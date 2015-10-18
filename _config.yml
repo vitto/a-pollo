@@ -1,0 +1,15 @@
+title: Apollo
+subtitle: Builds visual CSS style guides
+description: Apollo is a tool that builds visual CSS style guides
+author: Vittorio Vittori
+language: en
+timezone: Europe/Rome
+url: http://apollo.com
+root: /
+permalink: :year/:month/:day/:title/
+source_dir: ./theme
+public_dir: ./example
+# skip_render: ./theme/templates
+date_format: MMM D YYYY
+time_format: H:mm:ss
+filename_case: 1

@@ -1,21 +1,29 @@
 var reader = require('./lib/reader'),
-    Metalsmith = require('metalsmith');
+    Hexo = require('hexo');
 
-var widgets, metalsmith;
+var runBuild = function() {
+    var hexo, files;
 
-widgets = reader.load('test');
+    files = reader.load('test');
+    console.log(files[0][0]);
 
-var concat = function(files, metalsmith, done){
+    files[0][0].layout = 'widget';
+    files[0][0].slug = 'pipiloca';
 
-  widgets
-
-  done();
-};
-
-metalsmith = Metalsmith(__dirname)
-    .use(concat)
-    .build(function(err) {
-        if (err) { throw err; }
+    hexo = new Hexo(process.cwd(), {
+        debug: true,
+        config: '_config.yml'
+    });
+    hexo.init().then(function(){
+        hexo.post.publish(files[0][0], false);
     });
 
-console.log(widgets);
+    // console.log(files[0][0]);
+
+};
+
+exports.build = function() {
+    runBuild();
+};
+
+runBuild();
