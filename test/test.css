@@ -1,0 +1,22 @@
+/*pollo
+    @title: Buttons
+    @name: block-name
+    @category: Category name / Sub category
+    @description: This is the description of the element
+    @html:
+        <div class="button">
+            <div class="button__child">
+                hello
+            </div>
+        </div>
+*/
+
+.button {
+    padding: 6px 12px;
+    border: 2px solid grey;
+    color: grey;
+}
+
+.button__child {
+    background-color: #CFCFCF;
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Apollo",
+  "version": "1.0.0",
+  "description": "Builds visual CSS style guides",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitto/telaio.git"
+  },
+  "keywords": [
+    "node",
+    "css",
+    "styleguide"
+  ],
+  "author": "Vittorio Vittori",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vitto/telaio/issues"
+  },
+  "homepage": "https://github.com/vitto/telaio#readme",
+  "dependencies": {
+    "glob": "^5.0.15",
+    "handlebars": "^4.0.3",
+    "metalsmith": "^2.1.0",
+    "metalsmith-beautify": "0.0.7",
+    "metalsmith-markdown": "^0.2.1"
+  }
+}
