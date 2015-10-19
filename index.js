@@ -1,21 +1,30 @@
 var reader = require('./lib/reader'),
-    Hexo = require('hexo');
+    yaml = require('js-yaml'),
+    Hexo = require('hexo'),
+    fs = require('fs');
+
+var config = yaml.safeLoad(fs.readFileSync('./apollo.yml', 'utf-8'));
 
 var runBuild = function() {
-    var hexo, files;
+    var hexo, widgetFiles;
 
-    files = reader.load('test');
-    console.log(files[0][0]);
+    widgetFiles = reader.load(config.sassFolder);
 
-    files[0][0].layout = 'widget';
-    files[0][0].slug = 'pipiloca';
+    widgetFiles[0][0].layout = 'post';
+    widgetFiles[0][0].slug = 'widget-' + widgetFiles[0][0].slug;
+    widgetFiles[0][0].engine = 'ejs';
 
     hexo = new Hexo(process.cwd(), {
         debug: true,
         config: '_config.yml'
     });
+
     hexo.init().then(function(){
-        hexo.post.publish(files[0][0], false);
+        var widgetFile = widgetFiles[0][0];
+
+        hexo.render.render({text: widgetFile.text}, widgetFile).then(function(result){
+            console.log(result);
+        });
     });
 
     // console.log(files[0][0]);
