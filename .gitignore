@@ -4,5 +4,6 @@ db.json
 *.log
 node_modules/
 public/
-source/
+./source
+./hexo/source
 .deploy*/
