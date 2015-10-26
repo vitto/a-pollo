@@ -1,5 +1,6 @@
 var reader = require('./lib/reader'),
     formatter = require('./lib/formatter'),
+    widget = require('./lib/widget'),
     shell = require('shelljs'),
     yaml = require('js-yaml'),
     Hexo = require('hexo'),
@@ -18,9 +19,17 @@ var runBuild = function() {
     });
 
     hexo.init().then(function(){
-        var widgetFile = formatter.toHexo(widgetFiles[0][0]);
 
-        hexo.post.create(widgetFile, true);
+        var page;
+
+        for (var i = 0; i < widgetFiles.length; i += 1) {
+            page = widget.toPage(widgetFiles[i]);
+            console.log(page);
+        }
+
+        return;
+
+        hexo.post.create(widget, true);
 
         shell.rm('-rf', 'public');
         shell.rm('-rf', 'hexo/public');
