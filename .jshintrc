@@ -5,7 +5,8 @@
     // Custom Globals // additional predefined global variables
     "globals"       : {
         "module" : true,
-        "grunt"  : true
+        "grunt"  : true,
+        "exec"   : true
     },
 
     "maxerr" : 50,       // {int} Maximum error before stopping

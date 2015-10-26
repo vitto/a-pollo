@@ -1,4 +1,6 @@
 var reader = require('./lib/reader'),
+    formatter = require('./lib/formatter'),
+    shell = require('shelljs'),
     yaml = require('js-yaml'),
     Hexo = require('hexo'),
     fs = require('fs');
@@ -10,25 +12,27 @@ var runBuild = function() {
 
     widgetFiles = reader.load(config.sassFolder);
 
-    widgetFiles[0][0].layout = 'post';
-    widgetFiles[0][0].slug = 'widget-' + widgetFiles[0][0].slug;
-    widgetFiles[0][0].engine = 'ejs';
-
     hexo = new Hexo(process.cwd(), {
         debug: true,
-        config: '_config.yml'
+        config: './hexo/_config.yml'
     });
 
     hexo.init().then(function(){
-        var widgetFile = widgetFiles[0][0];
+        var widgetFile = formatter.toHexo(widgetFiles[0][0]);
 
-        hexo.render.render({text: widgetFile.text}, widgetFile).then(function(result){
-            console.log(result);
-        });
+        hexo.post.create(widgetFile, true);
+
+        shell.rm('-rf', 'public');
+        shell.rm('-rf', 'hexo/public');
+        shell.rm('-rf', 'hexo/source');
+        shell.mv('source', 'hexo/source');
+        shell.rm('-rf', 'source');
+        setTimeout(function(){
+            shell.exec('cd ./hexo && hexo generate && rm -rf source');
+            shell.mv('hexo/public', 'public');
+        }, 100);
+
     });
-
-    // console.log(files[0][0]);
-
 };
 
 exports.build = function() {

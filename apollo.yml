@@ -1,1 +1,8 @@
+title: Apollo
+subtitle: Builds visual CSS style guides
+description: Apollo is a tool that builds visual CSS style guides
+author: Vittorio Vittori
+language: en
+timezone: Europe/Rome
+
 sassFolder: ./test

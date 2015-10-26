@@ -34,7 +34,9 @@
     "hexo-renderer-marked": "^0.2.4",
     "hexo-renderer-stylus": "^0.3.0",
     "hexo-server": "^0.1.2",
+    "html-minifier": "^0.8.0",
     "js-beautify": "^1.5.10",
-    "js-yaml": "^3.4.3"
+    "js-yaml": "^3.4.3",
+    "shelljs": "^0.5.3"
   }
 }
