@@ -18,20 +18,21 @@ var runBuild = function() {
         config: './hexo/_config.yml'
     });
 
+    shell.rm('-rf', 'public');
+    shell.rm('-rf', 'hexo/public');
+    shell.rm('-rf', 'hexo/source');
+
     hexo.init().then(function(){
 
-        var page;
+        var postData, postContent;
 
         for (var i = 0; i < widgetFiles.length; i += 1) {
-            widgetFiles[i] = formatter.toHexo(widgetFiles[i]);
-            page = widget.toMarkdown(widgetFiles[i], config);
+            postData = formatter.toHexo(widgetFiles[i]);
+            postData.content = widget.toMarkdown(widgetFiles[i], config);
         }
 
-        hexo.post.create(widget, true);
+        hexo.post.create(postData, true);
 
-        shell.rm('-rf', 'public');
-        shell.rm('-rf', 'hexo/public');
-        shell.rm('-rf', 'hexo/source');
         shell.mv('source', 'hexo/source');
         shell.rm('-rf', 'source');
         setTimeout(function(){

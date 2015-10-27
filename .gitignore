@@ -2,8 +2,9 @@
 Thumbs.db
 db.json
 *.log
-node_modules/
-public/
-./source
-./hexo/source
+/node_modules/
+/public/
+/scaffolds/
+/source/
+/hexo/source
 .deploy*/

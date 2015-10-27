@@ -19,7 +19,7 @@
           </p>
         <% } %>
       <% } else { %>
-        <%- post.content %>
+        <%- markdown(post.content) %>
       <% } %>
     </div>
     <footer class="article-footer">
