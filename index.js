@@ -23,11 +23,9 @@ var runBuild = function() {
         var page;
 
         for (var i = 0; i < widgetFiles.length; i += 1) {
-            page = widget.toPage(widgetFiles[i]);
-            console.log(page);
+            widgetFiles[i] = formatter.toHexo(widgetFiles[i]);
+            page = widget.toMarkdown(widgetFiles[i], config);
         }
-
-        return;
 
         hexo.post.create(widget, true);
 
