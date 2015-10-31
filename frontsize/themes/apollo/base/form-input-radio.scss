@@ -1,0 +1,24 @@
+
+// The input element represents a typed data field,
+// usually with a form control to allow the user to edit the data.
+//
+// Url - http://html5doctor.com/element-index/#input
+
+input[type="radio"] {
+    @include user-select(none);
+    cursor: pointer;
+
+    @include appearance(none);
+
+    $size:24px;
+    @include moveTop(($size / 4));
+
+    $imageWidth:($size * 2);
+    $imageHeight:$size;
+
+    @include spriteRetina("input-radio-1x.png", "input-radio-2x.png", $size, $size, 2 1);
+
+    &:checked {
+        @include spritePosition(1 0, $size);
+    }
+}

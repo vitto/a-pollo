@@ -1,0 +1,10 @@
+
+// The th element represents a header cell in a table.
+//
+// Url - http://html5doctor.com/element-index/#th
+
+th {
+    text-align	: center;
+    font-weight	: bold;
+    padding		: ($spacing / 2);
+}

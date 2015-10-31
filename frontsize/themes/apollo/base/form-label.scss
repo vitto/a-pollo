@@ -1,0 +1,25 @@
+
+// The label represents a caption in a user interface.
+//
+// The caption can be associated with a specific form control,
+// known as the label element's labeled control, either using for attribute,
+// or by putting the form control inside the label element itself.
+//
+// Code snippet:
+// <label for="username">Username:</label>
+// <input name="user-name" id="username" type="email" placeholder="Your username is your email address" required autofocus>
+//
+// Url - http://html5doctor.com/element-index/#label
+
+label {
+
+    width   : 100%;
+    display : inline-block;
+    @include box-sizing(border-box);
+    @include user-select(none);
+
+    textarea,
+    input {
+        margin : 0;
+    }
+}

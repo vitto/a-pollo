@@ -1,0 +1,28 @@
+{
+  "name": "apollo",
+  "description": "Builds visual CSS style guides",
+  "main": "index.js",
+  "authors": [
+    "Vittorio Vittori"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "css",
+    "styleguide"
+  ],
+  "homepage": "https://github.com/vitto/apollo",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendors",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "frontsize-sass": "~3.9.44"
+  }
+}

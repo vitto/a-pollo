@@ -1,0 +1,24 @@
+
+// The blockquote element represents a section that is quoted
+// from another source.
+//
+// Content inside a blockquote must be quoted from another source,
+// whose address, if it has one, may be cited in the cite attribute.
+//
+// Url - http://html5doctor.com/element-index/#blockquote
+
+blockquote {
+
+    padding             : $global-padding;
+    font-style          : italic;
+    border-left         : 4px solid lighten($font-color, 20%);
+    background-color    : lighten($font-color, 45%);
+
+    &:before {
+        content: '«';
+    }
+
+    &:after {
+        content: '»';
+    }
+}

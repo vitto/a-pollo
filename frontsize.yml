@@ -1,0 +1,18 @@
+---
+frontsize:
+    theme: default
+    test: test/csslint/
+
+path:
+    frontsize: ./                   # compile.scss path
+    css: test/html/css/             # production path
+    images: test/html/img/theme/    # production path
+    fonts: test/html/fonts/         # production path
+
+vendors:
+    css:
+        - src/vendors/normalize-css/normalize.css
+#    fonts:
+#        - src/vendors/font/font-file.ttf
+#    images:
+#        - src/vendors/other/image.svg

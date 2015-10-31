@@ -1,0 +1,23 @@
+
+// The table element represents data with more than one dimension,
+// in the form of a table.
+//
+// Tables must not be used as layout aids.
+//
+// Code snippet:
+// <table>
+//  <tr>
+//      <td>dog</td>
+//      <td>cat</td>
+//      <td>horse</td>
+//      <td>iguana</td>
+//  </tr>
+// </table>
+//
+// Url - http://html5doctor.com/element-index/#table
+
+table {
+    border-collapse	: separate;
+    vertical-align	: middle;
+    width			: 100%;
+}

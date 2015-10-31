@@ -1,0 +1,18 @@
+
+// The body element represents the main content of the document.
+//
+// Url - http://html5doctor.com/element-index/#body
+
+body {
+    
+    background-color : $body-color;
+    color            : $font-color;
+    font-family      : $font-default;
+    font-size        : $font-size;
+    font-weight      : $font-weight;
+    line-height      : $font-line-height;
+    margin           : 0;
+    padding          : 0;
+
+    //@include font-smoothing(); // if you want to enable font smoothing (will be applied to webkit only)
+}

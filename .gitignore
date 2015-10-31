@@ -6,5 +6,6 @@ db.json
 /public/
 /scaffolds/
 /source/
+/vendors/
 /hexo/source
 .deploy*/

@@ -1,0 +1,25 @@
+
+// Represents a paragraph-level thematic break.
+//
+// The "paragraph-level" bit means between blocks of text,
+// so it can't be used to separate sections of a site.
+//
+// Instead, hr now separates different topics within a section of prose,
+// or between scenes in a novel.
+//
+// Url - http://html5doctor.com/element-index/#hr
+
+hr {
+    display       : block;
+    width         : 100%;
+
+    padding       : 0;
+    margin        : $vertical-padding 0;
+
+    border        : none;
+    border-top    : 1px solid;
+    border-bottom : 1px solid;
+
+	@include fallbackColor(border-top-color, rgba(0,0,0,0.075));
+    @include fallbackColor(border-bottom-color, rgba(255,255,255,0.8));
+}

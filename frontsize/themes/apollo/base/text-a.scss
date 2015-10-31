@@ -1,0 +1,53 @@
+
+// If the a element has an href attribute, then it represents
+// a hyperlink (a hypertext anchor).
+//
+// If the a element has no href attribute, then the element represents
+// a placeholder for where a link might otherwise have been placed,
+// if it had been relevant.
+//
+// The target, rel, media, hreflang, and type attributes must be omitted
+// if the href attribute is not present.
+//
+// Url - http://html5doctor.com/element-index/#a
+
+a {
+
+    $color     : $font-color;
+    $animation : 0.3s ease-in-out;
+
+    display         : inline-block;
+    color           : $color;
+    line-height     : $font-line-height;
+    text-decoration : none;
+    border-bottom   : 2px solid;
+    word-wrap       : break-word;
+
+    $color: $font-color;
+
+    @include fallbackColor(border-bottom-color, fade($color, 30%));
+
+    $animation:0.3s ease-in-out;
+    @include transition("border-bottom #{$animation}, color #{$animation}");
+
+    &[title]:hover {
+        text-decoration : none;
+    }
+
+    &:active,
+    &:hover,
+    &.hover,
+    &.selected,
+    &.active {
+        color : saturate(darken($color, 10%), 7%);
+        border-bottom-color : $color;
+    }
+
+    &.selected {
+        cursor : default;
+    }
+
+    img {
+        border : none;
+    }
+}

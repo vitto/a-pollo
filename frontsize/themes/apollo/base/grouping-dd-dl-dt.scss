@@ -1,0 +1,33 @@
+
+// Represents a description list consisting of zero or more name-value groups.
+//
+// Each group must consist of one or more names (dt elements)
+// each followed by one or more values (dd elements).
+//
+// Name-value groups may be terms and definitions, metadata topics and values,
+// or any other groups of name-value data.
+//
+// The values within a group are alternatives;
+// multiple paragraphs forming part of the same value must all be given
+// within the same dd element.
+//
+// Url - http://html5doctor.com/element-index/#dl
+
+// The dt element represents the term, or name,
+// part of a term-description group in a description list (dl element).
+//
+// Url - http://html5doctor.com/element-index/#dt
+
+dl {
+    margin	: 0;
+    padding	: 0;
+}
+
+dt {
+    font-weight : bold;
+}
+
+dd,
+dt {
+    margin-bottom : ($spacing * 1.25);
+}

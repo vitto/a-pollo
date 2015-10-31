@@ -1,0 +1,42 @@
+// The code element represents a fragment of computer code.
+// This could be an XML element name, a filename, a computer program,
+// or any other string that a computer would recognize.
+//
+// Url - http://html5doctor.com/element-index/#code
+
+// The var element represents a variable.
+// This could be an actual variable in a mathematical expression
+// or programming context, or it could just be a term used
+// as a placeholder in prose.
+//
+// Url - http://html5doctor.com/element-index/#var
+
+
+code,
+.code {
+    overflow : scroll;
+}
+
+code,
+.code,
+var,
+.var {
+
+    padding     : 0 ($spacing / 4);
+    font-family : $font-monospace;
+    color       : inherit;
+    border      : 1px solid;
+
+    @include fallbackColor(border-color, rgba(0,0,0,.03));
+    @include fallbackColor(border-top-color, rgba(0,0,0,.075));
+    @include fallbackColor(background-color, rgba(0,0,0,0.075));
+
+    @include border-radius(4px);
+    @include box-shadow(0 1px 0 rgba(255,255,255,0.2));
+
+    &.code-black {
+        background-color    : #202020;
+        text-shadow         : none;
+        color               : white;
+    }
+}

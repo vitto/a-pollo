@@ -1,0 +1,31 @@
+
+// The ol element represents a list of items,
+// where the items have been intentionally ordered,
+// such that changing the order would change the meaning of the list.
+//
+// Url - http://html5doctor.com/element-index/#ol
+
+// The ul element represents a list of items,
+// where the order of the items is not important — that is,
+// where changing the order would not materially change the meaning of the list.
+//
+// Url - http://html5doctor.com/element-index/#ul
+
+ol,
+ul {
+    padding : 0;
+    margin : 0;
+}
+
+// The li element represents a list item.
+// If its parent element is an ol, ul, or menu element,
+// then the element is an item of the parent element's list,
+// as defined for those elements. Otherwise,
+// the list item has no defined list-related relationship to any other li element.
+//
+// Url - http://html5doctor.com/element-index/#li
+
+li {
+    padding: 0;
+    margin: 0 0 0 (($spacing + $spacing) / 4);
+}

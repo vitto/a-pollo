@@ -6,4 +6,3 @@ language: en
 timezone: Europe/Rome
 
 sassFolder: ./test
-mardown: true
