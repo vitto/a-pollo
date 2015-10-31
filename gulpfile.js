@@ -55,7 +55,7 @@ gulp.task('frontsize:report', function () {
         .pipe(stylestats());
 });
 
-gulp.task('frontsize:assets', function () {
+gulp.task('frontsize:theme:assets', function () {
     gulp.src(f.path.frontsize + 'themes/' + f.frontsize.theme + '/img/**/*.*')
         .pipe(gulp.dest(f.path.images));
     gulp.src(f.path.frontsize + 'themes/' + f.frontsize.theme + '/fonts/**/*.*')
@@ -85,7 +85,7 @@ gulp.task('frontsize:watch', function () {
 gulp.task('frontsize:watch:assets', function(){
     var tasks = [
         'frontsize:build',
-        'frontsize:assets'
+        'frontsize:theme:assets'
     ];
     runSequence(tasks);
     gulp.watch([
@@ -95,7 +95,28 @@ gulp.task('frontsize:watch:assets', function(){
     ], tasks);
 });
 
-gulp.task('frontsize:vendors', function () {
+gulp.task('frontsize:vendors', function(){
+    var tasks = [
+        'frontsize:vendors:css',
+        'frontsize:vendors:fonts',
+        'frontsize:vendors:images'
+    ];
+    runSequence(tasks);
+});
+
+gulp.task('frontsize:watch:vendors', function(){
+    var tasks = [
+        'frontsize:vendors'
+    ];
+    runSequence(tasks);
+    gulp.watch([
+        f.path.frontsize + 'themes/**/*.scss',
+        f.path.frontsize + 'themes/**/img/**/*',
+        f.path.frontsize + 'themes/**/fonts/**/*'
+    ], tasks);
+});
+
+gulp.task('frontsize:vendors:css', function () {
     if (!f.vendors) {
         if (!f.vendors.css) {
             return;
@@ -106,6 +127,28 @@ gulp.task('frontsize:vendors', function () {
     .pipe(uglifyCss())
     .pipe(concat(cssVendorsFileName))
     .pipe(gulp.dest(f.path.css));
+});
+
+gulp.task('frontsize:vendors:fonts', function () {
+    if (!f.vendors) {
+        if (!f.vendors.fonts) {
+            return;
+        }
+        return;
+    }
+    gulp.src(f.vendors.fonts)
+        .pipe(gulp.dest(f.path.fonts));
+});
+
+gulp.task('frontsize:vendors:images', function () {
+    if (!f.vendors) {
+        if (!f.vendors.images) {
+            return;
+        }
+        return;
+    }
+    gulp.src(f.vendors.images)
+        .pipe(gulp.dest(f.path.images));
 });
 
 gulp.task('frontsize:merge', function () {

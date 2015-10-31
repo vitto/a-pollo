@@ -6,4 +6,19 @@
 // ==                                   ===================================================================================================================================
 // ========================================================================================================================================================================
 
-$border : 2px solid $font-color;
+
+$colorGold: rgb(184, 151, 102);
+$colorGreyDark: rgb(85, 85, 85);
+$colorGreyDeep: rgb(128, 128, 128);
+$colorGrey: rgb(217, 217, 217);
+$colorGreyLight: rgb(236, 232, 232);
+
+/* widgets */
+
+$colorTextBold: $colorGreyDark;
+$colorPage: $colorGreyLight;
+
+$colorMenuTitle: $colorGrey;
+$colorMenuButton: $colorGreyDeep;
+$colorMenuButtonHover: $colorMenuTitle;
+$colorMenuButtonSelected: $colorGold;

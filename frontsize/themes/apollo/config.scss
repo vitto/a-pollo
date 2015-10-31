@@ -12,7 +12,7 @@ $font-size:       16px;
 $font-small-size: 12px;
 
 // Fonts families global vars
-$font-sans      : "open sans", "helvetica neue", helvetica, arial, sans-serif;
+$font-sans      : "roboto", "helvetica neue", helvetica, arial, sans-serif;
 $font-serif     : georgia, "times new roman", times, serif;
 $font-monospace : menlo, monaco, "courier new", monospace;
 $font-small     : "lucida grande", tahoma, verdana, arial, sans-serif;
@@ -26,8 +26,8 @@ $spacing : 20px;
 
 $font-line-height    : s();
 $font-weight         : 400;
-$font-color          : #545454;
-$body-color          : #F5F0D6;
+$font-color          : rgb(128, 128, 128);
+$body-color          : rgb(38, 38, 38);
 $fallback-color-base : $body-color;
 
 // Global padding configuration
