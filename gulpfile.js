@@ -117,51 +117,36 @@ gulp.task('frontsize:watch:vendors', function(){
 });
 
 gulp.task('frontsize:vendors:css', function () {
-    if (!f.vendors) {
-        if (!f.vendors.css) {
-            return;
-        }
-        return;
+    if (f.vendors !== undefined && f.vendors.css !== undefined) {
+        return gulp.src(f.vendors.css)
+        .pipe(uglifyCss())
+        .pipe(concat(cssVendorsFileName))
+        .pipe(gulp.dest(f.path.css));
     }
-    return gulp.src(f.vendors)
-    .pipe(uglifyCss())
-    .pipe(concat(cssVendorsFileName))
-    .pipe(gulp.dest(f.path.css));
 });
 
 gulp.task('frontsize:vendors:fonts', function () {
-    if (!f.vendors) {
-        if (!f.vendors.fonts) {
-            return;
-        }
-        return;
+    if (f.vendors !== undefined && f.vendors.fonts !== undefined) {
+        gulp.src(f.vendors.fonts)
+            .pipe(gulp.dest(f.path.fonts));
     }
-    gulp.src(f.vendors.fonts)
-        .pipe(gulp.dest(f.path.fonts));
 });
 
 gulp.task('frontsize:vendors:images', function () {
-    if (!f.vendors) {
-        if (!f.vendors.images) {
-            return;
-        }
-        return;
+    if (f.vendors !== undefined && f.vendors.images !== undefined) {
+        gulp.src(f.vendors.images)
+            .pipe(gulp.dest(f.path.images));
     }
-    gulp.src(f.vendors.images)
-        .pipe(gulp.dest(f.path.images));
 });
 
 gulp.task('frontsize:merge', function () {
-    if (!f.vendors) {
-        if (!f.vendors.css) {
-            return;
-        }
-        return;
+    if (f.vendors !== undefined && f.vendors.css !== undefined) {
+        var css = f.vendors.css.slice(0);
+        css.push(f.frontsize.test + cssTestFileName);
+        console.log(css);
+        return gulp.src(css)
+        .pipe(uglifyCss())
+        .pipe(concat(cssMergeFileName))
+        .pipe(gulp.dest(f.path.css));
     }
-    var css = f.vendors.css.slice(0);
-    css.push(f.frontsize.test + cssTestFileName);
-    return gulp.src(css)
-    .pipe(uglifyCss())
-    .pipe(concat(cssMergeFileName))
-    .pipe(gulp.dest(f.path.css));
 });

@@ -1,17 +1,18 @@
 ---
 frontsize:
     theme: default
-    test: test/csslint/
+    test: frontsize/test/csslint/
 
 path:
-    frontsize: ./
+    frontsize: frontsize/
     css: hexo/themes/apollo/source/css/
-    images: hexo/themes/apollo/source/img/theme/
+    images: hexo/themes/apollo/source/img/
     fonts: hexo/themes/apollo/source/fonts/
 
 vendors:
     css:
         - vendors/normalize-css/normalize.css
+        - vendors/font-awesome/css/font-awesome.css
     fonts:
         - vendors/roboto-fontface/fonts/Roboto-Light.eot
         - vendors/roboto-fontface/fonts/Roboto-Light.svg
@@ -33,5 +34,11 @@ vendors:
         - vendors/roboto-fontface/fonts/Roboto-Black.ttf
         - vendors/roboto-fontface/fonts/Roboto-Black.woff
         - vendors/roboto-fontface/fonts/Roboto-Black.woff2
+        - vendors/font-awesome/fonts/fontawesome-webfont.eot
+        - vendors/font-awesome/fonts/fontawesome-webfont.svg
+        - vendors/font-awesome/fonts/fontawesome-webfont.ttf
+        - vendors/font-awesome/fonts/fontawesome-webfont.woff
+        - vendors/font-awesome/fonts/fontawesome-webfont.woff2
+        - vendors/font-awesome/fonts/FontAwesome.otf
 #    images:
 #        - src/vendors/other/image.svg

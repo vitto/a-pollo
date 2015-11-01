@@ -20,13 +20,28 @@
   }
   %>
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+
+  <meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <% if (theme.favicon){ %>
-    <link rel="icon" href="<%- theme.favicon %>">
-  <% } %>
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-    <!-- pipiloca -->
-  <%- css('css/style') %>
-  <%- partial('google-analytics') %>
+    <% if (theme.favicon){ %>
+        <link href="/icon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+        <link href="/icon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+        <link href="/icon/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+        <link href="/icon/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+        <link href="/icon/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+        <link href="/icon/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+        <link href="/icon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+        <link href="/icon/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+        <link href="/icon/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+        <link href="/icon/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+        <link href="/icon/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+        <link href="/icon/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png">
+        <link href="/icon/favicon-196x196.png" rel="icon" sizes="196x196" type="image/png">
+        <meta content="#2f83cd" name="msapplication-TileColor">
+        <meta content="/icon/mstile-144x144.png" name="msapplication-TileImage">
+    <% } %>
+    <%- css('css/frontsize-theme.min') %>
+    <%- css('css/vendors.min') %>
+    <!-- <%- partial('google-analytics') %> -->
 </head>

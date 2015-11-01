@@ -19,7 +19,7 @@ widgets:
 
 # Miscellaneous
 google_analytics:
-favicon: /favicon.png
+favicon: true
 twitter:
 google_plus:
 fb_admins:
