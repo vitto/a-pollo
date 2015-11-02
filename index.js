@@ -18,9 +18,9 @@ var runBuild = function() {
         config: './hexo/_config.yml'
     });
 
-    shell.rm('-rf', 'public');
-    shell.rm('-rf', 'hexo/public');
-    shell.rm('-rf', 'hexo/source');
+    shell.rm('-Rf', 'public');
+    shell.rm('-Rf', 'hexo/public');
+    shell.rm('-Rf', 'hexo/source/_posts');
 
     hexo.init().then(function(){
 
@@ -33,10 +33,8 @@ var runBuild = function() {
 
         hexo.post.create(postData, true);
 
-        shell.mv('source', 'hexo/source');
-        shell.rm('-rf', 'source');
         setTimeout(function(){
-            shell.exec('cd ./hexo && hexo generate && rm -rf source');
+            shell.exec('cd ./hexo && hexo generate && rm -Rf source/_posts');
             shell.mv('hexo/public', 'public');
         }, 100);
 

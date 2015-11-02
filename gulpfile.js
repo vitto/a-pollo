@@ -55,7 +55,7 @@ gulp.task('frontsize:report', function () {
         .pipe(stylestats());
 });
 
-gulp.task('frontsize:theme:assets', function () {
+gulp.task('frontsize:assets', function () {
     gulp.src(f.path.frontsize + 'themes/' + f.frontsize.theme + '/img/**/*.*')
         .pipe(gulp.dest(f.path.images));
     gulp.src(f.path.frontsize + 'themes/' + f.frontsize.theme + '/fonts/**/*.*')
@@ -85,7 +85,7 @@ gulp.task('frontsize:watch', function () {
 gulp.task('frontsize:watch:assets', function(){
     var tasks = [
         'frontsize:build',
-        'frontsize:theme:assets'
+        'frontsize:assets'
     ];
     runSequence(tasks);
     gulp.watch([

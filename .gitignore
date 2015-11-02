@@ -6,6 +6,7 @@ db.json
 /public/
 /scaffolds/
 /source/
+/frontsize/test/
 /vendors/
 /hexo/source
 .deploy*/

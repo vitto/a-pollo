@@ -1,13 +1,13 @@
 ---
 frontsize:
-    theme: default
+    theme: apollo
     test: frontsize/test/csslint/
 
 path:
-    frontsize: frontsize/
     css: hexo/themes/apollo/source/css/
     images: hexo/themes/apollo/source/img/
     fonts: hexo/themes/apollo/source/fonts/
+    frontsize: frontsize/
 
 vendors:
     css:

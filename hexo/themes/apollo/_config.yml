@@ -24,3 +24,5 @@ twitter:
 google_plus:
 fb_admins:
 fb_app_id:
+
+devMode: true
