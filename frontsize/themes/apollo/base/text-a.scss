@@ -13,25 +13,13 @@
 
 a {
 
-    $color     : $font-color;
-    $animation : 0.3s ease-in-out;
+    color: $colorLink;
+    word-wrap: break-word;
 
-    display         : inline-block;
-    color           : $color;
-    line-height     : $font-line-height;
-    text-decoration : none;
-    border-bottom   : 2px solid;
-    word-wrap       : break-word;
-
-    $color: $font-color;
-
-    @include fallbackColor(border-bottom-color, fade($color, 30%));
-
-    $animation:0.3s ease-in-out;
-    @include transition("border-bottom #{$animation}, color #{$animation}");
+    @include transition(color background-color, 0.125s ease-in-out);
 
     &[title]:hover {
-        text-decoration : none;
+        cursor: pointer;
     }
 
     &:active,
@@ -39,8 +27,8 @@ a {
     &.hover,
     &.selected,
     &.active {
-        color : saturate(darken($color, 10%), 7%);
-        border-bottom-color : $color;
+        color: desaturate($colorLink, 10%);
+        background-color: mix($colorLink, $colorPage, 15%);
     }
 
     &.selected {

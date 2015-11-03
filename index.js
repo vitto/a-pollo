@@ -24,7 +24,7 @@ var runBuild = function() {
 
     hexo.init().then(function(){
 
-        var postData, postContent;
+        var postData;
 
         for (var i = 0; i < widgetFiles.length; i += 1) {
             postData = formatter.toHexo(widgetFiles[i]);

@@ -10,16 +10,13 @@
 // Url - http://html5doctor.com/element-index/#hr
 
 hr {
-    display       : block;
-    width         : 100%;
+    display: block;
+    width: 100%;
 
-    padding       : 0;
-    margin        : $vertical-padding 0;
+    padding: 0;
+    margin: s() 0;
 
-    border        : none;
-    border-top    : 1px solid;
-    border-bottom : 1px solid;
+    border: none;
+    border-top: 1px solid $colorHr;
 
-	@include fallbackColor(border-top-color, rgba(0,0,0,0.075));
-    @include fallbackColor(border-bottom-color, rgba(255,255,255,0.8));
 }

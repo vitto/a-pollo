@@ -8,7 +8,7 @@ $h5 : 18px;
 $h6 : 16px;
 
 // Font sizes
-$font-size:       16px;
+$font-size:       12px;
 $font-small-size: 12px;
 
 // Fonts families global vars
@@ -76,5 +76,5 @@ $use-font-fallback : true;
 $use-fallbacks     : true;
 
 $use-root-path: true;
-$path-img  : "path/to/production/img/theme/";
-$path-font : "path/to/production/fonts/";
+$path-img  : "/img/";
+$path-font : "/fonts/";

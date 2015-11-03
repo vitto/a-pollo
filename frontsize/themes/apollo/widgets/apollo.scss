@@ -1,0 +1,21 @@
+.apollo {
+    @include row();
+    margin-top: s(3);
+
+    @include element("aside") {
+        margin-top: s(4);
+        @include column(
+            2, 2,
+            2, 2,
+            1, 1
+        );
+    }
+
+    @include element("page") {
+        @include column(
+            8, 8,
+            8, 8,
+            1, 1
+        );
+    }
+}

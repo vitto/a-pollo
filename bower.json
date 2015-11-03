@@ -26,6 +26,7 @@
     "frontsize-sass": "~3.9.44",
     "roboto-fontface": "~0.4.3",
     "normalize-css": "normalize.css#~3.0.3",
-    "font-awesome": "~4.4.0"
+    "font-awesome": "~4.4.0",
+    "github-markdown-css": "~2.1.0"
   }
 }

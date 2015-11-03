@@ -1,0 +1,21 @@
+.markdown {
+    > table {
+        width: 100%;
+        background-color: white;
+
+        th {
+            text-align: left;
+            font-weight: 500;
+        }
+
+        th, td {
+            padding: s(0.25) s(0.5);
+        }
+
+        tr:nth-child(odd) {
+            td {
+                background-color: $colorTableOdd;
+            }
+        }
+    }
+}

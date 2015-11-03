@@ -15,6 +15,9 @@ ol,
 ul {
     padding : 0;
     margin : 0;
+    > br {
+        display: none;
+    }
 }
 
 // The li element represents a list item.
@@ -27,5 +30,5 @@ ul {
 
 li {
     padding: 0;
-    margin: 0 0 0 (($spacing + $spacing) / 4);
+    margin: 0 0 0 s();
 }

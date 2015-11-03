@@ -8,9 +8,10 @@
 //@include setFontScaling(body, 20px, 18px, 16px, 16px, 16px, 16px);
 //@include setLineHeightScaling(body, $spacing);
 
-// @include font('open sans', 'OpenSans-Bold',    700);
-// @include font('open sans', 'OpenSans-Regular', 400);
-// @include font('open sans', 'OpenSans-Light',   200);
+@include font('roboto', 'Roboto-Black', 700);
+@include font('roboto', 'Roboto-Bold', 600);
+@include font('roboto', 'Roboto-Medium', 500);
+@include font('roboto', 'Roboto-Light', 300);
 
 //@include addFloatGridContainer(row);
 
@@ -19,4 +20,4 @@
 //@include addFloatGridColumns(4, 2, 2, "l", "m", "s", "mobile-landscape", false);
 
 // put .addViewportsSteps at the bottom of the configuration
-//@include addViewportsSteps(use-steps, 500px, 100px, 50px, 0);
+@include addViewportsSteps("spacer", 1280px, 1280px, 1024px, 0);

@@ -13,12 +13,18 @@ $colorGreyDeep: rgb(128, 128, 128);
 $colorGrey: rgb(217, 217, 217);
 $colorGreyLight: rgb(236, 232, 232);
 
+
 /* widgets */
 
 $colorTextBold: $colorGreyDark;
 $colorPage: $colorGreyLight;
 
+$colorLink: $colorGold;
+
 $colorMenuTitle: $colorGrey;
 $colorMenuButton: $colorGreyDeep;
-$colorMenuButtonHover: $colorMenuTitle;
+$colorMenuButtonHover: $colorGold;
 $colorMenuButtonSelected: $colorGold;
+
+$colorHr: $colorGrey;
+$colorTableOdd: mix($colorGreyLight, white, 25%);

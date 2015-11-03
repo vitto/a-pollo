@@ -2,11 +2,15 @@
 <html>
     <%- partial('_partial/head') %>
     <body>
-        <aside class="menu">
-            <%- partial('_partial/head') %>
-        </aside>
-        <main class="page">
-            <%- body %>
+        <main class="spacer">
+            <div class="apollo">
+                <aside class="apollo__aside">
+                    <%- partial('_partial/menu') %>
+                </aside>
+                <section class="apollo__page">
+                    <%- body %>
+                </section>
+            </div>
         </main>
     </body>
 </html>

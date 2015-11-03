@@ -13,7 +13,8 @@
 // Url - http://html5doctor.com/element-index/#b
 
 b {
-    font-weight: 700;
+    font-weight: 500;
+    color: $colorTextBold;
 }
 
 // Represents strong importance for its contents.
@@ -25,5 +26,6 @@ b {
 // Url - http://html5doctor.com/element-index/#strong
 
 strong {
-    font-weight: 700;
+    font-weight: 500;
+    color: $colorTextBold;
 }
