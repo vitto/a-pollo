@@ -8,6 +8,7 @@ path:
     images: hexo/themes/apollo/source/img/
     fonts: hexo/themes/apollo/source/fonts/
     frontsize: frontsize/
+    js: hexo/themes/apollo/source/js/
 
 vendors:
     css:
@@ -43,3 +44,11 @@ vendors:
         - vendors/font-awesome/fonts/FontAwesome.otf
 #    images:
 #        - src/vendors/other/image.svg
+
+js:
+    name: frontsize.min.js
+    watch: frontsize/js/**/*
+    files:
+        - vendors/clipboard/dist/clipboard.js
+        - vendors/jquery/dist/jquery.js
+        - frontsize/js/copy.js

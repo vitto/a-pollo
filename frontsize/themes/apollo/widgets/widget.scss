@@ -1,0 +1,19 @@
+.widget {
+
+    @include element("title") {
+        margin-bottom: 0;
+    }
+
+    @include element("category") {
+        margin-bottom: s();
+    }
+
+    @include element("description") {
+        margin-top: s();
+    }
+
+    @include element("hr") {
+        margin-top: s(1.5);
+        margin-bottom: s(1.5);
+    }
+}

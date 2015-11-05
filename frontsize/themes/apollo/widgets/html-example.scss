@@ -1,0 +1,20 @@
+.html-example {
+    margin-top: s();
+    background-color: white;
+
+    margin-left: s(-3);
+    margin-right: s(-3);
+    padding: s() s(3);
+
+    @include element("inner") {
+        display: inline-block;
+        padding: 2px;
+        border: 1px dashed;
+        border-color: $colorPage;
+        @include transition(border-color $ease);
+    }
+
+    &:hover .html-example__inner {
+        border-color: mix($font-color, $colorPage, 25%);
+    }
+}

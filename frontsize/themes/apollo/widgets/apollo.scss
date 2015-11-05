@@ -4,6 +4,7 @@
 
     @include element("aside") {
         margin-top: s(4);
+        padding: 0 s(2) s(2) s(2);
         @include column(
             2, 2,
             2, 2,

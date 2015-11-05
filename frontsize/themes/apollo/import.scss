@@ -48,9 +48,15 @@
 
 // @import "helpers/my-helper";
 
+@import "widgets/apollo-logo";
 @import "widgets/apollo";
+@import "widgets/code-example";
+@import "widgets/footer";
+@import "widgets/html-example";
 @import "widgets/markdown";
 @import "widgets/menu";
 @import "widgets/page";
+@import "widgets/title-spacer";
+@import "widgets/widget";
 
 @import "app";

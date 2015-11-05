@@ -1,0 +1,47 @@
+.code-example {
+    position: relative;
+    margin-top: s();
+    padding: s();
+
+    color: $colorCodeText;
+    background-color: $colorCodeBackground;
+
+    cursor: pointer;
+    @include user-select("none");
+    @include transition(color background-color, $ease);
+
+    @include element("message") {
+        position: absolute;
+        right: s();
+        top: s();
+
+        padding: s(0.25) s(0.5);
+
+        color: $colorCodeText;
+
+        background-color: transparent;
+        text-transform: lowercase;
+
+        @include transition(color background-color, $ease);
+    }
+
+    &:hover {
+        color: $colorCodeTextHover;
+
+        .code-example__message {
+            color: $colorCodeTextHover;
+            background-color: mix($colorPage, $colorCodeBackground, 75%);
+        }
+
+        .gutter {
+            color: saturate(mix($colorCodeLineNumber, $colorCodeBackground, 50%), 10%);
+        }
+    }
+
+    .gutter {
+        @include user-select("none");
+        padding-right: s(0.5);
+        @include transition(color $ease);
+        color: $colorCodeLineNumber;
+    }
+}

@@ -29,14 +29,13 @@ var runBuild = function() {
         for (var i = 0; i < widgetFiles.length; i += 1) {
             postData = formatter.toHexo(widgetFiles[i]);
             postData.content = widget.toMarkdown(widgetFiles[i], config);
+            hexo.post.create(postData, true);
         }
 
-        hexo.post.create(postData, true);
-
-        setTimeout(function(){
-            shell.exec('cd ./hexo && hexo generate && rm -Rf source/_posts');
-            shell.mv('hexo/public', 'public');
-        }, 100);
+        shell.mv('source/_posts', 'hexo/source/_posts');
+        shell.exec('cd ./hexo && hexo generate');
+        shell.mv('hexo/public', 'public');
+        shell.rm('-Rf', 'hexo/source/_posts');
 
     });
 };

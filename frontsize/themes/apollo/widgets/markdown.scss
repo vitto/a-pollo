@@ -1,4 +1,11 @@
 .markdown {
+
+    a {
+        &:hover {
+            background-color: mix($colorLink, $colorPage, 15%);
+        }
+    }
+
     > table {
         width: 100%;
         background-color: white;
@@ -6,6 +13,7 @@
         th {
             text-align: left;
             font-weight: 500;
+            color: $colorTextBold;
         }
 
         th, td {

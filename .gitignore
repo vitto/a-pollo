@@ -9,3 +9,4 @@ db.json
 /frontsize/test/
 /vendors/
 .deploy*/
+/hexo/source/_posts

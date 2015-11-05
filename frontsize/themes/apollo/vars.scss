@@ -18,8 +18,16 @@ $colorGreyLight: rgb(236, 232, 232);
 
 $colorTextBold: $colorGreyDark;
 $colorPage: $colorGreyLight;
+$colorLogoText: $colorGreyLight;
+$colorFooterLink: $colorGreyLight;
+
 
 $colorLink: $colorGold;
+
+$colorCodeBackground: desaturate(mix($colorGold, $colorPage, 20%), 10%);
+$colorCodeText: mix($colorGreyDark, $colorCodeBackground, 50%);
+$colorCodeTextHover: $colorGreyDark;
+$colorCodeLineNumber: mix($colorCodeText, $colorCodeBackground, 50%);
 
 $colorMenuTitle: $colorGrey;
 $colorMenuButton: $colorGreyDeep;
@@ -27,4 +35,6 @@ $colorMenuButtonHover: $colorGold;
 $colorMenuButtonSelected: $colorGold;
 
 $colorHr: $colorGrey;
-$colorTableOdd: mix($colorGreyLight, white, 25%);
+$colorTableOdd: mix($colorGreyLight, white, 30%);
+
+$ease: 0.25s ease-out;

@@ -1,6 +1,10 @@
 .menu {
-    margin: 0;
+    margin: s(2) 0 0 0;
     padding: 0;
+
+    @include modifier("first") {
+        margin-top: 0;
+    }
 
     @include element("title") {
         margin-bottom: s(0.5);
@@ -17,6 +21,7 @@
 
         &:hover {
             color: $colorMenuButtonSelected;
+            // background-color: transparent;
         }
     }
 }

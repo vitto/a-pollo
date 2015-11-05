@@ -1,11 +1,18 @@
-<footer id="footer">
-  <% if (theme.sidebar === 'bottom'){ %>
-    <%- partial('_partial/sidebar') %>
-  <% } %>
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+<footer class="footer">
+    <div>
+        <a href="#" class="apollo-logo">
+            <div class="apollo-logo__icon"></div>
+            <div class="apollo-logo__text">apollo</div>
+        </a>
     </div>
-  </div>
+    <div class="footer__left-column">
+        <p>
+            The visual CSS style guide for teams
+        </p>
+    </div>
+    <div class="footer__right-column">
+        <p>
+            Coded with <i class="fa fa-heart"></i> by <a href="#" class="footer__link">vitto</a> @ <a href="#" class="footer__link">ideato</a>
+        </p>
+    </div>
 </footer>

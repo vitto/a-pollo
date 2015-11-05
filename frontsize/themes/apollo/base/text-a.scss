@@ -28,7 +28,6 @@ a {
     &.selected,
     &.active {
         color: desaturate($colorLink, 10%);
-        background-color: mix($colorLink, $colorPage, 15%);
     }
 
     &.selected {

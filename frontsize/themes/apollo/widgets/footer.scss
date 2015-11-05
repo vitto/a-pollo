@@ -1,0 +1,35 @@
+.footer {
+    margin-top: s(4);
+    margin-bottom: s(4);
+
+    @include row();
+
+    @include element("left-column") {
+        @include column(
+            6, 6,
+            6, 6,
+            1, 1
+        );
+    }
+
+    @include element("right-column") {
+        text-align: right;
+        @include column(
+            6, 6,
+            6, 6,
+            1, 1
+        );
+
+        @media #{$till-tablet-portrait} {
+            text-align: left;
+        }
+    }
+
+    @include element("link") {
+        color: $colorFooterLink;
+        text-decoration: none;
+        &:hover {
+            color: $colorGold;
+        }
+    }
+}

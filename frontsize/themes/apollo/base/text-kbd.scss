@@ -17,29 +17,25 @@
 
 kbd {
 
+    position: relative;
+
     display: inline-block;
-    padding: s(0.125) s(0.25);
+    padding: 0 s(0.25);
 
     background-color: #FFF;
     border: 1px solid $colorGrey;
     border-bottom-width: 3px;
 
-    @include border-radius(8px);
-
     font-family: $font-monospace;
     font-weight: 400;
+    font-size: 10px;
 
-    kbd {
-        padding: 0;
-        border: none;
-        background-color: transparent;
-        background: none;
-        position:  static;
+    cursor: pointer;
+    @include border-radius(6px);
 
-        @include box-shadow(none);
-        &:active {
-            margin-bottom: 0;
-            border: none;
-        }
+    &:active {
+        top: 2px;
+        border-bottom-width: 1px;
     }
+
 }

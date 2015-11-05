@@ -1,0 +1,28 @@
+.apollo-logo {
+    $size: 21px;
+
+    display: inline-block;
+    margin-bottom: s(0.5, $size);
+
+    text-decoration: none;
+
+    @include transition(text-shadow 0.125s ease-in-out);
+
+    &:hover {
+        text-shadow: 0 0 4px $colorLogoText;
+    }
+
+    @include element("icon") {
+        @include icon("apollo-logo__icon.svg", 80px, 60px);
+    }
+
+    @include element("text") {
+        margin-top: $size;
+
+        color: $colorLogoText;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: $size;
+        line-height:1;
+    }
+}
