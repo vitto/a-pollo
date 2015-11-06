@@ -30,7 +30,7 @@
 
         .code-example__message {
             color: $colorCodeTextHover;
-            background-color: mix($colorPage, $colorCodeBackground, 75%);
+            background-color: saturate(mix($colorCodeLineNumber, $colorCodeBackground, 37%), 5%);
         }
 
         .gutter {

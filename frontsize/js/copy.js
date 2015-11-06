@@ -1,6 +1,17 @@
 $(function(){
+
+    var clipboard = new Clipboard('.code-example');
+
     $(document).on('click', '.code-example', function(){
-        console.log($(this).prev().prev().find('.html-example__inner').html());
-        // var clipboard = new Clipboard('.btn');
+
+        var $copyMessage, originalText;
+
+        $copyMessage = $(this).find('.code-example__message');
+        originalText = $(this).find('.code-example__message').data('text');
+        $copyMessage.text('copied');
+
+        setTimeout(function(){
+            $copyMessage.text(originalText);
+        }, 2000);
     });
 });
