@@ -17,9 +17,9 @@
 
         padding: s(0.25) s(0.5);
 
-        color: $colorCodeText;
+        color: $colorCodeLineNumber;
 
-        background-color: transparent;
+        background-color: $colorPage;
         text-transform: lowercase;
 
         @include transition(color background-color, $ease);
@@ -29,8 +29,8 @@
         color: $colorCodeTextHover;
 
         .code-example__message {
-            color: $colorCodeTextHover;
-            background-color: saturate(mix($colorCodeLineNumber, $colorCodeBackground, 37%), 5%);
+            color: $colorText;
+            background-color: white;
         }
 
         .gutter {
