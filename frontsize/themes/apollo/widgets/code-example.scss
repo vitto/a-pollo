@@ -7,7 +7,6 @@
     background-color: $colorCodeBackground;
 
     cursor: pointer;
-    @include user-select("none");
     @include transition(color background-color, $ease);
 
     @include element("message") {
@@ -21,6 +20,8 @@
 
         background-color: $colorPage;
         text-transform: lowercase;
+
+        @include user-select("none");
 
         @include transition(color background-color, $ease);
     }
@@ -41,7 +42,7 @@
     .gutter {
         @include user-select("none");
         padding-right: s(0.5);
-        @include transition(color $ease);
         color: $colorCodeLineNumber;
+        @include transition(color $ease);
     }
 }

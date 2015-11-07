@@ -1,6 +1,12 @@
 $(function(){
 
-    var clipboard = new Clipboard('.code-example');
+    $('.value').each(function(){
+        $(this).text($(this).text().replace(/[“”]{1,}/g, '"'));
+    });
+
+    new Clipboard('.code-example');
+
+    var timeout;
 
     $(document).on('click', '.code-example', function(){
 
@@ -10,7 +16,9 @@ $(function(){
         originalText = $(this).find('.code-example__message').data('text');
         $copyMessage.text('copied');
 
-        setTimeout(function(){
+        clearTimeout(timeout);
+
+        timeout = setTimeout(function(){
             $copyMessage.text(originalText);
         }, 2000);
     });
