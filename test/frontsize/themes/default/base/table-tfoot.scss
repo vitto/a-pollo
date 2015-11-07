@@ -1,0 +1,30 @@
+
+// The tfoot element represents the block of rows that consist
+// of the column summaries (footers) for the parent table element,
+// if the tfoot element has a parent and it is a table.
+//
+// Code snippet:
+// <table>
+//  <thead>
+//      ...
+//  </thead>
+//  <tfoot>
+//      <tr>
+//          <td>Footer 1</td>
+//          <td>Footer 2</td>
+//          <td>Footer 3</td>
+//      </tr>
+//  </tfoot>
+//  <tbody>
+//      ...
+//  </tbody>
+// </table>
+//
+// Url - http://html5doctor.com/element-index/#tfoot
+
+tfoot {
+    td {
+        text-align  : center;
+        color		: lighten($font-color,20%);
+    }
+}

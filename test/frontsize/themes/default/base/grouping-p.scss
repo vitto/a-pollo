@@ -1,0 +1,8 @@
+
+// The p element represents a paragraph.
+//
+// Url - http://html5doctor.com/element-index/#p
+
+p {
+    @include user-select();
+}

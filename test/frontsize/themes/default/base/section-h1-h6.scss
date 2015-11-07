@@ -1,0 +1,29 @@
+
+// Represent headings and subheadings.
+//
+// These elements rank in importance according to the number in their name.
+//
+// The h1 element is said to have the highest rank,
+// the h6 element has the lowest rank, and two elements with the same name
+// have equal rank.
+//
+// Url - http://html5doctor.com/element-index/#h1
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family : $font-heading;
+    font-weight : bold;
+    line-height : 1;
+    margin      : 0 0 ($spacing / 2) 0;
+}
+
+h1 { font-size : $h1; }
+h2 { font-size : $h2; }
+h3 { font-size : $h3; }
+h4 { font-size : $h4; }
+h5 { font-size : $h5; }
+h6 { font-size : $h6; }

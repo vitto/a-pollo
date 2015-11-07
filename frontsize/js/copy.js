@@ -1,7 +1,7 @@
 $(function(){
 
-    $('.value').each(function(){
-        $(this).text($(this).text().replace(/[“”]{1,}/g, '"'));
+    $('.highlight .code').each(function(){
+        $(this).html($(this).html().replace(/[“”]{1,}/g, '"'));
     });
 
     new Clipboard('.code-example');
@@ -20,6 +20,7 @@ $(function(){
 
         timeout = setTimeout(function(){
             $copyMessage.text(originalText);
+            window.getSelection().removeAllRanges();
         }, 2000);
     });
 });

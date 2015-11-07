@@ -1,0 +1,20 @@
+
+// The button element represents a button.
+//
+// If the element is not disabled, then the user agent should
+// allow the user to activate the button.
+//
+// Url - http://html5doctor.com/element-index/#button
+
+// The input element represents a typed data field,
+// usually with a form control to allow the user to edit the data.
+//
+// Url - http://html5doctor.com/element-index/#input
+
+/*button,
+input[type="reset"],
+input[type="button"],
+input[type="submit"] {
+    //.button-metal();
+    @include button-dark-metal();
+}*/

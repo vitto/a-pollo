@@ -1,0 +1,23 @@
+
+// Represents an abbreviation or acronym.
+//
+// The optional title attribute may be used to provide an expansion
+// of the abbreviation.
+//
+// If specified, the title attribute must contain an expansion of
+// the abbreviation and nothing else.
+//
+// Url - http://html5doctor.com/element-index/#abbr
+
+abbr,
+abbr[title] {
+
+	$borderColor	: #FCFCFC;
+	border-bottom	: 2px dotted $borderColor;
+	cursor			: help;
+	@include transition(border 0.25s ease-in-out);
+	&:hover {
+		border-bottom	: 2px solid darken($borderColor,10%);
+		text-decoration : none;
+	}
+}

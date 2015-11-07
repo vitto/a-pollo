@@ -2,11 +2,11 @@
 Thumbs.db
 db.json
 *.log
-/node_modules/
+node_modules/
 /public/
 /scaffolds/
 /source
 /frontsize/test/
-/vendors/
+vendors/
 .deploy*/
 /hexo/source/_posts

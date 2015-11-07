@@ -1,0 +1,81 @@
+
+// The select element represents a control for selecting amongst
+// a set of options.
+//
+// Code snippet:
+// <select id="title" name="title">
+//  <option value="" selected>Please choose</option>
+//  <option value="Mr">Mr</option>
+//  <option value="Miss">Miss</option>
+//  <option value="Mrs">Mrs</option>
+//  <option value="Ms">Ms</option>
+//  <option value="Dr">Dr</option>
+//  <option value="Other">Other</option>
+// </select>
+//
+// Url - http://html5doctor.com/element-index/#select
+
+// The keygen element represents a key pair generator control.
+// When the control's form is submitted, the private key is stored
+// in the local keystore, and the public key is packaged and sent to the server.
+//
+// Url - http://html5doctor.com/element-index/#keygen
+// Url - http://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_datalist
+
+select,
+keygen {
+
+    @include appearance(none);
+
+    cursor           : pointer;
+    padding          : ($spacing / 4) ($spacing * 1.75) ($spacing / 4) ($spacing / 2);
+    color            : $font-color;
+    font-weight      : normal;
+    border           : 2px solid $font-color;
+    background-color : desaturate(lighten($font-color, 45%), 2%);
+
+    $size : 16px;
+
+    @include backgroundRetinaIcon("input-select-1x.png", "input-select-2x.png", $size);
+    background-position: right ($spacing / 2) center;
+
+    @include transition(background-color 0.25s ease-in-out);
+    @include border-radius(10px);
+
+    &:hover {
+        background-color: white;
+    }
+}
+
+// The option element represents an option in a select element
+// or as part of a list of suggestions in a datalist element.
+//
+// In certain circumstances described in the definition of the
+// select element, an option element can be a select element's
+// placeholder label option.
+//
+// A placeholder label option does not represent an actual option,
+// but instead represents a label for the selectcontrol.
+//
+// Url - http://html5doctor.com/element-index/#option
+
+select option {
+    $colorEven: rgb(255,255,255);
+    $colorOdd: rgb(230,230,230);
+
+    color : $font-color;
+
+    &:nth-child(odd) {
+        background-color : $colorOdd;
+        &:hover {
+            background-color: darken($colorOdd, 10%);
+        }
+    }
+
+    &:nth-child(even) {
+        background-color : $colorEven;
+        &:hover {
+            background-color: darken($colorEven, 10%);
+        }
+    }
+}

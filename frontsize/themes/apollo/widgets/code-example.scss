@@ -9,6 +9,10 @@
     cursor: pointer;
     @include transition(color background-color, $ease);
 
+    .code * {
+        @include transition(color, $ease);
+    }
+
     @include element("message") {
         position: absolute;
         right: s();
@@ -29,6 +33,10 @@
     &:hover {
         color: $colorCodeTextHover;
 
+        .code * {
+            color: $colorCodeTextHover;
+        }
+
         .code-example__message {
             color: $colorText;
             background-color: white;
@@ -37,6 +45,10 @@
         .gutter {
             color: saturate(mix($colorCodeLineNumber, $colorCodeBackground, 50%), 10%);
         }
+    }
+
+    .code * {
+        color: $colorCodeText;
     }
 
     .gutter {

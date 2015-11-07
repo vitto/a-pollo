@@ -1,0 +1,112 @@
+/*@pollo
+    @name:  Social button
+    @auth:  [Vittorio Vittori](http://vit.to)
+    @slug:  button-social
+    @type:  Buttons
+    @date:  2015-11-07
+    @text:  This should be used to connect social accounts to the project service.
+            It requires [font-awesome](https://fortawesome.github.io/) to be loaded as dependency.
+            The code above will show the Facebook version.
+    @html:  <a href="#" class="button-social button-social--facebook">
+                <div class="button-social__icon">
+                    <i class="fa fa-facebook"></i>
+                </div>
+                <div class="button-social__network">
+                    facebook
+                </div>
+            </a>
+*/
+
+/*@pollo
+    @name:  Twitter
+    @auth:  [Vittorio Vittori](http://vit.to)
+    @_slug:  button-social
+    @_type:  Buttons
+    @date:  2015-11-07
+    @text:  This twitter version has also `.button-social--with-effects` modifier to show drop shadow effects
+    @html:  <a href="#" class="button-social button-social--twitter button-social--with-effects">
+                <div class="button-social__icon">
+                    <i class="fa fa-twitter"></i>
+                </div>
+                <div class="button-social__network">
+                    twitter
+                </div>
+            </a>
+*/
+
+/*@pollo
+    @name:  Github
+    @auth:  [Vittorio Vittori](http://vit.to)
+    @_slug:  button-social
+    @_type:  Buttons
+    @date:  2015-11-07
+    @_text:  The gihub version
+    @html:  <a href="#" class="button-social button-social--github button-social--with-effects">
+                <div class="button-social__icon">
+                    <i class="fa fa-github-alt"></i>
+                </div>
+                <div class="button-social__network">
+                    github
+                </div>
+            </a>
+*/
+
+
+
+@mixin buttonSocial($text, $background) {
+    color: mix($text, $background, 70%);
+    background-color: $background;
+
+    .button-social__icon {
+        color: $text;
+    }
+
+    &:hover {
+        color: $text;
+    }
+}
+
+.button-social {
+
+    display: inline-block;
+    width: auto;
+    cursor: pointer;
+    @include user-select("none");
+
+    padding: s(0.25) s(0.5);
+    @include buttonSocial(white, #999999);
+
+    @include transition(color 0.125s ease-out);
+    @include border-radius(4px);
+
+    @include element("icon") {
+        display: table-cell;
+        white-space: nowrap;
+        width: 18px;
+        text-align: center;
+    }
+
+    @include element("network") {
+        display: table-cell;
+        padding-left:  s(0.25);
+        text-transform: capitalize;
+        font-size: 14px;
+    }
+
+    @include modifier("with-effects") {
+        @include box-shadow("0 1px 2px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3)");
+    }
+
+    @include modifier("facebook") {
+        @include buttonSocial(white, #3b5998);
+    }
+
+    @include modifier("twitter") {
+        @include buttonSocial(white, #55acee);
+    }
+
+    @include modifier("github") {
+        @include buttonSocial(#333333, #f5f5f5);
+    }
+
+}

@@ -1,0 +1,37 @@
+
+// The fieldset element is expected to establish a new block formatting context.
+//
+// If the fieldset element has a child that matches the conditions
+// in the list below, then the first such child is the fieldset element's
+// rendered legend:
+// The child is a legend element.
+// The child is not out-of-flow (e.g. not absolutely positioned or floated).
+// The child is generating a box (e.g. it is not 'display:none').
+//
+// Code snippet:
+// <form id="app-login" action="process.php">
+//  <fieldset>
+//      <legend>Login Details</legend>
+//      <div>
+//          <label for="user-name">Username:</label>
+//          <input name="user-name" type="email" placeholder="Your username is your email address" required autofocus>
+//      </div>
+//      <div>
+//          <label for="password">Password:</label>
+//          <input name="password" type="password" placeholder="6 digits, a combination of numbers and letters" required>
+//      </div>
+//      <div>
+//          <input name="login" type="submit" value="Login">
+//      </div>
+//  </fieldset>
+// </form>
+//
+// Url - http://html5doctor.com/element-index/#fieldset
+
+fieldset {
+	background-color: desaturate(lighten($font-color, 45%), 2%);
+	border:none;
+	padding:$global-padding;
+	@include box-shadow(inset 0 -1px 0 rgba(0,0,0,0.05));
+	@include border-radius(10px);
+}

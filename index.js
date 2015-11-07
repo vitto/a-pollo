@@ -11,7 +11,7 @@ var config = yaml.safeLoad(fs.readFileSync('./apollo.yml', 'utf-8'));
 var runBuild = function() {
     var hexo, widgetFiles;
 
-    widgetFiles = reader.load(config.sassFolder);
+    widgetFiles = reader.load(config.watchFolder);
 
     hexo = new Hexo(process.cwd(), {
         debug: true,
@@ -19,8 +19,6 @@ var runBuild = function() {
     });
 
     shell.rm('-Rf', 'public');
-    shell.rm('-Rf', 'hexo/public');
-    shell.rm('-Rf', 'hexo/source/_posts');
 
     hexo.init().then(function(){
 

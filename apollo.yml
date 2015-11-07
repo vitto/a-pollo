@@ -5,4 +5,4 @@ author: Vittorio Vittori
 language: en
 timezone: Europe/Rome
 
-sassFolder: ./test
+watchFolder: ./test/frontsize/themes/default/widgets/
