@@ -1,15 +1,19 @@
-.widget {
+.apollo-widget {
 
     @include element("title") {
         margin-bottom: 0;
+        @include baseBold();
     }
 
     @include element("category") {
         margin-bottom: s();
+        @include baseBold();
     }
 
     @include element("description") {
         margin-top: s();
+        @include baseLink();
+        @include baseBold();
     }
 
     @include element("hr") {

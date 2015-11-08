@@ -22,20 +22,20 @@
 // @import "base/grouping-blockquote";
 // @import "base/grouping-dd-dl-dt";
 // @import "base/grouping-figcaption";
-@import "base/grouping-hr";
+// @import "base/grouping-hr";
 // @import "base/grouping-p";
 // @import "base/grouping-pre";
-@import "base/grouping-ul-ol-li";
+// @import "base/grouping-ul-ol-li";
 @import "base/section-body";
-@import "base/section-h1-h6";
+// @import "base/section-h1-h6";
 // @import "base/section-main";
 // @import "base/table-caption";
 // @import "base/table-td";
 // @import "base/table-tfoot";
 // @import "base/table-th";
 // @import "base/table";
-@import "base/text-a";
-@import "base/text-b-strong";
+// @import "base/text-a";
+// @import "base/text-b-strong";
 // @import "base/text-abbr";
 // @import "base/text-code-var";
 @import "base/text-kbd";
@@ -50,13 +50,12 @@
 
 @import "widgets/apollo-logo";
 @import "widgets/apollo";
-@import "widgets/code-example";
-@import "widgets/footer";
-@import "widgets/html-example";
-@import "widgets/markdown";
-@import "widgets/menu";
-@import "widgets/page";
-@import "widgets/title-spacer";
-@import "widgets/widget";
+@import "widgets/apollo-code-example";
+@import "widgets/apollo-footer";
+@import "widgets/apollo-html-example";
+@import "widgets/apollo-menu";
+@import "widgets/apollo-page";
+@import "widgets/apollo-title-spacer";
+@import "widgets/apollo-widget";
 
 @import "app";

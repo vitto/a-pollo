@@ -1,4 +1,4 @@
-.html-example {
+.apollo-html-example {
     margin-top: s();
     background-color: white;
 
@@ -14,7 +14,7 @@
         @include transition(border-color $ease);
     }
 
-    &:hover .html-example__inner {
+    &:hover .apollo-html-example__inner {
         border-color: mix($font-color, $colorPage, 25%);
     }
 }

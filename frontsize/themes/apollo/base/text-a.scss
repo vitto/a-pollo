@@ -12,29 +12,5 @@
 // Url - http://html5doctor.com/element-index/#a
 
 a {
-
-    color: $colorLink;
     word-wrap: break-word;
-
-    @include transition(color background-color, 0.125s ease-in-out);
-
-    &[title]:hover {
-        cursor: pointer;
-    }
-
-    &:active,
-    &:hover,
-    &.hover,
-    &.selected,
-    &.active {
-        color: desaturate($colorLink, 10%);
-    }
-
-    &.selected {
-        cursor : default;
-    }
-
-    img {
-        border : none;
-    }
 }

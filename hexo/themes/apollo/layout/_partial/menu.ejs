@@ -1,27 +1,27 @@
 <nav>
-    <ul class="menu menu--first">
-        <li class="menu__title">
+    <ul class="apollo-menu apollo-menu--first">
+        <li class="apollo-menu__title">
             Conventions
         </li>
-        <li class="menu__item">
-            <a href="#" class="menu__link">
+        <li class="apollo-menu__item">
+            <a href="#" class="apollo-menu__link">
                 CSS
             </a>
         </li>
-        <li class="menu__item">
-            <a href="#" class="menu__link">
+        <li class="apollo-menu__item">
+            <a href="#" class="apollo-menu__link">
                 HTML
             </a>
         </li>
     </ul>
 
     <ul class="menu">
-        <li class="menu__title">
+        <li class="apollo-menu__title">
             Widgets
         </li>
         <% site.posts.each(function(post, i){ %>
-            <li class="menu__item">
-                <a href="<%= post.permalink %>" class="menu__link">
+            <li class="apollo-menu__item">
+                <a href="<%= post.permalink %>" class="apollo-menu__link">
                     <%= post.title %>
                 </a>
             </li>

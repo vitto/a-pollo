@@ -1,8 +1,0 @@
-.page {
-    display: block;
-    background-color: $colorPage;
-
-    @include modifier("padded") {
-        padding: s(3);
-    }
-}

@@ -1,4 +1,4 @@
-.code-example {
+.apollo-code-example {
     position: relative;
     margin-top: s();
     padding: s();
@@ -22,7 +22,7 @@
 
         color: $colorCodeLineNumber;
 
-        background-color: $colorPage;
+        @include fallbackColor("background-color", rgba($colorPage,0.8));
         text-transform: lowercase;
 
         @include user-select("none");
@@ -37,7 +37,7 @@
             color: $colorCodeTextHover;
         }
 
-        .code-example__message {
+        .apollo-code-example__message {
             color: $colorText;
             background-color: white;
         }
@@ -49,6 +49,11 @@
 
     .code * {
         color: $colorCodeText;
+        font-weight: 400;
+    }
+
+    pre {
+        margin:0;
     }
 
     .gutter {
@@ -56,5 +61,9 @@
         padding-right: s(0.5);
         color: $colorCodeLineNumber;
         @include transition(color $ease);
+
+        pre {
+            margin:0;
+        }
     }
 }
