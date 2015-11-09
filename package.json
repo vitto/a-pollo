@@ -38,6 +38,7 @@
     "html-minifier": "^0.8.0",
     "js-beautify": "^1.5.10",
     "js-yaml": "^3.4.3",
+    "merge": "^1.2.0",
     "shelljs": "^0.5.3"
   },
   "devDependencies": {

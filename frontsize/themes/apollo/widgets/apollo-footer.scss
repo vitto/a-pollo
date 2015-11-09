@@ -32,4 +32,14 @@
             color: $colorGold;
         }
     }
+
+    @include element("heart") {
+        color: #DE4646;
+        @include animation("heart-beat" 1s infinite);
+    }
+}
+
+@include keyframes("heart-beat") {
+    0%   { @include scale(1.25); }
+    100% { @include scale(1); }
 }

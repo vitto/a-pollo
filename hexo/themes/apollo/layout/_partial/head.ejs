@@ -39,12 +39,7 @@
         <meta content="#2f83cd" name="msapplication-TileColor">
         <meta content="/img/icon/mstile-144x144.png" name="msapplication-TileImage">
     <% } %>
-    <% if (theme.devMode){ %>
-        <%- css('css/vendors.min') %>
-        <%- css('css/theme.min') %>
-        <%- css('css/frontsize-theme.min') %>
-    <% } else { %>
-        <%- css('css/frontsize.min') %>
-    <% } %>
+    <%- css('css/frontsize.min') %>
+    <%- css(site.data.apollo.cssUrl) %>
     <%- js('js/frontsize.min') %>
 </head>
