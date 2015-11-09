@@ -56,6 +56,10 @@
         margin:0;
     }
 
+    .html {
+        overflow-x: auto;
+    }
+
     .gutter {
         @include user-select("none");
         padding-right: s(0.5);

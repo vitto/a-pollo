@@ -2,8 +2,9 @@
     > a {
         color: $colorGold;
         text-decoration: none;
+        @include transition(background-color $ease);
         &:hover {
-            text-decoration:underline;
+            //text-decoration:underline;
             background-color: mix($colorLink, $colorPage, 15%);
         }
     }
@@ -17,6 +18,12 @@
     }
 }
 
+@mixin baseInlineCode() {
+    cursor: pointer;
+    padding: 2px 4px;
+    background-color: mix($colorPage, white, 50%);
+}
+
 .apollo-page {
     display: block;
     background-color: $colorPage;
@@ -24,7 +31,6 @@
     @include modifier("padded") {
         padding: s(3);
     }
-
 
     @include baseLink();
     @include baseBold();
@@ -52,13 +58,15 @@
 
     > p {
         @include baseLink();
+        @include baseBold();
         > code {
-            cursor: pointer;
-            padding: 2px 4px;
-            background-color: mix($colorPage, white, 50%);
+            @include baseInlineCode();
         }
     }
 
+    > strong + code {
+        margin-left: s(0.125);
+    }
 
     > hr {
         display: block;

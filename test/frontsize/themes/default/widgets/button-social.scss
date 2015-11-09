@@ -20,10 +20,8 @@
 /*@pollo
     @name:  Twitter
     @auth:  [Vittorio Vittori](http://vit.to)
-    @_slug:  button-social
-    @_type:  Buttons
     @date:  2015-11-07
-    @text:  This twitter version has also `.button-social--with-effects` modifier to show drop shadow effects
+    @text:  This twitter version has also `button-social--with-effects` modifier to show drop shadow effects
     @html:  <a href="#" class="button-social button-social--twitter button-social--with-effects">
                 <div class="button-social__icon">
                     <i class="fa fa-twitter"></i>
@@ -37,11 +35,9 @@
 /*@pollo
     @name:  Github
     @auth:  [Vittorio Vittori](http://vit.to)
-    @_slug:  button-social
-    @_type:  Buttons
     @date:  2015-11-07
-    @_text:  The gihub version
-    @html:  <a href="#" class="button-social button-social--github button-social--with-effects">
+    @text:  The GitHub version with `button-social--small` and `button-social--with-effects` modifiers.
+    @html:  <a href="#" class="button-social button-social--github button-social--with-effects button-social--small">
                 <div class="button-social__icon">
                     <i class="fa fa-github-alt"></i>
                 </div>
@@ -51,7 +47,50 @@
             </a>
 */
 
+/*@pollo
+    @name:  Google Plus
+    @auth:  [Vittorio Vittori](http://vit.to)
+    @date:  2015-11-09
+    @text:  The Google Plus version has also `button-social--small` modifier to make it smaller.
+    @html:  <a href="#" class="button-social button-social--google-plus button-social--small">
+                <div class="button-social__icon">
+                    <i class="fa fa-google-plus"></i>
+                </div>
+                <div class="button-social__network">
+                    googe plus
+                </div>
+            </a>
+*/
 
+/*@pollo
+    @name:  Facebook
+    @auth:  [Vittorio Vittori](http://vit.to)
+    @date:  2015-11-07
+    @text:  This Facebook version has also `button-social--big` modifier to make it bigger.
+    @html:  <a href="#" class="button-social button-social--facebook button-social--big">
+                <div class="button-social__icon">
+                    <i class="fa fa-facebook"></i>
+                </div>
+                <div class="button-social__network">
+                    facebook
+                </div>
+            </a>
+*/
+
+/*@pollo
+    @name:  Facebook
+    @auth:  [Vittorio Vittori](http://vit.to)
+    @date:  2015-11-07
+    @text:  This Facebook version has also `button-social--rounded` modifier to set it with rounded corners.
+    @html:  <a href="#" class="button-social button-social--facebook button-social--big button-social--rounded">
+                <div class="button-social__icon">
+                    <i class="fa fa-facebook"></i>
+                </div>
+                <div class="button-social__network">
+                    facebook
+                </div>
+            </a>
+*/
 
 @mixin buttonSocial($text, $background) {
     color: mix($text, $background, 70%);
@@ -76,6 +115,8 @@
     padding: s(0.25) s(0.5);
     @include buttonSocial(white, #999999);
 
+    text-decoration: none;
+
     @include transition(color 0.125s ease-out);
     @include border-radius(4px);
 
@@ -93,6 +134,24 @@
         font-size: 14px;
     }
 
+    @include modifier("small") {
+        padding: s(0.125) s(0.25);
+        .button-social__network {
+            padding-left:  s(0.125);
+            font-size: 12px;
+        }
+    }
+
+    @include modifier("rounded") {
+        padding-left: s(0.75);
+        padding-right: s(0.75);
+        @include border-radius(100px);
+    }
+
+    @include modifier("big") {
+        padding: s(0.5) s(0.75);
+    }
+
     @include modifier("with-effects") {
         @include box-shadow("0 1px 2px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3)");
     }
@@ -107,6 +166,10 @@
 
     @include modifier("github") {
         @include buttonSocial(#333333, #f5f5f5);
+    }
+
+    @include modifier("google-plus") {
+        @include buttonSocial(white, #dc4e41);
     }
 
 }

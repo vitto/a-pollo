@@ -9,8 +9,7 @@
     @include element("inner") {
         display: inline-block;
         padding: 2px;
-        border: 1px dashed;
-        border-color: $colorPage;
+        border: 1px dashed transparent;
         @include transition(border-color $ease);
     }
 
