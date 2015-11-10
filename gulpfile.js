@@ -81,10 +81,10 @@ gulp.task('frontsize:assets', function () {
 
 gulp.task('frontsize:build', function () {
     var tasks = [
+        'frontsize:css',
         'frontsize:assets',
         'frontsize:vendors',
         'frontsize:js',
-        'frontsize:css',
         'frontsize:merge',
         'frontsize:sourcemap',
         'frontsize:report'
@@ -153,6 +153,7 @@ gulp.task('frontsize:merge', function () {
     if (f.vendors !== undefined && f.vendors.css !== undefined) {
         var css = f.vendors.css.slice(0);
         css.push(f.frontsize.test + cssTestFileName);
+        console.log(css);
         return gulp.src(css)
         .pipe(uglifyCss())
         .pipe(concat(cssMergeFileName))

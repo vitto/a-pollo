@@ -1,7 +1,11 @@
 <nav>
     <% site.categories.each(function(category, i){ %>
         <% if (category.posts.length > 0) { %>
-            <ul class="apollo-menu apollo-menu--first">
+            <% if (i == 0) { %>
+                <ul class="apollo-menu apollo-menu--first">
+            <% } else { %>
+                <ul class="apollo-menu">
+            <% } %>
                 <li class="apollo-menu__title">
                     <%= category.name %>
                 </li>

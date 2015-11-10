@@ -9,7 +9,7 @@ var reader = require('./lib/reader'),
 var conf = yaml.safeLoad(fs.readFileSync('./apollo.yml', 'utf-8'));
 
 var runBuild = function() {
-    var hexo, widgetFiles, cssFile;
+    var hexo, widgetFiles, cssFileData;
 
     widgetFiles = reader.load(conf.docs);
 
@@ -21,15 +21,15 @@ var runBuild = function() {
     shell.mkdir('-p', 'hexo/source/_data');
     shell.cp('-f', './apollo.yml', 'hexo/source/_data/apollo.yml');
     shell.mkdir('-p', 'hexo/source/css/theme');
-    shell.cp('-f', conf.path.css, 'hexo/source/css/theme/theme.css');
+    //shell.cp('-f', conf.path.css, 'hexo/source/css/theme/theme.css');
     shell.mkdir('-p', 'hexo/source/css/theme/img');
     shell.cp('-R', conf.path.images, 'hexo/source/css/theme/img');
     shell.mkdir('-p', 'hexo/source/css/theme/fonts');
     shell.cp('-R', conf.path.fonts, 'hexo/source/css/theme/fonts');
 
-    cssFile = fs.readFileSync('hexo/source/css/theme/theme.css', 'utf8');
-
-    console.log(cssFile);
+    cssFileData = fs.readFileSync(conf.path.css, 'utf8');
+    cssFileData = cssFileData.replace(/url\("(.*\/)(.*)"\)/g, 'url("/css/theme/img/$2")');
+    fs.writeFileSync('hexo/source/css/theme/theme.css', cssFileData);
 
     hexo.init().then(function(){
 

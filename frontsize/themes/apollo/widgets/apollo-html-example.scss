@@ -7,13 +7,34 @@
     padding: s() s(3);
 
     @include element("inner") {
+        position: relative;
         display: inline-block;
         padding: 2px;
         border: 1px dashed transparent;
         @include transition(border-color $ease);
     }
 
+    @include element("container") {
+        position: relative;
+        z-index: 1;
+    }
+
+    @include element("bg") {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        @include transition(opacity $ease);
+        @include backgroundImage("transparent-background-light.svg");
+    }
+
     &:hover .apollo-html-example__inner {
         border-color: mix($font-color, $colorPage, 25%);
+    }
+    &:hover .apollo-html-example__bg {
+        opacity: 1;
     }
 }
