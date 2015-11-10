@@ -5,7 +5,15 @@ date: 2015-11-01
 
 author: Vittorio Vittori
 docs: test/frontsize/themes/default/widgets/
-cssUrl: css/theme.min.css
-imagesPath: img/
-fontsPath: fonts/
-headerLogo: example-logo.svg
+
+# headerLogo: example-logo.svg
+#
+# footer:
+#     logo: example-logo.svg
+#     rightText: This is right text
+#     leftText: This is right text
+
+path:
+    css: test/frontsize/test/csslint/frontsize.csslint.css
+    images: test/frontsize/themes/default/img/*
+    fonts: test/frontsize/themes/default/fonts/*

@@ -12,5 +12,5 @@ To build the style guide
 To test the HTML results
 
 ```
-php -S localhost:8000 -t ./public
+node index.js && php -S localhost:8000 -t ./public
 ```

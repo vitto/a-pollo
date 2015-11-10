@@ -4,7 +4,7 @@ frontsize:
     test: frontsize/test/csslint/
 
 path:
-    css: ../hexo/themes/apollo/source/css/
+    css: frontsize/test/
     images: ../hexo/themes/apollo/source/img/theme/
     fonts: ../hexo/themes/apollo/source/fonts/
     frontsize: frontsize/
