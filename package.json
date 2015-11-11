@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/vitto/telaio#readme",
   "dependencies": {
+    "absorb": "^1.0.1",
     "bower": "^1.6.5",
     "glob": "^5.0.15",
     "handlebars": "^4.0.3",
@@ -32,7 +33,7 @@
     "hexo-generator-index": "^0.1.2",
     "hexo-generator-tag": "^0.1.1",
     "hexo-renderer-ejs": "^0.1.0",
-    "hexo-renderer-markdown-it": "^3.4.0",
+    "hexo-renderer-marked": "^0.2.5",
     "hexo-renderer-stylus": "^0.3.0",
     "hexo-server": "^0.1.2",
     "html-minifier": "^0.8.0",

@@ -24,6 +24,15 @@
     background-color: mix($colorPage, white, 50%);
 }
 
+@mixin baseHr() {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: s() 0;
+    border: none;
+    border-top: 1px solid $colorHr;
+}
+
 .apollo-page {
     display: block;
     background-color: $colorPage;
@@ -69,15 +78,7 @@
     }
 
     > hr {
-        display: block;
-        width: 100%;
-
-        padding: 0;
-        margin: s() 0;
-
-        border: none;
-        border-top: 1px solid $colorHr;
-
+        @include baseHr();
     }
 
     > ol,

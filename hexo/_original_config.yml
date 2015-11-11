@@ -69,3 +69,12 @@ theme: apollo
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type:
+
+marked:
+  gfm: true
+  pedantic: true
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true

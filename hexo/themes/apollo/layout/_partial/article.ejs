@@ -1,3 +1,6 @@
 <article class="apollo-page apollo-page--padded">
+    <% if (config.header && config.header.logo) { %>
+        <%- partial('_partial/article-header', { header: config.header }) %>
+    <% } %>
     <%- markdown(post.content) %>
 </article>

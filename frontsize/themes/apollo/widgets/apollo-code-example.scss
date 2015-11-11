@@ -9,10 +9,6 @@
     cursor: pointer;
     @include transition(color background-color, $ease);
 
-    .code * {
-        @include transition(color, $ease);
-    }
-
     @include element("message") {
         position: absolute;
         right: s();
@@ -41,6 +37,9 @@
             color: $colorText;
             background-color: white;
         }
+        .code .value {
+            background-color: saturate(mix($colorCodeLineNumber, $colorCodeBackground, 40%), 6%);
+        }
 
         .gutter {
             color: saturate(mix($colorCodeLineNumber, $colorCodeBackground, 50%), 10%);
@@ -50,6 +49,12 @@
     .code * {
         color: $colorCodeText;
         font-weight: 400;
+        @include transition(color $ease);
+    }
+
+    .code .value {
+        @include transition(background-color color, $ease);
+        background-color: transparent;
     }
 
     pre {
