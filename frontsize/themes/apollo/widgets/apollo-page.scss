@@ -10,6 +10,14 @@
     }
 }
 
+@mixin baseCode() {
+    margin: s() 0 0 0;
+    padding: s();
+    color: $colorCodeText;
+    background-color: $colorCodeBackground;
+
+}
+
 @mixin baseBold() {
     > strong,
     > b {
@@ -47,6 +55,7 @@
     > table {
         width: 100%;
         background-color: white;
+        margin-bottom: s();
 
         th {
             text-align: left;
@@ -65,11 +74,27 @@
         }
     }
 
-    > p {
+    > p,
+    > blockquote p {
         @include baseLink();
         @include baseBold();
-        > code {
+        code {
             @include baseInlineCode();
+        }
+    }
+
+    > p {
+        margin-bottom: s();
+    }
+
+    > blockquote {
+        padding: s();
+        border-left: 3px solid darken($colorPage, 4%);
+        background-color: mix($colorPage, white, 50%);
+        margin-bottom: s(1.5);
+        li {
+            @include baseLink();
+            @include baseBold();
         }
     }
 
@@ -84,13 +109,15 @@
     > ol,
     > ul {
         padding : 0;
-        margin : 0;
+        margin : 0 0 s() 0;
         > br {
             display: none;
         }
         li {
             padding: 0;
             margin: 0 0 0 s();
+            @include baseLink();
+            @include baseBold();
         }
     }
 
@@ -100,8 +127,7 @@
     > h4,
     > h5,
     > h6 {
-        margin: 0 0 s(0.5) 0;
-
+        margin: s(2) 0 s(0.5) 0;
         color: $colorTextBold;
         font-family: $font-heading;
         font-weight: 500;
@@ -114,5 +140,15 @@
     > h4 { font-size : $h4; }
     > h5 { font-size : $h5; }
     > h6 { font-size : $h6; }
+
+    > pre {
+        @include baseCode();
+    }
+
+    > .highlight {
+        @extend .apollo-code-example;
+        cursor: text;
+        margin-bottom: s();
+    }
 
 }

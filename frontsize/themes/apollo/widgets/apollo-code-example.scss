@@ -6,6 +6,8 @@
     color: $colorCodeText;
     background-color: $colorCodeBackground;
 
+    overflow-x: auto;
+
     cursor: pointer;
     @include transition(color background-color, $ease);
 
@@ -62,7 +64,6 @@
     }
 
     .html {
-        overflow-x: auto;
         margin: 5px 0;
     }
 

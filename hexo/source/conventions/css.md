@@ -1,5 +1,5 @@
 title: CSS
-layout: guide
+category: conventions
 ---
 
 Welcome to StackEdit!

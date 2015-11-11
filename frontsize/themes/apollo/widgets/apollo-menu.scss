@@ -11,6 +11,10 @@
         color: $colorMenuTitle;
         font-weight: 500;
         font-size: 16px;
+
+        &:first-letter {
+            text-transform: uppercase;
+        }
     }
 
     @include element("link") {

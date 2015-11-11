@@ -1,25 +1,38 @@
 <nav>
-    <ul class="apollo-menu apollo-menu--first">
-        <li class="apollo-menu__title">
-            Conventions
-        </li>
-        <li class="apollo-menu__item">
-            <a href="#" class="apollo-menu__link">
-                CSS
-            </a>
-        </li>
-        <li class="apollo-menu__item">
-            <a href="#" class="apollo-menu__link">
-                HTML
-            </a>
-        </li>
-    </ul>
+
+    <% var prevCategory = '' %>
+    <% site.pages.each(function (page, i) { %>
+        <% if (page.category !== undefined) { %>
+            <% if (prevCategory != page.category) { %>
+                <% if (prevCategory === '') { %>
+                    <ul class="apollo-menu apollo-menu--first">
+                <% } else { %>
+                    <ul class="apollo-menu">
+                <% } %>
+                <% prevCategory = page.category %>
+                    <li class="apollo-menu__title">
+                        <%= page.category %>
+                    </li>
+            <% } %>
+
+            <li class="apollo-menu__item">
+                <a href="<%= page.permalink %>" class="apollo-menu__link">
+                    <%= page.title %>
+                </a>
+            </li>
+
+            <% if (prevCategory != page.category) { %>
+                </ul>
+            <% } %>
+        <% } %>
+        <% /*console.log(i, page.category, page.permalink, site.pages[i])*/ %>
+    <% }) %>
 
     <ul class="apollo-menu">
         <li class="apollo-menu__title">
             Widgets
         </li>
-        <% site.posts.each(function(post, i){ %>
+        <% site.posts.each(function (post, i) { %>
             <li class="apollo-menu__item">
                 <a href="<%= post.permalink %>" class="apollo-menu__link">
                     <%= post.title %>

@@ -1,5 +1,5 @@
 title: HTML
-layout: guide
+category: conventions
 ---
 
 This is HTML guide
