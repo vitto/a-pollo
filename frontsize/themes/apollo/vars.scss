@@ -20,7 +20,8 @@ $colorTextBold: $colorGreyDark;
 $colorPage: $colorGreyLight;
 $colorLogoText: $colorGreyLight;
 $colorFooterLink: $colorGreyLight;
-
+$colorFooterLinkHover: $colorGold;
+$colorFooterBold: mix($colorGold, $colorText, 50%);
 
 $colorLink: $colorGold;
 

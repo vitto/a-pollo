@@ -1,4 +1,6 @@
 .apollo-html-example {
+    overflow: auto;
+
     margin-top: s();
     background-color: white;
 
@@ -7,6 +9,7 @@
     padding: s() s(3);
 
     @include element("inner") {
+        float: left;
         position: relative;
         display: inline-block;
         padding: 2px;
@@ -17,6 +20,9 @@
     @include element("container") {
         position: relative;
         z-index: 1;
+        > * {
+            float: left;
+        }
     }
 
     @include element("bg") {
@@ -29,6 +35,8 @@
         opacity: 0;
         @include transition(opacity $ease);
         @include backgroundImage("transparent-background-light.svg");
+        background-size: 64px 64px;
+        background-position: 50% 50%;
     }
 
     &:hover .apollo-html-example__inner {

@@ -8,13 +8,13 @@ docs: test/frontsize/themes/default/widgets/
 
 header:
     logo: example-logo.svg
-    description: Your clinent description
+    description: Your client description
     link: http://github.com/vitto/apollo
-#
-# footer:
-#     logo: example-logo.svg
-#     rightText: This is right text
-#     leftText: This is right text
+
+footer:
+#    logo: <a href="http://github.com/vitto/apollo"><img width="100px" src="/img/apollo-logo__icon.svg"></a>
+    leftText: The visual <b>CSS style guide</b> for teams
+    rightText: <a href="http://github.com/vitto/apollo" class="apollo-footer__link"><i class="fa fa-code"></i></a> with <i class="fa fa-heart apollo-footer__heart"></i> by <a href="#" class="apollo-footer__link">vitto</a> @ <a href="#" class="apollo-footer__link">ideato</a>
 
 path:
     css: test/frontsize/test/csslint/frontsize.csslint.css

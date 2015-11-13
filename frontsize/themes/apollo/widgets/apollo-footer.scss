@@ -1,3 +1,23 @@
+@mixin baseFooterLink() {
+    color: $colorFooterLink;
+    text-decoration: none;
+    @include transition(color $ease);
+    &:hover {
+        color: $colorFooterLinkHover;
+    }
+}
+
+@mixin baseFooterElements() {
+    b, strong {
+        font-weight: 500;
+        color: $colorFooterBold;
+    }
+
+    a {
+        @include baseFooterLink();
+    }
+}
+
 .apollo-footer {
     margin-top: s(4);
     margin-bottom: s(4);
@@ -10,6 +30,8 @@
             6, 6,
             1, 1
         );
+
+        @include baseFooterElements();
     }
 
     @include element("right-column") {
@@ -23,14 +45,12 @@
         @media #{$till-tablet-portrait} {
             text-align: left;
         }
+
+        @include baseFooterElements();
     }
 
     @include element("link") {
-        color: $colorFooterLink;
-        text-decoration: none;
-        &:hover {
-            color: $colorGold;
-        }
+        @include baseFooterLink();
     }
 
     @include element("heart") {
