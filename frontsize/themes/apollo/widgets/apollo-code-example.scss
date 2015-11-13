@@ -6,8 +6,6 @@
     color: $colorCodeText;
     background-color: $colorCodeBackground;
 
-    overflow-x: auto;
-
     cursor: pointer;
     @include transition(color background-color, $ease);
 
@@ -25,7 +23,8 @@
 
         @include user-select("none");
 
-        @include transition(color background-color, $ease);
+        @include transition(color background-color top, $ease);
+        @include ease("ease-out-expo");
     }
 
     &:hover {
@@ -38,9 +37,11 @@
         .apollo-code-example__message {
             color: $colorText;
             background-color: white;
+            top: s(-0.75);
         }
         .code .value {
-            background-color: saturate(mix($colorCodeLineNumber, $colorCodeBackground, 40%), 6%);
+            background-color: $colorPage; //mix($colorPage, $colorCodeBackground, 50%);
+            // background-color: saturate(mix($colorCodeLineNumber, $colorCodeBackground, 40%), 6%);
         }
 
         .gutter {
@@ -64,6 +65,7 @@
     }
 
     .html {
+        overflow-x: auto;
         margin: 5px 0;
     }
 

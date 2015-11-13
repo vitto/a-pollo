@@ -60,13 +60,13 @@ gulp.task('frontsize:test:build', function () {
         .pipe(gulp.dest(f.path.test));
 });
 
-gulp.task('frontsize:test:report', function () {
+gulp.task('frontsize:test:report', ['frontsize:test:build'], function () {
     return gulp.src(f.path.test + 'frontsize.test.css')
         .pipe(csslint('test/.csslintrc'))
         .pipe(stylestats());
 });
 
-gulp.task('frontsize:report', function () {
+gulp.task('frontsize:report', ['frontsize:sourcemap'], function () {
     return gulp.src(f.path.test + cssTestFileName)
         .pipe(csslint('.csslintrc'))
         .pipe(stylestats());
