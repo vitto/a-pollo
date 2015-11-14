@@ -18,8 +18,24 @@ var cleanPath = function(path) {
     return path.replace(/(\/\*?)$/, '');
 };
 
+var cleanStartPath = function(path) {
+    if (/^([^.\/])/.test(path)) {
+        return path.replace(/^([^.\/])/, '../$1');
+    }
+    if (/^(^.\/)/.test(path)) {
+        return path.replace(/^(^.\/)/, '.$1');
+    }
+    return path;
+};
+
 var prepareFiles = function() {
     hexoConfig   = yaml.safeLoad(fs.readFileSync('hexo/_default_config.yml', 'utf-8'));
+
+    if (shell.test('-e', conf.public_dir)) {
+        shell.rm('-Rf', conf.public_dir);
+    }
+
+    conf.public_dir = cleanStartPath(conf.public_dir);
     mergedConfig = absorb(hexoConfig, conf);
     fs.writeFileSync('hexo/_config.yml', yaml.safeDump(mergedConfig));
 
@@ -35,7 +51,6 @@ var prepareFiles = function() {
         shell.cp('-R', 'hexo/_default_source/*', 'hexo/source');
     }
 
-    if (shell.test('-e', 'public')) { shell.rm('-Rf', 'public'); }
     shell.mkdir('-p', 'hexo/source/css/theme');
     shell.mkdir('-p', 'hexo/source/css/theme/img');
     shell.mkdir('-p', 'hexo/source/css/theme/fonts');
@@ -44,15 +59,15 @@ var prepareFiles = function() {
 };
 
 var generateDocs = function () {
-    shell.mv('source/_posts', 'hexo/source/_posts');
-    shell.exec('cd ./hexo && hexo generate');
-    shell.mv('hexo/public', 'public');
+    shell.exec('cd ./hexo && ../node_modules/.bin/hexo generate');
 };
 
 var cleanFiles = function() {
-    if (shell.test('-e', 'hexo/source')) { shell.rm('-Rf', 'hexo/source'); }
-    if (shell.test('-e', 'source')) { shell.rm('-Rf', 'source'); }
-    if (shell.test('-e', 'hexo/_config.yml')) { shell.rm('-f', 'hexo/_config.yml'); }
+    setTimeout(function(){
+        if (shell.test('-e', 'hexo/source')) { shell.rm('-Rf', 'hexo/source'); }
+        if (shell.test('-e', 'source')) { shell.rm('-Rf', 'source'); }
+        if (shell.test('-e', 'hexo/_config.yml')) { shell.rm('-f', 'hexo/_config.yml'); }
+    }, 500);
 };
 
 var runBuild = function() {
@@ -74,7 +89,6 @@ var runBuild = function() {
         var postData;
 
         for (var i = 0; i < widgetFiles.length; i += 1) {
-            //postData = absorb({apollo: conf}, formatter.toHexo(widgetFiles[i]));
             postData = formatter.toHexo(widgetFiles[i]);
             postData.content = widget.toMarkdown(widgetFiles[i], conf.author);
             hexo.post.create(postData, true);
