@@ -1,46 +1,43 @@
 <nav>
 
     <% var prevCategory = '' %>
-    <% site.pages.each(function (page, i) { %>
-        <% if (page.category !== undefined) { %>
-            <% if (prevCategory != page.category) { %>
-                <% if (prevCategory === '') { %>
-                    <ul class="apollo-menu apollo-menu--first">
-                <% } else { %>
-                    <ul class="apollo-menu">
+    <% site.pages.data = _.sortBy(_.sortBy(site.pages.data, 'category'), 'title') %>
+    <% if (site.pages.length > 1) { %>
+        <% site.pages.each(function (page, i) { %>
+            <% if (page.category !== undefined) { %>
+                <% if (prevCategory != page.category) { %>
+                    <% if (prevCategory === '') { %>
+                        <ul class="apollo-menu apollo-menu--first">
+                    <% } else { %>
+                        <ul class="apollo-menu">
+                    <% } %>
+                    <% prevCategory = page.category %>
+                        <li class="apollo-menu__title">
+                            <%= page.category %>
+                        </li>
                 <% } %>
-                <% prevCategory = page.category %>
-                    <li class="apollo-menu__title">
-                        <%= page.category %>
-                    </li>
-            <% } %>
+                <li class="apollo-menu__item">
+                    <% if (url.replace('index.html', '') == page.permalink) { %>
+                        <a href="<%= page.permalink %>" class="apollo-menu__link apollo-menu__link--current">
+                    <% } else { %>
+                        <a href="<%= page.permalink %>" class="apollo-menu__link">
+                    <% } %>
+                        <%= page.title %>
+                    </a>
+                </li>
 
-            <!-- <li class="apollo-menu__item">
-                <a href="<%= page.permalink %>" class="apollo-menu__link">
-                    <%= page.title %>
-                </a>
-            </li> -->
-
-            <li class="apollo-menu__item">
-                <% if (url.replace('index.html', '') == page.permalink) { %>
-                    <a href="<%= page.permalink %>" class="apollo-menu__link apollo-menu__link--current">
-                <% } else { %>
-                    <a href="<%= page.permalink %>" class="apollo-menu__link">
+                <% if (prevCategory != page.category) { %>
+                    </ul>
                 <% } %>
-                    <%= page.title %>
-                </a>
-            </li>
-
-            <% if (prevCategory != page.category) { %>
-                </ul>
             <% } %>
-        <% } %>
-        <% /*console.log(i, page.category, page.permalink, site.pages[i])*/ %>
-    <% }) %>
+        <% }) %>
+    <% } %>
 
-
-
-    <ul class="apollo-menu">
+    <% if (site.pages.length === 1) { %>
+        <ul class="apollo-menu apollo-menu--first">
+    <% } else { %>
+        <ul class="apollo-menu">
+    <% } %>
         <li class="apollo-menu__title">
             Widgets
         </li>

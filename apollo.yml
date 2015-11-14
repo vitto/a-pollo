@@ -1,10 +1,9 @@
 title: Client project
-subtitle: Client project subtitle
-
-date: 2015-11-01
 
 author: Vittorio Vittori
-docs: test/frontsize/themes/default/widgets/
+date: 2015-11-01
+
+pages: test/apollo/*
 
 header:
     logo: example-logo.svg
@@ -16,7 +15,8 @@ footer:
     leftText: The visual <b>CSS style guide</b> for teams
     rightText: <a href="http://github.com/vitto/apollo" class="apollo-footer__link"><i class="fa fa-code"></i></a> with <i class="fa fa-heart apollo-footer__heart"></i> by <a href="http://vit.to" class="apollo-footer__link">vitto</a> @ <a href="http://www.ideato.it" class="apollo-footer__link">ideato</a>
 
-path:
+style:
+    docs: test/frontsize/themes/default/widgets
     css: test/frontsize/test/csslint/frontsize.csslint.css
     images: test/frontsize/themes/default/img/*
     fonts: test/frontsize/themes/default/fonts/*
