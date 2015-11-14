@@ -24,7 +24,15 @@
         @include transition(color 0.125s ease-out);
 
         &:hover {
+            color: $colorMenuButtonHover;
+        }
+
+        @include modifier("current") {
+            cursor: default;
             color: $colorMenuButtonSelected;
+            &:hover {
+                color: $colorMenuButtonSelected;
+            }
         }
     }
 }

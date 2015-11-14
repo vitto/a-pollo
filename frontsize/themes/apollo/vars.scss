@@ -12,7 +12,7 @@ $colorGreyDark: rgb(85, 85, 85);
 $colorGreyDeep: rgb(128, 128, 128);
 $colorGrey: rgb(217, 217, 217);
 $colorGreyLight: rgb(236, 232, 232);
-
+$colorBlack: $body-color;
 
 /* widgets */
 $colorText: $font-color;
@@ -33,7 +33,7 @@ $colorCodeLineNumber: mix($colorCodeText, $colorCodeBackground, 50%);
 $colorMenuTitle: $colorGrey;
 $colorMenuButton: $colorGreyDeep;
 $colorMenuButtonHover: $colorGold;
-$colorMenuButtonSelected: $colorGold;
+$colorMenuButtonSelected: mix($colorGreyDeep, $colorBlack, 50%);
 
 $colorBlockquote: mix($colorPage, white, 50%);
 $colorHr: $colorGrey;
