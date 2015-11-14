@@ -1,5 +1,5 @@
 title: Typography
-category: identity
+category: base
 ---
 
 
