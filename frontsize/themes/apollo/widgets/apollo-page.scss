@@ -1,10 +1,9 @@
 @mixin baseLink() {
     > a {
-        color: $colorGold;
+        color: $colorLink;
         text-decoration: none;
         @include transition(background-color $ease);
         &:hover {
-            //text-decoration:underline;
             background-color: mix($colorLink, $colorPage, 15%);
         }
     }
@@ -54,7 +53,7 @@
 
     > table {
         width: 100%;
-        background-color: white;
+        background-color: $colorTableBg;
         margin-bottom: s();
 
         th {
@@ -90,7 +89,7 @@
     > blockquote {
         padding: s();
         border-left: 3px solid darken($colorPage, 4%);
-        background-color: mix($colorPage, white, 50%);
+        background-color: $colorBlockquote;
         margin-bottom: s(1.5);
         li {
             @include baseLink();

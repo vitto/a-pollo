@@ -35,7 +35,9 @@ $colorMenuButton: $colorGreyDeep;
 $colorMenuButtonHover: $colorGold;
 $colorMenuButtonSelected: $colorGold;
 
+$colorBlockquote: mix($colorPage, white, 50%);
 $colorHr: $colorGrey;
-$colorTableOdd: mix($colorGreyLight, white, 30%);
+$colorTableBg: white;
+$colorTableOdd: mix($colorGreyLight, $colorTableBg, 30%);
 
 $ease: 0.25s ease-out;

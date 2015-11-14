@@ -14,7 +14,7 @@ header:
 footer:
 #    logo: <a href="http://github.com/vitto/apollo"><img width="100px" src="/img/apollo-logo__icon.svg"></a>
     leftText: The visual <b>CSS style guide</b> for teams
-    rightText: <a href="http://github.com/vitto/apollo" class="apollo-footer__link"><i class="fa fa-code"></i></a> with <i class="fa fa-heart apollo-footer__heart"></i> by <a href="#" class="apollo-footer__link">vitto</a> @ <a href="#" class="apollo-footer__link">ideato</a>
+    rightText: <a href="http://github.com/vitto/apollo" class="apollo-footer__link"><i class="fa fa-code"></i></a> with <i class="fa fa-heart apollo-footer__heart"></i> by <a href="http://vit.to" class="apollo-footer__link">vitto</a> @ <a href="http://www.ideato.it" class="apollo-footer__link">ideato</a>
 
 path:
     css: test/frontsize/test/csslint/frontsize.csslint.css
