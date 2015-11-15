@@ -1,5 +1,5 @@
 {
-  "name": "apollo-styleguide",
+  "name": "apollo",
   "version": "1.0.1",
   "description": "The visual CSS style guide for teams",
   "bin": "./bin/apollo",
