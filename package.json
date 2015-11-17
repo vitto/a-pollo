@@ -1,8 +1,8 @@
 {
-  "name": "apollo",
-  "version": "1.0.1",
+  "name": "a-pollo",
+  "version": "1.0.2",
   "description": "The visual CSS style guide for teams",
-  "bin": "./bin/apollo",
+  "bin": "./bin/a-pollo",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -30,10 +30,10 @@
     "merge": "^1.2.0",
     "node-static": "^0.7.7",
     "path": "^0.12.7",
+    "colors": "^1.1.2",
     "shelljs": "^0.5.3"
   },
   "devDependencies": {
-    "colors": "^1.1.2",
     "csslint": "^0.10.0",
     "execSync": "^1.0.2",
     "fs-extra": "^0.26.0",
@@ -75,7 +75,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vitto/apollo.git"
+    "url": "git+https://github.com/vitto/a-pollo.git"
   },
   "keywords": [
     "style",
@@ -90,7 +90,7 @@
   "author": "Vittorio Vittori <me@vittoriovittori.com> (http://vit.to)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vitto/apollo/issues"
+    "url": "https://github.com/vitto/a-pollo/issues"
   },
-  "homepage": "https://github.com/vitto/apollo#readme"
+  "homepage": "https://github.com/vitto/a-pollo#readme"
 }

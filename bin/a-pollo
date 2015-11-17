@@ -2,5 +2,5 @@
 
 'use strict';
 
-var apollo = require('apollo');
+var apollo = require('a-pollo');
 apollo.build();

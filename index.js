@@ -20,7 +20,7 @@ var fromProcess = function(targetPath) {
     return process.cwd() + '/' + path.trimRight(path.trimLeft(targetPath));
 };
 
-var conf = yaml.safeLoad(fs.readFileSync('./apollo.yml', 'utf-8'));
+var conf = yaml.safeLoad(fs.readFileSync('./a-pollo.yml', 'utf-8'));
 var packageJSON = json.readFileSync(fromModule('package.json'));
 var hexoConfig, mergedConfig;
 
@@ -29,7 +29,7 @@ var checkPath = function(path) {
         return true;
     } else {
 
-        console.error(colors.bgBlack(colors.red(' ERROR: ' + fromProcess(path) + ' ')) + ' in your ' + colors.bgBlack(colors.yellow(' apollo.yml ')) + ' config not found.');
+        console.error(colors.bgBlack(colors.red(' ERROR: ' + fromProcess(path) + ' ')) + ' in your ' + colors.bgBlack(colors.yellow(' a-pollo.yml ')) + ' config not found.');
         return false;
     }
 };
@@ -137,7 +137,7 @@ var runBuild = function() {
     widgetFiles = reader.load(fromProcess(conf.style.docs));
 
     if (checkPath(conf.style.css)) {
-        console.log('Copying CSS theme eassets');
+        console.log('Copying CSS theme assets');
         cssFileData = fs.readFileSync(fromProcess(conf.style.css), 'utf8');
         cssFileData = cssFileData.replace(/url\("(.*\/)(.*)"\)/g, 'url("/css/theme/img/$2")');
         fs.writeFileSync(fromModule('/hexo/source/css/theme/theme.css'), cssFileData);

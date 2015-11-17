@@ -6,6 +6,7 @@ date: 2015-11-01
 pages: test/apollo/*
 public_dir: ./public
 url: http://localhost:7070
+http_server: true
 
 style:
     docs: test/frontsize/themes/default/widgets
@@ -16,9 +17,9 @@ style:
 header:
     logo: example-logo.svg
     description: Your client description
-    link: http://github.com/vitto/apollo
+    link: http://github.com/vitto/a-pollo
 
 footer:
 #    logo: <a href="http://github.com/vitto/apollo"><img width="100px" src="/img/apollo-logo__icon.svg"></a>
-    leftText: The visual <b>CSS style guide</b> for teams
-    rightText: <a href="http://github.com/vitto/apollo" class="apollo-footer__link"><i class="fa fa-code"></i></a> with <i class="fa fa-heart apollo-footer__heart"></i> by <a href="http://vit.to" class="apollo-footer__link">vitto</a> @ <a href="http://www.ideato.it" class="apollo-footer__link">ideato</a>
+    leftText: The visual CSS style guide for teams
+    rightText: <a href="http://github.com/vitto/a-pollo" class="apollo-footer__link"><i class="fa fa-code"></i></a> with <i class="fa fa-heart apollo-footer__heart"></i> by <a href="http://vit.to" class="apollo-footer__link">vitto</a> @ <a href="http://www.ideato.it" class="apollo-footer__link">ideato</a>

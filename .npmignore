@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+/public/
+/scaffolds/
+/source
+/frontsize/test/
+vendors/
+test/
+.deploy*/
+/hexo/source
