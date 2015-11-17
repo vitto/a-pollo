@@ -15,6 +15,10 @@
         padding: 2px;
         border: 1px dashed transparent;
         @include transition(border-color $ease);
+
+        &:hover .apollo-html-example__bg {
+            opacity: 1 !important;
+        }
     }
 
     @include element("container") {
@@ -43,6 +47,6 @@
         border-color: mix($font-color, $colorPage, 25%);
     }
     &:hover .apollo-html-example__bg {
-        opacity: 1;
+        opacity: 0.55;
     }
 }

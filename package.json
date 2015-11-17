@@ -23,10 +23,13 @@
     "hexo-renderer-stylus": "^0.3.0",
     "hexo-server": "^0.1.2",
     "html-minifier": "^0.8.0",
+    "http": "0.0.0",
     "js-beautify": "^1.5.10",
     "js-yaml": "^3.4.3",
+    "jsonfile": "^2.2.3",
     "merge": "^1.2.0",
     "node-static": "^0.7.7",
+    "path": "^0.12.7",
     "shelljs": "^0.5.3"
   },
   "devDependencies": {

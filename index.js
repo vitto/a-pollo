@@ -2,15 +2,15 @@ var reader = require('./lib/reader'),
     formatter = require('./lib/formatter'),
     absorb = require('absorb'),
     widget = require('./lib/widget'),
+    server = require('./lib/http-server'),
+    colors = require('colors/safe'),
     shell = require('shelljs'),
     path = require('./lib/path'),
     yaml = require('js-yaml'),
     Hexo = require('hexo'),
     glob = require('glob'),
+    json = require('jsonfile'),
     fs = require('fs');
-
-var conf = yaml.safeLoad(fs.readFileSync('./apollo.yml', 'utf-8'));
-var hexoConfig, mergedConfig;
 
 var fromModule = function(targetPath) {
     return __dirname + '/' + path.trimLeft(targetPath);
@@ -20,11 +20,16 @@ var fromProcess = function(targetPath) {
     return process.cwd() + '/' + path.trimRight(path.trimLeft(targetPath));
 };
 
+var conf = yaml.safeLoad(fs.readFileSync('./apollo.yml', 'utf-8'));
+var packageJSON = json.readFileSync(fromModule('package.json'));
+var hexoConfig, mergedConfig;
+
 var checkPath = function(path) {
     if (shell.test('-e', fromProcess(path))) {
         return true;
     } else {
-        console.error('ERROR:\n ' + fromProcess(path) + '\n in your apollo.yml config not found.');
+
+        console.error(colors.bgBlack(colors.red(' ERROR: ' + fromProcess(path) + ' ')) + ' in your ' + colors.bgBlack(colors.yellow(' apollo.yml ')) + ' config not found.');
         return false;
     }
 };
@@ -35,7 +40,7 @@ var copyHexoModule = function(moduleName) {
 
 var hexoModule = function() {
     if (!shell.test('-e', fromModule('/hexo/node_modules'))) {
-        console.log('Preparing node modules...');
+        console.log('Preparing node modules');
         shell.mkdir('-p', fromModule('/hexo/node_modules'));
         copyHexoModule('hexo');
         copyHexoModule('hexo-deployer-rsync');
@@ -61,7 +66,6 @@ var prepareFiles = function() {
         shell.rm('-Rf', fromProcess(conf.public_dir));
     }
 
-    //conf.public_dir = path.toParent(conf.public_dir);
     mergedConfig = absorb(hexoConfig, conf);
 
     fs.writeFileSync(fromModule('/hexo/_config.yml'), yaml.safeDump(mergedConfig));
@@ -95,13 +99,18 @@ var generateDocs = function () {
     shell.mv('-f', fromModule('/hexo/' + path.trimLeft(conf.public_dir)), fromProcess(conf.public_dir));
 };
 
-var cleanFiles = function() {
+var removeFiles = function() {
+    if (shell.test('-e', fromModule('/hexo/source'))) { shell.rm('-Rf', fromModule('/hexo/source')); }
+    if (shell.test('-e', fromModule('/hexo/node_modules'))) { shell.rm('-Rf', fromModule('/hexo/node_modules')); }
+    if (shell.test('-e', fromModule('/source'))) { shell.rm('-Rf', fromModule('/source')); }
+    if (shell.test('-e', fromModule('/hexo/_config.yml'))) { shell.rm('-f', fromModule('/hexo/_config.yml')); }
+};
+
+var prepareHTTP = function() {
     setTimeout(function(){
-        if (shell.test('-e', fromModule('/hexo/source'))) { shell.rm('-Rf', fromModule('/hexo/source')); }
-        if (shell.test('-e', fromModule('/hexo/node_modules'))) { shell.rm('-Rf', fromModule('/hexo/node_modules')); }
-        if (shell.test('-e', fromModule('/source'))) { shell.rm('-Rf', fromModule('/source')); }
-        if (shell.test('-e', fromModule('/hexo/_config.yml'))) { shell.rm('-f', fromModule('/hexo/_config.yml')); }
+        removeFiles();
     }, 500);
+    server.start(conf.public_dir, conf.url);
 };
 
 var postCreated = function(widgetFilesLength) {
@@ -109,7 +118,7 @@ var postCreated = function(widgetFilesLength) {
     if (posts.length === widgetFilesLength) {
         generateDocs();
         setTimeout(function(){
-            cleanFiles();
+            prepareHTTP();
         }, 1000);
     } else {
         setTimeout(function(){
@@ -120,17 +129,15 @@ var postCreated = function(widgetFilesLength) {
 
 var runBuild = function() {
     var hexo, widgetFiles, cssFileData;
+    console.log('Starting ' + colors.bgBlack(colors.yellow(' Apollo ')) + ' ' + packageJSON.version);
+    removeFiles();
     hexoModule();
     prepareFiles();
+    console.log('Loading data from ' + colors.bgBlack(colors.yellow(' ' + conf.style.docs + ' ')) + ' folder');
     widgetFiles = reader.load(fromProcess(conf.style.docs));
 
-    console.log('Initializing hexo...');
-    hexo = new Hexo(process.cwd(), {
-        debug: true,
-        config: fromModule('/hexo/_config.yml')
-    });
-
     if (checkPath(conf.style.css)) {
+        console.log('Copying CSS theme eassets');
         cssFileData = fs.readFileSync(fromProcess(conf.style.css), 'utf8');
         cssFileData = cssFileData.replace(/url\("(.*\/)(.*)"\)/g, 'url("/css/theme/img/$2")');
         fs.writeFileSync(fromModule('/hexo/source/css/theme/theme.css'), cssFileData);
@@ -138,15 +145,22 @@ var runBuild = function() {
         return false;
     }
 
+    console.log('Initializing ' + colors.bgBlack(colors.blue(' Hexo ')));
+    hexo = new Hexo(process.cwd(), {
+        debug: false,
+        config: fromModule('/hexo/_config.yml')
+    });
+
     hexo.init().then(function(){
         var postData;
-
+        console.log('Crunching ' + colors.bgBlack(colors.yellow(' Apollo ')) + ' annotations to ' + colors.bgBlack(colors.blue(' Hexo ')) + ' posts...');
         for (var i = 0; i < widgetFiles.length; i += 1) {
+            console.log('Creating post for ' + colors.bgBlack(colors.yellow(' ' + widgetFiles[i][0].file + ' ')));
             postData = formatter.toHexo(widgetFiles[i]);
-            postData.content = widget.toMarkdown(widgetFiles[i], conf.author);
+            postData.content = widget.toMarkdown(widgetFiles[i], conf);
             hexo.post.create(postData, true);
         }
-        console.log('Waiting for hexo...');
+        console.log('Waiting for ' + colors.bgBlack(colors.blue(' Hexo ')) + ' to finish posts creation...');
         postCreated(widgetFiles.length);
     });
 };

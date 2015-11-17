@@ -5,6 +5,8 @@ date: 2015-11-01
 
 pages: test/apollo/*
 public_dir: ./public
+url: http://localhost:7070
+
 style:
     docs: test/frontsize/themes/default/widgets
     css: test/frontsize/test/csslint/frontsize.csslint.css
