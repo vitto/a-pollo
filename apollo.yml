@@ -4,7 +4,7 @@ author: Vittorio Vittori
 date: 2015-11-01
 
 pages: test/apollo/*
-public_dir: ./testina
+public_dir: ./public
 style:
     docs: test/frontsize/themes/default/widgets
     css: test/frontsize/test/csslint/frontsize.csslint.css

@@ -26,6 +26,7 @@
     "js-beautify": "^1.5.10",
     "js-yaml": "^3.4.3",
     "merge": "^1.2.0",
+    "node-static": "^0.7.7",
     "shelljs": "^0.5.3"
   },
   "devDependencies": {
