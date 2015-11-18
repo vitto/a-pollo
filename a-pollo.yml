@@ -5,7 +5,7 @@ date: 2015-11-01
 
 pages: test/apollo/*
 public_dir: ./public
-url: http://localhost:7070
+url: http://localhost:7777
 http_server: true
 
 style:
