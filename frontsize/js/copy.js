@@ -1,20 +1,20 @@
 jQuery.fn.selectText = function(){
     this.find('input').each(function() {
-        if($(this).prev().length == 0 || !$(this).prev().hasClass('p_copy')) {
+        if($(this).prev().length === 0 || !$(this).prev().hasClass('p_copy')) {
             $('<p class="p_copy" style="position: absolute; z-index: -1;"></p>').insertBefore($(this));
         }
         $(this).prev().html($(this).val());
     });
     var doc = document;
     var element = this[0];
-    console.log(this, element);
+    var range;
     if (doc.body.createTextRange) {
-        var range = document.body.createTextRange();
+        range = document.body.createTextRange();
         range.moveToElementText(element);
         range.select();
     } else if (window.getSelection) {
         var selection = window.getSelection();
-        var range = document.createRange();
+        range = document.createRange();
         range.selectNodeContents(element);
         selection.removeAllRanges();
         selection.addRange(range);
@@ -22,6 +22,15 @@ jQuery.fn.selectText = function(){
 };
 
 $(function(){
+
+    $(document).on('click', '.apollo-html-example', function(){
+        var isActive = $(this).find('.apollo-html-example__bg').hasClass('apollo-html-example__bg--active');
+        if (isActive) {
+            $(this).find('.apollo-html-example__bg').removeClass('apollo-html-example__bg--active');
+        } else {
+            $(this).find('.apollo-html-example__bg').addClass('apollo-html-example__bg--active');
+        }
+    });
 
     $('.highlight .code').each(function(){
         $(this).html($(this).html().replace(/[“”]{1,}/g, '"'));

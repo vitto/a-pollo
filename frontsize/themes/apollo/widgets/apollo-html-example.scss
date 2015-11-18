@@ -48,5 +48,8 @@
     }
     &:hover .apollo-html-example__bg {
         opacity: 0.55;
+        &.apollo-html-example__bg--active {
+            opacity: 1;
+        }
     }
 }
