@@ -91,7 +91,7 @@ gulp.task('frontsize:build', function () {
         'frontsize:js',
         'frontsize:merge',
         'frontsize:sourcemap',
-        'frontsize:report'
+        //'frontsize:report'
     ];
     runSequence(tasks);
 });

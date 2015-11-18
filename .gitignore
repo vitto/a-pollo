@@ -9,4 +9,5 @@ node_modules/
 /frontsize/test/
 vendors/
 .deploy*/
-/hexo/source/_posts
+/hexo/source
+/hexo/_config.yml
