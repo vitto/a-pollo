@@ -25,11 +25,11 @@ var packageJSON = json.readFileSync(fromModule('package.json'));
 var hexoConfig, mergedConfig;
 
 var checkPath = function(path) {
-    if (shell.test('-e', fromProcess(path))) {
+    if (shell.test('-e', path)) {
         return true;
     } else {
 
-        console.error(colors.bgBlack(colors.red(' ERROR: ' + fromProcess(path) + ' ')) + ' in your ' + colors.bgBlack(colors.yellow(' a-pollo.yml ')) + ' config not found.');
+        console.error(colors.bgBlack(colors.red(' ERROR: ' + path + ' ')) + ' in your ' + colors.bgBlack(colors.yellow(' a-pollo.yml ')) + ' config not found.');
         return false;
     }
 };
@@ -75,7 +75,7 @@ var prepareFiles = function() {
     shell.mkdir('-p', fromModule('/source'));
 
     if (conf.pages !== undefined) {
-        if (checkPath(conf.pages)) {
+        if (checkPath(fromProcess(conf.pages))) {
             shell.cp('-R', path.inside(fromProcess(conf.pages)), fromModule('/hexo/source'));
         }
     } else {
@@ -85,10 +85,10 @@ var prepareFiles = function() {
     shell.mkdir('-p', fromModule('/hexo/source/css/theme'));
     shell.mkdir('-p', fromModule('/hexo/source/css/theme/img'));
     shell.mkdir('-p', fromModule('/hexo/source/css/theme/fonts'));
-    if (checkPath(conf.style.images)) {
+    if (checkPath(fromProcess(conf.style.images))) {
         shell.cp('-R', path.inside(fromProcess(conf.style.images)), fromModule('/hexo/source/css/theme/img'));
     }
-    if (checkPath(conf.style.fonts)) {
+    if (checkPath(fromProcess(conf.style.fonts))) {
         shell.cp('-R', path.inside(fromProcess(conf.style.fonts)), fromModule('/hexo/source/css/theme/fonts'));
     }
 };
@@ -136,7 +136,7 @@ var runBuild = function() {
     console.log('Loading data from ' + colors.bgBlack(colors.yellow(' ' + conf.style.docs + ' ')) + ' folder');
     widgetFiles = reader.load(fromProcess(conf.style.docs));
 
-    if (checkPath(conf.style.css)) {
+    if (checkPath(fromProcess(conf.style.css))) {
         console.log('Copying CSS theme assets');
         cssFileData = fs.readFileSync(fromProcess(conf.style.css), 'utf8');
         cssFileData = cssFileData.replace(/url\("(.*\/)(.*)"\)/g, 'url("/css/theme/img/$2")');
@@ -146,27 +146,30 @@ var runBuild = function() {
     }
 
     console.log('Initializing ' + colors.bgBlack(colors.blue(' Hexo ')));
+
+    if (checkPath(fromModule('/hexo/_config.yml'))) {
+        console.log('Loading ' + colors.bgBlack(colors.blue(' Hexo ')) + ' configuration');
+    }
+
     hexo = new Hexo(process.cwd(), {
         debug: false,
         config: fromModule('/hexo/_config.yml')
     });
 
-    hexo.init().then(function(){
-        var postData;
-        console.log('Crunching ' + colors.bgBlack(colors.yellow(' Apollo ')) + ' annotations to ' + colors.bgBlack(colors.blue(' Hexo ')) + ' posts...');
-        for (var i = 0; i < widgetFiles.length; i += 1) {
-            console.log('Creating post for ' + colors.bgBlack(colors.yellow(' ' + widgetFiles[i][0].file + ' ')));
-            postData = formatter.toHexo(widgetFiles[i]);
-            postData.content = widget.toMarkdown(widgetFiles[i], conf);
-            hexo.post.create(postData, true);
-        }
-        console.log('Waiting for ' + colors.bgBlack(colors.blue(' Hexo ')) + ' to finish posts creation...');
-        postCreated(widgetFiles.length);
-    });
-};
-
-exports.build = function() {
-    runBuild();
+    setTimeout(function(){
+        hexo.init().then(function(){
+            var postData;
+            console.log('Crunching ' + colors.bgBlack(colors.yellow(' Apollo ')) + ' annotations to ' + colors.bgBlack(colors.blue(' Hexo ')) + ' posts...');
+            for (var i = 0; i < widgetFiles.length; i += 1) {
+                console.log('Creating post for ' + colors.bgBlack(colors.yellow(' ' + widgetFiles[i][0].file + ' ')));
+                postData = formatter.toHexo(widgetFiles[i]);
+                postData.content = widget.toMarkdown(widgetFiles[i], conf);
+                hexo.post.create(postData, true);
+            }
+            console.log('Waiting for ' + colors.bgBlack(colors.blue(' Hexo ')) + ' to finish posts creation...');
+            postCreated(widgetFiles.length);
+        });
+    }, 1000);
 };
 
 runBuild();
