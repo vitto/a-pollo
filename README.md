@@ -1,7 +1,9 @@
 a-pollo
 ---
 
-Version `1.0.3`
+[![Version](http://img.shields.io/:version-1.0.4-B89766.svg)][release]
+[![Built with nodejs 4.2.2](http://img.shields.io/:nodejs-4.2.2-80BD01.svg)](http://badges.github.io/badgerbadgerbadger/)
+[![MIT licence](http://img.shields.io/:license-MIT-00AFFF.svg)](https://github.com/ideatosrl/frontsize-sass/blob/master/LICENSE.md)
 
 Place a `a-pollo.yml` in the root folder of your project, this is the default config:
 
@@ -34,6 +36,8 @@ footer:
     rightText: <a href="http://github.com/vitto/a-pollo" class="apollo-footer__link"><i class="fa fa-code"></i></a> with <i class="fa fa-heart apollo-footer__heart"></i> by <a href="http://vit.to" class="apollo-footer__link">vitto</a> @ <a href="http://www.ideato.it" class="apollo-footer__link">ideato</a>
 
 ```
+
+---
 
 #### Configuration
 
@@ -70,6 +74,20 @@ From package.json where you are installed `node_modules` folder
 
 ---
 
+##### Release notes
+
+- Add config var `http_server` check when HTTP server is ready to start
+
+##### Known issues
+
+- Conventions examples missing for CSS and HTML, this will be probably the next update
+- If `use_markdown` is set to `false`, code snippets are not correctly indented
+- Incomplete customizable HTML template, complete at 95%
+- Var names will change in the future
+- Needs a lot of micro optimizations
+
+---
+
 ##### Development utils
 
 To build theme
@@ -98,3 +116,4 @@ created by [Vittorio Vittori][vitto] at [ideato srl][ideato]
 
 [vitto]: https://twitter.com/vttrx
 [ideato]: http://www.ideato.it
+[release]: https://github.com/vitto/a-pollo/releases/tag/1.0.4

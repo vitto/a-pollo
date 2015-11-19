@@ -112,7 +112,9 @@ var prepareHTTP = function() {
     setTimeout(function(){
         removeFiles();
     }, 500);
-    server.start(conf.public_dir, conf.url);
+    if (conf.http_server !== undefined || conf.http_server) {
+        server.start(conf.public_dir, conf.url);
+    }
 };
 
 var postCreated = function(widgetFilesLength) {
