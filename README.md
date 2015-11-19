@@ -84,13 +84,13 @@ From package.json where you are installed `node_modules` folder
 
 ##### Release notes
 
-- Add config var `http_server` check when HTTP server is ready to start
+- Add theme manager
 
 ##### Known issues
 
-- Theme selection for customization missing, *this will be the next update*
 - Conventions examples missing for CSS and HTML
 - If `use_markdown` is set to `false`, code snippets are not correctly indented
+- If `use_markdown` is set to `false`, code snippets cannot be copied on clipboard
 - Incomplete customizable HTML template, complete at 95%
 - Var names will change in the future
 - Needs a lot of micro optimizations
