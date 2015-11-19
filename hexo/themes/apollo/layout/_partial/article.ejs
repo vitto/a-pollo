@@ -2,5 +2,19 @@
     <% if (config.header && config.header.logo) { %>
         <%- partial('_partial/article-header', { header: config.header }) %>
     <% } %>
-    <%- markdown(post.content) %>
+    <% if (!config.use_markdown && post.docs) {
+        _.each(post.docs, function(doc, i) {
+            if (i === 0) { %>
+                <%- partial('_partial/widget-header', { doc: doc, id:i }) %>
+            <% } else { %>
+                <%- partial('_partial/widget', { doc: doc, id:i }) %>
+            <% }
+        }); %>
+        <br>
+        <p>
+            <strong>Total examples</strong> <%= post.docs.length %>
+        </p>
+    <% } else { %>
+        <%- markdown(post.content) %>
+    <% } %>
 </article>

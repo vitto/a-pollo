@@ -1,0 +1,16 @@
+<h1 class="apollo-widget__title">
+    <%= doc.name %>
+</h1>
+<strong>Category</strong> <%= doc.type %> <br>
+<span class="apollo-widget__filename" title="<%= config.style.docs %> <%= doc.file %>">
+    <strong>File</strong>
+    <code><%= doc.file %></code>
+</span>
+<br>
+<strong>Block selector</strong>
+<code><%= doc.slug %></code>
+<br>
+<%- markdown('**Author/s** ' + doc.auth) %>
+<br>
+
+<%- partial('_partial/widget-body', { doc: doc, id:id }) %>

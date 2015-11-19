@@ -12,6 +12,8 @@ var reader = require('./lib/reader'),
     json = require('jsonfile'),
     fs = require('fs');
 
+var beautify = require('js-beautify').html;
+
 var fromModule = function(targetPath) {
     return __dirname + '/' + path.trimLeft(targetPath);
 };
@@ -127,15 +129,8 @@ var postCreated = function(widgetFilesLength) {
     }
 };
 
-var runBuild = function() {
-    var hexo, widgetFiles, cssFileData;
-    console.log('Starting ' + colors.bgBlack(colors.yellow(' Apollo ')) + ' ' + packageJSON.version);
-    removeFiles();
-    hexoModule();
-    prepareFiles();
-    console.log('Loading data from ' + colors.bgBlack(colors.yellow(' ' + conf.style.docs + ' ')) + ' folder');
-    widgetFiles = reader.load(fromProcess(conf.style.docs));
-
+var copyThemeAssets = function() {
+    var cssFileData;
     if (checkPath(fromProcess(conf.style.css))) {
         console.log('Copying CSS theme assets');
         cssFileData = fs.readFileSync(fromProcess(conf.style.css), 'utf8');
@@ -144,6 +139,21 @@ var runBuild = function() {
     } else {
         return false;
     }
+};
+
+var runBuild = function() {
+    var hexo, widgetFiles;
+
+    console.log('Starting ' + colors.bgBlack(colors.yellow(' Apollo ')) + ' ' + packageJSON.version);
+
+    removeFiles();
+    hexoModule();
+    prepareFiles();
+
+    console.log('Loading data from ' + colors.bgBlack(colors.yellow(' ' + conf.style.docs + ' ')) + ' folder');
+    widgetFiles = reader.load(fromProcess(conf.style.docs));
+
+    copyThemeAssets();
 
     console.log('Initializing ' + colors.bgBlack(colors.blue(' Hexo ')));
 
@@ -156,20 +166,46 @@ var runBuild = function() {
         config: fromModule('/hexo/_config.yml')
     });
 
-    setTimeout(function(){
-        hexo.init().then(function(){
-            var postData;
-            console.log('Crunching ' + colors.bgBlack(colors.yellow(' Apollo ')) + ' annotations to ' + colors.bgBlack(colors.blue(' Hexo ')) + ' posts...');
-            for (var i = 0; i < widgetFiles.length; i += 1) {
-                console.log('Creating post for ' + colors.bgBlack(colors.yellow(' ' + widgetFiles[i][0].file + ' ')));
-                postData = formatter.toHexo(widgetFiles[i]);
-                postData.content = widget.toMarkdown(widgetFiles[i], conf);
-                hexo.post.create(postData, true);
-            }
-            console.log('Waiting for ' + colors.bgBlack(colors.blue(' Hexo ')) + ' to finish posts creation...');
-            postCreated(widgetFiles.length);
-        });
-    }, 1000);
+
+    var beautifyOptions = {
+        'indent_size': 4,
+        'indent_char': ' ',
+        'eol': '\n',
+        'indent_level': 0,
+        'indent_with_tabs': false,
+        'preserve_newlines': true,
+        'max_preserve_newlines': 10,
+        'jslint_happy': false,
+        'space_after_anon_function': false,
+        'brace_style': 'collapse',
+        'keep_array_indentation': false,
+        'keep_function_indentation': false,
+        'space_before_conditional': true,
+        'break_chained_methods': false,
+        'eval_code': false,
+        'unescape_strings': false,
+        'wrap_line_length': 0,
+        'wrap_attributes': 'auto',
+        'wrap_attributes_indent_size': 4,
+        'end_with_newline': false
+    };
+
+    hexo.extend.helper.register('beautifyHTML', function(htmlString){
+        return beautify(htmlString, beautifyOptions);
+    });
+
+    hexo.init().then(function(){
+        var postData;
+        console.log('Crunching ' + colors.bgBlack(colors.yellow(' Apollo ')) + ' annotations to ' + colors.bgBlack(colors.blue(' Hexo ')) + ' posts...');
+        for (var i = 0; i < widgetFiles.length; i += 1) {
+            console.log('Creating post for ' + colors.bgBlack(colors.yellow(' ' + widgetFiles[i][0].file + ' ')));
+            postData = formatter.toHexo(widgetFiles[i]);
+            postData.content = widget.toMarkdown(widgetFiles[i], conf);
+            hexo.post.create(postData, true);
+        }
+        console.log('Waiting for ' + colors.bgBlack(colors.blue(' Hexo ')) + ' to finish posts creation...');
+        postCreated(widgetFiles.length);
+    });
 };
 
 runBuild();
