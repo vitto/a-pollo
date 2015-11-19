@@ -56,6 +56,7 @@ footer:
 | `date` | **yes** | Not yet used |
 | `public_dir` | **yes** | The target path the site will be generated |
 | `url` | **yes** | The URL to navigate the guide from the browser |
+| `theme` | **yes** | Theme folder name, you can [write your own theme][apollo_theme] |
 | `pages` | *no* | The customized markdown pages will be published from Hexo |
 | `http_server` | *no* | If the generated guide will be served by the HTTP server |
 | `use_markdown` | *no* | Which method will be used to render the HTML template pages |
