@@ -30,7 +30,6 @@ var checkPath = function(path) {
     if (shell.test('-e', path)) {
         return true;
     } else {
-
         console.error(colors.bgBlack(colors.red(' ERROR: ' + path + ' ')) + ' in your ' + colors.bgBlack(colors.yellow(' a-pollo.yml ')) + ' config not found.');
         return false;
     }
@@ -95,6 +94,21 @@ var prepareFiles = function() {
     }
 };
 
+var checkTheme = function() {
+    if (!shell.test('-e', fromModule('/hexo/themes/' + conf.theme))) {
+        console.log('Theme ' + colors.bgBlack(colors.yellow(' ' + conf.theme + ' ')) + ' not installed, searching on project folder');
+        if (!shell.test('-e', fromProcess(conf.theme))) {
+            console.log('Theme ' + colors.bgBlack(colors.yellow(' ' + conf.theme + ' ')) + ' not found, will be used ' + colors.bgBlack(colors.yellow(' apollo ')) + ' as default theme');
+            conf.theme = 'apollo';
+        } else {
+            console.log('Installing found theme ' + colors.bgBlack(colors.yellow(' ' + conf.theme + ' ')));
+            shell.cp('-R', path.inside(fromProcess(conf.theme)), fromModule('/hexo/themes/' + conf.theme));
+        }
+    } else {
+        console.log('Using selected theme ' + colors.bgBlack(colors.yellow(' ' + conf.theme + ' ')));
+    }
+};
+
 var generateDocs = function () {
     shell.mv('-f', fromProcess('/source/_posts'), fromModule('/hexo/source'));
     shell.exec('cd ' + fromModule('/hexo') + ' && ../node_modules/.bin/hexo generate');
@@ -149,6 +163,7 @@ var runBuild = function() {
     console.log('Starting ' + colors.bgBlack(colors.yellow(' Apollo ')) + ' ' + packageJSON.version);
 
     removeFiles();
+    checkTheme();
     hexoModule();
     prepareFiles();
 

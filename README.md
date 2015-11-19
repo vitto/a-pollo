@@ -1,7 +1,7 @@
 a-pollo
 ---
 
-[![Version](http://img.shields.io/:version-1.0.4-B89766.svg)][release]
+[![Version](http://img.shields.io/:version-1.0.5-B89766.svg)][release]
 [![Built with nodejs 4.2.2](http://img.shields.io/:nodejs-4.2.2-80BD01.svg)](http://badges.github.io/badgerbadgerbadger/)
 [![MIT licence](http://img.shields.io/:license-MIT-00AFFF.svg)](https://github.com/ideatosrl/frontsize-sass/blob/master/LICENSE.md)
 
@@ -128,4 +128,4 @@ created by [Vittorio Vittori][vitto] at [ideato srl][ideato]
 [hexo]: https://hexo.io
 [apollo_code_docs]: https://github.com/vitto/a-pollo/blob/master/test/frontsize/themes/default/widgets/button-social.scss
 [apollo_theme]: https://github.com/vitto/a-pollo/tree/master/hexo/themes/apollo
-[release]: https://github.com/vitto/a-pollo/releases/tag/1.0.4
+[release]: https://github.com/vitto/a-pollo/releases/tag/1.0.5
