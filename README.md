@@ -5,6 +5,14 @@ a-pollo
 [![Built with nodejs 4.2.2](http://img.shields.io/:nodejs-4.2.2-80BD01.svg)](http://badges.github.io/badgerbadgerbadger/)
 [![MIT licence](http://img.shields.io/:license-MIT-00AFFF.svg)](https://github.com/ideatosrl/frontsize-sass/blob/master/LICENSE.md)
 
+A-pollo generates **CSS style guide documentation** from your [code comments][apollo_code_docs].
+
+It's been written for teams who need to check CSS widgets with examples, copy html related code with no pain or the need to go through browser HTML debugger.
+
+The module works with [Hexo][hexo], a simple and powerful blog framework, so if you'd like to [write your own theme][apollo_theme] you'll have the power this nice tool at your hands.
+
+---
+
 Place a `a-pollo.yml` in the root folder of your project, this is the default config:
 
 ``` yaml
@@ -42,25 +50,25 @@ footer:
 #### Configuration
 
 | Property  | Shared with Hexo config | Description |
-| --- | --- | --- |
-| `title` | Yes | Will be shown on HTML page title |
-| `author` | Yes | Will be shown around the pages |
-| `date` | Yes | Not yes used |
-| `pages` | No | The customized markdown pages will be published from Hexo |
-| `public_dir` | Yes | The target path the site will be generated |
-| `url` | Yes | The URL to navigate the guide from the browser |
-| `http_server` | No | If the generated guide will be served by the HTTP server |
-| `use_markdown` | No | Which method will be used to render the HTML template pages |
-| `style.docs` | No | The path where the documentation files are |
-| `style.css` | No | The path where the CSS for the documentation is, this is not the CSS of the a-pollo theme |
-| `style.images` | No | Image assets for the CSS you are using |
-| `style.fonts` | No | Fonts assets for the CSS you are using |
-| `header.logo` | No | An image inside `style.images` to be used as image header inside a-pollo theme |
-| `header.description` | No | The header description inside a-pollo theme |
-| `header.link` | No | The header logo href inside a-pollo theme |
-| `footer.logo` | No | An image inside `style.images` to be used as image footer inside a-pollo theme |
-| `footer.leftText` | No | The left text or HTML on the footer inside a-pollo theme |
-| `footer.rightText` | No | The left text or HTML on the footer inside a-pollo theme |
+| --- | :---: | --- |
+| `title` | **yes** | Will be shown on HTML page title |
+| `author` | **yes** | Will be shown around the pages |
+| `date` | **yes** | Not yet used |
+| `public_dir` | **yes** | The target path the site will be generated |
+| `url` | **yes** | The URL to navigate the guide from the browser |
+| `pages` | *no* | The customized markdown pages will be published from Hexo |
+| `http_server` | *no* | If the generated guide will be served by the HTTP server |
+| `use_markdown` | *no* | Which method will be used to render the HTML template pages |
+| `style.docs` | *no* | The path where the documentation files are |
+| `style.css` | *no* | The path where the CSS for the documentation is, this is not the CSS of the a-pollo theme |
+| `style.images` | *no* | Image assets for the CSS you are using |
+| `style.fonts` | *no* | Fonts assets for the CSS you are using |
+| `header.logo` | *no* | An image inside `style.images` to be used as image header inside a-pollo theme |
+| `header.description` | *no* | The header description inside a-pollo theme |
+| `header.link` | *no* | The header logo href inside a-pollo theme |
+| `footer.logo` | *no* | An image inside `style.images` to be used as image footer inside a-pollo theme |
+| `footer.leftText` | *no* | The left text or HTML on the footer inside a-pollo theme |
+| `footer.rightText` | *no* | The right text or HTML on the footer inside a-pollo theme |
 
 ---
 
@@ -80,7 +88,8 @@ From package.json where you are installed `node_modules` folder
 
 ##### Known issues
 
-- Conventions examples missing for CSS and HTML, this will be probably the next update
+- Theme selection for customization missing, *this will be the next update*
+- Conventions examples missing for CSS and HTML
 - If `use_markdown` is set to `false`, code snippets are not correctly indented
 - Incomplete customizable HTML template, complete at 95%
 - Var names will change in the future
@@ -116,4 +125,7 @@ created by [Vittorio Vittori][vitto] at [ideato srl][ideato]
 
 [vitto]: https://twitter.com/vttrx
 [ideato]: http://www.ideato.it
+[hexo]: https://hexo.io
+[apollo_code_docs]: https://github.com/vitto/a-pollo/blob/master/test/frontsize/themes/default/widgets/button-social.scss
+[apollo_theme]: https://github.com/vitto/a-pollo/tree/master/hexo/themes/apollo
 [release]: https://github.com/vitto/a-pollo/releases/tag/1.0.4
