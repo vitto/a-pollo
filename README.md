@@ -122,7 +122,7 @@ To test the HTML results
 node index.js
 ```
 
-created by [Vittorio Vittori][vitto] at [ideato srl][ideato]
+Written with love by [Vittorio Vittori][vitto] @ [ideato srl][ideato]
 
 [vitto]: https://twitter.com/vttrx
 [ideato]: http://www.ideato.it
