@@ -10,7 +10,7 @@ http_server: true
 use_markdown: true
 
 style:
-    docs: test/frontsize/themes/default/widgets
+    docs: test/frontsize/themes/default/widgets/
     css: test/frontsize/test/csslint/frontsize.csslint.css
     images: test/frontsize/themes/default/img/*
     fonts: test/frontsize/themes/default/fonts/*
