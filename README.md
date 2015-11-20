@@ -13,6 +13,14 @@ The module works with [Hexo][hexo], a simple and powerful blog framework, so if 
 
 ---
 
+To install a-pollo in your project:
+
+```
+npm install --save a-pollo
+```
+
+---
+
 Place a `a-pollo.yml` in the root folder of your project, this is the default config:
 
 ``` yaml
