@@ -1,6 +1,6 @@
 {
   "name": "a-pollo",
-  "version": "1.10.2",
+  "version": "1.1.11",
   "description": "The visual CSS style guide for teams",
   "bin": "./bin/a-pollo",
   "main": "index.js",
