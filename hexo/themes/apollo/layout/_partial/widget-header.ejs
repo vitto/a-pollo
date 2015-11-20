@@ -1,15 +1,24 @@
 <h1 class="apollo-widget__title">
     <%= doc.name %>
 </h1>
-<strong>Category</strong> <%= doc.type %> <br>
-<span class="apollo-widget__filename" title="<%= config.style.docs %> <%= doc.file %>">
-    <strong>File</strong>
-    <code><%= doc.file %></code>
+<span class="apollo-widget__row-group">
+    <strong>Category</strong>
+    <%= doc.category %>
 </span>
-<br>
-<strong>Block selector</strong>
-<code><%= doc.slug %></code>
-<br>
+<span class="apollo-widget__row-group">
+    <strong>Created</strong>
+    <span class="apollo-widget__row-group-rollout"><%- moment(doc.date).format('dddd DD MMMM YYYY') %></span>
+    <span class="apollo-widget__row-group-rollover"><%- moment(doc.date).fromNow() %> from last build</span>
+</span>
+<span class="apollo-widget__row-group">
+    <strong>File</strong>
+    <code class="apollo-widget__row-group-rollout"><%= doc.file %></code>
+    <code class="apollo-widget__row-group-rollover"><%= config.style.docs %><%= doc.file %></code>
+</span>
+<span class="apollo-widget__row-group">
+    <strong>Block selector</strong>
+    <code><%= doc.slug %></code>
+</span>
 <%- markdown('**Author/s** ' + doc.auth) %>
 <br>
 
