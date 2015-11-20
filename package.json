@@ -10,6 +10,7 @@
   "dependencies": {
     "absorb": "^1.0.1",
     "bower": "^1.6.5",
+    "colors": "^1.1.2",
     "glob": "^5.0.15",
     "handlebars": "^4.0.3",
     "hexo": "^3.1.0",
@@ -30,7 +31,6 @@
     "merge": "^1.2.0",
     "node-static": "^0.7.7",
     "path": "^0.12.7",
-    "colors": "^1.1.2",
     "shelljs": "^0.5.3"
   },
   "devDependencies": {
