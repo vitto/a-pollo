@@ -98,7 +98,7 @@ From package.json where you are installed `node_modules` folder
 ##### Known issues
 
 - Conventions examples missing for CSS and HTML
-- Dedault theme not responsive yet
+- Default theme not responsive yet
 - If `use_markdown` is set to `false`, code snippets are not correctly indented
 - If `use_markdown` is set to `false`, code snippets cannot be copied on clipboard
 - Incomplete customizable HTML template, complete at 95%
