@@ -93,7 +93,12 @@ From package.json where you are installed `node_modules` folder
 
 ##### Release notes
 
-- Add theme manager
+- Add date to doc parsing
+- Add some tweak to theme and styles
+- Add some micro optimizations
+- Fix configuration with a missing theme
+- Fix missing dev lib in node package
+- Change `@type` to `@category` tags on docs
 
 ##### Known issues
 
