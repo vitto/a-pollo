@@ -37,7 +37,9 @@
         bottom: 0;
         left: 0;
         opacity: 0;
-        @include transition(opacity $ease);
+        $easeBackgorund: ease("out-back");
+        @include transition("opacity #{$ease}, background-size 0.25s #{$easeBackgorund}");
+
         @include backgroundImage("transparent-background-light.svg");
         background-size: 64px 64px;
         background-position: 50% 50%;
@@ -50,6 +52,7 @@
         opacity: 0.55;
         &.apollo-html-example__bg--active {
             opacity: 1;
+            background-size: 32px 32px;
         }
     }
 }

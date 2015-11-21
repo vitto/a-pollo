@@ -7,6 +7,7 @@
         padding: s(3);
     }
 
+    @include setFont();
     @include baseLink();
     @include baseBold();
 
@@ -61,6 +62,7 @@
 
     > strong + code {
         margin-left: s(0.125);
+        @include baseInlineCode();
     }
 
     > hr {

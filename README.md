@@ -93,13 +93,16 @@ From package.json where you are installed `node_modules` folder
 
 ##### Release notes
 
-- Add date to doc parsing
-- Add some tweak to theme and styles
-- Add some micro optimizations
-- Fix configuration with a missing theme
-- Fix missing dev lib in node package
-- Fix markdown generator var name
-- Change `@type` to `@category` tags on docs
+- Change theme assets folders to make file loading easier
+- Add some test assets for CSS base examples integration
+- Add some new style to isolate base CSS theme selectors from docs
+- Add body selector to isolate base theme styles
+- Add theme text style isolation to keep style guide theme widgets fonts
+- Add some test CSS theme style
+- Update post texts for the guide
+- Change various template elements and clean unused elements
+- Fix url replace for theme css, now work in much more cases
+- Fix broken image header link
 
 ##### Known issues
 
@@ -126,7 +129,7 @@ To build theme
 Generate test css
 
 ```
-cd ./test && ./node_modules/.bin/gulp frontsize:css
+./node_modules/.bin/gulp frontsize:build && cd ./test && ./node_modules/.bin/gulp frontsize:css && ../ && node index.js
 ```
 
 ---

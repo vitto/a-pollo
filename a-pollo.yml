@@ -12,7 +12,7 @@ theme: apollo
 
 style:
     docs: test/frontsize/themes/default/widgets/
-    css: test/frontsize/test/csslint/frontsize.csslint.css
+    css: test/frontsize/test/frontsize-theme.min.css
     images: test/frontsize/themes/default/img/*
     fonts: test/frontsize/themes/default/fonts/*
 

@@ -27,8 +27,7 @@
 
         @include user-select("none");
 
-        @include transition(color background-color top, $ease);
-        @include ease("ease-out-expo");
+        @include transition(color background-color top, 0.25s ease("out-expo"));
     }
 
     &:hover {
