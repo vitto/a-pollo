@@ -84,11 +84,14 @@ var prepareFiles = function() {
     shell.mkdir('-p', fromModule('/hexo/source/css/theme'));
     shell.mkdir('-p', fromModule('/hexo/source/css/theme/img'));
     shell.mkdir('-p', fromModule('/hexo/source/css/theme/fonts'));
+
+    console.log('Copying CSS theme images and fonts');
+
     if (checkPath(fromProcess(conf.style.images))) {
-        shell.cp('-R', path.inside(fromProcess(conf.style.images)), fromModule('/hexo/source/css/theme/img'));
+        shell.cp('-R', path.inside(fromProcess(conf.style.images)), fromModule('/hexo/source/css/theme/assets'));
     }
     if (checkPath(fromProcess(conf.style.fonts))) {
-        shell.cp('-R', path.inside(fromProcess(conf.style.fonts)), fromModule('/hexo/source/css/theme/fonts'));
+        shell.cp('-R', path.inside(fromProcess(conf.style.fonts)), fromModule('/hexo/source/css/theme/assets'));
     }
 };
 
@@ -146,9 +149,9 @@ var postCreated = function(widgetFilesLength) {
 var copyThemeAssets = function() {
     var cssFileData;
     if (checkPath(fromProcess(conf.style.css))) {
-        console.log('Copying CSS theme assets');
+        console.log('Copying CSS theme');
         cssFileData = fs.readFileSync(fromProcess(conf.style.css), 'utf8');
-        cssFileData = cssFileData.replace(/url\("(.*\/)(.*)"\)/g, 'url("/css/theme/img/$2")');
+        cssFileData = cssFileData.replace(/url\("(.*\/)(.*)"\)/g, 'url("/css/theme/assets/$2")');
         fs.writeFileSync(fromModule('/hexo/source/css/theme/theme.css'), cssFileData);
     } else {
         return false;
@@ -188,6 +191,7 @@ var runBuild = function() {
             console.log('Creating post for ' + colors.bgBlack(colors.yellow(' ' + widgetFiles[i][0].file + ' ')));
             postData = formatter.toHexo(widgetFiles[i]);
             postData.content = widget.toMarkdown(widgetFiles[i], conf);
+            // console.log(postData.docs[0].htmlSnippet)
             hexo.post.create(postData, true);
         }
         console.log('Waiting for ' + colors.bgBlack(colors.blue(' Hexo ')) + ' to finish posts creation...');
