@@ -18,7 +18,7 @@
 
         color: $colorCodeLineNumber;
 
-        @include fallbackColor("background-color", rgba($colorPage,0.8));
+        @include fallbackColor("background-color", rgba($colorPost,0.8));
         text-transform: lowercase;
 
         @include user-select("none");
@@ -40,7 +40,7 @@
             top: s(-0.75);
         }
         .code .value {
-            background-color: $colorPage; //mix($colorPage, $colorCodeBackground, 50%);
+            background-color: $colorPost; //mix($colorPost, $colorCodeBackground, 50%);
             // background-color: saturate(mix($colorCodeLineNumber, $colorCodeBackground, 40%), 6%);
         }
 
