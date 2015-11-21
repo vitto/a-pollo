@@ -12,6 +12,7 @@
 
     @include element("row-group") {
         display: block;
+        @include setFont();
         @include baseBold();
         @include baseLink();
 

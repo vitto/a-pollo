@@ -1,5 +1,5 @@
 .apollo-logo {
-    $size: 21px;
+    $size: 18px;
 
     display: inline-block;
     margin-bottom: s(0.5, $size);
@@ -18,8 +18,8 @@
 
     @include element("text") {
         margin-top: $size;
-
         color: $colorLogoText;
+        text-align: center;
         text-transform: uppercase;
         font-weight: 600;
         font-size: $size;

@@ -4,9 +4,13 @@
     padding: s();
 
     color: $colorCodeText;
-    background-color: $colorCodeBackground;
+    font-family: $font-monospace;
+    font-size: $font-size;
+    font-weight: 400;
 
+    background-color: $colorCodeBackground;
     cursor: pointer;
+
     @include transition(color background-color, $ease);
 
     @include element("message") {
@@ -16,7 +20,7 @@
 
         padding: s(0.25) s(0.5);
 
-        color: $colorCodeLineNumber;
+        @include setFont(200, $colorCodeLineNumber);
 
         @include fallbackColor("background-color", rgba($colorPost,0.8));
         text-transform: lowercase;
@@ -40,8 +44,7 @@
             top: s(-0.75);
         }
         .code .value {
-            background-color: $colorPost; //mix($colorPost, $colorCodeBackground, 50%);
-            // background-color: saturate(mix($colorCodeLineNumber, $colorCodeBackground, 40%), 6%);
+            background-color: $colorPost;
         }
 
         .gutter {
@@ -51,6 +54,8 @@
 
     .code * {
         color: $colorCodeText;
+        font-family: $font-monospace;
+        font-size: $font-size;
         font-weight: 400;
         @include transition(color $ease);
     }

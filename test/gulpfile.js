@@ -30,7 +30,7 @@ gulp.task('default', function () {
 gulp.task('frontsize:css', function () {
     return gulp.src(f.path.frontsize + compileFile)
         .pipe(sourcemaps.init())
-        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+        .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
         .pipe(concat(cssFileName))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(f.path.css));

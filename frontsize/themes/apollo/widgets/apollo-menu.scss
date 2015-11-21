@@ -8,9 +8,7 @@
 
     @include element("title") {
         margin-bottom: s(0.5);
-        color: $colorMenuTitle;
-        font-weight: 500;
-        font-size: 16px;
+        @include setFont(500, $colorMenuTitle, 16px);
 
         &:first-letter {
             text-transform: uppercase;
@@ -18,8 +16,8 @@
     }
 
     @include element("link") {
-        color: $colorMenuButton;
         text-decoration: none;
+        @include setFont(200, $colorMenuButton);
 
         @include transition(color 0.125s ease-out);
 

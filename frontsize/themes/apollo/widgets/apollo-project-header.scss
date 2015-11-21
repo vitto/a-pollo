@@ -18,4 +18,8 @@
         background-size: contain;
         background-position: 0% 50%;
     }
+
+    @include element("paragraph") {
+        @include setFont();
+    }
 }
