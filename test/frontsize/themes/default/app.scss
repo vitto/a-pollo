@@ -12,6 +12,10 @@
 // @include font('open sans', 'OpenSans-Regular', 400);
 // @include font('open sans', 'OpenSans-Light',   200);
 
+@include fontFile('open sans', 'opensans-bold-webfont.ttf', 700);
+@include fontFile('open sans', 'opensans-regular-webfont.ttf', 400);
+@include fontFile('open sans', 'opensans-light-webfont.ttf', 200);
+
 //@include addFloatGridContainer(row);
 
 //@include addFloatGridColumns(12);

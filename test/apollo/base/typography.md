@@ -1,6 +1,15 @@
-title: Typography from USER
+title: Typography
 category: base
 ---
 
+# Typography
 
-Hello, this is the Typography from USER
+This is some example on how typography works
+
+---
+
+# Huge title text
+
+## Very big title text
+
+### Big title text
