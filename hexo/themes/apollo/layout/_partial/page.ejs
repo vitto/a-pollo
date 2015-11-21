@@ -1,6 +1,6 @@
 <article class="apollo-page apollo-page--padded">
     <% if (config.header && config.header.logo) { %>
-        <%- partial('_partial/article-header', { header: config.header }) %>
+        <%- partial('_partial/doc-header', { header: config.header }) %>
     <% } %>
     <% if (!config.use_markdown && post.docs) {
         _.each(post.docs, function(doc, i) {
