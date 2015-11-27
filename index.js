@@ -42,14 +42,12 @@ var hexoModule = function() {
         console.log('Preparing node modules');
         shell.mkdir('-p', fromModule('/hexo/node_modules'));
         copyHexoModule('hexo');
-        copyHexoModule('hexo-deployer-rsync');
-        copyHexoModule('hexo-generator-archive');
-        copyHexoModule('hexo-generator-category');
-        copyHexoModule('hexo-generator-index');
-        copyHexoModule('hexo-generator-tag');
+        //copyHexoModule('hexo-deployer-rsync');
+        //copyHexoModule('hexo-generator-category');
+        //copyHexoModule('hexo-generator-tag');
         copyHexoModule('hexo-renderer-ejs');
         copyHexoModule('hexo-renderer-marked');
-        copyHexoModule('hexo-renderer-stylus');
+        //copyHexoModule('hexo-renderer-stylus');
         copyHexoModule('hexo-server');
         console.log('Done.');
     } else {
