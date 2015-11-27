@@ -1,13 +1,17 @@
 <nav>
 
+    <a href="/" class="apollo-logo apollo-logo--move-top">
+        <div class="apollo-logo__icon"></div>
+    </a>
+
     <% var prevCategory = '' %>
     <% site.pages.data = _.sortBy(site.pages.data, 'category') %>
     <% if (site.pages.length > 1) { %>
         <% site.pages.each(function (page, i) { %>
             <% if (page.category !== undefined) { %>
                 <% if (prevCategory != page.category) { %>
-                    <% if (prevCategory === '') { %>
-                        <ul class="apollo-menu apollo-menu--first">
+                    <% if (prevCategory === '') { /* apollo-menu--first */ %>
+                        <ul class="apollo-menu">
                     <% } else { %>
                         <ul class="apollo-menu">
                     <% } %>
@@ -33,8 +37,8 @@
         <% }) %>
     <% } %>
 
-    <% if (site.pages.length === 1) { %>
-        <ul class="apollo-menu apollo-menu--first">
+    <% if (site.pages.length === 1) { /* apollo-menu--first */ %>
+        <ul class="apollo-menu">
     <% } else { %>
         <ul class="apollo-menu">
     <% } %>

@@ -1,4 +1,4 @@
-<% if (page.category === 'guide') { %>
+<% if (page.category !== 'css' && page.category !== 'CSS') { %>
     <%- partial('_partial/post', {post: page, index: false}) %>
 <% } else { %>
     <%- partial('_partial/page', {post: page, index: false}) %>
