@@ -27,7 +27,7 @@
 
         @include user-select("none");
 
-        @include transition(color background-color top, 0.25s ease("out-expo"));
+        @include transition(color background-color top, 0.5s ease("out-elastic"));
     }
 
     &:hover {
@@ -41,6 +41,7 @@
             color: $colorText;
             background-color: white;
             top: s(-0.75);
+            @include transition(color background-color top, 0.25s ease("out-expo"));
         }
         .code .value {
             background-color: $colorPost;

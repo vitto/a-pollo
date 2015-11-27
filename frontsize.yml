@@ -1,13 +1,13 @@
 ---
-theme: apollo
+theme: a-pollo
 
 path:
     test: frontsize/test/csslint/
-    css: hexo/themes/apollo/source/css/
-    images: hexo/themes/apollo/source/img/
-    fonts: hexo/themes/apollo/source/fonts/
+    css: hexo/themes/a-pollo/source/css/
+    images: hexo/themes/a-pollo/source/img/
+    fonts: hexo/themes/a-pollo/source/fonts/
     frontsize: frontsize/
-    js: hexo/themes/apollo/source/js/
+    js: hexo/themes/a-pollo/source/js/
 
 vendors:
     css:

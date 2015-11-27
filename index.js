@@ -96,17 +96,23 @@ var prepareFiles = function() {
 };
 
 var checkTheme = function() {
-    if (!shell.test('-e', fromModule('/hexo/themes/' + conf.theme))) {
-        console.log('Theme ' + colors.bgBlack(colors.yellow(' ' + conf.theme + ' ')) + ' not installed, searching on project folder');
-        if (!shell.test('-e', fromProcess(conf.theme))) {
-            console.log('Theme ' + colors.bgBlack(colors.yellow(' ' + conf.theme + ' ')) + ' not found, will be used ' + colors.bgBlack(colors.yellow(' apollo ')) + ' as default theme');
-            conf.theme = 'apollo';
+    var defaultTheme = 'a-pollo';
+    if (conf.theme !== undefined) {
+        if (!shell.test('-e', fromModule('/hexo/themes/' + conf.theme))) {
+            console.log('Theme ' + colors.bgBlack(colors.yellow(' ' + conf.theme + ' ')) + ' not installed, searching on project folder');
+            if (!shell.test('-e', fromProcess(conf.theme))) {
+                console.log('Theme ' + colors.bgBlack(colors.yellow(' ' + conf.theme + ' ')) + ' not found, it will be used ' + colors.bgBlack(colors.yellow(' ' + defaultTheme + ' ')) + ' as default theme');
+                conf.theme = defaultTheme;
+            } else {
+                console.log('Installing found theme ' + colors.bgBlack(colors.yellow(' ' + conf.theme + ' ')));
+                shell.cp('-R', path.inside(fromProcess(conf.theme)), fromModule('/hexo/themes/' + conf.theme));
+            }
         } else {
-            console.log('Installing found theme ' + colors.bgBlack(colors.yellow(' ' + conf.theme + ' ')));
-            shell.cp('-R', path.inside(fromProcess(conf.theme)), fromModule('/hexo/themes/' + conf.theme));
+            console.log('Using selected theme ' + colors.bgBlack(colors.yellow(' ' + conf.theme + ' ')));
         }
     } else {
-        console.log('Using selected theme ' + colors.bgBlack(colors.yellow(' ' + conf.theme + ' ')));
+        console.log('Theme not set, it will be used ' + colors.bgBlack(colors.yellow(' ' + defaultTheme + ' ')) + ' as default theme');
+        conf.theme = defaultTheme;
     }
 };
 
@@ -161,7 +167,7 @@ var copyThemeAssets = function() {
 var runBuild = function() {
     var hexo, widgetFiles;
 
-    console.log('Starting ' + colors.bgBlack(colors.yellow(' Apollo ')) + ' ' + packageJSON.version);
+    console.log('Starting ' + colors.bgBlack(colors.yellow(' A-pollo ')) + ' ' + packageJSON.version);
 
     removeFiles();
     checkTheme();
@@ -186,7 +192,7 @@ var runBuild = function() {
 
     hexo.init().then(function(){
         var postData;
-        console.log('Crunching ' + colors.bgBlack(colors.yellow(' Apollo ')) + ' annotations to ' + colors.bgBlack(colors.blue(' Hexo ')) + ' posts...');
+        console.log('Crunching ' + colors.bgBlack(colors.yellow(' A-pollo ')) + ' annotations to ' + colors.bgBlack(colors.blue(' Hexo ')) + ' posts...');
         for (var i = 0; i < widgetFiles.length; i += 1) {
             console.log('Creating post for ' + colors.bgBlack(colors.yellow(' ' + widgetFiles[i][0].file + ' ')));
             postData = formatter.toHexo(widgetFiles[i]);

@@ -1,7 +1,7 @@
-a-pollo
+A-pollo
 ---
 
-[![Version](http://img.shields.io/:version-1.1.23-B89766.svg)][release]
+[![Version](http://img.shields.io/:version-1.1.25-B89766.svg)][release]
 [![Built with nodejs 4.2.2](http://img.shields.io/:nodejs-4.2.2-80BD01.svg)](http://badges.github.io/badgerbadgerbadger/)
 [![MIT licence](http://img.shields.io/:license-MIT-00AFFF.svg)](https://github.com/ideatosrl/frontsize-sass/blob/master/LICENSE.md)
 
@@ -29,7 +29,7 @@ title: Client project
 author: Vittorio Vittori
 date: 2015-11-01
 
-pages: test/apollo/*
+pages: test/a-pollo/*
 public_dir: ./public
 url: http://localhost:7777
 http_server: true
@@ -47,7 +47,7 @@ header:
     link: http://github.com/vitto/a-pollo
 
 footer:
-#    logo: <a href="http://github.com/vitto/apollo"><img width="100px" src="/img/apollo-logo__icon.svg"></a>
+#    logo: <a href="http://github.com/vitto/a-pollo"><img width="100px" src="/img/apollo-logo__icon.svg"></a>
     leftText: The visual CSS style guide for teams
     rightText: <a href="http://github.com/vitto/a-pollo" class="apollo-footer__link"><i class="fa fa-code"></i></a> with <i class="fa fa-heart apollo-footer__heart"></i> by <a href="http://vit.to" class="apollo-footer__link">vitto</a> @ <a href="http://www.ideato.it" class="apollo-footer__link">ideato</a>
 
@@ -93,16 +93,8 @@ From package.json where you are installed `node_modules` folder
 
 ##### Release notes
 
-- Change theme assets folders to make file loading easier
-- Add some test assets for CSS base examples integration
-- Add some new style to isolate base CSS theme selectors from docs
-- Add body selector to isolate base theme styles
-- Add theme text style isolation to keep style guide theme widgets fonts
-- Add some test CSS theme style
-- Update post texts for the guide
-- Change various template elements and clean unused elements
-- Fix url replace for theme css, now work in much more cases
-- Fix broken image header link
+- Set default theme when is not defined
+- Fix various names references around code and folders
 
 ##### Known issues
 
@@ -146,5 +138,5 @@ Written with love by [Vittorio Vittori][vitto] @ [ideato srl][ideato]
 [ideato]: http://www.ideato.it
 [hexo]: https://hexo.io
 [apollo_code_docs]: https://github.com/vitto/a-pollo/blob/master/test/frontsize/themes/default/widgets/button-social.scss
-[apollo_theme]: https://github.com/vitto/a-pollo/tree/master/hexo/themes/apollo
-[release]: https://github.com/vitto/a-pollo/releases/tag/1.1.23
+[apollo_theme]: https://github.com/vitto/a-pollo/tree/master/hexo/themes/a-pollo
+[release]: https://github.com/vitto/a-pollo/releases/tag/1.1.25

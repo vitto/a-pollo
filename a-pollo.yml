@@ -8,7 +8,7 @@ public_dir: ./public
 url: http://localhost:7777
 http_server: true
 use_markdown: true
-theme: apollo
+theme: a-pollo
 
 style:
     docs: test/frontsize/themes/default/widgets/
