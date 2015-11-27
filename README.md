@@ -27,7 +27,7 @@ Place a `a-pollo.yml` in the root folder of your project, this is the default co
 title: Client project       # [required] Will be listened on head's title tag
 
 author: Vittorio Vittori    # [required] Who's managing the style guide
-date: 2015-11-01            # [required] Whe the style guide project was started
+date: 2015-11-01            # [required] When the style guide project was started
 
 public_dir: ./public        # [required] Where the style guide will be genarated
 url: http://localhost:7777  # [optional] Root path of the style guide
@@ -141,6 +141,6 @@ Written with love by [Vittorio Vittori][vitto] @ [ideato srl][ideato]
 [vitto]: https://twitter.com/vttrx
 [ideato]: http://www.ideato.it
 [hexo]: https://hexo.io
-[apollo_code_docs]: https://github.com/vitto/a-pollo/blob/master/test/frontsize/themes/default/widgets/button-social.scss
+[apollo_code_docs]: https://github.com/vitto/a-pollo/blob/master/test/frontsize/themes/a-pollo/widgets/button-social.scss
 [apollo_theme]: https://github.com/vitto/a-pollo/tree/master/hexo/themes/a-pollo
 [release]: https://github.com/vitto/a-pollo/releases/tag/1.1.25
