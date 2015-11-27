@@ -27,7 +27,7 @@
 
         @include user-select("none");
 
-        @include transition(color background-color top, 0.5s ease("out-elastic"));
+        @include transition(color background-color top, 0.5s ease("out-expo"));
     }
 
     &:hover {

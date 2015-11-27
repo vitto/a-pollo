@@ -16,6 +16,10 @@
         @include icon("apollo-logo__icon.svg", 80px, 60px);
     }
 
+    @include modifier("move-top") {
+        margin-top: s(-1);
+    }
+
     @include element("text") {
         margin-top: $size;
         color: $colorLogoText;
