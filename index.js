@@ -38,6 +38,23 @@ var copyHexoModule = function(moduleName) {
     shell.cp('-R', fromModule('/node_modules/' + moduleName), fromModule('/hexo/node_modules'));
 };
 
+var checkPageFile = function(filter, defaultFileName) {
+    var filesToFind, filesFound, defaultFile, pages, destinationFile;
+
+    pages = path.trimRight(process.cwd() + '/' + path.trimLeft(conf.pages));
+    filesToFind = pages + filter;
+    filesFound = glob.sync(filesToFind);
+    defaultFile = fromModule('/hexo/_default_source/' + defaultFileName);
+    destinationFile = pages + '/' + defaultFileName;
+
+    if (filesFound.length === 0) {
+        if (!shell.test('-e', destinationFile)) {
+            console.log('Default index file not found, ' + 'a-pollo'.yellow + ' will create it for you');
+            shell.cp('-f', defaultFile, destinationFile);
+        }
+    }
+};
+
 var hexoModule = function() {
     if (!shell.test('-e', fromModule('/hexo/node_modules'))) {
         console.log('Preparing node modules');
@@ -68,8 +85,9 @@ var prepareFiles = function() {
     shell.mkdir('-p', fromModule('/hexo/source/_posts'));
     shell.mkdir('-p', fromModule('/source'));
 
-    if (conf.pages !== undefined) {
+    if (conf.pages !== undefined || conf.pages) {
         if (checkPath(fromProcess(conf.pages))) {
+            checkPageFile('index.{md,html}', 'index.md');
             shell.cp('-R', path.inside(fromProcess(conf.pages)), fromModule('/hexo/source'));
         }
     } else {
@@ -191,7 +209,7 @@ var runBuild = function() {
 
     hexo.init().then(function(){
         var postData;
-        console.log('Crunching ' + 'a-pollo'.rainbow + ' doc annotations to ' + 'Hexo'.blue + ' posts...');
+        console.log('Crunching ' + 'a-pollo'.yellow + ' doc annotations to ' + 'Hexo'.blue + ' posts...');
         for (var i = 0; i < widgetFiles.length; i += 1) {
             console.log('Creating post for ' + (' ' + widgetFiles[i][0].file + ' ').yellow.bgBlack);
             postData = formatter.toHexo(widgetFiles[i]);

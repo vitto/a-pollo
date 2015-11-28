@@ -110,7 +110,10 @@ From package.json where you are installed `node_modules` folder
 
 ##### Release notes
 
-- Add prompt configuration assistant with 'a-pollo init' when a-pollo.yml is missing
+- Remove unused var
+- Remove unused default hexo theme
+- Fix wrong index style page
+- Add default index to custom static pages when not present
 
 
 ##### Known issues
