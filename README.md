@@ -110,10 +110,8 @@ footer:
 
 ##### Release notes
 
-- Remove unused var
-- Remove unused default hexo theme
-- Fix wrong index style page
-- Add default index to custom static pages when not present
+- Fix missing use_markdown var from default config assistant
+- Change menu nav, added additional default config
 
 
 ##### Known issues

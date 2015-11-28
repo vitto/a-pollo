@@ -21,7 +21,7 @@ var fromProcess = function(targetPath) {
     return process.cwd() + '/' + path.trimRight(path.trimLeft(targetPath));
 };
 
-var conf;
+var conf, defaultConf;
 var packageJSON = json.readFileSync(fromModule('package.json'));
 var hexoConfig, mergedConfig;
 
@@ -69,6 +69,16 @@ var hexoModule = function() {
     }
 };
 
+var addThemeImage = function(imageName) {
+    var defaultLogoSource, defaultLogoTarget, defaultLogoTargetPath;
+    defaultLogoTarget = fromModule('/hexo/source/css/theme/assets/' + imageName);
+    defaultLogoTargetPath = path.trimRight(fromModule('/hexo/source/css/theme/assets/'));
+    if (!shell.test('-e', defaultLogoTarget)) {
+        defaultLogoSource = fromModule('/frontsize/themes/a-pollo/img/' + imageName);
+        shell.cp('-f', defaultLogoSource, defaultLogoTargetPath);
+    }
+};
+
 var prepareFiles = function() {
 
     hexoConfig   = yaml.safeLoad(fs.readFileSync(fromModule('/hexo/_default_config.yml'), 'utf-8'));
@@ -102,6 +112,9 @@ var prepareFiles = function() {
 
     if (checkPath(fromProcess(conf.style.images))) {
         shell.cp('-R', path.inside(fromProcess(conf.style.images)), fromModule('/hexo/source/css/theme/assets'));
+        addThemeImage('apollo-logo__icon.svg');
+        addThemeImage('apollo-logo__icon-grey.svg');
+        addThemeImage('apollo-logo__icon-black.svg');
     }
     if (checkPath(fromProcess(conf.style.fonts))) {
         shell.cp('-R', path.inside(fromProcess(conf.style.fonts)), fromModule('/hexo/source/css/theme/assets'));
@@ -231,6 +244,9 @@ var runProcess = function() {
     if (process.argv.length === 2) {
         if (shell.test('-e', filename)) {
             conf = yaml.safeLoad(fs.readFileSync(filename, 'utf-8'));
+            conf.apolloVersion = packageJSON.version;
+            defaultConf = yaml.safeLoad(fs.readFileSync(fromModule('/a-pollo.yml'), 'utf-8'));
+            conf = absorb(defaultConf, conf);
             runBuild();
         } else {
             console.log('ERROR: '.red + 'file ' + filename.toString().red + ' not found, please run ' + 'a-pollo init'.yellow + ' to create one.');
