@@ -97,9 +97,7 @@ From package.json where you are installed `node_modules` folder
 
 ##### Release notes
 
-- Update unused Hexo plugins
-- Update a-pollo theme templates
-- Update a-pollo CSS theme styles
+- Add prompt configuration assistant with 'a-pollo init' when a-pollo.yml is missing
 
 
 ##### Known issues
