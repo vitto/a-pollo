@@ -113,6 +113,10 @@
         @extend .apollo-code-example;
         cursor: text;
         margin-bottom: s();
+        overflow-x: auto;
+        .code {
+            padding-right: s();
+        }
     }
 
 }
