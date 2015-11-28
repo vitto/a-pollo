@@ -16,5 +16,9 @@ before_script:
 
 script:
     - gulp frontsize:build
-    - cd ./test && gulp frontsize:css
-    - cd ../ && node index.js
+    - cd ./test
+    - gulp frontsize:css
+    - cd ../
+    - mv a-pollo.yml _original_a-pollo.yml
+    - mv a-pollo.travis.yml a-pollo.yml
+    - node index.js
