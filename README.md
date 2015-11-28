@@ -1,4 +1,4 @@
-A-pollo
+a-pollo
 ---
 
 [![Version](http://img.shields.io/:version-1.2.28-B89766.svg)][release]
