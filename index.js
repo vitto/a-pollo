@@ -1,4 +1,5 @@
 var reader = require('./lib/reader'),
+    initializer = require('./lib/initializer'),
     formatter = require('./lib/formatter'),
     absorb = require('absorb'),
     widget = require('./lib/widget'),
@@ -20,7 +21,7 @@ var fromProcess = function(targetPath) {
     return process.cwd() + '/' + path.trimRight(path.trimLeft(targetPath));
 };
 
-var conf = yaml.safeLoad(fs.readFileSync('./a-pollo.yml', 'utf-8'));
+var conf;
 var packageJSON = json.readFileSync(fromModule('package.json'));
 var hexoConfig, mergedConfig;
 
@@ -42,12 +43,8 @@ var hexoModule = function() {
         console.log('Preparing node modules');
         shell.mkdir('-p', fromModule('/hexo/node_modules'));
         copyHexoModule('hexo');
-        //copyHexoModule('hexo-deployer-rsync');
-        //copyHexoModule('hexo-generator-category');
-        //copyHexoModule('hexo-generator-tag');
         copyHexoModule('hexo-renderer-ejs');
         copyHexoModule('hexo-renderer-marked');
-        //copyHexoModule('hexo-renderer-stylus');
         copyHexoModule('hexo-server');
         console.log('Done.');
     } else {
@@ -165,8 +162,6 @@ var copyThemeAssets = function() {
 var runBuild = function() {
     var hexo, widgetFiles;
 
-    console.log('Starting ' + colors.bgBlack(colors.yellow(' A-pollo ')) + ' ' + packageJSON.version);
-
     removeFiles();
     checkTheme();
     hexoModule();
@@ -203,4 +198,27 @@ var runBuild = function() {
     });
 };
 
-runBuild();
+var runProcess = function() {
+
+    console.log('Starting ' + colors.bgBlack(' a-pollo '.rainbow) + ' ' + packageJSON.version);
+
+    var filename = process.cwd() + '/a-pollo.yml';
+
+    if (process.argv.length === 2) {
+        if (shell.test('-e', filename)) {
+            conf = yaml.safeLoad(fs.readFileSync(filename, 'utf-8'));
+            runBuild();
+        } else {
+            console.log('ERROR: '.red + 'file ' + filename.toString().red + ' not found, please run ' + 'a-pollo init'.yellow + ' to create one.');
+        }
+    } else {
+        process.argv.forEach(function(val, index) {
+            if (val === 'init') {
+                initializer.start();
+                return;
+            }
+        });
+    }
+};
+
+runProcess();

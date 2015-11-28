@@ -1,5 +1,6 @@
 title: Main page
 date: {{date}}
+layout: index
 ---
 
 Here it will be reported:
