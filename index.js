@@ -4,7 +4,7 @@ var reader = require('./lib/reader'),
     absorb = require('absorb'),
     widget = require('./lib/widget'),
     server = require('./lib/http-server'),
-    colors = require('colors/safe'),
+    colors = require('colors'),
     shell = require('shelljs'),
     path = require('./lib/path'),
     yaml = require('js-yaml'),
@@ -29,7 +29,7 @@ var checkPath = function(path) {
     if (shell.test('-e', path)) {
         return true;
     } else {
-        console.error(colors.bgBlack(colors.red(' ERROR: ' + path + ' ')) + ' in your ' + colors.bgBlack(colors.yellow(' a-pollo.yml ')) + ' config not found.');
+        console.error(' ERROR: ' + path + ' '.red.bgBlack + ' in your ' + 'a-pollo.yml'.yellow + ' config not found.');
         return false;
     }
 };
@@ -94,19 +94,19 @@ var checkTheme = function() {
     var defaultTheme = 'a-pollo';
     if (conf.theme !== undefined) {
         if (!shell.test('-e', fromModule('/hexo/themes/' + conf.theme))) {
-            console.log('Theme ' + colors.bgBlack(colors.yellow(' ' + conf.theme + ' ')) + ' not installed, searching on project folder');
+            console.log('Theme ' + (' ' + conf.theme + ' ').yellow.bgBlack + ' not installed, searching on project folder');
             if (!shell.test('-e', fromProcess(conf.theme))) {
-                console.log('Theme ' + colors.bgBlack(colors.yellow(' ' + conf.theme + ' ')) + ' not found, it will be used ' + colors.bgBlack(colors.yellow(' ' + defaultTheme + ' ')) + ' as default theme');
+                console.log('Theme ' + (' ' + conf.theme + ' ').yellow.bgBlack + ' not found, it will be used ' + (' ' + defaultTheme + ' ').yellow.bgBlack + ' as default theme');
                 conf.theme = defaultTheme;
             } else {
-                console.log('Installing found theme ' + colors.bgBlack(colors.yellow(' ' + conf.theme + ' ')));
+                console.log('Installing found theme ' + (' ' + conf.theme + ' ').yellow.bgBlack);
                 shell.cp('-R', path.inside(fromProcess(conf.theme)), fromModule('/hexo/themes/' + conf.theme));
             }
         } else {
-            console.log('Using selected theme ' + colors.bgBlack(colors.yellow(' ' + conf.theme + ' ')));
+            console.log('Using selected theme ' + (' ' + conf.theme + ' ').yellow.bgBlack);
         }
     } else {
-        console.log('Theme not set, it will be used ' + colors.bgBlack(colors.yellow(' ' + defaultTheme + ' ')) + ' as default theme');
+        console.log('Theme not set, it will be used ' + (' ' + defaultTheme + ' ').yellow.bgBlack + ' as default theme');
         conf.theme = defaultTheme;
     }
 };
@@ -125,11 +125,17 @@ var removeFiles = function() {
 };
 
 var prepareHTTP = function() {
+
     setTimeout(function(){
         removeFiles();
     }, 500);
-    if (conf.http_server !== undefined || conf.http_server) {
+
+    console.log('Build finished successfully.'.green);
+
+    if (conf.http_server !== undefined && conf.http_server !== false) {
         server.start(conf.public_dir, conf.url);
+    } else {
+        console.log('The style guide was generated here: ' + conf.public_dir.toString().yellow);
     }
 };
 
@@ -167,15 +173,15 @@ var runBuild = function() {
     hexoModule();
     prepareFiles();
 
-    console.log('Loading data from ' + colors.bgBlack(colors.yellow(' ' + conf.style.docs + ' ')) + ' folder');
+    console.log('Loading doc annotations data from ' + (' ' + conf.style.docs + ' ').yellow.bgBlack + ' folder');
     widgetFiles = reader.load(fromProcess(conf.style.docs));
 
     copyThemeAssets();
 
-    console.log('Initializing ' + colors.bgBlack(colors.blue(' Hexo ')));
+    console.log('Initializing ' + 'Hexo'.blue);
 
     if (checkPath(fromModule('/hexo/_config.yml'))) {
-        console.log('Loading ' + colors.bgBlack(colors.blue(' Hexo ')) + ' configuration');
+        console.log('Loading ' + 'Hexo'.blue + ' configuration');
     }
 
     hexo = new Hexo(process.cwd(), {
@@ -185,22 +191,22 @@ var runBuild = function() {
 
     hexo.init().then(function(){
         var postData;
-        console.log('Crunching ' + colors.bgBlack(colors.yellow(' A-pollo ')) + ' annotations to ' + colors.bgBlack(colors.blue(' Hexo ')) + ' posts...');
+        console.log('Crunching ' + 'a-pollo'.rainbow + ' doc annotations to ' + 'Hexo'.blue + ' posts...');
         for (var i = 0; i < widgetFiles.length; i += 1) {
-            console.log('Creating post for ' + colors.bgBlack(colors.yellow(' ' + widgetFiles[i][0].file + ' ')));
+            console.log('Creating post for ' + (' ' + widgetFiles[i][0].file + ' ').yellow.bgBlack);
             postData = formatter.toHexo(widgetFiles[i]);
             postData.content = widget.toMarkdown(widgetFiles[i], conf);
             // console.log(postData.docs[0].htmlSnippet)
             hexo.post.create(postData, true);
         }
-        console.log('Waiting for ' + colors.bgBlack(colors.blue(' Hexo ')) + ' to finish posts creation...');
+        console.log('Waiting for ' + 'Hexo'.blue + ' to finish...');
         postCreated(widgetFiles.length);
     });
 };
 
 var runProcess = function() {
 
-    console.log('Starting ' + colors.bgBlack(' a-pollo '.rainbow) + ' ' + packageJSON.version);
+    console.log('Starting ' + 'a-pollo '.rainbow + packageJSON.version);
 
     var filename = process.cwd() + '/a-pollo.yml';
 
