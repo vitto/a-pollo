@@ -14,10 +14,32 @@ The module works with [Hexo][hexo], an easy to use and powerful blog framework, 
 
 ---
 
-To install a-pollo in your project:
+### To install a-pollo in your project:
 
 ```
 npm install --save a-pollo
+```
+
+---
+
+### To create a config file
+
+From `package.json` where you have installed `node_modules` folder
+
+```
+./node_modules/.bin/a-pollo init
+```
+
+It will start a process will help you to build the first one.
+
+---
+
+### To run a-pollo
+
+From `package.json` where you have installed `node_modules` folder
+
+```
+./node_modules/.bin/a-pollo
 ```
 
 ---
@@ -63,7 +85,7 @@ footer:
 #### Configuration
 
 | Property  | Shared with Hexo config | Description |
-| --- | :---: | --- |
+| :--- | :---: | :--- |
 | `title` | **yes** | Will be shown on HTML page title |
 | `author` | **yes** | Will be shown around the pages |
 | `date` | **yes** | Not yet used |
@@ -83,28 +105,6 @@ footer:
 | `footer.logo` | *no* | An image inside `style.images` to be used as image footer inside a-pollo theme |
 | `footer.leftText` | *no* | The left text or HTML on the footer inside a-pollo theme |
 | `footer.rightText` | *no* | The right text or HTML on the footer inside a-pollo theme |
-
----
-
-### To create a config file
-
-From package.json where you are installed `node_modules` folder
-
-```
-./node_modules/.bin/a-pollo init
-```
-
-It will start a process will help you to build the first one.
-
----
-
-### To run a-pollo
-
-From package.json where you are installed `node_modules` folder
-
-```
-./node_modules/.bin/a-pollo
-```
 
 ---
 
