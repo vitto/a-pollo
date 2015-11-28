@@ -1,7 +1,7 @@
 a-pollo
 ---
 
-[![Version](http://img.shields.io/:version-1.2.32-B89766.svg)][release]
+[![Version](http://img.shields.io/:version-1.2.35-B89766.svg)][release]
 [![TravisCI](https://travis-ci.org/vitto/a-pollo.svg?branch=master)](https://travis-ci.org/vitto/a-pollo/builds)
 [![Built with nodejs 4.2.2](http://img.shields.io/:nodejs-4.2.2-80BD01.svg)](http://badges.github.io/badgerbadgerbadger/)
 [![MIT licence](http://img.shields.io/:license-MIT-00AFFF.svg)](https://github.com/ideatosrl/frontsize-sass/blob/master/LICENSE.md)
@@ -111,7 +111,7 @@ footer:
 ##### Release notes
 
 - Fix missing use_markdown var from default config assistant
-- Change menu nav, added additional default config
+- Change menu nav, added additional defaults to config
 
 
 ##### Known issues
@@ -157,4 +157,4 @@ Written with love by [Vittorio Vittori][vitto] @ [ideato srl][ideato]
 [hexo]: https://hexo.io
 [apollo_code_docs]: https://github.com/vitto/a-pollo/blob/master/test/frontsize/themes/a-pollo/widgets/button-social.scss
 [apollo_theme]: https://github.com/vitto/a-pollo/tree/master/hexo/themes/a-pollo
-[release]: https://github.com/vitto/a-pollo/releases/tag/1.2.32
+[release]: https://github.com/vitto/a-pollo/releases/tag/1.2.35
