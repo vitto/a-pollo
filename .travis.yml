@@ -17,4 +17,4 @@ before_script:
 script:
     - gulp frontsize:build
     - cd ./test && gulp frontsize:css
-    - node index.js
+    - cd ../ && node index.js
