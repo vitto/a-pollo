@@ -86,6 +86,18 @@ footer:
 
 ---
 
+### To create a config file
+
+From package.json where you are installed `node_modules` folder
+
+```
+./node_modules/.bin/a-pollo init
+```
+
+It will start a process will help you to build the first one.
+
+---
+
 ### To run a-pollo
 
 From package.json where you are installed `node_modules` folder
