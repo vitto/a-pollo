@@ -116,11 +116,11 @@ footer:
 ##### Known issues
 
 - Conventions examples missing for CSS and HTML
-- Default theme not responsive yet
+- Default theme is not responsive yet
 - If `use_markdown` is set to `false`, code snippets are not correctly indented
 - If `use_markdown` is set to `false`, code snippets cannot be copied on clipboard
 - Incomplete customizable HTML template, complete at 95%
-- Var names will change in the future
+- Some of the doc vars names will probably change in the future
 - Needs a lot of micro optimizations
 
 ---
