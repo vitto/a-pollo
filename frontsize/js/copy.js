@@ -38,7 +38,7 @@ $(function(){
 
     new Clipboard('.apollo-code-example');
 
-    $(document).on('click', '.apollo-page > p > code, .apollo-widget__description code', function(){
+    $(document).on('click', '.apollo-post > p > code, .apollo-widget__description code', function(){
         $(this).selectText();
     });
 
