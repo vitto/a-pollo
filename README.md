@@ -1,3 +1,5 @@
+![a-pollo preview](https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/apollo-logo__icon.svg)
+
 a-pollo
 ---
 
