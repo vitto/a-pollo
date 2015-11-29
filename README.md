@@ -155,7 +155,7 @@ Written with love by [Vittorio Vittori][vitto] @ [ideato srl][ideato]
 [vitto]: https://twitter.com/vttrx
 [ideato]: http://www.ideato.it
 [hexo]: https://hexo.io
-[apollo_code_docs]: https://github.com/vitto/a-pollo/blob/master/test/frontsize/themes/a-pollo/widgets/button-social.scss
+[apollo_code_docs]: https://github.com/vitto/a-pollo/blob/master/test/frontsize/themes/default/widgets/button-social.scss
 [apollo_theme]: https://github.com/vitto/a-pollo/tree/master/hexo/themes/a-pollo
 [release]: https://github.com/vitto/a-pollo/releases/tag/1.3.42
 [a-pollo-preview]: https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/apollo-example.png
