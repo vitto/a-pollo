@@ -24,11 +24,17 @@
 
     @include row();
 
+    @media #{$till-tablet-portrait} {
+        padding-left: s();
+        padding-right: s();
+        text-align: center;
+    }
+
     @include element("left-column") {
         @include column(
             6, 6,
             6, 6,
-            1, 1
+            12, 12
         );
 
         @include baseFooterElements();
@@ -43,11 +49,12 @@
         @include column(
             6, 6,
             6, 6,
-            1, 1
+            12, 12
         );
 
         @media #{$till-tablet-portrait} {
-            text-align: left;
+            margin-top: s(0.25);
+            text-align: center;
         }
 
         @include baseFooterElements();

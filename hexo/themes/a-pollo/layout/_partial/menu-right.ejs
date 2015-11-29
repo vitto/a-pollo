@@ -1,34 +1,5 @@
 <nav>
-    <ul class="apollo-menu apollo-menu--first">
-        <li class="apollo-menu__title">
-            a-pollo
-        </li>
-        <li class="apollo-menu__item">
-            <a href="<%- config.apollo.homepage %>/releases/tag/<%- config.apollo.version %>" class="apollo-menu__link">
-                <i class="fa fa-code-fork"></i>&nbsp; Version <%- config.apollo.version %>
-            </a>
-        </li>
-        <li class="apollo-menu__item">
-            <a href="<%- config.apollo.homepage %>#readme" class="apollo-menu__link">
-                <i class="fa fa-github-alt"></i>&nbsp; GitHub
-            </a>
-        </li>
-        <li class="apollo-menu__item">
-            <a href="https://www.npmjs.com/package/a-pollo" class="apollo-menu__link">
-                <i class="fa fa-code"></i>&nbsp; npm
-            </a>
-        </li>
-        <li class="apollo-menu__item">
-            <a href="https://www.ideato.it" class="apollo-menu__link">
-                <i class="fa fa-briefcase"></i>&nbsp; ideato
-            </a>
-        </li>
-        <li class="apollo-menu__item">
-            <a href="https://vit.to" class="apollo-menu__link">
-                <i class="fa fa-coffee"></i>&nbsp; vitto
-            </a>
-        </li>
-    </ul>
+    <%- partial('_partial/menu-item-infos', { use_margin: false }) %>
 
     <% site.categories.each(function(category, i){ %>
         <% if (category.posts.length > 0) { %>

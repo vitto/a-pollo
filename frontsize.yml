@@ -51,3 +51,4 @@ js:
         - vendors/clipboard/dist/clipboard.js
         - vendors/jquery/dist/jquery.js
         - frontsize/js/copy.js
+        - frontsize/js/mobile-menu.js

@@ -2,9 +2,18 @@
 .apollo-post {
     display: block;
     background-color: $colorPost;
+    min-height: 100vh;
+
+    // @include box-shadow(0 2px 10px rgba(0,0,0,0.2));
+    // @media #{$till-tablet-portrait} {
+    //     @include box-shadow(none);
+    // }
 
     @include modifier("padded") {
         padding: s(3);
+        @media #{$till-tablet-portrait} {
+            padding: s(1.5) s();
+        }
     }
 
     @include setFont();

@@ -3,7 +3,7 @@
         <% if (config.footer && config.footer.logo) { %>
             <%- config.footer.logo %>
         <% } else { %>
-            <a href="<%- config.apollo.homepage %>#readme" class="apollo-logo">
+            <a href="<%= config.apollo.homepage %>#readme" class="apollo-logo">
                 <img width="80px" src="/img/apollo-logo__icon.svg">
                 <div class="apollo-logo__text">a-pollo</div>
             </a>
@@ -23,7 +23,7 @@
             <% if (config.footer && config.footer.rightText) { %>
                 <%- config.footer.rightText %>
             <% } else { %>
-                <a href="<%- config.apollo.homepage %>#readme" class="apollo-footer__link">
+                <a href="<%= config.apollo.homepage %>#readme" class="apollo-footer__link">
                     <i class="fa fa-code"></i>
                 </a>
                 with <i class="fa fa-heart apollo-footer__heart"></i>

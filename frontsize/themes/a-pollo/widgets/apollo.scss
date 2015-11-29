@@ -1,22 +1,25 @@
 .apollo {
     @include row();
-    margin-top: s(3);
+    padding-top: s(3);
 
     @include element("aside") {
         margin-top: s(4);
         padding: 0 s(2) s(2) s(2);
+        @media #{$till-tablet-landscape} {
+            display: none;
+        }
         @include column(
             2, 2,
-            2, 2,
-            1, 1
+            2, 12,
+            12, 12
         );
     }
 
     @include element("page") {
         @include column(
             8, 8,
-            8, 8,
-            1, 1
+            8, 12,
+            12, 12
         );
     }
 }

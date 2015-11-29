@@ -8,6 +8,12 @@
     margin-right: s(-3);
     padding: s() s(3);
 
+    @media #{$till-tablet-portrait} {
+        margin-left: s(-1);
+        margin-right: s(-1);
+        padding: s();
+    }
+
     @include element("inner") {
         float: left;
         position: relative;

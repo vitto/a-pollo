@@ -1,0 +1,27 @@
+<div class="apollo-menu-mobile">
+    <div>
+        <% if (header.link) { %>
+            <a href="<%= header.link %>" class="apollo-menu-mobile__logo" style="background-image: url(/css/theme/assets/<%= header.logo %>);"></a>
+        <% } else { %>
+            <div class="apollo-menu-mobile__logo" style="background-image: url(/css/theme/assets/<%= header.logo %>);"></div>
+        <% } %>
+        <div class="apollo-menu-mobile__title-box">
+            <div class="apollo-menu-mobile__category">
+                <% if (page.docs !== undefined) { %>
+                    <%= page.docs[0].category %>
+                <% } else if (page.category !== undefined) { %>
+                    <%= page.category %>
+                <% } %>
+            </div>
+            <div class="apollo-menu-mobile__title">
+                <%= page.title %>
+            </div>
+        </div>
+        <div class="apollo-menu-mobile__switch"></div>
+    </div>
+</div>
+
+<nav class="apollo-menu-mobile-nav">
+    <%- partial('_partial/menu') %>
+    <%- partial('_partial/menu-item-infos', { use_margin: true }) %>
+</nav>
