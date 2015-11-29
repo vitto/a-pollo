@@ -110,10 +110,7 @@ footer:
 
 ##### Release notes
 
-- Fix js broken selector
-- Fix config data merge
-- Add folder sanitize methods, in prompt assistant
-- Add better config error trace
+- Changed some theme var for project consistency
 
 
 ##### Known issues

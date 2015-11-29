@@ -249,7 +249,10 @@ var runProcess = function() {
     if (process.argv.length === 2) {
         if (shell.test('-e', filename)) {
             var confToMerge = yaml.safeLoad(fs.readFileSync(filename, 'utf-8'));
-            confToMerge.apolloVersion = packageJSON.version;
+            confToMerge.apollo = {
+                version: packageJSON.version,
+                homepage: packageJSON.homepage
+            };
             defaultConf = yaml.safeLoad(fs.readFileSync(fromModule('/a-pollo.yml'), 'utf-8'));
             conf = absorb(confToMerge, defaultConf, false, true);
             runBuild();
