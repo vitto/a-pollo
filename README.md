@@ -10,6 +10,8 @@ A-pollo generates **CSS style guide documentation** from your [code comments][ap
 
 It's been written for teams who need to check CSS widgets with examples, copy html related code with no pain to go through browser HTML debugger.
 
+![a-pollo preview](https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/apollo-example.png)
+
 The module works with [Hexo][hexo], an easy to use and powerful blog framework, so if you'd like to [write your own theme][apollo_theme] you'll have the power this nice tool in your fingers.
 
 ---
