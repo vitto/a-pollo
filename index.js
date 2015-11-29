@@ -25,11 +25,16 @@ var conf, defaultConf;
 var packageJSON = json.readFileSync(fromModule('package.json'));
 var hexoConfig, mergedConfig;
 
-var checkPath = function(path) {
+var checkPath = function(path, configVarName) {
     if (shell.test('-e', path)) {
         return true;
     } else {
-        console.error(' ERROR: ' + path + ' '.red.bgBlack + ' in your ' + 'a-pollo.yml'.yellow + ' config not found.');
+        var varName = configVarName || false;
+        if (varName) {
+            console.error(' ERROR: '.red + ' the file ' + (path).red + ' in ' + (varName).yellow + ' property from your ' + 'a-pollo.yml'.yellow + ' config not found.');
+        } else {
+            console.error(' ERROR: '.red + ' file ' + (path).red + ' in your ' + 'a-pollo.yml'.yellow + ' config not found.');
+        }
         return false;
     }
 };
@@ -87,7 +92,7 @@ var prepareFiles = function() {
         shell.rm('-Rf', fromProcess(conf.public_dir));
     }
 
-    mergedConfig = absorb(hexoConfig, conf);
+    mergedConfig = absorb(conf, hexoConfig, false, true);
 
     fs.writeFileSync(fromModule('/hexo/_config.yml'), yaml.safeDump(mergedConfig));
 
@@ -96,7 +101,7 @@ var prepareFiles = function() {
     shell.mkdir('-p', fromModule('/source'));
 
     if (conf.pages !== undefined || conf.pages) {
-        if (checkPath(fromProcess(conf.pages))) {
+        if (checkPath(fromProcess(conf.pages), 'pages')) {
             checkPageFile('index.{md,html}', 'index.md');
             shell.cp('-R', path.inside(fromProcess(conf.pages)), fromModule('/hexo/source'));
         }
@@ -110,13 +115,13 @@ var prepareFiles = function() {
 
     console.log('Copying CSS theme images and fonts');
 
-    if (checkPath(fromProcess(conf.style.images))) {
+    if (checkPath(fromProcess(conf.style.images), 'style.images')) {
         shell.cp('-R', path.inside(fromProcess(conf.style.images)), fromModule('/hexo/source/css/theme/assets'));
         addThemeImage('apollo-logo__icon.svg');
         addThemeImage('apollo-logo__icon-grey.svg');
         addThemeImage('apollo-logo__icon-black.svg');
     }
-    if (checkPath(fromProcess(conf.style.fonts))) {
+    if (checkPath(fromProcess(conf.style.fonts), 'style.fonts')) {
         shell.cp('-R', path.inside(fromProcess(conf.style.fonts)), fromModule('/hexo/source/css/theme/assets'));
     }
 };
@@ -186,7 +191,7 @@ var postCreated = function(widgetFilesLength) {
 
 var copyThemeAssets = function() {
     var cssFileData;
-    if (checkPath(fromProcess(conf.style.css))) {
+    if (checkPath(fromProcess(conf.style.css), 'style.css')) {
         console.log('Copying CSS theme');
         cssFileData = fs.readFileSync(fromProcess(conf.style.css), 'utf8');
         cssFileData = cssFileData.replace(/url\(('|"){1,}(.*\/)(.*)('|"){1,}\)/g, 'url($1/css/theme/assets/$3$4)');
@@ -243,10 +248,10 @@ var runProcess = function() {
 
     if (process.argv.length === 2) {
         if (shell.test('-e', filename)) {
-            conf = yaml.safeLoad(fs.readFileSync(filename, 'utf-8'));
-            conf.apolloVersion = packageJSON.version;
+            var confToMerge = yaml.safeLoad(fs.readFileSync(filename, 'utf-8'));
+            confToMerge.apolloVersion = packageJSON.version;
             defaultConf = yaml.safeLoad(fs.readFileSync(fromModule('/a-pollo.yml'), 'utf-8'));
-            conf = absorb(defaultConf, conf);
+            conf = absorb(confToMerge, defaultConf, false, true);
             runBuild();
         } else {
             console.log('ERROR: '.red + 'file ' + filename.toString().red + ' not found, please run ' + 'a-pollo init'.yellow + ' to create one.');
