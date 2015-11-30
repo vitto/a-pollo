@@ -21,8 +21,6 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 - Documentation tags for SASS
 - Documentation tags for LESS
 
----
-
 ##### Release notes
 
 - Hide redundant page header infos on responsive layout
