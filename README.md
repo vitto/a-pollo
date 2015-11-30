@@ -12,11 +12,38 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 ![a-pollo preview][a-pollo-preview]
 
+## Roadmap
+
+- Default style guide articles for CSS
+- Default style guide articles for HTML
+- Single widget tests with csslint
+- Single widget stylestats report
+- Documentation tags for SASS
+- Documentation tags for LESS
+
+---
+
+##### Release notes
+
+- Hide redundant page header infos on responsive layout
+
+##### Known issues
+
+- Conventions examples missing for CSS and HTML
+- If `use_markdown` is set to `false`, code snippets are not correctly indented
+- If `use_markdown` is set to `false`, code snippets cannot be copied on clipboard
+- Incomplete customizable HTML template, complete at 95%
+- Some of the doc vars names will probably change in the future
+- Needs a lot of micro optimizations
+
+
+---
+
 The module works with [Hexo][hexo], an easy to use and powerful blog framework, so if you'd like to [write your own theme][apollo_theme] you'll have the power this nice tool in your fingers.
 
 ---
 
-### To install a-pollo in your project:
+### To install a-pollo in your project
 
 ```
 npm install --save a-pollo
@@ -107,22 +134,6 @@ footer:
 | `footer.logo`        | *no*                 | An image inside `style.images` to be used as image footer inside a-pollo theme |
 | `footer.leftText`    | *no*                 | The left text or HTML on the footer inside a-pollo theme |
 | `footer.rightText`   | *no*                 | The right text or HTML on the footer inside a-pollo theme |
-
----
-
-##### Release notes
-
-- Hide redundant page header infos on responsive layout
-
-##### Known issues
-
-- Conventions examples missing for CSS and HTML
-- Default theme is not responsive yet
-- If `use_markdown` is set to `false`, code snippets are not correctly indented
-- If `use_markdown` is set to `false`, code snippets cannot be copied on clipboard
-- Incomplete customizable HTML template, complete at 95%
-- Some of the doc vars names will probably change in the future
-- Needs a lot of micro optimizations
 
 ---
 
