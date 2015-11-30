@@ -1,5 +1,9 @@
 .apollo-project-header {
 
+    @media #{$till-tablet-landscape} {
+        display: none;
+    }
+
     @include element("hr") {
         @include baseHr();
         margin-top: s(1.5);

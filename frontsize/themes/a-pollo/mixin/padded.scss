@@ -1,0 +1,8 @@
+@mixin postPadded() {
+    @include modifier("padded") {
+        padding: s(3);
+        @media #{$till-tablet-portrait} {
+            padding: s(1.5) s();
+        }
+    }
+}
