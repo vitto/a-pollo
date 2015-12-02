@@ -4,11 +4,31 @@
     background-color: $colorPost;
     min-height: 100vh;
 
+    @include modifier("white") {
+        background-color: white;
+    }
+
     @include postPadded();
 
     @include setFont();
     @include baseLink();
     @include baseBold();
+    @include fontAwesome();
+
+    @include element("markown-inline") {
+        display: inline-block;
+        > p {
+            @include setFont();
+            @include baseLink();
+            @include baseBold();
+            @include fontAwesome();
+        }
+    }
+
+    @include element("list-title") {
+        list-style-type: none;
+        margin-left: 0 !important;
+    }
 
     > table {
         width: 100%;
@@ -23,6 +43,7 @@
 
         th, td {
             padding: s(0.25) s(0.5);
+            @include fontAwesome();
         }
 
         tr:nth-child(odd) {
@@ -34,6 +55,7 @@
 
     > p,
     > blockquote p {
+        @include fontAwesome();
         @include setFont();
         @include baseLink();
         @include baseBold();
@@ -56,6 +78,7 @@
             @include setFont();
             @include baseLink();
             @include baseBold();
+            @include fontAwesome();
         }
     }
 
@@ -81,6 +104,7 @@
             @include setFont();
             @include baseLink();
             @include baseBold();
+            @include fontAwesome();
         }
     }
 
@@ -95,6 +119,7 @@
         font-family: $font-heading;
         font-weight: 500;
         line-height: 1;
+        @include fontAwesome();
     }
 
     > h1 { font-size : $h1; }

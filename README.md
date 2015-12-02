@@ -24,10 +24,11 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 ##### Release notes
 
 - Hide redundant page header infos on responsive layout
+- Create default index with project stats
+- Remove author config tag in favor of developers and designers tags
 
 ##### Known issues
 
-- Conventions examples missing for CSS and HTML
 - If `use_markdown` is set to `false`, code snippets are not correctly indented
 - If `use_markdown` is set to `false`, code snippets cannot be copied on clipboard
 - Incomplete customizable HTML template, complete at 95%

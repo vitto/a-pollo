@@ -2,5 +2,57 @@
     <% if (config.header && config.header.logo) { %>
         <%- partial('_partial/doc-header', { header: config.header }) %>
     <% } %>
-    <%- markdown(page.content) %>
+
+    <h1>Project details</h1>
+
+    <i class="fa fa-user-secret"></i>&nbsp; Project for <span class="apollo-post__markown-inline"><%- markdown(config.client) %></span><br>
+    <i class="fa fa-pencil"></i>&nbsp; Developed by <span class="apollo-post__markown-inline"><%- markdown(config.developers) %></span><br>
+    <i class="fa fa-paint-brush"></i>&nbsp; Designed by <span class="apollo-post__markown-inline"><%- markdown(config.designers) %></span>
+
+    <hr>
+
+    <h1>Project stats</h1>
+
+    <p>
+        <strong>Time</strong><br>
+        <i class="fa fa-clock-o"></i>&nbsp; Started on <%= config.stats.date %><br>
+        <i class="fa fa-flag-checkered"></i>&nbsp; Last edit on <%= config.stats.dateLastWidget %><br>
+        <i class="fa fa-hourglass-3"></i>&nbsp; <%= config.stats.dateDuration.years %>, <%= config.stats.dateDuration.months %>, <%= config.stats.dateDuration.date %>
+    </p>
+
+    <p>
+        <strong>Files</strong><br>
+        <i class="fa fa-cubes"></i>&nbsp; 42 widgets created<br>
+        <i class="fa fa-desktop"></i>&nbsp; 106 examples displayed<br>
+    </p>
+
+    <% if (config.libs !== undefined) { %>
+        <hr>
+
+        <h3>Code libraries used</h3>
+
+        <% if (config.libs.bowerDependencies !== undefined) { %>
+            <p>
+                <ul>
+                    <li class="apollo-post__list-title"><strong>Bower</strong></li>
+                    <% for(var key in config.libs.bowerDependencies) { %>
+                        <li><%= key %> <%= config.libs.bowerDependencies[key] %></li>
+                    <% } %>
+                </ul>
+            </p>
+        <% } %>
+
+        <% if (config.libs.nodeDependencies !== undefined) { %>
+        <p>
+            <ul>
+                <li class="apollo-post__list-title"><strong>Node</strong></li>
+                <% for(var key in config.libs.nodeDependencies) { %>
+                    <li><%= key %> <%= config.libs.nodeDependencies[key] %></li>
+                <% } %>
+            </ul>
+        </p>
+        <% } %>
+    <% } %>
+
+
 </article>

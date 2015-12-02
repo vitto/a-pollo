@@ -24,6 +24,7 @@ var fromProcess = function(targetPath) {
 var conf, defaultConf;
 var packageJSON = json.readFileSync(fromModule('package.json'));
 var hexoConfig, mergedConfig;
+var widgetFiles;
 
 var checkPath = function(path, configVarName) {
     if (shell.test('-e', path)) {
@@ -65,6 +66,7 @@ var hexoModule = function() {
         console.log('Preparing node modules');
         shell.mkdir('-p', fromModule('/hexo/node_modules'));
         copyHexoModule('hexo');
+        copyHexoModule('hexo-generator-index');
         copyHexoModule('hexo-renderer-ejs');
         copyHexoModule('hexo-renderer-marked');
         copyHexoModule('hexo-server');
@@ -86,15 +88,14 @@ var addThemeImage = function(imageName) {
 
 var prepareFiles = function() {
 
-    hexoConfig   = yaml.safeLoad(fs.readFileSync(fromModule('/hexo/_default_config.yml'), 'utf-8'));
 
     if (shell.test('-e', fromProcess(conf.public_dir))) {
         shell.rm('-Rf', fromProcess(conf.public_dir));
     }
 
-    mergedConfig = absorb(conf, hexoConfig, false, true);
-
-    fs.writeFileSync(fromModule('/hexo/_config.yml'), yaml.safeDump(mergedConfig));
+    // hexoConfig   = yaml.safeLoad(fs.readFileSync(fromModule('/hexo/_default_config.yml'), 'utf-8'));
+    // mergedConfig = absorb(conf, hexoConfig, false, true);
+    // fs.writeFileSync(fromModule('/hexo/_config.yml'), yaml.safeDump(mergedConfig));
 
     shell.mkdir('-p', fromModule('/hexo/source'));
     shell.mkdir('-p', fromModule('/hexo/source/_posts'));
@@ -102,7 +103,7 @@ var prepareFiles = function() {
 
     if (conf.pages !== undefined || conf.pages) {
         if (checkPath(fromProcess(conf.pages), 'pages')) {
-            checkPageFile('index.{md,html}', 'index.md');
+            //checkPageFile('index.{md,html}', 'index.md');
             shell.cp('-R', path.inside(fromProcess(conf.pages)), fromModule('/hexo/source'));
         }
     } else {
@@ -202,15 +203,10 @@ var copyThemeAssets = function() {
 };
 
 var runBuild = function() {
-    var hexo, widgetFiles;
-
-    removeFiles();
+    var hexo;
     checkTheme();
     hexoModule();
     prepareFiles();
-
-    console.log('Loading doc annotations data from ' + (' ' + conf.style.docs + ' ').yellow.bgBlack + ' folder');
-    widgetFiles = reader.load(fromProcess(conf.style.docs));
 
     copyThemeAssets();
 
@@ -246,6 +242,8 @@ var runProcess = function() {
 
     var filename = process.cwd() + '/a-pollo.yml';
 
+    removeFiles();
+
     if (process.argv.length === 2) {
         if (shell.test('-e', filename)) {
             var confToMerge = yaml.safeLoad(fs.readFileSync(filename, 'utf-8'));
@@ -255,6 +253,31 @@ var runProcess = function() {
             };
             defaultConf = yaml.safeLoad(fs.readFileSync(fromModule('/a-pollo.yml'), 'utf-8'));
             conf = absorb(confToMerge, defaultConf, false, true);
+            hexoConfig   = yaml.safeLoad(fs.readFileSync(fromModule('/hexo/_default_config.yml'), 'utf-8'));
+
+            if (conf.libs !== undefined) {
+                if (conf.libs.node !== undefined) {
+                    if (checkPath(fromProcess(conf.libs.node), 'libs.node')) {
+                        conf.libs.nodeDependencies = yaml.safeLoad(fs.readFileSync(fromProcess(conf.libs.node))).dependencies;
+                    }
+                }
+                if (conf.libs.bower !== undefined) {
+                    if (checkPath(fromProcess(conf.libs.bower), 'libs.bower')) {
+                        conf.libs.bowerDependencies = yaml.safeLoad(fs.readFileSync(fromProcess(conf.libs.bower))).dependencies;
+                    }
+                }
+            }
+
+            console.log('Loading doc annotations data from ' + (' ' + conf.style.docs + ' ').yellow.bgBlack + ' folder');
+            widgetFiles = reader.load(fromProcess(conf.style.docs));
+
+            conf = formatter.setProjectStats(conf, widgetFiles);
+            mergedConfig = absorb(conf, hexoConfig, false, true);
+
+            fs.writeFileSync(fromModule('/hexo/_config.yml'), yaml.safeDump(mergedConfig));
+
+            //console.log(mergedConfig);
+
             runBuild();
         } else {
             console.log('ERROR: '.red + 'file ' + filename.toString().red + ' not found, please run ' + 'a-pollo init'.yellow + ' to create one.');

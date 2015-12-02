@@ -9,6 +9,12 @@
     }
 }
 
+@mixin fontAwesome() {
+    > .fa {
+        color: $colorTextBold;
+    }
+}
+
 @mixin baseCode() {
     margin: s() 0 0 0;
     padding: s();

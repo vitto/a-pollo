@@ -11,10 +11,16 @@
                     <%= page.docs[0].category %>
                 <% } else if (page.category !== undefined) { %>
                     <%= page.category %>
+                <% } else { %>
+                    a-pollo
                 <% } %>
             </div>
             <div class="apollo-menu-mobile__title">
-                <%= page.title %>
+                <% if (page.permalink !== undefined) { %>
+                    <%= page.title %>
+                <% } else { %>
+                    <%= config.apollo.version %>
+                <% } %>
             </div>
         </div>
         <div class="apollo-menu-mobile__switch"></div>
