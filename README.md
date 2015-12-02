@@ -26,6 +26,7 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 - Hide redundant page header infos on responsive layout
 - Create default index with project stats
 - Remove author config tag in favor of developers and designers tags
+- Remove slug tag from doc widgets
 
 ##### Known issues
 
