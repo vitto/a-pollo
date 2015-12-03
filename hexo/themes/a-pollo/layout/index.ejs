@@ -16,7 +16,7 @@
     <p>
         <strong>Time</strong><br>
         <i class="fa fa-clock-o"></i>&nbsp; Started on <b><%= config.stats.date %></b><br>
-        <i class="fa fa-flag-checkered"></i>&nbsp; Last edit on <b><%= config.stats.dateLastWidget %></b><br>
+        <i class="fa fa-flag-checkered"></i>&nbsp; Last edit on <b><%= config.stats.widgetLastDate %></b><br>
         <i class="fa fa-hourglass-3"></i>&nbsp;
             <b>
                 <% if (config.stats.dateDuration.years !== '0 years') { %>
@@ -38,8 +38,8 @@
 
     <p>
         <strong>Files</strong><br>
-        <i class="fa fa-cubes"></i>&nbsp; <b>42 widgets</b> created<br>
-        <i class="fa fa-tv"></i>&nbsp; <b>106 examples</b> displayed<br>
+        <i class="fa fa-cubes"></i>&nbsp; <b><%= config.stats.widgetsTotal %></b> created<br>
+        <i class="fa fa-tv"></i>&nbsp; <b><%= config.stats.widgetExamplesTotal %></b> displayed<br>
     </p>
 
     <% if (config.libs !== undefined) { %>
