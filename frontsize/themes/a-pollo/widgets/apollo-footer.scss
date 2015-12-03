@@ -24,6 +24,11 @@
 
     @include row();
 
+    @media #{$till-tablet-landscape} {
+        padding-left: s(3);
+        padding-right: s(3);
+    }
+
     @media #{$till-tablet-portrait} {
         padding-left: s();
         padding-right: s();
