@@ -193,7 +193,7 @@ var postCreated = function(widgetFilesLength) {
 var copyThemeAssets = function() {
     var cssFileData;
     if (checkPath(fromProcess(conf.style.css), 'style.css')) {
-        console.log('Copying CSS theme');
+        console.log('Copying style CSS to display');
         cssFileData = fs.readFileSync(fromProcess(conf.style.css), 'utf8');
         cssFileData = cssFileData.replace(/url\(('|"){1,}(.*\/)(.*)('|"){1,}\)/g, 'url($1/css/theme/assets/$3$4)');
         fs.writeFileSync(fromModule('/hexo/source/css/theme/theme.css'), cssFileData);
