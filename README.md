@@ -24,6 +24,7 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 ##### Release notes
 
 - Add project index link on side menu
+- Add some default static page
 
 ##### Known issues
 
