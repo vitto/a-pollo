@@ -1,0 +1,20 @@
+.apollo-row {
+
+    @include modifier("2-columns") {
+        @include row(2,2,2,2,1,1);
+    }
+
+    @include modifier("3-columns") {
+        @include row(3,3,3,3,1,1);
+    }
+
+    @include modifier("4-columns") {
+        @include row(4,4,3,3,1,1);
+    }
+
+    @include modifier("gain") {
+        width: auto;
+        margin-left: s(-1);
+        margin-right: s(-1);
+    }
+}

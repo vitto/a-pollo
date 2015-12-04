@@ -1,23 +1,7 @@
 <head>
   <meta charset="utf-8">
-  <%
-  var title = page.title;
 
-  if (is_archive()){
-    title = 'Archives';
-
-    if (is_month()){
-      title += ': ' + page.year + '/' + page.month;
-    } else if (is_year()){
-      title += ': ' + page.year;
-    }
-  } else if (is_category()){
-    title = 'Category: ' + page.category;
-  } else if (is_tag()){
-    title = 'Tag: ' + page.tag;
-  }
-  %>
-    <title><% if (title){ %> <%= title %> - <% } %><%= config.title %> </title>
+    <title><%= page.title %> @ <%= config.title %> </title>
 
     <meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
