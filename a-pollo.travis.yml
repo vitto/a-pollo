@@ -1,13 +1,22 @@
-title: Client project       # [required] Will be listened on head's title tag
-author: Vittorio Vittori    # [required] Who's managing the style guide
-date: 2015-11-01            # [required] When the style guide project was started
+title: Client project                                           # [required] Will be listened on head's title tag
+client: '[Client name](http://github.com/vitto/a-pollo#readme)'
+developers: '[Vittorio Vittori](http://vit.to)'     # [required] Who's managing the style guide
+designers: '[Vittorio Vittori](http://vit.to)'      # [required] Who's desining the style guide
+date: 2015-11-01                 # [required] When the style guide project was started
+date_format: dddd D MMMM YYYY    # [optional] Default from hexo config YYYY-MM-DD
+
+
 
 public_dir: ./public        # [required] Where the style guide will be genarated
-url: http://localhost:7777  # [optional] Root path of the style guide
+url: http://localhost:7777  # [optional] HTTP server URL
 pages: test/a-pollo/*       # [optional] Additional static documentation pages you want to add, (markdown or html)
-http_server: false          # [optional] HTTP server with port number
-use_markdown: true          # [optional] This will be removed soon, it's used for development
+http_server: true           # [optional] HTTP server with port number
+use_markdown: false         # [optional] This will be removed soon, it's used for development
 theme: a-pollo              # [optional] The a-pollo theme folder
+
+libs:
+    bower: bower.json
+    node: package.json
 
 style:
     docs: test/frontsize/themes/default/widgets/        # [required] Where a-pollo comments and tags are placed
@@ -21,6 +30,6 @@ header:
     description: a-pollo / the visual CSS style guide for teams    # [optional] A description under the logo image
 
 footer:
-    logo: <a href="http://github.com/vitto/apollo" class="apollo-logo"><img width="80px" src="/img/apollo-logo__icon.svg"><div class="apollo-logo__text">a-pollo</div></a>
+    logo: <a href="http://github.com/vitto/apollo#readme" class="apollo-logo"><img width="80px" src="/img/apollo-logo__icon.svg"><div class="apollo-logo__text">a-pollo</div></a>
     leftText: The visual CSS style guide for teams
-    rightText: <a href="http://github.com/vitto/a-pollo" class="apollo-footer__link"><i class="fa fa-code"></i></a> with <i class="fa fa-heart apollo-footer__heart"></i> by <a href="http://vit.to" class="apollo-footer__link">vitto</a> @ <a href="http://www.ideato.it" class="apollo-footer__link">ideato</a>
+    rightText: <a href="http://github.com/vitto/a-pollo#readme" class="apollo-footer__link"><i class="fa fa-code"></i></a> with <i class="fa fa-heart apollo-footer__heart"></i> by <a href="http://vit.to" class="apollo-footer__link">vitto</a> @ <a href="http://www.ideato.it" class="apollo-footer__link">ideato</a>
