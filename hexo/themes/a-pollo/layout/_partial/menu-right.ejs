@@ -19,6 +19,9 @@
                             <a href="<%= post.permalink %>" class="apollo-menu__link">
                         <% } %>
                             <%= post.title %>
+                            <% if (post.docs !== undefined) { %>
+                                <span class="apollo-menu__docs"><%= post.docs.length %></span>
+                            <% } %>
                         </a>
                     </li>
                 <% }) %>
