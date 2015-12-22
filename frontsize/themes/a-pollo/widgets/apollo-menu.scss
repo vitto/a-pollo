@@ -24,10 +24,8 @@
         &:hover {
             color: $colorMenuButtonHover;
             .apollo-menu__docs {
-                background-color: $colorMenuButton;
-                color: $body-color;
-                font-weight: 600;
-                border-color: $colorMenuButton;
+                color: $colorMenuButtonHover;
+                border-color: $colorMenuButtonHover;
             }
         }
 
@@ -37,9 +35,7 @@
             &:hover {
                 color: $colorMenuButtonSelected;
                 .apollo-menu__docs {
-                    background-color: $body-color;
                     color: $colorMenuButtonSelected;
-                    font-weight: 400;
                     border-color: $colorMenuButtonSelected;
                 }
             }
@@ -54,8 +50,8 @@
         height: 14px;
         padding: 0 4px;
         margin-left: 2px;
-        background-color: $body-color;
         @include border-radius(100px);
+        background-color: transparent;
         color: $colorMenuButtonSelected;
         font-size: 8px;
         font-weight: 400;
