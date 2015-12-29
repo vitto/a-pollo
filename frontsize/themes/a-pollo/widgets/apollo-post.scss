@@ -10,9 +10,9 @@
 
     @include postPadded();
 
-    @include setFont();
     @include baseLink();
     @include baseBold();
+    @include baseSpan();
     @include fontAwesome();
 
     @include element("markown-inline") {
