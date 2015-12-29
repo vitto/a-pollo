@@ -2,6 +2,10 @@
     @include row();
     padding-top: s(3);
 
+    @include modifier("no-padding") {
+        padding-top: 0;
+    }
+
     @include element("aside") {
         margin-top: s(4);
         padding: 0 s(2) s(2) s(2);

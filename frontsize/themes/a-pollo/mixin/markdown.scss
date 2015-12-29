@@ -21,7 +21,12 @@
     color: $colorCodeText;
     font-family: $font-monospace;
     background-color: $colorCodeBackground;
+}
 
+@mixin baseSpan() {
+    > span {
+        @include setFont(200, $colorTextBold);
+    }
 }
 
 @mixin baseBold() {

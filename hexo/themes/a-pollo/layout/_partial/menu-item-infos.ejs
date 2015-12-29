@@ -1,10 +1,11 @@
-<% if (use_margin) { %>
-    <ul class="apollo-menu">
-<% } else { %>
-    <ul class="apollo-menu apollo-menu--first">
-<% } %>
+<% if (config.apollo) { %>
+    <% if (use_margin) { %>
+        <ul class="apollo-menu">
+    <% } else { %>
+        <ul class="apollo-menu apollo-menu--first">
+    <% } %>
         <li class="apollo-menu__title">
-            a-pollo
+            Infos
         </li>
         <li class="apollo-menu__item">
             <a href="<%= config.apollo.homepage %>/releases/tag/<%= config.apollo.version %>" class="apollo-menu__link">
@@ -37,3 +38,4 @@
             </a>
         </li>
     </ul>
+<% } %>

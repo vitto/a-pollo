@@ -7,7 +7,7 @@
     <% site.pages.data = _.sortBy(site.pages.data, 'category') %>
     <% if (site.pages.length > 1) { %>
         <% site.pages.each(function (page, i) { %>
-            <% if (page.category !== undefined) { %>
+            <% if (page.category !== undefined && page.category.toLowerCase() !== 'a-pollo') { %>
                 <% if (prevCategory != page.category) { %>
                     <% if (prevCategory === '') { /* apollo-menu--first */ %>
                         <ul class="apollo-menu apollo-menu--first">
@@ -68,9 +68,11 @@
     <% } else { %>
         <ul class="apollo-menu">
     <% } %>
-        <li class="apollo-menu__title">
-            Widgets
-        </li>
+        <% if (site.posts.length > 0) { %>
+            <li class="apollo-menu__title">
+                Widgets
+            </li>
+        <% } %>
         <% site.posts.each(function (post, i) { %>
             <li class="apollo-menu__item">
                 <% if (url.replace('index.html', '') === post.permalink) { %>

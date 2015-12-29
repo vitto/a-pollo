@@ -20,6 +20,13 @@ $colorTextBold: $colorGreyDark;
 $colorPage: white;
 $colorPost: $colorGreyLight;
 $colorLogoText: $colorGreyLight;
+$colorLogoTextHeader: $colorGreyDark;
+
+$colorHeaderLink: $colorGreyDeep;
+$colorHeaderLinkHover: $colorGold;
+$colorHeaderLinkActive: $colorGreyDark;
+$colorHeaderBold: $colorGold;
+
 $colorFooterLink: $colorGreyLight;
 $colorFooterLinkHover: $colorGold;
 $colorFooterBold: mix($colorGold, $colorText, 50%);

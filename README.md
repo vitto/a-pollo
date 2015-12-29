@@ -161,6 +161,14 @@ To test the HTML results
 ./node_modules/.bin/gulp frontsize:build && node index.js
 ```
 
+---
+
+Generate website
+
+```
+./node_modules/.bin/gulp frontsize:build && cd ./hexo && ../node_modules/.bin/hexo --config _site_config.yml generate && cd ../ && php -S localhost:8000 -t ./_site
+```
+
 Written with love by [Vittorio Vittori][vitto] @ [ideato srl][ideato]
 
 [vitto]: https://twitter.com/vttrx

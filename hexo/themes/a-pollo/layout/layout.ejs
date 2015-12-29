@@ -2,18 +2,22 @@
 <html>
     <%- partial('_partial/head') %>
     <body class="apollo-body">
-        <%- partial('_partial/menu-mobile', { header: config.header }) %>
+        <%- partial('_partial/menu-mobile') %>
         <main class="spacer">
             <div class="apollo">
                 <aside class="apollo__aside">
-                    <%- partial('_partial/menu') %>
+                    <% if (!config.is_website) { %>
+                        <%- partial('_partial/menu') %>
+                    <% } %>
                 </aside>
                 <section class="apollo__page">
                     <%- body %>
                     <%- partial('_partial/footer') %>
                 </section>
                 <aside class="apollo__aside">
-                    <%- partial('_partial/menu-right') %>
+                    <% if (!config.is_website) { %>
+                        <%- partial('_partial/menu-right') %>
+                    <% } %>
                 </aside>
             </div>
         </main>

@@ -21,12 +21,17 @@
     }
 
     @include element("text") {
-        margin-top: $size;
+        margin-top: 12px;
         color: $colorLogoText;
         text-align: center;
         text-transform: uppercase;
         font-weight: 600;
         font-size: $size;
         line-height:1;
+
+        @include modifier("header") {
+            color: $colorLogoTextHeader;
+        }
     }
+
 }
