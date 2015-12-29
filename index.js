@@ -93,10 +93,6 @@ var prepareFiles = function() {
         shell.rm('-Rf', fromProcess(conf.public_dir));
     }
 
-    // hexoConfig   = yaml.safeLoad(fs.readFileSync(fromModule('/hexo/_default_config.yml'), 'utf-8'));
-    // mergedConfig = absorb(conf, hexoConfig, false, true);
-    // fs.writeFileSync(fromModule('/hexo/_config.yml'), yaml.safeDump(mergedConfig));
-
     shell.mkdir('-p', fromModule('/hexo/source'));
     shell.mkdir('-p', fromModule('/hexo/source/_posts'));
     shell.mkdir('-p', fromModule('/source'));
