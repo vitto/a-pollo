@@ -16,9 +16,6 @@
 
         &:hover {
             color: $colorMenuButtonHover;
-            .apollo-menu__docs {
-                color: $colorMenuButtonHover;
-            }
         }
 
         @include modifier( "current" ) {
@@ -26,10 +23,8 @@
             color: $colorPost;
             background-color: $colorHeaderLinkActive;
             &:hover {
+                color: $colorPost;
                 background-color: $colorHeaderLinkActive;
-                .apollo-menu__docs {
-                    background-color: $colorHeaderLinkActive;
-                }
             }
 
             &:first-child {

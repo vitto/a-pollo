@@ -33,10 +33,11 @@ $colorFooterBold: mix($colorGold, $colorText, 50%);
 
 $colorLink: $colorGold;
 
-$colorCodeBackground: desaturate(mix($colorGold, $colorPost, 20%), 10%);
+$colorCodeBackground: $colorGrey;
 $colorCodeText: mix($colorGreyDark, $colorCodeBackground, 50%);
 $colorCodeTextHover: $colorGreyDark;
 $colorCodeLineNumber: mix($colorCodeText, $colorCodeBackground, 50%);
+$colorCodeLineNumberHover: mix($colorCodeText, $colorCodeBackground, 25%);
 
 $colorMenuTitle: $colorGrey;
 $colorMenuButton: $colorGreyDeep;
