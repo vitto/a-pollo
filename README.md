@@ -28,6 +28,7 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 - Add customizable config file as command parameter
 - Remove unused js file
 - Add site menu sorted by id
+- Add site default pages
 
 ##### Known issues
 
