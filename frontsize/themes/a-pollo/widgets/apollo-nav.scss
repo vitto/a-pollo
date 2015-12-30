@@ -10,8 +10,6 @@
 
         padding: s(0.25) s(0.5);
 
-        border: 1px solid transparent;
-
         @include setFont(200, $colorMenuButton);
 
         @include transition(color 0.125s ease-out);
@@ -25,13 +23,12 @@
 
         @include modifier( "current" ) {
             cursor: default;
-            color: $colorHeaderLinkActive;
-            border-color: $colorHr;
-            background-color: $colorHr;
+            color: $colorPost;
+            background-color: $colorHeaderLinkActive;
             &:hover {
-                color: $colorHeaderLinkActive;
+                background-color: $colorHeaderLinkActive;
                 .apollo-menu__docs {
-                    color: $colorHeaderLinkActive;
+                    background-color: $colorHeaderLinkActive;
                 }
             }
 
