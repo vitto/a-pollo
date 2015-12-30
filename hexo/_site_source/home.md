@@ -5,9 +5,9 @@ id: 1
 
 # A showcase for your CSS styles
 
-You know how much can be hard maintaining a solid design in your HTML templates, especially if you work with huge, continuously changing and scalable websites.
+You know how much can be hard maintaining a solid design in your CSS and HTML templates, especially if you work with huge, continuously changing and scalable websites.
 
-<div class="apollo-row apollo-row--styled apollo-row--gain apollo-row--2-columns"><p><b><i class="fa fa-book"></i> CSS style guide</b><br>A-pollo generates a default documentation of the CSS best practices taken from the best front-end developers with their relative sources and shows your CSS theme default base styles, everything is ready to be used as is or to be customized.</p><p><b><i class="fa fa-sitemap"></i> Organized snippets</b><br>With <b>a-pollo doc tags</b>, you can manage your front-end styles and split them into groups of widgets to easily find the style you need to create new HTML templates with a wide view of what you already have in your CSS.</p><p><b><i class="fa fa-paste"></i> Copy and paste the code you need</b><br>If you need a static documentation generated from your code with all the CSS widgets you have in your theme with <b>HTML code blocks</b> ready to be copied, <b>a-pollo</b> is probably the tool for you.</p><p><b><i class="fa fa-group"></i> Nice for teams</b><br>It's perfect to leave your CSS hard work to the rest of your team and let them view what's inside and reduce one page styles, through to be reused but forgotten in the code.</p><p><b><i class="fa fa-bar-chart"></i> CSS stats</b><br>Checkout front-end development duration, how much material is inside your theme, the people who worked on the project, and other useful stats you can use to check your team performance.</p><p><b><i class="fa fa-paint-brush"></i> Customizable theme</b><br>There is <a href="https://hexo.io/docs/themes.html">Hexo</a> behind a-pollo, a fast, simple & powerful blog framework, perfect to create  static websites and their relative themes.</p></div>
+<div class="apollo-row apollo-row--styled apollo-row--gain apollo-row--2-columns"><p><b><i class="fa fa-book"></i>&nbsp; CSS style guide</b><br>A-pollo generates a default documentation of the CSS best practices taken from the best front-end developers with their relative sources and shows your CSS theme default base styles, everything is ready to be used as is or to be customized.</p><p><b><i class="fa fa-sitemap"></i>&nbsp; Organized snippets</b><br>With <b>a-pollo doc tags</b>, you can manage your front-end styles and split them into groups of widgets to easily find the style you need to create new HTML templates with a wide view of what you already have in your CSS.</p><p><b><i class="fa fa-paste"></i>&nbsp; Copy and paste the code you need</b><br>If you need a static documentation generated from your code with all the CSS widgets you have in your theme with <b>HTML code blocks</b> ready to be copied, <b>a-pollo</b> is probably the tool for you.</p><p><b><i class="fa fa-group"></i>&nbsp; Nice for teams</b><br>It's perfect to leave your CSS hard work to the rest of your team and let them view what's inside and reduce one page styles, through to be reused but forgotten in the code.</p><p><b><i class="fa fa-bar-chart"></i>&nbsp; CSS stats</b><br>Checkout front-end development duration, how much material is inside your theme, the people who worked on the project, and other useful stats you can use to check your team performance.</p><p><b><i class="fa fa-paint-brush"></i>&nbsp; Customizable theme</b><br>There is <a href="https://hexo.io/docs/themes.html">Hexo</a> behind a-pollo, a fast, simple & powerful blog framework, perfect to create  static websites and their relative themes.</p></div>
 
 
 ---
@@ -19,7 +19,8 @@ You write code doc blocks in your CSS widgets:
 ```
 /*@pollo
     @name:  Twitter
-    @auth:  [Vittorio Vittori](http://vit.to)
+    @auth:  Vittorio Vittori
+    @category: Buttons
     @date:  2015-12-02
     @text:  This twitter version has also `button-social--with-effects` modifier to show drop shadow effects
     @html:  <a href="#" class="button-social button-social--twitter button-social--with-effects">

@@ -23,7 +23,11 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 ##### Release notes
 
-- Fix total doc examples styles on menu mobile viewports
+- Fix default font inheritance
+- Update some theme style
+- Add customizable config file as command parameter
+- Remove unused js file
+- Add site menu sorted by id
 
 ##### Known issues
 
