@@ -3,6 +3,7 @@
 %>
 <% site.pages.data = _.sortBy(site.pages.data, 'category') %>
 <% if (site.pages.length > 1) { %>
+    <% site.pages.data = _.sortBy(site.pages.data, 'id') %>
     <% site.pages.each(function (page, i) { %>
         <% if (page.category !== undefined && page.category.toLowerCase() === 'a-pollo') { %>
             <% if (firstElement) { %>
