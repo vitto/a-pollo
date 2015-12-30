@@ -236,55 +236,62 @@ var runProcess = function() {
 
     console.log('Starting ' + 'a-pollo '.rainbow + packageJSON.version);
 
-    var filename = process.cwd() + '/a-pollo.yml';
-
     removeFiles();
 
-    if (process.argv.length === 2) {
-        if (shell.test('-e', filename)) {
-            var confToMerge = yaml.safeLoad(fs.readFileSync(filename, 'utf-8'));
-            confToMerge.apollo = {
-                version: packageJSON.version,
-                homepage: packageJSON.homepage
-            };
-            defaultConf = yaml.safeLoad(fs.readFileSync(fromModule('/a-pollo.yml'), 'utf-8'));
-            conf = absorb(confToMerge, defaultConf, false, true);
-            hexoConfig   = yaml.safeLoad(fs.readFileSync(fromModule('/hexo/_default_config.yml'), 'utf-8'));
+    var initializerStarted = false;
 
-            if (conf.libs !== undefined) {
-                if (conf.libs.node !== undefined) {
-                    if (checkPath(fromProcess(conf.libs.node), 'libs.node')) {
-                        conf.libs.nodeDependencies = yaml.safeLoad(fs.readFileSync(fromProcess(conf.libs.node))).dependencies;
-                    }
-                }
-                if (conf.libs.bower !== undefined) {
-                    if (checkPath(fromProcess(conf.libs.bower), 'libs.bower')) {
-                        conf.libs.bowerDependencies = yaml.safeLoad(fs.readFileSync(fromProcess(conf.libs.bower))).dependencies;
-                    }
-                }
-            }
-
-            console.log('Loading doc annotations data from ' + (' ' + conf.style.docs + ' ').yellow.bgBlack + ' folder');
-            widgetFiles = reader.load(fromProcess(conf.style.docs));
-
-            conf = formatter.setProjectStats(conf, widgetFiles);
-            mergedConfig = absorb(conf, hexoConfig, false, true);
-
-            fs.writeFileSync(fromModule('/hexo/_config.yml'), yaml.safeDump(mergedConfig));
-
-            //console.log(mergedConfig);
-
-            runBuild();
-        } else {
-            console.log('ERROR: '.red + 'file ' + filename.toString().red + ' not found, please run ' + 'a-pollo init'.yellow + ' to create one.');
+    process.argv.forEach(function(val) {
+        if (val === 'init') {
+            initializer.start();
+            return;
         }
-    } else {
-        process.argv.forEach(function(val, index) {
-            if (val === 'init') {
-                initializer.start();
-                return;
+    });
+
+    if (initializerStarted) {
+        return;
+    }
+
+    var filename = process.cwd() + '/a-pollo.yml';
+    process.argv.forEach(function(val) {
+        if (val.indexOf('config=') === 0) {
+            filename = process.cwd() + val.replace('config=', '/');
+        }
+    });
+
+    if (shell.test('-e', filename)) {
+        var confToMerge = yaml.safeLoad(fs.readFileSync(filename, 'utf-8'));
+        confToMerge.apollo = {
+            version: packageJSON.version,
+            homepage: packageJSON.homepage
+        };
+        defaultConf = yaml.safeLoad(fs.readFileSync(fromModule('/a-pollo.yml'), 'utf-8'));
+        conf = absorb(confToMerge, defaultConf, false, true);
+        hexoConfig   = yaml.safeLoad(fs.readFileSync(fromModule('/hexo/_default_config.yml'), 'utf-8'));
+
+        if (conf.libs !== undefined) {
+            if (conf.libs.node !== undefined) {
+                if (checkPath(fromProcess(conf.libs.node), 'libs.node')) {
+                    conf.libs.nodeDependencies = yaml.safeLoad(fs.readFileSync(fromProcess(conf.libs.node))).dependencies;
+                }
             }
-        });
+            if (conf.libs.bower !== undefined) {
+                if (checkPath(fromProcess(conf.libs.bower), 'libs.bower')) {
+                    conf.libs.bowerDependencies = yaml.safeLoad(fs.readFileSync(fromProcess(conf.libs.bower))).dependencies;
+                }
+            }
+        }
+
+        console.log('Loading doc annotations data from ' + (' ' + conf.style.docs + ' ').yellow.bgBlack + ' folder');
+        widgetFiles = reader.load(fromProcess(conf.style.docs));
+
+        conf = formatter.setProjectStats(conf, widgetFiles);
+        mergedConfig = absorb(conf, hexoConfig, false, true);
+
+        fs.writeFileSync(fromModule('/hexo/_config.yml'), yaml.safeDump(mergedConfig));
+
+        runBuild();
+    } else {
+        console.log('ERROR: '.red + 'file ' + filename.toString().red + ' not found, please run ' + 'a-pollo init'.yellow + ' to create one.');
     }
 };
 
