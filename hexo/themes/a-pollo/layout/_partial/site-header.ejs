@@ -26,9 +26,17 @@
     <% site.pages.data = _.sortBy(site.pages.data, 'id') %>
     <% site.pages.each(function (page, i) { %>
         <% if (url.replace('index.html', '') === page.permalink) { %>
-            <a href="<%= page.permalink %>" class="apollo-nav__button apollo-nav__button--current">
+            <% if (page.alt_url === undefined) { %>
+                <a href="<%= page.permalink %>" class="apollo-nav__button apollo-nav__button--current">
+            <% } else { %>
+                <a href="<%= page.alt_url %>" class="apollo-nav__button apollo-nav__button--current">
+            <% } %>
         <% } else { %>
-            <a href="<%= page.permalink %>" class="apollo-nav__button">
+            <% if (page.alt_url === undefined) { %>
+                <a href="<%= page.permalink %>" class="apollo-nav__button">
+            <% } else { %>
+                <a href="<%= page.alt_url %>" class="apollo-nav__button">
+            <% } %>
         <% } %>
             <%= page.title %>
         </a>

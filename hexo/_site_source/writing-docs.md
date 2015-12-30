@@ -1,4 +1,4 @@
-title: Creating docs
+title: Writing docs
 category: a-pollo
 id: 3
 ---
