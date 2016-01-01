@@ -33,7 +33,7 @@ $colorFooterBold: mix($colorGold, $colorText, 50%);
 
 $colorLink: $colorGold;
 
-$colorCodeBackground: $colorGrey;
+$colorCodeBackground: mix($colorGrey, $colorGold, 90%);
 $colorCodeText: mix($colorGreyDark, $colorCodeBackground, 50%);
 $colorCodeTextHover: $colorGreyDark;
 $colorCodeLineNumber: mix($colorCodeText, $colorCodeBackground, 50%);
