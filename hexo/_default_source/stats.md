@@ -1,3 +1,2 @@
 title: Stats
-
-# category: a-pollo
+category: a-pollo
