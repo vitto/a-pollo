@@ -50,3 +50,52 @@
     border: none;
     border-top: 1px solid $colorHr;
 }
+
+@mixin baseTable() {
+    > table {
+        width: 100%;
+        background-color: $colorTableBg;
+        margin-bottom: s();
+
+        th, td {
+            padding: s(0.25) s(0.5);
+            @include fontAwesome();
+            @include setFont(200, $colorTextBold);
+        }
+
+        td {
+            code {
+                background-color: white;
+                padding-left: 4px;
+                padding-right: 4px;
+            }
+
+            strong, b {
+                font-weight: 500;
+            }
+        }
+
+        th {
+            @include setFont(500, $colorTextBold);
+            text-align: left;
+        }
+
+        &:hover {
+            tr td,
+            tr:nth-child(odd) td {
+                background-color: white;
+            }
+            tr:hover {
+                td {
+                    background-color: $colorTableOdd;
+                }
+            }
+        }
+
+        tr:nth-child(odd) {
+            td {
+                background-color: $colorTableOdd;
+            }
+        }
+    }
+}

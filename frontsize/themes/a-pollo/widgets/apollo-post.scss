@@ -30,28 +30,7 @@
         margin-left: 0 !important;
     }
 
-    > table {
-        width: 100%;
-        background-color: $colorTableBg;
-        margin-bottom: s();
-
-        th {
-            text-align: left;
-            font-weight: 500;
-            color: $colorTextBold;
-        }
-
-        th, td {
-            padding: s(0.25) s(0.5);
-            @include fontAwesome();
-        }
-
-        tr:nth-child(odd) {
-            td {
-                background-color: $colorTableOdd;
-            }
-        }
-    }
+    @include baseTable();
 
     > p,
     > blockquote p {
