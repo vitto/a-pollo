@@ -19,6 +19,5 @@ script:
     - cd ./test
     - gulp frontsize:css
     - cd ../
-    - mv a-pollo.yml _original_a-pollo.yml
-    - mv a-pollo.travis.yml a-pollo.yml
-    - node index.js
+    - node index.js config=a-pollo.travis.yml
+    - node index.js config=a-pollo.test.yml
