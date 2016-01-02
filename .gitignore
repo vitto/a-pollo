@@ -11,5 +11,6 @@ node_modules/
 vendors/
 .deploy*/
 /hexo/source
+/hexo/_default_source/site
 /hexo/_config.yml
 /test/a-pollo/index.md

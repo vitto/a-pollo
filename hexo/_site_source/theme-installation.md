@@ -9,11 +9,10 @@ Installing an [Hexo theme][hexo_theme] inside a-pollo is very simple, if you hav
 
 ```
 project-root
-    |_ node_modules
-        |_ a-pollo
-            |_ hexo
-                |_ themes
-
+    └─ node_modules
+        └─ a-pollo
+            └─ hexo
+                └─ themes
 ```
 
 ### Set theme from config

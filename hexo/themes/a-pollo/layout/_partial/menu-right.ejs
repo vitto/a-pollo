@@ -15,7 +15,7 @@
                 </li>
                 <% category.posts.each(function(post, i){ %>
                     <li class="apollo-menu__item">
-                        <% if (url.replace('index.html', '') == post.permalink) { %>
+                        <% if (url.replace('index.html', '') === post.permalink) { %>
                             <a href="<%= post.permalink %>" class="apollo-menu__link apollo-menu__link--current">
                         <% } else { %>
                             <a href="<%= post.permalink %>" class="apollo-menu__link">

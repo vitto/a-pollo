@@ -1,5 +1,6 @@
 <%
     var firstElement = true;
+    var page_url, selected;
 %>
 <% site.pages.data = _.sortBy(site.pages.data, 'category') %>
 <% if (site.pages.length > 1) { %>
@@ -14,11 +15,17 @@
                     </li>
             <% } %>
             <li class="apollo-menu__item">
-                <% if (url.replace('index.html', '') === page.permalink) { %>
-                    <a href="<%= page.permalink %>" class="apollo-menu__link apollo-menu__link--current">
-                <% } else { %>
-                    <a href="<%= page.permalink %>" class="apollo-menu__link">
-                <% } %>
+                <% if (page.url !== undefined) {
+                    page_url = page.url;
+                } else {
+                    page_url = page.permalink;
+                }
+                if (url.replace(config.url, '') === page_url.replace(config.url, '')) {
+                    selected = 'apollo-menu__link--current';
+                } else {
+                    selected = '';
+                } %>
+                <a href="<%= page_url %>" class="apollo-menu__link <%= selected %>">
                     <%= page.title %>
                 </a>
             </li>
