@@ -23,7 +23,7 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 ##### Release notes
 
-- Add configurable root path in theme css
+- Add customizable root path in theme css
 
 ##### Known issues
 
