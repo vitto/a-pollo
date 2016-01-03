@@ -5,7 +5,8 @@
         <% } else { %>
             <% if (config.apollo) { %>
                 <a href="<%= config.apollo.homepage %>#readme" class="apollo-logo">
-                    <img width="80px" src="<%= config.root %>img/apollo-logo__icon.svg">
+                    <% var rootPath = config.root || ''; %>
+                    <img width="80px" src="<%= rootPath %>img/apollo-logo__icon.svg">
                     <div class="apollo-logo__text">a-pollo</div>
                 </a>
             <% } else { %>
