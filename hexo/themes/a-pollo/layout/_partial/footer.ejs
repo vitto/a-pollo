@@ -1,17 +1,17 @@
 <footer class="apollo-footer">
     <div>
+        <% var rootPath = config.root || ''; %>
         <% if (config.footer && config.footer.logo) { %>
             <%- config.footer.logo %>
         <% } else { %>
             <% if (config.apollo) { %>
                 <a href="<%= config.apollo.homepage %>#readme" class="apollo-logo">
-                    <% var rootPath = config.root || ''; %>
                     <img width="80px" src="<%= rootPath %>img/apollo-logo__icon.svg">
                     <div class="apollo-logo__text">a-pollo</div>
                 </a>
             <% } else { %>
                 <a href="https://github.com/vitto/a-pollo#readme" class="apollo-logo">
-                    <img width="80px" src="<%= config.root %>img/apollo-logo__icon.svg">
+                    <img width="80px" src="<%= rootPath %>img/apollo-logo__icon.svg">
                     <div class="apollo-logo__text">a-pollo</div>
                 </a>
             <% } %>
