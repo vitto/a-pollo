@@ -11,6 +11,9 @@
                     <% } %>
                 </aside>
                 <section class="apollo__page">
+                    <% if (config.is_website) { %>
+                        <%- partial('_partial/social-buttons') %>
+                    <% } %>
                     <%- body %>
                     <%- partial('_partial/footer') %>
                 </section>
