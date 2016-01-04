@@ -291,7 +291,15 @@ var runProcess = function() {
 
         runBuild();
     } else {
-        console.log('ERROR: '.red + 'file ' + filename.toString().red + ' not found, please run ' + 'a-pollo init'.yellow + ' or ' + './node_modules/.bin/a-pollo init'.yellow + ' to create one.');
+        var isInitProcess = false;
+        process.argv.forEach(function(val) {
+            if (val.indexOf('init') === 0) {
+                isInitProcess = true;
+            }
+        });
+        if (!isInitProcess) {
+            console.log('ERROR: '.red + 'file ' + filename.toString().red + ' not found, please run ' + 'a-pollo init'.yellow + ' or ' + './node_modules/.bin/a-pollo init'.yellow + ' to create one.');
+        }
     }
 };
 
