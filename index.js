@@ -26,10 +26,14 @@ var packageJSON = json.readFileSync(fromModule('package.json'));
 var hexoConfig, mergedConfig;
 var widgetFiles;
 
-var checkPath = function(path, configVarName) {
+var checkPath = function(path, configVarName, canSkip) {
+    var skip = canSkip || false;
     if (shell.test('-e', path)) {
         return true;
     } else {
+        if (skip) {
+            return false;
+        }
         var varName = configVarName || false;
         if (varName) {
             console.error(' ERROR: '.red + ' the file ' + (path).red + ' in ' + (varName).yellow + ' property from your ' + 'a-pollo.yml'.yellow + ' config not found.');
@@ -87,7 +91,6 @@ var addThemeImage = function(imageName) {
 };
 
 var prepareFiles = function() {
-
 
     if (shell.test('-e', fromProcess(conf.public_dir))) {
         shell.rm('-Rf', fromProcess(conf.public_dir));
@@ -265,6 +268,10 @@ var runProcess = function() {
             homepage: packageJSON.homepage
         };
         defaultConf = yaml.safeLoad(fs.readFileSync(fromModule('/a-pollo.yml'), 'utf-8'));
+
+        delete defaultConf.pages;
+        delete defaultConf.libs;
+
         conf = absorb(confToMerge, defaultConf, false, true);
         hexoConfig   = yaml.safeLoad(fs.readFileSync(fromModule('/hexo/_default_config.yml'), 'utf-8'));
 
