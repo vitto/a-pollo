@@ -28,6 +28,7 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 - Fix grammar for init command step
 - Fix stats index page
 - Remove unwanted default values for some config var
+- Moved widgets lists on top
 
 ##### Known issues
 

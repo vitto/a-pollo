@@ -1,5 +1,7 @@
 <nav>
 
+    <%- partial('_partial/menu-widgets') %>
+
     <%
         var prevCategory = ''
         var indexCreated = false;
@@ -10,7 +12,7 @@
             <% if (page.category !== undefined && page.category.toLowerCase() !== 'a-pollo') { %>
                 <% if (prevCategory != page.category) { %>
                     <% if (prevCategory === '') { /* apollo-menu--first */ %>
-                        <ul class="apollo-menu apollo-menu--first">
+                        <ul class="apollo-menu">
                     <% } else { %>
                         <ul class="apollo-menu">
                     <% } %>
@@ -62,31 +64,5 @@
             <% } %>
         <% }) %>
     <% } %>
-
-    <% if (site.pages.length === 1) { /* apollo-menu--first */ %>
-        <ul class="apollo-menu apollo-menu--first">
-    <% } else { %>
-        <ul class="apollo-menu">
-    <% } %>
-        <% if (site.posts.length > 0) { %>
-            <li class="apollo-menu__title">
-                Widgets
-            </li>
-        <% } %>
-        <% site.posts.each(function (post, i) { %>
-            <li class="apollo-menu__item">
-                <% if (url.replace('index.html', '') === post.permalink) { %>
-                    <a href="<%= post.permalink %>" class="apollo-menu__link apollo-menu__link--current">
-                <% } else { %>
-                    <a href="<%= post.permalink %>" class="apollo-menu__link">
-                <% } %>
-                    <%= post.title %>
-                    <% if (post.docs !== undefined) { %>
-                        <span class="apollo-menu__docs"><%= post.docs.length %></span>
-                    <% } %>
-                </a>
-            </li>
-        <% }) %>
-    </ul>
 
 </nav>
