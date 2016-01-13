@@ -44,10 +44,6 @@ var checkPath = function(path, configVarName, canSkip) {
     }
 };
 
-var copyHexoModule = function(moduleName) {
-    shell.cp('-R', fromModule('/node_modules/' + moduleName), fromModule('/hexo/node_modules'));
-};
-
 var checkPageFile = function(filter, defaultFileName) {
     var filesToFind, filesFound, defaultFile, pages, destinationFile;
 
@@ -67,16 +63,9 @@ var checkPageFile = function(filter, defaultFileName) {
 
 var hexoModule = function() {
     if (!shell.test('-e', fromModule('/hexo/node_modules'))) {
-        console.log('Preparing node modules');
-        shell.mkdir('-p', fromModule('/hexo/node_modules'));
-        copyHexoModule('hexo');
-        copyHexoModule('hexo-generator-index');
-        copyHexoModule('hexo-renderer-ejs');
-        copyHexoModule('hexo-renderer-marked');
-        copyHexoModule('hexo-server');
+        console.log('Preparing modules...');
+        fs.symlinkSync(fromModule('node_modules'), fromModule('/hexo/node_modules'));
         console.log('Done.');
-    } else {
-        shell.rm('-Rf', fromModule('/hexo/node_modules'));
     }
 };
 
@@ -155,7 +144,6 @@ var generateDocs = function () {
 
 var removeFiles = function() {
     if (shell.test('-e', fromModule('/hexo/source'))) { shell.rm('-Rf', fromModule('/hexo/source')); }
-    if (shell.test('-e', fromModule('/hexo/node_modules'))) { shell.rm('-Rf', fromModule('/hexo/node_modules')); }
     if (shell.test('-e', fromModule('/source'))) { shell.rm('-Rf', fromModule('/source')); }
     if (shell.test('-e', fromModule('/hexo/_config.yml'))) { shell.rm('-f', fromModule('/hexo/_config.yml')); }
 };
