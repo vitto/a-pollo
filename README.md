@@ -30,7 +30,7 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 - If `use_markdown` is set to `false`, code snippets are not correctly indented
 - If `use_markdown` is set to `false`, code snippets cannot be copied on clipboard
-- Incomplete customizable HTML template, complete at 95%
+- Incomplete customizable HTML template if `use_markdown` is set to `true`
 - Some of the doc vars names will probably change in the future
 - Needs a lot of micro optimizations
 
