@@ -4,10 +4,10 @@ theme: default
 path:
     test: frontsize/test/csslint/
     css: frontsize/test/
-    images: ../hexo/themes/apollo/source/img/theme/
-    fonts: ../hexo/themes/apollo/source/fonts/
+    images: ../hexo/themes/a-pollo/source/img/theme/
+    fonts: ../hexo/themes/a-pollo/source/fonts/
     frontsize: frontsize/
-    js: ../hexo/themes/apollo/source/js/theme/
+    js: ../hexo/themes/a-pollo/source/js/theme/
 
 vendors:
     css:

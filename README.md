@@ -1,7 +1,7 @@
 a-pollo
 ---
 
-[![Version](http://img.shields.io/:version-1.5.68-B89766.svg)][release]
+[![Version](http://img.shields.io/:version-1.5.69-B89766.svg)][release]
 [![TravisCI](https://travis-ci.org/vitto/a-pollo.svg?branch=master)](https://travis-ci.org/vitto/a-pollo/builds)
 [![Built with nodejs 4.2.2](http://img.shields.io/:nodejs-4.2.2-80BD01.svg)](http://badges.github.io/badgerbadgerbadger/)
 [![MIT licence](http://img.shields.io/:license-MIT-00AFFF.svg)](https://github.com/ideatosrl/frontsize-sass/blob/master/LICENSE.md)
@@ -16,14 +16,15 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 - Default style guide articles for CSS
 - Default style guide articles for HTML
-- Single widget tests with csslint
-- Single widget stylestats report
+- Single widget tests with CSSlint
+- Single widget StyleStats report
 - Documentation tags for SASS
 - Documentation tags for LESS
 
 ##### Release notes
 
 - Some performance optimization
+- Removed some wrong paths
 
 ##### Known issues
 
@@ -175,5 +176,5 @@ Written with love by [Vittorio Vittori][vitto] @ [ideato srl][ideato]
 [hexo]: https://hexo.io
 [apollo_code_docs]: https://github.com/vitto/a-pollo/blob/master/test/frontsize/themes/default/widgets/button-social.scss
 [apollo_theme]: https://github.com/vitto/a-pollo/tree/master/hexo/themes/a-pollo
-[release]: https://github.com/vitto/a-pollo/releases/tag/1.5.68
+[release]: https://github.com/vitto/a-pollo/releases/tag/1.5.69
 [a-pollo-preview]: https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/apollo-example.png
