@@ -172,13 +172,13 @@ php -S localhost:8000 -t ./public
 Generate website from scratch
 
 ```
-cd test && npm install && ./node_modules/.bin/bower install && ./node_modules/.bin/gulp frontsize:build && cd ../ && npm install && ./node_modules/.bin/bower install && ./node_modules/.bin/gulp frontsize:build && node index config=a-pollo.site-example.yml && mv public example && rm hexo/db.json && cd ./hexo && npm install && ../node_modules/.bin/hexo --config _site_config.yml generate && cd ../ && rm hexo/db.json && cp -a ./_site/. ./ && rm -rf ./_site
+./node_modules/.bin/gulp frontsize:build && ./node_modules/.bin/hexo generate
 ```
 
 Generate website
 
 ```
-cd test && ./node_modules/.bin/gulp frontsize:build && cd ../ && ./node_modules/.bin/gulp frontsize:build && node index config=a-pollo.site-example.yml && mv public example && rm hexo/db.json && cd ./hexo && npm install && ../node_modules/.bin/hexo --config _site_config.yml generate && cd ../ && rm hexo/db.json && cp -a ./_site/. ./ && rm -rf ./_site
+./node_modules/.bin/hexo generate
 ```
 
 Clear website
