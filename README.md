@@ -164,7 +164,7 @@ To test the HTML results
 Test site
 
 ```
-php -S localhost:8000 -t ./_site
+php -S localhost:8000 -t ./public
 ```
 
 ---

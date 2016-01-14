@@ -20,5 +20,6 @@
 //@include addFloatGridColumns(4, 2, 2, "l", "m", "s", "mobile-landscape", false);
 
 // put .addViewportsSteps at the bottom of the configuration
-@include addViewportsSteps("spacer", 1280px, 1280px, 1024px, 0);
+@include addViewportsSteps("apollo-spacer", 1280px, 1280px, 1024px, 0);
+@include addViewportsSteps("apollo-website-spacer", 1280px, 1280px, 1024px, 0);
 @include globalSelection($colorGold, transparent);

@@ -1,7 +1,6 @@
 <nav>
 
     <%- partial('_partial/menu-item-infos', { use_margin: false }) %>
-    <%- partial('_partial/menu-site-links', { use_margin: false }) %>
 
     <% site.categories.each(function(category, i){ %>
         <% if (category.posts.length > 0) { %>

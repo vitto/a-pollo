@@ -3,25 +3,15 @@
     <%- partial('_partial/head') %>
     <body class="apollo-body">
         <%- partial('_partial/menu-mobile') %>
-        <main class="spacer">
+        <main class="apollo-website-spacer">
             <div class="apollo">
-                <aside class="apollo__aside">
-                    <% if (!config.is_website) { %>
-                        <%- partial('_partial/menu') %>
-                    <% } %>
-                </aside>
-                <section class="apollo__page">
+                <section class="apollo-website__page">
                     <% if (config.is_website) { %>
                         <%- partial('_partial/social-buttons') %>
                     <% } %>
                     <%- body %>
                     <%- partial('_partial/footer') %>
                 </section>
-                <aside class="apollo__aside">
-                    <% if (!config.is_website) { %>
-                        <%- partial('_partial/menu-right') %>
-                    <% } %>
-                </aside>
             </div>
         </main>
     </body>
