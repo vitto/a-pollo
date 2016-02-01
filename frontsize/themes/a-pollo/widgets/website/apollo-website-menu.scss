@@ -1,0 +1,29 @@
+.apollo-website-menu {
+    @include element( "link" ) {
+
+        text-decoration: none;
+        display: inline-block;
+
+        padding: s(0.25) s(0.5);
+
+        @include setFont(200, $colorMenuButton);
+
+        @include transition(color 0.125s ease-out);
+
+        &:hover {
+            color: $colorMenuButtonHover;
+        }
+
+        @include modifier( "current" ) {
+            cursor: default;
+            color: $colorPost;
+            &:hover {
+                color: $colorPost;
+            }
+
+            &:first-child {
+                margin-left:s(0.5);
+            }
+        }
+    }
+}

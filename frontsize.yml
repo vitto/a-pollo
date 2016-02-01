@@ -2,12 +2,12 @@
 theme: a-pollo
 
 path:
-    test: frontsize/test/csslint/
-    css: hexo/themes/a-pollo/source/css/
-    images: hexo/themes/a-pollo/source/img/
-    fonts: hexo/themes/a-pollo/source/fonts/
     frontsize: frontsize/
-    js: hexo/themes/a-pollo/source/js/
+    test: frontsize/test/csslint/
+    css: themes/a-pollo/source/css/
+    images: themes/a-pollo/source/img/
+    fonts: themes/a-pollo/source/fonts/
+    js: themes/a-pollo/source/js/
 
 vendors:
     css:

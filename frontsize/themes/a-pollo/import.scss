@@ -66,9 +66,15 @@
 @import "widgets/apollo-post";
 @import "widgets/apollo-project-header";
 @import "widgets/apollo-row";
-@import "widgets/apollo-site-header";
 @import "widgets/apollo-title-spacer";
 @import "widgets/apollo-widget";
 @import "widgets/apollo";
+@import "widgets/website/apollo-website-header";
+@import "widgets/website/apollo-website-menu";
+
+@import "widgets/website/apollo-website-header";
+@import "widgets/website/apollo-website-home";
+@import "widgets/website/apollo-website-menu";
+@import "widgets/website/apollo-website-page";
 
 @import "app";

@@ -1,5 +1,14 @@
-<% if (page.category !== undefined && page.category.toLowerCase() !== 'css') { %>
-    <%- partial('_partial/post', {post: page, index: false}) %>
-<% } else { %>
-    <%- partial('_partial/page', {post: page, index: false}) %>
-<% } %>
+<%- partial('_partial/menu-mobile') %>
+<main class="apollo-website-spacer">
+    <div class="apollo">
+        <section class="apollo-website__page">
+            <%- partial('_partial/website/social-buttons') %>
+            <% if (page.category !== undefined && page.category.toLowerCase() !== 'css') { %>
+                <%- partial('_partial/post', {post: page, index: false}) %>
+            <% } else { %>
+                <%- partial('_partial/page', {post: page, index: false}) %>
+            <% } %>
+            <%- partial('_partial/footer') %>
+        </section>
+    </div>
+</main>

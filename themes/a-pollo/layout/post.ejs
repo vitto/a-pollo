@@ -1,1 +1,10 @@
-<%- partial('_partial/doc', {post: page, index: false}) %>
+<%- partial('_partial/menu-mobile') %>
+<main class="apollo-website-spacer">
+    <div class="apollo">
+        <section class="apollo-website__page">
+            <%- partial('_partial/website/social-buttons') %>
+            <%- partial('_partial/doc', {post: page, index: false}) %>
+            <%- partial('_partial/footer') %>
+        </section>
+    </div>
+</main>

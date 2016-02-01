@@ -1,0 +1,20 @@
+.apollo-website-header {
+
+    padding: s(2) s();
+
+    @include row();
+
+    @include element("col-logo") {
+        @include column(2,2,2,2,12,12, 12);
+    }
+
+    @include element("col-menu") {
+        text-align: right;
+        @include column(10,10,10,10,12,12, 12);
+    }
+
+    @include element("logo") {
+        display: inline-block;
+        @include icon("apollo-logo__icon.svg", 40px, 30px);
+    }
+}

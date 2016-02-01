@@ -1,46 +1,8 @@
-<header class="apollo-header">
-    <div>
-        <a href="https://github.com/vitto/a-pollo#readme" class="apollo-logo">
-            <img width="80px" src="<%= config.root %>img/apollo-logo__icon.svg">
-            <div class="apollo-logo__text apollo-logo__text--header">a-pollo</div>
-        </a>
+<header class="apollo-website-header apollo-website-spacer">
+    <div class="apollo-website-header__col-logo">
+        <a href="https://github.com/vitto/a-pollo#readme" class="apollo-website-header__logo apollo-website-header__logo--small"></a>
     </div>
-    <div class="apollo-header__left-column">
-        <p class="apollo-header__paragraph">
-            The visual CSS style guide for teams
-        </p>
-    </div>
-    <div class="apollo-header__right-column">
-        <p class="apollo-header__paragraph">
-            <a href="https://github.com/vitto/a-pollo#readme" class="apollo-header__link">
-                <i class="fa fa-code"></i>
-            </a>
-            with <i class="fa fa-heart apollo-header__heart"></i>
-            by <a href="http://vit.to" class="apollo-header__link">vitto</a>
-            @ <a href="http://www.ideato.it" class="apollo-header__link">ideato</a>
-        </p>
-    </div>
+    <nav class="apollo-website-header__col-menu">
+        <%- partial('_partial/website/menu') %>
+    </nav>
 </header>
-
-<nav class="apollo-nav">
-    <% site.pages.data = _.sortBy(site.pages.data, 'id') %>
-    <% site.pages.each(function (page, i) { %>
-        <% if (url.replace('index.html', '') === page.permalink) { %>
-            <% if (page.alt_url === undefined) { %>
-                <a href="<%= page.permalink %>" class="apollo-nav__button apollo-nav__button--current">
-            <% } else { %>
-                <a href="<%= page.alt_url %>" class="apollo-nav__button apollo-nav__button--current">
-            <% } %>
-        <% } else { %>
-            <% if (page.alt_url === undefined) { %>
-                <a href="<%= page.permalink %>" class="apollo-nav__button">
-            <% } else { %>
-                <a href="<%= page.alt_url %>" class="apollo-nav__button">
-            <% } %>
-        <% } %>
-            <%= page.title %>
-        </a>
-    <% }) %>
-</nav>
-
-<hr>

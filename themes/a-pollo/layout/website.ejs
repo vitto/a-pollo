@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html>
-    <%- partial('_partial/head') %>
-    <body class="apollo-body">
-        <%- partial('_partial/menu-mobile') %>
-        <main class="apollo-website-spacer">
-            <div class="apollo">
-                <section class="apollo-website__page">
-                    <% if (config.is_website) { %>
-                        <%- partial('_partial/social-buttons') %>
-                    <% } %>
-                    <%- body %>
-                    <%- partial('_partial/footer') %>
-                </section>
-            </div>
-        </main>
-    </body>
-</html>
+<%- partial('_partial/website/menu-mobile') %>
+<%- partial('_partial/website/header') %>
+
+<% if (page.title === 'Index') { %>
+    <%- partial('_partial/website/page-index') %>
+<% } %>
+
+<section class="apollo-website-page">
+    <div class="apollo-website-spacer">
+        <%- markdown(page.content) %>
+    </div>
+</section>
+
+<%- partial('_partial/website/footer') %>
