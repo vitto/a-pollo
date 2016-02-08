@@ -1,6 +1,7 @@
 title: Examples
 category: a-pollo
 id: 2
+layout: website
 ---
 
 ### Generated style guide

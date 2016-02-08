@@ -5,12 +5,29 @@
     @include row();
 
     @include element("col-logo") {
-        @include column(2,2,2,2,12,12, 12);
+        @include column(1,1,1,2,2,12, 12);
+    }
+
+    @include element("col-social") {
+        margin-top: 7px;
+        @include column(2,2,2,10,10,12, 12);
+
+        @media #{$till-tablet-landscape} {
+            text-align: right;
+        }
     }
 
     @include element("col-menu") {
         text-align: right;
-        @include column(10,10,10,10,12,12, 12);
+        @include column(9,9,9,12,12,12, 12);
+        @media #{$till-tablet-landscape} {
+            font-size: 12px;
+            text-align: left;
+        }
+    }
+
+    @include element("github") {
+        width: 85px;
     }
 
     @include element("logo") {

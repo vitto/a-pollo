@@ -1,6 +1,7 @@
 title: Generate style guide
 category: a-pollo
 id: 5
+layout: website
 ---
 
 ### Config file missing?

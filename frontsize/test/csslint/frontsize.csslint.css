@@ -108,7 +108,7 @@ kbd:active {
   padding: 0;
 }
 
-.apollo-code-example, .apollo-post > .highlight {
+.apollo-code-example, .apollo-post > .highlight, .apollo-website-contents > .highlight {
   position: relative;
   margin-top: 20px;
   padding: 20px;
@@ -154,15 +154,15 @@ kbd:active {
   transition: color 0.5s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.5s cubic-bezier(0.19, 1, 0.22, 1), top 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.apollo-code-example:hover, .apollo-post > .highlight:hover {
+.apollo-code-example:hover, .apollo-post > .highlight:hover, .apollo-website-contents > .highlight:hover {
   color: #555555;
 }
 
-.apollo-code-example:hover .code *, .apollo-post > .highlight:hover .code * {
+.apollo-code-example:hover .code *, .apollo-post > .highlight:hover .code *, .apollo-website-contents > .highlight:hover .code * {
   color: #555555;
 }
 
-.apollo-code-example:hover .apollo-code-example__message, .apollo-post > .highlight:hover .apollo-code-example__message {
+.apollo-code-example:hover .apollo-code-example__message, .apollo-post > .highlight:hover .apollo-code-example__message, .apollo-website-contents > .highlight:hover .apollo-code-example__message {
   color: gray;
   background-color: white;
   top: -15px;
@@ -174,19 +174,16 @@ kbd:active {
   transition: color 0.25s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.25s cubic-bezier(0.19, 1, 0.22, 1), top 0.25s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.apollo-code-example:hover .code .value, .apollo-post > .highlight:hover .code .value {
+.apollo-code-example:hover .code .value, .apollo-post > .highlight:hover .code .value, .apollo-website-contents > .highlight:hover .code .value {
   background-color: #ece8e8;
 }
 
-.apollo-code-example:hover .gutter, .apollo-post > .highlight:hover .gutter {
+.apollo-code-example:hover .gutter, .apollo-post > .highlight:hover .gutter, .apollo-website-contents > .highlight:hover .gutter {
   color: #c6c3bf;
 }
 
-.apollo-code-example .code *, .apollo-post > .highlight .code * {
+.apollo-code-example .code *, .apollo-post > .highlight .code *, .apollo-website-contents > .highlight .code * {
   color: #969492;
-  font-family: menlo, monaco, "courier new", monospace;
-  font-size: 16px;
-  font-weight: 400;
   -webkit-transition: 0.25s ease-out;
   -khtml-transition: color 0.25s ease-out;
   -moz-transition: color 0.25s ease-out;
@@ -195,7 +192,14 @@ kbd:active {
   transition: color 0.25s ease-out;
 }
 
-.apollo-code-example .code .value, .apollo-post > .highlight .code .value {
+.apollo-code-example .gutter *, .apollo-post > .highlight .gutter *, .apollo-website-contents > .highlight .gutter *,
+.apollo-code-example .code *, .apollo-post > .highlight .code *, .apollo-website-contents > .highlight .code * {
+  font-family: menlo, monaco, "courier new", monospace;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.apollo-code-example .code .value, .apollo-post > .highlight .code .value, .apollo-website-contents > .highlight .code .value {
   -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
   -khtml-transition: background-color 0.25s ease-out, color 0.25s ease-out;
   -moz-transition: background-color 0.25s ease-out, color 0.25s ease-out;
@@ -205,16 +209,16 @@ kbd:active {
   background-color: transparent;
 }
 
-.apollo-code-example pre, .apollo-post > .highlight pre {
+.apollo-code-example pre, .apollo-post > .highlight pre, .apollo-website-contents > .highlight pre {
   margin: 0;
 }
 
-.apollo-code-example .html, .apollo-post > .highlight .html {
+.apollo-code-example .html, .apollo-post > .highlight .html, .apollo-website-contents > .highlight .html {
   overflow-x: auto;
   margin: 5px 0;
 }
 
-.apollo-code-example .gutter, .apollo-post > .highlight .gutter {
+.apollo-code-example .gutter, .apollo-post > .highlight .gutter, .apollo-website-contents > .highlight .gutter {
   -webkit-touch-callout: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -232,7 +236,7 @@ kbd:active {
   transition: color 0.25s ease-out;
 }
 
-.apollo-code-example .gutter pre, .apollo-post > .highlight .gutter pre {
+.apollo-code-example .gutter pre, .apollo-post > .highlight .gutter pre, .apollo-website-contents > .highlight .gutter pre {
   margin: 0;
 }
 
@@ -1125,7 +1129,7 @@ kbd:active {
   }
 }
 
-.apollo-post {
+.apollo-post, .apollo-website-contents {
   display: block;
   background-color: #ece8e8;
   min-height: 100vh;
@@ -1145,7 +1149,7 @@ kbd:active {
   }
 }
 
-.apollo-post > a {
+.apollo-post > a, .apollo-website-contents > a {
   text-decoration: none;
   color: #b89766;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
@@ -1160,12 +1164,12 @@ kbd:active {
   transition: background-color 0.25s ease-out;
 }
 
-.apollo-post > a:hover {
+.apollo-post > a:hover, .apollo-website-contents > a:hover {
   background-color: #e4dcd5;
 }
 
-.apollo-post > strong,
-.apollo-post > b {
+.apollo-post > strong, .apollo-website-contents > strong,
+.apollo-post > b, .apollo-website-contents > b {
   color: #555555;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
   font-size: 16px;
@@ -1173,7 +1177,7 @@ kbd:active {
   line-height: 24px;
 }
 
-.apollo-post > span {
+.apollo-post > span, .apollo-website-contents > span {
   color: #555555;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
   font-size: 16px;
@@ -1181,7 +1185,7 @@ kbd:active {
   line-height: 24px;
 }
 
-.apollo-post > .fa {
+.apollo-post > .fa, .apollo-website-contents > .fa {
   color: #555555;
 }
 
@@ -1234,13 +1238,13 @@ kbd:active {
   margin-left: 0 !important;
 }
 
-.apollo-post > table {
+.apollo-post > table, .apollo-website-contents > table {
   width: 100%;
   background-color: white;
   margin-bottom: 20px;
 }
 
-.apollo-post > table th, .apollo-post > table td {
+.apollo-post > table th, .apollo-website-contents > table th, .apollo-post > table td, .apollo-website-contents > table td {
   padding: 5px 10px;
   color: #555555;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
@@ -1249,21 +1253,21 @@ kbd:active {
   line-height: 24px;
 }
 
-.apollo-post > table th > .fa, .apollo-post > table td > .fa {
+.apollo-post > table th > .fa, .apollo-website-contents > table th > .fa, .apollo-post > table td > .fa, .apollo-website-contents > table td > .fa {
   color: #555555;
 }
 
-.apollo-post > table td code {
+.apollo-post > table td code, .apollo-website-contents > table td code {
   background-color: white;
   padding-left: 4px;
   padding-right: 4px;
 }
 
-.apollo-post > table td strong, .apollo-post > table td b {
+.apollo-post > table td strong, .apollo-website-contents > table td strong, .apollo-post > table td b, .apollo-website-contents > table td b {
   font-weight: 500;
 }
 
-.apollo-post > table th {
+.apollo-post > table th, .apollo-website-contents > table th {
   color: #555555;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
   font-size: 16px;
@@ -1272,21 +1276,21 @@ kbd:active {
   text-align: left;
 }
 
-.apollo-post > table:hover tr td,
-.apollo-post > table:hover tr:nth-child(odd) td {
+.apollo-post > table:hover tr td, .apollo-website-contents > table:hover tr td,
+.apollo-post > table:hover tr:nth-child(odd) td, .apollo-website-contents > table:hover tr:nth-child(odd) td {
   background-color: white;
 }
 
-.apollo-post > table:hover tr:hover td {
+.apollo-post > table:hover tr:hover td, .apollo-website-contents > table:hover tr:hover td {
   background-color: #f9f8f8;
 }
 
-.apollo-post > table tr:nth-child(odd) td {
+.apollo-post > table tr:nth-child(odd) td, .apollo-website-contents > table tr:nth-child(odd) td {
   background-color: #f9f8f8;
 }
 
-.apollo-post > p,
-.apollo-post > blockquote p {
+.apollo-post > p, .apollo-website-contents > p,
+.apollo-post > blockquote p, .apollo-website-contents > blockquote p {
   color: gray;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
   font-size: 16px;
@@ -1294,13 +1298,13 @@ kbd:active {
   line-height: 24px;
 }
 
-.apollo-post > p > .fa,
-.apollo-post > blockquote p > .fa {
+.apollo-post > p > .fa, .apollo-website-contents > p > .fa,
+.apollo-post > blockquote p > .fa, .apollo-website-contents > blockquote p > .fa {
   color: #555555;
 }
 
-.apollo-post > p > a,
-.apollo-post > blockquote p > a {
+.apollo-post > p > a, .apollo-website-contents > p > a,
+.apollo-post > blockquote p > a, .apollo-website-contents > blockquote p > a {
   text-decoration: none;
   color: #b89766;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
@@ -1315,15 +1319,15 @@ kbd:active {
   transition: background-color 0.25s ease-out;
 }
 
-.apollo-post > p > a:hover,
-.apollo-post > blockquote p > a:hover {
+.apollo-post > p > a:hover, .apollo-website-contents > p > a:hover,
+.apollo-post > blockquote p > a:hover, .apollo-website-contents > blockquote p > a:hover {
   background-color: #e4dcd5;
 }
 
-.apollo-post > p > strong,
-.apollo-post > p > b,
-.apollo-post > blockquote p > strong,
-.apollo-post > blockquote p > b {
+.apollo-post > p > strong, .apollo-website-contents > p > strong,
+.apollo-post > p > b, .apollo-website-contents > p > b,
+.apollo-post > blockquote p > strong, .apollo-website-contents > blockquote p > strong,
+.apollo-post > blockquote p > b, .apollo-website-contents > blockquote p > b {
   color: #555555;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
   font-size: 16px;
@@ -1331,18 +1335,18 @@ kbd:active {
   line-height: 24px;
 }
 
-.apollo-post > p code,
-.apollo-post > blockquote p code {
+.apollo-post > p code, .apollo-website-contents > p code,
+.apollo-post > blockquote p code, .apollo-website-contents > blockquote p code {
   cursor: pointer;
   padding: 2px 4px;
   background-color: #f6f4f4;
 }
 
-.apollo-post > p {
+.apollo-post > p, .apollo-website-contents > p {
   margin-bottom: 20px;
 }
 
-.apollo-post > blockquote {
+.apollo-post > blockquote, .apollo-website-contents > blockquote {
   padding: 20px;
   color: gray;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
@@ -1354,7 +1358,7 @@ kbd:active {
   margin-bottom: 30px;
 }
 
-.apollo-post > blockquote li {
+.apollo-post > blockquote li, .apollo-website-contents > blockquote li {
   color: gray;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
   font-size: 16px;
@@ -1362,7 +1366,7 @@ kbd:active {
   line-height: 24px;
 }
 
-.apollo-post > blockquote li > a {
+.apollo-post > blockquote li > a, .apollo-website-contents > blockquote li > a {
   text-decoration: none;
   color: #b89766;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
@@ -1377,12 +1381,12 @@ kbd:active {
   transition: background-color 0.25s ease-out;
 }
 
-.apollo-post > blockquote li > a:hover {
+.apollo-post > blockquote li > a:hover, .apollo-website-contents > blockquote li > a:hover {
   background-color: #e4dcd5;
 }
 
-.apollo-post > blockquote li > strong,
-.apollo-post > blockquote li > b {
+.apollo-post > blockquote li > strong, .apollo-website-contents > blockquote li > strong,
+.apollo-post > blockquote li > b, .apollo-website-contents > blockquote li > b {
   color: #555555;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
   font-size: 16px;
@@ -1390,18 +1394,18 @@ kbd:active {
   line-height: 24px;
 }
 
-.apollo-post > blockquote li > .fa {
+.apollo-post > blockquote li > .fa, .apollo-website-contents > blockquote li > .fa {
   color: #555555;
 }
 
-.apollo-post > strong + code {
+.apollo-post > strong + code, .apollo-website-contents > strong + code {
   margin-left: 3px;
   cursor: pointer;
   padding: 2px 4px;
   background-color: #f6f4f4;
 }
 
-.apollo-post > hr {
+.apollo-post > hr, .apollo-website-contents > hr {
   display: block;
   width: 100%;
   padding: 0;
@@ -1410,19 +1414,19 @@ kbd:active {
   border-top: 1px solid #d9d9d9;
 }
 
-.apollo-post > ol,
-.apollo-post > ul {
+.apollo-post > ol, .apollo-website-contents > ol,
+.apollo-post > ul, .apollo-website-contents > ul {
   padding: 0;
   margin: 0 0 20px 0;
 }
 
-.apollo-post > ol > br,
-.apollo-post > ul > br {
+.apollo-post > ol > br, .apollo-website-contents > ol > br,
+.apollo-post > ul > br, .apollo-website-contents > ul > br {
   display: none;
 }
 
-.apollo-post > ol li,
-.apollo-post > ul li {
+.apollo-post > ol li, .apollo-website-contents > ol li,
+.apollo-post > ul li, .apollo-website-contents > ul li {
   padding: 0;
   margin: 0 0 0 20px;
   color: gray;
@@ -1432,8 +1436,8 @@ kbd:active {
   line-height: 24px;
 }
 
-.apollo-post > ol li > a,
-.apollo-post > ul li > a {
+.apollo-post > ol li > a, .apollo-website-contents > ol li > a,
+.apollo-post > ul li > a, .apollo-website-contents > ul li > a {
   text-decoration: none;
   color: #b89766;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
@@ -1448,15 +1452,15 @@ kbd:active {
   transition: background-color 0.25s ease-out;
 }
 
-.apollo-post > ol li > a:hover,
-.apollo-post > ul li > a:hover {
+.apollo-post > ol li > a:hover, .apollo-website-contents > ol li > a:hover,
+.apollo-post > ul li > a:hover, .apollo-website-contents > ul li > a:hover {
   background-color: #e4dcd5;
 }
 
-.apollo-post > ol li > strong,
-.apollo-post > ol li > b,
-.apollo-post > ul li > strong,
-.apollo-post > ul li > b {
+.apollo-post > ol li > strong, .apollo-website-contents > ol li > strong,
+.apollo-post > ol li > b, .apollo-website-contents > ol li > b,
+.apollo-post > ul li > strong, .apollo-website-contents > ul li > strong,
+.apollo-post > ul li > b, .apollo-website-contents > ul li > b {
   color: #555555;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
   font-size: 16px;
@@ -1464,17 +1468,17 @@ kbd:active {
   line-height: 24px;
 }
 
-.apollo-post > ol li > .fa,
-.apollo-post > ul li > .fa {
+.apollo-post > ol li > .fa, .apollo-website-contents > ol li > .fa,
+.apollo-post > ul li > .fa, .apollo-website-contents > ul li > .fa {
   color: #555555;
 }
 
-.apollo-post > h1,
-.apollo-post > h2,
-.apollo-post > h3,
-.apollo-post > h4,
-.apollo-post > h5,
-.apollo-post > h6 {
+.apollo-post > h1, .apollo-website-contents > h1,
+.apollo-post > h2, .apollo-website-contents > h2,
+.apollo-post > h3, .apollo-website-contents > h3,
+.apollo-post > h4, .apollo-website-contents > h4,
+.apollo-post > h5, .apollo-website-contents > h5,
+.apollo-post > h6, .apollo-website-contents > h6 {
   margin: 40px 0 10px 0;
   color: #555555;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
@@ -1482,40 +1486,40 @@ kbd:active {
   line-height: 1;
 }
 
-.apollo-post > h1 > .fa,
-.apollo-post > h2 > .fa,
-.apollo-post > h3 > .fa,
-.apollo-post > h4 > .fa,
-.apollo-post > h5 > .fa,
-.apollo-post > h6 > .fa {
+.apollo-post > h1 > .fa, .apollo-website-contents > h1 > .fa,
+.apollo-post > h2 > .fa, .apollo-website-contents > h2 > .fa,
+.apollo-post > h3 > .fa, .apollo-website-contents > h3 > .fa,
+.apollo-post > h4 > .fa, .apollo-website-contents > h4 > .fa,
+.apollo-post > h5 > .fa, .apollo-website-contents > h5 > .fa,
+.apollo-post > h6 > .fa, .apollo-website-contents > h6 > .fa {
   color: #555555;
 }
 
-.apollo-post > h1 {
+.apollo-post > h1, .apollo-website-contents > h1 {
   font-size: 32px;
 }
 
-.apollo-post > h2 {
+.apollo-post > h2, .apollo-website-contents > h2 {
   font-size: 28px;
 }
 
-.apollo-post > h3 {
+.apollo-post > h3, .apollo-website-contents > h3 {
   font-size: 24px;
 }
 
-.apollo-post > h4 {
+.apollo-post > h4, .apollo-website-contents > h4 {
   font-size: 20px;
 }
 
-.apollo-post > h5 {
+.apollo-post > h5, .apollo-website-contents > h5 {
   font-size: 18px;
 }
 
-.apollo-post > h6 {
+.apollo-post > h6, .apollo-website-contents > h6 {
   font-size: 16px;
 }
 
-.apollo-post > pre {
+.apollo-post > pre, .apollo-website-contents > pre {
   margin: 20px 0 0 0;
   padding: 20px;
   color: #969492;
@@ -1523,13 +1527,13 @@ kbd:active {
   background-color: #d6d2ce;
 }
 
-.apollo-post > .highlight {
+.apollo-post > .highlight, .apollo-website-contents > .highlight {
   cursor: text;
   margin-bottom: 20px;
   overflow-x: auto;
 }
 
-.apollo-post > .highlight .code {
+.apollo-post > .highlight .code, .apollo-website-contents > .highlight .code {
   padding-right: 20px;
 }
 
@@ -2102,123 +2106,6 @@ kbd:active {
   }
 }
 
-.apollo-website-header {
-  padding: 40px 20px;
-  width: 100%;
-}
-
-.apollo-website-header::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-.apollo-website-header__col-logo {
-  width: 100%;
-  float: left;
-  position: relative;
-  -webkit-box-sizing: border-box;
-  -khtml-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-@media only screen and (min-width: 1px) {
-  .apollo-website-header__col-logo {
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 480px) {
-  .apollo-website-header__col-logo {
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 768px), only print {
-  .apollo-website-header__col-logo {
-    width: 16.66667%;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .apollo-website-header__col-logo {
-    width: 16.66667%;
-  }
-}
-
-@media only screen and (min-width: 1280px) {
-  .apollo-website-header__col-logo {
-    width: 16.66667%;
-  }
-}
-
-@media only screen and (min-width: 1800px) {
-  .apollo-website-header__col-logo {
-    width: 16.66667%;
-  }
-}
-
-.apollo-website-header__col-menu {
-  text-align: right;
-  width: 100%;
-  float: left;
-  position: relative;
-  -webkit-box-sizing: border-box;
-  -khtml-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-@media only screen and (min-width: 1px) {
-  .apollo-website-header__col-menu {
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 480px) {
-  .apollo-website-header__col-menu {
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 768px), only print {
-  .apollo-website-header__col-menu {
-    width: 83.33333%;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .apollo-website-header__col-menu {
-    width: 83.33333%;
-  }
-}
-
-@media only screen and (min-width: 1280px) {
-  .apollo-website-header__col-menu {
-    width: 83.33333%;
-  }
-}
-
-@media only screen and (min-width: 1800px) {
-  .apollo-website-header__col-menu {
-    width: 83.33333%;
-  }
-}
-
-.apollo-website-header__logo {
-  display: inline-block;
-  width: 40px;
-  height: 30px;
-  background-image: url("/img/apollo-logo__icon.svg");
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-}
-
 .apollo-website-menu__link {
   text-decoration: none;
   display: inline-block;
@@ -2240,6 +2127,14 @@ kbd:active {
   color: #b89766;
 }
 
+.apollo-website-menu__link:first-child {
+  padding-left: 0;
+}
+
+.apollo-website-menu__link:last-child {
+  padding-right: 0;
+}
+
 .apollo-website-menu__link--current {
   cursor: default;
   color: #ece8e8;
@@ -2247,10 +2142,6 @@ kbd:active {
 
 .apollo-website-menu__link--current:hover {
   color: #ece8e8;
-}
-
-.apollo-website-menu__link--current:first-child {
-  margin-left: 10px;
 }
 
 .apollo-website-header {
@@ -2284,7 +2175,7 @@ kbd:active {
 
 @media only screen and (min-width: 480px) {
   .apollo-website-header__col-logo {
-    width: 100%;
+    width: 16.66667%;
   }
 }
 
@@ -2296,19 +2187,74 @@ kbd:active {
 
 @media only screen and (min-width: 1024px) {
   .apollo-website-header__col-logo {
-    width: 16.66667%;
+    width: 8.33333%;
   }
 }
 
 @media only screen and (min-width: 1280px) {
   .apollo-website-header__col-logo {
-    width: 16.66667%;
+    width: 8.33333%;
   }
 }
 
 @media only screen and (min-width: 1800px) {
   .apollo-website-header__col-logo {
+    width: 8.33333%;
+  }
+}
+
+.apollo-website-header__col-social {
+  margin-top: 7px;
+  width: 100%;
+  float: left;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 1px) {
+  .apollo-website-header__col-social {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .apollo-website-header__col-social {
+    width: 83.33333%;
+  }
+}
+
+@media only screen and (min-width: 768px), only print {
+  .apollo-website-header__col-social {
+    width: 83.33333%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .apollo-website-header__col-social {
     width: 16.66667%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .apollo-website-header__col-social {
+    width: 16.66667%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .apollo-website-header__col-social {
+    width: 16.66667%;
+  }
+}
+
+@media only screen and (max-width: 1023px), only print {
+  .apollo-website-header__col-social {
+    text-align: right;
   }
 }
 
@@ -2339,26 +2285,37 @@ kbd:active {
 
 @media only screen and (min-width: 768px), only print {
   .apollo-website-header__col-menu {
-    width: 83.33333%;
+    width: 100%;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   .apollo-website-header__col-menu {
-    width: 83.33333%;
+    width: 75%;
   }
 }
 
 @media only screen and (min-width: 1280px) {
   .apollo-website-header__col-menu {
-    width: 83.33333%;
+    width: 75%;
   }
 }
 
 @media only screen and (min-width: 1800px) {
   .apollo-website-header__col-menu {
-    width: 83.33333%;
+    width: 75%;
   }
+}
+
+@media only screen and (max-width: 1023px), only print {
+  .apollo-website-header__col-menu {
+    font-size: 12px;
+    text-align: left;
+  }
+}
+
+.apollo-website-header__github {
+  width: 85px;
 }
 
 .apollo-website-header__logo {
@@ -2434,6 +2391,14 @@ kbd:active {
   color: #b89766;
 }
 
+.apollo-website-menu__link:first-child {
+  padding-left: 0;
+}
+
+.apollo-website-menu__link:last-child {
+  padding-right: 0;
+}
+
 .apollo-website-menu__link--current {
   cursor: default;
   color: #ece8e8;
@@ -2443,14 +2408,9 @@ kbd:active {
   color: #ece8e8;
 }
 
-.apollo-website-menu__link--current:first-child {
-  margin-left: 10px;
-}
-
 .apollo-website-page {
-  padding-top: 120px;
-  padding-bottom: 120px;
-  background-color: #b89766;
+  padding: 120px 20px;
+  background-color: #ece8e8;
 }
 
 @font-face {

@@ -1,7 +1,7 @@
 title: Writing docs
 category: a-pollo
 id: 4
-
+layout: website
 ---
 
 ### How to write a CSS widget documentation?

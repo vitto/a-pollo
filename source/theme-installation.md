@@ -1,6 +1,7 @@
 title: Theme installation
 category: a-pollo
 id: 6
+layout: website
 ---
 
 ### Install a theme

@@ -1,6 +1,7 @@
 title: Installation
 category: a-pollo
 id: 3
+layout: website
 ---
 
 ### Node.js only
