@@ -48,7 +48,7 @@ js:
     name: frontsize.min.js
     watch: frontsize/js/**/*
     files:
-        - vendors/clipboard/dist/clipboard.js
         - vendors/jquery/dist/jquery.js
-        - frontsize/js/copy.js
+        - vendors/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js
+        - vendors/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js
         - frontsize/js/mobile-menu.js
