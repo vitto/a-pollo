@@ -2370,6 +2370,30 @@ kbd:active {
   line-height: 24px;
 }
 
+.apollo-website-logo__css3 {
+  width: 122px;
+  height: 91px;
+  background-image: url("/img/css3-logo.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.apollo-website-logo__less {
+  width: 122px;
+  height: 91px;
+  background-image: url("/img/less-logo.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.apollo-website-logo__sass {
+  width: 122px;
+  height: 91px;
+  background-image: url("/img/sass-logo.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
 .apollo-website-menu__link {
   text-decoration: none;
   display: inline-block;

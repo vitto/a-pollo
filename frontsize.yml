@@ -49,6 +49,8 @@ js:
     watch: frontsize/js/**/*
     files:
         - vendors/jquery/dist/jquery.js
+        - vendors/gsap/src/uncompressed/TweenMax.js
         - vendors/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js
+        - vendors/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js
         - vendors/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js
-        - frontsize/js/mobile-menu.js
+        - frontsize/js/home.js

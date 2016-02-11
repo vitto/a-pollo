@@ -1,0 +1,16 @@
+.apollo-website-logo {
+    $width: 122px;
+    $height: 91px;
+
+    @include element("css3") {
+        @include icon("css3-logo.svg", $width, $height);
+    }
+
+    @include element("less") {
+        @include icon("less-logo.svg", $width, $height);
+    }
+
+    @include element("sass") {
+        @include icon("sass-logo.svg", $width, $height);
+    }
+}

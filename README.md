@@ -175,11 +175,29 @@ Generate website from scratch
 ./node_modules/.bin/gulp frontsize:build && ./node_modules/.bin/hexo generate
 ```
 
-Generate website
+---
+
+Generate website and watch
+
+On a terminal tab
 
 ```
-./node_modules/.bin/hexo generate
+./node_modules/.bin/hexo generate --watch
 ```
+
+On a terminal tab
+
+```
+./node_modules/.bin/gulp frontsize:watch
+```
+
+On a terminal tab
+
+```
+php -S localhost:8000 -t ./public
+```
+
+---
 
 Clear website
 
