@@ -2,24 +2,23 @@
 
     text-align: center;
 
-    border: 1px solid purple;
+    $width: 160px;
+    $height: 280px;
+    $upperHeight: 168px;
 
-    $width: 200px;
-    $height: 100px;
+    height: 400px;
 
     @include element("container-upper") {
         position: absolute;
         left: 0;
         right: 0;
-        border: 1px solid yellow;
-        z-index: 2;
+        z-index: 3;
     }
 
     @include element("container-lower") {
         position: absolute;
         left: 0;
         right: 0;
-        border: 1px solid green;
     }
 
     @include element("upper") {
@@ -27,19 +26,28 @@
         margin: auto;
 
         display: inline-block;
+
+        @include backgroundImage("a-pollo-mincer.svg");
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: $width $height;
         width: $width;
-        height: $height;
-        background-color: red;
+        height: $upperHeight;
     }
 
     @include element("lower") {
         position: relative;
-        top: 90px;
         margin: auto;
 
         display: inline-block;
+        top: $upperHeight;
+
+        @include backgroundImage("a-pollo-mincer.svg");
+        background-repeat: no-repeat;
+        background-position-x: 0;
+        background-position-y: -($upperHeight);
+        background-size: $width $height;
         width: $width;
-        height: $height;
-        background-color: blue;
+        height: 111px;
     }
 }

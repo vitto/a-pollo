@@ -2327,6 +2327,22 @@ kbd:active {
   background-position: 50% 50%;
 }
 
+.apollo-website-headline {
+  margin: 60px 0 120px 0;
+  text-align: center;
+}
+
+.apollo-website-headline__title {
+  text-transform: uppercase;
+  color: white;
+  font-size: 48px;
+}
+
+.apollo-website-headline__sub-title {
+  font-size: 24px;
+  color: #b89766;
+}
+
 .apollo-website-home {
   margin-top: 120px;
   margin-bottom: 120px;
@@ -2469,46 +2485,97 @@ kbd:active {
 
 .apollo-website-mincer {
   text-align: center;
-  border: 1px solid purple;
+  height: 400px;
 }
 
 .apollo-website-mincer__container-upper {
   position: absolute;
   left: 0;
   right: 0;
-  border: 1px solid yellow;
-  z-index: 2;
+  z-index: 3;
 }
 
 .apollo-website-mincer__container-lower {
   position: absolute;
   left: 0;
   right: 0;
-  border: 1px solid green;
 }
 
 .apollo-website-mincer__upper {
   position: relative;
   margin: auto;
   display: inline-block;
-  width: 200px;
-  height: 100px;
-  background-color: red;
+  background-image: url("/img/a-pollo-mincer.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 160px 280px;
+  width: 160px;
+  height: 168px;
 }
 
 .apollo-website-mincer__lower {
   position: relative;
-  top: 90px;
   margin: auto;
   display: inline-block;
-  width: 200px;
-  height: 100px;
-  background-color: blue;
+  top: 168px;
+  background-image: url("/img/a-pollo-mincer.svg");
+  background-repeat: no-repeat;
+  background-position-x: 0;
+  background-position-y: -168px;
+  background-size: 160px 280px;
+  width: 160px;
+  height: 111px;
 }
 
 .apollo-website-page {
   padding: 120px 20px;
   background-color: #ece8e8;
+}
+
+.apollo-website-styleguide {
+  position: relative;
+}
+
+.apollo-website-styleguide__container {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.apollo-website-styleguide__container:first-child {
+  z-index: 2;
+}
+
+.apollo-website-styleguide__page {
+  position: relative;
+  margin: auto;
+  display: inline-block;
+  background-color: white;
+  -webkit-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  width: 210px;
+  height: 297px;
+  -webkit-transform: scale(0.125);
+  -khtml-transform: scale(0.125);
+  -moz-transform: scale(0.125);
+  -ms-transform: scale(0.125);
+  -o-transform: scale(0.125);
+  transform: scale(0.125);
+  background-image: url("/img/a-pollo-styleguide.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  -khtml-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 @font-face {

@@ -1,0 +1,35 @@
+.apollo-website-styleguide {
+
+    $width: 210px;
+    $height: 297px;
+
+    position: relative;
+
+    @include element("container") {
+        top: 0;
+        left:0;
+        right:0;
+        position: absolute;
+        z-index: 1;
+
+        &:first-child {
+            z-index: 2;
+        }
+    }
+
+    @include element("page") {
+        position: relative;
+        margin: auto;
+        display: inline-block;
+        background-color: white;
+        @include border-radius(4px);
+        @include size($width, $height);
+        @include scale(0.125);
+
+        @include backgroundImage("a-pollo-styleguide.svg");
+        background-repeat: no-repeat;
+        background-position: 0 0;
+
+        @include box-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+}
