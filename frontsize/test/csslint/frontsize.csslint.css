@@ -112,11 +112,11 @@ kbd:active {
   position: relative;
   margin-top: 20px;
   padding: 20px;
-  color: #969492;
+  color: #aaaaaa;
   font-family: menlo, monaco, "courier new", monospace;
   font-size: 16px;
   font-weight: 400;
-  background-color: #d6d2ce;
+  background-color: white;
   cursor: pointer;
   -webkit-transition: color 0.25s ease-out, background-color 0.25s ease-out;
   -khtml-transition: color 0.25s ease-out, background-color 0.25s ease-out;
@@ -131,7 +131,7 @@ kbd:active {
   right: 20px;
   top: 20px;
   padding: 5px 10px;
-  color: #b6b3b0;
+  color: #d5d5d5;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
   font-size: 16px;
   font-weight: 200;
@@ -179,11 +179,11 @@ kbd:active {
 }
 
 .apollo-code-example:hover .gutter, .apollo-post > .highlight:hover .gutter, .apollo-website-contents > .highlight:hover .gutter {
-  color: #c6c3bf;
+  color: #eaeaea;
 }
 
 .apollo-code-example .code *, .apollo-post > .highlight .code *, .apollo-website-contents > .highlight .code * {
-  color: #969492;
+  color: #aaaaaa;
   -webkit-transition: 0.25s ease-out;
   -khtml-transition: color 0.25s ease-out;
   -moz-transition: color 0.25s ease-out;
@@ -227,7 +227,7 @@ kbd:active {
   -o-user-select: none;
   user-select: none;
   padding-right: 10px;
-  color: #b6b3b0;
+  color: #d5d5d5;
   -webkit-transition: 0.25s ease-out;
   -khtml-transition: color 0.25s ease-out;
   -moz-transition: color 0.25s ease-out;
@@ -1522,9 +1522,9 @@ kbd:active {
 .apollo-post > pre, .apollo-website-contents > pre {
   margin: 20px 0 0 0;
   padding: 20px;
-  color: #969492;
+  color: #aaaaaa;
   font-family: menlo, monaco, "courier new", monospace;
-  background-color: #d6d2ce;
+  background-color: white;
 }
 
 .apollo-post > .highlight, .apollo-website-contents > .highlight {
