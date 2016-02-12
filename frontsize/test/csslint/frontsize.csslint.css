@@ -2488,6 +2488,12 @@ kbd:active {
   height: 400px;
 }
 
+@media only screen and (max-width: 767px) {
+  .apollo-website-mincer {
+    display: none;
+  }
+}
+
 .apollo-website-mincer__container-upper {
   position: absolute;
   left: 0;

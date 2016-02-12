@@ -8,6 +8,10 @@
 
     height: 400px;
 
+    @media #{$till-tablet-portrait} {
+        display: none;
+    }
+
     @include element("container-upper") {
         position: absolute;
         left: 0;
