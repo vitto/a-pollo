@@ -8,7 +8,7 @@ $h5 : 18px;
 $h6 : 16px;
 
 // Font sizes
-$font-size:       12px;
+$font-size:       16px;
 $font-small-size: 12px;
 
 // Fonts families global vars
@@ -24,7 +24,7 @@ $font-heading : $font-sans;
 // used with s(); mixin, if $spacing is 20px s(0.5); returns 10px
 $spacing : 20px;
 
-$font-line-height    : s();
+$font-line-height    : s(1.5, $font-size);
 $font-weight         : 300;
 $font-color          : rgb(128, 128, 128);
 $body-color          : rgb(38, 38, 38);
@@ -76,5 +76,8 @@ $use-font-fallback : true;
 $use-fallbacks     : true;
 
 $use-root-path: true;
+// $path-img  : "/a-pollo/img/";
+// $path-font : "/a-pollo/fonts/";
+
 $path-img  : "/img/";
 $path-font : "/fonts/";

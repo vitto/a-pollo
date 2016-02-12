@@ -139,6 +139,14 @@ footer:
 
 ##### Development utils
 
+Prepare environment
+
+```
+npm install && ./node_modules/.bin/bower install && cd test && npm install && ./node_modules/.bin/bower install
+```
+
+---
+
 To build theme
 
 ```
@@ -150,7 +158,7 @@ To build theme
 Generate test css
 
 ```
-./node_modules/.bin/gulp frontsize:build && cd ./test && ./node_modules/.bin/gulp frontsize:css && ../ && node index.js
+./node_modules/.bin/gulp frontsize:build && cd ./test && ./node_modules/.bin/gulp frontsize:css && ../ && node index.js config=a-pollo.test.yml
 ```
 
 ---

@@ -1,0 +1,25 @@
+.apollo-website-home {
+
+    margin-top: s(6);
+    margin-bottom: s(6);
+
+    @include element("title-icon") {
+        margin-right: s(0.25);
+        color: white;
+    }
+    @include element("title") {
+        @include setFont(500, $colorMenuButtonHover);
+        margin-bottom: s();
+    }
+    @include element("p") {
+        @include setFont(300, $colorMenuButton);
+
+        a {
+            @include setFont(300, $colorMenuButtonHover);
+        }
+
+        b {
+            @include setFont(500, mix($colorMenuButton, white, 75%));
+        }
+    }
+}

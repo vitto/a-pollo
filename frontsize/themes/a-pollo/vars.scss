@@ -33,7 +33,7 @@ $colorFooterBold: mix($colorGold, $colorText, 50%);
 
 $colorLink: $colorGold;
 
-$colorCodeBackground: mix($colorGrey, $colorGold, 90%);
+$colorCodeBackground: white; //mix($colorGrey, $colorGold, 90%);
 $colorCodeText: mix($colorGreyDark, $colorCodeBackground, 50%);
 $colorCodeTextHover: $colorGreyDark;
 $colorCodeLineNumber: mix($colorCodeText, $colorCodeBackground, 50%);
@@ -48,5 +48,8 @@ $colorBlockquote: mix($colorPost, white, 50%);
 $colorHr: $colorGrey;
 $colorTableBg: white;
 $colorTableOdd: mix($colorGreyLight, $colorTableBg, 30%);
+
+$colorWebsiteHeader: white;
+$colorWebsiteHeaderSubText: $colorGold;
 
 $ease: 0.25s ease-out;

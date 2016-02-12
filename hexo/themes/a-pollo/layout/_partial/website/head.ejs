@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8">
 
-    <title><%= page.title %> @ <%= config.title %> </title>
+    <title><%= page.title || 'Welcome' %> @ <%= config.title %> </title>
 
     <meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -24,6 +24,5 @@
         <meta content="<%= config.url %>/img/icon/mstile-144x144.png" name="msapplication-TileImage">
     <% } %>
     <%- css('css/frontsize.min') %>
-    <%- css('css/theme/theme') %>
     <%- js('js/frontsize.min') %>
 </head>

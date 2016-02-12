@@ -1,0 +1,16 @@
+<%- partial('_partial/website/menu-mobile') %>
+<%- partial('_partial/website/header') %>
+
+<% if (page.title === 'Index') { %>
+    <%- partial('_partial/website/page-index') %>
+<% } %>
+
+<section class="apollo-website-page">
+    <div class="apollo-website-spacer">
+        <div class="apollo-website-contents">
+            <%- markdown(page.content) %>
+        </div>
+    </div>
+</section>
+
+<%- partial('_partial/website/footer') %>
