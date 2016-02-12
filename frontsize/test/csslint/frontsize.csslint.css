@@ -243,6 +243,8 @@ kbd:active {
 .apollo-footer {
   margin-top: 80px;
   margin-bottom: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
   width: 100%;
 }
 
@@ -836,7 +838,7 @@ kbd:active {
 
 .apollo-menu-mobile-nav {
   position: fixed;
-  z-index: 3;
+  z-index: 6;
   left: -100%;
   overflow: auto;
   width: 75%;
@@ -875,7 +877,7 @@ kbd:active {
 
 .apollo-menu-mobile {
   position: fixed;
-  z-index: 2;
+  z-index: 5;
   top: 0;
   left: 0;
   right: 0;
@@ -2155,6 +2157,12 @@ kbd:active {
   clear: both;
 }
 
+@media only screen and (max-width: 1023px), only print {
+  .apollo-website-header {
+    display: none !important;
+  }
+}
+
 .apollo-website-header__col-logo {
   width: 100%;
   float: left;
@@ -2328,8 +2336,16 @@ kbd:active {
 }
 
 .apollo-website-headline {
+  padding: 0 20px;
   margin: 60px 0 120px 0;
   text-align: center;
+}
+
+@media only screen and (max-width: 1023px), only print {
+  .apollo-website-headline {
+    margin-top: 0;
+    padding-top: 100px;
+  }
 }
 
 .apollo-website-headline__title {
@@ -2531,6 +2547,16 @@ kbd:active {
   background-size: 160px 280px;
   width: 160px;
   height: 111px;
+}
+
+.apollo-website-mobile {
+  margin-bottom: 20px;
+}
+
+.apollo-website-mobile__social {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ece8e8;
 }
 
 .apollo-website-page {

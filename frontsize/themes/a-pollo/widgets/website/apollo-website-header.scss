@@ -4,6 +4,10 @@
 
     @include row();
 
+    @media #{$till-tablet-landscape} {
+        display: none !important;
+    }
+
     @include element("col-logo") {
         @include column(1,1,1,2,2,12, 12);
     }

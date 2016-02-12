@@ -12,19 +12,6 @@
             } else {
                 page_url = page.permalink;
             }
-            %>
-            <!--
-            <% if (firstElement) { %>
-                <% firstElement = false; %>
-                <ul class="apollo-website-menu">
-                    <li class="apollo-website-menu__logo">
-                        <a href="<%= page_url %>">
-                            <img src="<%= config.root %>img/apollo-logo__icon.svg">
-                        </a>
-                    </li>
-            <% } %>
-            -->
-            <%
             if (url.replace(config.url, '') === page_url.replace(config.url, '')) {
                 selected = 'apollo-website-menu__link--current';
             } else {

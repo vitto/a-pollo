@@ -22,6 +22,9 @@
     margin-top: s(4);
     margin-bottom: s(4);
 
+    padding-left: s();
+    padding-right: s();
+
     @include row();
 
     @media #{$till-tablet-landscape} {

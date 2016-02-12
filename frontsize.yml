@@ -53,4 +53,5 @@ js:
         - vendors/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js
         - vendors/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js
         - vendors/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js
+        - frontsize/js/mobile-menu.js
         - frontsize/js/home.js

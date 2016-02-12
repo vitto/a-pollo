@@ -181,6 +181,5 @@ $(function () {
     );
     scene.setPin(sceneSelector);
     scene.setTween([sassTween, lessTween, css3Tween, mincerTween, page1Tween, page2Tween, page3Tween]);
-    // scene.addIndicators(); // add indicators (requires plugin)
     scene.addTo(controller);
 });

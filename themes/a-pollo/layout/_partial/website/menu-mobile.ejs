@@ -1,0 +1,84 @@
+<div class="apollo-menu-mobile">
+    <div>
+        <% if (config.header) { %>
+            <% if (config.header.link) { %>
+                <a href="<%= config.header.link %>" class="apollo-menu-mobile__logo" style="background-image: url(/css/theme/assets/<%= config.header.logo %>);"></a>
+            <% } else { %>
+                <div class="apollo-menu-mobile__logo" style="background-image: url(/css/theme/assets/<%= config.header.logo %>);"></div>
+            <% } %>
+        <% } %>
+        <div class="apollo-menu-mobile__title-box">
+            <div class="apollo-menu-mobile__category">
+                <% if (page.docs !== undefined) { %>
+                    <%= page.docs[0].category %>
+                <% } else if (page.category !== undefined) { %>
+                    <%= page.category %>
+                <% } else { %>
+                    a-pollo
+                <% } %>
+            </div>
+            <div class="apollo-menu-mobile__title">
+                <% if (page.permalink !== undefined) { %>
+                    <%= page.title %>
+                <% } else { %>
+                    <%= config.apollo.version %>
+                <% } %>
+            </div>
+        </div>
+        <div class="apollo-menu-mobile__switch"></div>
+    </div>
+</div>
+
+<nav class="apollo-menu-mobile-nav">
+
+    <div class="apollo-website-mobile">
+        <div class="apollo-logo__icon"></div>
+        <div class="apollo-website-mobile__social">
+            <%- partial('_partial/website/social-buttons') %>
+        </div>
+    </div>
+
+
+    <%
+        var firstElement = true;
+        var page_url, selected;
+    %>
+    <% site.pages.data = _.sortBy(site.pages.data, 'category') %>
+    <% if (site.pages.length > 1) { %>
+        <% site.pages.data = _.sortBy(site.pages.data, 'id') %>
+        <% site.pages.each(function (page, i) { %>
+            <% if (page.category !== undefined && page.category.toLowerCase() === 'a-pollo') { %>
+                <% if (page.url !== undefined) {
+                    page_url = page.url;
+                } else {
+                    page_url = page.permalink;
+                }
+                %>
+                <!--
+                <% if (firstElement) { %>
+                    <% firstElement = false; %>
+                    <ul class="apollo-website-menu">
+                        <li class="apollo-website-menu__logo">
+                            <a href="<%= page_url %>">
+                                <img src="<%= config.root %>img/apollo-logo__icon.svg">
+                            </a>
+                        </li>
+                <% } %>
+                -->
+                <%
+                if (url.replace(config.url, '') === page_url.replace(config.url, '')) {
+                    selected = 'apollo-website-menu__link--current';
+                } else {
+                    selected = '';
+                } %>
+                <div>
+                    <a href="<%= page_url %>" class="apollo-website-menu__link <%= selected %>">
+                        <%= page.title %>
+                    </a>
+                </div>
+            <% } %>
+        <% }) %>
+        </ul>
+    <% } %>
+
+</nav>

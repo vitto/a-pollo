@@ -1,7 +1,13 @@
 .apollo-website-headline {
 
+    padding: 0 s();
     margin: s(3) 0 s(6) 0;
     text-align: center;
+
+    @media #{$till-tablet-landscape} {
+        margin-top: 0;
+        padding-top: s(5);
+    }
 
     @include element("title") {
         text-transform: uppercase;
