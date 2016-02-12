@@ -1,16 +1,31 @@
 .apollo-website-logo {
-    $width: 122px;
-    $height: 91px;
+
+    max-width: 500px;
+    position: relative;
+    margin: auto;
+    margin-bottom: s(2);
+    z-index: 1;
+
+    @mixin websiteLibLogo($image) {
+        $width: 122px;
+        $height: 91px;
+        display: inline-block;
+        @include icon($image, $width, $height);
+        margin-left: s();
+        margin-right: s();
+
+        @include transition(transform 0.125s ease-out);
+    }
 
     @include element("css3") {
-        @include icon("css3-logo.svg", $width, $height);
+        @include websiteLibLogo("css3-logo.svg");
     }
 
     @include element("less") {
-        @include icon("less-logo.svg", $width, $height);
+        @include websiteLibLogo("less-logo.svg");
     }
 
     @include element("sass") {
-        @include icon("sass-logo.svg", $width, $height);
+        @include websiteLibLogo("sass-logo.svg");
     }
 }

@@ -1,0 +1,45 @@
+.apollo-website-mincer {
+
+    text-align: center;
+
+    border: 1px solid purple;
+
+    $width: 200px;
+    $height: 100px;
+
+    @include element("container-upper") {
+        position: absolute;
+        left: 0;
+        right: 0;
+        border: 1px solid yellow;
+        z-index: 2;
+    }
+
+    @include element("container-lower") {
+        position: absolute;
+        left: 0;
+        right: 0;
+        border: 1px solid green;
+    }
+
+    @include element("upper") {
+        position: relative;
+        margin: auto;
+
+        display: inline-block;
+        width: $width;
+        height: $height;
+        background-color: red;
+    }
+
+    @include element("lower") {
+        position: relative;
+        top: 90px;
+        margin: auto;
+
+        display: inline-block;
+        width: $width;
+        height: $height;
+        background-color: blue;
+    }
+}

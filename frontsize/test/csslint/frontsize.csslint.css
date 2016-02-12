@@ -2370,28 +2370,63 @@ kbd:active {
   line-height: 24px;
 }
 
+.apollo-website-logo {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+  margin-bottom: 40px;
+  z-index: 1;
+}
+
 .apollo-website-logo__css3 {
+  display: inline-block;
   width: 122px;
   height: 91px;
   background-image: url("/img/css3-logo.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+  -webkit-transition: transform 0.125s ease-out;
+  -khtml-transition: transform 0.125s ease-out;
+  -moz-transition: transform 0.125s ease-out;
+  -ms-transition: transform 0.125s ease-out;
+  -o-transition: transform 0.125s ease-out;
+  transition: transform 0.125s ease-out;
 }
 
 .apollo-website-logo__less {
+  display: inline-block;
   width: 122px;
   height: 91px;
   background-image: url("/img/less-logo.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+  -webkit-transition: transform 0.125s ease-out;
+  -khtml-transition: transform 0.125s ease-out;
+  -moz-transition: transform 0.125s ease-out;
+  -ms-transition: transform 0.125s ease-out;
+  -o-transition: transform 0.125s ease-out;
+  transition: transform 0.125s ease-out;
 }
 
 .apollo-website-logo__sass {
+  display: inline-block;
   width: 122px;
   height: 91px;
   background-image: url("/img/sass-logo.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+  -webkit-transition: transform 0.125s ease-out;
+  -khtml-transition: transform 0.125s ease-out;
+  -moz-transition: transform 0.125s ease-out;
+  -ms-transition: transform 0.125s ease-out;
+  -o-transition: transform 0.125s ease-out;
+  transition: transform 0.125s ease-out;
 }
 
 .apollo-website-menu__link {
@@ -2430,6 +2465,45 @@ kbd:active {
 
 .apollo-website-menu__link--current:hover {
   color: #ece8e8;
+}
+
+.apollo-website-mincer {
+  text-align: center;
+  border: 1px solid purple;
+}
+
+.apollo-website-mincer__container-upper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border: 1px solid yellow;
+  z-index: 2;
+}
+
+.apollo-website-mincer__container-lower {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border: 1px solid green;
+}
+
+.apollo-website-mincer__upper {
+  position: relative;
+  margin: auto;
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  background-color: red;
+}
+
+.apollo-website-mincer__lower {
+  position: relative;
+  top: 90px;
+  margin: auto;
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  background-color: blue;
 }
 
 .apollo-website-page {

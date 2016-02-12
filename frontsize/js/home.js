@@ -1,56 +1,93 @@
-$(function () { // wait for document ready
-    var $logoLess, sceneSelector;
+$(function () {
 
-    $logoLess = $("#logo-less");
+    // http://greensock.com/ease-visualizer
+    // http://janpaepke.github.io/ScrollMagic/examples/expert/bezier_path_animation.html
+
+    var logoEase, logoDuration, logoDelay, logoCurviness,
+    sceneSelector, controller, scene,
+    $lessLogo, lessPath, lessTween,
+    $sassLogo, sassPath, sassTween,
+    $css3Logo, css3Path, css3Tween;
+
+    lessTween = new TimelineMax();
+    sassTween = new TimelineMax();
+    css3Tween = new TimelineMax();
+    controller = new ScrollMagic.Controller();
+
+    logoEase = Circ.easeInOut;
+    logoDuration = 2;
+    logoCurviness = 1.75;
+    logoDelay = 0.2;
+
+    $lessLogo = $("#logo-less");
+    $sassLogo = $("#logo-sass");
+    $css3Logo = $("#logo-css3");
     sceneSelector = "#from-code-to-docs";
 
-    var flightpath = {
-        entry : {
-            curviness: 1.25,
-            autoRotate: true,
-            values: [
-                    {x: 100,    y: -20},
-                    {x: 300,    y: 10}
-                ]
-        },
-        looping : {
-            curviness: 1.25,
-            autoRotate: true,
-            values: [
-                    {x: 510,    y: 60},
-                    {x: 620,    y: -60},
-                    {x: 500,    y: -100},
-                    {x: 380,    y: 20},
-                    {x: 500,    y: 60},
-                    {x: 580,    y: 20},
-                    {x: 620,    y: 15}
-                ]
-        },
-        leave : {
-            curviness: 1.25,
-            autoRotate: true,
-            values: [
-                    {x: 660,    y: 20},
-                    {x: 800,    y: 130},
-                    {x: $(window).width() + 300,    y: -100},
-                ]
-        }
+    lessPath = {
+        curviness: logoCurviness,
+        autoRotate: false,
+        values: [
+            {x: 0,   y: 0},
+            {x: 150, y: 100},
+            {x: 200, y: 170}
+        ]
     };
-        // init controller
-        var controller = new ScrollMagic.Controller();
+
+    sassPath = {
+        curviness: logoCurviness,
+        autoRotate: false,
+        values: [
+            {x: 0, y: 0},
+            {x: 0, y: 170}
+        ]
+    };
+
+    css3Path = {
+        curviness: logoCurviness,
+        autoRotate: false,
+        values: [
+            {x: 0,   y: 0},
+            {x: -150, y: 100},
+            {x: -200, y: 170}
+        ]
+    };
 
 
 
-        // create tween
-        var tween = new TimelineMax()
-            .add(TweenMax.to($logoLess, 1.2, {css:{bezier:flightpath.entry}, ease:Power1.easeInOut}))
-            .add(TweenMax.to($logoLess, 2, {css:{bezier:flightpath.looping}, ease:Power1.easeInOut}))
-            .add(TweenMax.to($logoLess, 1, {css:{bezier:flightpath.leave}, ease:Power1.easeInOut}));
+    lessTween.add(TweenMax.to($lessLogo, logoDuration, {
+        css:{
+            bezier:lessPath,
+            scale: 0.25,
+            rotation: 90
+        }, ease:logoEase
+    }));
 
-        // build scene
-        var scene = new ScrollMagic.Scene({triggerElement: sceneSelector, duration: 500, offset: 100})
-                        .setPin(sceneSelector)
-                        .setTween(tween)
-                        .addIndicators() // add indicators (requires plugin)
-                        .addTo(controller);
+    sassTween.add(TweenMax.to($sassLogo, logoDuration, {
+        css:{
+            bezier:sassPath,
+            scale: 0.25
+        }, ease:logoEase, delay: logoDelay
+    }));
+
+    css3Tween.add(TweenMax.to($css3Logo, logoDuration, {
+        css:{
+            bezier:css3Path,
+            scale: 0.25,
+            rotation: -90
+        }, ease:logoEase, delay: logoDelay * 1.5
+    }));
+
+    // build scene
+    scene = new ScrollMagic.Scene(
+        {
+            triggerElement: sceneSelector,
+            duration: 500,
+            offset: 300
+        }
+    );
+    scene.setPin(sceneSelector);
+    scene.setTween([sassTween, lessTween, css3Tween]);
+    scene.addIndicators(); // add indicators (requires plugin)
+    scene.addTo(controller);
 });

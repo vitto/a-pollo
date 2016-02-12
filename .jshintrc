@@ -6,7 +6,11 @@
     "globals"       : {
         "module" : true,
         "grunt"  : true,
-        "exec"   : true
+        "exec"   : true,
+        "ScrollMagic" : true,
+        "TimelineMax" : true,
+        "TweenMax" : true,
+        "Power1" : true
     },
 
     "maxerr" : 50,       // {int} Maximum error before stopping
