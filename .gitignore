@@ -1,16 +1,1 @@
 .DS_Store
-Thumbs.db
-db.json
-*.log
-node_modules/
-/public/
-/scaffolds/
-/source
-/_site
-/frontsize/test/
-vendors/
-.deploy*/
-/hexo/source
-/hexo/_default_source/site
-/hexo/_config.yml
-/test/a-pollo/index.md
