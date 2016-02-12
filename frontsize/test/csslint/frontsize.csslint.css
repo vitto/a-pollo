@@ -2351,12 +2351,18 @@ kbd:active {
 .apollo-website-headline__title {
   text-transform: uppercase;
   color: white;
+  font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
   font-size: 48px;
+  font-weight: 600;
+  line-height: 24px;
 }
 
 .apollo-website-headline__sub-title {
-  font-size: 24px;
   color: #b89766;
+  font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 24px;
 }
 
 .apollo-website-home {
