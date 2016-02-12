@@ -776,7 +776,7 @@ kbd:active {
   -ms-transition: opacity 0.25s ease-out, background-size 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -o-transition: opacity 0.25s ease-out, background-size 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: opacity 0.25s ease-out, background-size 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  background-image: url("/img/transparent-background-light.svg");
+  background-image: url("/a-pollo/img/transparent-background-light.svg");
   background-size: 64px 64px;
   background-position: 50% 50%;
 }
@@ -813,7 +813,7 @@ kbd:active {
 .apollo-logo__icon {
   width: 80px;
   height: 60px;
-  background-image: url("/img/apollo-logo__icon.svg");
+  background-image: url("/a-pollo/img/apollo-logo__icon.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -973,7 +973,7 @@ kbd:active {
   -o-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid #ece8e8;
-  background-image: url("/img/apollo-mobile-button-switch.svg");
+  background-image: url("/a-pollo/img/apollo-mobile-button-switch.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 24px 24px;
@@ -2330,7 +2330,7 @@ kbd:active {
   display: inline-block;
   width: 40px;
   height: 30px;
-  background-image: url("/img/apollo-logo__icon.svg");
+  background-image: url("/a-pollo/img/apollo-logo__icon.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -2414,7 +2414,7 @@ kbd:active {
   display: inline-block;
   width: 122px;
   height: 91px;
-  background-image: url("/img/css3-logo.svg");
+  background-image: url("/a-pollo/img/css3-logo.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   margin-left: 20px;
@@ -2431,7 +2431,7 @@ kbd:active {
   display: inline-block;
   width: 122px;
   height: 91px;
-  background-image: url("/img/less-logo.svg");
+  background-image: url("/a-pollo/img/less-logo.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   margin-left: 20px;
@@ -2448,7 +2448,7 @@ kbd:active {
   display: inline-block;
   width: 122px;
   height: 91px;
-  background-image: url("/img/sass-logo.svg");
+  background-image: url("/a-pollo/img/sass-logo.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   margin-left: 20px;
@@ -2527,7 +2527,7 @@ kbd:active {
   position: relative;
   margin: auto;
   display: inline-block;
-  background-image: url("/img/a-pollo-mincer.svg");
+  background-image: url("/a-pollo/img/a-pollo-mincer.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 160px 280px;
@@ -2540,7 +2540,7 @@ kbd:active {
   margin: auto;
   display: inline-block;
   top: 168px;
-  background-image: url("/img/a-pollo-mincer.svg");
+  background-image: url("/a-pollo/img/a-pollo-mincer.svg");
   background-repeat: no-repeat;
   background-position-x: 0;
   background-position-y: -168px;
@@ -2599,7 +2599,7 @@ kbd:active {
   -ms-transform: scale(0.125);
   -o-transform: scale(0.125);
   transform: scale(0.125);
-  background-image: url("/img/a-pollo-styleguide.svg");
+  background-image: url("/a-pollo/img/a-pollo-styleguide.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -2613,25 +2613,25 @@ kbd:active {
 @font-face {
   font-family: "roboto";
   font-weight: 700;
-  src: url("/fonts/Roboto-Black.eot?#iefix") format("embedded-opentype"), url("/fonts/Roboto-Black.woff2") format("woff2"), url("/fonts/Roboto-Black.woff") format("woff"), url("/fonts/Roboto-Black.ttf") format("truetype"), url("/fonts/Roboto-Black.svgroboto") format("svg");
+  src: url("/a-pollo/fonts/Roboto-Black.eot?#iefix") format("embedded-opentype"), url("/a-pollo/fonts/Roboto-Black.woff2") format("woff2"), url("/a-pollo/fonts/Roboto-Black.woff") format("woff"), url("/a-pollo/fonts/Roboto-Black.ttf") format("truetype"), url("/a-pollo/fonts/Roboto-Black.svgroboto") format("svg");
 }
 
 @font-face {
   font-family: "roboto";
   font-weight: 600;
-  src: url("/fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/Roboto-Bold.woff2") format("woff2"), url("/fonts/Roboto-Bold.woff") format("woff"), url("/fonts/Roboto-Bold.ttf") format("truetype"), url("/fonts/Roboto-Bold.svgroboto") format("svg");
+  src: url("/a-pollo/fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("/a-pollo/fonts/Roboto-Bold.woff2") format("woff2"), url("/a-pollo/fonts/Roboto-Bold.woff") format("woff"), url("/a-pollo/fonts/Roboto-Bold.ttf") format("truetype"), url("/a-pollo/fonts/Roboto-Bold.svgroboto") format("svg");
 }
 
 @font-face {
   font-family: "roboto";
   font-weight: 500;
-  src: url("/fonts/Roboto-Medium.eot?#iefix") format("embedded-opentype"), url("/fonts/Roboto-Medium.woff2") format("woff2"), url("/fonts/Roboto-Medium.woff") format("woff"), url("/fonts/Roboto-Medium.ttf") format("truetype"), url("/fonts/Roboto-Medium.svgroboto") format("svg");
+  src: url("/a-pollo/fonts/Roboto-Medium.eot?#iefix") format("embedded-opentype"), url("/a-pollo/fonts/Roboto-Medium.woff2") format("woff2"), url("/a-pollo/fonts/Roboto-Medium.woff") format("woff"), url("/a-pollo/fonts/Roboto-Medium.ttf") format("truetype"), url("/a-pollo/fonts/Roboto-Medium.svgroboto") format("svg");
 }
 
 @font-face {
   font-family: "roboto";
   font-weight: 300;
-  src: url("/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("/fonts/Roboto-Light.woff2") format("woff2"), url("/fonts/Roboto-Light.woff") format("woff"), url("/fonts/Roboto-Light.ttf") format("truetype"), url("/fonts/Roboto-Light.svgroboto") format("svg");
+  src: url("/a-pollo/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("/a-pollo/fonts/Roboto-Light.woff2") format("woff2"), url("/a-pollo/fonts/Roboto-Light.woff") format("woff"), url("/a-pollo/fonts/Roboto-Light.ttf") format("truetype"), url("/a-pollo/fonts/Roboto-Light.svgroboto") format("svg");
 }
 
 .apollo-spacer {
