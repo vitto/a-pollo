@@ -2354,7 +2354,7 @@ kbd:active {
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
   font-size: 48px;
   font-weight: 600;
-  line-height: 24px;
+  line-height: 72px;
 }
 
 .apollo-website-headline__sub-title {
@@ -2362,7 +2362,7 @@ kbd:active {
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
   font-size: 24px;
   font-weight: 600;
-  line-height: 24px;
+  line-height: 36px;
 }
 
 .apollo-website-home {

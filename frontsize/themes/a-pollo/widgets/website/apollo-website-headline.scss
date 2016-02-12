@@ -11,10 +11,10 @@
 
     @include element("title") {
         text-transform: uppercase;
-        @include setFont(600, $colorWebsiteHeader, 48px);
+        @include setFont(600, $colorWebsiteHeader, 48px, s(48px, 1.5));
     }
 
     @include element("sub-title") {
-        @include setFont(600, $colorWebsiteHeaderSubText, 24px);
+        @include setFont(600, $colorWebsiteHeaderSubText, 24px, s(24px, 1.5));
     }
 }
