@@ -53,6 +53,7 @@ So you can have [a file with multiple examples][button_social_sass] like this an
 
 This is the list of the a-pollo documentation tags for CSS widgets:
 
+
 | Tag name         | Required | Type         | Description                 |
 |---               |---       |---           |---                          |
 | `@name`          | `true`   | `String`     | Title of the example |
