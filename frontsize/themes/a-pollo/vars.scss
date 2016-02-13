@@ -49,6 +49,8 @@ $colorHr: $colorGrey;
 $colorTableBg: white;
 $colorTableOdd: mix($colorGreyLight, $colorTableBg, 30%);
 
+$colorMarkCodeAttrValue: mix(mix($colorGold, white, 25%), yellow, 50%);
+
 $colorWebsiteHeader: white;
 $colorWebsiteHeaderSubText: $colorGold;
 
