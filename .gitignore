@@ -8,8 +8,10 @@ node_modules/
 /source
 /_site
 /frontsize/test/
+/example/
 vendors/
 .deploy*/
+/themes/
 /hexo/source
 /hexo/node_modules
 /hexo/_default_source/site

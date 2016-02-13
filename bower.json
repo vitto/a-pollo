@@ -23,7 +23,7 @@
     "tests"
   ],
   "dependencies": {
-    "frontsize-sass": "~3.10.59",
+    "frontsize-sass": "~3.12.62",
     "roboto-fontface": "~0.4.3",
     "normalize-css": "normalize.css#~3.0.3",
     "font-awesome": "~4.4.0",

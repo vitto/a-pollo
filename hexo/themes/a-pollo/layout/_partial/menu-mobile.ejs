@@ -2,9 +2,9 @@
     <div>
         <% if (config.header) { %>
             <% if (config.header.link) { %>
-                <a href="<%= config.header.link %>" class="apollo-menu-mobile__logo" style="background-image: url(/css/theme/assets/<%= config.header.logo %>);"></a>
+                <a href="<%= config.header.link %>" class="apollo-menu-mobile__logo" style="background-image: url(<%= config.url %>/css/theme/assets/<%= config.header.logo %>);"></a>
             <% } else { %>
-                <div class="apollo-menu-mobile__logo" style="background-image: url(/css/theme/assets/<%= config.header.logo %>);"></div>
+                <div class="apollo-menu-mobile__logo" style="background-image: url(<%= config.url %>/css/theme/assets/<%= config.header.logo %>);"></div>
             <% } %>
         <% } %>
         <div class="apollo-menu-mobile__title-box">

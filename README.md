@@ -155,10 +155,16 @@ To build theme
 
 ---
 
-Generate test css
+Generate test CSS
 
 ```
 ./node_modules/.bin/gulp frontsize:build && cd ./test && ./node_modules/.bin/gulp frontsize:css && ../ && node index.js config=a-pollo.test.yml
+```
+
+Generate website example CSS
+
+```
+./node_modules/.bin/gulp frontsize:build && cd ./test && ./node_modules/.bin/gulp frontsize:css && ../ && node index.js config=a-pollo.example.yml
 ```
 
 ---
