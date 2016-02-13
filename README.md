@@ -174,6 +174,7 @@ To test the HTML results
 ```
 ./node_modules/.bin/gulp frontsize:build && node index.js
 ./node_modules/.bin/gulp frontsize:build && node index.js config=a-pollo.test.yml
+./node_modules/.bin/gulp frontsize:build && node index.js config=a-pollo.example.yml
 ```
 
 ---

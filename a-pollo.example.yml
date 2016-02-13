@@ -32,6 +32,6 @@ header:
     description: The world's most generic agency ever # [optional] A description under the logo image
 
 footer:
-    logo: <a href="http://github.com/vitto/apollo#readme" class="apollo-logo"><img width="80px" src="/css/theme/assets/example-logo.svg"></a>
+    logo: <a href="http://github.com/vitto/apollo#readme" class="apollo-logo"><img width="80px" src="/a-pollo/example/css/theme/assets/example-logo.svg"></a>
     leftText: The world's most generic agency ever
     rightText: Project by Pipiloca
