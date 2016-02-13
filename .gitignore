@@ -1,5 +1,6 @@
 .DS_Store
 db.json
-node_modules/
-_site/
-vendors/
+/node_modules/
+/_site/
+/vendors/
+/public/
