@@ -508,7 +508,7 @@ h6 {
 */
 .icon {
   display: inline-block;
-  background-image: url("/css/theme/assets/icons-sprite.svg");
+  background-image: url(http://vitto.github.io/a-pollo/example/css/theme/assets/icons-sprite.svg");
   background-repeat: no-repeat;
   background-size: 192px 192px;
   width: 48px;
@@ -582,19 +582,19 @@ h6 {
 @font-face {
   font-family: "open sans";
   font-weight: 700;
-  src: url("/css/theme/assets/opensans-bold-webfont.ttf") format("truetype");
+  src: url(http://vitto.github.io/a-pollo/example/css/theme/assets/opensans-bold-webfont.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "open sans";
   font-weight: 400;
-  src: url("/css/theme/assets/opensans-regular-webfont.ttf") format("truetype");
+  src: url(http://vitto.github.io/a-pollo/example/css/theme/assets/opensans-regular-webfont.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "open sans";
   font-weight: 200;
-  src: url("/css/theme/assets/opensans-light-webfont.ttf") format("truetype");
+  src: url(http://vitto.github.io/a-pollo/example/css/theme/assets/opensans-light-webfont.ttf") format("truetype");
 }
 
 /*# sourceMappingURL=frontsize-theme.min.css.map */
