@@ -23,8 +23,9 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 ##### Release notes
 
-- Update some code style
-- Fixed some wrong path
+- Fixed some asset wrong path
+- Add gh-pages website frontsize config for frontsize theme
+- Add gh-pages example website page config for frontsize theme
 
 ##### Known issues
 
