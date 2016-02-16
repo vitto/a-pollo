@@ -60,4 +60,4 @@ This is [what you can expect from the default theme][apollo_example] of a-pollo.
 [nodejs]: http://nodejs.org
 [hexo]: https://hexo.io
 [hexo_theme]: https://hexo.io/docs/themes.html
-[apollo_example]: #
+[apollo_example]: http://vitto.github.io/a-pollo/example/index.html
