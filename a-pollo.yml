@@ -25,7 +25,7 @@ style:
 
 header:
     logo: apollo-logo__icon-grey.svg        # [optional] The logo image you'll se on every page, it must be stored in style.images
-    link: /                                 # [optional] The link on the logo image
+#    link: /                                 # [optional] The link on the logo image
     description: a-pollo / the visual CSS style guide for teams    # [optional] A description under the logo image
 
 footer:

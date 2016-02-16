@@ -1,9 +1,15 @@
 <div class="apollo-project-header">
     <div class="apollo-project-header__logo">
-        <% if (header.link) { %> <a class="apollo-project-header__button" href="<%= header.link %>"> <% } %>
-            <% var rootPath = config.root || ''; %>
-            <div class="apollo-project-header__image" style="background-image: url(<%= rootPath %>css/theme/assets/<%= header.logo %>);"></div>
-        <% if (header.link) { %> </a> <% } %>
+        <%
+            var root = config.root || '/';
+            var url = config.url || root;
+        %>
+        <% if (header.link) { %>
+            <% url = header.link; %>
+        <% } %>
+        <a class="apollo-project-header__button" href="<%= url %>">
+            <div class="apollo-project-header__image" style="background-image: url(<%= root %>css/theme/assets/<%= header.logo %>);"></div>
+        </a>
     </div>
     <% if (header.description) { %>
         <p class="apollo-project-header__paragraph">
