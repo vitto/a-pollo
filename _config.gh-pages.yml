@@ -16,9 +16,9 @@ is_website: true
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 
-url: http://localhost:8000/
-root: /
-public_dir: public
+url: http://vitto.github.io/a-pollo/
+root: /a-pollo/
+public_dir: _site
 
 permalink: :category/:title/
 permalink_defaults:
