@@ -27,8 +27,8 @@ style:
     fonts: test/frontsize/themes/default/fonts/*        # [optional] Where the CSS fonts are stored
 
 header:
-    logo: example-logo.svg        # [optional] The logo image you'll se on every page, it must be stored in style.images
-    link: /                                 # [optional] The link on the logo image
+    logo: example-logo.svg                        # [optional] The logo image you'll se on every page, it must be stored in style.images
+    link: http://vitto.github.io/a-pollo/example/ # [optional] The link on the logo image
     description: The world's most generic agency ever # [optional] A description under the logo image
 
 footer:
