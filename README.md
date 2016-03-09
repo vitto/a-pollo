@@ -23,8 +23,10 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 ##### Release notes
 
-- Some fix to header links
-- Removed undefined title if in index page
+- Fix wrong path regex
+- Change look path of hexo bin
+- Improved consistency of initialization messages
+- Improved and fixed configuration parameters
 
 ##### Known issues
 
