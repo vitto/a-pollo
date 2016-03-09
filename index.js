@@ -57,7 +57,7 @@ var prepareFiles = function() {
     shell.mkdir('-p', path.fromModule('/hexo/source/_posts'));
     shell.mkdir('-p', path.fromModule('/source'));
 
-    if (conf.pages !== undefined || conf.pages) {
+    if (conf.pages) {
         if (checkPath(path.fromProcess(conf.pages), 'pages')) {
             shell.cp('-R', path.inside(path.fromProcess(conf.pages)), path.fromModule('/hexo/source'));
         }
@@ -71,13 +71,14 @@ var prepareFiles = function() {
 
     console.log('Copying CSS theme images and fonts');
 
-    if (checkPath(path.fromProcess(conf.style.images), 'style.images')) {
+    addThemeImage('apollo-logo__icon.svg');
+    addThemeImage('apollo-logo__icon-grey.svg');
+    addThemeImage('apollo-logo__icon-black.svg');
+
+    if (conf.style.images && checkPath(path.fromProcess(conf.style.images), 'style.images')) {
         shell.cp('-R', path.inside(path.fromProcess(conf.style.images)), path.fromModule('/hexo/source/css/theme/assets'));
-        addThemeImage('apollo-logo__icon.svg');
-        addThemeImage('apollo-logo__icon-grey.svg');
-        addThemeImage('apollo-logo__icon-black.svg');
     }
-    if (checkPath(path.fromProcess(conf.style.fonts), 'style.fonts')) {
+    if (conf.style.fonts && checkPath(path.fromProcess(conf.style.fonts), 'style.fonts')) {
         shell.cp('-R', path.inside(path.fromProcess(conf.style.fonts)), path.fromModule('/hexo/source/css/theme/assets'));
     }
 };
