@@ -105,7 +105,11 @@ var checkTheme = function() {
 
 var generateDocs = function () {
     shell.mv('-f', path.fromProcess('/source/_posts'), path.fromModule('/hexo/source'));
-    shell.exec('cd ' + path.fromModule('/hexo') + ' && ../node_modules/.bin/hexo generate');
+    if (shell.test('-e', path.fromModule('/node_modules/.bin/hexo'))) {
+        shell.exec('cd ' + path.fromModule('/hexo') + ' && ../node_modules/.bin/hexo generate');
+    } else {
+        shell.exec('cd ' + path.fromModule('/hexo') + ' && ../../.bin/hexo generate');
+    }
     shell.mv('-f', path.fromModule('/hexo/' + path.trimLeft(conf.public_dir)), path.fromProcess(conf.public_dir));
 };
 
