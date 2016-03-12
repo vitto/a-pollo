@@ -54,7 +54,7 @@ gulp.task('frontsize:test', function () {
 });
 
 gulp.task('frontsize:test:build', function () {
-    return gulp.src('test/frontsize/test.scss')
+    return gulp.src('example_source/frontsize/test.scss')
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(concat('frontsize.test.css'))
         .pipe(gulp.dest(f.path.test));
@@ -62,7 +62,7 @@ gulp.task('frontsize:test:build', function () {
 
 gulp.task('frontsize:test:report', ['frontsize:test:build'], function () {
     return gulp.src(f.path.test + 'frontsize.test.css')
-        .pipe(csslint('test/.csslintrc'))
+        .pipe(csslint('example_source/.csslintrc'))
         .pipe(stylestats());
 });
 
