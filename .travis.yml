@@ -13,6 +13,7 @@ before_script:
     - bower install
 
 script:
+    - npm test
     - gulp frontsize:build
     - cd ./test
     - gulp frontsize:css
