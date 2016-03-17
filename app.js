@@ -66,8 +66,7 @@ var prepareFiles = function() {
     }
 
     shell.mkdir('-p', path.fromModule('/hexo/source/css/theme'));
-    shell.mkdir('-p', path.fromModule('/hexo/source/css/theme/img'));
-    shell.mkdir('-p', path.fromModule('/hexo/source/css/theme/fonts'));
+    shell.mkdir('-p', path.fromModule('/hexo/source/css/theme/assets'));
 
     console.log('Copying CSS theme images and fonts');
 
