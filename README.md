@@ -23,10 +23,9 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 ##### Release notes
 
-- Fix wrong path regex
-- Change look path of hexo bin
-- Improved consistency of initialization messages
-- Improved and fixed configuration parameters
+- Fix wrong assets path
+- Add first test with Jasmine
+- Refactoring path.js
 
 ##### Known issues
 
