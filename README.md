@@ -83,7 +83,7 @@ date_format: dddd D MMMM YYYY    # [optional] Default from hexo config YYYY-MM-D
 
 public_dir: ./public        # [required] Where the style guide will be genarated
 url: http://localhost:7777  # [optional] HTTP server URL
-pages: test/a-pollo/*       # [optional] Additional static documentation pages you want to add, (markdown or html)
+pages: example_source/a-pollo/*       # [optional] Additional static documentation pages you want to add, (markdown or html)
 http_server: true           # [optional] HTTP server with port number
 use_markdown: true          # [optional] This will be removed soon, it's used for development
 theme: a-pollo              # [optional] The a-pollo theme folder
@@ -93,10 +93,10 @@ libs:
     node: package.json  # [optional] Link the package.json file to display NodeJS used libraries in the index page
 
 style:
-    docs: test/frontsize/themes/default/widgets/        # [required] Where a-pollo comments and tags are placed
-    css: test/frontsize/test/frontsize-theme.min.css    # [required] This is the CSS will be loaded by a-pollo to show rendered widgets
-    images: test/frontsize/themes/default/img/*         # [optional] Where the CSS images are stored
-    fonts: test/frontsize/themes/default/fonts/*        # [optional] Where the CSS fonts are stored
+    docs: example_source/frontsize/themes/default/widgets/        # [required] Where a-pollo comments and tags are placed
+    css: example_source/frontsize/test/frontsize-theme.min.css    # [required] This is the CSS will be loaded by a-pollo to show rendered widgets
+    images: example_source/frontsize/themes/default/img/*         # [optional] Where the CSS images are stored
+    fonts: example_source/frontsize/themes/default/fonts/*        # [optional] Where the CSS fonts are stored
 
 header:
     logo: apollo-logo__icon-grey.svg        # [optional] The logo image you'll se on every page, it must be stored in style.images
@@ -191,7 +191,7 @@ Written with love by [Vittorio Vittori][vitto] @ [ideato srl][ideato]
 [vitto]: https://twitter.com/vttrx
 [ideato]: http://www.ideato.it
 [hexo]: https://hexo.io
-[apollo_code_docs]: https://github.com/vitto/a-pollo/blob/master/test/frontsize/themes/default/widgets/button-social.scss
+[apollo_code_docs]: https://github.com/vitto/a-pollo/blob/master/example_source/frontsize/themes/default/widgets/button-social.scss
 [apollo_theme]: https://github.com/vitto/a-pollo/tree/master/hexo/themes/a-pollo
 [release]: https://github.com/vitto/a-pollo/releases/tag/1.5.77
 [a-pollo-preview]: https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/apollo-example.png
