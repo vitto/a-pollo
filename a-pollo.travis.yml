@@ -1,6 +1,6 @@
 title: Client project                                           # [required] Will be listened on head's title tag
 client: '[Client name](http://github.com/vitto/a-pollo#readme)'
-developers: '[Vittorio Vittori](http://vit.to)'     # [required] Who's managing the style guide
+developers: '[Vittorio Vittori](http://vit.to), [Pietro Campagnano](https://github.com/fain182)'     # [required] Who's managing the style guide
 designers: '[Vittorio Vittori](http://vit.to)'      # [required] Who's desining the style guide
 date: 2015-11-01                 # [required] When the style guide project was started
 date_format: dddd D MMMM YYYY    # [optional] Default from hexo config YYYY-MM-DD
@@ -20,7 +20,7 @@ libs:
 
 style:
     docs: example_source/frontsize/themes/default/widgets/        # [required] Where a-pollo comments and tags are placed
-    css: example_source/frontsize/test/frontsize-theme.min.css    # [required] This is the CSS will be loaded by a-pollo to show rendered widgets
+    css: example_source/frontsize/test/css/frontsize-theme.min.css    # [required] This is the CSS will be loaded by a-pollo to show rendered widgets
     images: example_source/frontsize/themes/default/img/*         # [optional] Where the CSS images are stored
     fonts: example_source/frontsize/themes/default/fonts/*        # [optional] Where the CSS fonts are stored
 

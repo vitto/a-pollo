@@ -78,7 +78,6 @@ gulp.task('frontsize:assets:images', function () {
 });
 
 gulp.task('frontsize:assets:fonts', function () {
-    console.log(f.path.frontsize + 'themes/' + f.theme + '/fonts/**/*.*');
     return gulp.src(f.path.frontsize + 'themes/' + f.theme + '/fonts/**/*.*')
         .pipe(gulp.dest(f.path.fonts));
 });

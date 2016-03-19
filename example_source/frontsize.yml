@@ -3,11 +3,11 @@ theme: default
 
 path:
     test: frontsize/test/csslint/
-    css: frontsize/test/
-    images: ../hexo/themes/a-pollo/source/img/theme/
-    fonts: ../hexo/themes/a-pollo/source/fonts/
+    css: frontsize/test/css/
+    images: frontsize/test/img/
+    fonts: frontsize/test/fonts/
     frontsize: frontsize/
-    js: ../hexo/themes/a-pollo/source/js/theme/
+    js: frontsize/test/js/
 
 vendors:
     css:
