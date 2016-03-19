@@ -17,31 +17,45 @@
 
     <p>
         <strong>Time</strong><br>
-        <i class="fa fa-clock-o"></i>&nbsp; Started on <b><%= config.stats.date %></b><br>
-        <i class="fa fa-flag-checkered"></i>&nbsp; Last edit on <b><%= config.stats.widgetLastDate %></b><br>
+        <i class="fa fa-clock-o"></i>&nbsp; Started on <b><%= config.stats.date.begin %></b>
+        <br>
+        <i class="fa fa-flag-checkered"></i>&nbsp; Last edit on <b><%= config.stats.date.end %></b>
+        <br>
         <i class="fa fa-hourglass-3"></i>&nbsp;
             <b>
-                <% if (config.stats.dateDuration.years !== '0 years') { %>
-                    <%= config.stats.dateDuration.years %>,
+                <% if (config.stats.date.total.years !== '0 years') { %>
+                    <%= config.stats.date.total.years %>,
                 <% } %>
-                <% if (config.stats.dateDuration.months !== '0 months') { %>
-                    <%= config.stats.dateDuration.months %>,
+                <% if (config.stats.date.total.months !== '0 months') { %>
+                    <%= config.stats.date.total.months %>,
                 <% } %>
-                <% if (config.stats.dateDuration.date !== '0 days') { %>
-                    <%= config.stats.dateDuration.date %>
+                <% if (config.stats.date.total.days !== '0 days') { %>
+                    <%= config.stats.date.total.days %>
                 <% } %>
             </b>
-            <% if (config.stats.dateDuration.years === '0 years' && config.stats.dateDuration.months === '0 months' && config.stats.dateDuration.date === '0 days') { %>
+            <% if (config.stats.date.total.years === '0 years' && config.stats.date.total.months === '0 months' && config.stats.date.total.days === '0 days') { %>
                 The project started today
             <% } else { %>
-                in development
+                of lifetime &nbsp;<span title="<%= config.stats.date.days %> days total, <%= config.stats.date.business %> business days"><i class="fa fa-question-circle"></i></span>
             <% } %>
+        <br>
+        <i class="fa fa-code"></i>&nbsp;
+            <b>
+                <%= config.stats.widget.days %> day/s
+            </b>
+             of effective development &nbsp;<span title="Based on widget dates entries, without duplicates"><i class="fa fa-question-circle"></i></span>
+        <br>
+        <i class="fa fa-pie-chart"></i>&nbsp;
+            <b>
+                <%= config.stats.widget.activity %>%
+            </b>
+            of activity &nbsp;<span title="Ratio between widget dates entries (<%= config.stats.widget.days %>) and project business days (<%= config.stats.date.business %>)"><i class="fa fa-question-circle"></i></span>
     </p>
 
     <p>
         <strong>Files</strong><br>
-        <i class="fa fa-cubes"></i>&nbsp; <b><%= config.stats.widgetsTotal %></b> created<br>
-        <i class="fa fa-tv"></i>&nbsp; <b><%= config.stats.widgetExamplesTotal %></b> displayed<br>
+        <i class="fa fa-cubes"></i>&nbsp; <b><%= config.stats.widget.count %></b> created<br>
+        <i class="fa fa-tv"></i>&nbsp; <b><%= config.stats.widget.countExamples %></b> displayed<br>
     </p>
 
     <% if (config.libs !== undefined) { %>
