@@ -153,8 +153,10 @@ gulp.task('frontsize:vendors:images', function () {
 gulp.task('frontsize:js', function () {
     if (f.js !== undefined && f.js.files !== undefined) {
         return gulp.src(f.js.files)
+            .pipe(sourcemaps.init())
             .pipe(uglify())
             .pipe(concat(f.js.name || jsFileName))
+            .pipe(sourcemaps.write('./'))
             .pipe(gulp.dest(f.path.js));
     } else {
         return gulp;
