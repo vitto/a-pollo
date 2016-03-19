@@ -23,9 +23,10 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 ##### Release notes
 
-- Fix wrong example assets and vendors paths
-- Change stats data structure to make it more clear
-- Add some project stats
+- Add regex to prevent unexpected hexo permalink url on posts only
+- Add missing sourcemap for js files
+- Change fonts to ttf format only
+- Update package.json
 
 ##### Known issues
 

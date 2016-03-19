@@ -70,7 +70,7 @@
         <% if (config.libs.bowerDependencies !== undefined) { %>
             <p>
                 <ul>
-                    <li class="apollo-post__list-title"><strong>Bower</strong></li>
+                    <li class="apollo-post__list-title"><a href="http://bower.io" target="blank" class="apollo-logo-lib apollo-logo-lib--bower"></a><strong>Bower</strong></li>
                     <% for(var key in config.libs.bowerDependencies) { %>
                         <li><b><%= key %></b> <%= config.libs.bowerDependencies[key] %></li>
                     <% } %>
@@ -81,7 +81,7 @@
         <% if (config.libs.nodeDependencies !== undefined) { %>
         <p>
             <ul>
-                <li class="apollo-post__list-title"><strong>Node</strong></li>
+                <li class="apollo-post__list-title"><a href="http://nodejs.org" target="blank" class="apollo-logo-lib apollo-logo-lib--nodejs"></a><strong>Node</strong></li>
                 <% for(var key in config.libs.nodeDependencies) { %>
                     <li><b><%= key %></b> <%= config.libs.nodeDependencies[key] %></li>
                 <% } %>
