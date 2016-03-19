@@ -8,10 +8,15 @@
 //@include setFontScaling(body, 20px, 18px, 16px, 16px, 16px, 16px);
 //@include setLineHeightScaling(body, $spacing);
 
-@include font('roboto', 'Roboto-Black', 700);
-@include font('roboto', 'Roboto-Bold', 600);
-@include font('roboto', 'Roboto-Medium', 500);
-@include font('roboto', 'Roboto-Light', 300);
+// @include font('roboto', 'Roboto-Black', 700);
+// @include font('roboto', 'Roboto-Bold', 600);
+// @include font('roboto', 'Roboto-Medium', 500);
+// @include font('roboto', 'Roboto-Light', 300);
+
+@include fontFile('roboto', 'Roboto-Black.ttf', 700);
+@include fontFile('roboto', 'Roboto-Bold.ttf', 600);
+@include fontFile('roboto', 'Roboto-Medium.ttf', 500);
+@include fontFile('roboto', 'Roboto-Light.ttf', 300);
 
 //@include addFloatGridContainer("row--website", 3);
 
