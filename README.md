@@ -25,6 +25,7 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 - Fix wrong example assets and vendors paths
 - Change stats data structure to make it more clear
+- Add some project stats
 
 ##### Known issues
 
