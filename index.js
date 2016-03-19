@@ -1,3 +1,3 @@
 var app = require('./app');
 
-app.runProcess(process.cwd() + '/a-pollo.yml');
+app.runProcess(process.argv, process.cwd() + '/a-pollo.yml');

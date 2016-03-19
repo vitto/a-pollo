@@ -193,9 +193,9 @@ var runBuild = function() {
     });
 };
 
-var isInitProcess = function() {
+var isInitProcess = function(argv) {
     var result = false;
-    process.argv.forEach(function(val) {
+    argv.forEach(function(val) {
         if (val === 'init') {
             result = true;
         }
@@ -203,21 +203,20 @@ var isInitProcess = function() {
     return result;
 }
 
-var runProcess = function(apolloDefaultConfPath) {
-
+var runProcess = function(argv, apolloDefaultConfPath) {
     console.log('Starting ' + 'a-pollo '.rainbow + packageJSON.version);
 
     removeFiles();
 
-    if (isInitProcess()){
+    if (isInitProcess(argv)){
         initializer.start();
         return;
     }
 
     var filename = apolloDefaultConfPath;
-    process.argv.forEach(function(val) {
+    argv.forEach(function(val) {
         if (val.indexOf('config=') === 0) {
-            filename = process.cwd() + val.replace('config=', '/');
+            filename = val.replace('config=', '');
         }
     });
 
