@@ -56,6 +56,10 @@
     "sass": "^0.5.0",
     "stylestats": "^6.3.0"
   },
+  "engines": {
+    "node" : ">=4.1.0",
+    "npm" : ">=3.7.2"
+  },
   "scripts": {
     "test": "./node_modules/.bin/jasmine"
   },
@@ -74,6 +78,7 @@
     "guide"
   ],
   "author": "Vittorio Vittori <me@vittoriovittori.com> (http://vit.to)",
+  "contributors": "Pietro Campagnano <fain182@gmail.com> (https://twitter.com/fain182)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/vitto/a-pollo/issues"
