@@ -15,6 +15,10 @@
     @include element("icon") {
         @include icon("a-pollo-logo.svg", 240px, 80px);
         background-position: 0 100%;
+
+        @media #{$till-tablet-landscape} {
+            background-position: 50% 100%;
+        }
     }
 
     @include modifier("move-top") {
