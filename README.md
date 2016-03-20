@@ -189,9 +189,10 @@ Generate website
 ./node_modules/.bin/gulp frontsize:build && cd ./hexo && ../node_modules/.bin/hexo --config _site_config.yml generate && cd ../ && php -S localhost:8000 -t ./_site
 ```
 
-Written with love by [Vittorio Vittori][vitto] @ [ideato srl][ideato]
+Coded with love by [Vittorio Vittori][vitto] and [Pietro Campagnano][pietro] @ [ideato srl][ideato]
 
 [vitto]: https://twitter.com/vttrx
+[pietro]: https://twitter.com/fain182
 [ideato]: http://www.ideato.it
 [hexo]: https://hexo.io
 [apollo_code_docs]: https://github.com/vitto/a-pollo/blob/master/example_source/frontsize/themes/default/widgets/button-social.scss
