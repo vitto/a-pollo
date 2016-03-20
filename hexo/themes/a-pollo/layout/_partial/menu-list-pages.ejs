@@ -1,5 +1,6 @@
 <%
-    var prevCategory = ''
+    var prevCategory = '';
+    var firstItem = true;
 %>
 <% site.pages.data = _.sortBy(site.pages.data, 'category') %>
 <% if (site.pages.length > 1) { %>
@@ -7,11 +8,15 @@
 
         <% if (page.category !== undefined && page.category.toLowerCase() !== 'a-pollo') { %>
             <% if (prevCategory != page.category) { %>
-                <% console.log('opening UL'); %>
-                <ul class="apollo-menu">
-                    <li class="apollo-menu__title">
-                        <%= page.category %>
-                    </li>
+                <% if (use_margin || !firstItem) { %>
+                    <ul class="apollo-menu">
+                <% } else { %>
+                    <% firstItem = false; %>
+                    <ul class="apollo-menu apollo-menu--first">
+                <% } %>
+                <li class="apollo-menu__title">
+                    <%= page.category %>
+                </li>
                 <% prevCategory = page.category %>
             <% } %>
         <% } else { %>

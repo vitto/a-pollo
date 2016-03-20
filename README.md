@@ -26,6 +26,7 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 - Change config footer to a easier one
 - Change a-pollo logo with a new one
 - Fix to unclosed menu ul element for pages articles
+- Changed menu items sequence to focus on a-pollo meaning
 
 ##### Known issues
 
