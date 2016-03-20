@@ -19,6 +19,13 @@
         @media #{$till-tablet-portrait} {
             background-position: 50% 100%;
         }
+
+        @include modifier("mobile") {
+            display: block;
+            @media #{$till-tablet-portrait} {
+                background-position: 0 100%;
+            }
+        }
     }
 
     @include modifier("move-top") {
