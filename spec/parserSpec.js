@@ -13,7 +13,7 @@ var completeDocumentationExample =
     '            <div class="button-social__icon">' + "\n" +
     '                <i class="fa fa-facebook"></i>' + "\n" +
     '            </div>' + "\n" +
-    '            <div class="button-social__network">' + "\n" +
+    '            <div class="button-social__network" style="background-image:url(http://placehold.it/80);">' + "\n" +
     '                facebook' + "\n" +
     '            </div>' + "\n" +
     '        </a>' + "\n" +
@@ -48,7 +48,7 @@ describe("CSS comment parser", function() {
         var widget = result[0];
         expect(widget.text).toEqual("This should be used to connect social accounts to the project service.\n It requires Font Awesome http://fontawesome.github.io to be loaded as dependency.\n The code above will show the Facebook version.");
     });
-    it("parses html and remove new lines", function() {
+    it("parses html and minifies it", function() {
         var result = parser.format(completeDocumentationExample, "style.css");
         var widget = result[0];
         expect(widget.html).toEqual(
@@ -56,19 +56,19 @@ describe("CSS comment parser", function() {
             '<div class="button-social__icon">' +
             '<i class="fa fa-facebook"></i>' +
             '</div>' +
-            '<div class="button-social__network">' +
+            '<div class="button-social__network" style="background-image:url(http://placehold.it/80)">' +
             'facebook' +
             '</div>' +
             '</a>'
         );
     });
-    it("gives html beautified", function() {
+    it("parses html and beautifies it", function() {
         var result = parser.format(completeDocumentationExample, "style.css");
         var widget = result[0];
         expect(widget.htmlSnippet).toEqual(
             '<a href="#" class="button-social button-social--facebook">' + "\n" +
             '    <div class="button-social__icon"><i class="fa fa-facebook"></i></div>' + "\n" +
-            '    <div class="button-social__network">facebook</div>' + "\n" +
+            '    <div class="button-social__network" style="background-image:url(http://placehold.it/80)">facebook</div>' + "\n" +
             '</a>'
         );
     });
