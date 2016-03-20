@@ -25,7 +25,8 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 ##### Release notes
 
-- Update config documentation with the new one
+- Update favicon on theme
+- Fix footer logo positioning on tablet and mobile
 
 ##### Known issues
 

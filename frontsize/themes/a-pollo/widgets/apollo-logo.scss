@@ -16,7 +16,7 @@
         @include icon("a-pollo-logo.svg", 240px, 80px);
         background-position: 0 100%;
 
-        @media #{$till-tablet-landscape} {
+        @media #{$till-tablet-portrait} {
             background-position: 50% 100%;
         }
     }
