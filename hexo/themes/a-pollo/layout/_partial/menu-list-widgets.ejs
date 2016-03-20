@@ -1,0 +1,22 @@
+<ul class="apollo-menu apollo-menu--first">
+    <% if (site.posts.length > 0) { %>
+        <li class="apollo-menu__title">
+            Widgets
+        </li>
+    <% } %>
+    <% site.posts.each(function (post, i) { %>
+        <li class="apollo-menu__item">
+            <% var permalink = post.permalink.replace(config.root, '/'); %>
+            <% if (url.replace('index.html', '') === permalink) { %>
+                <a href="<%= permalink %>" class="apollo-menu__link apollo-menu__link--current">
+            <% } else { %>
+                <a href="<%= permalink %>" class="apollo-menu__link">
+            <% } %>
+                <%= post.title %>
+                <% if (post.docs !== undefined) { %>
+                    <span class="apollo-menu__docs"><%= post.docs.length %></span>
+                <% } %>
+            </a>
+        </li>
+    <% }) %>
+</ul>

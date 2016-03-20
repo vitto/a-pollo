@@ -1,0 +1,28 @@
+<% site.categories.each(function(category, i){ %>
+    <% if (category.posts.length > 0) { %>
+        <% if (i == 0) { /* apollo-menu--first */ %>
+            <ul class="apollo-menu">
+        <% } else { %>
+            <ul class="apollo-menu">
+        <% } %>
+            <li class="apollo-menu__title">
+                <%= category.name %>
+            </li>
+            <% category.posts.each(function(post, i){ %>
+                <li class="apollo-menu__item">
+                    <% var permalink = post.permalink.replace(config.root, '/'); %>
+                    <% if (url.replace('index.html', '') === permalink) { %>
+                        <a href="<%= permalink %>" class="apollo-menu__link apollo-menu__link--current">
+                    <% } else { %>
+                        <a href="<%= permalink %>" class="apollo-menu__link">
+                    <% } %>
+                        <%= post.title %>
+                        <% if (post.docs !== undefined) { %>
+                            <span class="apollo-menu__docs"><%= post.docs.length %></span>
+                        <% } %>
+                    </a>
+                </li>
+            <% }) %>
+        </ul>
+    <% } %>
+<% }) %>
