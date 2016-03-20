@@ -3,7 +3,7 @@
 a-pollo
 ---
 
-[![Version](http://img.shields.io/:version-1.15.82-B89766.svg)][release]
+[![Version](http://img.shields.io/:version-1.15.83-B89766.svg)][release]
 [![TravisCI](https://travis-ci.org/vitto/a-pollo.svg?branch=master)](https://travis-ci.org/vitto/a-pollo/builds)
 [![Built with nodejs 4.2.2](http://img.shields.io/:nodejs-4.2.2-80BD01.svg)](http://badges.github.io/badgerbadgerbadger/)
 [![MIT licence](http://img.shields.io/:license-MIT-00AFFF.svg)](https://github.com/ideatosrl/frontsize-sass/blob/master/LICENSE.md)
@@ -25,11 +25,7 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 ##### Release notes
 
-- Change config footer to a easier one
-- Change a-pollo logo with a new one
-- Changed menu items sequence to focus on a-pollo meaning
-- Fix to unclosed menu ul element for pages articles
-- Fix missing behavior for menu margin
+- Update new logo for favicons
 
 ##### Known issues
 
@@ -197,6 +193,6 @@ Written with love by [Vittorio Vittori][vitto] @ [ideato srl][ideato]
 [hexo]: https://hexo.io
 [apollo_code_docs]: https://github.com/vitto/a-pollo/blob/master/example_source/frontsize/themes/default/widgets/button-social.scss
 [apollo_theme]: https://github.com/vitto/a-pollo/tree/master/hexo/themes/a-pollo
-[release]: https://github.com/vitto/a-pollo/releases/tag/1.15.82
+[release]: https://github.com/vitto/a-pollo/releases/tag/1.15.83
 [a-pollo-preview]: https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/apollo-example.png
 [a-pollo-logo]: https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/a-pollo-logo.png
