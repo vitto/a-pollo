@@ -1,3 +1,5 @@
+<img src="https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/a-pollo-logo.png" width="64">
+
 a-pollo
 ---
 
@@ -197,3 +199,4 @@ Written with love by [Vittorio Vittori][vitto] @ [ideato srl][ideato]
 [apollo_theme]: https://github.com/vitto/a-pollo/tree/master/hexo/themes/a-pollo
 [release]: https://github.com/vitto/a-pollo/releases/tag/1.15.82
 [a-pollo-preview]: https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/apollo-example.png
+[a-pollo-logo]: https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/a-pollo-logo.png
