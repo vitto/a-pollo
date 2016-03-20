@@ -3,7 +3,7 @@
 a-pollo
 ---
 
-[![Version](http://img.shields.io/:version-1.15.83-B89766.svg)][release]
+[![Version](http://img.shields.io/:version-1.15.89-B89766.svg)][release]
 [![TravisCI](https://travis-ci.org/vitto/a-pollo.svg?branch=master)](https://travis-ci.org/vitto/a-pollo/builds)
 [![Built with nodejs 4.2.2](http://img.shields.io/:nodejs-4.2.2-80BD01.svg)](http://badges.github.io/badgerbadgerbadger/)
 [![MIT licence](http://img.shields.io/:license-MIT-00AFFF.svg)](https://github.com/ideatosrl/frontsize-sass/blob/master/LICENSE.md)
@@ -25,15 +25,18 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 ##### Release notes
 
-- Update new logo for favicons
+- Add tests for argv parsing
+- Add other tests for parser
+- Fix a bug with url in description
+- Fix parenthesis should be allowed in html
+- Simplify some if statements in runProcess
+- Update html-minifier to fix bug: [kangax/html-minifier#507](https://github.com/kangax/html-minifier/issues/507)
 
 ##### Known issues
 
 - If `use_markdown` is set to `false`, code snippets are not correctly indented
 - If `use_markdown` is set to `false`, code snippets cannot be copied on clipboard
 - Incomplete customizable HTML template if `use_markdown` is set to `true`
-- Some of the doc vars names will probably change in the future
-- Needs a lot of micro optimizations
 
 ---
 
@@ -193,6 +196,6 @@ Written with love by [Vittorio Vittori][vitto] @ [ideato srl][ideato]
 [hexo]: https://hexo.io
 [apollo_code_docs]: https://github.com/vitto/a-pollo/blob/master/example_source/frontsize/themes/default/widgets/button-social.scss
 [apollo_theme]: https://github.com/vitto/a-pollo/tree/master/hexo/themes/a-pollo
-[release]: https://github.com/vitto/a-pollo/releases/tag/1.15.83
+[release]: https://github.com/vitto/a-pollo/releases/tag/1.15.89
 [a-pollo-preview]: https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/apollo-example.png
 [a-pollo-logo]: https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/a-pollo-logo.png
