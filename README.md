@@ -77,9 +77,9 @@ From `package.json` where you have installed `node_modules` folder
 Place a `a-pollo.yml` in the root folder of your project, this is the default config:
 
 ``` yaml
-title: Client project                                           # [required] Will be listened on head's title tag
+title: 'Client project'                                           # [required] Will be listened on head's title tag
 client: '[Client name](http://github.com/vitto/a-pollo#readme)'
-developers: '[Vittorio Vittori](http://vit.to)'     # [required] Who's managing the style guide
+developers: '[Vittorio Vittori](http://vit.to), [Pietro Campagnano](https://twitter.com/fain182)'     # [required] Who's managing the style guide
 designers: '[Vittorio Vittori](http://vit.to)'      # [required] Who's desining the style guide
 date: 2015-11-01                 # [required] When the style guide project was started
 date_format: dddd D MMMM YYYY    # [optional] Default from hexo config YYYY-MM-DD
@@ -134,10 +134,12 @@ footer:
 | `style.fonts`        | *no*                 | Fonts assets for the CSS you are using |
 | `header.logo`        | *no*                 | An image inside `style.images` to be used as image header inside a-pollo theme |
 | `header.description` | *no*                 | The header description inside a-pollo theme |
-| `header.link`        | *no*                 | The header logo href inside a-pollo theme |
+| `header.link`        | *no*                 | The header logo href link |
 | `footer.logo`        | *no*                 | An image inside `style.images` to be used as image footer inside a-pollo theme |
-| `footer.leftText`    | *no*                 | The left text or HTML on the footer inside a-pollo theme |
-| `footer.rightText`   | *no*                 | The right text or HTML on the footer inside a-pollo theme |
+| `footer.description` | *no*                 | The footer description inside a-pollo theme |
+| `footer.link`        | *no*                 | The footer logo href link |
+| `libs.bower`         | *no*                 | Location of the `bower.json` file to display Bower used libraries in the index page |
+| `libs.node`          | *no*                 | Location of the `package.json` file to display NodeJS used libraries in the index page |
 
 ---
 
