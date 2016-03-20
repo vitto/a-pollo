@@ -70,9 +70,9 @@ var prepareFiles = function() {
 
     console.log('Copying CSS theme images and fonts');
 
-    addThemeImage('apollo-logo__icon.svg');
-    addThemeImage('apollo-logo__icon-grey.svg');
-    addThemeImage('apollo-logo__icon-black.svg');
+    addThemeImage('a-pollo-logo.svg');
+    addThemeImage('a-pollo-logo--black.svg');
+    addThemeImage('a-pollo-logo--gold.svg');
 
     if (conf.style.images && checkPath(path.fromProcess(conf.style.images), 'style.images')) {
         shell.cp('-R', path.inside(path.fromProcess(conf.style.images)), path.fromModule('/hexo/source/css/theme/assets'));

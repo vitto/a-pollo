@@ -1,26 +1,21 @@
 <footer class="apollo-footer">
     <div>
         <% var rootPath = config.root || ''; %>
-        <% if (config.footer && config.footer.logo) { %>
-            <%- config.footer.logo %>
-        <% } else { %>
-            <% if (config.apollo) { %>
-                <a href="<%= config.apollo.homepage %>#readme" class="apollo-logo">
-                    <img width="80px" src="<%= rootPath %>img/apollo-logo__icon.svg">
-                    <div class="apollo-logo__text">a-pollo</div>
-                </a>
+        <% if (config.apollo) {
+            var homepage = config.apollo.homepage || 'https://github.com/vitto/a-pollo#readme';
+        } %>
+        <a href="<%= homepage %>" class="apollo-logo">
+            <% if (config.footer && config.footer.logo) { %>
+                    <div class="apollo-logo__icon" style="background-image:url(<%= rootPath %>img/<%= config.footer.logo %>);"></div>
             <% } else { %>
-                <a href="https://github.com/vitto/a-pollo#readme" class="apollo-logo">
-                    <img width="80px" src="<%= rootPath %>img/apollo-logo__icon.svg">
-                    <div class="apollo-logo__text">a-pollo</div>
-                </a>
+                    <div class="apollo-logo__icon" style="background-image:url(<%= rootPath %>img/a-pollo-logo.svg);"></div>
             <% } %>
-        <% } %>
+        </a>
     </div>
     <div class="apollo-footer__left-column">
         <p class="apollo-footer__paragraph">
-            <% if (config.footer && config.footer.leftText) { %>
-                <%- config.footer.leftText %>
+            <% if (config.footer && config.footer.description) { %>
+                <%- config.footer.description %>&nbsp;
             <% } else { %>
                 The visual CSS style guide for teams
             <% } %>
@@ -28,22 +23,14 @@
     </div>
     <div class="apollo-footer__right-column">
         <p class="apollo-footer__paragraph">
-            <% if (config.footer && config.footer.rightText) { %>
-                <%- config.footer.rightText %>
-            <% } else { %>
-                <% if (config.apollo) { %>
-                    <a href="<%= config.apollo.homepage %>#readme" class="apollo-footer__link">
-                        <i class="fa fa-code"></i>
-                    </a>
-                <% } else { %>
-                    <a href="https://github.com/vitto/a-pollo#readme" class="apollo-footer__link">
-                        <i class="fa fa-code"></i>
-                    </a>
-                <% } %>
-                with <i class="fa fa-heart apollo-footer__heart"></i>
-                by <a href="http://vit.to" class="apollo-footer__link">vitto</a>
-                @ <a href="http://www.ideato.it" class="apollo-footer__link">ideato</a>
+            <% if (config.apollo) { %>
+                <a href="<%= homepage %>" class="apollo-footer__link">
+                    <i class="fa fa-code"></i>
+                </a>
             <% } %>
+            with <i class="fa fa-heart apollo-footer__heart"></i>
+            by <a href="http://vit.to" class="apollo-footer__link">vitto</a>
+            @ <a href="http://www.ideato.it" class="apollo-footer__link">ideato</a>
         </p>
     </div>
 </footer>

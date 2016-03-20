@@ -13,7 +13,8 @@
     }
 
     @include element("icon") {
-        @include icon("apollo-logo__icon.svg", 80px, 60px);
+        @include icon("a-pollo-logo.svg", 240px, 80px);
+        background-position: 0 100%;
     }
 
     @include modifier("move-top") {

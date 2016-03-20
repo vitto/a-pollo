@@ -24,11 +24,11 @@ style:
     fonts: example_source/frontsize/themes/default/fonts/*        # [optional] Where the CSS fonts are stored
 
 header:
-    logo: apollo-logo__icon-grey.svg        # [optional] The logo image you'll se on every page, it must be stored in style.images
-#    link: /                                 # [optional] The link on the logo image
-    description: a-pollo / the visual CSS style guide for teams    # [optional] A description under the logo image
+    logo: a-pollo-logo--gold.svg        # [optional] The logo image you'll se on every page, it must be stored in style.images
+    link: /                             # [optional] The link on the logo image
+    description: A-POLLO / The visual CSS style guide for teams # [optional] A description under the logo image
 
 footer:
-    logo: <a href="http://github.com/vitto/apollo#readme" class="apollo-logo"><img width="80px" src="/img/apollo-logo__icon.svg"><div class="apollo-logo__text">a-pollo</div></a>
-    leftText: The visual CSS style guide for teams
-    rightText: <a href="http://github.com/vitto/a-pollo#readme" class="apollo-footer__link"><i class="fa fa-code"></i></a> with <i class="fa fa-heart apollo-footer__heart"></i> by <a href="http://vit.to" class="apollo-footer__link">vitto</a> @ <a href="http://www.ideato.it" class="apollo-footer__link">ideato</a>
+    logo: a-pollo-logo.svg                 # [optional] The logo image you'll se on every page, it must be stored in style.images
+    link: http://vitto.github.io/a-pollo/  # [optional] The link on the logo image
+    description: A-POLLO / The visual CSS style guide for teams # [optional] A description under the logo image
