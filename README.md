@@ -23,11 +23,8 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 ##### Release notes
 
-- Add regex to prevent unexpected hexo permalink url on posts only
-- Add missing sourcemap for js files
-- Add node and bower logo libs on homepage
-- Change fonts to ttf format only
-- Update package.json
+- Change config footer to a easier one
+- Change a-pollo logo with a new one
 
 ##### Known issues
 
