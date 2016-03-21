@@ -4,9 +4,6 @@
   "description": "The visual CSS style guide for teams",
   "bin": "./bin/a-pollo",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "dependencies": {
     "absorb": "^1.0.1",
     "bower": "^1.6.5",
