@@ -31,7 +31,8 @@
         position: relative;
         z-index: 1;
         > * {
-            float: left;
+            float: left !important;
+            position: static !important;
         }
     }
 
