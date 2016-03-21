@@ -3,6 +3,7 @@ Thumbs.db
 db.json
 *.log
 
+/hexo/node_modules
 node_modules/
 example_source/
 frontsize/
