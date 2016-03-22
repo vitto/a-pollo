@@ -15,6 +15,7 @@
             <strong>Total examples</strong> <%= post.docs.length %>
         </p>
     <% } else { %>
+        <!-- this should be removed -->
         <%- markdown(post.content) %>
     <% } %>
 </article>

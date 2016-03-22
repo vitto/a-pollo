@@ -27,12 +27,6 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 - Widgets in the menus are now sorted by title
 
-##### Known issues
-
-- If `use_markdown` is set to `false`, code snippets are not correctly indented
-- If `use_markdown` is set to `false`, code snippets cannot be copied on clipboard
-- Incomplete customizable HTML template if `use_markdown` is set to `true`
-
 ---
 
 The module works with [Hexo][hexo], an easy to use and powerful blog framework, so if you'd like to [write your own theme][apollo_theme] you'll have the power this nice tool in your fingers.
