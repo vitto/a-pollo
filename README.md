@@ -8,6 +8,8 @@ a-pollo
 [![Built with nodejs 4.2.2](http://img.shields.io/:nodejs-4.2.2-80BD01.svg)](http://badges.github.io/badgerbadgerbadger/)
 [![MIT licence](http://img.shields.io/:license-MIT-00AFFF.svg)](https://github.com/ideatosrl/frontsize-sass/blob/master/LICENSE.md)
 
+---
+
 ##### Release notes
 
 - Widgets in the menus are now sorted by title
