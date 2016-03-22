@@ -19,12 +19,12 @@
         position: relative;
         display: inline-block;
         padding: 2px;
-        border: 1px dashed transparent;
+
         @include transition(border-color $ease);
 
-        &:hover .apollo-html-example__bg {
-            opacity: 1 !important;
-        }
+        // &:hover .apollo-html-example__bg {
+        //     opacity: 1;
+        // }
     }
 
     @include element("container") {
@@ -43,7 +43,8 @@
         right: 0;
         bottom: 0;
         left: 0;
-        opacity: 0;
+        opacity: 0.55;
+        border: 1px dashed mix($font-color, $colorPost, 50%);
         $easeBackgorund: ease("out-back");
         @include transition("opacity #{$ease}, background-size 0.25s #{$easeBackgorund}");
 
@@ -52,14 +53,12 @@
         background-position: 50% 50%;
     }
 
-    &:hover .apollo-html-example__inner {
-        border-color: mix($font-color, $colorPost, 25%);
-    }
-    &:hover .apollo-html-example__bg {
-        opacity: 0.55;
-        &.apollo-html-example__bg--active {
-            opacity: 1;
-            background-size: 32px 32px;
-        }
-    }
+
+
+    // &:hover .apollo-html-example__bg {
+    //     &.apollo-html-example__bg--active {
+    //         opacity: 0;
+    //         background-size: 32px 32px;
+    //     }
+    // }
 }
