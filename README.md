@@ -8,13 +8,21 @@ a-pollo
 [![Built with nodejs 4.2.2](http://img.shields.io/:nodejs-4.2.2-80BD01.svg)](http://badges.github.io/badgerbadgerbadger/)
 [![MIT licence](http://img.shields.io/:license-MIT-00AFFF.svg)](https://github.com/ideatosrl/frontsize-sass/blob/master/LICENSE.md)
 
+##### Release notes
+
+- Widgets in the menus are now sorted by title
+
+---
+
 A-pollo generates **CSS style guide documentation** from your [code comments][apollo_code_docs].
 
 It's been written for teams who need to check CSS widgets with examples, copy html related code with no pain to go through browser HTML debugger.
 
 ![a-pollo preview][a-pollo-preview]
 
-## Roadmap
+---
+
+##### Roadmap
 
 - Default style guide articles for CSS
 - Default style guide articles for HTML
@@ -22,10 +30,6 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 - Single widget StyleStats report
 - Documentation tags for SASS
 - Documentation tags for LESS
-
-##### Release notes
-
-- Widgets in the menus are now sorted by title
 
 ---
 
