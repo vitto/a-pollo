@@ -3,7 +3,7 @@
 a-pollo
 ---
 
-[![Version](http://img.shields.io/:version-1.15.92-B79769.svg)][release]
+[![Version](http://img.shields.io/:version-1.15.93-B79769.svg)][release]
 [![TravisCI](https://travis-ci.org/vitto/a-pollo.svg?branch=master)](https://travis-ci.org/vitto/a-pollo/builds)
 [![Built with nodejs 4.2.2](http://img.shields.io/:nodejs-4.2.2-80BD01.svg)](https://nodejs.org/en/)
 [![Built with hexo 3.2.0](http://img.shields.io/:hexo-3.2.0-0E83CD.svg)](https://hexo.io/)
@@ -17,7 +17,7 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 ##### Release notes
 
-- Widgets in the menus are now sorted by title
+- Fix missing logo assets of the default a-pollo theme
 
 ![a-pollo preview][a-pollo-preview]
 
@@ -193,6 +193,6 @@ Coded with love by [Vittorio Vittori][vitto] and [Pietro Campagnano][pietro] @ [
 [hexo]: https://hexo.io
 [apollo_code_docs]: https://github.com/vitto/a-pollo/blob/master/example_source/frontsize/themes/default/widgets/button-social.scss
 [apollo_theme]: https://github.com/vitto/a-pollo/tree/master/hexo/themes/a-pollo
-[release]: https://github.com/vitto/a-pollo/releases/tag/1.15.92
+[release]: https://github.com/vitto/a-pollo/releases/tag/1.15.93
 [a-pollo-preview]: https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/apollo-example.png
 [a-pollo-logo]: https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/a-pollo-logo.png

@@ -42,7 +42,7 @@ var addThemeImage = function(imageName) {
     defaultLogoTarget = path.fromModule('/hexo/source/css/theme/assets/' + imageName);
     defaultLogoTargetPath = path.trimRight(path.fromModule('/hexo/source/css/theme/assets/'));
     if (!shell.test('-e', defaultLogoTarget)) {
-        defaultLogoSource = path.fromModule('/frontsize/themes/a-pollo/img/' + imageName);
+        defaultLogoSource = path.fromModule('/hexo/themes/a-pollo/source/img/' + imageName);
         shell.cp('-f', defaultLogoSource, defaultLogoTargetPath);
     }
 };
