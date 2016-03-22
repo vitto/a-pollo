@@ -47,9 +47,11 @@
             top: s(-0.75);
             @include transition(color background-color top, 0.25s ease("out-expo"));
         }
-        .code .value {
-            background-color: $colorMarkCodeAttrValue;
-            @include border-radius(3px);
+        .code {
+            .value, .string {
+                background-color: $colorMarkCodeAttrValue;
+                @include border-radius(3px);
+            }
         }
 
         .gutter {
@@ -69,10 +71,12 @@
         font-weight: 400;
     }
 
-    .code .value {
-        @include transition(background-color color, $ease);
-        background-color: transparent;
-        @include border-radius(3px);
+    .code {
+        .value, .string {
+            @include transition(background-color color, $ease);
+            background-color: transparent;
+            @include border-radius(3px);
+        }
     }
 
     pre {
