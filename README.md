@@ -19,6 +19,7 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 - Remove transparency check UX
 - Fix broken element attribute prop coloring on code snippet hover
+- Fix duplicate entries on date stats when there are multiple files developed the same day
 
 ![a-pollo preview][a-pollo-preview]
 
