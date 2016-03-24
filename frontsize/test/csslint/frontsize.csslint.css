@@ -835,28 +835,17 @@ kbd:active {
 }
 
 .apollo-logo__icon {
+  margin-bottom: 20px;
   width: 240px;
   height: 80px;
-  background-image: url("/a-pollo/img/a-pollo-logo.svg");
+  background-image: url("/a-pollo/img/a-pollo-logo--gold.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-position: 0 100%;
 }
 
-@media only screen and (max-width: 767px) {
-  .apollo-logo__icon {
-    background-position: 50% 100%;
-  }
-}
-
 .apollo-logo__icon--mobile {
   display: block;
-}
-
-@media only screen and (max-width: 767px) {
-  .apollo-logo__icon--mobile {
-    background-position: 0 100%;
-  }
 }
 
 .apollo-logo--move-top {
@@ -881,6 +870,7 @@ kbd:active {
   position: fixed;
   z-index: 3;
   left: -100%;
+  top: 0;
   overflow: auto;
   width: 75%;
   height: 100vh;
@@ -2378,7 +2368,7 @@ kbd:active {
 }
 
 .apollo-website-headline {
-  padding: 60px 40px 0 40px;
+  padding: 40px 20px 0 20px;
   margin: 60px 0 120px 0;
   text-align: center;
 }
@@ -2521,6 +2511,15 @@ kbd:active {
   -ms-transition: transform 0.125s ease-out;
   -o-transition: transform 0.125s ease-out;
   transition: transform 0.125s ease-out;
+}
+
+.apollo-website-menu-logo {
+  width: 160px;
+  height: 160px;
+  background-image: url("/a-pollo/img/a-pollo-logo--gold.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  margin-bottom: 40px;
 }
 
 .apollo-website-menu__link {

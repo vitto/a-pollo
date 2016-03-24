@@ -13,18 +13,13 @@
     }
 
     @include element("icon") {
-        @include icon("a-pollo-logo.svg", 240px, 80px);
-        background-position: 0 100%;
+        margin-bottom: s(1);
 
-        @media #{$till-tablet-portrait} {
-            background-position: 50% 100%;
-        }
+        @include icon("a-pollo-logo--gold.svg", 240px, 80px);
+        background-position: 0 100%;
 
         @include modifier("mobile") {
             display: block;
-            @media #{$till-tablet-portrait} {
-                background-position: 0 100%;
-            }
         }
     }
 

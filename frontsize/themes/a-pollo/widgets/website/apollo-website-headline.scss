@@ -1,6 +1,6 @@
 .apollo-website-headline {
 
-    padding: s(3) s(2) 0 s(2);
+    padding: s(2) s() 0 s();
     margin: s(3) 0 s(6) 0;
     text-align: center;
 
@@ -20,7 +20,6 @@
     @include element("logo") {
         @include icon("a-pollo-logo.svg", 160px, 160px);
         margin: 0 auto s(2) auto;
-
 
         @media #{$from-tablet-landscape} {
             display: none;
