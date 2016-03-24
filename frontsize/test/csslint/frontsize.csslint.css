@@ -2378,7 +2378,7 @@ kbd:active {
 }
 
 .apollo-website-headline {
-  padding-top: 60px;
+  padding: 60px 40px 0 40px;
   margin: 60px 0 120px 0;
   text-align: center;
 }
