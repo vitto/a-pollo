@@ -8,7 +8,7 @@
 
     height: 400px;
 
-    @media #{$till-tablet-portrait} {
+    @media #{$till-tablet-landscape} {
         display: none;
     }
 

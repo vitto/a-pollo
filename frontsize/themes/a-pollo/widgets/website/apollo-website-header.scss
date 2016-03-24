@@ -36,6 +36,6 @@
 
     @include element("logo") {
         display: inline-block;
-        @include icon("apollo-logo__icon.svg", 40px, 30px);
+        @include icon("a-pollo-logo--gold.svg", 40px, 30px);
     }
 }

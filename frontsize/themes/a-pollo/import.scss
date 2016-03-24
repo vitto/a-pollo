@@ -1,4 +1,4 @@
-@import "config";
+@import "config.gh-pages";
 @import "vars";
 
 @import "mixin/font";
@@ -57,6 +57,7 @@
 @import "widgets/apollo-footer";
 @import "widgets/apollo-header";
 @import "widgets/apollo-html-example";
+@import "widgets/apollo-logo-lib";
 @import "widgets/apollo-logo";
 @import "widgets/apollo-menu-mobile-nav";
 @import "widgets/apollo-menu-mobile";
@@ -77,7 +78,6 @@
 @import "widgets/website/apollo-website-logo";
 @import "widgets/website/apollo-website-menu";
 @import "widgets/website/apollo-website-mincer";
-@import "widgets/website/apollo-website-mobile";
 @import "widgets/website/apollo-website-page";
 @import "widgets/website/apollo-website-spacer";
 @import "widgets/website/apollo-website-styleguide";

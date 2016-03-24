@@ -1,12 +1,11 @@
 .apollo-website-headline {
 
-    padding: 0 s();
+    padding-top: s(3);
     margin: s(3) 0 s(6) 0;
     text-align: center;
 
-    @media #{$till-tablet-landscape} {
-        margin-top: 0;
-        padding-top: s(5);
+    @media #{$from-tablet-landscape} {
+        padding-top: 0;
     }
 
     @include element("title") {
@@ -16,5 +15,15 @@
 
     @include element("sub-title") {
         @include setFont(600, $colorWebsiteHeaderSubText, 24px, s(24px, 1.5));
+    }
+
+    @include element("logo") {
+        @include icon("a-pollo-logo.svg", 160px, 160px);
+        margin: 0 auto s(2) auto;
+
+
+        @media #{$from-tablet-landscape} {
+            display: none;
+        }
     }
 }

@@ -2,8 +2,8 @@
 Frontsize: http://frontsize.com
 GitHub:    https://github.com/ideatosrl/frontsize-sass
 License:   MIT Licence
-Version:   3.12.62
-Date:      2015-11-26 12:07
+Version:   3.12.68
+Date:      2016-03-08T15:22:51+01:00
 Authors:   Vittorio Vittori, Alessandro Minoccheri
 */
 * {
@@ -118,6 +118,7 @@ kbd:active {
   font-weight: 400;
   background-color: white;
   cursor: pointer;
+  min-height: 74px;
   -webkit-transition: color 0.25s ease-out, background-color 0.25s ease-out;
   -khtml-transition: color 0.25s ease-out, background-color 0.25s ease-out;
   -moz-transition: color 0.25s ease-out, background-color 0.25s ease-out;
@@ -130,12 +131,19 @@ kbd:active {
   position: absolute;
   right: 20px;
   top: 20px;
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
   padding: 5px 10px;
-  color: #d5d5d5;
+  color: gray;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
   font-size: 16px;
   font-weight: 200;
   line-height: 24px;
+  border: 1px solid rgba(236, 232, 232, 0.8);
   background-color: #ece8e8;
   background-color: rgba(236, 232, 232, 0.8);
   text-transform: lowercase;
@@ -174,8 +182,14 @@ kbd:active {
   transition: color 0.25s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.25s cubic-bezier(0.19, 1, 0.22, 1), top 0.25s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.apollo-code-example:hover .code .value, .apollo-post > .highlight:hover .code .value, .apollo-website-contents > .highlight:hover .code .value {
-  background-color: #ece8e8;
+.apollo-code-example:hover .code .value, .apollo-post > .highlight:hover .code .value, .apollo-website-contents > .highlight:hover .code .value, .apollo-code-example:hover .code .string, .apollo-post > .highlight:hover .code .string, .apollo-website-contents > .highlight:hover .code .string {
+  background-color: #f2ed98;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
 }
 
 .apollo-code-example:hover .gutter, .apollo-post > .highlight:hover .gutter, .apollo-website-contents > .highlight:hover .gutter {
@@ -199,7 +213,7 @@ kbd:active {
   font-weight: 400;
 }
 
-.apollo-code-example .code .value, .apollo-post > .highlight .code .value, .apollo-website-contents > .highlight .code .value {
+.apollo-code-example .code .value, .apollo-post > .highlight .code .value, .apollo-website-contents > .highlight .code .value, .apollo-code-example .code .string, .apollo-post > .highlight .code .string, .apollo-website-contents > .highlight .code .string {
   -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
   -khtml-transition: background-color 0.25s ease-out, color 0.25s ease-out;
   -moz-transition: background-color 0.25s ease-out, color 0.25s ease-out;
@@ -207,6 +221,12 @@ kbd:active {
   -o-transition: background-color 0.25s ease-out, color 0.25s ease-out;
   transition: background-color 0.25s ease-out, color 0.25s ease-out;
   background-color: transparent;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
 }
 
 .apollo-code-example pre, .apollo-post > .highlight pre, .apollo-website-contents > .highlight pre {
@@ -243,8 +263,6 @@ kbd:active {
 .apollo-footer {
   margin-top: 80px;
   margin-bottom: 80px;
-  padding-left: 20px;
-  padding-right: 20px;
   width: 100%;
 }
 
@@ -740,7 +758,6 @@ kbd:active {
   position: relative;
   display: inline-block;
   padding: 2px;
-  border: 1px dashed transparent;
   -webkit-transition: 0.25s ease-out;
   -khtml-transition: border-color 0.25s ease-out;
   -moz-transition: border-color 0.25s ease-out;
@@ -749,17 +766,14 @@ kbd:active {
   transition: border-color 0.25s ease-out;
 }
 
-.apollo-html-example__inner:hover .apollo-html-example__bg {
-  opacity: 1 !important;
-}
-
 .apollo-html-example__container {
   position: relative;
   z-index: 1;
 }
 
 .apollo-html-example__container > * {
-  float: left;
+  float: left !important;
+  position: static !important;
 }
 
 .apollo-html-example__bg {
@@ -769,7 +783,8 @@ kbd:active {
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 0;
+  opacity: 0.55;
+  border: 1px dashed #b6b4b4;
   -webkit-transition: opacity 0.25s ease-out, background-size 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -khtml-transition: opacity 0.25s ease-out, background-size 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -moz-transition: opacity 0.25s ease-out, background-size 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -781,17 +796,26 @@ kbd:active {
   background-position: 50% 50%;
 }
 
-.apollo-html-example:hover .apollo-html-example__inner {
-  border-color: #d1cece;
+.apollo-logo-lib {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
 }
 
-.apollo-html-example:hover .apollo-html-example__bg {
-  opacity: 0.55;
+.apollo-logo-lib:hover {
+  background-color: transparent !important;
 }
 
-.apollo-html-example:hover .apollo-html-example__bg.apollo-html-example__bg--active {
-  opacity: 1;
-  background-size: 32px 32px;
+.apollo-logo-lib--nodejs {
+  width: 150px;
+  background-image: url("/a-pollo/img/nodejs-logo.png");
+}
+
+.apollo-logo-lib--bower {
+  background-image: url("/a-pollo/img/bower-logo.svg");
 }
 
 .apollo-logo {
@@ -811,11 +835,28 @@ kbd:active {
 }
 
 .apollo-logo__icon {
-  width: 80px;
-  height: 60px;
-  background-image: url("/a-pollo/img/apollo-logo__icon.svg");
+  width: 240px;
+  height: 80px;
+  background-image: url("/a-pollo/img/a-pollo-logo.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  background-position: 0 100%;
+}
+
+@media only screen and (max-width: 767px) {
+  .apollo-logo__icon {
+    background-position: 50% 100%;
+  }
+}
+
+.apollo-logo__icon--mobile {
+  display: block;
+}
+
+@media only screen and (max-width: 767px) {
+  .apollo-logo__icon--mobile {
+    background-position: 0 100%;
+  }
 }
 
 .apollo-logo--move-top {
@@ -838,7 +879,7 @@ kbd:active {
 
 .apollo-menu-mobile-nav {
   position: fixed;
-  z-index: 6;
+  z-index: 3;
   left: -100%;
   overflow: auto;
   width: 75%;
@@ -877,14 +918,15 @@ kbd:active {
 
 .apollo-menu-mobile {
   position: fixed;
-  z-index: 5;
+  z-index: 2;
   top: 0;
   left: 0;
   right: 0;
   font-family: "roboto", "helvetica neue", helvetica, arial, sans-serif;
   font-weight: 300;
-  width: 100%;
   display: table;
+  table-layout: fixed;
+  width: 100%;
   width: 100%;
   height: 60px;
   padding: 10px 20px;
@@ -2330,21 +2372,20 @@ kbd:active {
   display: inline-block;
   width: 40px;
   height: 30px;
-  background-image: url("/a-pollo/img/apollo-logo__icon.svg");
+  background-image: url("/a-pollo/img/a-pollo-logo--gold.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
 .apollo-website-headline {
-  padding: 0 20px;
+  padding-top: 60px;
   margin: 60px 0 120px 0;
   text-align: center;
 }
 
-@media only screen and (max-width: 1023px), only print {
+@media only screen and (min-width: 1024px) {
   .apollo-website-headline {
-    margin-top: 0;
-    padding-top: 100px;
+    padding-top: 0;
   }
 }
 
@@ -2363,6 +2404,21 @@ kbd:active {
   font-size: 24px;
   font-weight: 600;
   line-height: 36px;
+}
+
+.apollo-website-headline__logo {
+  width: 160px;
+  height: 160px;
+  background-image: url("/a-pollo/img/a-pollo-logo.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  margin: 0 auto 40px auto;
+}
+
+@media only screen and (min-width: 1024px) {
+  .apollo-website-headline__logo {
+    display: none;
+  }
 }
 
 .apollo-website-home {
@@ -2510,7 +2566,7 @@ kbd:active {
   height: 400px;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1023px), only print {
   .apollo-website-mincer {
     display: none;
   }
@@ -2553,16 +2609,6 @@ kbd:active {
   background-size: 160px 280px;
   width: 160px;
   height: 111px;
-}
-
-.apollo-website-mobile {
-  margin-bottom: 20px;
-}
-
-.apollo-website-mobile__social {
-  margin-top: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ece8e8;
 }
 
 .apollo-website-page {
@@ -2619,25 +2665,25 @@ kbd:active {
 @font-face {
   font-family: "roboto";
   font-weight: 700;
-  src: url("/a-pollo/fonts/Roboto-Black.eot?#iefix") format("embedded-opentype"), url("/a-pollo/fonts/Roboto-Black.woff2") format("woff2"), url("/a-pollo/fonts/Roboto-Black.woff") format("woff"), url("/a-pollo/fonts/Roboto-Black.ttf") format("truetype"), url("/a-pollo/fonts/Roboto-Black.svgroboto") format("svg");
+  src: url("/a-pollo/fonts/Roboto-Black.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "roboto";
   font-weight: 600;
-  src: url("/a-pollo/fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("/a-pollo/fonts/Roboto-Bold.woff2") format("woff2"), url("/a-pollo/fonts/Roboto-Bold.woff") format("woff"), url("/a-pollo/fonts/Roboto-Bold.ttf") format("truetype"), url("/a-pollo/fonts/Roboto-Bold.svgroboto") format("svg");
+  src: url("/a-pollo/fonts/Roboto-Bold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "roboto";
   font-weight: 500;
-  src: url("/a-pollo/fonts/Roboto-Medium.eot?#iefix") format("embedded-opentype"), url("/a-pollo/fonts/Roboto-Medium.woff2") format("woff2"), url("/a-pollo/fonts/Roboto-Medium.woff") format("woff"), url("/a-pollo/fonts/Roboto-Medium.ttf") format("truetype"), url("/a-pollo/fonts/Roboto-Medium.svgroboto") format("svg");
+  src: url("/a-pollo/fonts/Roboto-Medium.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "roboto";
   font-weight: 300;
-  src: url("/a-pollo/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("/a-pollo/fonts/Roboto-Light.woff2") format("woff2"), url("/a-pollo/fonts/Roboto-Light.woff") format("woff"), url("/a-pollo/fonts/Roboto-Light.ttf") format("truetype"), url("/a-pollo/fonts/Roboto-Light.svgroboto") format("svg");
+  src: url("/a-pollo/fonts/Roboto-Light.ttf") format("truetype");
 }
 
 .apollo-spacer {
