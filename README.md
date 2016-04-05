@@ -6,6 +6,7 @@ a-pollo
 [![Version](http://img.shields.io/:version-1.16.96-B79769.svg)][release]
 [![TravisCI](https://travis-ci.org/vitto/a-pollo.svg?branch=master)](https://travis-ci.org/vitto/a-pollo/builds)
 [![Built with nodejs 4.2.2](http://img.shields.io/:nodejs-4.2.2-80BD01.svg)](https://nodejs.org/en/)
+[![NPM](http://img.shields.io/:NPM-package-C12127.svg)](https://www.npmjs.com/package/a-pollo)
 [![Built with hexo 3.2.0](http://img.shields.io/:hexo-3.2.0-0E83CD.svg)](https://hexo.io/)
 [![MIT licence](http://img.shields.io/:license-MIT-00AFFF.svg)](https://github.com/ideatosrl/frontsize-sass/blob/master/LICENSE.md)
 
