@@ -230,8 +230,9 @@
         <div class="apollo-website-contents">
             <p><h3 id="Config-file-missing"><a href="#Config-file-missing" class="headerlink" title="Config file missing?"></a>Config file missing?</h3><p>Be sure to have a <code>a-pollo.yml</code> first, to do it check out <a href="/installation.html#Init_your_style_guide">how to init the project</a>.</p></p>
 <p><h3 id="Generate"><a href="#Generate" class="headerlink" title="Generate"></a>Generate</h3><p>To generate the style guide, you just need to run this command:</p></p>
-<p><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">.</span><span class="comment">/node_modules/</span><span class="string">.</span><span class="comment">bin/a</span><span class="literal">-</span><span class="comment">pollo</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">.</span><span class="comment">/node_modules/</span><span class="string">.</span><span class="comment">bin/a</span><span class="literal">-</span><span class="comment">pollo</span></span><br></pre></td></tr></table></figure>
 <p>This will run a-pollo locally and generate the site in the folder specified in the config.</p>
+<hr>
 <h3 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h3><p>This is the list of the properties inside the <code>a-pollo.yml</code> config file, basically it’s just an extension of <a href="https://hexo.io/docs/configuration.html" target="_blank" rel="external">Hexo configuration</a>, so if you want to handle it’s configuration, just write what you need here.</p>
 <table>
 <thead>
@@ -328,18 +329,20 @@
 <td>An image inside <code>style.images</code> to be used as image footer inside a-pollo theme</td>
 </tr>
 <tr>
-<td><code>footer.leftText</code></td>
+<td><code>footer.description</code></td>
 <td><em>no</em></td>
-<td>The left text or HTML on the footer inside a-pollo theme</td>
+<td>The footer description</td>
 </tr>
 <tr>
-<td><code>footer.rightText</code></td>
+<td><code>footer.link</code></td>
 <td><em>no</em></td>
-<td>The right text or HTML on the footer inside a-pollo theme</td>
+<td>The footer logo href inside a-pollo theme</td>
 </tr>
 </tbody>
 </table>
 <p>Then if you want to customize the a-pollo theme, check out <a href="/theme-installation.html">how to do it here</a>.</p>
+<h3 id="Choose-config"><a href="#Choose-config" class="headerlink" title="Choose config"></a>Choose config</h3><p>If you need multiple configurations you can call the one you are using with this command:</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">.</span><span class="comment">/node_modules/</span><span class="string">.</span><span class="comment">bin/a</span><span class="literal">-</span><span class="comment">pollo</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">config</span> <span class="comment">file_config</span><span class="string">.</span><span class="comment">yml</span></span><br></pre></td></tr></table></figure>
 
         </div>
     </div>
