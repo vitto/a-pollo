@@ -8,6 +8,7 @@ var reader = require('./lib/reader'),
     colors = require('colors'),
     shell = require('shelljs'),
     path = require('./lib/path'),
+    params = require('./lib/params'),
     yaml = require('js-yaml'),
     Hexo = require('hexo'),
     glob = require('glob'),
@@ -201,7 +202,7 @@ var isInitProcess = function(argv) {
         }
     });
     return result;
-}
+};
 
 var runProcess = function(argv, apolloDefaultConfPath) {
     console.log('Starting ' + 'a-pollo '.rainbow + packageJSON.version);
@@ -213,12 +214,7 @@ var runProcess = function(argv, apolloDefaultConfPath) {
         return;
     }
 
-    var filename = apolloDefaultConfPath;
-    argv.forEach(function(val) {
-        if (val.indexOf('config=') === 0) {
-            filename = val.replace('config=', '');
-        }
-    });
+    var filename = params.configFile(argv, apolloDefaultConfPath);
 
     if (! shell.test('-e', filename)) {
         console.log('ERROR: '.red + 'file ' + filename.toString().red + ' not found, please run ' + 'a-pollo init'.yellow + ' or ' + './node_modules/.bin/a-pollo init'.yellow + ' to create one.');
