@@ -18,7 +18,7 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 ##### Release notes
 
-- Add `--config` to sobstitute `config=filename` syntax
+- Add `--config filename.yml` to sobstitute `config=filename.yml` syntax that will be deprecated in the next releases
 
 ![a-pollo preview][a-pollo-preview]
 
