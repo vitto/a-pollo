@@ -18,6 +18,8 @@ To generate the style guide, you just need to run this command:
 
 This will run a-pollo locally and generate the site in the folder specified in the config.
 
+---
+
 ### Configuration
 
 This is the list of the properties inside the `a-pollo.yml` config file, basically it's just an extension of [Hexo configuration][hexo_config], so if you want to handle it's configuration, just write what you need here.
@@ -41,11 +43,17 @@ This is the list of the properties inside the `a-pollo.yml` config file, basical
 | `header.description` | *no*                 | The header description inside a-pollo theme |
 | `header.link`        | *no*                 | The header logo href inside a-pollo theme |
 | `footer.logo`        | *no*                 | An image inside `style.images` to be used as image footer inside a-pollo theme |
-| `footer.leftText`    | *no*                 | The left text or HTML on the footer inside a-pollo theme |
-| `footer.rightText`   | *no*                 | The right text or HTML on the footer inside a-pollo theme |
+| `footer.description`    | *no*                 | The footer description |
+| `footer.link`   | *no*                 | The footer logo href inside a-pollo theme |
 
 Then if you want to customize the a-pollo theme, check out [how to do it here][apollo_theme].
 
+### Choose config
+If you need multiple configurations you can call the one you are using with this command:
+
+```
+./node_modules/.bin/a-pollo --config file_config.yml
+```
 
 [apollo_init]: /installation.html#Init_your_style_guide
 [hexo_config]: https://hexo.io/docs/configuration.html
