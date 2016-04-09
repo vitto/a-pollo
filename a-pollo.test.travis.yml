@@ -6,7 +6,6 @@ developers: # [required] Who's managing the style guide
 designers: # [required] Who's desining the style guide
     - '[Vittorio Vittori](http://vit.to)'
 date: 2015-11-01                 # [required] When the style guide project was started
-date: 2015-11-01                 # [required] When the style guide project was started
 date_format: dddd D MMMM YYYY    # [optional] Default from hexo config YYYY-MM-DD
 
 
