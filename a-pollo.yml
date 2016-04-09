@@ -1,7 +1,12 @@
 title: Client project                                           # [required] Will be listened on head's title tag
 client: '[Client name](http://github.com/vitto/a-pollo#readme)'
-developers: '[Vittorio Vittori](http://vit.to), [Pietro Campagnano](https://github.com/fain182)' # [required] Who's managing the style guide
-designers: '[Vittorio Vittori](http://vit.to)'      # [required] Who's desining the style guide
+developers:
+    - '[Vittorio Vittori](http://vit.to)'
+    - '[Pietro Campagnano](https://github.com/fain182)'
+    # [required] Who's managing the style guide
+designers:
+    - '[Vittorio Vittori](http://vit.to)'
+    # [required] Who's desining the style guide
 date: 2015-11-01                 # [required] When the style guide project was started
 date_format: dddd D MMMM YYYY    # [optional] Default from hexo config YYYY-MM-DD
 
