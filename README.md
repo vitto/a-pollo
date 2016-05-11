@@ -70,6 +70,24 @@ From `package.json` where you have installed `node_modules` folder
 
 ---
 
+### Doc style guide example
+
+This will be placed on `style.docs` files defined in the YAML configuration.
+
+```
+/*@pollo
+    @name:  Icon
+    @icon:  fa-star
+    @auth:  [Vittorio Vittori](http://vit.to)
+    @category:  Icons
+    @date:  2016-01-11
+    @text:  This is an icons set composet by an SVG sprite, the single icon is `48px` size.
+    @html:  <i class="icon icon--head"></i>
+*/
+```
+
+---
+
 Place a `a-pollo.yml` in the root folder of your project, this is the default config:
 
 ``` yaml

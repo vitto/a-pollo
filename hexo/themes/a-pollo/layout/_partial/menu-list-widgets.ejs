@@ -13,6 +13,7 @@
             <% } else { %>
                 <a href="<%= permalink %>" class="apollo-menu__link">
             <% } %>
+                <%- fawicon(post.docs[0].icon || post.docs[0].category) %>
                 <%= post.title %>
                 <% if (post.docs !== undefined) { %>
                     <span class="apollo-menu__docs"><%= post.docs.length %></span>

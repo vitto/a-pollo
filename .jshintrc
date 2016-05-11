@@ -6,7 +6,8 @@
     "globals"       : {
         "module" : true,
         "grunt"  : true,
-        "exec"   : true
+        "exec"   : true,
+        "hexo" : true
     },
 
     "maxerr" : 50,       // {int} Maximum error before stopping
