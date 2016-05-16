@@ -6,6 +6,7 @@
             <ul class="apollo-menu">
         <% } %>
             <li class="apollo-menu__title">
+                <%- fawicon(category.name) %>
                 <%= category.name %>
             </li>
             <% category.posts.each(function(post, i){ %>
