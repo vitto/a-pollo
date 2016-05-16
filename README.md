@@ -3,7 +3,7 @@
 a-pollo
 ---
 
-[![Version](http://img.shields.io/:version-1.17.98-B79769.svg)][release]
+[![Version](http://img.shields.io/:version-1.18.99-B79769.svg)][release]
 [![TravisCI](https://travis-ci.org/vitto/a-pollo.svg?branch=master)](https://travis-ci.org/vitto/a-pollo/builds)
 [![Built with nodejs 4.2.2](http://img.shields.io/:nodejs-4.2.2-80BD01.svg)](https://nodejs.org/en/)
 [![NPM](http://img.shields.io/:NPM-package-C12127.svg)](https://www.npmjs.com/package/a-pollo)
@@ -19,6 +19,8 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 ##### Release notes
 
 - Add icons to categories and widgets with font awesome
+- Moved menus for easier finds in category ordered widgets
+- Minor fix on apollo-menu widget selector
 
 ![a-pollo preview][a-pollo-preview]
 
@@ -212,6 +214,6 @@ Coded with love by [Vittorio Vittori][vitto] and [Pietro Campagnano][pietro] @ [
 [hexo]: https://hexo.io
 [apollo_code_docs]: https://github.com/vitto/a-pollo/blob/master/example_source/frontsize/themes/default/widgets/button-social.scss
 [apollo_theme]: https://github.com/vitto/a-pollo/tree/master/hexo/themes/a-pollo
-[release]: https://github.com/vitto/a-pollo/releases/tag/1.17.98
+[release]: https://github.com/vitto/a-pollo/releases/tag/1.18.99
 [a-pollo-preview]: https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/apollo-example.png
 [a-pollo-logo]: https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/a-pollo-logo.png
