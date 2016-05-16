@@ -18,8 +18,7 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 ##### Release notes
 
-- Add possibility to add multiple dates for widget examples to improve project stats
-- Add array for team members
+- Add icons to categories and widgets with font awesome
 
 ![a-pollo preview][a-pollo-preview]
 

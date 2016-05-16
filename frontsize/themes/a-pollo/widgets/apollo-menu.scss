@@ -2,7 +2,7 @@
     margin: s(2) 0 0 0;
     padding: 0;
 
-    @include modifier("first") {
+    &:first-child {
         margin-top: 0;
     }
 

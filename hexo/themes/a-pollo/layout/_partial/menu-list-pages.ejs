@@ -8,11 +8,8 @@
 
         <% if (page.category !== undefined && page.category.toLowerCase() !== 'a-pollo') { %>
             <% if (prevCategory != page.category) { %>
-                <% if (use_margin || !firstItem) { %>
+                <% if (firstItem) { %>
                     <ul class="apollo-menu">
-                <% } else { %>
-                    <% firstItem = false; %>
-                    <ul class="apollo-menu apollo-menu--first">
                 <% } %>
                 <li class="apollo-menu__title">
                     <%= page.category %>

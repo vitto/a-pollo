@@ -1,10 +1,6 @@
 <% site.categories.each(function(category, i){ %>
     <% if (category.posts.length > 0) { %>
-        <% if (i == 0) { /* apollo-menu--first */ %>
-            <ul class="apollo-menu">
-        <% } else { %>
-            <ul class="apollo-menu">
-        <% } %>
+        <ul class="apollo-menu">
             <li class="apollo-menu__title">
                 <%- fawicon(category.name) %>
                 <%= category.name %>
