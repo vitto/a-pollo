@@ -2,7 +2,7 @@
 <ul class="apollo-menu">
     <% if (site.posts.length > 0) { %>
         <li class="apollo-menu__title">
-            Widgets
+            Snippets
         </li>
     <% } %>
     <% site.posts.each(function (post, i) { %>
@@ -13,10 +13,10 @@
             <% } else { %>
                 <a href="<%= permalink %>" class="apollo-menu__link">
             <% } %>
-                <%- fawicon(post.docs[0].icon || post.docs[0].category) %>
+                <%- fawicon(post.annotations[0].icon || post.annotations[0].category) %>
                 <%= post.title %>
-                <% if (post.docs !== undefined) { %>
-                    <span class="apollo-menu__docs"><%= post.docs.length %></span>
+                <% if (post.annotations !== undefined) { %>
+                    <span class="apollo-menu__docs"><%= post.annotations.length %></span>
                 <% } %>
             </a>
         </li>

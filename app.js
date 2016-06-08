@@ -3,7 +3,7 @@ var reader = require('./lib/reader'),
     formatter = require('./lib/formatter'),
     dependency = require('./lib/dependency'),
     absorb = require('absorb'),
-    widget = require('./lib/widget'),
+    snippet = require('./lib/snippet'),
     server = require('./lib/http-server'),
     colors = require('colors'),
     shell = require('shelljs'),
@@ -18,7 +18,7 @@ var reader = require('./lib/reader'),
 var conf, defaultConf;
 var packageJSON = json.readFileSync(path.fromModule('package.json'));
 var hexoConfig, mergedConfig;
-var widgetFiles;
+var files;
 
 var checkPath = function(path, configVarName, canSkip) {
     var skip = canSkip || false;
@@ -135,16 +135,16 @@ var prepareHTTP = function() {
     }
 };
 
-var postCreated = function(widgetFilesLength) {
+var postCreated = function(snippetFilesLength) {
     var posts = glob.sync(path.fromProcess('/source/_posts/**/*.md'));
-    if (posts.length === widgetFilesLength) {
+    if (posts.length === snippetFilesLength) {
         generateDocs();
         setTimeout(function(){
             prepareHTTP();
         }, 1000);
     } else {
         setTimeout(function(){
-            postCreated(widgetFilesLength);
+            postCreated(snippetFilesLength);
         }, 500);
     }
 };
@@ -183,14 +183,18 @@ var runBuild = function() {
     hexo.init().then(function(){
         var postData;
         console.log('Hexo: Crunching a-pollo doc annotations to posts...'.grey);
-        for (var i = 0; i < widgetFiles.length; i += 1) {
-            console.log('Creating post for ' + (' ' + widgetFiles[i][0].file + ' ').yellow.bgBlack);
-            postData = formatter.toHexo(widgetFiles[i]);
-            postData.content = widget.toMarkdown(widgetFiles[i], conf);
+        for (var i = 0; i < files.length; i += 1) {
+            if (files[i][0].isDoc) {
+                console.log('Creating documetation for ' + (' ' + files[i][0].file + ' ').yellow.bgBlack);
+            } else {
+                console.log('Creating code snippet for ' + (' ' + files[i][0].file + ' ').yellow.bgBlack);
+            }
+            postData = formatter.toHexo(files[i]);
+            postData.content = snippet.toMarkdown(files[i], conf);
             hexo.post.create(postData, true);
         }
         console.log('Hexo: Waiting to finish...'.grey);
-        postCreated(widgetFiles.length);
+        postCreated(files.length);
     });
 };
 
@@ -248,9 +252,9 @@ var runProcess = function(argv, apolloDefaultConfPath) {
     }
 
     console.log('Loading doc annotations data from ' + (' ' + conf.style.docs + ' ').yellow.bgBlack + ' folder');
-    widgetFiles = reader.load(path.fromProcess(conf.style.docs));
+    files = reader.load(path.fromProcess(conf.style.docs));
 
-    conf = formatter.setProjectStats(conf, widgetFiles);
+    conf = formatter.setProjectStats(conf, files);
     mergedConfig = absorb(conf, hexoConfig, false, true);
 
     fs.writeFileSync(path.fromModule('/hexo/_config.yml'), yaml.safeDump(mergedConfig));

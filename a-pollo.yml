@@ -21,7 +21,7 @@ libs:
     node: package.json  # [optional] Link the package.json file to display NodeJS used libraries in the index page
 
 style:
-    docs: example_source/frontsize/themes/default/widgets/        # [required] Where a-pollo comments and tags are placed
+    docs: example_source/frontsize/themes/default/        # [required] Where a-pollo comments and tags are placed
     css: example_source/frontsize/test/css/frontsize-theme.min.css    # [required] This is the CSS will be loaded by a-pollo to show rendered widgets
     images: example_source/frontsize/themes/default/img/*         # [optional] Where the CSS images are stored
     fonts: example_source/frontsize/themes/default/fonts/*        # [optional] Where the CSS fonts are stored

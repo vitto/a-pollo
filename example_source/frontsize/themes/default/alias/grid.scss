@@ -1,26 +1,26 @@
 /*@pollo
 
     @name: column
-    @doc: mixin, function, custom as mixin, custom as function, [false]
+    @doc: mixin
     @category: Alias
-    @version: 1.X.X | [false]
+    @version: 4.0.0
+    @public: true
     @auth: Vittorio Vittori
     @date:  2015-11-10
     @text:  This is an icons set composet by an SVG sprite, the single icon is `48px` size.
-    @public: true | [false]
-    @param: {array} $paramName [default]
-        description
-    @param: {boolean} base.default [default]
-        description
-    @param: {unit} base.default [default]
-        description
-    @param: {int} base.default [default]
-        description
-    @param: {number} base.default [default]
-        description
-    @param: {string} base.default [default]
-        description
-    @return: css | unit | custom | [nothing]
+    @param: {array} ($paramOne) [default]
+        Inline description
+    @param: {boolean} (@paramTwo) [false]
+        Inline description
+    @param: {unit} (paramThree) [100%]
+        Inline description
+    @param: {int} (paramFour) [12]
+        Inline description
+    @param: {number} (paramFive) [12.5]
+        Inline description
+    @param: {string} (paramSix) [12]
+        Inline description
+    @returns: css | unit | custom | [nothing]
     @code: Description must be inline
         // SASS or LESS or CSS by current filetype
     @css: Description must be inline

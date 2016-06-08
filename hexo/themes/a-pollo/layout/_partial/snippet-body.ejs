@@ -1,4 +1,4 @@
-<%- markdown(doc.text) %>
+<%- markdown(annotation.text) %>
 
 <div class="apollo-title-spacer">
     <strong>HTML example</strong>
@@ -8,7 +8,7 @@
     <div class="apollo-html-example__inner">
         <div class="apollo-html-example__bg"></div>
         <div class="apollo-html-example__container">
-            <%- doc.html %>
+            <%- annotation.html %>
         </div>
     </div>
 </div>
@@ -20,6 +20,6 @@
 <div id="html-example-<%= id %>" class="apollo-code-example" data-clipboard-target="#html-example-<%= id %> .highlight .code">
     <div class="apollo-code-example__message" data-text="Click to copy">Click to copy</div>
     <% /* console.log(doc) */ %>
-    <%- markdown('\n```html\n' + doc.htmlSnippet + '\n```\n') %>
+    <%- markdown('\n```html\n' + annotation.htmlSnippet + '\n```\n') %>
 </div>
 <hr class="apollo-widget__hr">

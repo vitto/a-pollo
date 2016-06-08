@@ -59,21 +59,21 @@
         <br>
         <i class="fa fa-code"></i>&nbsp;
             <b>
-                <%= config.stats.widget.days %> day/s
+                <%= config.stats.snippet.days %> day/s
             </b>
-             of effective development &nbsp;<span title="Based on widget dates entries, without duplicates"><i class="fa fa-question-circle"></i></span>
+             of effective development &nbsp;<span title="Based on snippet dates entries, without duplicates"><i class="fa fa-question-circle"></i></span>
         <br>
         <i class="fa fa-pie-chart"></i>&nbsp;
             <b>
-                <%= config.stats.widget.activity %>%
+                <%= config.stats.snippet.activity %>%
             </b>
-            of activity &nbsp;<span title="Ratio between widget dates entries (<%= config.stats.widget.days %>) and project business days (<%= config.stats.date.business %>)"><i class="fa fa-question-circle"></i></span>
+            of activity &nbsp;<span title="Ratio between snippet dates entries (<%= config.stats.snippet.days %>) and project business days (<%= config.stats.date.business %>)"><i class="fa fa-question-circle"></i></span>
     </p>
 
     <p>
         <strong>Files</strong><br>
-        <i class="fa fa-cubes"></i>&nbsp; <b><%= config.stats.widget.count %></b> created<br>
-        <i class="fa fa-tv"></i>&nbsp; <b><%= config.stats.widget.countExamples %></b> displayed<br>
+        <i class="fa fa-cubes"></i>&nbsp; <b><%= config.stats.snippet.count %></b> created<br>
+        <i class="fa fa-tv"></i>&nbsp; <b><%= config.stats.snippet.countExamples %></b> displayed<br>
     </p>
 
     <% if (config.libs !== undefined) { %>
