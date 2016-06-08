@@ -15,7 +15,6 @@ url: http://vitto.github.io/a-pollo/example/
 root: /a-pollo/example/
 pages: example_source/a-pollo/*      # [optional] Additional static documentation pages you want to add, (markdown or html)
 http_server: false          # [optional] HTTP server with port number
-use_markdown: true          # [optional] This will be removed soon, it's used for development
 theme: a-pollo              # [optional] The a-pollo theme folder
 
 cache: false
