@@ -1,0 +1,55 @@
+
+// The pre element represents a block of preformatted text,
+// in which structure is represented by typographic conventions
+// rather than by elements.
+//
+// Url - http://html5doctor.com/element-index/#pre
+
+pre {
+
+    $color: white;
+
+    font-family      : $font-monospace;
+    padding          : $spacing;
+    overflow         : auto;
+    white-space      : pre;
+    color            : $color;
+    text-shadow      : none;
+    border           : 1px solid;
+    background-color : #202020;
+
+    @include fallbackColor(border-color, rgba(0,0,0,.03));
+    @include fallbackColor(border-top-color, rgba(0,0,0,.075));
+
+    @include border-radius(4px);
+    @include box-shadow(0 1px 0 rgba(255,255,255,.6));
+
+    kbd {
+        @include user-select(inherit);
+        @include box-shadow(none);
+
+        color            : darken($color, 40%);
+        cursor           : inherit;
+        padding          : 0;
+        border           : none;
+        background-color : transparent;
+        background       : none;
+        text-shadow      : none;
+        position         : static;
+
+        &:active {
+            margin-bottom : 0;
+            border        : none;
+        }
+    }
+
+    code,
+    samp {
+        border-color:transparent;
+        background-color: transparent;
+        @include box-shadow(none);
+    }
+    &.with-small-fonts {
+        font-family: $font-monospace;
+    }
+}

@@ -29,6 +29,11 @@
     "font-awesome": "~4.4.0",
     "github-markdown-css": "~2.1.0",
     "jquery": "~2.1.4",
-    "clipboard": "~1.5.3"
+    "clipboard": "~1.5.3",
+    "karla-googlefont": "*",
+    "bitter-fontface": "^0.1.3",
+    "entypo-plus": "*",
+    "open-iconic": "^1.1.1",
+    "material-design-icons": "^2.2.3"
   }
 }

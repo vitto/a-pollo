@@ -1,0 +1,7 @@
+@mixin setFont($weight:200, $color:$font-color, $size:$font-size) {
+    color: $color;
+    font-family: $font-default;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $font-line-height;
+}

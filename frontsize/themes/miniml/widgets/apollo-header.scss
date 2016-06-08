@@ -1,0 +1,70 @@
+@mixin baseFooterLink() {
+    color: $colorHeaderLink;
+    text-decoration: none;
+    @include transition(color $ease);
+    &:hover {
+        color: $colorHeaderLinkHover;
+    }
+}
+
+@mixin baseHeaderElements() {
+    b, strong {
+        font-weight: 500;
+        color: $colorHeaderBold;
+    }
+
+    a {
+        @include baseFooterLink();
+    }
+}
+
+.apollo-header {
+    margin-bottom: s(2);
+
+    @include row();
+
+    @media #{$till-tablet-portrait} {
+        padding-left: s();
+        padding-right: s();
+        text-align: center;
+    }
+
+    @include element("left-column") {
+        @include column(
+            6, 6,
+            6, 6,
+            12, 12
+        );
+
+        @include baseHeaderElements();
+    }
+
+    @include element("paragraph") {
+        @include setFont();
+    }
+
+    @include element("right-column") {
+        text-align: right;
+        @include column(
+            6, 6,
+            6, 6,
+            12, 12
+        );
+
+        @media #{$till-tablet-portrait} {
+            margin-top: s(0.25);
+            text-align: center;
+        }
+
+        @include baseFooterElements();
+    }
+
+    @include element("link") {
+        @include baseFooterLink();
+    }
+
+    @include element("heart") {
+        color: #DE4646;
+        @include animation("heart-beat" 1s infinite);
+    }
+}

@@ -1,0 +1,31 @@
+
+// The caption element represents the title of the table that is its parent,
+// if it has a parent and that is a table element.
+//
+// When a table element is the only content in a figure element other than
+// the figcaption, the caption element should be omitted in favor of the
+// figcaption.
+//
+// Code snippet:
+// <table>
+//  <caption>Monthly savings</caption>
+//  <thead>
+//      <tr>
+//          <th scope="col">Header 1</th>
+//          <th scope="col">Header 2</th>
+//          <th scope="col">Header 3</th>
+//      </tr>
+//  </thead>
+//  <tfoot>
+//      ...
+//  </tfoot>
+//  <tbody>
+//      ...
+//  </tbody>
+// </table>
+//
+// Url - http://html5doctor.com/element-index/#caption
+
+caption {
+    padding	: $global-padding;
+}

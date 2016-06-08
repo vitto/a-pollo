@@ -1,0 +1,43 @@
+
+// The td element represents a data cell in a table.
+//
+// Url - http://html5doctor.com/element-index/#td
+
+td {
+    text-align  : left;
+    padding     : ($spacing / 2);
+}
+
+tbody {
+
+    $colorOdd  : rgb(230,230,230);
+    $colorEven : rgb(200,200,200);
+
+    tr {
+        &:nth-child(odd) {
+            td {
+                background-color : $colorOdd;
+            }
+        }
+        &:nth-child(even) {
+            td {
+                background-color : $colorEven;
+            }
+        }
+    }
+
+    &:hover {
+        tr {
+            &:nth-child(odd) {
+                td {
+                    background-color : white;
+                }
+            }
+            &:nth-child(even) {
+                td {
+                    background-color : white;
+                }
+            }
+        }
+    }
+}

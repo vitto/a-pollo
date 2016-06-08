@@ -1,0 +1,81 @@
+@mixin baseFooterLink() {
+    color: $colorFooterLink;
+    text-decoration: none;
+    @include transition(color $ease);
+    &:hover {
+        color: $colorFooterLinkHover;
+    }
+}
+
+@mixin baseFooterElements() {
+    b, strong {
+        font-weight: 500;
+        color: $colorFooterBold;
+    }
+
+    a {
+        @include baseFooterLink();
+    }
+}
+
+.apollo-footer {
+    margin-top: s(4);
+    margin-bottom: s(4);
+
+    @include row();
+
+    @media #{$till-tablet-landscape} {
+        padding-left: s(3);
+        padding-right: s(3);
+    }
+
+    @media #{$till-tablet-portrait} {
+        padding-left: s();
+        padding-right: s();
+        text-align: center;
+    }
+
+    @include element("left-column") {
+        @include column(
+            6, 6,
+            6, 6,
+            12, 12
+        );
+
+        @include baseFooterElements();
+    }
+
+    @include element("paragraph") {
+        @include setFont();
+    }
+
+    @include element("right-column") {
+        text-align: right;
+        @include column(
+            6, 6,
+            6, 6,
+            12, 12
+        );
+
+        @media #{$till-tablet-portrait} {
+            margin-top: s(0.25);
+            text-align: center;
+        }
+
+        @include baseFooterElements();
+    }
+
+    @include element("link") {
+        @include baseFooterLink();
+    }
+
+    @include element("heart") {
+        color: #DE4646;
+        @include animation("heart-beat" 1s infinite);
+    }
+}
+
+@include keyframes("heart-beat") {
+    0%   { @include scale(1.25); }
+    100% { @include scale(1); }
+}

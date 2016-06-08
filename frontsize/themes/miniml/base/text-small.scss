@@ -1,0 +1,15 @@
+
+// Represents side comments such as small print.
+//
+// It is not intended to be presentational.
+//
+// The small element should not be used for extended spans of text
+// such as multiple paragraphs, lists, or sections of text.
+//
+// It is only intended for short runs of text.
+//
+// Url - http://html5doctor.com/element-index/#small
+
+small {
+    font-size	: $font-small-size;
+}

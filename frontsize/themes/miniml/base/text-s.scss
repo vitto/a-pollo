@@ -1,0 +1,11 @@
+
+// The s element represents contents that are no longer accurate
+// or no longer relevant.
+//
+// Url - http://html5doctor.com/element-index/#s
+
+s {
+    color			: $font-color;
+    text-decoration	: line-through;
+    opacity			: $state-faded-opacity;
+}

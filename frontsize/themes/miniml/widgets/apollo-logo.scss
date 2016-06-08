@@ -1,0 +1,49 @@
+.apollo-logo {
+    $size: 18px;
+
+    display: inline-block;
+    margin-bottom: s(0.5, $size);
+
+    text-decoration: none;
+
+    @include transition(text-shadow 0.125s ease-in-out);
+
+    &:hover {
+        text-shadow: 0 0 4px $colorLogoText;
+    }
+
+    @include element("icon") {
+        @include icon("a-pollo-logo.svg", 240px, 80px);
+        background-position: 0 100%;
+
+        @media #{$till-tablet-portrait} {
+            background-position: 50% 100%;
+        }
+
+        @include modifier("mobile") {
+            display: block;
+            @media #{$till-tablet-portrait} {
+                background-position: 0 100%;
+            }
+        }
+    }
+
+    @include modifier("move-top") {
+        margin-top: s(-1);
+    }
+
+    @include element("text") {
+        margin-top: 12px;
+        color: $colorLogoText;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: $size;
+        line-height:1;
+
+        @include modifier("header") {
+            color: $colorLogoTextHeader;
+        }
+    }
+
+}

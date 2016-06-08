@@ -1,0 +1,78 @@
+.apollo-menu-mobile {
+    position: fixed;
+    z-index: 2;
+    top:0;
+    left:0;
+    right:0;
+
+    font-family: $font-sans;
+    font-weight: 300;
+
+    @include asTable(0);
+    @include size(100%, s(3));
+    padding: s(0.5) s();
+
+    background-color: white;
+    @include box-shadow(0 1px 0 rgba(0,0,0,0.05));
+
+    @media #{$from-tablet-portrait} {
+        padding-left: s(3);
+        padding-right: s(3);
+    }
+
+    @media #{$from-tablet-landscape} {
+        display: none;
+    }
+
+    @include element("logo") {
+        @include size(s(4), s(2));
+        min-width: s(4);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0 50%;
+    }
+
+    @include element("title-box") {
+        padding-left: s();
+        padding-right: s();
+        width: 100%;
+    }
+
+    @include element("category") {
+        color: $colorTextBold;
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &:first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    @include element("title") {
+        color: $colorText;
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &:first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    @include element("switch") {
+        @include size(s(2));
+        min-width: s(2);
+
+        @include border-radius(3px);
+        border: 1px solid $colorGreyLight;
+
+        @include backgroundImage("apollo-mobile-button-switch.svg");
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 24px 24px;
+
+        cursor: pointer;
+    }
+}

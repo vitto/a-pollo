@@ -1,0 +1,27 @@
+
+// The input element represents a typed data field,
+// usually with a form control to allow the user to edit the data.
+//
+// Url - http://html5doctor.com/element-index/#input
+
+input[type="checkbox"] {
+
+    // http://stackoverflow.com/questions/19145504/style-a-checkbox-in-firefox-remove-check-and-border
+
+    $size : 32px;
+    cursor: pointer;
+
+    @include user-select(none);
+    @include appearance(none);
+    @include moveTop(($size / 4));
+
+    @include spriteRetina("input-checkbox-1x.png", "input-checkbox-2x.png", $size, $size, 2 1);
+
+    &:checked {
+        @include spritePosition(1 0, $size);
+    }
+
+    & + * {
+        cursor: pointer;
+    }
+}

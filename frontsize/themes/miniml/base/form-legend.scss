@@ -1,0 +1,33 @@
+
+// The legend element represents a caption for the rest of the contents
+// of the legend element's parent fieldset element, if any.
+//
+// Code snippet:
+// <form id="app-login" action="process.php">
+//  <fieldset>
+//      <legend>Login Details</legend>
+//      <div>
+//          <label for="user-name">Username:</label>
+//          <input name="user-name" type="email" placeholder="Your username is your email address" required autofocus>
+//      </div>
+//      <div>
+//          <label for="password">Password:</label>
+//          <input name="password" type="password" placeholder="6 digits, a combination of numbers and letters" required>
+//      </div>
+//      <div>
+//          <input name="login" type="submit" value="Login">
+//      </div>
+//  </fieldset>
+// </form>
+//
+// Url - http://html5doctor.com/element-index/#legend
+
+legend {
+    $backgroundColor	: desaturate(lighten($font-color, 45%), 2%);
+    $round              : 20px;
+	font-weight         : bold;
+	background-color	: $backgroundColor;
+	padding				: ($vertical-padding / 1.5) $horizontal-padding;
+	margin-left			: -($horizontal-padding);
+	@include border-radius("#{$round} #{$round} 0 0");
+}

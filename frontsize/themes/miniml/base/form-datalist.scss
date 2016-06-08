@@ -1,0 +1,37 @@
+
+// The datalist element represents a set of option elements
+// that represent predefined options for other controls.
+//
+// The contents of the element represents fallback content
+// for legacy user agents, intermixed with option elements
+// that represent the predefined options.
+//
+// In the rendering, the datalist element represents nothing and it,
+// along with its children, should be hidden.
+//
+// The datalist element is hooked up to an input element using
+// the list attribute on the input element.
+//
+// Url - http://html5doctor.com/element-index/#datalist
+
+datalist * {
+
+    $colorEven: rgb(255,255,255);
+    $colorOdd: rgb(230,230,230);
+
+    color: $font-color;
+
+    &:nth-child(odd) {
+        background-color: $colorOdd;
+        &:hover {
+            background-color: darken($colorOdd, 10%);
+        }
+    }
+
+    &:nth-child(even) {
+        background-color: $colorEven;
+        &:hover {
+            background-color: darken($colorEven, 10%);
+        }
+    }
+}

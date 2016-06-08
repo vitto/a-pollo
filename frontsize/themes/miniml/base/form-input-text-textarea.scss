@@ -1,0 +1,63 @@
+
+// The input element represents a typed data field,
+// usually with a form control to allow the user to edit the data.
+//
+// Url - http://html5doctor.com/element-index/#input
+
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"] {
+
+    $color: $font-color;
+    $placeholderColor: $color;
+
+    width:   100%;
+    padding: ($spacing / 2);
+
+    @include disableOutline();
+    @include box-sizing(border-box);
+
+    @include fallbackColor(color, $color);
+
+    border: 1px solid;
+    @include fallbackColor(border-color, rgba(0,0,0,0.2));
+    @include fallbackColor(background-color, rgba(0,0,0,0.05));
+
+    @include input-placeholder($color, lighten($color, 20%));
+    @include box-shadow("inset 0 1px 4px rgba(0,0,0,.15), 0 0 0 rgba(0,0,0,0)");
+    @include transition("border-color .25s ease-in-out, background-color .25s ease-in-out, box-shadow .25s ease-in-out");
+
+    &:focus {
+        background-color: white;
+        @include fallbackColor(border-color, rgba(0,0,0,0.3));
+        @include box-shadow("inset 0 0 0 rgba(0,0,0,0), 0 1px 4px rgba(0,0,0,0.15)");
+    }
+
+    &:disabled {
+        cursor: default;
+        @include opacity($state-disabled-opacity);
+    }
+}
+
+// The textarea element represents a multiline plain text edit control
+// for the element's raw value.
+//
+// The contents of the control represent the control's default value.
+//
+// Code snippet:
+// <form action="/action-name.php" method="post" enctype="multipart/form-data">
+//  <textarea cols="50" rows="10"></textarea>
+// </form>
+//
+// Url - http://html5doctor.com/element-index/#textarea
+
+textarea {
+    width:100%;
+    @include box-sizing(border-box);
+    @include resize(vertical);
+    min-height: 100px;
+    max-height: 200px;
+}

@@ -1,0 +1,41 @@
+
+// The kbd element represents user input (typically keyboard input,
+// although it may also be used to represent other input,
+// such as voice commands).
+//
+// When the kbd element is nested inside a samp element,
+// it represents the input as it was echoed by the system.
+//
+// When the kbd element contains a samp element,
+// it represents input based on system output, for example invoking a menu item.
+//
+// When the kbd element is nested inside another kbd element,
+// it represents an actual key or other single unit of input
+// as appropriate for the input mechanism.
+//
+// Url - http://html5doctor.com/element-index/#kbd
+
+kbd {
+
+    position: relative;
+
+    display: inline-block;
+    padding: 0 s(0.25);
+
+    background-color: #FFF;
+    border: 1px solid $colorGrey;
+    border-bottom-width: 3px;
+
+    font-family: $font-monospace;
+    font-weight: 400;
+    font-size: 10px;
+
+    cursor: pointer;
+    @include border-radius(6px);
+
+    &:active {
+        top: 2px;
+        border-bottom-width: 1px;
+    }
+
+}

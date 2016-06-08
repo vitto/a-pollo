@@ -1,0 +1,101 @@
+.apollo-code-example {
+    position: relative;
+    margin-top: s();
+    padding: s();
+
+    color: $colorCodeText;
+    font-family: $font-monospace;
+    font-size: $font-size;
+    font-weight: 400;
+
+    background-color: $colorCodeBackground;
+    cursor: pointer;
+    min-height: 74px;
+
+    @include transition(color background-color, $ease);
+
+    @include element("message") {
+        position: absolute;
+        right: s();
+        top: s();
+        @include box-sizing("border-box");
+
+        padding: s(0.25) s(0.5);
+
+        @include setFont(200, $colorText);
+
+        border: 1px solid rgba($colorPost,0.8);
+
+        @include fallbackColor("background-color", rgba($colorPost,0.8));
+        text-transform: lowercase;
+
+        @include user-select("none");
+
+        @include transition(color background-color top, 0.5s ease("out-expo"));
+    }
+
+    &:hover {
+        color: $colorCodeTextHover;
+
+        .code * {
+            color: $colorCodeTextHover;
+        }
+
+        .apollo-code-example__message {
+            color: $colorText;
+            background-color: white;
+            top: s(-0.75);
+            @include transition(color background-color top, 0.25s ease("out-expo"));
+        }
+        .code {
+            .value, .string {
+                background-color: $colorMarkCodeAttrValue;
+                @include border-radius(3px);
+            }
+        }
+
+        .gutter {
+            color: $colorCodeLineNumberHover;
+        }
+    }
+
+    .code * {
+        color: $colorCodeText;
+        @include transition(color $ease);
+    }
+
+    .gutter *,
+    .code * {
+        font-family: $font-monospace;
+        font-size: $font-size;
+        font-weight: 400;
+    }
+
+    .code {
+        .value, .string {
+            @include transition(background-color color, $ease);
+            background-color: transparent;
+            @include border-radius(3px);
+        }
+    }
+
+    pre {
+        margin: 8px 0;
+    }
+
+    .html {
+        overflow-x: auto;
+        margin: 5px 0;
+    }
+
+    .gutter {
+        @include user-select("none");
+        padding-right: s(0.5);
+        color: $colorCodeLineNumber;
+        @include transition(color $ease);
+
+        pre {
+            margin:0;
+        }
+    }
+}

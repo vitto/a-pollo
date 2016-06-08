@@ -1,0 +1,30 @@
+
+// if $use-root-path located in app.less is set to true use it with:
+// @include backgroundImage("background.png");
+// this will output
+// background-image: url("/img/background.png");
+
+// set font scaling to change the font size depending by different resolutions
+//@include setFontScaling(body, 20px, 18px, 16px, 16px, 16px, 16px);
+//@include setLineHeightScaling(body, $spacing);
+
+// @include font('roboto', 'Roboto-Black', 700);
+// @include font('roboto', 'Roboto-Bold', 600);
+// @include font('roboto', 'Roboto-Medium', 500);
+// @include font('roboto', 'Roboto-Light', 300);
+
+@include fontFile('roboto', 'Roboto-Black.ttf', 700);
+@include fontFile('roboto', 'Roboto-Bold.ttf', 600);
+@include fontFile('roboto', 'Roboto-Medium.ttf', 500);
+@include fontFile('roboto', 'Roboto-Light.ttf', 300);
+
+//@include addFloatGridContainer("row--website", 3);
+
+//@include addFloatGridColumns(12);
+//@include addFloatGridOffset(12);
+//@include addFloatGridColumns(4, 2, 2, "l", "m", "s", "mobile-landscape", false);
+
+// put .addViewportsSteps at the bottom of the configuration
+@include addViewportsSteps("apollo-spacer", 1280px, 1280px, 1024px, 0);
+@include addViewportsSteps("apollo-website-spacer", 1024px, 1024px, 1024px, 0);
+@include globalSelection($colorGold, transparent);

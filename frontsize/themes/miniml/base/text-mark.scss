@@ -1,0 +1,15 @@
+// Represents a run of text in one document marked
+// or highlighted because of its relevance in another context.
+//
+// When used in a quotation or other block of text referenced in a document,
+// it indicates a highlight that was not present in the original document
+// — e.g., a portion of text in an academic publication that has recently
+// come under additional scrutiny.
+//
+// Url - http://html5doctor.com/element-index/#mark
+
+mark {
+    color				: inherit;
+    background-color	: rgb(255,255,0);
+    @include box-shadow("0 0 1px rgba(0, 0, 0, 0.35), inset 0 0 2px rgba(255, 255, 255, 0.75)");
+}

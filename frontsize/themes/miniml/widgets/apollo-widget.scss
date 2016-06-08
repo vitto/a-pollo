@@ -1,0 +1,54 @@
+.apollo-widget {
+
+    @include element("title") {
+        margin-top: 0 !important;
+        @include baseBold();
+    }
+
+    @include element("category") {
+        margin-bottom: s();
+        @include baseBold();
+    }
+
+    @include element("row-group") {
+        display: block;
+        @include setFont();
+        @include baseBold();
+        @include baseLink();
+
+        &:hover {
+            .apollo-widget__row-group-rollover {
+                display: inline-block;
+            }
+            .apollo-widget__row-group-rollout {
+                display: none;
+            }
+        }
+    }
+
+    @include element("row-group-rollover") {
+        display: none;
+    }
+
+    @include element("row-group-rollout") {
+        display: inline-block;
+    }
+
+    @include element("filename") {
+        @include baseBold();
+    }
+
+    @include element("description") {
+        margin-top: s();
+        @include baseLink();
+        @include baseBold();
+        > code {
+            @include baseInlineCode();
+        }
+    }
+
+    @include element("hr") {
+        margin-top: s(1.5);
+        margin-bottom: s(1.5);
+    }
+}

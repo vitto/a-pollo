@@ -1,0 +1,9 @@
+
+.apollo-page {
+    display: block;
+    background-color: $colorPage;
+    min-height: 100vh;
+
+    @include postPadded();
+
+}

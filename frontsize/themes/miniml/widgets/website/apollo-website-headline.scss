@@ -1,0 +1,16 @@
+.apollo-website-headline {
+
+    margin: s(3) 0 s(6) 0;
+    text-align: center;
+
+    @include element("title") {
+        text-transform: uppercase;
+        color: $colorWebsiteHeader;
+        font-size: 48px;
+    }
+
+    @include element("sub-title") {
+        font-size: 24px;
+        color: $colorWebsiteHeaderSubText;
+    }
+}
