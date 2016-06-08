@@ -18,9 +18,11 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 ##### Release notes
 
-- Add icons to categories and widgets with font awesome
-- Moved menus for easier finds in category ordered widgets
-- Minor fix on apollo-menu widget selector
+- Remove use_markdown var from config
+- Add data-style snippet attribute to ease snippet specific examples
+- Change named widgets to snippets
+- Add doc support
+- Update snippet style
 
 ![a-pollo preview][a-pollo-preview]
 
