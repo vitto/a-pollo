@@ -1,0 +1,49 @@
+<% if (config.apollo) { %>
+    <ul class="apollo-menu">
+        <li class="apollo-menu__title">
+            Infos
+        </li>
+        <li class="apollo-menu__item">
+            <a href="http://vitto.github.io/a-pollo/" class="apollo-menu__link">
+                <%- fawicon('fa-home') %>
+                Website
+            </a>
+        </li>
+        <li class="apollo-menu__item">
+            <a href="<%= config.apollo.homepage %>/releases/tag/<%= config.apollo.version %>" class="apollo-menu__link">
+                <%- fawicon('fa-code-fork') %>
+                Version <%= config.apollo.version %>
+            </a>
+        </li>
+        <li class="apollo-menu__item">
+            <a href="<%= config.apollo.homepage %>#readme" class="apollo-menu__link">
+                <%- fawicon('fa-github-alt') %>
+                GitHub
+            </a>
+        </li>
+        <li class="apollo-menu__item">
+            <a href="<%= config.apollo.homepage %>/issues" class="apollo-menu__link">
+                <%- fawicon('fa-bug') %>
+                Report bugs
+            </a>
+        </li>
+        <li class="apollo-menu__item">
+            <a href="https://www.npmjs.com/package/a-pollo" class="apollo-menu__link">
+                <%- fawicon('fa-code') %>
+                npm
+            </a>
+        </li>
+        <li class="apollo-menu__item">
+            <a href="https://www.ideato.it" class="apollo-menu__link">
+                <%- fawicon('fa-briefcase') %>
+                ideato
+            </a>
+        </li>
+        <li class="apollo-menu__item">
+            <a href="https://vit.to" class="apollo-menu__link">
+                <%- fawicon('fa-coffee') %>
+                vitto
+            </a>
+        </li>
+    </ul>
+<% } %>

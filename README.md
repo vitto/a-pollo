@@ -18,11 +18,12 @@ It's been written for teams who need to check CSS widgets with examples, copy ht
 
 ##### Release notes
 
+- Documentation annotations support
 - Remove use_markdown var from config
 - Add data-style snippet attribute to ease snippet specific examples
 - Change named widgets to snippets
-- Add doc support
 - Update snippet style
+- Add new font icons
 
 ![a-pollo preview][a-pollo-preview]
 

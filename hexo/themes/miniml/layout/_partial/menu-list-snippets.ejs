@@ -1,0 +1,24 @@
+<%  site.posts.data = _.sortBy(site.posts.data, 'title'); %>
+<ul class="apollo-menu">
+    <% if (site.posts.length > 0) { %>
+        <li class="apollo-menu__title">
+            Snippets
+        </li>
+    <% } %>
+    <% site.posts.each(function (post, i) { %>
+        <li class="apollo-menu__item">
+            <% var permalink = post.permalink.replace(config.root, '/'); %>
+            <% if (url.replace('index.html', '') === permalink) { %>
+                <a href="<%= permalink %>" class="apollo-menu__link apollo-menu__link--current">
+            <% } else { %>
+                <a href="<%= permalink %>" class="apollo-menu__link">
+            <% } %>
+                <%- fawicon(post.annotations[0].icon || post.annotations[0].category) %>
+                <%= post.title %>
+                <% if (post.annotations !== undefined) { %>
+                    <span class="apollo-menu__docs"><%= post.annotations.length %></span>
+                <% } %>
+            </a>
+        </li>
+    <% }) %>
+</ul>

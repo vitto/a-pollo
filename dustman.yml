@@ -2,25 +2,25 @@
 
 css:
   file: dustman.frontsize.min.css
-  watch: test/examples/sass/**/*.scss
+  watch: frontend/frontsize/**/*.scss
   verbose: 3
   themes:
     -
-      name: theme-one
-      file: frontsize.theme-one.css
-      compile: test/examples/sass/theme-one/import.scss
+      name: miniml
+      file: frontsize.miniml.css
+      compile: frontend/frontsize/miniml/compile.scss
       images: test/examples/sass/themes/default/img/**/*.*
       fonts: test/examples/sass/themes/default/img/**/*.*
-      csslint: false
-      stylestats: false
+      csslint: true
+      stylestats: true
       autoprefixer: true
-    -
-      name: theme-two
-      file: frontsize.theme-two.css
-      compile: test/examples/sass/theme-two/import.scss
-      csslint: false
-      stylestats: false
-      autoprefixer: false
+#    -
+#      name: a-pollo
+#      file: frontsize.a-pollo.css
+#      compile: frontend/frontsize/a-pollo/compile.scss
+#      csslint: false
+#      stylestats: false
+#      autoprefixer: false
 
 config:
   autoprefixer:
@@ -40,17 +40,9 @@ js:
   file: dustman.min.js
   watch: test/examples/js/**/*.js
   files:
-    - test/examples/vendor/angular/angular.js
-    - test/examples/vendor/angular-animate/angular-animate.js
-    - test/examples/vendor/angular-bootstrap/ui-bootstrap-tpls.js
-    - test/examples/vendor/angular-bootstrap/ui-bootstrap.js
-    - test/examples/vendor/Chart.js/Chart.js
-    - test/examples/vendor/angular-chart.js/dist/angular-chart.js
-    - test/examples/vendor/angular-cookies/angular-cookies.js
-    - test/examples/vendor/angular-dynamic-locale/dist/tmhDynamicLocale.js
-    - test/examples/vendor/angular-flash/angular-flash.js
-    - test/examples/vendor/angular-route/angular-route.js
-    - test/examples/js/*
+    - frontend/vendors/clipboard/dist/clipboard.js
+    - frontend/vendors/jquery/dist/jquery.js
+    - frontend/js/*
 
 twig:
   watch: test/examples/twig/**/*.twig
@@ -61,19 +53,20 @@ vendors:
   css:
     file: vendors.min.css
     files:
-      - test/examples/vendor/angular/angular-csp.css
-      - test/examples/vendor/angular-bootstrap/ui-bootstrap-csp.css
-      - test/examples/vendor/font-awesome/css/font-awesome.css
-      - test/examples/vendor/angular-chart.js/dist/angular-chart.css
+      - frontend/vendors/font-awesome/css/font-awesome.css
   fonts:
-    - test/examples/vendor/font-awesome/fonts/fontawesome-webfont.eot
-    - test/examples/vendor/font-awesome/fonts/fontawesome-webfont.svg
-    - test/examples/vendor/font-awesome/fonts/fontawesome-webfont.ttf
-    - test/examples/vendor/font-awesome/fonts/fontawesome-webfont.woff
-    - test/examples/vendor/font-awesome/fonts/fontawesome-webfont.woff2
-    - test/examples/vendor/font-awesome/fonts/FontAwesome.otf
+    - frontend/vendors/font-awesome/fonts/fontawesome-webfont.eot
+    - frontend/vendors/font-awesome/fonts/fontawesome-webfont.svg
+    - frontend/vendors/font-awesome/fonts/fontawesome-webfont.ttf
+    - frontend/vendors/font-awesome/fonts/fontawesome-webfont.woff
+    - frontend/vendors/font-awesome/fonts/fontawesome-webfont.woff2
+    - frontend/vendors/font-awesome/fonts/FontAwesome.otf
+    - frontend/vendors/bitter-fontface/fonts/Regular/Bitter-Regular.ttf
+    - frontend/vendors/bitter-fontface/fonts/Bold/Bitter-Bold.ttf
+    - frontend/vendors/karla-googlefont/Karla-Regular.ttf
+    - frontend/vendors/karla-googlefont/Karla-Bold.ttf
   images:
-    - test/examples/vendor/font-awesome/fonts/fontawesome-webfont.svg
+    - frontend/vendors/font-awesome/fonts/fontawesome-webfont.svg
 
 paths:
   server: test/results/

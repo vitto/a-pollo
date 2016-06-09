@@ -1,0 +1,21 @@
+<article class="apollo-post apollo-post--padded">
+    <% if (config.header && config.header.logo) { %>
+        <%- partial('_partial/doc-header', { header: config.header }) %>
+    <% } %>
+    <% if (!config.use_markdown && post.annotations) {
+        _.each(post.annotations, function(annotation, i) {
+            if (i === 0) { %>
+                <%- partial('_partial/snippet-header', { annotation: annotation, id:i }) %>
+            <% } else { %>
+                <%- partial('_partial/snippet-item', { annotation: annotation, id:i }) %>
+            <% }
+        }); %>
+        <br>
+        <p>
+            <strong>Total examples</strong> <%= post.annotations.length %>
+        </p>
+    <% } else { %>
+        <!-- this should be removed -->
+        <%- markdown(post.content) %>
+    <% } %>
+</article>

@@ -1,0 +1,5 @@
+<% if (page.category !== undefined && page.category.toLowerCase() !== 'css') { %>
+    <%- partial('_partial/post', {post: page, index: false}) %>
+<% } else { %>
+    <%- partial('_partial/page', {post: page, index: false}) %>
+<% } %>

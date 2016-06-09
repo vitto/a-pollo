@@ -1,0 +1,24 @@
+<%- markdown(annotation.text) %>
+
+<div class="apollo-title-spacer">
+    <strong>HTML example</strong>
+</div>
+
+<div class="apollo-html-example">
+    <div class="apollo-html-example__inner">
+        <div class="apollo-html-example__bg"></div>
+        <div class="apollo-html-example__container">
+            <%- annotation.html %>
+        </div>
+    </div>
+</div>
+
+<div class="apollo-title-spacer">
+    <strong>HTML code</strong>
+</div>
+
+<div id="html-example-<%= id %>" class="apollo-code-example" data-clipboard-target="#html-example-<%= id %> .highlight .code">
+    <div class="apollo-code-example__message" data-text="Click to copy">Click to copy</div>
+    <%- markdown('\n```html\n' + annotation.htmlSnippet + '\n```\n') %>
+</div>
+<hr class="apollo-widget__hr">

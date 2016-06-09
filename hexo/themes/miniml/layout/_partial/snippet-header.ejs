@@ -1,0 +1,22 @@
+<h1 class="apollo-widget__title">
+    <%= annotation.name %>
+</h1>
+<span class="apollo-widget__row-group">
+    <strong>Category</strong>
+    <%= annotation.category %>
+</span>
+<span class="apollo-widget__row-group">
+    <strong>Created</strong>
+    <span class="apollo-widget__row-group-rollout"><%- moment(annotation.date).format('dddd DD MMMM YYYY') %></span>
+    <span class="apollo-widget__row-group-rollover"><%- moment(annotation.date).fromNow() %> from last build</span>
+</span>
+<span class="apollo-widget__row-group">
+    <strong>File</strong>
+    <code class="apollo-widget__row-group-rollout"><%= annotation.file %></code>
+    <code class="apollo-widget__row-group-rollover"><%= config.style.docs %><%= annotation.file %></code>
+</span>
+
+<%- markdown('**Author/s** ' + annotation.auth) %>
+<br>
+
+<%- partial('_partial/snippet-body', { annotation: annotation, id:id }) %>
