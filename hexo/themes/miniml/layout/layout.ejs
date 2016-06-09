@@ -1,25 +1,13 @@
 <!DOCTYPE html>
 <html>
-    <%- partial('_partial/head') %>
-    <body class="apollo-body">
-        <%- partial('_partial/menu-mobile') %>
-        <main class="spacer">
-            <div class="apollo">
-                <aside class="apollo__aside">
-                    <% if (!config.is_website) { %>
-                        <%- partial('_partial/menu-left') %>
-                    <% } %>
-                </aside>
-                <section class="apollo__page">
-                    <%- body %>
-                    <%- partial('_partial/footer') %>
-                </section>
-                <aside class="apollo__aside">
-                    <% if (!config.is_website) { %>
-                        <%- partial('_partial/menu-right') %>
-                    <% } %>
-                </aside>
-            </div>
-        </main>
-    </body>
+  <%- partial('_partial/head') %>
+  <body class="miniml-body">
+    <%- partial('_partial/header') %>
+    <main class="miniml--limit miniml-main">
+      <section class="apollo__page">
+        <%- body %>
+        <%- partial('_partial/footer') %>
+      </section>
+    </main>
+  </body>
 </html>

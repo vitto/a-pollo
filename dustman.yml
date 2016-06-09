@@ -14,6 +14,8 @@ css:
       csslint: true
       stylestats: true
       autoprefixer: true
+      concat: false
+      path: hexo/themes/miniml/source/css/
 #    -
 #      name: a-pollo
 #      file: frontsize.a-pollo.css
@@ -38,7 +40,7 @@ config:
 
 js:
   file: dustman.min.js
-  watch: test/examples/js/**/*.js
+  watch: frontend/js/**/*.js
   files:
     - frontend/vendors/clipboard/dist/clipboard.js
     - frontend/vendors/jquery/dist/jquery.js
@@ -53,8 +55,31 @@ vendors:
   css:
     file: vendors.min.css
     files:
+      - frontend/vendors/normalize-css/normalize.css
       - frontend/vendors/font-awesome/css/font-awesome.css
+      - frontend/vendors/github-markdown-css/github-markdown.css
+      - frontend/vendors/entypo-plus/css/entypo-plus.css
   fonts:
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Light.eot
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Light.svg
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Light.ttf
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Light.woff
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Light.woff2
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Medium.eot
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Medium.svg
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Medium.ttf
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Medium.woff
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Medium.woff2
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Bold.eot
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Bold.svg
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Bold.ttf
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Bold.woff
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Bold.woff2
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Black.eot
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Black.svg
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Black.ttf
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Black.woff
+    - frontend/vendors/roboto-fontface/fonts/Roboto-Black.woff2
     - frontend/vendors/font-awesome/fonts/fontawesome-webfont.eot
     - frontend/vendors/font-awesome/fonts/fontawesome-webfont.svg
     - frontend/vendors/font-awesome/fonts/fontawesome-webfont.ttf
@@ -65,12 +90,16 @@ vendors:
     - frontend/vendors/bitter-fontface/fonts/Bold/Bitter-Bold.ttf
     - frontend/vendors/karla-googlefont/Karla-Regular.ttf
     - frontend/vendors/karla-googlefont/Karla-Bold.ttf
+    - frontend/vendors/entypo-plus/fonts/entypo-plus.eot
+    - frontend/vendors/entypo-plus/fonts/entypo-plus.svg
+    - frontend/vendors/entypo-plus/fonts/entypo-plus.ttf
+    - frontend/vendors/entypo-plus/fonts/entypo-plus.woff
   images:
     - frontend/vendors/font-awesome/fonts/fontawesome-webfont.svg
 
 paths:
   server: test/results/
-  css: test/results/css/
-  images: test/results/img/
-  fonts: test/results/fonts/
-  js: test/results/js/
+  css: hexo/themes/miniml/source/css/
+  images: hexo/themes/miniml/source/img/
+  fonts: hexo/themes/miniml/source/fonts/
+  js: hexo/themes/miniml/source/js/

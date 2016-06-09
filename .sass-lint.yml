@@ -10,6 +10,9 @@ rules:
 
   # Mixins
   mixins-before-declarations: 1
+  exclude:
+    - 'modifier'
+    - 'element'
 
   # Line Spacing
   one-declaration-per-line: 1

@@ -17,7 +17,7 @@
     "underscore-property-hack"   : true,
     "bulletproof-font-face"      : true,
 
-    "font-faces"                  : true,
+    "font-faces"                  : false,
     "import"                      : true,
     "regex-selectors"             : true,
     "universal-selector"          : false,

@@ -1,0 +1,68 @@
+.miniml-header {
+  background-color: $color-page;
+  height: $height-header;
+  position: relative;
+  user-select: none;
+  width: 100%;
+
+  transition: visibility 0s, top 0.75s ease('out-expo');
+
+  &::after {
+    background-color: $color-border-transparent;
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: $height-header;
+    width: 100%;
+  }
+
+  @include modifier('fixed') {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+  }
+
+  @include modifier('outside') {
+    top: -($height-header) - 1px;
+  }
+
+  @include modifier('hidden') {
+    visibility: hidden;
+  }
+
+  @include element('group') {
+    color: $color-text;
+    display: block;
+    float: left;
+    padding: 0 s(1);
+    text-decoration: none;
+  }
+
+  @include element('title') {
+    display: block;
+    font-weight: $font-weight-bold;
+    margin-top: 14px;
+
+    @include modifier('gold') {
+      color: $color-gold;
+    }
+  }
+  @include element('desc') {
+    color: $color-text-light;
+    display: block;
+    font-size: $font-size-small;
+
+    @include modifier('gold') {
+      color: $color-gold-light;
+    }
+  }
+
+  @include element('left') {
+    @include column(4, 4, 4);
+  }
+
+  @include element('right') {
+    @include column(8, 8, 8);
+  }
+}

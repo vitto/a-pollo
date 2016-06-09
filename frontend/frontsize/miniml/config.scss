@@ -8,7 +8,7 @@ $h5: 18px;
 $h6: 16px;
 
 // Font sizes
-$font-size:       16px;
+$font-size:       12px;
 $font-small-size: 12px;
 
 // Fonts families global vars
@@ -19,15 +19,15 @@ $font-small: 'lucida grande', tahoma, verdana, arial, sans-serif;
 
 // Default fonts used inside the core
 $font-default: $font-sans;
-$font-heading: $font-sans;
+$font-heading: $font-serif;
 
 // used with s(); mixin, if $spacing is 20px s(0.5); returns 10px
 $spacing: 20px;
 
-$font-line-height: s(1.5, $font-size);
+$font-line-height: 1.25;
 $font-weight: 300;
-$font-color: rgb(128, 128, 128);
-$body-color: rgb(38, 38, 38);
+$font-color: #4e4d48;
+$body-color: #fff;
 $fallback-color-base: $body-color;
 
 // Global padding configuration

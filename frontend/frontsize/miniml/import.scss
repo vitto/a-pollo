@@ -42,7 +42,7 @@
 // @import 'base/text-b-strong';
 // @import 'base/text-abbr';
 // @import 'base/text-code-var';
-@import 'base/text-kbd';
+// @import 'base/text-kbd';
 // @import 'base/text-mark';
 // @import 'base/text-s';
 // @import 'base/text-samp';
@@ -52,6 +52,10 @@
 
 // @import 'helpers/my-helper';
 
-// @import 'widgets/apollo-body';
+@import 'widgets/miniml-body';
+@import 'widgets/header/miniml-header-button';
+@import 'widgets/header/miniml-header';
+@import 'widgets/miniml-logo';
+@import 'widgets/miniml-main';
 
 @import 'app';

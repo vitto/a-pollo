@@ -1,112 +1,132 @@
 <article class="apollo-post apollo-post--padded">
-    <% if (config.header && config.header.logo) { %>
-        <%- partial('_partial/doc-header', { header: config.header }) %>
+
+  <h1>Project details</h1>
+
+  <span>
+    <i class="fa fa-user-secret"></i>&nbsp; Project for
+    <span class="apollo-post__markown-inline"><%- markdown(config.client) %></span><br>
+    <i class="fa fa-pencil"></i>&nbsp; Developed by
+    <% if (typeof config.developers === 'string') { %>
+      <span class="apollo-post__markown-inline"><%- markdown(config.developers) %></span>
+    <% } else { %>
+      <% for(var i = 0; i < config.developers.length; i += 1) {%>
+        <% if (i > 0) { %>,<% } %>
+        <span class="apollo-post__markown-inline"><%- markdown(config.developers[i]) %></span>
+      <% } %>
     <% } %>
+    <br>
+    <i class="fa fa-paint-brush"></i>&nbsp; Designed by
+    <% if (typeof config.designers === 'string') { %>
+      <span class="apollo-post__markown-inline"><%- markdown(config.designers) %></span>
+    <% } else { %>
+      <% for(var i = 0; i < config.designers.length; i += 1) {%>
+        <% if (i > 0) { %>,<% } %>
+        <span class="apollo-post__markown-inline"><%- markdown(config.designers[i]) %></span>
+      <% } %>
+    <% } %>
+  </span>
+</span>
 
-    <h1>Project details</h1>
+<hr>
 
-    <span>
-        <i class="fa fa-user-secret"></i>&nbsp; Project for <span class="apollo-post__markown-inline"><%- markdown(config.client) %></span><br>
-        <i class="fa fa-pencil"></i>&nbsp; Developed by
-                <% if (typeof config.developers === 'string') { %>
-                    <span class="apollo-post__markown-inline"><%- markdown(config.developers) %></span>
-                <% } else { %>
-                    <% for(var i = 0; i < config.developers.length; i += 1) {%>
-                        <% if (i > 0) { %>,<% } %>
-                        <span class="apollo-post__markown-inline"><%- markdown(config.developers[i]) %></span>
-                    <% } %>
-                <% } %>
-            <br>
-        <i class="fa fa-paint-brush"></i>&nbsp; Designed by
-                <% if (typeof config.designers === 'string') { %>
-                    <span class="apollo-post__markown-inline"><%- markdown(config.designers) %></span>
-                <% } else { %>
-                    <% for(var i = 0; i < config.designers.length; i += 1) {%>
-                        <% if (i > 0) { %>,<% } %>
-                        <span class="apollo-post__markown-inline"><%- markdown(config.designers[i]) %></span>
-                    <% } %>
-                <% } %>
-            </span>
+<h4>Project stats</h4>
+
+<p>
+  <strong>Time</strong><br>
+  <i class="fa fa-clock-o"></i>&nbsp; Started on
+  <b><%= config.stats.date.begin %></b>
+  <br>
+  <i class="fa fa-flag-checkered"></i>&nbsp; Last edit on
+  <b><%= config.stats.date.end %></b>
+  <br>
+  <i class="fa fa-hourglass-3"></i>&nbsp;
+  <b>
+    <% if (config.stats.date.total.years !== '0 years') { %>
+      <%= config.stats.date.total.years %>,
+    <% } %>
+    <% if (config.stats.date.total.months !== '0 months') { %>
+      <%= config.stats.date.total.months %>,
+    <% } %>
+    <% if (config.stats.date.total.days !== '0 days') { %>
+      <%= config.stats.date.total.days %>
+    <% } %>
+  </b>
+  <% if (config.stats.date.total.years === '0 years' && config.stats.date.total.months === '0 months' && config.stats.date.total.days === '0 days') { %>
+    The project started today
+  <% } else { %>
+    of lifetime &nbsp;<span title="<%= config.stats.date.days %> days total, <%= config.stats.date.business %> business days">
+      <i class="fa fa-question-circle"></i>
     </span>
+  <% } %>
+  <br>
+  <i class="fa fa-code"></i>&nbsp;
+  <b>
+    <%= config.stats.snippet.days %>
+    day/s
+  </b>
+  of effective development &nbsp;<span title="Based on snippet dates entries, without duplicates">
+    <i class="fa fa-question-circle"></i>
+  </span>
+  <br>
+  <i class="fa fa-pie-chart"></i>&nbsp;
+  <b>
+    <%= config.stats.snippet.activity %>%
+  </b>
+  of activity &nbsp;<span title="Ratio between snippet dates entries (<%= config.stats.snippet.days %>) and project business days (<%= config.stats.date.business %>)">
+    <i class="fa fa-question-circle"></i>
+  </span>
+</p>
 
-    <hr>
+<p>
+  <strong>Files</strong><br>
+  <i class="fa fa-cubes"></i>&nbsp;
+  <b><%= config.stats.snippet.count %></b>
+  created<br>
+  <i class="fa fa-tv"></i>&nbsp;
+  <b><%= config.stats.snippet.countExamples %></b>
+  displayed<br>
+</p>
 
-    <h4>Project stats</h4>
+<% if (config.libs !== undefined) { %>
+  <hr>
 
+  <h4>Code libraries</h4>
+
+  <p>
+    This is a list of the code libraries included in the project.
+  </p>
+
+  <% if (config.libs.bowerDependencies !== undefined) { %>
     <p>
-        <strong>Time</strong><br>
-        <i class="fa fa-clock-o"></i>&nbsp; Started on <b><%= config.stats.date.begin %></b>
-        <br>
-        <i class="fa fa-flag-checkered"></i>&nbsp; Last edit on <b><%= config.stats.date.end %></b>
-        <br>
-        <i class="fa fa-hourglass-3"></i>&nbsp;
-            <b>
-                <% if (config.stats.date.total.years !== '0 years') { %>
-                    <%= config.stats.date.total.years %>,
-                <% } %>
-                <% if (config.stats.date.total.months !== '0 months') { %>
-                    <%= config.stats.date.total.months %>,
-                <% } %>
-                <% if (config.stats.date.total.days !== '0 days') { %>
-                    <%= config.stats.date.total.days %>
-                <% } %>
-            </b>
-            <% if (config.stats.date.total.years === '0 years' && config.stats.date.total.months === '0 months' && config.stats.date.total.days === '0 days') { %>
-                The project started today
-            <% } else { %>
-                of lifetime &nbsp;<span title="<%= config.stats.date.days %> days total, <%= config.stats.date.business %> business days"><i class="fa fa-question-circle"></i></span>
-            <% } %>
-        <br>
-        <i class="fa fa-code"></i>&nbsp;
-            <b>
-                <%= config.stats.snippet.days %> day/s
-            </b>
-             of effective development &nbsp;<span title="Based on snippet dates entries, without duplicates"><i class="fa fa-question-circle"></i></span>
-        <br>
-        <i class="fa fa-pie-chart"></i>&nbsp;
-            <b>
-                <%= config.stats.snippet.activity %>%
-            </b>
-            of activity &nbsp;<span title="Ratio between snippet dates entries (<%= config.stats.snippet.days %>) and project business days (<%= config.stats.date.business %>)"><i class="fa fa-question-circle"></i></span>
+      <ul>
+        <li class="apollo-post__list-title">
+          <a href="http://bower.io" target="blank" class="apollo-logo-lib apollo-logo-lib--bower"></a>
+          <strong>Bower</strong>
+        </li>
+        <% for(var key in config.libs.bowerDependencies) { %>
+          <li>
+            <b><%= key %></b>
+            <%= config.libs.bowerDependencies[key] %></li>
+        <% } %>
+      </ul>
     </p>
+  <% } %>
 
+  <% if (config.libs.nodeDependencies !== undefined) { %>
     <p>
-        <strong>Files</strong><br>
-        <i class="fa fa-cubes"></i>&nbsp; <b><%= config.stats.snippet.count %></b> created<br>
-        <i class="fa fa-tv"></i>&nbsp; <b><%= config.stats.snippet.countExamples %></b> displayed<br>
+      <ul>
+        <li class="apollo-post__list-title">
+          <a href="http://nodejs.org" target="blank" class="apollo-logo-lib apollo-logo-lib--nodejs"></a>
+          <strong>Node</strong>
+        </li>
+        <% for(var key in config.libs.nodeDependencies) { %>
+          <li>
+            <b><%= key %></b>
+            <%= config.libs.nodeDependencies[key] %></li>
+        <% } %>
+      </ul>
     </p>
-
-    <% if (config.libs !== undefined) { %>
-        <hr>
-
-        <h4>Code libraries</h4>
-
-        <p>
-            This is a list of the code libraries included in the project.
-        </p>
-
-        <% if (config.libs.bowerDependencies !== undefined) { %>
-            <p>
-                <ul>
-                    <li class="apollo-post__list-title"><a href="http://bower.io" target="blank" class="apollo-logo-lib apollo-logo-lib--bower"></a><strong>Bower</strong></li>
-                    <% for(var key in config.libs.bowerDependencies) { %>
-                        <li><b><%= key %></b> <%= config.libs.bowerDependencies[key] %></li>
-                    <% } %>
-                </ul>
-            </p>
-        <% } %>
-
-        <% if (config.libs.nodeDependencies !== undefined) { %>
-        <p>
-            <ul>
-                <li class="apollo-post__list-title"><a href="http://nodejs.org" target="blank" class="apollo-logo-lib apollo-logo-lib--nodejs"></a><strong>Node</strong></li>
-                <% for(var key in config.libs.nodeDependencies) { %>
-                    <li><b><%= key %></b> <%= config.libs.nodeDependencies[key] %></li>
-                <% } %>
-            </ul>
-        </p>
-        <% } %>
-    <% } %>
-
+  <% } %>
+<% } %>
 
 </article>

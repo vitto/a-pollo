@@ -22,13 +22,22 @@ var gulp = require('gulp'),
   faker        = require('faker'),
   browserSync  = require('browser-sync');
 
+var dustmanTasks = [
+  'message:start',
+  'timer:start',
+  'css:build',
+  'js:build',
+  'message:end'
+];
+
 var buildIndex = 0,
   c = false,
   cssThemes = [],
   startBuildDate,
   themeBuildTasks = [],
   themesTotal = 0,
-  phrases = {};
+  phrases = {},
+  isWatching = false;
 
 phrases.change = [
   'Hey, something\'s happened to %file%, this is a work for DUSTMAN...',
@@ -373,12 +382,12 @@ gulp.task('message:end', function(done){
 
   messageVerbose('');
 
-  if (buildIndex > 0) {
-    message('Build ' + colors.yellow('[ ' + buildIndex + ' ]') + ' done at ' + colors.yellow(moment().format('HH:mm')) + ' and ' + colors.yellow(moment().format('ss')) + ' seconds.', true);
-    message(colors.green('The dust was cleaned successfully in ' + timeSpent));
-    message('Waiting for file changes...');
-  } else {
-    message(colors.green('The dust was cleaned successfully in ' + timeSpent));
+  message('Build ' + colors.yellow('[ ' + buildIndex + ' ]') + ' done at ' + colors.yellow(moment().format('HH:mm')) + ' and ' + colors.yellow(moment().format('ss')) + ' seconds.', true);
+  message(colors.green('The dust was cleaned successfully in ' + timeSpent));
+
+  if (isWatching) {
+    messageVerbose('');
+    message(colors.blue('Waiting for file changes...'));
   }
 
   messageVerbose('');
@@ -487,13 +496,19 @@ gulp.task('css:build', gulp.series(
   done();
 }));
 
-/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
-
-gulp.task('watch:http', function() {
-  return browserSync.stream();
+gulp.task('state:watch', function(done){
+  isWatching = true;
+  done();
 });
 
-gulp.task('http', gulp.series(['css:build', 'watch:http'], function() {
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+gulp.task('watch:http', function(done) {
+  browserSync.stream();
+  done();
+});
+
+gulp.task('http', gulp.series(['state:watch', 'watch:http'].concat(dustmanTasks), function() {
   browserSync.init({
     server: {
         baseDir: c.paths.server
@@ -502,7 +517,7 @@ gulp.task('http', gulp.series(['css:build', 'watch:http'], function() {
     notify: true
   });
 
-  return gulp.watch(watchList(), gulp.parallel(['css:build', 'twig:build', 'js:build'], browserSync.reload))
+  return gulp.watch(watchList(), gulp.series(dustmanTasks, browserSync.reload))
     .on('change', function(path) {
       messageFile(phrases.change, path);
     })
@@ -514,12 +529,8 @@ gulp.task('http', gulp.series(['css:build', 'watch:http'], function() {
     });
 }));
 
-gulp.task('watch', gulp.series([
-  'css:build',
-  'twig:build',
-  'js:build'
-], function() {
-  return gulp.watch(watchList(), gulp.parallel(['css:build', 'twig:build', 'js:build']))
+gulp.task('watch', gulp.series(['state:watch'].concat(dustmanTasks), function() {
+  return gulp.watch(watchList(), gulp.series(dustmanTasks))
     .on('change', function(path) {
       messageFile(phrases.change, path);
     })
@@ -531,15 +542,6 @@ gulp.task('watch', gulp.series([
     });
 }));
 
-gulp.task('default', gulp.series([
-  'message:start',
-  'timer:start']
-  .concat(themeBuildTasks).concat([
-  'vendors:build',
-  'css:merge',
-  'js:build',
-  'twig:build',
-  'message:end'
-]), function(done) {
+gulp.task('default', gulp.series(dustmanTasks, function(done) {
   done();
 }));

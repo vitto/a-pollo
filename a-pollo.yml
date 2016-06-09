@@ -14,7 +14,7 @@ url: http://localhost:7777  # [optional] HTTP server URL
 #pages: example_source/a-pollo/*       # [optional] Additional static documentation pages you want to add, (markdown or html)
 http_server: true           # [optional] HTTP server with port number
 use_markdown: false          # [optional] This will be removed soon, it's used for development
-theme: a-pollo              # [optional] The a-pollo theme folder
+theme: miniml              # [optional] The a-pollo theme folder
 
 libs:
     bower: bower.json   # [optional] Link the bower.json file to display Bower used libraries in the index page

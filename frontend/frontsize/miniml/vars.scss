@@ -7,5 +7,18 @@
 // ========================================================================================================================================================================
 
 
+$color-page: $body-color;
 $color-gold: rgb(184, 151, 102);
-$color-page: #ffffff;
+$color-gold-light: mix($color-gold, $color-page);
+$color-text: $font-color;
+$color-text-light: mix($color-text, $color-page, 40%);
+$color-border-transparent: rgba($color-text, 0.15);
+$color-border: mix($color-text, $color-page, 2%);
+
+$height-header: 60px;
+
+$font-size-normal: 14px;
+$font-size-small: 12px;
+
+$font-weight-normal: 300;
+$font-weight-bold: 400;
