@@ -1,4 +1,4 @@
-<img src="https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/a-pollo-logo.png" width="64">
+<img src="https://github.com/vitto/a-pollo/raw/master/frontend/themes/a-pollo/img/a-pollo-logo.png" width="64">
 
 a-pollo
 ---
@@ -218,5 +218,5 @@ Coded with love by [Vittorio Vittori][vitto] and [Pietro Campagnano][pietro] @ [
 [apollo_code_docs]: https://github.com/vitto/a-pollo/blob/master/example_source/frontsize/themes/default/widgets/button-social.scss
 [apollo_theme]: https://github.com/vitto/a-pollo/tree/master/hexo/themes/a-pollo
 [release]: https://github.com/vitto/a-pollo/releases/tag/1.18.99
-[a-pollo-preview]: https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/apollo-example.png
-[a-pollo-logo]: https://github.com/vitto/a-pollo/raw/master/frontsize/themes/a-pollo/img/a-pollo-logo.png
+[a-pollo-preview]: https://github.com/vitto/a-pollo/raw/master/frontend/themes/a-pollo/img/apollo-example.png
+[a-pollo-logo]: https://github.com/vitto/a-pollo/raw/master/frontend/themes/a-pollo/img/a-pollo-logo.png
