@@ -1,0 +1,22 @@
+<h3 class="miniml__title">
+  Team
+</h3>
+<hr class="miniml__hr">
+
+<%- partial('_partial/index/team__people', {
+  icon: 'fa fa-suitcase',
+  title: 'Client',
+  people: config.client
+}) %>
+
+<%- partial('_partial/index/team__people', {
+  icon: 'fa fa-pencil',
+  title: 'Developers',
+  people: config.developers
+}) %>
+
+<%- partial('_partial/index/team__people', {
+  icon: 'fa fa-paint-brush',
+  title: 'Designers',
+  people: config.designers
+}) %>

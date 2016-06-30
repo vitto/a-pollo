@@ -1,9 +1,7 @@
 
-@include fontFile('karla', 'Roboto-Black.ttf', 700);
-@include fontFile('karla', 'Roboto-Bold.ttf', 600);
-@include fontFile('karla', 'Roboto-Medium.ttf', 500);
-@include fontFile('karla', 'Roboto-Light.ttf', 300);
+@include fontFile('karla', 'Karla-Bold.ttf', 600);
+@include fontFile('karla', 'Karla-Regular.ttf', 400);
+@include fontFile('bitter', 'Bitter-Bold.ttf', 600);
 
 @include globalSelection($color-gold, rgba($color-gold, 0.25));
-
 @include addViewportsSteps('miniml--limit', 1280px, 1024px, 1024px);

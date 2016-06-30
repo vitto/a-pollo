@@ -1,28 +1,23 @@
 ---
 
+tasks:
+  - css
+  - js
+#  - html
+
 css:
   file: dustman.frontsize.min.css
   watch: frontend/frontsize/**/*.scss
-  verbose: 3
   themes:
     -
       name: miniml
       file: frontsize.miniml.css
       compile: frontend/frontsize/miniml/compile.scss
-      images: test/examples/sass/themes/default/img/**/*.*
-      fonts: test/examples/sass/themes/default/img/**/*.*
+      images: frontend/frontsize/miniml/img/**/*.*
       csslint: true
       stylestats: true
       autoprefixer: true
-      concat: false
       path: hexo/themes/miniml/source/css/
-#    -
-#      name: a-pollo
-#      file: frontsize.a-pollo.css
-#      compile: frontend/frontsize/a-pollo/compile.scss
-#      csslint: false
-#      stylestats: false
-#      autoprefixer: false
 
 config:
   autoprefixer:
@@ -37,6 +32,7 @@ config:
     locale: it
   twig:
     cache: false
+  verbose: 3
 
 js:
   file: dustman.min.js
@@ -47,7 +43,7 @@ js:
     - frontend/js/*
 
 twig:
-  watch: test/examples/twig/**/*.twig
+  watch: hexo/themes/miniml/layout/**/*.ejs
   files:
     - test/examples/twig/index.twig
 
@@ -56,9 +52,16 @@ vendors:
     file: vendors.min.css
     files:
       - frontend/vendors/normalize-css/normalize.css
-      - frontend/vendors/font-awesome/css/font-awesome.css
       - frontend/vendors/github-markdown-css/github-markdown.css
       - frontend/vendors/entypo-plus/css/entypo-plus.css
+      - frontend/vendors/font-awesome/css/font-awesome.css
+      - frontend/vendors/material-design-icons/iconfont/material-icons.css
+      - frontend/vendors/metro/build/css/metro-icons.css
+      - frontend/vendors/open-iconic/font/css/open-iconic.css
+      - frontend/vendors/sass-bootstrap-glyphicons/css/bootstrap-glyphicons.css
+      - frontend/vendors/siconfont/css/siconfont.css
+      - frontend/vendors/stroke-gap-icons-webfont/style.css
+      - frontend/vendors/typicons.font/src/font/typicons.css
   fonts:
     - frontend/vendors/roboto-fontface/fonts/Roboto-Light.eot
     - frontend/vendors/roboto-fontface/fonts/Roboto-Light.svg
@@ -94,6 +97,38 @@ vendors:
     - frontend/vendors/entypo-plus/fonts/entypo-plus.svg
     - frontend/vendors/entypo-plus/fonts/entypo-plus.ttf
     - frontend/vendors/entypo-plus/fonts/entypo-plus.woff
+    - frontend/vendors/sass-bootstrap-glyphicons/fonts/glyphiconshalflings-regular.eot
+    - frontend/vendors/sass-bootstrap-glyphicons/fonts/glyphiconshalflings-regular.otf
+    - frontend/vendors/sass-bootstrap-glyphicons/fonts/glyphiconshalflings-regular.svg
+    - frontend/vendors/sass-bootstrap-glyphicons/fonts/glyphiconshalflings-regular.ttf
+    - frontend/vendors/sass-bootstrap-glyphicons/fonts/glyphiconshalflings-regular.woff
+    - frontend/vendors/siconfont/fonts/siconfont.eot
+    - frontend/vendors/siconfont/fonts/siconfont.svg
+    - frontend/vendors/siconfont/fonts/siconfont.ttf
+    - frontend/vendors/siconfont/fonts/siconfont.woff
+    - frontend/vendors/stroke-gap-icons-webfont/fonts/Stroke-Gap-Icons.eot
+    - frontend/vendors/stroke-gap-icons-webfont/fonts/Stroke-Gap-Icons.svg
+    - frontend/vendors/stroke-gap-icons-webfont/fonts/Stroke-Gap-Icons.ttf
+    - frontend/vendors/stroke-gap-icons-webfont/fonts/Stroke-Gap-Icons.woff
+    - frontend/vendors/typicons.font/src/font/typicons.eot
+    - frontend/vendors/typicons.font/src/font/typicons.svg
+    - frontend/vendors/typicons.font/src/font/typicons.ttf
+    - frontend/vendors/typicons.font/src/font/typicons.woff
+    - frontend/vendors/open-iconic/font/fonts/open-iconic.eot
+    - frontend/vendors/open-iconic/font/fonts/open-iconic.otf
+    - frontend/vendors/open-iconic/font/fonts/open-iconic.svg
+    - frontend/vendors/open-iconic/font/fonts/open-iconic.ttf
+    - frontend/vendors/open-iconic/font/fonts/open-iconic.woff
+    - frontend/vendors/metro/build/fonts/metro.eot
+    - frontend/vendors/metro/build/fonts/metro.svg
+    - frontend/vendors/metro/build/fonts/metro.ttf
+    - frontend/vendors/metro/build/fonts/metro.woff
+    - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.eot
+    - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.ijmap
+    - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.svg
+    - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.ttf
+    - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.woff
+    - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.woff2
   images:
     - frontend/vendors/font-awesome/fonts/fontawesome-webfont.svg
 

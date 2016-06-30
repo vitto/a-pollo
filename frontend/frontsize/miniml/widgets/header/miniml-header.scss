@@ -1,11 +1,10 @@
 .miniml-header {
-  background-color: $color-page;
+  background-color: $color-background-page;
   height: $height-header;
   position: relative;
+  transition: visibility 0s, top 0.75s ease('out-expo');
   user-select: none;
   width: 100%;
-
-  transition: visibility 0s, top 0.75s ease('out-expo');
 
   &::after {
     background-color: $color-border-transparent;
@@ -40,22 +39,25 @@
   }
 
   @include element('title') {
-    display: block;
-    font-weight: $font-weight-bold;
-    margin-top: 14px;
 
     @include modifier('gold') {
       color: $color-gold;
     }
+
+    display: block;
+    font-weight: $font-weight-bold;
+    margin-top: 14px;
+
   }
   @include element('desc') {
-    color: $color-text-light;
-    display: block;
-    font-size: $font-size-small;
 
     @include modifier('gold') {
       color: $color-gold-light;
     }
+
+    color: $color-text-light;
+    display: block;
+    font-size: $font-size-small;
   }
 
   @include element('left') {

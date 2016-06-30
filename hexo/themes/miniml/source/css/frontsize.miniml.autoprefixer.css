@@ -1,0 +1,663 @@
+/*!
+Frontsize: http://frontsize.com
+GitHub:    https://github.com/ideatosrl/frontsize-sass
+License:   MIT Licence
+Version:   3.12.68
+Date:      2016-03-08T15:22:51+01:00
+Authors:   Vittorio Vittori, Alessandro Minoccheri
+*/
+* {
+  -khtml-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+span[title],
+div[title],
+b[title],
+strong[title] {
+  cursor: help;
+}
+
+span[title]:hover,
+div[title]:hover,
+b[title]:hover,
+strong[title]:hover {
+  text-decoration: underline;
+}
+
+a[title],
+a strong[title],
+a span[title],
+a div[title],
+a b[title] {
+  cursor: pointer;
+}
+
+p,
+blockquote,
+dl, dt, dd,
+figure,
+figcaption,
+div,
+hr,
+article,
+nav,
+aside,
+main,
+section,
+header,
+footer,
+h1, h2, h3, h4, h5, h6
+hgroup,
+address {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  text-align: left;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 0;
+}
+
+.miniml-a-pollo-release {
+  width: 100%;
+  background-color: #4e4d48;
+  padding: 60px 20px;
+}
+
+.miniml-a-pollo-release::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.miniml-a-pollo-release__logo {
+  width: 72px;
+  height: 72px;
+  background-image: url("/img/a-pollo-logo--gold.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  display: block;
+  float: left;
+}
+
+.miniml-a-pollo-release__info {
+  display: block;
+  float: left;
+  padding: 10px 20px;
+}
+
+.miniml-a-pollo-release__title {
+  color: #fff;
+  display: block;
+  font-weight: 600;
+}
+
+.miniml-a-pollo-release__desc {
+  color: #a4a296;
+  display: block;
+}
+
+.miniml-a-pollo-release__details {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.miniml-a-pollo-release__details-item {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.miniml-a-pollo-release__details-item + .miniml-a-pollo-release__details-item {
+  margin-left: 20px;
+}
+
+.miniml-a-pollo-release__details-icon {
+  color: #fff;
+  font-size: 14px;
+  line-height: 14px;
+  margin-right: 3px;
+}
+
+.miniml-a-pollo-release__text {
+  border-radius: 3px;
+  color: #a4a296;
+  font-size: 12px;
+  line-height: 14px;
+  padding: 1px 2px;
+  text-decoration: none;
+  transition: color 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.miniml-a-pollo-release__text:hover {
+  color: #fff;
+}
+
+.miniml-a-pollo-release__text--marked {
+  background-color: #696863;
+}
+
+.miniml-body {
+  background-color: #fff;
+  color: #4e4d48;
+  font-family: "karla", "helvetica neue", helvetica, arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.25;
+  margin: 0;
+  padding: 0;
+}
+
+.miniml-header-button {
+  width: 100%;
+  float: left;
+  position: relative;
+  -khtml-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #fff;
+  display: block;
+  height: 60px;
+  padding: 20px;
+}
+
+@media only screen and (min-width: 1px) {
+  .miniml-header-button {
+    width: 0;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .miniml-header-button {
+    width: 0;
+  }
+}
+
+@media only screen and (min-width: 768px), only print {
+  .miniml-header-button {
+    width: 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .miniml-header-button {
+    width: 25%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .miniml-header-button {
+    width: 25%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .miniml-header-button {
+    width: 25%;
+  }
+}
+
+.miniml-header-button:hover, .miniml-header-button:focus {
+  background-color: #4e4d48;
+  color: #fff;
+}
+
+.miniml-header {
+  background-color: #fff;
+  height: 60px;
+  position: relative;
+  transition: visibility 0s, top 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 100%;
+}
+
+.miniml-header::after {
+  background-color: rgba(78, 77, 72, 0.15);
+  content: '';
+  display: block;
+  height: 1px;
+  position: absolute;
+  top: 60px;
+  width: 100%;
+}
+
+.miniml-header--fixed {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.miniml-header--outside {
+  top: -61px;
+}
+
+.miniml-header--hidden {
+  visibility: hidden;
+}
+
+.miniml-header__group {
+  color: #4e4d48;
+  display: block;
+  float: left;
+  padding: 0 20px;
+  text-decoration: none;
+}
+
+.miniml-header__title {
+  display: block;
+  font-weight: 600;
+  margin-top: 14px;
+}
+
+.miniml-header__title--gold {
+  color: #b89766;
+}
+
+.miniml-header__desc {
+  color: #b8b8b6;
+  display: block;
+  font-size: 12px;
+}
+
+.miniml-header__desc--gold {
+  color: #dccbb3;
+}
+
+.miniml-header__left {
+  width: 100%;
+  float: left;
+  position: relative;
+  -khtml-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 1px) {
+  .miniml-header__left {
+    width: 0;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .miniml-header__left {
+    width: 0;
+  }
+}
+
+@media only screen and (min-width: 768px), only print {
+  .miniml-header__left {
+    width: 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .miniml-header__left {
+    width: 33.33333%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .miniml-header__left {
+    width: 33.33333%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .miniml-header__left {
+    width: 33.33333%;
+  }
+}
+
+.miniml-header__right {
+  width: 100%;
+  float: left;
+  position: relative;
+  -khtml-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 1px) {
+  .miniml-header__right {
+    width: 0;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .miniml-header__right {
+    width: 0;
+  }
+}
+
+@media only screen and (min-width: 768px), only print {
+  .miniml-header__right {
+    width: 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .miniml-header__right {
+    width: 66.66667%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .miniml-header__right {
+    width: 66.66667%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .miniml-header__right {
+    width: 66.66667%;
+  }
+}
+
+.miniml-logo {
+  width: 34px;
+  height: 34px;
+  background-image: url("/img/a-pollo-logo.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  display: block;
+  float: left;
+  position: relative;
+  top: 13px;
+}
+
+.miniml-main {
+  padding-top: 60px;
+}
+
+.miniml-map-dot {
+  background-color: #fff;
+  border: 1px solid rgba(78, 77, 72, 0.15);
+  border-radius: 100%;
+  display: block;
+  float: left;
+  height: 16px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  width: 16px;
+}
+
+.miniml-map-dot--latest {
+  border: 2px solid #4e4d48;
+}
+
+.miniml-map-dot--no-margin {
+  margin-bottom: 0;
+}
+
+.miniml-map-dot--category {
+  background-color: #90de72;
+}
+
+.miniml-map-dot--snippet {
+  background-color: #dfed76;
+}
+
+.miniml-map-dot--example {
+  background-color: #9ad0ea;
+}
+
+.miniml-map-dot--page {
+  background-color: #ce9aea;
+}
+
+.miniml-map-dot--doc {
+  background-color: #ec9d83;
+}
+
+.miniml-map {
+  margin-top: 20px;
+}
+
+.miniml-map__label {
+  display: table;
+  table-layout: fixed;
+  width: auto;
+  color: #b8b8b6;
+  cursor: pointer;
+  font-size: 12px;
+  transition: color 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.miniml-map__label > * {
+  display: table-row;
+  float: none;
+}
+
+.miniml-map__label > * > * {
+  display: table-cell;
+  float: none;
+  vertical-align: middle;
+}
+
+.miniml-map__label:hover {
+  color: #4e4d48;
+}
+
+.miniml-map__label--category + .miniml-map__dots .miniml-map-dot--category {
+  border: 2px solid #4e4d48;
+}
+
+.miniml-map__dots {
+  margin-top: 20px;
+}
+
+.miniml-markdown > p a {
+  border-radius: 3px;
+  color: #b8b8b6;
+  margin-left: -3px;
+  margin-right: -3px;
+  padding-left: 3px;
+  padding-right: 3px;
+  text-decoration: none;
+  transition: color 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.miniml-markdown > p a:hover {
+  color: #4e4d48;
+}
+
+.miniml-markdown--inline > p {
+  display: inline;
+}
+
+.miniml-markdown--inline > p a {
+  display: inline;
+}
+
+.miniml--padding-top {
+  padding-top: 40px;
+}
+
+.miniml__title {
+  font-family: "bitter", "times new roman", times, serif;
+  font-size: 18px;
+}
+
+.miniml__hr {
+  border: 0;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 10px;
+}
+
+.miniml__row {
+  width: 100%;
+  margin-left: -20px;
+  margin-right: -20px;
+  width: auto;
+}
+
+.miniml__row::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.miniml__col-half {
+  width: 100%;
+  float: left;
+  position: relative;
+  -khtml-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+@media only screen and (min-width: 1px) {
+  .miniml__col-half {
+    width: 0;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .miniml__col-half {
+    width: 0;
+  }
+}
+
+@media only screen and (min-width: 768px), only print {
+  .miniml__col-half {
+    width: 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .miniml__col-half {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .miniml__col-half {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .miniml__col-half {
+    width: 50%;
+  }
+}
+
+.miniml__paragraph-title {
+  display: block;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.miniml__icon {
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.miniml__paragraph {
+  color: #b8b8b6;
+  display: block;
+  margin-top: 5px;
+}
+
+@font-face {
+  font-family: "karla";
+  font-weight: 600;
+  src: url("/fonts/Karla-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "karla";
+  font-weight: 400;
+  src: url("/fonts/Karla-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "bitter";
+  font-weight: 600;
+  src: url("/fonts/Bitter-Bold.ttf") format("truetype");
+}
+
+::-moz-selection {
+  background-color: #b89766;
+  background-color: rgba(184, 151, 102, 0.25);
+  color: #b89766;
+}
+
+img::-moz-selection {
+  background-color: transparent;
+}
+
+::-moz-focus-inner {
+  border: 0;
+}
+
+::-moz-selection {
+  background-color: #b89766;
+  background-color: rgba(184, 151, 102, 0.25);
+  color: #b89766;
+}
+
+::selection {
+  background-color: #b89766;
+  background-color: rgba(184, 151, 102, 0.25);
+  color: #b89766;
+}
+
+img::-moz-selection {
+  background-color: transparent;
+}
+
+img::selection {
+  background-color: transparent;
+}
+
+.miniml--limit {
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 1024px) {
+  .miniml--limit {
+    max-width: 1024px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .miniml--limit {
+    max-width: 1024px;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .miniml--limit {
+    max-width: 1280px;
+  }
+}

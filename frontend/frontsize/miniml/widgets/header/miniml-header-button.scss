@@ -2,7 +2,7 @@
 
   @include column(3, 3, 3);
 
-  background-color: $color-page;
+  background-color: $color-background-page;
   display: block;
   height: $height-header;
   padding: s();
@@ -10,6 +10,6 @@
   &:hover,
   &:focus {
     background-color: $color-text;
-    color: $color-page;
+    color: $color-background-page;
   }
 }

@@ -1,0 +1,42 @@
+.miniml-map-dot {
+  $size: 16px;
+  $border-default: rgba($color-border-dark, 0.15);
+
+  background-color: $color-background-page;
+  border: 1px solid $border-default;
+  border-radius: 100%;
+  display: block;
+  float: left;
+  height: $size;
+  margin-bottom: s(0.25);
+  margin-right: s(0.25);
+  width: $size;
+
+  @include modifier('latest') {
+    border: 2px solid $color-border-dark;
+  }
+
+  @include modifier('no-margin') {
+    margin-bottom: 0;
+  }
+
+  @include modifier('category') {
+    background-color: $color-map-category;
+  }
+
+  @include modifier('snippet') {
+    background-color: $color-map-snippet;
+  }
+
+  @include modifier('example') {
+    background-color: $color-map-example;
+  }
+
+  @include modifier('page') {
+    background-color: $color-map-page;
+  }
+
+  @include modifier('doc') {
+    background-color: $color-map-doc;
+  }
+}

@@ -1,0 +1,16 @@
+<div class="miniml__paragraph-title">
+  <i class="<%= icon %> miniml__icon"></i>
+  <%= title %>
+</div>
+<% if (typeof people === 'string') { %>
+  <div class="miniml__paragraph miniml-markdown">
+    <%- markdown(people) %>
+  </div>
+<% } else { %>
+  <div class="miniml__paragraph miniml-markdown miniml-markdown--inline">
+    <% for(var i = 0; i < people.length; i += 1) {%>
+      <% if (i > 0) { %>,<% } %>
+      <%- markdown(people[i]) %>
+    <% } %>
+  </div>
+<% } %>

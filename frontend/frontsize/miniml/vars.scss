@@ -1,24 +1,41 @@
 
-// ========================================================================================================================================================================
-// ==                                   ===================================================================================================================================
-// ==               THEME               ===================================================================================================================================
-// ==            CUSTOM VARS            ===================================================================================================================================
-// ==                                   ===================================================================================================================================
-// ========================================================================================================================================================================
-
-
-$color-page: $body-color;
+$color-aqua: #47c1fc;
+$color-gold-light: mix(rgb(184, 151, 102), #fff);
 $color-gold: rgb(184, 151, 102);
-$color-gold-light: mix($color-gold, $color-page);
+$color-light: #fff;
+$color-dark: #4e4d48;
+
+$color-background-page: $color-light;
+$color-background-link: mix($color-gold, $color-light, 20%);
+$color-background-dark: $color-dark;
+$color-background-shaded: mix($color-dark, $color-light, 85%);
+
+$color-text-lightest: #fff;
 $color-text: $font-color;
-$color-text-light: mix($color-text, $color-page, 40%);
+$color-text-light: mix($color-text, $color-background-page, 40%);
+$color-text-shaded: #a4a296;
 $color-border-transparent: rgba($color-text, 0.15);
-$color-border: mix($color-text, $color-page, 2%);
+$color-border: mix($color-text, $color-background-page, 2%);
+$color-hr: #e5e5e5;
+$color-border-dark: $color-text;
+
+$color-map-category: #90de72;
+$color-map-snippet: #dfed76;
+$color-map-example: #9ad0ea;
+$color-map-page: #ce9aea;
+$color-map-doc: #ec9d83;
+
+$color-link: $color-aqua;
+
 
 $height-header: 60px;
 
+$font-size-title: 18px;
+$font-size-big: 16px;
 $font-size-normal: 14px;
 $font-size-small: 12px;
 
-$font-weight-normal: 300;
-$font-weight-bold: 400;
+$font-weight-normal: 400;
+$font-weight-bold: 600;
+$radius: 3px;
+$ease-hover: 0.5s ease('out-expo');

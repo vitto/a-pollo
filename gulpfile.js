@@ -1,547 +1,1114 @@
 'use strict';
 
-var gulp = require('gulp'),
-  autoprefixer = require('gulp-autoprefixer'),
-  analyzer     = require('analyze-css'), // https://github.com/macbre/analyze-css
-  colors       = require('colors'),
-  concat       = require('gulp-concat'),
-  csslint      = require('gulp-csslint'),
-  moment       = require('moment'),
-  plugins      = require('gulp-load-plugins')(),
-  run          = require('run-sequence'),
-  sass         = require('gulp-sass'),
-  jshint       = require('gulp-jshint'), // https://github.com/spalger/gulp-jshint
-  sourcemaps   = require('gulp-sourcemaps'),
-  stylestats   = require('gulp-stylestats'),
-  uglify       = require('gulp-uglify'),
-  uglifyCss    = require('gulp-uglifycss'),
-  yaml         = require('js-yaml'),
-  fs           = require('fs'),
-  twig         = require('gulp-twig'),
-  prettify     = require('gulp-html-prettify'),
-  faker        = require('faker'),
-  browserSync  = require('browser-sync');
+/*
+  D U S T M A N
+  1.0.1
 
-var dustmanTasks = [
-  'message:start',
-  'timer:start',
-  'css:build',
-  'js:build',
-  'message:end'
-];
+  A Gulp 4 automation boilerplate
+  by https://github.com/vitto
+*/
 
-var buildIndex = 0,
-  c = false,
-  cssThemes = [],
-  startBuildDate,
-  themeBuildTasks = [],
-  themesTotal = 0,
-  phrases = {},
-  isWatching = false;
+var gulp = require('gulp');
 
-phrases.change = [
-  'Hey, something\'s happened to %file%, this is a work for DUSTMAN...',
-  'Dear %file%, do you really though I wouldn\'t noticed you? Hahaha!',
-  'Aha! %file%! You are under build!'
-];
-phrases.unlink = [
-  'We have lost %file%, this is a work for DUSTMAN...',
-  'Oh my god... %file%... Nooooo!',
-  'Another good %file% gone... I will avange you...'
-];
-phrases.add = [
-  'What the hell is %file%?? I, DUSTMAN will do something to solve this situation...',
-  'I made a sensational discovery, %file% was found right there!',
-  'Hey %file%, welcome to the build',
-];
+    // autoprefixer = require('gulp-autoprefixer'),
+    // concat       = require('gulp-concat'),
+    // csslint      = require('gulp-csslint'),
+    // sass         = require('gulp-sass'),
+    // less         = require('gulp-less'),
+    // rename       = require('gulp-rename'),
+    // sourcemaps   = require('gulp-sourcemaps'),
+    // stylestats   = require('gulp-stylestats'),
+    // uglify       = require('gulp-uglify'),
+    // twig         = require('gulp-twig'),
+    // uglifyCss    = require('gulp-uglifycss'),
+    // prettify     = require('gulp-html-prettify'),
+    // moment       = require('moment'),
+    // sequence     = require('run-sequence'),
+    // exec         = require('child_process').exec,
+    // fs           = require('fs'),
+    // faker        = require('faker'),
+    // browserSync  = require('browser-sync');
 
-/* = = = = = = = = = = = = = = = = = = = = = = = = = */
 
-for (var i = 0; i < process.argv.length; i += 1) {
-    if (process.argv[i] === '--config') {
-        if (process.argv[i+1] !== undefined) {
-            var file = process.argv[i + 1];
-            c = yaml.safeLoad(fs.readFileSync(file, 'utf-8'));
-        }
-    }
-}
+var config = (function(){
+  var colour = require('colour');
+  var fs = require('fs');
+  var yaml = require('js-yaml');
+  var merge = require('merge');
+  var path = require('path');
 
-if (!c) {
-  c = yaml.safeLoad(fs.readFileSync('./dustman.yml', 'utf-8'));
-}
+  var configFile = 'dustman.yml';
 
-if (c.css === undefined) {
-  console.log(colors.red('Error: object dustman is NOT present in YAML configuration.'));
-  process.exit();
-}
-
-faker.locale = c.config.faker ? c.config.faker.locale ? c.config.faker.locale : 'en' : 'en';
-themesTotal = c.css.themes.length;
-
-/* = = = = = = = = = = = = = = = = = = = = = = = = = */
-
-var messageVerbose = function(title, message) {
-  if (c.css.verbose !== undefined && c.css.verbose >= 3) {
-    if (message !== undefined) {
-      console.log(colors.yellow(title.trim() + ': ') + message.trim());
-    } else {
-      console.log(colors.yellow(title.trim()));
-    }
-  }
-};
-
-var message = function(message, force) {
-  if (force !== undefined && force || c.css.verbose !== undefined && c.css.verbose >= 2) {
-    console.log(message);
-  }
-};
-
-var messageFile = function(phrases, file) {
-  var min, max, phrase, splitPhrase, index;
-  min = 1;
-  max = phrases.length;
-  index = (Math.floor(Math.random() * (max - min + 1)) + min) - 1;
-  phrase = phrases[index];
-  splitPhrase = phrase.split('%file%');
-  message(colors.magenta(splitPhrase[0]) + file + colors.magenta(splitPhrase[1]));
-  messageVerbose('');
-};
-
-var messageError = function(message) {
-  if (c.css.verbose !== undefined && c.css.verbose >= 1) {
-    console.log(colors.red('Error: ') + message.trim());
-  }
-};
-
-/* = = = = = = = = = = = = = = = = = = = = = = = = = */
-
-var check = function(path, throwErr) {
-  var throwError = throwErr || false;
-  try {
-    path = path.replace(new RegExp(/\*.*$/), '');
-    fs.accessSync(path, fs.F_OK);
-      return true;
-  } catch (e) {
-    if (throwError) {
-      messageError(path + colors.red(' not found'));
-      if (c.css.verbose !== undefined && c.css.verbose >= 3) {
-        console.log(e);
+  var data = {
+    config: {
+      autoprefixer: {
+        browsers: [
+          'last 3 versions'
+        ]
+      },
+      faker: {
+        locale: 'en'
+      },
+      prettify: {
+        indent_char: ' ',
+        indent_size: 2
+      },
+      twig: {
+        cache: false
+      },
+      verbose: 3
+    },
+    css: {
+      file: 'dustman.min.css',
+      watch: './**/*.css'
+    },
+    js: {
+      file: 'dustman.min.js',
+      watch: './**/*.js'
+    },
+    paths: {
+      css: 'dustman/css/',
+      fonts: 'dustman/fonts/',
+      images: 'dustman/img/',
+      js: 'dustman/js/',
+      server: 'dustman/'
+    },
+    tasks: [
+      'css',
+      'js',
+      'html'
+    ],
+    vendors: {
+      css: {
+        merge: true
       }
+    }
+  };
+
+  var configFileExists = function(configFile) {
+    try {
+      fs.accessSync(configFile, fs.F_OK);
+      return true;
+    } catch (e) {
+      console.log(colour.red('Error: config file ') + colour.yellow(configFile) + colour.red(' NOT found'));
       process.exit();
-    } else {
-      return false;
     }
-  }
-};
+  };
 
-var checkConfig = function(name, value) {
-  if (value === undefined) {
-    messageError('No "' + name + '" defined in config YAML');
+  var checkDefaultConfig = function(loadedConfig, configFile){
+    if (!loadedConfig) {
+      configFileExists(configFile);
+      return yaml.safeLoad(fs.readFileSync(configFile, 'utf-8'));
+    }
+    return loadedConfig;
+  };
+
+  var pathClean = function(configPath) {
+    return path.normalize(configPath).replace(/\/$/, '') + '/';
+  };
+
+  var checkArguments = function(){
+    var loadedConfig = false;
+    for (var i = 0; i < process.argv.length; i += 1) {
+      if (process.argv[i] === '--config' && process.argv[i + 1] !== undefined) {
+        configFile = process.argv[i + 1];
+        configFileExists(configFile);
+        loadedConfig = yaml.safeLoad(fs.readFileSync(configFile, 'utf-8'));
+      }
+    }
+    loadedConfig = checkDefaultConfig(loadedConfig, configFile);
+    data = merge.recursive(true, data, loadedConfig);
+
+    data.paths.css = pathClean(data.paths.css);
+    data.paths.fonts = pathClean(data.paths.fonts);
+    data.paths.images = pathClean(data.paths.images);
+    data.paths.js = pathClean(data.paths.js);
+    data.paths.server = pathClean(data.paths.server);
+  };
+
+  var ifProp = function(propName) {
+    return typeof data[propName] !== 'undefined' ? true : false;
+  };
+
+  var error = function(message) {
+    console.log(colour.red('Error:') + message);
     process.exit();
-  } else {
-    return true;
-  }
-};
+  };
 
-/* = = = = = = = = = = = = = = = = = = = = = = = = = */
-
-var watchList = function() {
-  var list = [];
-  if (checkConfig('twig.watch', c.twig.watch)) {
-    list.push(c.twig.watch);
-  }
-
-  if (checkConfig('css.watch', c.css.watch)) {
-    list.push(c.css.watch);
-  }
-
-  if (checkConfig('js.watch', c.js.watch)) {
-    list.push(c.js.watch);
-  }
-  return list;
-};
-
-/* = = = = = = = = = = = = = = = = = = = = = = = = = */
-
-var taskPrefix = function(themeName, action) {
-  return 'css:theme:' + themeName + ':' + action;
-};
-
-var tasksList = function(theme, taskNames) {
-  var tasks = [];
-  for (var i = 0; i < taskNames.length; i += 1) {
-    tasks.push(taskPrefix(theme.name, taskNames[i]));
-  }
-  return tasks;
-};
-
-var tasks = function(theme, taskNames) {
-  var tasks = {};
-  for (var i = 0; i < taskNames.length; i += 1) {
-    tasks[taskNames[i]] = taskPrefix(theme.name, taskNames[i]);
-  }
-  return tasks;
-};
-
-/* = = = = = = = = = = = = = = = = = = = = = = = = = */
-
-var addTask = function(theme, index){
-
-  var compile = theme.compile,
-    destinationPath = c.paths.css,
-    file = theme.file,
-    fonts = theme.fonts || false,
-    images = theme.images || false,
-    name = theme.name,
-    prefixAutoprefixer = c.config.autoprefixer ? theme.autoprefixer ? true : false : false,
-    reportStylestats = c.config.stylestats ? theme.stylestats ? true : false : false,
-    task = {},
-    tasksToBuild = [],
-    testCsslint = c.config.csslint ? theme.csslint ? true : false : false,
-    themeBuildSubTasks = [];
-
-  check(compile, true);
-
-  tasksToBuild = ['build', 'css'];
-
-  if (testCsslint) { tasksToBuild.push('testCsslint'); }
-  if (reportStylestats) { tasksToBuild.push('reportStylestats'); }
-  if (prefixAutoprefixer) { tasksToBuild.push('prefixAutoprefixer'); }
-  if (images) { tasksToBuild.push('images'); }
-  if (fonts) { tasksToBuild.push('fonts'); }
-
-  task = tasks(theme, tasksToBuild);
-  themeBuildTasks.push(task.build);
-  themeBuildSubTasks = tasksList(theme, tasksToBuild.slice(1));
-
-  if (!prefixAutoprefixer) {
-    cssThemes.push(destinationPath + file);
-  } else {
-    cssThemes.push(destinationPath + 'autoprefixer/' + file);
-  }
-
-  gulp.task(task.css, function () {
-    if (buildIndex === 0 && index > 0 ) {
-      messageVerbose('');
+  return {
+    file: function() {
+      return configFile;
+    },
+    get: function(propName){
+      if (!ifProp(propName)) {
+        error('Required property ' + colour.yellow(propName) + ' NOT found in ' + colour.yellow(configFile));
+      }
+      return data[propName];
+    },
+    hasTask: function(taskName) {
+      if (!ifProp('tasks')) {
+        error('Required property ' + colour.yellow('tasks') + ' NOT found in ' + colour.yellow(configFile));
+      }
+      for (var i = 0; i < data.tasks.length; i += 1) {
+        if (data.tasks[i] === taskName) {
+          return true;
+        }
+      }
+      return false;
+    },
+    if: function(propName){
+      return ifProp(propName);
+    },
+    load: function(){
+      checkArguments();
+    },
+    pathClean : function(configPath) {
+      return path.normalize(configPath).replace(/\/$/, '') + '/';
     }
-    message('Build CSS theme');
+  };
+})();
 
-    if (themesTotal >= 1) {
-      messageVerbose('Theme task', name + ' ' + (index + 1) + ' of ' + themesTotal);
-    }
-    messageVerbose('File', destinationPath + file);
 
-    return gulp.src(compile)
-      .pipe(sourcemaps.init())
-      .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
-      .pipe(concat(file))
-      .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest(destinationPath));
+var message = (function(){
+  var colour = require('colour');
+  colour.setTheme({
+    annoy: 'grey',
+    error: 'red bold',
+    event: 'magenta',
+    intro: 'rainbow',
+    speak: 'white',
+    success: 'green',
+    task: 'white',
+    verbose: 'blue',
+    warning: 'yellow bold'
   });
 
-  if (prefixAutoprefixer) {
-    gulp.task(task.prefixAutoprefixer, function () {
-      messageVerbose('');
-      message('Browser compatibility');
-      messageVerbose('Theme', name);
-      if (c.config.autoprefixer.browsers) {
-        messageVerbose('Autoprefixer browsers', c.config.autoprefixer.browsers.toString().replace(new RegExp(',', 'g'), ', '));
+  var phrases = {
+    add: [
+      'What the hell is %file%?? I, DUSTMAN will do something to solve this situation...',
+      'I\'ve found a sensational discovery, %file% is alive!',
+      'Hey %file%, welcome to da build',
+      'File %file% detected. Updating the build.'
+    ],
+    change: [
+      'Hey, something\'s happened to %file%, this is a work for DUSTMAN...',
+      'Dear %file%, do you really though I wouldn\'t noticed you? Hahaha!',
+      'Aha! %file%! You are under build!',
+      'We change every day, just as you, %file%'
+    ],
+    unlink: [
+      'We have lost %file%, this is a work for DUSTMAN...',
+      'Oh my god... %file%... Nooooo!',
+      'Another good %file% gone... I will avange you...',
+      'Good bye %file%. I will clean your past without pain.'
+    ],
+    wait: [
+      'Waiting silently if something changes, is unlinked or added',
+      'Dustman is watching them',
+      'The dust is never clear totally, waiting for changes',
+      'I will seek and clean. Again, and again'
+    ]
+  };
+
+  var isVerboseEnough = function(verbosity) {
+    return config.get('config').verbose >= verbosity;
+  };
+
+  var log = function(level, message) {
+    if (isVerboseEnough(level)) {
+      console.log(message);
+    }
+  };
+
+  var event = function(eventType, file) {
+    var min, max, phrase, splitPhrase, finalPhrase, index;
+    min = 1;
+    max = phrases[eventType].length;
+    index = (Math.floor(Math.random() * (max - min + 1)) + min) - 1;
+    phrase = phrases[eventType][index];
+
+    if (typeof file !== 'undefined') {
+      splitPhrase = phrase.split('%file%');
+      finalPhrase = colour.event(splitPhrase[0]) + file + colour.event(splitPhrase[1]);
+    } else {
+      finalPhrase = colour.event(phrase + '...');
+    }
+
+    log(1, finalPhrase);
+  };
+
+  return {
+    annoy: function(message) {
+      log(4, colour.annoy(message.trim()));
+    },
+    intro: function() {
+      console.log('');
+      console.log(colour.intro('   D U S T M A N   '));
+      console.log('');
+    },
+    error: function(message) {
+      log(0, colour.error('Error: ') + message.trim());
+      process.exit();
+    },
+    event: function(eventType, file) {
+      event(eventType, file);
+    },
+    wait: function() {
+      log(3, '');
+      event('wait');
+    },
+    notice: function(message) {
+      log(3, colour.verbose('Notice: ') + message.trim());
+    },
+    speak: function(message) {
+      log(2, colour.speak(message));
+    },
+    success: function(message) {
+      log(2, colour.success(message.trim()));
+    },
+    task: function(message) {
+      log(3, '');
+      log(2, colour.task(message));
+    },
+    verbose: function(title, message) {
+      if (typeof message !== 'undefined') {
+        log(3, colour.verbose(title.trim() + ': ') + message.trim());
       } else {
-        messageVerbose('Autoprefixer', 'Enabled');
+        log(3, colour.verbose(title.trim()));
       }
-      messageVerbose('Adding prefixes to file', destinationPath + file);
-      messageVerbose('Browser prefixes saved to', destinationPath + 'autoprefixer/' + file);
-      return gulp.src(destinationPath + file)
-        .pipe(autoprefixer(c.config.autoprefixer))
-        .pipe(gulp.dest(destinationPath + 'autoprefixer/'));
+    },
+    warning: function(message){
+      log(2, colour.warning('Warning: ') + message.trim());
+    },
+  };
+})();
+
+var task = task || {};
+
+task.core = (function(){
+
+  var fs = require('fs');
+
+  return {
+    action: function(name, actionName) {
+      return name + ':' + actionName;
+    },
+    fileCheck: function(path){
+      try {
+        path = path.replace(new RegExp(/\*.*$/), '');
+        fs.accessSync(path, fs.F_OK);
+        return true;
+      } catch (e) {
+        message.error(path + ' NOT found');
+        console.log(e);
+        process.exit();
+      }
+    },
+    fileExists: function(path) {
+      try {
+        path = path.replace(new RegExp(/\*.*$/), '');
+        fs.accessSync(path, fs.F_OK);
+        return true;
+      } catch (e) {
+        return false;
+      }
+    },
+    has: function(task, property) {
+      return property in task ? true : false;
+    }
+  };
+})();
+
+var tasks = (function(){
+
+  var browserSync = require('browser-sync');
+
+  var paths;
+  var pipeline = {
+    before:[],
+    middle:[],
+    after:[]
+  };
+
+  var tasksConfig = {};
+  var watchFolders = [];
+
+  var getWatchFolder = function(property) {
+    if (config.if(property)) {
+      var configProperty = config.get(property);
+      if (task.core.has(configProperty, 'watch')) {
+        return [configProperty.watch];
+      }
+    }
+    return [];
+  };
+
+  var init = function() {
+    paths = config.if('paths') ? config.get('paths') : false;
+    tasksConfig = config.if('config') ? config.get('config') : false;
+
+    watchFolders = watchFolders.concat(getWatchFolder('css'));
+    watchFolders = watchFolders.concat(getWatchFolder('js'));
+    watchFolders = watchFolders.concat(getWatchFolder('twig'));
+  };
+
+  var addToPipeline = function(subTaskPipeline) {
+    pipeline.before = pipeline.before.concat(subTaskPipeline.before);
+    pipeline.middle = pipeline.middle.concat(subTaskPipeline.middle);
+    pipeline.after = pipeline.after.concat(subTaskPipeline.after.reverse());
+  };
+
+  var http = function(tasks) {
+
+    gulp.task('http', gulp.series(tasks, function() {
+      browserSync.stream();
+      browserSync.init({
+        server: {
+            baseDir: paths.server
+        },
+        logLevel: 'info',
+        notify: true
+      });
+
+      message.wait();
+
+      return gulp.watch(watchFolders, gulp.series(tasks, function(done){
+          browserSync.reload();
+          message.wait();
+          done();
+        }))
+        .on('change', function(path) {
+          message.event('change', path);
+        })
+        .on('unlink', function(path) {
+          message.event('unlink', path);
+        })
+        .on('add', function(path) {
+          message.event('add', path);
+        });
+    }));
+  };
+
+  var watch = function(tasks) {
+    gulp.task('watch', gulp.series(tasks, function() {
+      message.wait();
+      return gulp.watch(watchFolders, gulp.series(tasks, function(done){
+          message.wait();
+          done();
+        }))
+        .on('change', function(path) {
+          message.event('change', path);
+        })
+        .on('unlink', function(path) {
+          message.event('unlink', path);
+        })
+        .on('add', function(path) {
+          message.event('add', path);
+        });
+    }));
+  };
+
+  var build = function(tasks){
+    gulp.task('default', gulp.series(tasks, function(done){
+      done();
+    }));
+  };
+
+  return {
+    init: function(){
+      init();
+      addToPipeline(task.timer.get());
+      addToPipeline(task.shell.get());
+      addToPipeline(task.css.get());
+      addToPipeline(task.js.get());
+      addToPipeline(task.vendors.get());
+      addToPipeline(task.html.get());
+      pipeline.after.reverse();
+      var pipelineList = pipeline.before.concat(pipeline.middle.concat(pipeline.after));
+      build(pipelineList);
+      watch(pipelineList);
+      http(pipelineList);
+    }
+  };
+})();
+
+var task = task || {};
+
+task.timer = (function(){
+  var moment = require('moment');
+
+  var name = 'timer';
+  var startBuildDate;
+  var buildIndex = 1;
+
+  var pipeline = {
+    before:[],
+    middle:[],
+    after:[]
+  };
+
+  var start = function(){
+    var taskName = task.core.action(name, 'start');
+    gulp.task(taskName, function(done){
+      startBuildDate = Date.now();
+      done();
     });
-  }
+    pipeline.before.push(taskName);
+  };
 
-  if (testCsslint) {
-    gulp.task(task.testCsslint, function () {
-      messageVerbose('');
-      message('CSSlint');
-      messageVerbose('Theme', name);
-      return gulp.src(destinationPath + file)
-        .pipe(csslint(c.config.csslint))
-        .pipe(csslint.reporter());
+  var stop = function(){
+    var taskName = task.core.action(name, 'stop');
+    gulp.task(taskName, function(done){
+      var stopBuildDate = Date.now();
+      var timeSpent = (stopBuildDate - startBuildDate)/1000 + ' secs';
+      message.success('The dust was cleaned successfully in ' + timeSpent);
+      message.success('Build [ ' + buildIndex + ' ] done at ' + moment().format('HH:mm') + ' and ' + moment().format('ss') + ' seconds.');
+      buildIndex += 1;
+      done();
     });
-  }
+    pipeline.after.push(taskName);
+  };
 
-  if (reportStylestats) {
-    gulp.task(task.reportStylestats, function () {
-      return gulp.src(destinationPath + file)
-        .pipe(stylestats({
-          type: 'md',
-          config: c.config.stylestats
-        }));
+  return {
+    duration: function(){
+
+    },
+    get: function(){
+      start();
+      stop();
+      return pipeline;
+    }
+  };
+})();
+
+var task = task || {};
+
+task.vendors = (function(){
+
+  var name = 'vendors';
+  var paths = {};
+  var vendorsConfig = {};
+  var vendorsFontsBuilt = false;
+  var vendorsImagesBuilt = false;
+
+  var pipeline = {
+    before:[],
+    middle:[],
+    after:[]
+  };
+
+  var init = function() {
+    paths = config.get('paths');
+    vendorsConfig = config.if('vendors') ? config.get('vendors') : {};
+  };
+
+  var images = function() {
+    if (config.if('vendors') && task.core.has(vendorsConfig, 'images')) {
+      var taskName = task.core.action(name, 'images');
+      gulp.task(taskName, function (done) {
+        if (vendorsImagesBuilt) {
+          message.notice('Vendors Images already built, if you need to update them, re-run the watcher');
+          done();
+        } else {
+          vendorsImagesBuilt = true;
+            message.task('Copying images from vendors');
+            for (var i = 0; i < vendorsConfig.images.length; i += 1) {
+              message.verbose('Image vendor', vendorsConfig.images[i]);
+              task.core.fileCheck(vendorsConfig.images[i]);
+            }
+            message.verbose('Vendor images copied to', paths.images);
+            return gulp.src(vendorsConfig.images)
+            .pipe(gulp.dest(paths.images));
+        }
+      });
+      return [taskName];
+    } else {
+      message.warning('Vendor\'s Images not found, skipping task');
+    }
+    return [];
+  };
+
+  var fonts = function(){
+    if (config.if('vendors') && task.core.has(vendorsConfig, 'fonts')) {
+      var taskName = task.core.action(name, 'fonts');
+      gulp.task(taskName, function (done) {
+        if (vendorsFontsBuilt) {
+          message.notice('Vendors Fonts already built, if you need to update them, re-run the watcher');
+          done();
+        } else {
+          vendorsFontsBuilt = true;
+            message.task('Copying fonts from vendors');
+            var i = 0;
+            for (i = 0; i < vendorsConfig.fonts.length; i += 1) {
+              message.verbose('Font vendor', vendorsConfig.fonts[i]);
+              task.core.fileCheck(vendorsConfig.fonts[i]);
+            }
+            message.verbose('Vendor fonts copied to', paths.fonts);
+            return gulp.src(vendorsConfig.fonts)
+              .pipe(gulp.dest(paths.fonts));
+        }
+      });
+      return [taskName];
+    } else {
+      message.warning('Vendor\'s Fonts not found, skipping task');
+    }
+    return [];
+  };
+
+  return {
+    get: function(){
+      if (!config.hasTask(name)) {
+        return pipeline;
+      }
+      init();
+      pipeline.middle = pipeline.middle.concat(fonts());
+      pipeline.middle = pipeline.middle.concat(images());
+      return pipeline;
+    }
+  };
+})();
+
+var task = task || {};
+
+task.shell = (function(){
+  var exec = require('child_process').exec;
+  var name = 'shell';
+  var taskConfig = [];
+  var pipeline = {
+    before: [],
+    middle:[],
+    after: []
+  };
+
+  var init = function() {
+    taskConfig = config.if('shell') ? config.get('shell') : [];
+  };
+
+  var afterMessage = function(){
+    if (task.core.has(taskConfig, 'after')) {
+      var taskName = task.core.action(name, 'after-message');
+      gulp.task(taskName, function(done){
+        message.task('Executing shell tasks after build');
+        done();
+      });
+      pipeline.after.push(taskName);
+    }
+  };
+
+  var afterTask = function(index) {
+    var taskName = task.core.action(name, 'after-' + index);
+    pipeline.after.push(taskName);
+    gulp.task(taskName, function(done){
+      message.verbose('Shell', taskConfig.after[index]);
+      exec(taskConfig.after[index], function (err) {
+        done(err);
+      });
     });
-  }
+  };
 
-  if (images) {
-    gulp.task(task.images, function () {
-      messageVerbose('Copy theme images', c.paths.images + name);
-      return gulp.src(images)
-        .pipe(gulp.dest(c.paths.images + name));
+  var after = function(){
+    if (task.core.has(taskConfig, 'after')) {
+      afterMessage();
+      for (var i = 0; i < taskConfig.after.length; i += 1) {
+        afterTask(i);
+      }
+    }
+  };
+
+  var beforeMessage = function(){
+    if (task.core.has(taskConfig, 'before')) {
+      var taskName = task.core.action(name, 'before-message');
+      gulp.task(taskName, function(done){
+        message.task('Executing shell tasks before build');
+        done();
+      });
+      pipeline.before.push(taskName);
+    }
+  };
+
+  var beforeTask = function(index) {
+    var taskName = task.core.action(name, 'before-' + index);
+    pipeline.before.push(taskName);
+    gulp.task(taskName, function(done){
+      message.verbose('Shell', taskConfig.before[index]);
+      exec(taskConfig.before[index], function (err) {
+        done(err);
+      });
     });
-  }
+  };
 
-  if (fonts) {
-    gulp.task(task.fonts, function () {
-      messageVerbose('Copy theme fonts', c.paths.fonts + name);
-      return gulp.src(fonts)
-        .pipe(gulp.dest(c.paths.fonts + name));
+  var before = function(){
+    if (task.core.has(taskConfig, 'before')) {
+      beforeMessage();
+      for (var i = 0; i < taskConfig.before.length; i += 1) {
+        beforeTask(i);
+      }
+    }
+  };
+
+  return {
+    get: function(){
+      if (!config.hasTask(name)) {
+        return pipeline;
+      }
+      init();
+      before();
+      after();
+      return pipeline;
+    }
+  };
+})();
+
+var task = task || {};
+
+task.html = (function(){
+
+  var faker = require('faker');
+  var prettify = require('gulp-html-prettify');
+  var twig = require('gulp-twig');
+
+  var name = 'html';
+  var paths = {};
+  var twigConfig = {};
+  var twigPages;
+
+  var pipeline = {
+    before:[],
+    middle:[],
+    after:[]
+  };
+
+  var init = function() {
+    paths = config.get('paths');
+    twigPages = config.if('twig') ? config.get('twig') : {};
+    twigConfig = config.if('config') ? config.get('config') : {};
+    faker.locale = 'en';
+  };
+
+  var build = function() {
+    if (config.if('twig') && task.core.has(twigPages, 'files')) {
+      gulp.task(name, function () {
+        message.task('Twig to HTML');
+        if (!task.core.has(twigConfig, 'twig')) {
+          twigConfig.twig = {};
+        }
+        twigConfig.twig.data = {
+          faker: faker
+        };
+        for (var i = 0; i < twigPages.files.length; i += 1) {
+          message.verbose('Twig view', twigPages.files[i]);
+        }
+        message.verbose('All Twig files converted in', paths.server);
+        return gulp.src(twigPages.files)
+          .pipe(twig(twigConfig.twig))
+          .pipe(prettify(twigConfig.prettify || {}))
+          .pipe(gulp.dest(paths.server));
+      });
+      return [name];
+    } else {
+      message.warning('Twig files not set, skipping task');
+    }
+    return [];
+  };
+
+  return {
+    get: function(){
+      if (!config.hasTask(name)) {
+        return pipeline;
+      }
+      init();
+      pipeline.middle = pipeline.middle.concat(build());
+      return pipeline;
+    }
+  };
+})();
+
+var task = task || {};
+
+task.css = (function(){
+  var autoprefixer = require('gulp-autoprefixer');
+  var concat = require('gulp-concat');
+  var less = require('gulp-less');
+  var merge = require('merge');
+  var rename = require('gulp-rename');
+  var sass = require('gulp-sass');
+  var stylestats = require('gulp-stylestats');
+  var sourcemaps = require('gulp-sourcemaps');
+  var uglifyCss = require('gulp-uglifycss');
+
+  var name = 'css';
+  var paths = {};
+  var tasksConfig = {};
+  var themeTasks = [];
+  var themeBuilds = [];
+  var vendorsBuilt = false;
+  var vendorsConfig = {};
+  var pipeline = {
+    before: [],
+    middle: [],
+    after: []
+  };
+
+  var init = function() {
+    pipeline.middle.push(name);
+    paths = config.get('paths');
+    themeTasks = config.if('css') ? config.get('css') : [];
+    tasksConfig = config.if('config') ? config.get('config') : {};
+    vendorsConfig = config.if('vendors') ? config.get('vendors') : {};
+  };
+
+  var fonts = function(theme) {
+    if (theme.fonts) {
+      if (!task.core.fileExists(theme.fonts)) {
+        message.verbose('Checking ' + theme.name + ' fonts', theme.fonts);
+        task.core.fileCheck(theme.fonts);
+      }
+      var taskName = task.core.action(name, theme.name + '-fonts');
+      var target = paths.fonts + theme.name;
+      gulp.task(taskName, function () {
+        message.verbose('Copy theme fonts to', target);
+        return gulp.src(theme.fonts)
+          .pipe(gulp.dest(target));
+      });
+      return [taskName];
+    }
+    return [];
+  };
+
+  var images = function(theme) {
+    if (theme.images) {
+      if (!task.core.fileExists(theme.images)) {
+        message.verbose('Checking ' + theme.name + ' images', theme.images);
+        task.core.fileCheck(theme.images);
+      }
+      var taskName = task.core.action(name, theme.name + '-images');
+      var target = paths.images + theme.name;
+      gulp.task(taskName, function () {
+        message.verbose('Copy theme images to', target);
+        return gulp.src(theme.images)
+          .pipe(gulp.dest(target));
+      });
+      return [taskName];
+    }
+    return [];
+  };
+
+  var css = function(theme, index, totalThemes) {
+    var taskName = task.core.action(name, theme.name + '-css');
+    gulp.task(taskName, function () {
+      if (totalThemes >= 1) {
+        message.task('Build CSS theme ' + (index + 1) + ' of ' + totalThemes);
+      } else {
+        message.task('Build CSS theme');
+      }
+      message.verbose('Theme', theme.name);
+      message.verbose('File', theme.path + theme.file);
+      return gulp.src(theme.compile)
+        .pipe(sourcemaps.init())
+        .pipe(
+          theme.compile.indexOf('.scss') !== -1 ?
+            sass({ outputStyle: 'expanded' }).on('error', function(err){
+              console.log(err.formatted);
+              message.error('Checkout SASS error before this message');
+            })
+          :
+            less()
+          )
+        .pipe(concat(theme.file))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest(theme.path));
     });
-  }
+    return [taskName];
+  };
 
-  gulp.task(task.build, gulp.series(themeBuildSubTasks, function(done){
-    done();
-  }));
-};
+  var autoprefixerRename = function(file) {
+    return file.replace('.css', '.autoprefixer.css');
+  };
 
-/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
-
-gulp.task('message:start', function (done) {
-  if (buildIndex === 0) {
-    message('', true);
-    message(colors.magenta('   D U S T M A N   '), true);
-    message('', true);
-  }
-  done();
-});
-
-gulp.task('timer:start', function(done){
-  startBuildDate = Date.now();
-  done();
-});
-
-if (checkConfig('css', c.css)) {
-  if (checkConfig('css.themes', c.css.themes)) {
-    for (var t = 0; t < c.css.themes.length; t += 1) {
-      addTask(c.css.themes[t], t);
+  var getAutoprefixer = function(theme) {
+    if (theme.autoprefixer) {
+      var taskName = task.core.action(name, theme.name + '-autoprefixer');
+      gulp.task(taskName, function () {
+        var fileName = autoprefixerRename(theme.file);
+        message.task('Browser compatibility');
+        message.verbose('Theme', theme.name);
+        if (task.core.has(tasksConfig.autoprefixer, 'browsers')) {
+          message.verbose('Autoprefixer browsers', tasksConfig.autoprefixer.browsers.toString().replace(new RegExp(',', 'g'), ', '));
+        } else {
+          message.verbose('Autoprefixer', 'Enabled');
+        }
+        message.verbose('Adding prefixes to file', theme.path + theme.file);
+        message.verbose('Browser prefixes saved to', theme.path + fileName);
+        return gulp.src(theme.path + theme.file)
+          .pipe(
+            autoprefixer(theme.autoprefixer instanceof Object ?
+              theme.autoprefixer
+              :
+              tasksConfig.autoprefixer
+            )
+          )
+          .pipe(rename(fileName))
+          .pipe(gulp.dest(theme.path));
+      });
+      return [taskName];
     }
-  }
-}
+    return [];
+  };
 
-gulp.task('vendors:fonts', function (done) {
-  if (c.vendors !== undefined && c.vendors.fonts !== undefined) {
-    messageVerbose('');
-    message('Copying fonts from vendors');
-    var i = 0;
-    for (i = 0; i < c.vendors.fonts.length; i += 1) {
-      messageVerbose('Font vendor', c.vendors.fonts[i]);
-      check(c.vendors.fonts[i], true);
+  var getStylestats = function(theme) {
+    if (theme.stylestats) {
+      var taskName = task.core.action(name, theme.name + '-stylestats');
+      var fileName = autoprefixerRename(theme.file);
+
+      gulp.task(taskName, function () {
+        return gulp.src(theme.autoprefixer !== false ?
+            theme.path + fileName
+            :
+            theme.path + theme.file
+          )
+          .pipe(stylestats({
+            type: 'md',
+            config: theme.stylestats instanceof Object ? theme.stylestats : tasksConfig.stylestats
+          }));
+      });
+      return [taskName];
     }
-    messageVerbose('Vendor fonts copied to', c.paths.fonts);
-    return gulp.src(c.vendors.fonts)
-      .pipe(gulp.dest(c.paths.fonts));
-  }
-  messageVerbose('Notice', 'Vendor\'s Fonts not found, skipping task');
-  done();
-});
+    return [];
+  };
 
-gulp.task('vendors:images', function (done) {
-  if (c.vendors !== undefined && c.vendors.images !== undefined) {
-    messageVerbose('');
-    message('Copying images from vendors');
-    var i = 0;
-    for (i = 0; i < c.vendors.images.length; i += 1) {
-      messageVerbose('Image vendor', c.vendors.images[i]);
-      check(c.vendors.images[i], true);
-    }
-    messageVerbose('Vendor images copied to', c.paths.images);
-    return gulp.src(c.vendors.images)
-      .pipe(gulp.dest(c.paths.images));
-  }
-  messageVerbose('Notice', 'Vendor\'s Images not found, skipping task');
-  done();
-});
+  var themeBuild = function(theme, themePipeline) {
+    var taskName = task.core.action(name, theme.name + '-build');
+    gulp.task(taskName, gulp.series(themePipeline, function(done){
+      done();
+    }));
+    return [taskName];
+  };
 
-gulp.task('vendors:css', function (done) {
-  if (c.vendors !== undefined && c.vendors.css !== undefined) {
-    messageVerbose('');
-    message('Merging CSS vendors');
-    var i = 0;
-    for (i = 0; i < c.vendors.css.files.length; i += 1) {
-      messageVerbose('CSS vendor', c.vendors.css.files[i]);
-      check(c.vendors.css.files[i], true);
-    }
-    messageVerbose('Vendor CSS files merged to', c.paths.css + c.vendors.css.file);
-    return gulp.src(c.vendors.css.files)
-      .pipe(uglifyCss())
-      .pipe(concat(c.vendors.css.file))
-      .pipe(gulp.dest(c.paths.css));
-  }
-  messageVerbose('Notice', 'Vendor\'s CSS not found, skipping task');
-  done();
-});
-
-gulp.task('message:end', function(done){
-  var stopBuildDate = Date.now();
-  var timeSpent = (stopBuildDate - startBuildDate)/1000 + ' secs';
-
-  messageVerbose('');
-
-  message('Build ' + colors.yellow('[ ' + buildIndex + ' ]') + ' done at ' + colors.yellow(moment().format('HH:mm')) + ' and ' + colors.yellow(moment().format('ss')) + ' seconds.', true);
-  message(colors.green('The dust was cleaned successfully in ' + timeSpent));
-
-  if (isWatching) {
-    messageVerbose('');
-    message(colors.blue('Waiting for file changes...'));
-  }
-
-  messageVerbose('');
-
-  buildIndex += 1;
-  done();
-});
-
-gulp.task('js:build', function (done) {
-  if (c.js !== undefined && c.js.files !== undefined) {
-    messageVerbose('');
-    message('Merging JavaScript files');
-    var i = 0;
-    for (i = 0; i < c.js.files.length; i += 1) {
-      messageVerbose('JavaScript file', c.js.files[i]);
-      check(c.js.files[i], true);
-    }
-    messageVerbose('JavaScript files merged to', c.paths.js + c.js.file);
-    return gulp.src(c.js.files)
-      .pipe(sourcemaps.init())
-      .pipe(uglify())
-      .pipe(concat(c.js.file))
-      .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest(c.paths.js));
-
-  }
-  messageVerbose('Notice', 'Vendor\'s JavaScript not found, skipping task');
-  done();
-});
-
-gulp.task('vendors:build', gulp.series(['vendors:css', 'vendors:images', 'vendors:fonts'], function (done) {
-  done();
-}));
-
-gulp.task('css:merge', function(done){
-  if (c.vendors !== undefined && c.vendors.css !== undefined) {
-    messageVerbose('');
-    message('Merging all CSS files');
-    messageVerbose('CSS to merge', c.paths.css + c.vendors.css.file);
-    for (var i = 0; i < cssThemes.length; i += 1) {
-      messageVerbose('CSS to merge', cssThemes[i]);
-    }
-    messageVerbose('All CSS files merged to', c.paths.css + c.css.file);
-    var css = [c.paths.css + c.vendors.css.file].concat(cssThemes);
-    return gulp.src(css)
-      .pipe(uglifyCss())
-      .pipe(concat(c.css.file))
-      .pipe(gulp.dest(c.paths.css));
-  }
-  messageVerbose('Notice', 'CSS vendors not found, skipping merge');
-  done();
-});
-
-gulp.task('watch:js', function () {
-    var tasks = [
-      'js:build'
-    ];
-    run(tasks);
-    var watchList = [ c.css.watch ];
-    if (c.js !== undefined && c.js.watch !== undefined) {
-      watchList.push(c.js.watch);
-    }
-    return gulp.watch(watchList, gulp.series(tasks, function(done){ done(); }));
-});
-
-/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
-
-
-gulp.task('twig:html', function (done) {
-  if (c.twig !== undefined && c.twig.files !== undefined) {
-    var twigConfig = {};
-    if (c.config !== undefined && c.config.twig !== undefined) {
-      twigConfig = c.config.twig;
-    }
-    twigConfig.data = {
-      faker: faker
+  var add = function(theme, index, totalThemes) {
+    var themePipeline = [];
+    var defaults = {
+      autoprefixer: false,
+      compile: null,
+      csslint: false,
+      file: 'theme-' + index.toString() + '.css',
+      fonts: false,
+      images: false,
+      merge: true,
+      name: 'theme-' + index.toString(),
+      path: paths.css,
+      stylestats: false
     };
 
-    messageVerbose('');
-    message('Twig to HTML');
-    checkConfig('paths.server', c.paths.server);
-    for (var i = 0; i < c.twig.files.length; i += 1) {
-      messageVerbose('Twig view', c.twig.files[i]);
+    themeTasks.themes[index] = merge.recursive(true, defaults, theme);
+
+    if (!themeTasks.themes[index].path) {
+      themeTasks.themes[index].path = paths.css;
     }
-    messageVerbose('All Twig files converted in', c.paths.server);
-    return gulp.src(c.twig.files)
-      .pipe(twig(twigConfig))
-      .pipe(prettify(c.prettify || {}))
-      .pipe(gulp.dest(c.paths.server));
-  }
-  messageVerbose('Notice', 'Twig files not found, skipping task');
-  done();
-});
 
-gulp.task('twig:build', gulp.series(['twig:html'], function(done){
-  done();
-}));
+    themeTasks.themes[index].path = config.pathClean(themeTasks.themes[index].path);
 
-/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+    if (themeTasks.themes[index].compile === null) {
+      message.error(themeTasks.themes[index].name + ' "compile" attribute must be specified');
+    }
 
-gulp.task('css:build', gulp.series(
-  themeBuildTasks.concat([
-  'vendors:build',
-  'css:merge'
-]), function(done){
-  done();
-}));
+    theme = themeTasks.themes[index];
 
-gulp.task('state:watch', function(done){
-  isWatching = true;
-  done();
-});
+    themePipeline = themePipeline.concat(fonts(theme));
+    themePipeline = themePipeline.concat(images(theme));
+    themePipeline = themePipeline.concat(css(theme, index, totalThemes));
+    themePipeline = themePipeline.concat(getAutoprefixer(theme));
+    themePipeline = themePipeline.concat(getStylestats(theme));
+    themeBuilds = themeBuilds.concat(themeBuild(theme, themePipeline));
+  };
 
-/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+  var themes = function() {
+    for (var i = 0; i < themeTasks.themes.length; i += 1) {
+      add(themeTasks.themes[i], i, themeTasks.themes.length);
+    }
+    return themeBuilds;
+  };
 
-gulp.task('watch:http', function(done) {
-  browserSync.stream();
-  done();
-});
+  var vendors = function() {
+    if (task.core.has(vendorsConfig, 'css') && task.core.has(vendorsConfig.css, 'files')) {
+      var taskName = task.core.action(name, 'vendors');
+      gulp.task(taskName, function (done) {
+        if (vendorsBuilt) {
+          message.annoy('Vendors CSS already built, if you need to update them, re-run the task');
+          done();
+        } else {
+          vendorsBuilt = true;
+          message.task('Merging CSS vendors');
+          for (var i = 0; i < vendorsConfig.css.files.length; i += 1) {
+            message.verbose('CSS vendor', vendorsConfig.css.files[i]);
+            task.core.fileCheck(vendorsConfig.css.files[i]);
+          }
+          message.verbose('Vendor CSS files merged to', paths.css + vendorsConfig.css.file);
+          return gulp.src(vendorsConfig.css.files)
+          .pipe(uglifyCss())
+          .pipe(concat(vendorsConfig.css.file))
+          .pipe(gulp.dest(paths.css));
+        }
+      });
+      return [taskName];
+    }
+    return [];
+  };
 
-gulp.task('http', gulp.series(['state:watch', 'watch:http'].concat(dustmanTasks), function() {
-  browserSync.init({
-    server: {
-        baseDir: c.paths.server
-    },
-    logLevel: 'info',
-    notify: true
-  });
+  var needsMerge = function() {
+    var theme;
+    for (var i = 0; i < themeTasks.themes.length; i += 1) {
+      theme = merge.recursive(true, themeTasks.themes[i], { merge: true });
+      if (theme.merge === true) {
+        return true;
+      }
+    }
+    return false;
+  };
 
-  return gulp.watch(watchList(), gulp.series(dustmanTasks, browserSync.reload))
-    .on('change', function(path) {
-      messageFile(phrases.change, path);
-    })
-    .on('unlink', function(path) {
-      messageFile(phrases.unlink, path);
-    })
-    .on('add', function(path) {
-      messageFile(phrases.add, path);
-    });
-}));
+  var getVendorsToMerge = function() {
+    if (vendorsConfig.css.merge) {
+      message.verbose('CSS vendors to merge', paths.css + vendorsConfig.css.file);
+      return [paths.css + vendorsConfig.css.file];
+    }
+    message.verbose('CSS vendors skipped from merge', paths.css + vendorsConfig.css.file);
+    return [];
+  };
 
-gulp.task('watch', gulp.series(['state:watch'].concat(dustmanTasks), function() {
-  return gulp.watch(watchList(), gulp.series(dustmanTasks))
-    .on('change', function(path) {
-      messageFile(phrases.change, path);
-    })
-    .on('unlink', function(path) {
-      messageFile(phrases.unlink, path);
-    })
-    .on('add', function(path) {
-      messageFile(phrases.add, path);
-    });
-}));
+  var getThemesToMerge = function() {
+    var fileName, theme, themes = [];
+    for (var i = 0; i < themeTasks.themes.length; i += 1) {
+      theme = themeTasks.themes[i];
+      fileName = theme.autoprefixer ? autoprefixerRename(theme.file) : theme.file;
+      if (theme.merge) {
+        message.verbose('CSS theme to merge', theme.path + fileName);
+        themes.push(theme.path + fileName);
+      } else {
+        message.verbose('CSS theme skipped from merge', theme.path + fileName);
+      }
+    }
+    return themes;
+  };
 
-gulp.task('default', gulp.series(dustmanTasks, function(done) {
-  done();
-}));
+  var mergeCss = function() {
+    if (needsMerge()) {
+      var taskName = task.core.action(name, 'merge');
+      gulp.task(taskName, function(done){
+        var themes = [];
+        message.task('Checking CSS files to merge');
+
+        themes = themes.concat(getVendorsToMerge());
+        themes = themes.concat(getThemesToMerge());
+
+        if (themes.length > 0) {
+          message.verbose('All CSS files merged to', paths.css + themeTasks.file);
+          return gulp.src(themes)
+            .pipe(uglifyCss())
+            .pipe(concat(themeTasks.file))
+            .pipe(gulp.dest(paths.css));
+        } else {
+          message.warning('No vendors or themes will be merged');
+          done();
+        }
+      });
+      return [taskName];
+    }
+    return [];
+  };
+
+  var build = function(subTaskPipeline) {
+    gulp.task(name, gulp.series(subTaskPipeline, function(done){
+      done();
+    }));
+    return [name];
+  };
+
+  return {
+    get: function(){
+      if (!config.hasTask(name)) {
+        return pipeline;
+      }
+      init();
+      var subTaskPipeline = [];
+      subTaskPipeline = subTaskPipeline.concat(themes());
+      subTaskPipeline = subTaskPipeline.concat(vendors());
+      subTaskPipeline = subTaskPipeline.concat(mergeCss());
+      pipeline.middle.concat(build(subTaskPipeline));
+      return pipeline;
+    }
+  };
+})();
+
+var task = task || {};
+
+task.js = (function(){
+
+  var concat = require('gulp-concat');
+  var sourcemaps = require('gulp-sourcemaps');
+  var uglify = require('gulp-uglify');
+
+  var name = 'js';
+  var js = {};
+  var paths = {};
+  var vendorsConfig = {};
+
+  var pipeline = {
+    before:[],
+    middle:[],
+    after:[]
+  };
+
+  var init = function() {
+    js = config.if(name) ? config.get(name) : [];
+    paths = config.get('paths');
+    vendorsConfig = config.if('vendors') ? config.get('vendors') : {};
+  };
+
+  var build = function(){
+    if (config.if(name)) {
+      gulp.task(name, function (done) {
+        message.task('Merging JavaScript files');
+        var notFoundLength = 0;
+        for (var i = 0; i < js.files.length; i += 1) {
+          if (task.core.fileExists(js.files[i])) {
+            message.verbose('JavaScript file', js.files[i]);
+          } else {
+            notFoundLength += 1;
+            message.warning('JavaScript file ' + js.files[i] + ' NOT found');
+          }
+        }
+        if (notFoundLength === js.files.length) {
+          message.error('None of the JavaScript files where found, check your "js.files" propery in your configuration file');
+          done();
+          return;
+        }
+        message.verbose('JavaScript files merged to', paths.js + js.file);
+        return gulp.src(js.files)
+          .pipe(sourcemaps.init())
+          .pipe(uglify())
+          .pipe(concat(js.file))
+          .pipe(sourcemaps.write('./'))
+          .pipe(gulp.dest(paths.js));
+      });
+      return [name];
+    }
+    return [];
+  };
+
+  return {
+    get: function(){
+      if (!config.hasTask(name)) {
+        return pipeline;
+      }
+      init();
+      pipeline.middle = pipeline.middle.concat(build());
+      return pipeline;
+    }
+  };
+})();
+
+
+message.intro();
+config.load();
+message.verbose('Version', '1.0.1');
+message.verbose('Config loaded', config.file());
+tasks.init();

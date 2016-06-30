@@ -39,6 +39,7 @@
     "siconfont": "^0.1.9",
     "typicons.font": "typicons#^2.0.7",
     "css-social-buttons": "zocial#^1.2.0",
-    "metro": "metro-ui-css#^3.0.14"
+    "metro": "metro-ui-css#^3.0.14",
+    "sass-bootstrap-glyphicons": "^1.0.0"
   }
 }

@@ -52,10 +52,15 @@
 
 // @import 'helpers/my-helper';
 
+@import 'widgets/miniml-a-pollo-release';
 @import 'widgets/miniml-body';
 @import 'widgets/header/miniml-header-button';
 @import 'widgets/header/miniml-header';
 @import 'widgets/miniml-logo';
 @import 'widgets/miniml-main';
+@import 'widgets/miniml-map-dot';
+@import 'widgets/miniml-map';
+@import 'widgets/miniml-markdown';
+@import 'widgets/miniml';
 
 @import 'app';

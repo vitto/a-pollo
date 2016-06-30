@@ -12,10 +12,10 @@
     "gradients"                  : true,
     "text-indent"                : true,
     "vendor-prefix"              : true,
-    "fallback-colors"            : true,
+    "fallback-colors"            : false,
     "star-property-hack"         : true,
     "underscore-property-hack"   : true,
-    "bulletproof-font-face"      : true,
+    "bulletproof-font-face"      : false,
 
     "font-faces"                  : false,
     "import"                      : true,
