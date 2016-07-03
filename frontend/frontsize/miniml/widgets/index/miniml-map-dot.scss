@@ -10,6 +10,9 @@
   height: $size;
   margin-bottom: s(0.25);
   margin-right: s(0.25);
+  transition:
+  border-color $ease-hover,
+  filter $ease-hover;
   width: $size;
 
   @include modifier('latest') {

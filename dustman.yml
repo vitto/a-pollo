@@ -18,6 +18,20 @@ css:
       stylestats: true
       autoprefixer: true
       path: hexo/themes/miniml/source/css/
+  vendors:
+    file: vendors.min.css
+    files:
+      - frontend/vendors/normalize-css/normalize.css
+      - frontend/vendors/github-markdown-css/github-markdown.css
+      - frontend/vendors/entypo-plus/css/entypo-plus.css
+      - frontend/vendors/font-awesome/css/font-awesome.css
+      - frontend/vendors/material-design-icons/iconfont/material-icons.css
+      - frontend/vendors/metro/build/css/metro-icons.css
+      - frontend/vendors/open-iconic/font/css/open-iconic.css
+      - frontend/vendors/sass-bootstrap-glyphicons/css/bootstrap-glyphicons.css
+      - frontend/vendors/siconfont/css/siconfont.css
+      - frontend/vendors/stroke-gap-icons-webfont/style.css
+      - frontend/vendors/typicons.font/src/font/typicons.css
 
 config:
   autoprefixer:
@@ -33,35 +47,20 @@ config:
   twig:
     cache: false
   verbose: 3
+  verify: true
 
 js:
   file: dustman.min.js
   watch: frontend/js/**/*.js
   files:
-    - frontend/vendors/clipboard/dist/clipboard.js
-    - frontend/vendors/jquery/dist/jquery.js
     - frontend/js/*
-
-twig:
-  watch: hexo/themes/miniml/layout/**/*.ejs
-  files:
-    - test/examples/twig/index.twig
+  vendors:
+    file: vendors.min.js
+    files:
+      - frontend/vendors/clipboard/dist/clipboard.js
+      - frontend/vendors/jquery/dist/jquery.js
 
 vendors:
-  css:
-    file: vendors.min.css
-    files:
-      - frontend/vendors/normalize-css/normalize.css
-      - frontend/vendors/github-markdown-css/github-markdown.css
-      - frontend/vendors/entypo-plus/css/entypo-plus.css
-      - frontend/vendors/font-awesome/css/font-awesome.css
-      - frontend/vendors/material-design-icons/iconfont/material-icons.css
-      - frontend/vendors/metro/build/css/metro-icons.css
-      - frontend/vendors/open-iconic/font/css/open-iconic.css
-      - frontend/vendors/sass-bootstrap-glyphicons/css/bootstrap-glyphicons.css
-      - frontend/vendors/siconfont/css/siconfont.css
-      - frontend/vendors/stroke-gap-icons-webfont/style.css
-      - frontend/vendors/typicons.font/src/font/typicons.css
   fonts:
     - frontend/vendors/roboto-fontface/fonts/Roboto-Light.eot
     - frontend/vendors/roboto-fontface/fonts/Roboto-Light.svg

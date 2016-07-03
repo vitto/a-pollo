@@ -1,0 +1,25 @@
+
+.miniml-map {
+  margin-top: s(1);
+
+  @include element('labels') {
+    @include row;
+    width: 100%;
+  }
+
+  @include element('label') {
+    @include asTable(false, middle, auto);
+
+    color: $color-text;
+    cursor: default;
+    float: left;
+    font-size: $font-size-small;
+    margin-right: s(1);
+    transition: color $ease-hover;
+
+  }
+
+  @include element('dots') {
+    margin-top: s(1);
+  }
+}

@@ -75,96 +75,6 @@ nav ul li {
   margin-left: 0;
 }
 
-.miniml-a-pollo-release {
-  width: 100%;
-  background-color: #4e4d48;
-  padding: 60px 20px;
-}
-
-.miniml-a-pollo-release::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-.miniml-a-pollo-release__logo {
-  width: 72px;
-  height: 72px;
-  background-image: url("/img/a-pollo-logo--gold.svg");
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  display: block;
-  float: left;
-}
-
-.miniml-a-pollo-release__info {
-  display: block;
-  float: left;
-  padding: 10px 20px;
-}
-
-.miniml-a-pollo-release__title {
-  color: #fff;
-  display: block;
-  font-weight: 600;
-}
-
-.miniml-a-pollo-release__desc {
-  color: #a4a296;
-  display: block;
-}
-
-.miniml-a-pollo-release__details {
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
-.miniml-a-pollo-release__details-item {
-  display: inline-block;
-  margin-top: 10px;
-}
-
-.miniml-a-pollo-release__details-item + .miniml-a-pollo-release__details-item {
-  margin-left: 20px;
-}
-
-.miniml-a-pollo-release__details-icon {
-  color: #fff;
-  font-size: 14px;
-  line-height: 14px;
-  margin-right: 3px;
-}
-
-.miniml-a-pollo-release__text {
-  border-radius: 3px;
-  color: #a4a296;
-  font-size: 12px;
-  line-height: 14px;
-  padding: 1px 2px;
-  text-decoration: none;
-  transition: color 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.miniml-a-pollo-release__text:hover {
-  color: #fff;
-}
-
-.miniml-a-pollo-release__text--marked {
-  background-color: #696863;
-}
-
-.miniml-body {
-  background-color: #fff;
-  color: #4e4d48;
-  font-family: "karla", "helvetica neue", helvetica, arial, sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.25;
-  margin: 0;
-  padding: 0;
-}
-
 .miniml-header-button {
   width: 100%;
   float: left;
@@ -376,22 +286,6 @@ nav ul li {
   }
 }
 
-.miniml-logo {
-  width: 34px;
-  height: 34px;
-  background-image: url("/img/a-pollo-logo.svg");
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  display: block;
-  float: left;
-  position: relative;
-  top: 13px;
-}
-
-.miniml-main {
-  padding-top: 60px;
-}
-
 .miniml-map-dot {
   background-color: #fff;
   border: 1px solid rgba(78, 77, 72, 0.15);
@@ -401,6 +295,9 @@ nav ul li {
   height: 16px;
   margin-bottom: 5px;
   margin-right: 5px;
+  transition: border-color 0.5s cubic-bezier(0.19, 1, 0.22, 1), -webkit-filter 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: border-color 0.5s cubic-bezier(0.19, 1, 0.22, 1), filter 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: border-color 0.5s cubic-bezier(0.19, 1, 0.22, 1), filter 0.5s cubic-bezier(0.19, 1, 0.22, 1), -webkit-filter 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   width: 16px;
 }
 
@@ -436,13 +333,26 @@ nav ul li {
   margin-top: 20px;
 }
 
+.miniml-map__labels {
+  width: 100%;
+  width: 100%;
+}
+
+.miniml-map__labels::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 .miniml-map__label {
   display: table;
   table-layout: fixed;
   width: auto;
-  color: #b8b8b6;
-  cursor: pointer;
+  color: #4e4d48;
+  cursor: default;
+  float: left;
   font-size: 12px;
+  margin-right: 20px;
   transition: color 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
@@ -457,16 +367,114 @@ nav ul li {
   vertical-align: middle;
 }
 
-.miniml-map__label:hover {
-  color: #4e4d48;
-}
-
-.miniml-map__label--category + .miniml-map__dots .miniml-map-dot--category {
-  border: 2px solid #4e4d48;
-}
-
 .miniml-map__dots {
   margin-top: 20px;
+}
+
+.miniml-a-pollo-release {
+  width: 100%;
+  background-color: #4e4d48;
+  padding: 60px 20px;
+}
+
+.miniml-a-pollo-release::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.miniml-a-pollo-release__logo {
+  width: 72px;
+  height: 72px;
+  background-image: url("/img/a-pollo-logo.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  display: block;
+  float: left;
+}
+
+.miniml-a-pollo-release__info {
+  display: block;
+  float: left;
+  padding: 10px 20px;
+}
+
+.miniml-a-pollo-release__title {
+  color: #fff;
+  display: block;
+  font-weight: 600;
+}
+
+.miniml-a-pollo-release__desc {
+  color: #a4a296;
+  display: block;
+}
+
+.miniml-a-pollo-release__details {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.miniml-a-pollo-release__details-item {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.miniml-a-pollo-release__details-item + .miniml-a-pollo-release__details-item {
+  margin-left: 20px;
+}
+
+.miniml-a-pollo-release__details-icon {
+  color: #fff;
+  font-size: 14px;
+  line-height: 14px;
+  margin-right: 3px;
+}
+
+.miniml-a-pollo-release__text {
+  border-radius: 3px;
+  color: #a4a296;
+  font-size: 12px;
+  line-height: 14px;
+  padding: 1px 2px;
+  text-decoration: none;
+  transition: color 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.miniml-a-pollo-release__text:hover {
+  color: #fff;
+}
+
+.miniml-a-pollo-release__text--marked {
+  background-color: #696863;
+}
+
+.miniml-body {
+  background-color: #fff;
+  color: #4e4d48;
+  font-family: "karla", "helvetica neue", helvetica, arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.25;
+  margin: 0;
+  padding: 0;
+}
+
+.miniml-logo {
+  width: 34px;
+  height: 34px;
+  background-image: url("/img/a-pollo-logo--gold.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  display: block;
+  float: left;
+  position: relative;
+  top: 13px;
+}
+
+.miniml-main {
+  padding-top: 60px;
 }
 
 .miniml-markdown > p a {
@@ -490,6 +498,10 @@ nav ul li {
 
 .miniml-markdown--inline > p a {
   display: inline;
+}
+
+.miniml-tip {
+  display: none;
 }
 
 .miniml--padding-top {

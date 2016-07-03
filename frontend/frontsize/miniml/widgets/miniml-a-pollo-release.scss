@@ -6,7 +6,7 @@
 
   @include element('logo') {
     $icon-size: 72px;
-    @include icon('a-pollo-logo--gold.svg', $icon-size);
+    @include icon('a-pollo-logo.svg', $icon-size);
     display: block;
     float: left;
   }

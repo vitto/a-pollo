@@ -5,18 +5,14 @@
 
 <div class="miniml-map">
 
-  <div class="miniml-map__label miniml-map__label--category">
-    <div>
-      <div>
-        <span class="miniml-map-dot miniml-map-dot--no-margin miniml-map-dot--category"></span>
-      </div>
-      <div>
-          Categoria
-      </div>
-    </div>
-  </div>
+  <%- partial('_partial/index/map__labels') %>
 
   <div class="miniml-map__dots">
+    <%- partial('_partial/index/map__dots', {
+      elements: site.tags,
+      name: 'category',
+      preview: 'tip'
+    }) %>
     <span class="miniml-map-dot miniml-map-dot--category"></span>
     <span class="miniml-map-dot miniml-map-dot--snippet"></span>
     <span class="miniml-map-dot miniml-map-dot--example"></span>
