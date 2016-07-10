@@ -1,3 +1,33 @@
 .miniml-tip {
-  display: none;
+  $width: 96px;
+  $height: s(2);
+  $arrow-position: 14px;
+  background-color: $color-background-dark;
+  border-radius: $radius;
+  color: $color-text-lightest;
+  height: $height;
+  left: 0;
+  line-height: $height;
+  min-width: $width;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  top: s(1.25, s(-2.25));
+  transform: scale(0.5);
+  transform-origin: bottom left;
+  transition:
+  visibility $ease-hover,
+  transform $ease-hover 0.5s,
+  opacity $ease-hover,
+  left $ease-hover 0.5s,
+  top $ease-hover;
+
+  visibility: hidden;
+
+  @include arrow-after((
+      'color': $color-background-dark,
+      'offset': $arrow-position,
+      'position': bottom,
+      'size': 6px
+    ));
 }

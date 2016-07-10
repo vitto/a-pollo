@@ -10,10 +10,27 @@
   height: $size;
   margin-bottom: s(0.25);
   margin-right: s(0.25);
+  position: relative;
   transition:
   border-color $ease-hover,
   filter $ease-hover;
   width: $size;
+
+  &:hover {
+    .miniml-tip {
+      $delay: 0.5s;
+      left: -50%;
+      opacity: 1;
+      top: s(1.25, s(-2));
+      transform: scale(1);
+      transition:
+      visibility $ease-hover-fast $delay,
+      opacity $ease-hover-fast $delay,
+      transform $ease-hover-fast $delay,
+      left $ease-hover-fast $delay;
+      visibility: visible;
+    }
+  }
 
   @include modifier('latest') {
     border: 2px solid $color-border-dark;

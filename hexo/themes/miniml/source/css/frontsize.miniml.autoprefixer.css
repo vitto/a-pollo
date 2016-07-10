@@ -295,10 +295,24 @@ nav ul li {
   height: 16px;
   margin-bottom: 5px;
   margin-right: 5px;
+  position: relative;
   transition: border-color 0.5s cubic-bezier(0.19, 1, 0.22, 1), -webkit-filter 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   transition: border-color 0.5s cubic-bezier(0.19, 1, 0.22, 1), filter 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   transition: border-color 0.5s cubic-bezier(0.19, 1, 0.22, 1), filter 0.5s cubic-bezier(0.19, 1, 0.22, 1), -webkit-filter 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   width: 16px;
+}
+
+.miniml-map-dot:hover .miniml-tip {
+  left: -50%;
+  opacity: 1;
+  top: -50px;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  transition: visibility 0.325s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 0.325s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, left 0.325s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, -webkit-transform 0.325s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transition: visibility 0.325s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 0.325s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, transform 0.325s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, left 0.325s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transition: visibility 0.325s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 0.325s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, transform 0.325s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, left 0.325s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, -webkit-transform 0.325s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  visibility: visible;
 }
 
 .miniml-map-dot--latest {
@@ -501,7 +515,42 @@ nav ul li {
 }
 
 .miniml-tip {
-  display: none;
+  background-color: #4e4d48;
+  border-radius: 3px;
+  color: #fff;
+  height: 40px;
+  left: 0;
+  line-height: 40px;
+  min-width: 96px;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  top: -56px;
+  -webkit-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: bottom left;
+      -ms-transform-origin: bottom left;
+          transform-origin: bottom left;
+  transition: visibility 0.5s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1), left 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, top 0.5s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transition: visibility 0.5s cubic-bezier(0.19, 1, 0.22, 1), transform 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1), left 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, top 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: visibility 0.5s cubic-bezier(0.19, 1, 0.22, 1), transform 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1), left 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, top 0.5s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  visibility: hidden;
+}
+
+.miniml-tip::after {
+  border: solid transparent;
+  border-color: transparent;
+  border-width: 6px;
+  content: ' ';
+  height: 0;
+  left: 14px;
+  margin-left: -6px;
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  border-top-color: #4e4d48;
+  top: 100%;
 }
 
 .miniml--padding-top {

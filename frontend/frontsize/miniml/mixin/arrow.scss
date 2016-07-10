@@ -1,0 +1,28 @@
+@mixin arrow-after($map: ('color': black, 'offset': 50%, 'position': bottom, 'size': 6px)) {
+  &::after {
+    border: solid transparent;
+    border-color: transparent;
+    border-width: map-get($map, size);
+    content: ' ';
+    height: 0;
+    left: map-get($map, offset);
+    margin-left: -(map-get($map, size));
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+
+    @if (map-get($map, position) == 'bottom') {
+      border-top-color: map-get($map, color);
+      top: 100%;
+    } @else if (map-get($map, position) == 'top') {
+      border-bottom-color: map-get($map, color);
+      bottom: 100%;
+    } @else if (map-get($map, position) == 'left') {
+      border-right-color: map-get($map, color);
+      right: 100%;
+    } @else if (map-get($map, position) == 'right') {
+      border-left-color: map-get($map, color);
+      left: 100%;
+    }
+  }
+}

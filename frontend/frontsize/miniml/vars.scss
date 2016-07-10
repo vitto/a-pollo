@@ -7,8 +7,8 @@ $color-dark: #4e4d48;
 
 $color-background-page: $color-light;
 $color-background-link: mix($color-gold, $color-light, 20%);
-$color-background-dark: $color-dark;
 $color-background-shaded: mix($color-dark, $color-light, 85%);
+$color-background-dark: $color-dark;
 
 $color-text-lightest: #fff;
 $color-text: $font-color;
@@ -38,4 +38,5 @@ $font-size-small: 12px;
 $font-weight-normal: 400;
 $font-weight-bold: 600;
 $radius: 3px;
+$ease-hover-fast: 0.325s ease('out-expo');
 $ease-hover: 0.5s ease('out-expo');

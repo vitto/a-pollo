@@ -15,7 +15,7 @@ css:
       compile: frontend/frontsize/miniml/compile.scss
       images: frontend/frontsize/miniml/img/**/*.*
       csslint: true
-      stylestats: true
+      stylestats: false
       autoprefixer: true
       path: hexo/themes/miniml/source/css/
   vendors:
@@ -46,8 +46,8 @@ config:
     locale: it
   twig:
     cache: false
-  verbose: 3
-  verify: true
+  verbose: 2
+  verify: false
 
 js:
   file: dustman.min.js
@@ -133,7 +133,8 @@ vendors:
 
 paths:
   server: test/results/
-  css: hexo/themes/miniml/source/css/
+  css: public/css/
+  #css: hexo/themes/miniml/source/css/
   images: hexo/themes/miniml/source/img/
   fonts: hexo/themes/miniml/source/fonts/
   js: hexo/themes/miniml/source/js/
