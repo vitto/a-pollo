@@ -13,10 +13,15 @@
       name: 'category',
       preview: 'tip'
     }) %>
-    <span class="miniml-map-dot miniml-map-dot--category"></span>
+    <%- partial('_partial/index/map__dots', {
+      elements: site.categories,
+      name: 'snippet',
+      preview: 'tip'
+    }) %>
+    <!--span class="miniml-map-dot miniml-map-dot--category"></span>
     <span class="miniml-map-dot miniml-map-dot--snippet"></span>
     <span class="miniml-map-dot miniml-map-dot--example"></span>
     <span class="miniml-map-dot miniml-map-dot--page miniml-map-dot--latest"></span>
-    <span class="miniml-map-dot miniml-map-dot--doc"></span>
+    <span class="miniml-map-dot miniml-map-dot--doc"></span-->
   </div>
 </div>

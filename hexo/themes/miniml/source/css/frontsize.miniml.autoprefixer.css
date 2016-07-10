@@ -523,6 +523,9 @@ nav ul li {
   line-height: 40px;
   min-width: 96px;
   opacity: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  pointer-events: none;
   position: absolute;
   text-align: center;
   top: -56px;

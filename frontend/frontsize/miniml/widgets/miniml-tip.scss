@@ -10,6 +10,9 @@
   line-height: $height;
   min-width: $width;
   opacity: 0;
+  padding-left: s(1);
+  padding-right: s(1);
+  pointer-events: none;
   position: absolute;
   text-align: center;
   top: s(1.25, s(-2.25));

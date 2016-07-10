@@ -133,8 +133,11 @@ vendors:
 
 paths:
   server: test/results/
-  css: public/css/
-  #css: hexo/themes/miniml/source/css/
+  css: hexo/themes/miniml/source/css/
   images: hexo/themes/miniml/source/img/
   fonts: hexo/themes/miniml/source/fonts/
   js: hexo/themes/miniml/source/js/
+
+shell:
+  after:
+    - cp hexo/themes/miniml/source/css public/css &
