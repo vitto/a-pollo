@@ -8,16 +8,48 @@
   <%- partial('_partial/index/map__labels') %>
 
   <div class="miniml-map__dots">
-    <%- partial('_partial/index/map__dots', {
+    <%- partial('_partial/index/map__dots--category', {
       elements: site.tags,
-      name: 'category',
       preview: 'tip'
     }) %>
-    <%- partial('_partial/index/map__dots', {
-      elements: site.categories,
-      name: 'snippet',
+
+    <%- partial('_partial/index/map__dots--snippet', {
+      elements: site.posts,
       preview: 'tip'
     }) %>
+
+    <% /* console.log(site.posts.data[0].annotations); */ %>
+
+    <%- partial('_partial/index/map__dots--example', {
+      elements: site.posts,
+      preview: 'tip'
+    }) %>
+
+    <%- partial('_partial/index/map__dots--page', {
+      elements: site.pages,
+      preview: 'tip'
+    }) %>
+
+    <%- partial('_partial/index/map__dots--doc', {
+      elements: site.posts,
+      preview: 'tip'
+    }) %>
+
+    <!--
+    <%- partial('_partial/index/map__dots--snippet', {
+      elements: site.pages,
+      selector: 'page',
+      filter: false,
+      preview: 'tip'
+    }) %>
+    <%- partial('_partial/index/map__dots--snippet', {
+      elements: site.posts,
+      selector: 'doc',
+      filter: 'doc',
+      preview: 'tip'
+    }) %>
+
+  -->
     <!--span class="miniml-map-dot miniml-map-dot--category"></span>
     <span class="miniml-map-dot miniml-map-dot--snippet"></span>
     <span class="miniml-map-dot miniml-map-dot--example"></span>

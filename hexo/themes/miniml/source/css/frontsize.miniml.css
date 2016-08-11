@@ -301,8 +301,12 @@ nav ul li {
   margin-bottom: 5px;
   margin-right: 5px;
   position: relative;
-  transition: border-color 0.5s cubic-bezier(0.19, 1, 0.22, 1), filter 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: border 0.5s cubic-bezier(0.19, 1, 0.22, 1), filter 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   width: 16px;
+}
+
+.miniml-map-dot:hover {
+  border: 2px solid #4e4d48;
 }
 
 .miniml-map-dot:hover .miniml-tip {
@@ -322,8 +326,12 @@ nav ul li {
   margin-bottom: 0;
 }
 
-.miniml-map-dot--category {
+.miniml-map-dot--category-snippet {
   background-color: #90de72;
+}
+
+.miniml-map-dot--category-doc {
+  background-color: #edc262;
 }
 
 .miniml-map-dot--snippet {
@@ -382,6 +390,22 @@ nav ul li {
 
 .miniml-map__dots {
   margin-top: 20px;
+}
+
+.miniml-map__group {
+  overflow: auto;
+}
+
+.miniml-map__group .miniml-tip {
+  left: -8px !important;
+}
+
+.miniml-map__group:hover .miniml-map-dot {
+  border: 5px solid rgba(78, 77, 72, 0.3);
+}
+
+.miniml-map__group:hover .miniml-map-dot:hover {
+  border: 2px solid #4e4d48;
 }
 
 .miniml-a-pollo-release {
@@ -532,6 +556,11 @@ nav ul li {
   transform-origin: bottom left;
   transition: visibility 0.5s cubic-bezier(0.19, 1, 0.22, 1), transform 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1), left 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, top 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   visibility: hidden;
+  white-space: nowrap;
+}
+
+.miniml-tip__type {
+  color: #a7a6a4;
 }
 
 .miniml-tip::after {

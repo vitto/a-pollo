@@ -1,0 +1,9 @@
+<% elements.each(function(element, i){ %>
+  <% if(element.layout === 'page') { %>
+    <a href="<%= element.permalink %>" class="miniml-map-dot miniml-map-dot--page">
+      <span class="miniml-tip">
+        <%= element.title %>
+      </span>
+    </a>
+  <% } %>
+<% }) %>

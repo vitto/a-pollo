@@ -2,7 +2,7 @@
 
 /*
   D U S T M A N
-  1.2.18
+  1.5.26
 
   A Gulp 4 automation boilerplate
   by https://github.com/vitto
@@ -13,6 +13,8 @@ var gulp = require('gulp');
 
 var message = (function(){
   var colour = require('colour');
+  // var sleep = require('sleep').sleep;
+
   colour.setTheme({
     error: 'red bold',
     event: 'magenta',
@@ -58,9 +60,14 @@ var message = (function(){
     return verbose >= verbosity;
   };
 
-  var log = function(level, message) {
+  var log = function(level, message, delay) {
     if (isVerboseEnough(level)) {
       console.log(message);
+      if (typeof delay !== 'undefined') {
+        var waitTill = new Date(new Date().getTime() + delay * 1000);
+        while(waitTill > new Date()) { }
+        // sleep(delay);
+      }
     }
   };
 
@@ -87,9 +94,12 @@ var message = (function(){
       console.log(colour.intro('   D U S T M A N   '));
       console.log('');
     },
-    error: function(message) {
+    error: function(message, doNotExit) {
+      var exit = typeof doNotExit !== 'undefined' ? doNotExit : true;
       log(0, colour.error('Error: ') + message.trim());
-      process.exit();
+      if(exit) {
+        process.exit();
+      }
     },
     event: function(eventType, file) {
       event(eventType, file);
@@ -98,31 +108,31 @@ var message = (function(){
       log(3, '');
       event('wait');
     },
-    notice: function(message) {
-      log(2, colour.notice('Notice: ') + message.trim());
+    notice: function(message, delay) {
+      log(2, colour.notice('Notice: ') + message.trim(), delay);
     },
     setVerbosity: function(verbosity) {
       verbose = verbosity;
     },
-    speak: function(message) {
-      log(2, colour.speak(message));
+    speak: function(message, delay) {
+      log(2, colour.speak(message), delay);
     },
-    success: function(message) {
-      log(1, colour.success(message.trim()));
+    success: function(message, delay) {
+      log(1, colour.success(message.trim()), delay);
     },
-    task: function(message) {
+    task: function(message, delay) {
       log(3, '');
-      log(2, colour.task(message));
+      log(2, colour.task(message), delay);
     },
-    verbose: function(title, message) {
+    verbose: function(title, message, delay) {
       if (typeof message !== 'undefined') {
-        log(3, colour.verbose(title.trim() + ': ') + message.trim());
+        log(3, colour.verbose(title.trim() + ': ') + message.trim(), delay);
       } else {
-        log(3, colour.verbose(title.trim()));
+        log(3, colour.verbose(title.trim()), delay);
       }
     },
-    warning: function(message){
-      log(2, colour.warning('Warning: ') + message.trim());
+    warning: function(message, delay){
+      log(2, colour.warning('Warning: ') + message.trim(), delay);
     },
   };
 })();
@@ -136,6 +146,7 @@ var config = (function(){
   var path = require('path');
 
   var configFile = 'dustman.yml';
+  var nodeMinVersion = false;
 
   var data = {
     config: {
@@ -154,6 +165,7 @@ var config = (function(){
       twig: {
         cache: false
       },
+      polling: false,
       verbose: 3,
       verify: false
     },
@@ -164,6 +176,9 @@ var config = (function(){
     js: {
       file: 'dustman.min.js',
       watch: './**/*.js'
+    },
+    html: {
+      engine: 'html'
     },
     paths: {
       css: 'dustman/css/',
@@ -184,7 +199,7 @@ var config = (function(){
       fs.accessSync(configFile, fs.F_OK);
       return true;
     } catch (e) {
-      message.error('config file configFile NOT found');
+      message.error('config file ' + configFile + ' NOT found');
     }
   };
 
@@ -224,6 +239,28 @@ var config = (function(){
     message.setVerbosity(data.config.verbose);
   };
 
+
+  var warn = function(systemVersion, requiredVersion) {
+    message.verbose('Node system version', systemVersion);
+    message.verbose('Node required version', requiredVersion);
+    message.warning('The system node version is older then the required minimum version', 2);
+    message.warning('Please update node version to to avoid malfunctions', 3);
+  };
+
+  var checkVersion = function(version) {
+    if (typeof version === 'undefined') {
+      message.error('Minimum node version not specified');
+    }
+    var nodeSystemVersion = process.version.match(/(\d+\.\d+)/)[0].split('.');
+    nodeMinVersion = version.match(/(\d+\.\d+)/)[0].split('.');
+
+    if (parseInt(nodeSystemVersion[0]) < parseInt(nodeMinVersion[0])) {
+      warn(process.version.toString(), version.toString());
+    } else if (parseInt(nodeSystemVersion[0]) === parseInt(nodeMinVersion[0]) && parseInt(nodeSystemVersion[1]) < parseInt(nodeMinVersion[1])) {
+      warn(process.version.toString(), version.toString());
+    }
+  };
+
   var ifProp = function(propName) {
     return typeof data[propName] !== 'undefined' ? true : false;
   };
@@ -252,7 +289,8 @@ var config = (function(){
     if: function(propName){
       return ifProp(propName);
     },
-    load: function(){
+    load: function(version){
+      checkVersion(version);
       checkArguments();
     },
     pathClean : function(configPath) {
@@ -277,8 +315,10 @@ task.core = (function(){
         fs.accessSync(path, fs.F_OK);
         return true;
       } catch (e) {
-        message.error(path + ' NOT found');
-        console.log(e);
+        message.error(path + ' NOT found', false);
+        if (path.toLowerCase().indexOf('vendor') > -1) {
+          message.warning('Have you installed vendors after npm install?');
+        }
         process.exit();
       }
     },
@@ -329,13 +369,26 @@ var tasks = (function(){
 
     watchFolders = watchFolders.concat(getWatchFolder('css'));
     watchFolders = watchFolders.concat(getWatchFolder('js'));
-    watchFolders = watchFolders.concat(getWatchFolder('twig'));
+    watchFolders = watchFolders.concat(getWatchFolder('html'));
   };
 
   var addToPipeline = function(subTaskPipeline) {
     pipeline.before = pipeline.before.concat(subTaskPipeline.before);
     pipeline.middle = pipeline.middle.concat(subTaskPipeline.middle);
     pipeline.after = pipeline.after.concat(subTaskPipeline.after.reverse());
+  };
+
+  var pollingOptions = function() {
+    if (tasksConfig.polling !== false) {
+      return {
+        usePolling: true,
+        interval: parseInt(tasksConfig.polling)
+      };
+    }
+    return {
+      usePolling: false,
+      interval: 1000
+    };
   };
 
   var http = function(tasks) {
@@ -352,7 +405,7 @@ var tasks = (function(){
 
       message.wait();
 
-      return gulp.watch(watchFolders, gulp.series(tasks, function(done){
+      return gulp.watch(watchFolders, pollingOptions(), gulp.series(tasks, function(done){
           browserSync.reload();
           message.wait();
           done();
@@ -372,7 +425,7 @@ var tasks = (function(){
   var watch = function(tasks) {
     gulp.task('watch', gulp.series(tasks, function() {
       message.wait();
-      return gulp.watch(watchFolders, gulp.series(tasks, function(done){
+      return gulp.watch(watchFolders, pollingOptions(), gulp.series(tasks, function(done){
           message.wait();
           done();
         }))
@@ -468,6 +521,7 @@ task.timer = (function(){
       var timeSpent = (stopBuildDate - startBuildDate)/1000 + ' secs';
       message.success('The dust was cleaned successfully in ' + timeSpent);
       message.success('Build [ ' + buildIndex + ' ] done at ' + moment().format('HH:mm') + ' and ' + moment().format('ss') + ' seconds.');
+      console.log('');
       buildIndex += 1;
       done();
     });
@@ -676,7 +730,7 @@ task.html = (function(){
   var name = 'html';
   var paths = {};
   var twigConfig = {};
-  var twigPages;
+  var templateConfig;
 
   var pipeline = {
     before:[],
@@ -686,27 +740,32 @@ task.html = (function(){
 
   var init = function() {
     paths = config.get('paths');
-    twigPages = config.if('twig') ? config.get('twig') : {};
+    templateConfig = config.if('html') ? config.get('html') : {};
     twigConfig = config.if('config') ? config.get('config') : {};
     faker.locale = 'en';
   };
 
   var build = function() {
-    if (config.if('twig') && task.core.has(twigPages, 'files')) {
+    if (config.if('html') && task.core.has(templateConfig, 'files')) {
       gulp.task(name, function () {
-        message.task('Twig to HTML');
+        message.task('Build HTML');
         if (!task.core.has(twigConfig, 'twig')) {
           twigConfig.twig = {};
         }
         twigConfig.twig.data = {
           faker: faker
         };
-        for (var i = 0; i < twigPages.files.length; i += 1) {
-          message.verbose('Twig view', twigPages.files[i]);
-          task.core.fileCheck(twigPages.files[i]);
+        for (var i = 0; i < templateConfig.files.length; i += 1) {
+          message.verbose('Template view', templateConfig.files[i]);
+          task.core.fileCheck(templateConfig.files[i]);
         }
-        message.verbose('All Twig files converted in', paths.server);
-        return gulp.src(twigPages.files)
+        message.verbose('All Template files converted in', paths.server);
+        if (templateConfig.engine === 'html') {
+          return gulp.src(templateConfig.files)
+            .pipe(prettify(twigConfig.prettify || {}))
+            .pipe(gulp.dest(paths.server));
+        }
+        return gulp.src(templateConfig.files)
           .pipe(twig(twigConfig.twig))
           .pipe(prettify(twigConfig.prettify || {}))
           .pipe(gulp.dest(paths.server));
@@ -721,8 +780,8 @@ task.html = (function(){
   var getFilesToVerifyHTML = function() {
     var htmlConfig, files;
     files = [];
-    if (config.if('twig')) {
-      htmlConfig = config.get('twig');
+    if (config.if('html')) {
+      htmlConfig = config.get('html');
       for (var i = 0; i < htmlConfig.files.length; i += 1) {
         files.push(paths.server + path.parse(htmlConfig.files[i]).name  + '.html');
       }
@@ -786,6 +845,9 @@ task.css = (function(){
     vendorsConfig = merge.recursive(true, { path: paths.css, merge: true }, vendorsConfig);
     if (!task.core.has(vendorsConfig, 'path')) {
       vendorsConfig.path = paths.css;
+    }
+    if (!task.core.has(cssConfig, 'path')) {
+      cssConfig.path = paths.css;
     }
   };
 
@@ -1032,11 +1094,11 @@ task.css = (function(){
         themes = themes.concat(getThemesToMerge());
 
         if (themes.length > 0) {
-          message.verbose('All CSS files merged to', paths.css + cssConfig.file);
+          message.verbose('All CSS files merged to', cssConfig.path + cssConfig.file);
           return gulp.src(themes)
             .pipe(uglifyCss())
             .pipe(concat(cssConfig.file))
-            .pipe(gulp.dest(paths.css));
+            .pipe(gulp.dest(cssConfig.path));
         } else {
           message.warning('No vendors or themes will be merged');
           done();
@@ -1134,6 +1196,9 @@ task.js = (function(){
     if (!task.core.has(vendorsConfig, 'path')) {
       vendorsConfig.path = paths.js;
     }
+    if (!task.core.has(jsConfig, 'path')) {
+      jsConfig.path = paths.js;
+    }
   };
 
   var vendors = function() {
@@ -1170,7 +1235,7 @@ task.js = (function(){
         message.task('Merging JavaScript vendors with your JavaScript files');
 
         files.push(vendorsConfig.path + vendorsConfig.file);
-        files.push(paths.js + jsConfig.file.replace('.min.js', '.no-vendors.min.js'));
+        files.push(jsConfig.path + jsConfig.file.replace('.min.js', '.no-vendors.min.js'));
 
         for (var i = 0; i < files.length; i += 1) {
           message.verbose('JavaScript file', files[i]);
@@ -1178,11 +1243,11 @@ task.js = (function(){
         }
 
         if (files.length > 0) {
-          message.verbose('All JavaScript files merged to', paths.js + jsConfig.file);
+          message.verbose('All JavaScript files merged to', jsConfig.path + jsConfig.file);
           return gulp.src(files)
             .pipe(uglify())
             .pipe(concat(jsConfig.file))
-            .pipe(gulp.dest(paths.js));
+            .pipe(gulp.dest(jsConfig.path));
         } else {
           message.warning('No vendors or files will be merged');
           done();
@@ -1253,7 +1318,7 @@ task.js = (function(){
 
 
 message.intro();
-config.load();
-message.verbose('Version', '1.2.18');
+config.load('>=5.4.1');
+message.verbose('Version', '1.5.26');
 message.verbose('Config loaded', config.file());
 tasks.init();

@@ -1,0 +1,25 @@
+<% elements.each(function(element, j){ %>
+  <% var prev = ''; %>
+  <% for (var i = 0; i < element.annotations.length; i += 1) { %>
+    <% var annotation = element.annotations[i]; %>
+    <% if (!annotation.isSnippet) { %>
+
+      <% if (prev !== element.title) { %>
+        <% if (j > 0) { %>
+          </span>
+        <% } %>
+        <% var prev = element.title; %>
+        <span class="miniml-map__group">
+      <% } %>
+
+      <a href="<%= element.permalink %>" class="miniml-map-dot miniml-map-dot--doc">
+        <span class="miniml-tip">
+          <%= annotation.name %>
+          <% if (element.title !== annotation.name) { %>
+            <span class="miniml-tip__type">(<%= element.title %>)</span>
+          <% } %>
+        </span>
+      </a>
+    <% } %>
+  <% } %>
+<% }) %>

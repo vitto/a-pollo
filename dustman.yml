@@ -140,4 +140,4 @@ paths:
 
 shell:
   after:
-    - cp hexo/themes/miniml/source/css public/css &
+    - cp hexo/themes/miniml/source/css/dustman.frontsize.min.css public/css/dustman.frontsize.min.css &

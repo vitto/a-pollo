@@ -12,11 +12,13 @@
   margin-right: s(0.25);
   position: relative;
   transition:
-  border-color $ease-hover,
+  border $ease-hover,
   filter $ease-hover;
   width: $size;
 
   &:hover {
+    border: 2px solid $color-dark;
+
     .miniml-tip {
       $delay: 0.5s;
       left: -50%;
@@ -40,8 +42,12 @@
     margin-bottom: 0;
   }
 
-  @include modifier('category') {
-    background-color: $color-map-category;
+  @include modifier('category-snippet') {
+    background-color: $color-map-category-snippet;
+  }
+
+  @include modifier('category-doc') {
+    background-color: $color-map-category-doc;
   }
 
   @include modifier('snippet') {

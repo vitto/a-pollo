@@ -169,20 +169,21 @@ var runBuild = function() {
     prepareFiles();
     copyThemeAssets();
 
-    console.log('Hexo: Initializing...'.grey);
-
-    if (checkPath(path.fromModule('/hexo/_config.yml'))) {
-        console.log('Hexo: Loading configuration'.grey);
-    }
+    // console.log('Hexo: Initializing...'.grey);
+    //
+    // if (checkPath(path.fromModule('/hexo/_config.yml'))) {
+    //     console.log('Hexo: Loading configuration'.grey);
+    // }
 
     hexo = new Hexo(process.cwd(), {
         debug: false,
+        silent: true,
         config: path.fromModule('/hexo/_config.yml')
     });
 
     hexo.init().then(function(){
         var postData;
-        console.log('Hexo: Crunching a-pollo doc annotations to posts...'.grey);
+        // console.log('Hexo: Crunching a-pollo doc annotations to posts...'.grey);
         for (var i = 0; i < files.length; i += 1) {
             if (files[i][0].isDoc) {
                 console.log('Creating documetation for ' + (' ' + files[i][0].file + ' ').yellow.bgBlack);
@@ -193,7 +194,7 @@ var runBuild = function() {
             postData.content = snippet.toMarkdown(files[i], conf);
             hexo.post.create(postData, true);
         }
-        console.log('Hexo: Waiting to finish...'.grey);
+        // console.log('Hexo: Waiting to finish...'.grey);
         postCreated(files.length);
     });
 };

@@ -22,4 +22,23 @@
   @include element('dots') {
     margin-top: s(1);
   }
+
+  @include element('group') {
+    overflow: auto;
+
+    .miniml-tip {
+      left: -8px !important;
+    }
+
+    &:hover {
+      .miniml-map-dot {
+        $border-color: rgba($color-border-dark, 0.30);
+        border: 5px solid $border-color;
+
+        &:hover {
+          border: 2px solid $color-dark;
+        }
+      }
+    }
+  }
 }
