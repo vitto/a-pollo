@@ -1,0 +1,14 @@
+<% var prev = ''; %>
+<% elements.each(function(element, i) { %>
+  <% if (element.posts.data[0].layout === 'snippet') { %>
+    <% if (prev !== element.name) { %>
+    <a href="<%= element.permalink %>" class="miniml-map-dot miniml-map-dot--category-<%= element.posts.data[0].layout %>">
+      <span class="miniml-tip">
+        <%= element.name %>
+        <span class="miniml-tip__type">(<%= element.posts.data[0].layout %>)</span>
+      </span>
+    </a>
+    <% } %>
+  <% } %>
+  <% prev = element.name %>
+<% }) %>

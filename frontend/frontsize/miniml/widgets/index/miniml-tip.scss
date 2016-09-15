@@ -1,5 +1,4 @@
 .miniml-tip {
-  $width: 96px;
   $height: s(2);
   $arrow-position: 14px;
 
@@ -7,9 +6,9 @@
   border-radius: $radius;
   color: $color-text-lightest;
   height: $height;
-  left: 0;
+  left: s(-0.5, $tip-width) + s(0.5, $map-dot-size) - 2px;
   line-height: $height;
-  min-width: $width;
+  min-width: $tip-width;
   opacity: 0;
 
   padding-left: s(1);
@@ -18,15 +17,14 @@
   position: absolute;
 
   text-align: center;
-  top: s(1.25, s(-2.25));
-  transform: scale(0.5);
-  transform-origin: bottom left;
-  transition:
-  visibility $ease-hover,
-  transform $ease-hover 0.5s,
-  opacity $ease-hover,
-  left $ease-hover 0.5s,
-  top $ease-hover;
+  top: s(1.25, s(-2));
+  // transform: scale(0.5);
+  // transform-origin: bottom left;
+  // transition:
+  // visibility $ease-hover,
+  // transform $ease-hover $tip-duration,
+  // opacity $ease-hover,
+  // top $ease-hover;
 
   visibility: hidden;
   white-space: nowrap;
@@ -37,8 +35,8 @@
 
   @include arrow-after((
       'color': $color-background-dark,
-      'offset': $arrow-position,
+      'offset': 50%,
       'position': bottom,
-      'size': 6px
+      'size': $tip-arrow-size
     ));
 }

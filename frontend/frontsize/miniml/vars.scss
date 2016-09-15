@@ -19,15 +19,22 @@ $color-border: mix($color-text, $color-background-page, 2%);
 $color-hr: #e5e5e5;
 $color-border-dark: $color-text;
 
-$color-map-category-snippet: #90de72;
-$color-map-category-doc: #edc262;
-$color-map-snippet: #dfed76;
-$color-map-example: #9ad0ea;
-$color-map-page: #ce9aea;
-$color-map-doc: #ec9d83;
+
+$color-map-category-snippet: #1aabd8;
+$color-map-snippet:          #9ddaec;
+$color-map-example:          #bdd549;
+$color-map-page:             #fae83e;
+$color-map-category-doc:     #fcb71e;
+$color-map-doc:              #f58023;
+
+$tip-arrow-position: 14px;
+$tip-arrow-size: 6px;
+$tip-duration: 0.5s;
+$tip-width: 200px;
+
+$map-dot-size: 16px;
 
 $color-link: $color-aqua;
-
 
 $height-header: 60px;
 
@@ -41,3 +48,4 @@ $font-weight-bold: 600;
 $radius: 3px;
 $ease-hover-fast: 0.325s ease('out-expo');
 $ease-hover: 0.5s ease('out-expo');
+$ease-hover-slow: 0.75s ease('out-expo');

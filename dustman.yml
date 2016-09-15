@@ -23,15 +23,15 @@ css:
     files:
       - frontend/vendors/normalize-css/normalize.css
       - frontend/vendors/github-markdown-css/github-markdown.css
-      - frontend/vendors/entypo-plus/css/entypo-plus.css
-      - frontend/vendors/font-awesome/css/font-awesome.css
-      - frontend/vendors/material-design-icons/iconfont/material-icons.css
-      - frontend/vendors/metro/build/css/metro-icons.css
-      - frontend/vendors/open-iconic/font/css/open-iconic.css
-      - frontend/vendors/sass-bootstrap-glyphicons/css/bootstrap-glyphicons.css
-      - frontend/vendors/siconfont/css/siconfont.css
-      - frontend/vendors/stroke-gap-icons-webfont/style.css
-      - frontend/vendors/typicons.font/src/font/typicons.css
+      - frontend/vendors/entypo-plus/css/entypo-plus.css # http://www.entypo.com/
+      - frontend/vendors/font-awesome/css/font-awesome.css # http://fontawesome.io/cheatsheet/
+      # - frontend/vendors/material-design-icons/iconfont/material-icons.css # https://materialdesignicons.com/
+      # - frontend/vendors/metro/build/css/metro-icons.css # https://metroui.org.ua/font.html
+      - frontend/vendors/open-iconic/font/css/open-iconic-bootstrap.css # https://useiconic.com/open
+      - frontend/vendors/sass-bootstrap-glyphicons/css/bootstrap-glyphicons.css # http://getbootstrap.com/components/
+      # - frontend/vendors/siconfont/css/siconfont.css # http://segundofdez.github.io/siconfont/
+      # - frontend/vendors/stroke-gap-icons-webfont/style.css
+      # - frontend/vendors/typicons.font/src/font/typicons.css # http://www.typicons.com/
 
 config:
   autoprefixer:
@@ -101,33 +101,33 @@ vendors:
     - frontend/vendors/sass-bootstrap-glyphicons/fonts/glyphiconshalflings-regular.svg
     - frontend/vendors/sass-bootstrap-glyphicons/fonts/glyphiconshalflings-regular.ttf
     - frontend/vendors/sass-bootstrap-glyphicons/fonts/glyphiconshalflings-regular.woff
-    - frontend/vendors/siconfont/fonts/siconfont.eot
-    - frontend/vendors/siconfont/fonts/siconfont.svg
-    - frontend/vendors/siconfont/fonts/siconfont.ttf
-    - frontend/vendors/siconfont/fonts/siconfont.woff
-    - frontend/vendors/stroke-gap-icons-webfont/fonts/Stroke-Gap-Icons.eot
-    - frontend/vendors/stroke-gap-icons-webfont/fonts/Stroke-Gap-Icons.svg
-    - frontend/vendors/stroke-gap-icons-webfont/fonts/Stroke-Gap-Icons.ttf
-    - frontend/vendors/stroke-gap-icons-webfont/fonts/Stroke-Gap-Icons.woff
-    - frontend/vendors/typicons.font/src/font/typicons.eot
-    - frontend/vendors/typicons.font/src/font/typicons.svg
-    - frontend/vendors/typicons.font/src/font/typicons.ttf
-    - frontend/vendors/typicons.font/src/font/typicons.woff
+    # - frontend/vendors/siconfont/fonts/siconfont.eot
+    # - frontend/vendors/siconfont/fonts/siconfont.svg
+    # - frontend/vendors/siconfont/fonts/siconfont.ttf
+    # - frontend/vendors/siconfont/fonts/siconfont.woff
+    # - frontend/vendors/stroke-gap-icons-webfont/fonts/Stroke-Gap-Icons.eot
+    # - frontend/vendors/stroke-gap-icons-webfont/fonts/Stroke-Gap-Icons.svg
+    # - frontend/vendors/stroke-gap-icons-webfont/fonts/Stroke-Gap-Icons.ttf
+    # - frontend/vendors/stroke-gap-icons-webfont/fonts/Stroke-Gap-Icons.woff
+    # - frontend/vendors/typicons.font/src/font/typicons.eot
+    # - frontend/vendors/typicons.font/src/font/typicons.svg
+    # - frontend/vendors/typicons.font/src/font/typicons.ttf
+    # - frontend/vendors/typicons.font/src/font/typicons.woff
     - frontend/vendors/open-iconic/font/fonts/open-iconic.eot
     - frontend/vendors/open-iconic/font/fonts/open-iconic.otf
     - frontend/vendors/open-iconic/font/fonts/open-iconic.svg
     - frontend/vendors/open-iconic/font/fonts/open-iconic.ttf
     - frontend/vendors/open-iconic/font/fonts/open-iconic.woff
-    - frontend/vendors/metro/build/fonts/metro.eot
-    - frontend/vendors/metro/build/fonts/metro.svg
-    - frontend/vendors/metro/build/fonts/metro.ttf
-    - frontend/vendors/metro/build/fonts/metro.woff
-    - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.eot
-    - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.ijmap
-    - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.svg
-    - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.ttf
-    - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.woff
-    - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.woff2
+    # - frontend/vendors/metro/build/fonts/metro.eot
+    # - frontend/vendors/metro/build/fonts/metro.svg
+    # - frontend/vendors/metro/build/fonts/metro.ttf
+    # - frontend/vendors/metro/build/fonts/metro.woff
+    # - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.eot
+    # - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.ijmap
+    # - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.svg
+    # - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.ttf
+    # - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.woff
+    # - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.woff2
   images:
     - frontend/vendors/font-awesome/fonts/fontawesome-webfont.svg
 

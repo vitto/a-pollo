@@ -6,36 +6,12 @@
   <div class="miniml__row">
     <div class="miniml__col-half">
       <%- partial('_partial/index/team') %>
+      <%- partial('_partial/index/time') %>
     </div>
     <div class="miniml__col-half">
       <%- partial('_partial/index/map') %>
     </div>
   </div>
-
-  <span>
-    <i class="fa fa-user-secret"></i>&nbsp; Project for
-    <span class="apollo-post__markown-inline"><%- markdown(config.client) %></span><br>
-    <i class="fa fa-pencil"></i>&nbsp; Developed by
-    <% if (typeof config.developers === 'string') { %>
-      <span class="apollo-post__markown-inline"><%- markdown(config.developers) %></span>
-    <% } else { %>
-      <% for(var i = 0; i < config.developers.length; i += 1) {%>
-        <% if (i > 0) { %>,<% } %>
-        <span class="apollo-post__markown-inline"><%- markdown(config.developers[i]) %></span>
-      <% } %>
-    <% } %>
-    <br>
-    <i class="fa fa-paint-brush"></i>&nbsp; Designed by
-    <% if (typeof config.designers === 'string') { %>
-      <span class="apollo-post__markown-inline"><%- markdown(config.designers) %></span>
-    <% } else { %>
-      <% for(var i = 0; i < config.designers.length; i += 1) {%>
-        <% if (i > 0) { %>,<% } %>
-        <span class="apollo-post__markown-inline"><%- markdown(config.designers[i]) %></span>
-      <% } %>
-    <% } %>
-  </span>
-</span>
 
 <hr>
 

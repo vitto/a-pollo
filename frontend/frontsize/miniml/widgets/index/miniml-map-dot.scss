@@ -1,45 +1,84 @@
+@mixin miniml-map-dot-tip-animate {
+  // $delay: 0.5s;
+  $delay: 0s;
+  opacity: 1;
+  visibility: visible;
+  // transform: scale(1);
+  // transition:
+  // display $ease-hover-fast $delay,
+  // visibility $ease-hover-fast $delay,
+  // opacity $ease-hover-fast $delay,
+  // transform $ease-hover-fast $delay,
+  // left $ease-hover-fast $delay;
+  // visibility: visible;
+}
+
 .miniml-map-dot {
-  $size: 16px;
   $border-default: rgba($color-border-dark, 0.15);
 
   background-color: $color-background-page;
   border: 1px solid $border-default;
-  border-radius: 100%;
+  border-radius: 100px;
   display: block;
   float: left;
-  height: $size;
+  height: $map-dot-size;
   margin-bottom: s(0.25);
   margin-right: s(0.25);
   position: relative;
-  transition:
-  border $ease-hover,
-  filter $ease-hover;
-  width: $size;
+  transition: border $ease-hover;
+  width: $map-dot-size;
+
+  &::before {
+    content: '';
+    display: block;
+    height: $map-dot-size;
+    left: -4px;
+    position: absolute;
+    top: -1px;
+    transition: left $ease-hover, top $ease-hover;
+    width: 24px;
+  }
 
   &:hover {
     border: 2px solid $color-dark;
 
-    .miniml-tip {
-      $delay: 0.5s;
-      left: -50%;
-      opacity: 1;
-      top: s(1.25, s(-2));
-      transform: scale(1);
-      transition:
-      visibility $ease-hover-fast $delay,
-      opacity $ease-hover-fast $delay,
-      transform $ease-hover-fast $delay,
-      left $ease-hover-fast $delay;
-      visibility: visible;
+    &::before {
+      left: -6px;
+      top: -3px;
+    }
+
+    .miniml-tip,
+    .miniml-snippet-example-preview {
+      @include miniml-map-dot-tip-animate;
     }
   }
 
   @include modifier('latest') {
-    border: 2px solid $color-border-dark;
+    border: 2px solid $color-dark;
+    &::before {
+      top: -2px;
+    }
   }
 
   @include modifier('no-margin') {
     margin-bottom: 0;
+  }
+
+  @include modifier('label') {
+    font-size: 10px;
+    line-height: $map-dot-size - 2px;
+    min-width: $map-dot-size;
+    padding: 0 4px;
+    text-align: center;
+    width: auto;
+
+    &::before {
+      display: none;
+    }
+
+    &:hover {
+      border: 1px solid $border-default;
+    }
   }
 
   @include modifier('category-snippet') {

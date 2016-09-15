@@ -2,7 +2,7 @@
 
 /*
   D U S T M A N
-  1.5.26
+  1.5.40
 
   A Gulp 4 automation boilerplate
   by https://github.com/vitto
@@ -96,7 +96,7 @@ var message = (function(){
     },
     error: function(message, doNotExit) {
       var exit = typeof doNotExit !== 'undefined' ? doNotExit : true;
-      log(0, colour.error('Error: ') + message.trim());
+      log(0, colour.error('Error: ') + message.toString().trim());
       if(exit) {
         process.exit();
       }
@@ -109,7 +109,7 @@ var message = (function(){
       event('wait');
     },
     notice: function(message, delay) {
-      log(2, colour.notice('Notice: ') + message.trim(), delay);
+      log(2, colour.notice('Notice: ') + message.toString().trim(), delay);
     },
     setVerbosity: function(verbosity) {
       verbose = verbosity;
@@ -118,7 +118,7 @@ var message = (function(){
       log(2, colour.speak(message), delay);
     },
     success: function(message, delay) {
-      log(1, colour.success(message.trim()), delay);
+      log(1, colour.success(message.toString().trim()), delay);
     },
     task: function(message, delay) {
       log(3, '');
@@ -126,13 +126,13 @@ var message = (function(){
     },
     verbose: function(title, message, delay) {
       if (typeof message !== 'undefined') {
-        log(3, colour.verbose(title.trim() + ': ') + message.trim(), delay);
+        log(3, colour.verbose(title.toString().trim() + ': ') + message.toString().trim(), delay);
       } else {
-        log(3, colour.verbose(title.trim()), delay);
+        log(3, colour.verbose(title.toString().trim()), delay);
       }
     },
     warning: function(message, delay){
-      log(2, colour.warning('Warning: ') + message.trim(), delay);
+      log(2, colour.warning('Warning: ') + message.toString().trim(), delay);
     },
   };
 })();
@@ -171,14 +171,21 @@ var config = (function(){
     },
     css: {
       file: 'dustman.min.css',
-      watch: './**/*.css'
+      watch: './**/*.css',
+      vendors: {
+        files: false
+      }
     },
     js: {
       file: 'dustman.min.js',
-      watch: './**/*.js'
+      watch: './**/*.js',
+      vendors: {
+        files: false
+      }
     },
     html: {
-      engine: 'html'
+      engine: 'html',
+      files: false
     },
     paths: {
       css: 'dustman/css/',
@@ -218,7 +225,7 @@ var config = (function(){
   var checkArguments = function(){
     var loadedConfig = false;
     for (var i = 0; i < process.argv.length; i += 1) {
-      if (process.argv[i] === '--silent') {
+      if (process.argv[i] === '--silent' || process.argv[i] === '--S') {
         message.warning('You\'ve set --silent or --S flag to che gulp process, this could hide some errors not handled by Dustman');
       }
       if (process.argv[i] === '--config' && process.argv[i + 1] !== undefined) {
@@ -315,8 +322,8 @@ task.core = (function(){
         fs.accessSync(path, fs.F_OK);
         return true;
       } catch (e) {
-        message.error(path + ' NOT found', false);
-        if (path.toLowerCase().indexOf('vendor') > -1) {
+        message.error(path.toString() + ' NOT found', false);
+        if (path.toString().toLowerCase().indexOf('vendor') > -1) {
           message.warning('Have you installed vendors after npm install?');
         }
         process.exit();
@@ -420,6 +427,7 @@ var tasks = (function(){
           message.event('add', path);
         });
     }));
+    gulp.task('h', gulp.parallel('http'));
   };
 
   var watch = function(tasks) {
@@ -439,6 +447,7 @@ var tasks = (function(){
           message.event('add', path);
         });
     }));
+    gulp.task('w', gulp.parallel('watch'));
   };
 
   var verify = function() {
@@ -450,7 +459,8 @@ var tasks = (function(){
     if (tasksConfig.verify) {
       var taskName = 'verify';
       gulp.task(taskName, function(done){
-        var files = task.css.verify();
+        var files = [];
+        files = files.concat(task.css.verify());
         files = files.concat(task.js.verify());
         files = files.concat(task.html.verify());
         message.task('Verifying if all files were successfully created');
@@ -782,8 +792,10 @@ task.html = (function(){
     files = [];
     if (config.if('html')) {
       htmlConfig = config.get('html');
-      for (var i = 0; i < htmlConfig.files.length; i += 1) {
-        files.push(paths.server + path.parse(htmlConfig.files[i]).name  + '.html');
+      if (htmlConfig.files) {
+        for (var i = 0; i < htmlConfig.files.length; i += 1) {
+          files.push(paths.server + path.parse(htmlConfig.files[i]).name  + '.html');
+        }
       }
     }
     return files;
@@ -1023,7 +1035,7 @@ task.css = (function(){
   };
 
   var vendors = function() {
-    if (task.core.has(vendorsConfig, 'files')) {
+    if (vendorsConfig.files !== false) {
       var taskName = task.core.action(name, 'vendors');
       gulp.task(taskName, function (done) {
         if (task.core.fileExists(vendorsConfig.path + vendorsConfig.file) && vendorsBuilt) {
@@ -1088,9 +1100,13 @@ task.css = (function(){
       var taskName = task.core.action(name, 'merge');
       gulp.task(taskName, function(done){
         var themes = [];
-        message.task('Merging CSS vendors with your CSS files');
 
-        themes = themes.concat(getVendorsToMerge());
+        if (vendorsConfig.files) {
+          message.task('Merging CSS vendors with your CSS themes');
+          themes = themes.concat(getVendorsToMerge());
+        } else {
+          message.task('Merging CSS themes');
+        }
         themes = themes.concat(getThemesToMerge());
 
         if (themes.length > 0) {
@@ -1118,7 +1134,7 @@ task.css = (function(){
 
   var getFilesToVerifyCSSVendors = function() {
     var files = [];
-    if (task.core.has(cssConfig, 'vendors')) {
+    if (cssConfig.vendors.files) {
       files.push(cssConfig.vendors.path + cssConfig.vendors.file);
     }
     return files;
@@ -1137,10 +1153,10 @@ task.css = (function(){
         }
       }
     }
-
     files.concat(getFilesToVerifyCSSVendors());
-    files.push(paths.css + cssConfig.file);
-
+    if (cssConfig.themes) {
+      files.push(cssConfig.path + cssConfig.file);
+    }
     return files;
   };
 
@@ -1202,7 +1218,7 @@ task.js = (function(){
   };
 
   var vendors = function() {
-    if (task.core.has(vendorsConfig, 'files')) {
+    if (vendorsConfig.files !== false) {
       var taskName = task.core.action(name, 'vendors');
       gulp.task(taskName, function (done) {
         if (task.core.fileExists(vendorsConfig.path + vendorsConfig.file) && vendorsBuilt) {
@@ -1228,7 +1244,7 @@ task.js = (function(){
   };
 
   var mergeJs = function() {
-    if (vendorsConfig.merge) {
+    if (vendorsConfig.files && vendorsConfig.merge) {
       var taskName = task.core.action(name, 'merge');
       gulp.task(taskName, function(done){
         var files = [];
@@ -1267,17 +1283,19 @@ task.js = (function(){
           task.core.fileCheck(jsConfig.files[i]);
         }
         var file = jsConfig.file;
-        if (vendorsConfig.merge) {
-          file = file.replace('.min.js', '.no-vendors.min.js');
+        if (vendorsConfig.files !== false) {
+          if (vendorsConfig.merge) {
+            file = file.replace('.min.js', '.no-vendors.min.js');
+          }
         }
-        message.verbose('JavaScript files merged to', paths.js + file);
+        message.verbose('JavaScript files merged to', jsConfig.path + file);
 
         return gulp.src(jsConfig.files)
         .pipe(sourcemaps.init())
         .pipe(uglify())
         .pipe(concat(file))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest(paths.js));
+        .pipe(gulp.dest(jsConfig.path));
       });
       return [name];
     }
@@ -1285,8 +1303,8 @@ task.js = (function(){
   };
 
   var getFilesToVerifyJSVendors = function() {
-    if (task.core.has(vendorsConfig, 'vendors')) {
-      return [vendorsConfig.vendors.path + vendorsConfig.vendors.file];
+    if (vendorsConfig.files) {
+      return [vendorsConfig.path + vendorsConfig.file];
     }
     return [];
   };
@@ -1294,7 +1312,9 @@ task.js = (function(){
   var getFilesToVerifyJS = function() {
     var files = [];
     files = getFilesToVerifyJSVendors();
-    files.push(paths.js + jsConfig.file);
+    if (jsConfig.files) {
+      files.push(jsConfig.path + jsConfig.file);
+    }
 
     return files;
   };
@@ -1319,6 +1339,6 @@ task.js = (function(){
 
 message.intro();
 config.load('>=5.4.1');
-message.verbose('Version', '1.5.26');
+message.verbose('Version', '1.5.40');
 message.verbose('Config loaded', config.file());
 tasks.init();

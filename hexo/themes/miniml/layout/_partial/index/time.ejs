@@ -1,0 +1,58 @@
+<h3 class="miniml__title miniml__title--m-top">
+  Time
+</h3>
+<hr class="miniml__hr">
+
+<div class="miniml__row">
+  <div class="miniml__col-half">
+    <div class="miniml__paragraph-title miniml__paragraph-title--m-top-none">
+      <i class="oi oi-clock miniml__icon"></i>
+      Start date
+    </div>
+    <div class="miniml__paragraph miniml-markdown">
+      <%= config.stats.date.begin %>
+    </div>
+  </div>
+  <div class="miniml__col-half">
+    <div class="miniml__paragraph-title miniml__paragraph-title--m-top-none">
+      <i class="oi oi-bar-chart miniml__icon"></i>
+      Effective development <i class="fa fa-question-circle miniml__question" title="Based on snippet dates entries, without duplicates"></i>
+    </div>
+    <div class="miniml__paragraph miniml-markdown">
+      <%= config.stats.snippet.days %> day/s
+    </div>
+  </div>
+</div>
+
+<div class="miniml__row">
+  <div class="miniml__col-half miniml__col-half--p-top-none">
+    <div class="miniml__paragraph-title miniml__paragraph-title--m-top-none">
+      <i class="fa fa-code-fork miniml__icon"></i>
+      Last edit
+    </div>
+    <div class="miniml__paragraph miniml-markdown">
+      <%= config.stats.date.end %>
+    </div>
+  </div>
+  <div class="miniml__col-half miniml__col-half--p-top-none">
+    <div class="miniml__paragraph-title miniml__paragraph-title--m-top-none">
+      <i class="oi oi-dashboard miniml__icon"></i>
+      Lifetime activity
+    </div>
+    <div class="miniml__paragraph miniml-markdown">
+      <%= config.stats.snippet.activity %>%
+    </div>
+  </div>
+</div>
+
+<div class="miniml__row">
+  <div class="miniml__col-half miniml__col-half--p-top-none">
+    <div class="miniml__paragraph-title miniml__paragraph-title--m-top-none">
+      <i class="fa fa-hourglass-end miniml__icon"></i>
+      Lifetime
+    </div>
+    <div class="miniml__paragraph miniml-markdown">
+      <%= config.stats.date.end %>
+    </div>
+  </div>
+</div>

@@ -12,14 +12,28 @@
         <span class="miniml-map__group">
       <% } %>
 
-      <a href="<%= element.permalink %>#<%- slugify(annotation.name) %>" class="miniml-map-dot miniml-map-dot--example">
+      <% var latestSelector = ''; %>
+      <% if (config.stats.date.endValue === annotation.latestDate) { %>
+         <% latestSelector = 'miniml-map-dot--latest' %>
+      <% } %>
+
+      <div class="miniml-map-dot miniml-map-dot--example <%= latestSelector %>">
         <span class="miniml-tip">
           <%= annotation.name %>
           <% if (element.title !== annotation.name) { %>
             <span class="miniml-tip__type">(<%= element.title %>)</span>
           <% } %>
         </span>
-      </a>
+        <div class="miniml-snippet-example-preview">
+          <div class="miniml-snippet-example-preview__links">
+            <a class="miniml-snippet-example-preview__link" href="<%= element.permalink %>#<%- slugify(annotation.name) %>">Copy</a>
+            <a class="miniml-snippet-example-preview__link" href="<%= element.permalink %>#<%- slugify(annotation.name) %>">Example page</a>
+          </div>
+          <div class="miniml-snippet-example-preview__preview">
+              <%- annotation.html %>
+          </div>
+        </div>
+      </div>
     <% } %>
   <% } %>
 <% }) %>

@@ -237,7 +237,7 @@ var runProcess = function(argv, apolloDefaultConfPath) {
     delete defaultConf.libs;
 
     conf = absorb(confToMerge, defaultConf, false, true);
-    hexoConfig   = yaml.safeLoad(fs.readFileSync(path.fromModule('/hexo/_default_config.yml'), 'utf-8'));
+    hexoConfig = yaml.safeLoad(fs.readFileSync(path.fromModule('/hexo/_default_config.yml'), 'utf-8'));
 
     if (conf.libs !== undefined) {
         if (conf.libs.node !== undefined) {

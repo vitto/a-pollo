@@ -2,8 +2,8 @@
   <div class="miniml-map__label miniml-map__label--category">
     <div>
       <div>
-        <span class="miniml-map-dot miniml-map-dot--no-margin miniml-map-dot--category-snippet"></span>
-        <span class="miniml-map-dot miniml-map-dot--no-margin miniml-map-dot--category-doc"></span>
+        <span class="miniml-map-dot miniml-map-dot--label miniml-map-dot--no-margin miniml-map-dot--category-snippet"></span>
+        <span class="miniml-map-dot miniml-map-dot--label miniml-map-dot--no-margin miniml-map-dot--category-doc"></span>
       </div>
       <div>
           Categories
@@ -13,40 +13,64 @@
   <div class="miniml-map__label miniml-map__label--snippet">
     <div>
       <div>
-        <span class="miniml-map-dot miniml-map-dot--no-margin miniml-map-dot--snippet"></span>
+        <span class="miniml-map-dot miniml-map-dot--label miniml-map-dot--no-margin miniml-map-dot--snippet">
+          <%= config.stats.snippet.count %>
+        </span>
       </div>
       <div>
+        <% if(config.stats.snippet.count === 1) { %>
           Snippet
+        <% } else { %>
+          Snippets
+        <% } %>
       </div>
     </div>
   </div>
   <div class="miniml-map__label miniml-map__label--example">
     <div>
       <div>
-        <span class="miniml-map-dot miniml-map-dot--no-margin miniml-map-dot--example"></span>
+        <span class="miniml-map-dot miniml-map-dot--label miniml-map-dot--no-margin miniml-map-dot--example">
+          <%= config.stats.snippet.countExamples %>
+        </span>
       </div>
       <div>
+        <% if(config.stats.snippet.countExamples === 1) { %>
           Example
+        <% } else { %>
+          Examples
+        <% } %>
       </div>
     </div>
   </div>
   <div class="miniml-map__label miniml-map__label--page">
     <div>
       <div>
-        <span class="miniml-map-dot miniml-map-dot--no-margin miniml-map-dot--page"></span>
+        <span class="miniml-map-dot miniml-map-dot--label miniml-map-dot--no-margin miniml-map-dot--page">
+          <% var pagesTotal = 0 %>
+          <% site.pages.each(function(element, i){ %>
+            <% if(element.layout === 'page') { pagesTotal += 1; } %>
+          <% }) %>
+          <% if(pagesTotal > 0) { %>
+            <%= pagesTotal %>
+          <% } %>
+        </span>
       </div>
       <div>
+        <% if(pagesTotal === 1) { %>
           Page
+        <% } else { %>
+          Pages
+        <% } %>
       </div>
     </div>
   </div>
   <div class="miniml-map__label miniml-map__label--doc">
     <div>
       <div>
-        <span class="miniml-map-dot miniml-map-dot--no-margin miniml-map-dot--doc"></span>
+        <span class="miniml-map-dot miniml-map-dot--label miniml-map-dot--no-margin miniml-map-dot--doc"></span>
       </div>
       <div>
-          Documentation
+          Docs
       </div>
     </div>
   </div>

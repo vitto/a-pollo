@@ -7,6 +7,10 @@
   @include element('title') {
     font-family: $font-serif;
     font-size: $font-size-title;
+
+    @include modifier('m-top') {
+      margin-top: s(2);
+    }
   }
 
   @include element('hr') {
@@ -25,16 +29,29 @@
   @include element('col-half') {
     @include column(6,6,6);
     padding: s(1);
+    @include modifier('p-top-none') {
+      padding-top: 0;
+    }
   }
 
   @include element('paragraph-title') {
     display: block;
     font-weight: $font-weight-bold;
     margin-top: s(1);
+
+    @include modifier('m-top-none') {
+      margin-top: 0;
+    }
+  }
+
+  @include element('question') {
+    color: $color-text-shaded;
+    cursor: help;
   }
 
   @include element('icon') {
     display: inline-block;
+    float: left;
     font-size: $font-size-big;
     margin-right: s(0.25);
   }
