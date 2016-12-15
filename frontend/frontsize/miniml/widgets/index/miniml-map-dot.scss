@@ -25,7 +25,6 @@
   margin-bottom: s(0.25);
   margin-right: s(0.25);
   position: relative;
-  transition: border $ease-hover;
   width: $map-dot-size;
 
   &::before {

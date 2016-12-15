@@ -2,8 +2,30 @@
   <div class="miniml-map__label miniml-map__label--category">
     <div>
       <div>
-        <span class="miniml-map-dot miniml-map-dot--label miniml-map-dot--no-margin miniml-map-dot--category-snippet"></span>
-        <span class="miniml-map-dot miniml-map-dot--label miniml-map-dot--no-margin miniml-map-dot--category-doc"></span>
+        <span class="miniml-map-dot miniml-map-dot--label miniml-map-dot--no-margin miniml-map-dot--category-snippet">
+          <% var categories = 0; %>
+          <% elements.each(function(element, i) { %>
+            <% if (element.posts.data[0].layout === 'snippet') { %>
+              <% categories += 1; %>
+            <% } %>
+          <% }) %>
+          <%= categories %>
+          <span class="miniml-tip">
+            snippet
+          </span>
+        </span>
+        <span class="miniml-map-dot miniml-map-dot--label miniml-map-dot--no-margin miniml-map-dot--category-doc">
+          <% categories = 0; %>
+          <% elements.each(function(element, i) { %>
+            <% if (element.posts.data[0].layout === 'doc') { %>
+              <% categories += 1; %>
+            <% } %>
+          <% }) %>
+          <%= categories %>
+          <span class="miniml-tip">
+            doc
+          </span>
+        </span>
       </div>
       <div>
           Categories

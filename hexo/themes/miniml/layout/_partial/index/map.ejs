@@ -5,7 +5,9 @@
 
 <div class="miniml-map">
 
-  <%- partial('_partial/index/map__labels') %>
+  <%- partial('_partial/index/map__labels', {
+    elements: site.tags
+  }) %>
 
   <div class="miniml-map__dots">
     <%- partial('_partial/index/map__dots--category-snippet', {
