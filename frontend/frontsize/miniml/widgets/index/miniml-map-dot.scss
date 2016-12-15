@@ -54,6 +54,7 @@
 
   @include modifier('latest') {
     border: 2px solid $color-dark;
+
     &::before {
       top: -2px;
     }

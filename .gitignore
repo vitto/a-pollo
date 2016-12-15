@@ -17,3 +17,6 @@ vendors/
 /hexo/_default_source/site
 /hexo/_config.yml
 /test/a-pollo/index.md
+
+.nyc_output/
+coverage
