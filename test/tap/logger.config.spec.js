@@ -1,3 +1,5 @@
+'use strict'
+
 const logger = require('../../lib/logger')
 const tap = require('tap')
 const test = tap.test

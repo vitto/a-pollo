@@ -17,6 +17,8 @@ vendors/
 /hexo/_default_source/site
 /hexo/_config.yml
 /test/a-pollo/index.md
+/build
+gulpfile.js
 
 .nyc_output/
 coverage

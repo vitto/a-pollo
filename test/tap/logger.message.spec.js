@@ -1,3 +1,5 @@
+'use strict'
+
 const logger = require('../../lib/logger')
 const strip = require('strip-ansi')
 const tap = require('tap')

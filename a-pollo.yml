@@ -11,9 +11,8 @@ date_format: dddd D MMMM YYYY    # [optional] Default from hexo config YYYY-MM-D
 
 public_dir: ./public        # [required] Where the style guide will be genarated
 url: http://localhost:7777  # [optional] HTTP server URL
-#pages: test/examples/a-pollo/*       # [optional] Additional static documentation pages you want to add, (markdown or html)
+#pages: pages folder
 http_server: true           # [optional] HTTP server with port number
-use_markdown: false          # [optional] This will be removed soon, it's used for development
 theme: miniml              # [optional] The a-pollo theme folder
 
 libs:
@@ -25,13 +24,3 @@ style:
   css: test/examples/frontsize/test/css/frontsize-theme.min.css    # [required] This is the CSS will be loaded by a-pollo to show rendered widgets
   images: test/examples/frontsize/themes/default/img/*         # [optional] Where the CSS images are stored
   fonts: test/examples/frontsize/themes/default/fonts/*        # [optional] Where the CSS fonts are stored
-
-header:
-    logo: a-pollo-logo--gold.svg        # [optional] The logo image you'll se on every page, it must be stored in style.images
-    link: /                             # [optional] The link on the logo image
-    description: A-POLLO / The visual CSS style guide for teams # [optional] A description under the logo image
-
-footer:
-    logo: a-pollo-logo.svg                 # [optional] The logo image you'll se on every page, it must be stored in style.images
-    link: http://vitto.github.io/a-pollo/  # [optional] The link on the logo image
-    description: A-POLLO / The visual CSS style guide for teams # [optional] A description under the logo image
