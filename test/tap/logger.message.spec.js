@@ -37,49 +37,67 @@ tap.afterEach(done => {
 })
 
 test('logger message intro', tap => {
-  tap.plan(1)
-  logger.intro()
+  logger().intro()
   tap.equal(hook.captured(), 'a-pollo')
+  tap.end()
 })
 
 test('logger message error', tap => {
-  tap.plan(1)
-  logger.error('Something went wrong here')
+  logger().error('Something went wrong here')
   tap.equal(hook.captured(), 'Error: Something went wrong here')
+  tap.end()
 })
 
 test('logger message success', tap => {
-  tap.plan(1)
-  logger.success('Something went nice here')
+  logger().success('Something went nice here')
   tap.equal(hook.captured(), 'Something went nice here')
+  tap.end()
 })
 
 test('logger message notice', tap => {
-  tap.plan(1)
-  logger.notice('Something just went somewhere')
+  logger().notice('Something just went somewhere')
   tap.equal(hook.captured(), 'Notice: Something just went somewhere')
+  tap.end()
 })
 
 test('logger message speak', tap => {
-  tap.plan(1)
-  logger.speak('Hello, how going here?')
+  logger().speak('Hello, how going here?')
   tap.equal(hook.captured(), 'Hello, how going here?')
+  tap.end()
 })
 
 test('logger message warning', tap => {
-  tap.plan(1)
-  logger.warning('Are you sure you checked this?')
+  logger().warning('Are you sure you checked this?')
   tap.equal(hook.captured(), 'Warning: Are you sure you checked this?')
+  tap.end()
 })
 
 test('logger message verbose short', tap => {
-  tap.plan(1)
-  logger.verbose('This is a short verbose message')
+  logger().verbose('This is a short verbose message')
   tap.equal(hook.captured(), 'This is a short verbose message')
+  tap.end()
+})
+
+test('logger message verbose long', tap => {
+  logger().verbose('Hey', 'This is a short verbose message')
+  tap.equal(hook.captured(), 'Hey: This is a short verbose message')
+  tap.end()
+})
+
+test('logger message verbose long', tap => {
+  logger({ verbosity: 0 }).verbose('Hey', 'This is a short verbose message')
+  tap.equal(hook.captured(), '')
+  tap.end()
+})
+
+test('logger message verbose long', tap => {
+  logger({ muted: true }).verbose('Hey', 'This is a short verbose message')
+  tap.equal(hook.captured(), '')
+  tap.end()
 })
 
 test('logger message verbose long', tap => {
   tap.plan(1)
-  logger.verbose('Hey', 'This is a short verbose message')
-  tap.equal(hook.captured(), 'Hey: This is a short verbose message')
+  logger({ delay: 100 }).verbose('Delayed message')
+  tap.equal(hook.captured(), 'Delayed message')
 })
