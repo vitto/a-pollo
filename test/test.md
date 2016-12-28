@@ -8,12 +8,19 @@ We are using tap as test suite
 npm test
 ```
 
+#### To test single file
+
+```
+node test/tap/annotations.spec.js
+```
+
+---
+
 #### Test coverage report
 
 ```
 npm test -- --cov
 ```
-
 
 #### HTML page test coverage report
 

@@ -22,3 +22,5 @@ gulpfile.js
 
 .nyc_output/
 coverage
+
+test/samples/sass/frontsize

@@ -11,10 +11,6 @@ logger(loggerOpts).error('Hello')
 console.log(logger(loggerOpts).options())
 */
 
-const between = require('./lib/between')
-between()
-process.exit()
-
 
 const collections = require('metalsmith-collections')
 const layouts = require('metalsmith-layouts')
@@ -22,7 +18,24 @@ const markdown = require('metalsmith-markdown')
 const metalsmith = require('metalsmith')
 const permalinks = require('metalsmith-permalinks')
 
+const commandLine = require('./lib/command-line')
+const config = require('./lib/config')
+
+commandLine(function (args) {
+  config(args).load(function (err, data) {
+    if (err) {
+      throw err
+    }
+    console.log(data)
+  })
+})
+
+process.exit()
+
 const source = './test/samples/metalsmith/'
+const themeName = 'miniml'
+const theme = `${source}themes/${themeName}`
+const destination = './build'
 
 metalsmith(__dirname)
   .metadata({
@@ -33,7 +46,7 @@ metalsmith(__dirname)
     generatorurl: 'http://metalsmith.io/'
   })
   .source(`${source}contents`)
-  .destination('./build')
+  .destination(destination)
   .clean(true)
   .use(collections({
     posts: `${source}contents/posts/*.md`,
@@ -45,9 +58,9 @@ metalsmith(__dirname)
   }))
   .use(layouts({
     default: 'layout.html',
-    directory: `${source}theme/layouts`,
+    directory: `${theme}/layouts`,
     engine: 'handlebars',
-    partials: `${source}theme/partials`
+    partials: `${theme}/partials`
   }))
   .build(function (err) {
     if (err) { throw err }
