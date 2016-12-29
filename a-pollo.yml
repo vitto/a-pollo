@@ -1,29 +1,45 @@
 
-title: Client project
+project:
+  title: Client project
+  date: 2016-11-01
 
 team:
-  client: '[Client name](http://github.com/vitto/a-pollo#readme)'
+  clients:
+    -
+      email: client@client-name.com
+      name: Client Name
+      phone: +39 320 1852742
+      role: CEO
+      url: http://client-name.com
   developers:
-    - '[Vittorio Vittori](http://vit.to)'
+    -
+      email: me@vittoriovittori.com
+      name: Vittorio Vittori
+      phone: +39 320 1852742
+      role: Front-end engineer
+      url: http://vit.to
   designers:
-    - '[Vittorio Vittori](http://vit.to)'
+    -
+      email: me@vittoriovittori.com
+      name: Vittorio Vittori
+      phone: +39 320 1852742
+      role: Front-end engineer
+      url: http://vit.to
 
-date: 2016-11-01
-date_format: dddd D MMMM YYYY
+styleguide:
+  docs: ./test/samples/sass
+  pages: ./test/samples/metalsmith/contents/posts
 
-source: ./test/samples/sass
-destination: ./build        # [required] Where the style guide will be genarated
-url: http://localhost:7777  # [optional] HTTP server URL
-#pages: pages folder
-http_server: true           # [optional] HTTP server with port number
-theme: miniml               # [optional] The a-pollo theme folder
+build:
+  destination: ./build
+  theme: miniml
 
 libs:
-  bower: bower.json   # [optional] Link the bower.json file to display Bower used libraries in the index page
-  node: package.json  # [optional] Link the package.json file to display NodeJS used libraries in the index page
+  bower: bower.json
+  node: package.json
 
-style:
-  css: test/examples/frontsize/test/css/frontsize-theme.min.css    # [required] This is the CSS will be loaded by a-pollo to show rendered widgets
-  docs: test/examples/frontsize/themes/default/        # [required] Where a-pollo comments and tags are placed
-  fonts: test/examples/frontsize/themes/default/fonts/*        # [optional] Where the CSS fonts are stored
-  images: test/examples/frontsize/themes/default/img/*         # [optional] Where the CSS images are stored
+assets:
+  css: test/examples/frontsize/test/css/frontsize-theme.min.css
+  files:
+    - test/examples/frontsize/themes/default/fonts
+    - test/examples/frontsize/themes/default/img
