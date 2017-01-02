@@ -18,50 +18,58 @@ const markdown = require('metalsmith-markdown')
 const metalsmith = require('metalsmith')
 const permalinks = require('metalsmith-permalinks')
 
+const annotations = require('./lib/annotations')
 const commandLine = require('./lib/command-line')
-const config = require('./lib/config')
+const configuration = require('./lib/config')
+const filter = require('./lib/filter')
+const parse = require('./lib/parse')
 
 commandLine(function (args) {
-  config(args).load(function (err, data) {
-    if (err) {
-      throw err
+  configuration(args)
+    .load(function (err, config) {
+      if (err) {
+        throw err
+      }
+      console.log(`Loaded configuration`)
+
+      annotations(config.styleguide.docs)
+        .list(function (err, matches) {
+          if (err) {
+            throw err
+          }
+          console.log(`Got annotations from '${matches.length}' matched file/s`)
+
+          filter(matches, function (err, files) {
+            if (err) {
+              throw err
+            }
+            parse(files, function (err, docs) {
+              if (err) {
+                throw err
+              }
+              // console.log(docs)
+            })
+          })
+        }
+      )
     }
-    console.log(data)
-  })
+  )
 })
+
 
 process.exit()
 
-const source = './test/samples/metalsmith/'
-const themeName = 'miniml'
-const theme = `${source}themes/${themeName}`
-const destination = './build'
+const m = {}
 
 metalsmith(__dirname)
-  .metadata({
-    sitename: 'My Static Site & Blog',
-    siteurl: 'http://example.com/',
-    description: 'It\'s about saying »Hello« to the world.',
-    generatorname: 'Metalsmith',
-    generatorurl: 'http://metalsmith.io/'
-  })
-  .source(`${source}contents`)
-  .destination(destination)
-  .clean(true)
-  .use(collections({
-    posts: `${source}contents/posts/*.md`,
-    sortBy: 'date'
-  }))
-  .use(markdown())
-  .use(permalinks({
-    relative: false
-  }))
-  .use(layouts({
-    default: 'layout.html',
-    directory: `${theme}/layouts`,
-    engine: 'handlebars',
-    partials: `${theme}/partials`
-  }))
+  .metadata(m.metadata)
+  .source(m.source)
+  .destination(m.destination)
+  .clean(m.clean)
+  .use(collections(m.collections))
+  .use(markdown(m.markdown))
+  .use(permalinks(m.permalinks))
+  .use(layouts(m.layouts))
   .build(function (err) {
     if (err) { throw err }
   })

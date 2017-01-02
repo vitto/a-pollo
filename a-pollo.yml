@@ -6,33 +6,54 @@ project:
 team:
   clients:
     -
-      email: client@client-name.com
+      email: me@client.com
       name: Client Name
-      phone: +39 320 1852742
+      phone: +39 123 4567890
       role: CEO
-      url: http://client-name.com
+      url: http://client.com
   developers:
     -
-      email: me@vittoriovittori.com
-      name: Vittorio Vittori
-      phone: +39 320 1852742
+      email: dev@devsite.com
+      name: John Doe
+      phone: +39 123 4567890
       role: Front-end engineer
       url: http://vit.to
   designers:
     -
-      email: me@vittoriovittori.com
-      name: Vittorio Vittori
-      phone: +39 320 1852742
-      role: Front-end engineer
-      url: http://vit.to
+      email: leo@davinci.com
+      name: Leonardo Da Vinci
+      phone: +39 123 4567890
+      role: UX/UI Expert
+      url: http://www.davinci.com
 
 styleguide:
   docs: ./test/samples/sass
-  pages: ./test/samples/metalsmith/contents/posts
+  pages: ./test/samples/metalsmith/contents/posts/*.md
 
-build:
+metalsmith:
+  metadata:
+    description: It's about saying Hello to the world.
+    generatorname: Metalsmith
+    generatorurl: http://metalsmith.io/
+    sitename: My Static Site & Blog
+    siteurl: http://example.com/
+  clean: true
+  collections:
+    posts: ./test/samples/metalsmith/contents/posts/*.md
+    sortBy: date
   destination: ./build
-  theme: miniml
+  layouts:
+    default: layout.html
+    directory: ./test/samples/metalsmith/themes/miniml/layouts
+    engine: handlebars
+    partials: ./test/samples/metalsmith/themes/miniml/partials
+  markdown:
+    smartypants: true
+    gfm: true
+    tables: true
+  permalinks:
+    relative: false
+  source: ./test/samples/metalsmith/contents
 
 libs:
   bower: bower.json

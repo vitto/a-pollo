@@ -43,8 +43,7 @@ test('loads default config', tap => {
     verbosity: 3
   }).load(function (err, data) {
     if (err) {
-      console.error(err)
-      return
+      throw err
     }
     tap.ok(data)
   })

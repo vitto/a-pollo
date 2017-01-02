@@ -18,10 +18,9 @@ test('load file list of annotations', tap => {
 test('load empty file list of annotations', tap => {
   tap.plan(1)
 
-  annotations('non/existing/folder').list(function (err, data) {
-    if (err) {
+  annotations('non/existing/folder').list(function (err) {
+    tap.throws(function () {
       throw err
-    }
-    tap.equal(data.length, 0)
+    }, new Error(`No annotations found in search`))
   })
 })
