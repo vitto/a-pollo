@@ -11,7 +11,6 @@ logger(loggerOpts).error('Hello')
 console.log(logger(loggerOpts).options())
 */
 
-
 const collections = require('metalsmith-collections')
 const layouts = require('metalsmith-layouts')
 const markdown = require('metalsmith-markdown')
@@ -25,41 +24,36 @@ const filter = require('./lib/filter')
 const parse = require('./lib/parse')
 
 commandLine(function (args) {
-  configuration(args)
-    .load(function (err, config) {
+  configuration(args).load(function (err, config) {
+    if (err) {
+      throw err
+    }
+    console.log(`Loaded configuration`)
+
+    annotations(config.styleguide.docs).list(function (err, matches) {
       if (err) {
         throw err
       }
-      console.log(`Loaded configuration`)
+      console.log(`Got annotations from '${matches.length}' matched file/s`)
 
-      annotations(config.styleguide.docs)
-        .list(function (err, matches) {
+      filter(matches, function (err, files) {
+        if (err) {
+          throw err
+        }
+        parse(files, function (err, docs) {
           if (err) {
             throw err
           }
-          console.log(`Got annotations from '${matches.length}' matched file/s`)
-
-          filter(matches, function (err, files) {
-            if (err) {
-              throw err
-            }
-            parse(files, function (err, docs) {
-              if (err) {
-                throw err
-              }
-              // console.log(docs)
-            })
-          })
-        }
-      )
-    }
-  )
+          console.log(docs[0].params)
+        })
+      })
+    })
+  })
 })
-
 
 process.exit()
 
-const m = {}
+const m = {} // loaded config
 
 metalsmith(__dirname)
   .metadata(m.metadata)

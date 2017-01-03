@@ -33,6 +33,12 @@ const annotations = [`
   @name: block
   @param: {string} ($block-name) [required]
           Defines the block name of the BEM component
+  @param: {int} ($another-name) [optional]
+          Defines the block name of the BEM component
+  @param: {map} ($map-name)
+          Defines the block name of the BEM component
+  @param: {list} ($list-name)[optional]
+  @param:{last-list}($list-last-name)
   @public: true
   @returns: css
   @text: Defines the block name of the BEM component. This mixin is required as wrapper of \`element\` and \`modifier\` mixins
@@ -62,7 +68,7 @@ const annotations = [`
   @date:2016-12-31T15:42:05+01:00
   @html:
     <a class="button" data-style="width: 100px;" style="background-image:url('heilo.svg');" href="#">Visit this link</a>
-  @icon: fa fa-css3
+  @icon: fa fa-developer
   @name: block
   @param: {string} ($block-name) [required]
           Defines the block name of the BEM component
@@ -90,9 +96,6 @@ const cssExtracted = `.button {
   font-size: 12px;
   padding: 4px 8px;
 }`
-
-const htmlExtracted = `<a class="button" data-style="width: 100px;" style="background-image:url('heilo.svg')" href="#">Visit this link</a>`
-const htmlExtractedAlt = `<a class="button" style="width: 100px; background-image:url('heilo.svg')" href="#">Visit this link</a>`
 
 test('extracts the annotation author', tap => {
   tap.equal(extract.author(annotations[0]), 'Vittorio Vittori')
@@ -159,20 +162,80 @@ test('checks if the string has annotations', tap => {
 })
 
 test('extracts the annotation html', tap => {
-  tap.plan(2)
-  extract.html(annotations[0], function (data) {
-    tap.equal(data.code, htmlExtracted)
-  })
-  extract.html(annotations[0], function (data) {
+  tap.plan(3)
+  extract.html(annotations[0], function (err, data) {
+    if (err) { throw err }
+    tap.equal(data.code, `<a class="button" href="#" style="width:100px;background-image:url('heilo.svg')">Visit this link</a>`)
+    tap.equal(data.source, `<a class="button" data-style="width: 100px;" style="background-image:url('heilo.svg');" href="#">Visit this link</a>`)
     tap.equal(data.text, 'A simple HTML element to see how mixin works')
   })
 })
 
-// test('extracts the annotation html without text', tap => {
-//   const code = extract.html(annotations[1]).code
-//   const text = extract.html(annotations[1]).text
-//
-//   tap.equal(code, htmlExtracted)
-//   tap.equal(text, '')
-//   tap.end()
-// })
+test('extracts the annotation html without text', tap => {
+  tap.plan(3)
+  extract.html(annotations[1], function (err, data) {
+    if (err) { throw err }
+    tap.equal(data.code, `<a class="button" href="#" style="width:100px;background-image:url('heilo.svg')">Visit this link</a>`)
+    tap.equal(data.source, `<a class="button" data-style="width: 100px;" style="background-image:url('heilo.svg');" href="#">Visit this link</a>`)
+    tap.equal(data.text, '')
+  })
+})
+
+test('extracts the annotation icon', tap => {
+  tap.equal(extract.icon(annotations[0]), 'fa fa-css3')
+  tap.equal(extract.icon(annotations[1]), 'fa fa-developer')
+  tap.end()
+})
+
+test('extracts the annotation name', tap => {
+  tap.equal(extract.name(annotations[0]), 'block')
+  tap.equal(extract.name(annotations[1]), 'block')
+  tap.end()
+})
+
+test('extracts the annotation name', tap => {
+  tap.equal(extract.name(annotations[0]), 'block')
+  tap.equal(extract.name(annotations[1]), 'block')
+  tap.end()
+})
+
+test('extracts the annotation params', tap => {
+  const params = extract.params(annotations[0])
+
+  tap.same(params[0], {
+    default: 'required',
+    name: '$block-name',
+    text: 'Defines the block name of the BEM component',
+    type: 'string'
+  })
+
+  tap.same(params[1], {
+    default: 'optional',
+    name: '$another-name',
+    text: 'Defines the block name of the BEM component',
+    type: 'int'
+  })
+
+  tap.same(params[2], {
+    default: 'optional',
+    name: '$map-name',
+    text: 'Defines the block name of the BEM component',
+    type: 'map'
+  })
+
+  tap.same(params[3], {
+    default: 'optional',
+    name: '$list-name',
+    text: null,
+    type: 'list'
+  })
+
+  tap.same(params[4], {
+    default: 'optional',
+    name: '$list-last-name',
+    text: null,
+    type: 'last-list'
+  })
+
+  tap.end()
+})
