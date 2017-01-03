@@ -44,7 +44,7 @@ commandLine(function (args) {
           if (err) {
             throw err
           }
-          console.log(docs[0])
+          console.log(docs)
         })
       })
     })
