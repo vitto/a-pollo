@@ -22,48 +22,44 @@ const commandLine = require('./lib/command-line')
 const configuration = require('./lib/config')
 const filter = require('./lib/filter')
 const parse = require('./lib/parse')
+const save = require('./lib/save')
 
-commandLine(function (args) {
-  configuration(args).load(function (err, config) {
-    if (err) {
-      throw err
-    }
-    console.log(`Loaded configuration`)
-
-    annotations(config.styleguide.docs).list(function (err, matches) {
-      if (err) {
-        throw err
-      }
-      console.log(`Got annotations from '${matches.length}' matched file/s`)
-
-      filter(matches, function (err, files) {
-        if (err) {
-          throw err
-        }
-        parse(files, function (err, docs) {
-          if (err) {
-            throw err
-          }
-          console.log(docs)
+function aPollo (cb) {
+  commandLine(function (args) {
+    configuration(args).load(function (err, config) {
+      if (err) { throw err }
+      annotations(config.styleguide.docs).list(function (err, matches) {
+        if (err) { throw err }
+        filter(matches, function (err, files) {
+          if (err) { throw err }
+          parse(files, function (err, docs) {
+            if (err) { throw err }
+            save(config, docs, function (err, config, docs) {
+              if (err) { throw err }
+              cb(config, docs)
+            })
+          })
         })
       })
     })
   })
+}
+
+module.exports = aPollo
+
+aPollo(function (config, docs) {
+  console.log('done');
+  const m = config.metalsmith
+  metalsmith(__dirname)
+    .metadata(m.metadata)
+    .source(m.source)
+    .destination(m.destination)
+    .clean(m.clean)
+    .use(collections(m.collections))
+    .use(markdown(m.markdown))
+    .use(permalinks(m.permalinks))
+    .use(layouts(m.layouts))
+    .build(function (err) {
+      if (err) { throw err }
+    })
 })
-
-process.exit()
-
-const m = {} // loaded config
-
-metalsmith(__dirname)
-  .metadata(m.metadata)
-  .source(m.source)
-  .destination(m.destination)
-  .clean(m.clean)
-  .use(collections(m.collections))
-  .use(markdown(m.markdown))
-  .use(permalinks(m.permalinks))
-  .use(layouts(m.layouts))
-  .build(function (err) {
-    if (err) { throw err }
-  })

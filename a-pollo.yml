@@ -1,7 +1,10 @@
 
-project:
-  title: Client project
-  date: 2016-11-01
+title: Client project
+date: 2016-11-01
+
+libs:
+  bower: bower.json
+  node: package.json
 
 team:
   clients:
@@ -26,8 +29,14 @@ team:
       role: UX/UI Expert
       url: http://www.davinci.com
 
+temp:
+  ./test/samples/metalsmith/contents/a-pollo
+
 styleguide:
+  css: test/examples/frontsize/test/css/frontsize-theme.min.css
   docs: ./test/samples/sass
+  files: test/examples/frontsize/themes/default/fonts
+  images: test/examples/frontsize/themes/default/img
   pages: ./test/samples/metalsmith/contents/posts/*.md
 
 metalsmith:
@@ -39,8 +48,9 @@ metalsmith:
     siteurl: http://example.com/
   clean: true
   collections:
-    posts: ./test/samples/metalsmith/contents/posts/*.md
-    sortBy: date
+    posts:
+      pattern: ./test/samples/metalsmith/contents/posts/*.md
+      sortBy: date
   destination: ./build
   layouts:
     default: layout.html
@@ -54,13 +64,3 @@ metalsmith:
   permalinks:
     relative: false
   source: ./test/samples/metalsmith/contents
-
-libs:
-  bower: bower.json
-  node: package.json
-
-assets:
-  css: test/examples/frontsize/test/css/frontsize-theme.min.css
-  files:
-    - test/examples/frontsize/themes/default/fonts
-    - test/examples/frontsize/themes/default/img
