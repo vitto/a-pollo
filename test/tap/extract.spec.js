@@ -70,7 +70,7 @@ const annotations = [`
     <a class="button" data-style="width: 100px;" style="background-image:url('heilo.svg');" href="#">Visit this link</a>
   @icon: fa fa-developer
   @name: block
-  @public: true
+  @public: false
   @returns: css
   @text: Defines the block name of the BEM component. This mixin is required as wrapper of \`element\` and \`modifier\` mixins
   @version: 4.0.0
@@ -99,11 +99,13 @@ const cssExtracted = `.button {
 
 test('extracts the annotation author', tap => {
   tap.equal(extract.author(annotations[0]), 'Vittorio Vittori')
+  tap.equal(extract.author(annotations[2]), null)
   tap.end()
 })
 
 test('extracts the annotation category', tap => {
   tap.equal(extract.category(annotations[0]), 'BEM')
+  tap.equal(extract.category(annotations[2]), null)
   tap.end()
 })
 
@@ -125,7 +127,14 @@ test('extracts the annotation code without text', tap => {
   tap.end()
 })
 
-test('extracts the annotation css', tap => {
+test('extracts the annotation code when missing', tap => {
+  const code = extract.code(annotations[2])
+
+  tap.equal(code, null)
+  tap.end()
+})
+
+test('extracts the annotation CSS', tap => {
   const code = extract.css(annotations[0]).code
   const text = extract.css(annotations[0]).text
 
@@ -134,7 +143,7 @@ test('extracts the annotation css', tap => {
   tap.end()
 })
 
-test('extracts the annotation css without text', tap => {
+test('extracts the annotation CSS without text', tap => {
   const code = extract.css(annotations[1]).code
   const text = extract.css(annotations[1]).text
 
@@ -143,25 +152,36 @@ test('extracts the annotation css without text', tap => {
   tap.end()
 })
 
+test('extracts the annotation CSS when missing', tap => {
+  const css = extract.css(annotations[2])
+
+  tap.equal(css, null)
+  tap.end()
+})
+
 test('extracts the annotation date', tap => {
   tap.equal(extract.date(annotations[0]), '2016-12-28T17:40:42+01:00')
   tap.equal(extract.date(annotations[1]), '2016-12-31T15:42:05+01:00')
+  tap.equal(extract.date(annotations[2]), null)
   tap.end()
 })
 
 test('extracts the annotation doc', tap => {
   tap.equal(extract.doc(annotations[0]), 'mixin')
   tap.equal(extract.doc(annotations[1]), 'snippet')
+  tap.equal(extract.doc(annotations[2]), 'snippet')
   tap.end()
 })
 
 test('checks if the string has annotations', tap => {
   tap.equal(extract.hasAnnotations(annotations[0]), true)
+  tap.equal(extract.hasAnnotations(annotations[1]), true)
+  tap.equal(extract.hasAnnotations(annotations[2]), true)
   tap.equal(extract.hasAnnotations(cssExtracted), false)
   tap.end()
 })
 
-test('extracts the annotation html', tap => {
+test('extracts the annotation HTML', tap => {
   tap.plan(3)
   extract.html(annotations[0], function (err, data) {
     if (err) { throw err }
@@ -171,7 +191,7 @@ test('extracts the annotation html', tap => {
   })
 })
 
-test('extracts the annotation html without text', tap => {
+test('extracts the annotation HTML without text', tap => {
   tap.plan(3)
   extract.html(annotations[1], function (err, data) {
     if (err) { throw err }
@@ -181,21 +201,32 @@ test('extracts the annotation html without text', tap => {
   })
 })
 
+test('extracts the annotation HTML when missing', tap => {
+  tap.plan(1)
+  extract.html(annotations[2], function (err, data) {
+    if (err) { throw err }
+    tap.equal(data, null)
+  })
+})
+
 test('extracts the annotation icon', tap => {
   tap.equal(extract.icon(annotations[0]), 'fa fa-css3')
   tap.equal(extract.icon(annotations[1]), 'fa fa-developer')
+  tap.equal(extract.icon(annotations[2]), null)
+  tap.end()
+})
+
+test('extracts if the annotation public', tap => {
+  tap.equal(extract.public(annotations[0]), true)
+  tap.equal(extract.public(annotations[1]), false)
+  tap.equal(extract.public(annotations[2]), null)
   tap.end()
 })
 
 test('extracts the annotation name', tap => {
   tap.equal(extract.name(annotations[0]), 'block')
   tap.equal(extract.name(annotations[1]), 'block')
-  tap.end()
-})
-
-test('extracts the annotation name', tap => {
-  tap.equal(extract.name(annotations[0]), 'block')
-  tap.equal(extract.name(annotations[1]), 'block')
+  tap.equal(extract.name(annotations[2]), null)
   tap.end()
 })
 
