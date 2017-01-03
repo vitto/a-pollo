@@ -31,7 +31,7 @@
     "strip-indent": "^2.0.0"
   },
   "devDependencies": {
-    "frontsize": "git+https://github.com/ideatosrl/frontsize.git#48bfd6f",
+    "frontsize": "git+https://github.com/ideatosrl/frontsize.git#724e1f1",
     "bower": "^1.6.5",
     "dustman": "^1.11.55",
     "matchdep": "^1.0.0",
