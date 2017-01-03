@@ -13,6 +13,7 @@
     "command-line-usage": "^3.0.8",
     "defaults": "^1.0.3",
     "glob": "^5.0.15",
+    "html-minifier": "^3.2.3",
     "http": "0.0.0",
     "js-beautify": "^1.5.10",
     "js-yaml": "^3.5.5",
