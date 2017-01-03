@@ -70,14 +70,14 @@ const annotations = [`
     <a class="button" data-style="width: 100px;" style="background-image:url('heilo.svg');" href="#">Visit this link</a>
   @icon: fa fa-developer
   @name: block
-  @param: {string} ($block-name) [required]
-          Defines the block name of the BEM component
-  @param: {boolean} ($active) [false]
-          Defines if the element is active or not by default
   @public: true
   @returns: css
   @text: Defines the block name of the BEM component. This mixin is required as wrapper of \`element\` and \`modifier\` mixins
   @version: 4.0.0
+*/
+`, `
+/*
+  @a-pollo
 */
 `]
 
@@ -237,5 +237,29 @@ test('extracts the annotation params', tap => {
     type: 'last-list'
   })
 
+  tap.end()
+})
+
+test('extracts the annotation params while not present', tap => {
+  const params = extract.params(annotations[1])
+  tap.equal(params, null)
+  tap.end()
+})
+
+test('extracts the annotation returns', tap => {
+  tap.equal(extract.returns(annotations[0]), 'css')
+  tap.equal(extract.returns(annotations[2]), null)
+  tap.end()
+})
+
+test('extracts the annotation text', tap => {
+  tap.equal(extract.text(annotations[0]), 'Defines the block name of the BEM component. This mixin is required as wrapper of `element` and `modifier` mixins')
+  tap.equal(extract.text(annotations[2]), null)
+  tap.end()
+})
+
+test('extracts the annotation version', tap => {
+  tap.equal(extract.version(annotations[0]), '4.0.0')
+  tap.equal(extract.version(annotations[2]), null)
   tap.end()
 })
