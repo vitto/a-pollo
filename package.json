@@ -34,10 +34,11 @@
     "yamljs": "^0.2.8"
   },
   "devDependencies": {
-    "frontsize": "git+https://github.com/ideatosrl/frontsize.git#724e1f1",
     "bower": "^1.6.5",
     "dustman": "^1.11.55",
+    "frontsize": "git+https://github.com/ideatosrl/frontsize.git#4b721f7",
     "matchdep": "^1.0.0",
+    "standard": "^8.6.0",
     "strip-ansi": "^3.0.1",
     "tap": "^8.0.1"
   },

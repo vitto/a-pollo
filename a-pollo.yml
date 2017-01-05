@@ -34,7 +34,7 @@ temp:
 
 styleguide:
   css: test/examples/frontsize/test/css/frontsize-theme.min.css
-  docs: ./test/samples/sass
+  docs: ./test/samples/sass/frontsize
   files: test/examples/frontsize/themes/default/fonts
   images: test/examples/frontsize/themes/default/img
   pages: ./test/samples/metalsmith/contents/posts/*.md

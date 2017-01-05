@@ -6,7 +6,7 @@ const test = tap.test
 
 const annotations = [`
 /*
-  @a-pollo
+  @a-pollo-doc
   @author: Vittorio Vittori
   @category: BEM
   @code: Example on using the mixin block with some static property
@@ -26,7 +26,7 @@ const annotations = [`
       padding: 4px 8px;
     }
   @date: 2016-12-28T17:40:42+01:00
-  @doc: mixin
+  @type: mixin
   @html: A simple HTML element to see how mixin works
     <a class="button" data-style="width: 100px;" style="background-image:url('heilo.svg');" href="#">Visit this link</a>
   @icon: fa fa-css3
@@ -46,7 +46,7 @@ const annotations = [`
 */
 `, `
 /*
-  @a-pollo
+  @a-pollo-doc
   @author: Vittorio Vittori
   @category: BEM
   @code:
@@ -77,7 +77,7 @@ const annotations = [`
 */
 `, `
 /*
-  @a-pollo
+  @a-pollo-snippet
 */
 `]
 
@@ -163,13 +163,6 @@ test('extracts the annotation date', tap => {
   tap.equal(extract.date(annotations[0]), '2016-12-28T17:40:42+01:00')
   tap.equal(extract.date(annotations[1]), '2016-12-31T15:42:05+01:00')
   tap.equal(extract.date(annotations[2]), null)
-  tap.end()
-})
-
-test('extracts the annotation doc', tap => {
-  tap.equal(extract.doc(annotations[0]), 'mixin')
-  tap.equal(extract.doc(annotations[1]), 'snippet')
-  tap.equal(extract.doc(annotations[2]), 'snippet')
   tap.end()
 })
 
@@ -286,6 +279,13 @@ test('extracts the annotation returns', tap => {
 test('extracts the annotation text', tap => {
   tap.equal(extract.text(annotations[0]), 'Defines the block name of the BEM component. This mixin is required as wrapper of `element` and `modifier` mixins')
   tap.equal(extract.text(annotations[2]), null)
+  tap.end()
+})
+
+test('extracts the annotation type', tap => {
+  tap.equal(extract.type(annotations[0]), 'mixin')
+  tap.equal(extract.type(annotations[1]), 'snippet')
+  tap.equal(extract.type(annotations[2]), 'snippet')
   tap.end()
 })
 
