@@ -2,7 +2,9 @@
 <html>
 {{> head }}
 <body>
-  '{{ author }}'
+  {{#each annotations}}
+    <li>{{this.name}}</li>
+  {{/each}}
   {{{ contents }}}
 </body>
 </html>

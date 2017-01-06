@@ -30,7 +30,7 @@ team:
       url: http://www.davinci.com
 
 temp:
-  ./test/samples/metalsmith/contents/a-pollo
+  ./test/samples/metalsmith/contents/temp
 
 styleguide:
   css: test/examples/frontsize/test/css/frontsize-theme.min.css

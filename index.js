@@ -48,7 +48,6 @@ function aPollo (cb) {
 module.exports = aPollo
 
 aPollo(function (config, docs) {
-  console.log('done');
   const m = config.metalsmith
   metalsmith(__dirname)
     .metadata(m.metadata)
@@ -61,5 +60,6 @@ aPollo(function (config, docs) {
     .use(layouts(m.layouts))
     .build(function (err) {
       if (err) { throw err }
+      console.log('Build done')
     })
 })
