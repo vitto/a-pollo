@@ -31,13 +31,12 @@
     "prompt": "^0.2.14",
     "shelljs": "^0.5.3",
     "slugify": "^1.0.2",
-    "strip-indent": "^2.0.0",
-    "yamljs": "^0.2.8"
+    "strip-indent": "^2.0.0"
   },
   "devDependencies": {
     "bower": "^1.6.5",
     "dustman": "^1.11.55",
-    "frontsize": "git+https://github.com/ideatosrl/frontsize.git#35f40f2",
+    "frontsize": "git+https://github.com/ideatosrl/frontsize.git#6b1de8c",
     "matchdep": "^1.0.0",
     "standard": "^8.6.0",
     "strip-ansi": "^3.0.1",

@@ -19,7 +19,8 @@ vendors/
 /test/a-pollo/index.md
 /build
 gulpfile.js
-/test/samples/metalsmith/contents/temp
+/test/samples/metalsmith/contents/docs
+/test/samples/metalsmith/contents/snippets
 
 .nyc_output/
 coverage
