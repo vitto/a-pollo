@@ -1,0 +1,344 @@
+[
+  {
+    "annotation": "doc",
+    "author": "Vittorio Vittori",
+    "category": "BEM",
+    "code": {
+      "code": "@include block (button) {\n  background: #3f6c44;\n  color: #fff;\n  display: inline-block;\n  font-size: 12px;\n  padding: 4px 8px;\n}",
+      "text": "Example on using the mixin with some static property"
+    },
+    "css": {
+      "code": ".button {\n  background: #3f6c44;\n  color: #fff;\n  display: inline-block;\n  font-size: 12px;\n  padding: 4px 8px;\n}",
+      "text": "This is the CSS generated"
+    },
+    "date": "2016-12-28T17:40:42+01:00",
+    "html": {
+      "code": "<a class=\"button\" href=\"#\">Visit this link</a>",
+      "snippet": "<a class=\"button\" href=\"#\">Visit this link</a>",
+      "source": "<a class=\"button\" href=\"#\">Visit this link</a>",
+      "text": "A simple HTML element to see how mixin works"
+    },
+    "icon": "fa fa-css3",
+    "name": "block",
+    "params": [
+      {
+        "default": "required",
+        "name": "$block-name",
+        "text": "Defines the block name of the BEM component",
+        "type": "string"
+      }
+    ],
+    "path": {
+      "root": "/",
+      "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/core/components",
+      "base": "bem.scss",
+      "ext": ".scss",
+      "name": "bem",
+      "relative": "test/samples/sass/frontsize/core/components",
+      "project": "/a-pollo/test/samples/sass/frontsize/core/components",
+      "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/core/components/bem.scss"
+    },
+    "public": true,
+    "returns": "css",
+    "text": "Defines the block name of the BEM component. This mixin is required as wrapper of `element` and `modifier` mixins",
+    "type": "mixin",
+    "version": "4.0.0"
+  },
+  {
+    "annotation": "doc",
+    "author": "Vittorio Vittori",
+    "category": "BEM",
+    "code": {
+      "code": "@include block (button) {\n  background: #3f6c44;\n  display: inline-block;\n  padding: 4px 8px;\n\n  @include element (text) {\n    color: #fff;\n    font-size: 12px;\n  }\n}",
+      "text": "You must wrap `element` mixin inside `block` mixin"
+    },
+    "css": {
+      "code": ".button {\n  background: #3f6c44;\n  display: inline-block;\n  padding: 4px 8px;\n}\n.button__text {\n  color: #fff;\n  font-size: 12px;\n}",
+      "text": "The CSS generated will keep everything on 1 class level deep"
+    },
+    "date": "2016-12-28T18:09:00+01:00",
+    "html": {
+      "code": "<a class=\"button\" href=\"#\"><span class=\"button__text\">Visit this link</span></a>",
+      "snippet": "<a class=\"button\" href=\"#\"><span class=\"button__text\">Visit this link</span></a>",
+      "source": "<a class=\"button\" href=\"#\"><span class=\"button__text\">Visit this link</span></a>",
+      "text": "Elements should be inside a parent block"
+    },
+    "icon": "fa fa-css3",
+    "name": "element",
+    "params": [
+      {
+        "default": "required",
+        "name": "$element-name",
+        "text": "Defines the element name of the BEM component",
+        "type": "string"
+      }
+    ],
+    "path": {
+      "root": "/",
+      "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/core/components",
+      "base": "bem.scss",
+      "ext": ".scss",
+      "name": "bem",
+      "relative": "test/samples/sass/frontsize/core/components",
+      "project": "/a-pollo/test/samples/sass/frontsize/core/components",
+      "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/core/components/bem.scss"
+    },
+    "public": true,
+    "returns": "css",
+    "text": "Defines the element name of the BEM component. This mixin is required as wrapped inside `block` mixin",
+    "type": "mixin",
+    "version": "4.0.0"
+  },
+  {
+    "annotation": "doc",
+    "author": "Vittorio Vittori",
+    "category": "BEM",
+    "code": {
+      "code": "@include block (button) {\n  background: #3f6c44;\n  color: #fff;\n  display: inline-block;\n  font-size: 12px;\n  padding: 4px 8px;\n\n  @include modifier (error) {\n    background: #f02052;\n  }\n}",
+      "text": "Modifiers can be applied to `block` or `element` mixins"
+    },
+    "css": {
+      "code": ".button {\n  background: #3f6c44;\n  color: #fff;\n  display: inline-block;\n  font-size: 12px;\n  padding: 4px 8px;\n}\n.button--error {\n  background: #f02052;\n}",
+      "text": ""
+    },
+    "date": "2016-12-28T18:09:00+01:00",
+    "html": {
+      "code": "<a class=\"button button--error\" href=\"#\">Click here to report the error</a>",
+      "snippet": "<a class=\"button button--error\" href=\"#\">Click here to report the error</a>",
+      "source": "<a class=\"button button--error\" href=\"#\">Click here to report the error</a>",
+      "text": "Remember to keep the modifier's original block or element selector"
+    },
+    "icon": "fa fa-css3",
+    "name": "modifier",
+    "params": [
+      {
+        "default": "required",
+        "name": "$modifier-name",
+        "text": "Defines the modifier name of the BEM component",
+        "type": "string"
+      }
+    ],
+    "path": {
+      "root": "/",
+      "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/core/components",
+      "base": "bem.scss",
+      "ext": ".scss",
+      "name": "bem",
+      "relative": "test/samples/sass/frontsize/core/components",
+      "project": "/a-pollo/test/samples/sass/frontsize/core/components",
+      "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/core/components/bem.scss"
+    },
+    "public": true,
+    "returns": "css",
+    "text": "Defines the modifier name of the BEM component. This mixin is required as wrapped inside `block` mixin",
+    "type": "mixin",
+    "version": "4.0.0"
+  },
+  {
+    "annotation": "doc",
+    "author": "Vittorio Vittori",
+    "category": "Functions",
+    "code": {
+      "code": ".selector {\n  width: scale-value(40px, 0.5);\n}",
+      "text": "Usage example"
+    },
+    "css": {
+      "code": ".selector {\n  width: 20px;\n}",
+      "text": "The CSS generated"
+    },
+    "date": "2017-01-05T15:01:54+01:00",
+    "icon": "fa fa-terminal",
+    "name": "scale-value",
+    "params": [
+      {
+        "default": "required",
+        "name": "$value",
+        "text": "The unit value to be scaled, es: `10px`, `2em`, etc.",
+        "type": "unit-value"
+      },
+      {
+        "default": "required",
+        "name": "$scale",
+        "text": "The scale number to change the value, es: `0.5`, `1`, `1.75`, etc.",
+        "type": "number"
+      }
+    ],
+    "path": {
+      "root": "/",
+      "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/core/functions",
+      "base": "public.scss",
+      "ext": ".scss",
+      "name": "public",
+      "relative": "test/samples/sass/frontsize/core/functions",
+      "project": "/a-pollo/test/samples/sass/frontsize/core/functions",
+      "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/core/functions/public.scss"
+    },
+    "public": true,
+    "returns": "unit-value",
+    "text": "Scales unit values passed, the return value will be rounded.",
+    "type": "function",
+    "version": "4.0.0"
+  },
+  {
+    "annotation": "snippet",
+    "category": "Buttons",
+    "date": "2017-01-06T17:50:18+01:00",
+    "html": {
+      "code": "<a class=\"button-social\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-dashboard\"></i></div>\n  <div class=\"button-social__network\">Button</div>\n</a>",
+      "snippet": "<a class=\"button-social\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-dashboard\"></i></div>\n  <div class=\"button-social__network\">Button</div>\n</a>",
+      "source": "<a class=\"button-social\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-dashboard\"></i></div>\n  <div class=\"button-social__network\">Button</div>\n</a>",
+      "text": ""
+    },
+    "name": "button-social",
+    "path": {
+      "root": "/",
+      "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "base": "button-social.scss",
+      "ext": ".scss",
+      "name": "button-social",
+      "relative": "test/samples/sass/frontsize/themes/default/widgets",
+      "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+    },
+    "text": "The base usage without styles of the button, this component",
+    "type": "snippet"
+  },
+  {
+    "annotation": "snippet",
+    "date": "2015-12-03",
+    "name": "button-social--small",
+    "path": {
+      "root": "/",
+      "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "base": "button-social.scss",
+      "ext": ".scss",
+      "name": "button-social",
+      "relative": "test/samples/sass/frontsize/themes/default/widgets",
+      "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+    },
+    "text": "The GitHub version with `button-social--small` and `button-social--with-effects` modifiers.",
+    "type": "snippet"
+  },
+  {
+    "annotation": "snippet",
+    "date": "2017-01-06T17:54:08+01:00",
+    "name": "button-social--rounded",
+    "path": {
+      "root": "/",
+      "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "base": "button-social.scss",
+      "ext": ".scss",
+      "name": "button-social",
+      "relative": "test/samples/sass/frontsize/themes/default/widgets",
+      "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+    },
+    "text": "This Facebook version has also `button-social--rounded` modifier to set it with rounded corners.",
+    "type": "snippet"
+  },
+  {
+    "annotation": "snippet",
+    "date": "2016-01-09",
+    "name": "button-social--big",
+    "path": {
+      "root": "/",
+      "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "base": "button-social.scss",
+      "ext": ".scss",
+      "name": "button-social",
+      "relative": "test/samples/sass/frontsize/themes/default/widgets",
+      "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+    },
+    "text": "This Facebook version has also `button-social--big` modifier to make it bigger.",
+    "type": "snippet"
+  },
+  {
+    "annotation": "snippet",
+    "date": "2017-01-06T17:56:58+01:00",
+    "name": "button-social--with-effects",
+    "path": {
+      "root": "/",
+      "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "base": "button-social.scss",
+      "ext": ".scss",
+      "name": "button-social",
+      "relative": "test/samples/sass/frontsize/themes/default/widgets",
+      "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+    },
+    "type": "snippet"
+  },
+  {
+    "annotation": "snippet",
+    "date": "2017-01-06T17:57:20+01:00",
+    "html": {
+      "code": "<a class=\"button-social button-social--facebook\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-facebook\"></i></div>\n  <div class=\"button-social__network\">facebook</div>\n</a>",
+      "snippet": "<a class=\"button-social button-social--facebook\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-facebook\"></i></div>\n  <div class=\"button-social__network\">facebook</div>\n</a>",
+      "source": "<a class=\"button-social button-social--facebook\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-facebook\"></i></div>\n  <div class=\"button-social__network\">facebook</div>\n</a>",
+      "text": ""
+    },
+    "name": "button-social--facebook",
+    "path": {
+      "root": "/",
+      "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "base": "button-social.scss",
+      "ext": ".scss",
+      "name": "button-social",
+      "relative": "test/samples/sass/frontsize/themes/default/widgets",
+      "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+    },
+    "text": "This should be used to connect social accounts to the project service.",
+    "type": "snippet"
+  },
+  {
+    "annotation": "snippet",
+    "date": "2017-01-06T18:01:30+01:00",
+    "name": "button-social--twitter",
+    "path": {
+      "root": "/",
+      "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "base": "button-social.scss",
+      "ext": ".scss",
+      "name": "button-social",
+      "relative": "test/samples/sass/frontsize/themes/default/widgets",
+      "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+    },
+    "type": "snippet"
+  },
+  {
+    "annotation": "snippet",
+    "date": "2017-01-06T17:59:33+01:00",
+    "name": "button-social--github",
+    "path": {
+      "root": "/",
+      "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "base": "button-social.scss",
+      "ext": ".scss",
+      "name": "button-social",
+      "relative": "test/samples/sass/frontsize/themes/default/widgets",
+      "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+    },
+    "type": "snippet"
+  },
+  {
+    "annotation": "snippet",
+    "date": "2017-01-06T18:02:15+01:00",
+    "name": "button-social--google-plus",
+    "path": {
+      "root": "/",
+      "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "base": "button-social.scss",
+      "ext": ".scss",
+      "name": "button-social",
+      "relative": "test/samples/sass/frontsize/themes/default/widgets",
+      "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+      "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+    },
+    "type": "snippet"
+  }
+]

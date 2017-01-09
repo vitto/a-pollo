@@ -38,6 +38,7 @@
     "dustman": "^1.11.55",
     "frontsize": "git+https://github.com/ideatosrl/frontsize.git#6b1de8c",
     "matchdep": "^1.0.0",
+    "prettyjson": "^1.2.1",
     "standard": "^8.6.0",
     "strip-ansi": "^3.0.1",
     "tap": "^8.0.1"

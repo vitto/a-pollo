@@ -13,5 +13,5 @@ module.exports.diff = function (first, second) {
 }
 
 module.exports.fixtures = function (file) {
-  return JSON.parse(fs.readFileSync(path.resolve(__dirname, `tap/data/${file}.json`), 'utf8'))
+  return JSON.parse(fs.readFileSync(path.resolve(__dirname, `tap/data/${file.replace('.json', '')}.json`), 'utf8'))
 }
