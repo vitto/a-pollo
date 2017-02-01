@@ -20,6 +20,7 @@ vendors/
 /build
 gulpfile.js
 /test/samples/metalsmith/contents/docs
+/test/samples/metalsmith/contents/identity
 /test/samples/metalsmith/contents/snippets
 /test/samples/build
 .nyc_output/
