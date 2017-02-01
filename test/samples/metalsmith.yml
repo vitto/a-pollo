@@ -1,0 +1,24 @@
+metadata:
+  description: It's about saying Hello to the world.
+  generatorname: Metalsmith
+  generatorurl: http://metalsmith.io/
+  sitename: My Static Site & Blog
+  siteurl: http://example.com/
+clean: true
+collections:
+  posts:
+    pattern: ./metalsmith/contents/posts/*.md
+    sortBy: date
+destination: ./build
+layouts:
+  default: layout.html
+  directory: ./metalsmith/themes/miniml/layouts
+  engine: handlebars
+  partials: ./metalsmith/themes/miniml/partials
+markdown:
+  smartypants: true
+  gfm: true
+  tables: true
+permalinks:
+  relative: false
+source: ./metalsmith/contents
