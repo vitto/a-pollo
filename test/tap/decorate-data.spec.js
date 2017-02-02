@@ -1,6 +1,6 @@
 'use strict'
 
-const decorator = require('../../lib/decorator')
+const decorator = require('../../lib/decorate-data')
 const tap = require('tap')
 const test = tap.test
 
@@ -18,6 +18,11 @@ test('generates two elements', tap => {
     annotations: parsedAnnotations,
     slugBase: 'snippets',
     filter: 'snippet',
+    path: docsPath
+  })).concat(decorator.sortBySnippetType({
+    annotations: parsedAnnotations,
+    slugBase: 'identity',
+    filter: 'color',
     path: docsPath
   }))
 

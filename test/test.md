@@ -45,6 +45,12 @@ saveJson('path/to/file.json', {
 }, exitWhenFinished)
 ```
 
+Or simply
+
+```
+require('./test/save-json')('test/tap/data/parse-files-2.json', files, true)
+```
+
 #### Load JSON data in tests
 
 In the tap tests, load json data with `fixtures` helper, data is expected to be located in `/test/tap/data` path the extension will be automatically added

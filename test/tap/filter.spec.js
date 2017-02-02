@@ -52,7 +52,7 @@ test('filters file list of annotations', tap => {
     if (err) {
       throw err
     }
-    tap.equal(files.length, 2)
+    tap.equal(files.length, 3)
   })
 })
 

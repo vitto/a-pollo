@@ -322,5 +322,409 @@
         "category": "Buttons"
       }
     ]
+  },
+  {
+    "file": "identity/color.md",
+    "breadcrumb": [
+      "Color"
+    ],
+    "annotations": [
+      {
+        "annotation": "color",
+        "css": {
+          "rgb": "rgb(19, 90, 163)",
+          "hsl": "hsl(210, 79%, 36%)",
+          "hex": "#135AA3",
+          "cmyk": "cmyk(88%, 45%, 0%, 36%)"
+        },
+        "name": "$color-azure",
+        "path": {
+          "root": "/",
+          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "base": "vars.scss",
+          "ext": ".scss",
+          "name": "vars",
+          "relative": "test/samples/sass/frontsize/themes/_config",
+          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+        },
+        "type": "color",
+        "title": "Azure",
+        "value": "#135aa3",
+        "names": {
+          "basic": "indigo",
+          "html": "darkslateblue",
+          "ntc": "Azure",
+          "pantone": "Denim",
+          "roygbiv": "indigo",
+          "x11": "darkslateblue"
+        },
+        "object": {
+          "rgb": {
+            "r": 19,
+            "g": 90,
+            "b": 163
+          },
+          "cmyk": {
+            "c": 88,
+            "m": 45,
+            "y": 0,
+            "k": 36
+          }
+        }
+      },
+      {
+        "annotation": "color",
+        "css": {
+          "rgb": "rgb(246, 225, 82)",
+          "hsl": "hsl(52, 90%, 64%)",
+          "hex": "#F6E152",
+          "cmyk": "cmyk(0%, 9%, 67%, 4%)"
+        },
+        "name": "$color-candy-corn",
+        "path": {
+          "root": "/",
+          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "base": "vars.scss",
+          "ext": ".scss",
+          "name": "vars",
+          "relative": "test/samples/sass/frontsize/themes/_config",
+          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+        },
+        "type": "color",
+        "title": "Candy corn",
+        "value": "rgb(246, 225, 82)",
+        "names": {
+          "basic": "gold",
+          "html": "gold",
+          "ntc": "Candy Corn",
+          "pantone": "Unmellow Yellow",
+          "roygbiv": "yellow",
+          "x11": "gold"
+        },
+        "object": {
+          "rgb": {
+            "r": 246,
+            "g": 225,
+            "b": 82
+          },
+          "cmyk": {
+            "c": 0,
+            "m": 9,
+            "y": 67,
+            "k": 4
+          }
+        }
+      },
+      {
+        "annotation": "color",
+        "css": {
+          "rgb": "rgb(177, 232, 75)",
+          "hsl": "hsl(81, 77%, 60%)",
+          "hex": "#B1E84B",
+          "cmyk": "cmyk(24%, 0%, 68%, 9%)"
+        },
+        "name": "$color-conifer",
+        "path": {
+          "root": "/",
+          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "base": "vars.scss",
+          "ext": ".scss",
+          "name": "vars",
+          "relative": "test/samples/sass/frontsize/themes/_config",
+          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+        },
+        "type": "color",
+        "title": "Conifer",
+        "value": "rgb(177, 232, 75)",
+        "names": {
+          "basic": "yellow",
+          "html": "yellowgreen",
+          "ntc": "Conifer",
+          "pantone": "Inch Worm",
+          "roygbiv": "yellow",
+          "x11": "yellowgreen"
+        },
+        "object": {
+          "rgb": {
+            "r": 177,
+            "g": 232,
+            "b": 75
+          },
+          "cmyk": {
+            "c": 24,
+            "m": 0,
+            "y": 68,
+            "k": 9
+          }
+        }
+      },
+      {
+        "annotation": "color",
+        "css": {
+          "rgb": "rgb(246, 96, 141)",
+          "hsl": "hsl(342, 89%, 67%)",
+          "hex": "#F6608D",
+          "cmyk": "cmyk(0%, 61%, 43%, 4%)"
+        },
+        "name": "$color-cranberry",
+        "path": {
+          "root": "/",
+          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "base": "vars.scss",
+          "ext": ".scss",
+          "name": "vars",
+          "relative": "test/samples/sass/frontsize/themes/_config",
+          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+        },
+        "type": "color",
+        "title": "Cranberry",
+        "value": "rgb(246, 96, 141)",
+        "names": {
+          "basic": "brown",
+          "html": "palevioletred",
+          "ntc": "Cranberry",
+          "pantone": "Blush",
+          "roygbiv": "violet",
+          "x11": "palevioletred"
+        },
+        "object": {
+          "rgb": {
+            "r": 246,
+            "g": 96,
+            "b": 141
+          },
+          "cmyk": {
+            "c": 0,
+            "m": 61,
+            "y": 43,
+            "k": 4
+          }
+        }
+      },
+      {
+        "annotation": "color",
+        "css": {
+          "rgb": "rgb(63, 73, 79)",
+          "hsl": "hsl(203, 11%, 28%)",
+          "hex": "#3F494F",
+          "cmyk": "cmyk(20%, 8%, 0%, 69%)"
+        },
+        "name": "$color-limed-spruce",
+        "path": {
+          "root": "/",
+          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "base": "vars.scss",
+          "ext": ".scss",
+          "name": "vars",
+          "relative": "test/samples/sass/frontsize/themes/_config",
+          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+        },
+        "type": "color",
+        "title": "Limed spruce",
+        "value": "#3f494f",
+        "names": {
+          "basic": "gray",
+          "html": "darkslategray",
+          "ntc": "Limed Spruce",
+          "pantone": "Outer Space",
+          "roygbiv": "indigo",
+          "x11": "darkslategrey"
+        },
+        "object": {
+          "rgb": {
+            "r": 63,
+            "g": 73,
+            "b": 79
+          },
+          "cmyk": {
+            "c": 20,
+            "m": 8,
+            "y": 0,
+            "k": 69
+          }
+        }
+      },
+      {
+        "annotation": "color",
+        "css": {
+          "rgb": "rgb(71, 176, 236)",
+          "hsl": "hsl(202, 81%, 60%)",
+          "hex": "#47B0EC",
+          "cmyk": "cmyk(70%, 25%, 0%, 7%)"
+        },
+        "name": "$color-picton-blue",
+        "path": {
+          "root": "/",
+          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "base": "vars.scss",
+          "ext": ".scss",
+          "name": "vars",
+          "relative": "test/samples/sass/frontsize/themes/_config",
+          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+        },
+        "type": "color",
+        "title": "Picton blue",
+        "value": "#47b0ec",
+        "names": {
+          "basic": "teal",
+          "html": "deepskyblue",
+          "ntc": "Picton Blue",
+          "pantone": "Cerulean",
+          "roygbiv": "violet",
+          "x11": "deepskyblue"
+        },
+        "object": {
+          "rgb": {
+            "r": 71,
+            "g": 176,
+            "b": 236
+          },
+          "cmyk": {
+            "c": 70,
+            "m": 25,
+            "y": 0,
+            "k": 7
+          }
+        }
+      },
+      {
+        "annotation": "color",
+        "css": {
+          "rgb": "rgb(81, 215, 223)",
+          "hsl": "hsl(183, 69%, 60%)",
+          "hex": "#51D7DF",
+          "cmyk": "cmyk(64%, 4%, 0%, 13%)"
+        },
+        "name": "$color-turquoise-blue",
+        "path": {
+          "root": "/",
+          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "base": "vars.scss",
+          "ext": ".scss",
+          "name": "vars",
+          "relative": "test/samples/sass/frontsize/themes/_config",
+          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+        },
+        "type": "color",
+        "title": "Turquoise blue",
+        "value": "rgb(81, 215, 223)",
+        "names": {
+          "basic": "turquoise",
+          "html": "darkturquoise",
+          "ntc": "Turquoise Blue",
+          "pantone": "Aquamarine",
+          "roygbiv": "green",
+          "x11": "darkturquoise"
+        },
+        "object": {
+          "rgb": {
+            "r": 81,
+            "g": 215,
+            "b": 223
+          },
+          "cmyk": {
+            "c": 64,
+            "m": 4,
+            "y": 0,
+            "k": 13
+          }
+        }
+      },
+      {
+        "annotation": "color",
+        "css": {
+          "rgb": "rgb(255, 255, 255)",
+          "hsl": "hsl(0, 0%, 100%)",
+          "hex": "#FFFFFF",
+          "cmyk": "cmyk(0%, 0%, 0%, 0%)"
+        },
+        "name": "$color-white",
+        "path": {
+          "root": "/",
+          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "base": "vars.scss",
+          "ext": ".scss",
+          "name": "vars",
+          "relative": "test/samples/sass/frontsize/themes/_config",
+          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+        },
+        "type": "color",
+        "title": "White",
+        "value": "#fff",
+        "names": {
+          "basic": "white",
+          "html": "white",
+          "ntc": "White",
+          "pantone": "White",
+          "roygbiv": "violet",
+          "x11": "white"
+        },
+        "object": {
+          "rgb": {
+            "r": 255,
+            "g": 255,
+            "b": 255
+          },
+          "cmyk": {
+            "c": 0,
+            "m": 0,
+            "y": 0,
+            "k": 0
+          }
+        }
+      },
+      {
+        "annotation": "color",
+        "css": {
+          "rgb": "rgb(255, 0, 0)",
+          "hsl": "hsl(0, 100%, 50%)",
+          "hex": "#FF0000",
+          "cmyk": "cmyk(0%, 100%, 100%, 0%)"
+        },
+        "name": "$color-red",
+        "path": {
+          "root": "/",
+          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "base": "vars.scss",
+          "ext": ".scss",
+          "name": "vars",
+          "relative": "test/samples/sass/frontsize/themes/_config",
+          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+        },
+        "type": "color",
+        "title": "Red",
+        "value": "rgb(255, 0, 0)",
+        "names": {
+          "basic": "red",
+          "html": "red",
+          "ntc": "Red",
+          "pantone": "Scarlet",
+          "roygbiv": "red",
+          "x11": "red"
+        },
+        "object": {
+          "rgb": {
+            "r": 255,
+            "g": 0,
+            "b": 0
+          },
+          "cmyk": {
+            "c": 0,
+            "m": 100,
+            "y": 100,
+            "k": 0
+          }
+        }
+      }
+    ]
   }
 ]

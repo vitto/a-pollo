@@ -1,0 +1,29 @@
+{
+  "css": {
+    "rgb": "rgb(19, 90, 163)",
+    "hsl": "hsl(210, 79%, 36%)",
+    "hex": "#135AA3",
+    "cmyk": "cmyk(88%, 45%, 0%, 36%)"
+  },
+  "names": {
+    "basic": "indigo",
+    "html": "darkslateblue",
+    "ntc": "Azure",
+    "pantone": "Denim",
+    "roygbiv": "indigo",
+    "x11": "darkslateblue"
+  },
+  "channel": {
+    "rgb": {
+      "r": 19,
+      "g": 90,
+      "b": 163
+    },
+    "cmyk": {
+      "c": 88,
+      "m": 45,
+      "y": 0,
+      "k": 36
+    }
+  }
+}
