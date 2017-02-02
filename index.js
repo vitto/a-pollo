@@ -21,7 +21,7 @@ function aPollo (cb) {
   commandLine(function (args) {
     configuration(args).load(function (err, config) {
       if (err) { throw err }
-      annotations(config.styleguide.docs).list(function (err, matches) {
+      annotations(config.annotations).list(function (err, matches) {
         if (err) { throw err }
         filter(matches, function (err, files) {
           if (err) { throw err }

@@ -48,7 +48,7 @@ saveJson('path/to/file.json', {
 Or simply
 
 ```
-require('./test/save-json')('test/tap/data/parse-files-2.json', files, true)
+require('./test/save-json')('test/tap/data/decorate-colors.json', files, true)
 ```
 
 #### Load JSON data in tests
