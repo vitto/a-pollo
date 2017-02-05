@@ -1,39 +1,6 @@
-
-title: Client project
-date: 2016-11-01
-
-libs:
-  bower: bower.json
-  node: package.json
-
-team:
-  clients:
-    -
-      email: me@client.com
-      name: Client Name
-      phone: +39 123 4567890
-      role: CEO
-      url: http://client.com
-  developers:
-    -
-      email: dev@devsite.com
-      name: John Doe
-      phone: +39 123 4567890
-      role: Front-end engineer
-      url: http://vit.to
-  designers:
-    -
-      email: leo@davinci.com
-      name: Leonardo Da Vinci
-      phone: +39 123 4567890
-      role: UX/UI Expert
-      url: http://www.davinci.com
-
-temp: ./test/samples/metalsmith/contents
-
-styleguide:
-  css: test/examples/frontsize/test/css/frontsize-theme.min.css
-  docs: ./test/samples/sass/frontsize
-  files: test/examples/frontsize/themes/default/fonts
+annotations: sass/frontsize
+cache: metalsmith/contents
+assets:
+  css: css/example.css
+  fonts: test/examples/frontsize/themes/default/fonts
   images: test/examples/frontsize/themes/default/img
-  pages: ./test/samples/metalsmith/contents/posts/*.md

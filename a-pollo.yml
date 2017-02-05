@@ -1,13 +1,6 @@
-
-title: Client project
-date: 2016-11-01
-
-annotations: ./test/samples/sass/frontsize
-cache: ./test/samples/metalsmith/contents
-css: test/examples/frontsize/test/css/frontsize-theme.min.css
-posts: ./test/samples/metalsmith/contents/posts/*.md
-
-dependencies:
-  assets:
-    - test/examples/frontsize/themes/default/fonts
-    - test/examples/frontsize/themes/default/img
+annotations: sass/frontsize
+cache: metalsmith/contents
+assets:
+  css: test/samples/css/example.css
+  fonts: test/examples/frontsize/themes/default/fonts
+  images: test/examples/frontsize/themes/default/img

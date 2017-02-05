@@ -1,0 +1,32 @@
+.selector {
+  background-image: url('/path/to/image.png');
+}
+
+.selector-2 {
+  background-image: url('/path/to/image.svg');
+}
+
+.selector-3 {
+  background-image: url("/path/to/image.svg");
+}
+
+.selector-4 {
+  background-image: url(/path/to/image.png);
+}
+
+@font-face {
+  font-family: 'Graublau Web';
+  src: url('GraublauWeb.eot');
+  src: local('☺︎'),
+    url("GraublauWeb.woff") format("woff"),
+    url('GraublauWeb.otf') format("opentype"),
+    url("GraublauWeb.svg#grablau") format("svg");
+  }
+
+@media screen and (max-device-width: 480px) {
+  @font-face {
+    font-family: "Graublau Web";
+    src: url("GraublauWeb.woff") format("woff"),
+    url(GraublauWeb.otf) format("opentype"),
+    url("GraublauWeb.svg#grablau") format("svg");
+}}

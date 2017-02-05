@@ -19,7 +19,7 @@ const save = require('./lib/save')
 
 function aPollo (cb) {
   commandLine(function (args) {
-    configuration(args).load(function (err, config) {
+    configuration(args).load(function (err, config, inlineCss) {
       if (err) { throw err }
       annotations(config.annotations).list(function (err, matches) {
         if (err) { throw err }
@@ -29,7 +29,7 @@ function aPollo (cb) {
             if (err) { throw err }
             save(config, docs, function (err, config, docs) {
               if (err) { throw err }
-              cb(config, docs)
+              cb(config, docs, inlineCss)
             })
           })
         })
