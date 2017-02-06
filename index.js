@@ -11,6 +11,7 @@ logger(loggerOpts).error('Hello')
 console.log(logger(loggerOpts).options())
 */
 const annotations = require('./lib/annotations')
+const assets = require('./lib/assets')
 const commandLine = require('./lib/command-line')
 const configuration = require('./lib/config')
 const filter = require('./lib/filter')
@@ -29,7 +30,10 @@ function aPollo (cb) {
             if (err) { throw err }
             save(config, docs, function (err, config, docs) {
               if (err) { throw err }
-              cb(config, docs, inlineCss)
+              assets(config, function (err) {
+                if (err) { throw err }
+                cb(config, docs, inlineCss)
+              })
             })
           })
         })

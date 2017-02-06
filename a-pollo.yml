@@ -2,5 +2,5 @@ annotations: sass/frontsize
 cache: metalsmith/contents
 assets:
   css: test/samples/css/example.css
-  fonts: test/examples/frontsize/themes/default/fonts
-  images: test/examples/frontsize/themes/default/img
+  fonts: test/samples/fonts
+  images: test/samples/images
