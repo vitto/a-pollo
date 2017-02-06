@@ -1,4 +1,3 @@
-
 .DS_Store
 .nyc_output/
 *.log
@@ -12,6 +11,7 @@
 /test/samples/metalsmith/contents/fonts
 /test/samples/metalsmith/contents/identity
 /test/samples/metalsmith/contents/images
+/test/samples/metalsmith/contents/index.md
 /test/samples/metalsmith/contents/snippets
 /test/samples/sass/frontsize
 /vendors/
