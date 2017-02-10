@@ -76,6 +76,6 @@ const cssChanged = `
 `
 
 test('replace CSS url with a-pollo build path', tap => {
-  tap.equal(css.inline(cssString, config.assetsPath), cssChanged)
+  tap.equal(css.changePaths(cssString, 'assets'), cssChanged)
   tap.end()
 })

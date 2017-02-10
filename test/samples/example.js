@@ -22,7 +22,7 @@ const markdown = require('metalsmith-markdown')
 const metalsmith = require('metalsmith')
 const permalinks = require('metalsmith-permalinks')
 
-aPollo(function (config, docs, inlineCss) {
+aPollo(function (config, docs, inlineCss, images, fonts) {
   var m = yaml.safeLoad(fs.readFileSync('metalsmith.yml', 'utf-8'))
   m.metadata.css = inlineCss
   metalsmith(__dirname)
@@ -35,7 +35,7 @@ aPollo(function (config, docs, inlineCss) {
     .use(permalinks(m.permalinks))
     .use(layouts(m.layouts))
     .build(function (err) {
-      if (err) { throw err }
+      if (err) throw err
       console.log('Build done')
     })
 })

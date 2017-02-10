@@ -21,18 +21,21 @@ const save = require('./lib/save')
 function aPollo (cb) {
   commandLine(function (args) {
     configuration(args).load(function (err, config, inlineCss) {
-      if (err) { throw err }
+      if (err) throw err
       annotations(config.annotations).list(function (err, matches) {
-        if (err) { throw err }
+        if (err) throw err
         filter(matches, function (err, files) {
-          if (err) { throw err }
+          if (err) throw err
           parse(files, function (err, docs) {
-            if (err) { throw err }
-            save(config, docs, function (err, config, docs) {
-              if (err) { throw err }
-              assets(config, function (err) {
-                if (err) { throw err }
-                cb(config, docs, inlineCss)
+            if (err) throw err
+            assets.build(config, function (err) {
+              if (err) throw err
+              assets.images(config, function (err, images) {
+                if (err) throw err
+                save(config, docs, function (err, config, docs) {
+                  if (err) throw err
+                  cb(config, docs, inlineCss, images)
+                })
               })
             })
           })
