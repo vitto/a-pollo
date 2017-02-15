@@ -1,4 +1,4 @@
-annotations: sass/frontsize
+annotations: sass
 cache: metalsmith/contents
 assets:
   css: css/example.css

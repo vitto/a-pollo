@@ -26,15 +26,22 @@ function aPollo (cb) {
         if (err) throw err
         filter(matches, function (err, files) {
           if (err) throw err
-          parse(files, function (err, docs) {
+          parse(files, function (err, annotations) {
             if (err) throw err
             assets.build(config, function (err) {
               if (err) throw err
               assets.images(config, function (err, images) {
                 if (err) throw err
-                save(config, docs, function (err, config, docs) {
+                assets.fonts(config, function (err, fonts) {
                   if (err) throw err
-                  cb(config, docs, inlineCss, images)
+                  save(config, {
+                    annotations: annotations,
+                    fonts: fonts,
+                    images: images
+                  }, function (err, config, annotations) {
+                    if (err) throw err
+                    cb(config, annotations, inlineCss, images, fonts)
+                  })
                 })
               })
             })

@@ -1,0 +1,16 @@
+@include font('Merriweather-Light') {
+  font-family: 'merriweather';
+  font-weight: 300;
+}
+
+/*
+  @a-pollo-typography
+  @name: Merriweather
+  @selector: .text.text--big
+  @text: This is used for paragraphs text blocks, it's nice on web browser and digial devices with low or high density displays.
+        If you need to write on physical object it's recommended to use [Kepler STD](https://typekit.com/fonts/kepler).
+*/
+
+@include block ('text') {
+  font-family: merriweather, times new roman, serif;
+}
