@@ -37,7 +37,8 @@ function aPollo (cb) {
                   save(config, {
                     annotations: annotations,
                     fonts: fonts,
-                    images: images
+                    images: images,
+                    css: inlineCss
                   }, function (err, config, annotations) {
                     if (err) throw err
                     cb(config, annotations, inlineCss, images, fonts)
