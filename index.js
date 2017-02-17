@@ -39,9 +39,9 @@ function aPollo (cb) {
                     fonts: fonts,
                     images: images,
                     css: inlineCss
-                  }, function (err, config, annotations) {
+                  }, function (err, config, annotations, map) {
                     if (err) throw err
-                    cb(config, annotations, inlineCss, images, fonts)
+                    cb(config, annotations, map, inlineCss, images, fonts)
                   })
                 })
               })
