@@ -28,6 +28,7 @@ function aPollo (cb) {
           if (err) throw err
           parse(files, function (err, annotations) {
             if (err) throw err
+            // require('./test/save-json')('../tap/data/parsed-annotations-2.json', annotations, true)
             assets.build(config, function (err) {
               if (err) throw err
               assets.images(config, function (err, images) {
@@ -41,6 +42,7 @@ function aPollo (cb) {
                     css: inlineCss
                   }, function (err, config, annotations, map) {
                     if (err) throw err
+                    // require('./test/save-json')('../tap/data/decorated-annotations-2.json', annotations, true)
                     cb(config, annotations, map, inlineCss, images, fonts)
                   })
                 })

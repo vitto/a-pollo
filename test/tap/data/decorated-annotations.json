@@ -1,30 +1,71 @@
 [
   {
-    "file": "docs/core/components/bem.md",
+    "annotation": "doc",
+    "annotations": [
+      {
+        "annotation": "doc",
+        "author": "Vittorio Vittori",
+        "category": "Core vars",
+        "date": "2017-02-20T14:48:35+01:00",
+        "name": "Base",
+        "params": [
+          {
+            "default": "true",
+            "name": "$use-core-base",
+            "text": "Enables CSS core reset styles",
+            "type": "boolean"
+          }
+        ],
+        "path": {
+          "root": "/",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/components",
+          "base": "base.scss",
+          "ext": ".scss",
+          "name": "base",
+          "relative": "sass/frontsize/core/components",
+          "project": "/samples/sass/frontsize/core/components",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/components/base.scss"
+        },
+        "public": true,
+        "text": "<p>This core var is used to load default reset CSS behavior</p>\n",
+        "type": "var",
+        "version": "4.0.0",
+        "code": {
+          "code": "$use-core-base: true",
+          "snippet": "<pre><code class=\"lang-scss\">$use-core-base: true\n</code></pre>\n",
+          "text": "<p>To use core base reset behavior just set to <code>true</code> the var <code>$use-core-base</code></p>\n"
+        }
+      }
+    ],
     "breadcrumb": [
+      "Frontsize",
       "Core",
       "Components",
-      "Bem"
+      "Base"
     ],
+    "category": "Core vars",
+    "file": "docs/frontsize/core/components/base.md",
+    "title": "Base",
+    "url": {
+      "short": "docs/frontsize/core/components/base",
+      "folder": "docs/frontsize/core/components/base/",
+      "full": "docs/frontsize/core/components/base/index.html"
+    }
+  },
+  {
+    "annotation": "doc",
     "annotations": [
       {
         "annotation": "doc",
         "author": "Vittorio Vittori",
         "category": "BEM",
-        "code": {
-          "code": "@include block (button) {\n  background: #3f6c44;\n  color: #fff;\n  display: inline-block;\n  font-size: 12px;\n  padding: 4px 8px;\n}",
-          "text": "Example on using the mixin with some static property"
-        },
-        "css": {
-          "code": ".button {\n  background: #3f6c44;\n  color: #fff;\n  display: inline-block;\n  font-size: 12px;\n  padding: 4px 8px;\n}",
-          "text": "This is the CSS generated"
-        },
         "date": "2016-12-28T17:40:42+01:00",
         "html": {
           "code": "<a class=\"button\" href=\"#\">Visit this link</a>",
-          "snippet": "<a class=\"button\" href=\"#\">Visit this link</a>",
+          "copy": "<a class=\"button\" href=\"#\">Visit this link</a>",
+          "snippet": "<pre><code class=\"lang-html\">&lt;a class=&quot;button&quot; href=&quot;#&quot;&gt;Visit this link&lt;/a&gt;\n</code></pre>\n",
           "source": "<a class=\"button\" href=\"#\">Visit this link</a>",
-          "text": "A simple HTML element to see how mixin works"
+          "text": "<p>A simple HTML element to see how mixin works</p>\n"
         },
         "icon": "fa fa-css3",
         "name": "block",
@@ -38,38 +79,41 @@
         ],
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/core/components",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/components",
           "base": "bem.scss",
           "ext": ".scss",
           "name": "bem",
-          "relative": "test/samples/sass/frontsize/core/components",
-          "project": "/a-pollo/test/samples/sass/frontsize/core/components",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/core/components/bem.scss"
+          "relative": "sass/frontsize/core/components",
+          "project": "/samples/sass/frontsize/core/components",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/components/bem.scss"
         },
         "public": true,
         "returns": "css",
-        "text": "Defines the block name of the BEM component. This mixin is required as wrapper of `element` and `modifier` mixins",
+        "text": "<p>Defines the block name of the BEM component. This mixin is required as wrapper of <code>element</code> and <code>modifier</code> mixins</p>\n",
         "type": "mixin",
-        "version": "4.0.0"
+        "version": "4.0.0",
+        "code": {
+          "code": "@include block (button) {\n  background: #3f6c44;\n  color: #fff;\n  display: inline-block;\n  font-size: 12px;\n  padding: 4px 8px;\n}",
+          "snippet": "<pre><code class=\"lang-scss\">@include block (button) {\n  background: #3f6c44;\n  color: #fff;\n  display: inline-block;\n  font-size: 12px;\n  padding: 4px 8px;\n}\n</code></pre>\n",
+          "text": "<p>Example on using the mixin with some static property</p>\n"
+        },
+        "css": {
+          "code": ".button {\n  background: #3f6c44;\n  color: #fff;\n  display: inline-block;\n  font-size: 12px;\n  padding: 4px 8px;\n}",
+          "snippet": "<pre><code class=\"lang-css\">.button {\n  background: #3f6c44;\n  color: #fff;\n  display: inline-block;\n  font-size: 12px;\n  padding: 4px 8px;\n}\n</code></pre>\n",
+          "text": "<p>This is the CSS generated</p>\n"
+        }
       },
       {
         "annotation": "doc",
         "author": "Vittorio Vittori",
         "category": "BEM",
-        "code": {
-          "code": "@include block (button) {\n  background: #3f6c44;\n  display: inline-block;\n  padding: 4px 8px;\n\n  @include element (text) {\n    color: #fff;\n    font-size: 12px;\n  }\n}",
-          "text": "You must wrap `element` mixin inside `block` mixin"
-        },
-        "css": {
-          "code": ".button {\n  background: #3f6c44;\n  display: inline-block;\n  padding: 4px 8px;\n}\n.button__text {\n  color: #fff;\n  font-size: 12px;\n}",
-          "text": "The CSS generated will keep everything on 1 class level deep"
-        },
         "date": "2016-12-28T18:09:00+01:00",
         "html": {
           "code": "<a class=\"button\" href=\"#\"><span class=\"button__text\">Visit this link</span></a>",
-          "snippet": "<a class=\"button\" href=\"#\"><span class=\"button__text\">Visit this link</span></a>",
-          "source": "<a class=\"button\" href=\"#\"><span class=\"button__text\">Visit this link</span></a>",
-          "text": "Elements should be inside a parent block"
+          "copy": "<a class=\"button\" href=\"#\"><span class=\"button__text\">Visit this link</span></a>",
+          "snippet": "<pre><code class=\"lang-html\">&lt;a class=&quot;button&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;button__text&quot;&gt;Visit this link&lt;/span&gt;&lt;/a&gt;\n</code></pre>\n",
+          "source": "<a class=\"button\" href=\"#\">\n  <span class=\"button__text\">Visit this link</span>\n</a>",
+          "text": "<p>Elements should be inside a parent block</p>\n"
         },
         "icon": "fa fa-css3",
         "name": "element",
@@ -83,38 +127,41 @@
         ],
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/core/components",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/components",
           "base": "bem.scss",
           "ext": ".scss",
           "name": "bem",
-          "relative": "test/samples/sass/frontsize/core/components",
-          "project": "/a-pollo/test/samples/sass/frontsize/core/components",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/core/components/bem.scss"
+          "relative": "sass/frontsize/core/components",
+          "project": "/samples/sass/frontsize/core/components",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/components/bem.scss"
         },
         "public": true,
         "returns": "css",
-        "text": "Defines the element name of the BEM component. This mixin is required as wrapped inside `block` mixin",
+        "text": "<p>Defines the element name of the BEM component. This mixin is required as wrapped inside <code>block</code> mixin</p>\n",
         "type": "mixin",
-        "version": "4.0.0"
+        "version": "4.0.0",
+        "code": {
+          "code": "@include block (button) {\n  background: #3f6c44;\n  display: inline-block;\n  padding: 4px 8px;\n\n  @include element (text) {\n    color: #fff;\n    font-size: 12px;\n  }\n}",
+          "snippet": "<pre><code class=\"lang-scss\">@include block (button) {\n  background: #3f6c44;\n  display: inline-block;\n  padding: 4px 8px;\n\n  @include element (text) {\n    color: #fff;\n    font-size: 12px;\n  }\n}\n</code></pre>\n",
+          "text": "<p>You must wrap <code>element</code> mixin inside <code>block</code> mixin</p>\n"
+        },
+        "css": {
+          "code": ".button {\n  background: #3f6c44;\n  display: inline-block;\n  padding: 4px 8px;\n}\n.button__text {\n  color: #fff;\n  font-size: 12px;\n}",
+          "snippet": "<pre><code class=\"lang-css\">.button {\n  background: #3f6c44;\n  display: inline-block;\n  padding: 4px 8px;\n}\n.button__text {\n  color: #fff;\n  font-size: 12px;\n}\n</code></pre>\n",
+          "text": "<p>The CSS generated will keep everything on 1 class level deep</p>\n"
+        }
       },
       {
         "annotation": "doc",
         "author": "Vittorio Vittori",
         "category": "BEM",
-        "code": {
-          "code": "@include block (button) {\n  background: #3f6c44;\n  color: #fff;\n  display: inline-block;\n  font-size: 12px;\n  padding: 4px 8px;\n\n  @include modifier (error) {\n    background: #f02052;\n  }\n}",
-          "text": "Modifiers can be applied to `block` or `element` mixins"
-        },
-        "css": {
-          "code": ".button {\n  background: #3f6c44;\n  color: #fff;\n  display: inline-block;\n  font-size: 12px;\n  padding: 4px 8px;\n}\n.button--error {\n  background: #f02052;\n}",
-          "text": ""
-        },
         "date": "2016-12-28T18:09:00+01:00",
         "html": {
           "code": "<a class=\"button button--error\" href=\"#\">Click here to report the error</a>",
-          "snippet": "<a class=\"button button--error\" href=\"#\">Click here to report the error</a>",
+          "copy": "<a class=\"button button--error\" href=\"#\">Click here to report the error</a>",
+          "snippet": "<pre><code class=\"lang-html\">&lt;a class=&quot;button button--error&quot; href=&quot;#&quot;&gt;Click here to report the error&lt;/a&gt;\n</code></pre>\n",
           "source": "<a class=\"button button--error\" href=\"#\">Click here to report the error</a>",
-          "text": "Remember to keep the modifier's original block or element selector"
+          "text": "<p>Remember to keep the modifier&#39;s original block or element selector</p>\n"
         },
         "icon": "fa fa-css3",
         "name": "modifier",
@@ -128,28 +175,337 @@
         ],
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/core/components",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/components",
           "base": "bem.scss",
           "ext": ".scss",
           "name": "bem",
-          "relative": "test/samples/sass/frontsize/core/components",
-          "project": "/a-pollo/test/samples/sass/frontsize/core/components",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/core/components/bem.scss"
+          "relative": "sass/frontsize/core/components",
+          "project": "/samples/sass/frontsize/core/components",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/components/bem.scss"
         },
         "public": true,
         "returns": "css",
-        "text": "Defines the modifier name of the BEM component. This mixin is required as wrapped inside `block` mixin",
+        "text": "<p>Defines the modifier name of the BEM component. This mixin is required as wrapped inside <code>block</code> mixin</p>\n",
         "type": "mixin",
-        "version": "4.0.0"
+        "version": "4.0.0",
+        "code": {
+          "code": "@include block (button) {\n  background: #3f6c44;\n  color: #fff;\n  display: inline-block;\n  font-size: 12px;\n  padding: 4px 8px;\n\n  @include modifier (error) {\n    background: #f02052;\n  }\n}",
+          "snippet": "<pre><code class=\"lang-scss\">@include block (button) {\n  background: #3f6c44;\n  color: #fff;\n  display: inline-block;\n  font-size: 12px;\n  padding: 4px 8px;\n\n  @include modifier (error) {\n    background: #f02052;\n  }\n}\n</code></pre>\n",
+          "text": "<p>Modifiers can be applied to <code>block</code> or <code>element</code> mixins</p>\n"
+        },
+        "css": {
+          "code": ".button {\n  background: #3f6c44;\n  color: #fff;\n  display: inline-block;\n  font-size: 12px;\n  padding: 4px 8px;\n}\n.button--error {\n  background: #f02052;\n}",
+          "snippet": "<pre><code class=\"lang-css\">.button {\n  background: #3f6c44;\n  color: #fff;\n  display: inline-block;\n  font-size: 12px;\n  padding: 4px 8px;\n}\n.button--error {\n  background: #f02052;\n}\n</code></pre>\n",
+          "text": null
+        }
       }
-    ]
+    ],
+    "breadcrumb": [
+      "Frontsize",
+      "Core",
+      "Components",
+      "Bem"
+    ],
+    "category": "BEM",
+    "file": "docs/frontsize/core/components/bem.md",
+    "title": "block",
+    "url": {
+      "short": "docs/frontsize/core/components/bem",
+      "folder": "docs/frontsize/core/components/bem/",
+      "full": "docs/frontsize/core/components/bem/index.html"
+    }
   },
   {
-    "file": "snippets/buttons/button-social.md",
-    "breadcrumb": [
-      "Buttons",
-      "Button social"
+    "annotation": "doc",
+    "annotations": [
+      {
+        "annotation": "doc",
+        "author": "Vittorio Vittori",
+        "category": "Core vars",
+        "date": "2017-02-20T17:01:46+01:00",
+        "name": "Print",
+        "params": [
+          {
+            "default": "true",
+            "name": "$use-core-print",
+            "text": "Enables CSS default print media query behavior",
+            "type": "boolean"
+          }
+        ],
+        "path": {
+          "root": "/",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/components",
+          "base": "print.scss",
+          "ext": ".scss",
+          "name": "print",
+          "relative": "sass/frontsize/core/components",
+          "project": "/samples/sass/frontsize/core/components",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/components/print.scss"
+        },
+        "public": true,
+        "text": "<p>This core var is used for print media query behavior</p>\n",
+        "type": "var",
+        "version": "4.0.0",
+        "code": {
+          "code": "$use-core-print: true",
+          "snippet": "<pre><code class=\"lang-scss\">$use-core-print: true\n</code></pre>\n",
+          "text": "<p>To use media query default print behavior just set to <code>true</code> the var <code>$use-core-print</code></p>\n"
+        }
+      }
     ],
+    "breadcrumb": [
+      "Frontsize",
+      "Core",
+      "Components",
+      "Print"
+    ],
+    "category": "Core vars",
+    "file": "docs/frontsize/core/components/print.md",
+    "title": "Print",
+    "url": {
+      "short": "docs/frontsize/core/components/print",
+      "folder": "docs/frontsize/core/components/print/",
+      "full": "docs/frontsize/core/components/print/index.html"
+    }
+  },
+  {
+    "annotation": "doc",
+    "annotations": [
+      {
+        "annotation": "doc",
+        "author": "Vittorio Vittori",
+        "category": "Background",
+        "date": "2017-02-20T17:06:06+01:00",
+        "name": "theme",
+        "params": [
+          {
+            "default": "required",
+            "name": "$image",
+            "text": "An image file",
+            "type": "string"
+          },
+          {
+            "default": "optional",
+            "name": "$path",
+            "text": "[$path-images]\n          The relative or absolute path to override, by default is based on core var `$path-images` used in config",
+            "type": "string"
+          }
+        ],
+        "path": {
+          "root": "/",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/functions",
+          "base": "background.scss",
+          "ext": ".scss",
+          "name": "background",
+          "relative": "sass/frontsize/core/functions",
+          "project": "/samples/sass/frontsize/core/functions",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/functions/background.scss"
+        },
+        "public": true,
+        "returns": "css",
+        "text": "<p>Returns a css <code>url</code> parameter, this should be used with <code>$path-images</code> core var</p>\n",
+        "type": "function",
+        "version": "4.0.0",
+        "code": {
+          "code": ".selector {\n  background-image: theme('image.svg');\n}",
+          "snippet": "<pre><code class=\"lang-scss\">.selector {\n  background-image: theme(&#39;image.svg&#39;);\n}\n</code></pre>\n",
+          "text": "<p>Example on using the mixin with some static property</p>\n"
+        },
+        "css": {
+          "code": ".selector {\n  background-image: url('path/to/image.svg');\n}",
+          "snippet": "<pre><code class=\"lang-css\">.selector {\n  background-image: url(&#39;path/to/image.svg&#39;);\n}\n</code></pre>\n",
+          "text": "<p>This is the CSS generated</p>\n"
+        }
+      },
+      {
+        "annotation": "doc",
+        "author": "Vittorio Vittori",
+        "category": "Background",
+        "date": "2017-02-20T17:06:06+01:00",
+        "name": "vertical-gradient",
+        "params": [
+          {
+            "default": "required",
+            "name": "$color-base",
+            "text": "A color value",
+            "type": "string"
+          },
+          {
+            "default": "optional",
+            "name": "$strength-or-color",
+            "text": "[5%]\n          You have two usages, the % strength contrast to the color base or the bottom color for `grandient` paramter generated",
+            "type": "string"
+          }
+        ],
+        "path": {
+          "root": "/",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/functions",
+          "base": "background.scss",
+          "ext": ".scss",
+          "name": "background",
+          "relative": "sass/frontsize/core/functions",
+          "project": "/samples/sass/frontsize/core/functions",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/functions/background.scss"
+        },
+        "public": true,
+        "returns": "css",
+        "text": "<p>Returns a css <code>grandient</code> parameter, this should be used with <code>$path-images</code> core var</p>\n",
+        "type": "function",
+        "version": "4.0.0",
+        "code": {
+          "code": ".selector-a {\n  background-image: vertical-gradient(#ff724d, 10%);\n}\n.selector-b {\n  background-image: vertical-gradient(#80c6ff, #0082e6);\n}",
+          "snippet": "<pre><code class=\"lang-scss\">.selector-a {\n  background-image: vertical-gradient(#ff724d, 10%);\n}\n.selector-b {\n  background-image: vertical-gradient(#80c6ff, #0082e6);\n}\n</code></pre>\n",
+          "text": "<p>Usage example</p>\n"
+        },
+        "css": {
+          "code": ".selector-a {\n  background-image: linear-gradient(\"top, #ff9a80 0%, #ff4a1a 100%\");\n}\n.selector-b {\n  background-image: linear-gradient(\"top, #80c6ff 0%, #0082e6 100%\");\n}",
+          "snippet": "<pre><code class=\"lang-css\">.selector-a {\n  background-image: linear-gradient(&quot;top, #ff9a80 0%, #ff4a1a 100%&quot;);\n}\n.selector-b {\n  background-image: linear-gradient(&quot;top, #80c6ff 0%, #0082e6 100%&quot;);\n}\n</code></pre>\n",
+          "text": "<p>CSS generated</p>\n"
+        }
+      }
+    ],
+    "breadcrumb": [
+      "Frontsize",
+      "Core",
+      "Functions",
+      "Background"
+    ],
+    "category": "Background",
+    "file": "docs/frontsize/core/functions/background.md",
+    "title": "theme",
+    "url": {
+      "short": "docs/frontsize/core/functions/background",
+      "folder": "docs/frontsize/core/functions/background/",
+      "full": "docs/frontsize/core/functions/background/index.html"
+    }
+  },
+  {
+    "annotation": "doc",
+    "annotations": [
+      {
+        "annotation": "doc",
+        "author": "Vittorio Vittori",
+        "category": "Transition",
+        "date": "2017-02-20T18:59:41+01:00",
+        "name": "ease",
+        "params": [
+          {
+            "default": "required",
+            "name": "$easing",
+            "text": "An easing name",
+            "type": "string"
+          }
+        ],
+        "path": {
+          "root": "/",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/functions",
+          "base": "ease.scss",
+          "ext": ".scss",
+          "name": "ease",
+          "relative": "sass/frontsize/core/functions",
+          "project": "/samples/sass/frontsize/core/functions",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/functions/ease.scss"
+        },
+        "public": true,
+        "returns": "css",
+        "text": "<p>Returns a css <code>ease</code> effect for the css <code>transition</code> parameters, you have these effects:\n | Easing | Equivalent CSS easing |\n |-|-|\n | <code>in-back</code> | <code>cubic-bezier(0.6, -0.28, 0.735, 0.045)</code> |\n | <code>in-circ</code> | <code>cubic-bezier(0.6, 0.04, 0.98, 0.335)</code> |\n | <code>in-cubic</code> | <code>cubic-bezier(0.55, 0.055, 0.675, 0.19)</code> |\n | <code>in-expo</code> | <code>cubic-bezier(0.95, 0.05, 0.795, 0.035)</code> |\n | <code>in-out-back</code> | <code>cubic-bezier(0.68, -0.55, 0.265, 1.55)</code> |\n | <code>in-out-circ</code> | <code>cubic-bezier(0.785, 0.135, 0.15, 0.86)</code> |\n | <code>in-out-cubic</code> | <code>cubic-bezier(0.645, 0.045, 0.355, 1)</code> |\n | <code>in-out-expo</code> | <code>cubic-bezier(1, 0, 0, 1)</code> |\n | <code>in-out-quad</code> | <code>cubic-bezier(0.455, 0.03, 0.515, 0.955)</code> |\n | <code>in-out-quart</code> | <code>cubic-bezier(0.77, 0, 0.175, 1)</code> |\n | <code>in-out-quint</code> | <code>cubic-bezier(0.86, 0, 0.07, 1)</code> |\n | <code>in-out-sine</code> | <code>cubic-bezier(0.445, 0.05, 0.55, 0.95)</code> |\n | <code>in-quad</code> | <code>cubic-bezier(0.55, 0.085, 0.68, 0.53)</code> |\n | <code>in-quart</code> | <code>cubic-bezier(0.895, 0.03, 0.685, 0.22)</code> |\n | <code>in-quint</code> | <code>cubic-bezier(0.755, 0.05, 0.855, 0.06)</code> |\n | <code>in-sine</code> | <code>cubic-bezier(0.47, 0, 0.745, 0.715)</code> |\n | <code>out-back</code> | <code>cubic-bezier(0.175, 0.885, 0.32, 1.275)</code> |\n | <code>out-circ</code> | <code>cubic-bezier(0.075, 0.82, 0.165, 1)</code> |\n | <code>out-cubic</code> | <code>cubic-bezier(0.215, 0.61, 0.355, 1)</code> |\n | <code>out-expo</code> | <code>cubic-bezier(0.19, 1, 0.22, 1)</code> |\n | <code>out-quad</code> | <code>cubic-bezier(0.25, 0.46, 0.45, 0.94)</code> |\n | <code>out-quart</code> | <code>cubic-bezier(0.165, 0.84, 0.44, 1)</code> |\n | <code>out-quint</code> | <code>cubic-bezier(0.23, 1, 0.32, 1)</code> |\n | <code>out-sine</code> | <code>cubic-bezier(0.39, 0.575, 0.565, 1)</code> |</p>\n",
+        "type": "function",
+        "version": "4.0.0",
+        "code": {
+          "code": ".selector {\n  transition: color 0.25s ease('in-quad');\n}",
+          "snippet": "<pre><code class=\"lang-scss\">.selector {\n  transition: color 0.25s ease(&#39;in-quad&#39;);\n}\n</code></pre>\n",
+          "text": "<p>Usage example</p>\n"
+        },
+        "css": {
+          "code": ".selector {\n  transition: color 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53);\n}",
+          "snippet": "<pre><code class=\"lang-css\">.selector {\n  transition: color 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53);\n}\n</code></pre>\n",
+          "text": "<p>CSS generated</p>\n"
+        }
+      }
+    ],
+    "breadcrumb": [
+      "Frontsize",
+      "Core",
+      "Functions",
+      "Ease"
+    ],
+    "category": "Transition",
+    "file": "docs/frontsize/core/functions/ease.md",
+    "title": "ease",
+    "url": {
+      "short": "docs/frontsize/core/functions/ease",
+      "folder": "docs/frontsize/core/functions/ease/",
+      "full": "docs/frontsize/core/functions/ease/index.html"
+    }
+  },
+  {
+    "annotation": "doc",
+    "annotations": [
+      {
+        "annotation": "doc",
+        "author": "Vittorio Vittori",
+        "category": "Functions",
+        "date": "2017-01-05T15:01:54+01:00",
+        "icon": "fa fa-terminal",
+        "name": "scale-value",
+        "params": [
+          {
+            "default": "required",
+            "name": "$value",
+            "text": "The unit value to be scaled, es: `10px`, `2em`, etc.",
+            "type": "unit-value"
+          },
+          {
+            "default": "required",
+            "name": "$scale",
+            "text": "The scale number to change the value, es: `0.5`, `1`, `1.75`, etc.",
+            "type": "number"
+          }
+        ],
+        "path": {
+          "root": "/",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/functions",
+          "base": "public.scss",
+          "ext": ".scss",
+          "name": "public",
+          "relative": "sass/frontsize/core/functions",
+          "project": "/samples/sass/frontsize/core/functions",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/core/functions/public.scss"
+        },
+        "public": true,
+        "returns": "unit-value",
+        "text": "<p>Scales unit values passed, the return value will be rounded.</p>\n",
+        "type": "function",
+        "version": "4.0.0",
+        "code": {
+          "code": ".selector {\n  width: scale-value(40px, 0.5);\n}",
+          "snippet": "<pre><code class=\"lang-scss\">.selector {\n  width: scale-value(40px, 0.5);\n}\n</code></pre>\n",
+          "text": "<p>Usage example</p>\n"
+        },
+        "css": {
+          "code": ".selector {\n  width: 20px;\n}",
+          "snippet": "<pre><code class=\"lang-css\">.selector {\n  width: 20px;\n}\n</code></pre>\n",
+          "text": "<p>The CSS generated</p>\n"
+        }
+      }
+    ],
+    "breadcrumb": [
+      "Frontsize",
+      "Core",
+      "Functions",
+      "Public"
+    ],
+    "category": "Functions",
+    "file": "docs/frontsize/core/functions/public.md",
+    "title": "scale-value",
+    "url": {
+      "short": "docs/frontsize/core/functions/public",
+      "folder": "docs/frontsize/core/functions/public/",
+      "full": "docs/frontsize/core/functions/public/index.html"
+    }
+  },
+  {
+    "annotation": "snippet",
     "annotations": [
       {
         "annotation": "snippet",
@@ -157,91 +513,120 @@
         "date": "2017-01-06T17:50:18+01:00",
         "html": {
           "code": "<a class=\"button-social\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-dashboard\"></i></div>\n  <div class=\"button-social__network\">Button</div>\n</a>",
-          "snippet": "<a class=\"button-social\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-dashboard\"></i></div>\n  <div class=\"button-social__network\">Button</div>\n</a>",
-          "source": "<a class=\"button-social\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-dashboard\"></i></div>\n  <div class=\"button-social__network\">Button</div>\n</a>",
-          "text": ""
+          "copy": "<a class=\"button-social\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-dashboard\"></i></div>\n  <div class=\"button-social__network\">Button</div>\n</a>",
+          "snippet": "<pre><code class=\"lang-html\">&lt;a class=&quot;button-social&quot; href=&quot;#&quot;&gt;\n  &lt;div class=&quot;button-social__icon&quot;&gt;&lt;i class=&quot;fa fa-dashboard&quot;&gt;&lt;/i&gt;&lt;/div&gt;\n  &lt;div class=&quot;button-social__network&quot;&gt;Button&lt;/div&gt;\n&lt;/a&gt;\n</code></pre>\n",
+          "source": "<a href=\"#\" class=\"button-social\">\n  <div class=\"button-social__icon\">\n    <i class=\"fa fa-dashboard\"></i>\n  </div>\n  <div class=\"button-social__network\">\n    Button\n  </div>\n</a>",
+          "text": null
         },
         "name": "button-social",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
           "base": "button-social.scss",
           "ext": ".scss",
           "name": "button-social",
-          "relative": "test/samples/sass/frontsize/themes/default/widgets",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+          "relative": "sass/frontsize/themes/default/widgets",
+          "project": "/samples/sass/frontsize/themes/default/widgets",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
         },
-        "text": "The base usage without styles of the button, this component",
+        "text": "<p>The base usage without styles of the button, this component</p>\n",
         "type": "snippet"
       },
       {
         "annotation": "snippet",
         "date": "2015-12-03",
+        "html": {
+          "code": "<a class=\"button-social button-social--small\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-compress\"></i></div>\n  <div class=\"button-social__network\">Small button</div>\n</a>",
+          "copy": "<a class=\"button-social button-social--small\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-compress\"></i></div>\n  <div class=\"button-social__network\">Small button</div>\n</a>",
+          "snippet": "<pre><code class=\"lang-html\">&lt;a class=&quot;button-social button-social--small&quot; href=&quot;#&quot;&gt;\n  &lt;div class=&quot;button-social__icon&quot;&gt;&lt;i class=&quot;fa fa-compress&quot;&gt;&lt;/i&gt;&lt;/div&gt;\n  &lt;div class=&quot;button-social__network&quot;&gt;Small button&lt;/div&gt;\n&lt;/a&gt;\n</code></pre>\n",
+          "source": "<a href=\"#\" class=\"button-social button-social--small\">\n  <div class=\"button-social__icon\">\n    <i class=\"fa fa-compress\"></i>\n  </div>\n  <div class=\"button-social__network\">\n    Small button\n  </div>\n</a>",
+          "text": null
+        },
         "name": "button-social--small",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
           "base": "button-social.scss",
           "ext": ".scss",
           "name": "button-social",
-          "relative": "test/samples/sass/frontsize/themes/default/widgets",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+          "relative": "sass/frontsize/themes/default/widgets",
+          "project": "/samples/sass/frontsize/themes/default/widgets",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
         },
-        "text": "The GitHub version with `button-social--small` and `button-social--with-effects` modifiers.",
+        "text": "<p>The GitHub version with <code>button-social--small</code> and <code>button-social--with-effects</code> modifiers.</p>\n",
         "type": "snippet",
         "category": "Buttons"
       },
       {
         "annotation": "snippet",
         "date": "2017-01-06T17:54:08+01:00",
+        "html": {
+          "code": "<a class=\"button-social button-social--rounded\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-life-ring\"></i></div>\n  <div class=\"button-social__network\">Rounded button</div>\n</a>",
+          "copy": "<a class=\"button-social button-social--rounded\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-life-ring\"></i></div>\n  <div class=\"button-social__network\">Rounded button</div>\n</a>",
+          "snippet": "<pre><code class=\"lang-html\">&lt;a class=&quot;button-social button-social--rounded&quot; href=&quot;#&quot;&gt;\n  &lt;div class=&quot;button-social__icon&quot;&gt;&lt;i class=&quot;fa fa-life-ring&quot;&gt;&lt;/i&gt;&lt;/div&gt;\n  &lt;div class=&quot;button-social__network&quot;&gt;Rounded button&lt;/div&gt;\n&lt;/a&gt;\n</code></pre>\n",
+          "source": "<a href=\"#\" class=\"button-social button-social--rounded\">\n  <div class=\"button-social__icon\">\n    <i class=\"fa fa-life-ring\"></i>\n  </div>\n  <div class=\"button-social__network\">\n    Rounded button\n  </div>\n</a>",
+          "text": null
+        },
         "name": "button-social--rounded",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
           "base": "button-social.scss",
           "ext": ".scss",
           "name": "button-social",
-          "relative": "test/samples/sass/frontsize/themes/default/widgets",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+          "relative": "sass/frontsize/themes/default/widgets",
+          "project": "/samples/sass/frontsize/themes/default/widgets",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
         },
-        "text": "This Facebook version has also `button-social--rounded` modifier to set it with rounded corners.",
+        "text": "<p>This Facebook version has also <code>button-social--rounded</code> modifier to set it with rounded corners.</p>\n",
         "type": "snippet",
         "category": "Buttons"
       },
       {
         "annotation": "snippet",
         "date": "2016-01-09",
+        "html": {
+          "code": "<a class=\"button-social button-social--big\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-expand\"></i></div>\n  <div class=\"button-social__network\">Big button</div>\n</a>",
+          "copy": "<a class=\"button-social button-social--big\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-expand\"></i></div>\n  <div class=\"button-social__network\">Big button</div>\n</a>",
+          "snippet": "<pre><code class=\"lang-html\">&lt;a class=&quot;button-social button-social--big&quot; href=&quot;#&quot;&gt;\n  &lt;div class=&quot;button-social__icon&quot;&gt;&lt;i class=&quot;fa fa-expand&quot;&gt;&lt;/i&gt;&lt;/div&gt;\n  &lt;div class=&quot;button-social__network&quot;&gt;Big button&lt;/div&gt;\n&lt;/a&gt;\n</code></pre>\n",
+          "source": "<a href=\"#\" class=\"button-social button-social--big\">\n  <div class=\"button-social__icon\">\n    <i class=\"fa fa-expand\"></i>\n  </div>\n  <div class=\"button-social__network\">\n    Big button\n  </div>\n</a>",
+          "text": null
+        },
         "name": "button-social--big",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
           "base": "button-social.scss",
           "ext": ".scss",
           "name": "button-social",
-          "relative": "test/samples/sass/frontsize/themes/default/widgets",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+          "relative": "sass/frontsize/themes/default/widgets",
+          "project": "/samples/sass/frontsize/themes/default/widgets",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
         },
-        "text": "This Facebook version has also `button-social--big` modifier to make it bigger.",
+        "text": "<p>This Facebook version has also <code>button-social--big</code> modifier to make it bigger.</p>\n",
         "type": "snippet",
         "category": "Buttons"
       },
       {
         "annotation": "snippet",
         "date": "2017-01-06T17:56:58+01:00",
+        "html": {
+          "code": "<a class=\"button-social button-social--with-effects\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-magic\"></i></div>\n  <div class=\"button-social__network\">Button with effects</div>\n</a>",
+          "copy": "<a class=\"button-social button-social--with-effects\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-magic\"></i></div>\n  <div class=\"button-social__network\">Button with effects</div>\n</a>",
+          "snippet": "<pre><code class=\"lang-html\">&lt;a class=&quot;button-social button-social--with-effects&quot; href=&quot;#&quot;&gt;\n  &lt;div class=&quot;button-social__icon&quot;&gt;&lt;i class=&quot;fa fa-magic&quot;&gt;&lt;/i&gt;&lt;/div&gt;\n  &lt;div class=&quot;button-social__network&quot;&gt;Button with effects&lt;/div&gt;\n&lt;/a&gt;\n</code></pre>\n",
+          "source": "<a href=\"#\" class=\"button-social button-social--with-effects\">\n  <div class=\"button-social__icon\">\n    <i class=\"fa fa-magic\"></i>\n  </div>\n  <div class=\"button-social__network\">\n    Button with effects\n  </div>\n</a>",
+          "text": null
+        },
         "name": "button-social--with-effects",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
           "base": "button-social.scss",
           "ext": ".scss",
           "name": "button-social",
-          "relative": "test/samples/sass/frontsize/themes/default/widgets",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+          "relative": "sass/frontsize/themes/default/widgets",
+          "project": "/samples/sass/frontsize/themes/default/widgets",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
         },
         "type": "snippet",
         "category": "Buttons"
@@ -251,38 +636,46 @@
         "date": "2017-01-06T17:57:20+01:00",
         "html": {
           "code": "<a class=\"button-social button-social--facebook\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-facebook\"></i></div>\n  <div class=\"button-social__network\">facebook</div>\n</a>",
-          "snippet": "<a class=\"button-social button-social--facebook\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-facebook\"></i></div>\n  <div class=\"button-social__network\">facebook</div>\n</a>",
-          "source": "<a class=\"button-social button-social--facebook\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-facebook\"></i></div>\n  <div class=\"button-social__network\">facebook</div>\n</a>",
-          "text": ""
+          "copy": "<a class=\"button-social button-social--facebook\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-facebook\"></i></div>\n  <div class=\"button-social__network\">facebook</div>\n</a>",
+          "snippet": "<pre><code class=\"lang-html\">&lt;a class=&quot;button-social button-social--facebook&quot; href=&quot;#&quot;&gt;\n  &lt;div class=&quot;button-social__icon&quot;&gt;&lt;i class=&quot;fa fa-facebook&quot;&gt;&lt;/i&gt;&lt;/div&gt;\n  &lt;div class=&quot;button-social__network&quot;&gt;facebook&lt;/div&gt;\n&lt;/a&gt;\n</code></pre>\n",
+          "source": "<a href=\"#\" class=\"button-social button-social--facebook\">\n  <div class=\"button-social__icon\">\n    <i class=\"fa fa-facebook\"></i>\n  </div>\n  <div class=\"button-social__network\">\n    facebook\n  </div>\n</a>",
+          "text": null
         },
         "name": "button-social--facebook",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
           "base": "button-social.scss",
           "ext": ".scss",
           "name": "button-social",
-          "relative": "test/samples/sass/frontsize/themes/default/widgets",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+          "relative": "sass/frontsize/themes/default/widgets",
+          "project": "/samples/sass/frontsize/themes/default/widgets",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
         },
-        "text": "This should be used to connect social accounts to the project service.",
+        "text": "<p>This should be used to connect social accounts to the project service.</p>\n",
         "type": "snippet",
         "category": "Buttons"
       },
       {
         "annotation": "snippet",
         "date": "2017-01-06T18:01:30+01:00",
+        "html": {
+          "code": "<a class=\"button-social button-social--twitter button-social--with-effects\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-twitter\"></i></div>\n  <div class=\"button-social__network\">twitter</div>\n</a>",
+          "copy": "<a class=\"button-social button-social--twitter button-social--with-effects\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-twitter\"></i></div>\n  <div class=\"button-social__network\">twitter</div>\n</a>",
+          "snippet": "<pre><code class=\"lang-html\">&lt;a class=&quot;button-social button-social--twitter button-social--with-effects&quot; href=&quot;#&quot;&gt;\n  &lt;div class=&quot;button-social__icon&quot;&gt;&lt;i class=&quot;fa fa-twitter&quot;&gt;&lt;/i&gt;&lt;/div&gt;\n  &lt;div class=&quot;button-social__network&quot;&gt;twitter&lt;/div&gt;\n&lt;/a&gt;\n</code></pre>\n",
+          "source": "<a href=\"#\" class=\"button-social button-social--twitter button-social--with-effects\">\n  <div class=\"button-social__icon\">\n    <i class=\"fa fa-twitter\"></i>\n  </div>\n  <div class=\"button-social__network\">\n    twitter\n  </div>\n</a>",
+          "text": null
+        },
         "name": "button-social--twitter",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
           "base": "button-social.scss",
           "ext": ".scss",
           "name": "button-social",
-          "relative": "test/samples/sass/frontsize/themes/default/widgets",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+          "relative": "sass/frontsize/themes/default/widgets",
+          "project": "/samples/sass/frontsize/themes/default/widgets",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
         },
         "type": "snippet",
         "category": "Buttons"
@@ -290,16 +683,23 @@
       {
         "annotation": "snippet",
         "date": "2017-01-06T17:59:33+01:00",
+        "html": {
+          "code": "<a class=\"button-social button-social--github\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-github-alt\"></i></div>\n  <div class=\"button-social__network\">github</div>\n</a>",
+          "copy": "<a class=\"button-social button-social--github\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-github-alt\"></i></div>\n  <div class=\"button-social__network\">github</div>\n</a>",
+          "snippet": "<pre><code class=\"lang-html\">&lt;a class=&quot;button-social button-social--github&quot; href=&quot;#&quot;&gt;\n  &lt;div class=&quot;button-social__icon&quot;&gt;&lt;i class=&quot;fa fa-github-alt&quot;&gt;&lt;/i&gt;&lt;/div&gt;\n  &lt;div class=&quot;button-social__network&quot;&gt;github&lt;/div&gt;\n&lt;/a&gt;\n</code></pre>\n",
+          "source": "<a href=\"#\" class=\"button-social button-social--github\">\n  <div class=\"button-social__icon\">\n    <i class=\"fa fa-github-alt\"></i>\n  </div>\n  <div class=\"button-social__network\">\n    github\n  </div>\n</a>",
+          "text": null
+        },
         "name": "button-social--github",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
           "base": "button-social.scss",
           "ext": ".scss",
           "name": "button-social",
-          "relative": "test/samples/sass/frontsize/themes/default/widgets",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+          "relative": "sass/frontsize/themes/default/widgets",
+          "project": "/samples/sass/frontsize/themes/default/widgets",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
         },
         "type": "snippet",
         "category": "Buttons"
@@ -307,46 +707,57 @@
       {
         "annotation": "snippet",
         "date": "2017-01-06T18:02:15+01:00",
+        "html": {
+          "code": "<a class=\"button-social button-social--google-plus\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-google-plus\"></i></div>\n  <div class=\"button-social__network\">googe plus</div>\n</a>",
+          "copy": "<a class=\"button-social button-social--google-plus\" href=\"#\">\n  <div class=\"button-social__icon\"><i class=\"fa fa-google-plus\"></i></div>\n  <div class=\"button-social__network\">googe plus</div>\n</a>",
+          "snippet": "<pre><code class=\"lang-html\">&lt;a class=&quot;button-social button-social--google-plus&quot; href=&quot;#&quot;&gt;\n  &lt;div class=&quot;button-social__icon&quot;&gt;&lt;i class=&quot;fa fa-google-plus&quot;&gt;&lt;/i&gt;&lt;/div&gt;\n  &lt;div class=&quot;button-social__network&quot;&gt;googe plus&lt;/div&gt;\n&lt;/a&gt;\n</code></pre>\n",
+          "source": "<a href=\"#\" class=\"button-social button-social--google-plus\">\n  <div class=\"button-social__icon\">\n    <i class=\"fa fa-google-plus\"></i>\n  </div>\n  <div class=\"button-social__network\">\n    googe plus\n  </div>\n</a>",
+          "text": null
+        },
         "name": "button-social--google-plus",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
           "base": "button-social.scss",
           "ext": ".scss",
           "name": "button-social",
-          "relative": "test/samples/sass/frontsize/themes/default/widgets",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/default/widgets",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
+          "relative": "sass/frontsize/themes/default/widgets",
+          "project": "/samples/sass/frontsize/themes/default/widgets",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/default/widgets/button-social.scss"
         },
         "type": "snippet",
         "category": "Buttons"
       }
-    ]
+    ],
+    "breadcrumb": [
+      "Buttons",
+      "Button social"
+    ],
+    "category": "Buttons",
+    "file": "snippets/buttons/button-social.md",
+    "title": "button-social",
+    "url": {
+      "short": "snippets/buttons/button-social",
+      "folder": "snippets/buttons/button-social/",
+      "full": "snippets/buttons/button-social/index.html"
+    }
   },
   {
-    "file": "identity/color.md",
-    "breadcrumb": [
-      "Color"
-    ],
+    "annotation": "color",
     "annotations": [
       {
         "annotation": "color",
-        "css": {
-          "rgb": "rgb(19, 90, 163)",
-          "hsl": "hsl(210, 79%, 36%)",
-          "hex": "#135AA3",
-          "cmyk": "cmyk(88%, 45%, 0%, 36%)"
-        },
+        "category": "identity",
         "name": "$color-azure",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/_config",
           "base": "vars.scss",
           "ext": ".scss",
           "name": "vars",
-          "relative": "test/samples/sass/frontsize/themes/_config",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+          "relative": "sass/frontsize/themes/_config",
+          "project": "/samples/sass/frontsize/themes/_config",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
         },
         "type": "color",
         "title": "Azure",
@@ -359,7 +770,13 @@
           "roygbiv": "indigo",
           "x11": "darkslateblue"
         },
-        "object": {
+        "css": {
+          "rgb": "rgb(19, 90, 163)",
+          "hsl": "hsl(210, 79%, 36%)",
+          "hex": "#135AA3",
+          "cmyk": "cmyk(88%, 45%, 0%, 36%)"
+        },
+        "channel": {
           "rgb": {
             "r": 19,
             "g": 90,
@@ -375,22 +792,17 @@
       },
       {
         "annotation": "color",
-        "css": {
-          "rgb": "rgb(246, 225, 82)",
-          "hsl": "hsl(52, 90%, 64%)",
-          "hex": "#F6E152",
-          "cmyk": "cmyk(0%, 9%, 67%, 4%)"
-        },
+        "category": "identity",
         "name": "$color-candy-corn",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/_config",
           "base": "vars.scss",
           "ext": ".scss",
           "name": "vars",
-          "relative": "test/samples/sass/frontsize/themes/_config",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+          "relative": "sass/frontsize/themes/_config",
+          "project": "/samples/sass/frontsize/themes/_config",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
         },
         "type": "color",
         "title": "Candy corn",
@@ -403,7 +815,13 @@
           "roygbiv": "yellow",
           "x11": "gold"
         },
-        "object": {
+        "css": {
+          "rgb": "rgb(246, 225, 82)",
+          "hsl": "hsl(52, 90%, 64%)",
+          "hex": "#F6E152",
+          "cmyk": "cmyk(0%, 9%, 67%, 4%)"
+        },
+        "channel": {
           "rgb": {
             "r": 246,
             "g": 225,
@@ -419,22 +837,17 @@
       },
       {
         "annotation": "color",
-        "css": {
-          "rgb": "rgb(177, 232, 75)",
-          "hsl": "hsl(81, 77%, 60%)",
-          "hex": "#B1E84B",
-          "cmyk": "cmyk(24%, 0%, 68%, 9%)"
-        },
+        "category": "identity",
         "name": "$color-conifer",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/_config",
           "base": "vars.scss",
           "ext": ".scss",
           "name": "vars",
-          "relative": "test/samples/sass/frontsize/themes/_config",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+          "relative": "sass/frontsize/themes/_config",
+          "project": "/samples/sass/frontsize/themes/_config",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
         },
         "type": "color",
         "title": "Conifer",
@@ -447,7 +860,13 @@
           "roygbiv": "yellow",
           "x11": "yellowgreen"
         },
-        "object": {
+        "css": {
+          "rgb": "rgb(177, 232, 75)",
+          "hsl": "hsl(81, 77%, 60%)",
+          "hex": "#B1E84B",
+          "cmyk": "cmyk(24%, 0%, 68%, 9%)"
+        },
+        "channel": {
           "rgb": {
             "r": 177,
             "g": 232,
@@ -463,22 +882,17 @@
       },
       {
         "annotation": "color",
-        "css": {
-          "rgb": "rgb(246, 96, 141)",
-          "hsl": "hsl(342, 89%, 67%)",
-          "hex": "#F6608D",
-          "cmyk": "cmyk(0%, 61%, 43%, 4%)"
-        },
+        "category": "identity",
         "name": "$color-cranberry",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/_config",
           "base": "vars.scss",
           "ext": ".scss",
           "name": "vars",
-          "relative": "test/samples/sass/frontsize/themes/_config",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+          "relative": "sass/frontsize/themes/_config",
+          "project": "/samples/sass/frontsize/themes/_config",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
         },
         "type": "color",
         "title": "Cranberry",
@@ -491,7 +905,13 @@
           "roygbiv": "violet",
           "x11": "palevioletred"
         },
-        "object": {
+        "css": {
+          "rgb": "rgb(246, 96, 141)",
+          "hsl": "hsl(342, 89%, 67%)",
+          "hex": "#F6608D",
+          "cmyk": "cmyk(0%, 61%, 43%, 4%)"
+        },
+        "channel": {
           "rgb": {
             "r": 246,
             "g": 96,
@@ -507,22 +927,17 @@
       },
       {
         "annotation": "color",
-        "css": {
-          "rgb": "rgb(63, 73, 79)",
-          "hsl": "hsl(203, 11%, 28%)",
-          "hex": "#3F494F",
-          "cmyk": "cmyk(20%, 8%, 0%, 69%)"
-        },
+        "category": "identity",
         "name": "$color-limed-spruce",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/_config",
           "base": "vars.scss",
           "ext": ".scss",
           "name": "vars",
-          "relative": "test/samples/sass/frontsize/themes/_config",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+          "relative": "sass/frontsize/themes/_config",
+          "project": "/samples/sass/frontsize/themes/_config",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
         },
         "type": "color",
         "title": "Limed spruce",
@@ -535,7 +950,13 @@
           "roygbiv": "indigo",
           "x11": "darkslategrey"
         },
-        "object": {
+        "css": {
+          "rgb": "rgb(63, 73, 79)",
+          "hsl": "hsl(203, 11%, 28%)",
+          "hex": "#3F494F",
+          "cmyk": "cmyk(20%, 8%, 0%, 69%)"
+        },
+        "channel": {
           "rgb": {
             "r": 63,
             "g": 73,
@@ -551,22 +972,17 @@
       },
       {
         "annotation": "color",
-        "css": {
-          "rgb": "rgb(71, 176, 236)",
-          "hsl": "hsl(202, 81%, 60%)",
-          "hex": "#47B0EC",
-          "cmyk": "cmyk(70%, 25%, 0%, 7%)"
-        },
+        "category": "identity",
         "name": "$color-picton-blue",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/_config",
           "base": "vars.scss",
           "ext": ".scss",
           "name": "vars",
-          "relative": "test/samples/sass/frontsize/themes/_config",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+          "relative": "sass/frontsize/themes/_config",
+          "project": "/samples/sass/frontsize/themes/_config",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
         },
         "type": "color",
         "title": "Picton blue",
@@ -579,7 +995,13 @@
           "roygbiv": "violet",
           "x11": "deepskyblue"
         },
-        "object": {
+        "css": {
+          "rgb": "rgb(71, 176, 236)",
+          "hsl": "hsl(202, 81%, 60%)",
+          "hex": "#47B0EC",
+          "cmyk": "cmyk(70%, 25%, 0%, 7%)"
+        },
+        "channel": {
           "rgb": {
             "r": 71,
             "g": 176,
@@ -595,22 +1017,17 @@
       },
       {
         "annotation": "color",
-        "css": {
-          "rgb": "rgb(81, 215, 223)",
-          "hsl": "hsl(183, 69%, 60%)",
-          "hex": "#51D7DF",
-          "cmyk": "cmyk(64%, 4%, 0%, 13%)"
-        },
+        "category": "identity",
         "name": "$color-turquoise-blue",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/_config",
           "base": "vars.scss",
           "ext": ".scss",
           "name": "vars",
-          "relative": "test/samples/sass/frontsize/themes/_config",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+          "relative": "sass/frontsize/themes/_config",
+          "project": "/samples/sass/frontsize/themes/_config",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
         },
         "type": "color",
         "title": "Turquoise blue",
@@ -623,7 +1040,13 @@
           "roygbiv": "green",
           "x11": "darkturquoise"
         },
-        "object": {
+        "css": {
+          "rgb": "rgb(81, 215, 223)",
+          "hsl": "hsl(183, 69%, 60%)",
+          "hex": "#51D7DF",
+          "cmyk": "cmyk(64%, 4%, 0%, 13%)"
+        },
+        "channel": {
           "rgb": {
             "r": 81,
             "g": 215,
@@ -639,22 +1062,17 @@
       },
       {
         "annotation": "color",
-        "css": {
-          "rgb": "rgb(255, 255, 255)",
-          "hsl": "hsl(0, 0%, 100%)",
-          "hex": "#FFFFFF",
-          "cmyk": "cmyk(0%, 0%, 0%, 0%)"
-        },
+        "category": "identity",
         "name": "$color-white",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/_config",
           "base": "vars.scss",
           "ext": ".scss",
           "name": "vars",
-          "relative": "test/samples/sass/frontsize/themes/_config",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+          "relative": "sass/frontsize/themes/_config",
+          "project": "/samples/sass/frontsize/themes/_config",
+          "file": "/path/to/user/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
         },
         "type": "color",
         "title": "White",
@@ -667,7 +1085,13 @@
           "roygbiv": "violet",
           "x11": "white"
         },
-        "object": {
+        "css": {
+          "rgb": "rgb(255, 255, 255)",
+          "hsl": "hsl(0, 0%, 100%)",
+          "hex": "#FFFFFF",
+          "cmyk": "cmyk(0%, 0%, 0%, 0%)"
+        },
+        "channel": {
           "rgb": {
             "r": 255,
             "g": 255,
@@ -680,51 +1104,108 @@
             "k": 0
           }
         }
-      },
+      }
+    ],
+    "breadcrumb": [
+      "Color"
+    ],
+    "category": "identity",
+    "file": "identity/color.md",
+    "title": "$color-azure",
+    "url": {
+      "short": "identity/color",
+      "folder": "identity/color/",
+      "full": "identity/color/index.html"
+    }
+  },
+  {
+    "annotation": "typography",
+    "annotations": [
       {
-        "annotation": "color",
-        "css": {
-          "rgb": "rgb(255, 0, 0)",
-          "hsl": "hsl(0, 100%, 50%)",
-          "hex": "#FF0000",
-          "cmyk": "cmyk(0%, 100%, 100%, 0%)"
-        },
-        "name": "$color-red",
+        "annotation": "typography",
+        "category": "identity",
+        "name": "Merriweather",
         "path": {
           "root": "/",
-          "dir": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config",
-          "base": "vars.scss",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/fonts/widgets",
+          "base": "text.scss",
           "ext": ".scss",
-          "name": "vars",
-          "relative": "test/samples/sass/frontsize/themes/_config",
-          "project": "/a-pollo/test/samples/sass/frontsize/themes/_config",
-          "file": "/Users/vitto/repo/a-pollo/test/samples/sass/frontsize/themes/_config/vars.scss"
+          "name": "text",
+          "relative": "sass/fonts/widgets",
+          "project": "/samples/sass/fonts/widgets",
+          "file": "/path/to/user/a-pollo/test/samples/sass/fonts/widgets/text.scss"
         },
-        "type": "color",
-        "title": "Red",
-        "value": "rgb(255, 0, 0)",
-        "names": {
-          "basic": "red",
-          "html": "red",
-          "ntc": "Red",
-          "pantone": "Scarlet",
-          "roygbiv": "red",
-          "x11": "red"
+        "text": "<p>This is used for paragraphs text blocks, it&#39;s nice on web browser and digial devices with low or high density displays.\n If you need to write on physical object it&#39;s recommended to use <a href=\"https://typekit.com/fonts/kepler\">Kepler STD</a>.</p>\n",
+        "type": "snippet",
+        "alphabet": {
+          "uppercase": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "lowercase": "abcdefghijklmnopqrstuvwxyz",
+          "symbols": "‘?’“!”(%)[#]{@}/&<-+÷×=>®©$€£¥¢:;,.*"
         },
-        "object": {
-          "rgb": {
-            "r": 255,
-            "g": 0,
-            "b": 0
-          },
-          "cmyk": {
-            "c": 0,
-            "m": 100,
-            "y": 100,
-            "k": 0
-          }
+        "selector": ".text.text--big",
+        "selectorClass": "text text--big",
+        "preview": {
+          "title": "Random text",
+          "sentence": "Random text",
+          "paragraph": "Random text"
         }
       }
-    ]
+    ],
+    "breadcrumb": [
+      "Typography"
+    ],
+    "category": "identity",
+    "file": "identity/typography.md",
+    "title": "Merriweather",
+    "url": {
+      "short": "identity/typography",
+      "folder": "identity/typography/",
+      "full": "identity/typography/index.html"
+    }
+  },
+  {
+    "annotation": "typography",
+    "annotations": [
+      {
+        "annotation": "typography",
+        "category": "identity",
+        "name": "Raleway",
+        "path": {
+          "root": "/",
+          "dir": "/path/to/user/a-pollo/test/samples/sass/fonts/widgets",
+          "base": "title.scss",
+          "ext": ".scss",
+          "name": "title",
+          "relative": "sass/fonts/widgets",
+          "project": "/samples/sass/fonts/widgets",
+          "file": "/path/to/user/a-pollo/test/samples/sass/fonts/widgets/title.scss"
+        },
+        "text": "<p>Use it for big titles blocks, it&#39;s nice on web browser and digial devices with low or high density displays, also for typographic uses on physical objects.</p>\n",
+        "type": "snippet",
+        "alphabet": {
+          "uppercase": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "lowercase": "abcdefghijklmnopqrstuvwxyz",
+          "symbols": "‘?’“!”(%)[#]{@}/&<-+÷×=>®©$€£¥¢:;,.*"
+        },
+        "selector": ".title",
+        "selectorClass": "title",
+        "preview": {
+          "title": "Random text",
+          "sentence": "Random text",
+          "paragraph": "Random text"
+        }
+      }
+    ],
+    "breadcrumb": [
+      "Typography"
+    ],
+    "category": "identity",
+    "file": "identity/typography.md",
+    "title": "Raleway",
+    "url": {
+      "short": "identity/typography",
+      "folder": "identity/typography/",
+      "full": "identity/typography/index.html"
+    }
   }
 ]
