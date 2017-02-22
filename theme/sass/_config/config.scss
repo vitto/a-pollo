@@ -1,0 +1,15 @@
+
+$use-core-base: true !default;
+$use-core-print: true !default;
+
+$path-fonts: 'production/img/theme/fonts/' !default;
+$path-images: 'production/img/theme/img/' !default;
+
+$bem-element: '__' !default;
+$bem-modifier: '--' !default;
+
+$spacing: 20px !default;
+
+$row-columns-name: 'column';
+$row-columns-style: 'classic'; // 'classic' || 'frontsize'
+$row-columns-total: 12 !default;

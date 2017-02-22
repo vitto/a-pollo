@@ -1,5 +1,6 @@
 annotations: sass
 cache: metalsmith/contents
+front_matter: true
 assets:
   css: css/example.css
   fonts: fonts

@@ -1,21 +1,9 @@
-
-/*
-const logger = require('./lib/logger')
-const loggerOpts = {
-  muted: false,
-  verbosity: 8
-}
-
-logger(loggerOpts).intro()
-logger(loggerOpts).error('Hello')
-console.log(logger(loggerOpts).options())
-*/
-
 const fs = require('fs')
 const yaml = require('js-yaml')
 
 const aPollo = require('../../index')
 
+const beutify = require('metalsmith-beautify')
 const collections = require('metalsmith-collections')
 const layouts = require('metalsmith-layouts')
 const markdown = require('metalsmith-markdown')
@@ -35,6 +23,7 @@ aPollo(function (config, docs, map, inlineCss, images, fonts) {
     .use(markdown(m.markdown))
     .use(permalinks(m.permalinks))
     .use(layouts(m.layouts))
+    .use(beutify(m.beautify))
     .build(function (err) {
       if (err) throw err
       console.log('Build done')

@@ -1,9 +1,9 @@
 metadata:
   description: It's about saying Hello to the world.
-  generatorname: Metalsmith
-  generatorurl: http://metalsmith.io/
-  sitename: My Static Site & Blog
-  siteurl: http://example.com/
+  generator_name: Metalsmith
+  generator_url: http://metalsmith.io/
+  site_name: My Static Site & Blog
+  site_url: http://example.com/
 clean: true
 collections:
   posts:
@@ -12,9 +12,18 @@ collections:
 destination: ./build
 layouts:
   default: layout.html
-  directory: ./metalsmith/themes/miniml/layouts
+  directory: ../../theme/handlebars/layouts
   engine: handlebars
-  partials: ./metalsmith/themes/miniml/partials
+  partials: ../../theme/handlebars/partials
+beautify:
+  css: false
+  js: false
+  html:
+    indent_char: " "
+    indent_size: 2
+    max_preserve_newlines: 1
+    preserve_newlines: false
+    wrap_line_length: 10000
 markdown:
   smartypants: true
   gfm: true

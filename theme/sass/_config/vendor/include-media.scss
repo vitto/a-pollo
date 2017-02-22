@@ -1,0 +1,28 @@
+// http://include-media.com/
+// npm install include-media
+// .selector {
+//   @include media('>=desktop-small') {
+//     width: 100%;
+//   }
+// }
+
+$im-media-support: true;
+
+$breakpoints: (
+  'mobile-small': 320px,
+  'mobile-large': 480px,
+  'tablet-small': 768px,
+  'tablet-large': 1024px,
+  'desktop-small': 1280px,
+  'desktop-large': 1800px
+);
+
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
+);

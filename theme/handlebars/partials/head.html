@@ -1,0 +1,13 @@
+<head>
+  <title>
+    {{#if title}}
+      {{ title }}
+    {{else}}
+      {{#each annotations}}
+        {{#if @first}}
+          {{ this.name }}
+        {{/if}}
+      {{/each}}
+    {{/if}}
+  </title>
+</head>

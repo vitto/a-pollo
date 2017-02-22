@@ -3,7 +3,6 @@
 tasks:
   - css
   - js
-#  - html
 
 css:
   file: dustman.frontsize.min.css
@@ -12,7 +11,7 @@ css:
     -
       name: miniml
       file: frontsize.miniml.css
-      compile: frontend/frontsize/miniml/compile.scss
+      compile: theme/sass/ideatollo/import.scss
       images: frontend/frontsize/miniml/img/**/*.*
       csslint: true
       stylestats: false
@@ -57,79 +56,17 @@ js:
   vendors:
     file: vendors.min.js
     files:
-      - frontend/vendors/clipboard/dist/clipboard.js
-      - frontend/vendors/jquery/dist/jquery.js
+      - node_modules/clipboard/dist/clipboard.js
+      - node_modules/jquery/dist/jquery.slim.js
 
 vendors:
   fonts:
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Light.eot
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Light.svg
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Light.ttf
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Light.woff
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Light.woff2
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Medium.eot
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Medium.svg
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Medium.ttf
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Medium.woff
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Medium.woff2
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Bold.eot
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Bold.svg
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Bold.ttf
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Bold.woff
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Bold.woff2
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Black.eot
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Black.svg
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Black.ttf
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Black.woff
-    - frontend/vendors/roboto-fontface/fonts/Roboto-Black.woff2
-    - frontend/vendors/font-awesome/fonts/fontawesome-webfont.eot
-    - frontend/vendors/font-awesome/fonts/fontawesome-webfont.svg
-    - frontend/vendors/font-awesome/fonts/fontawesome-webfont.ttf
-    - frontend/vendors/font-awesome/fonts/fontawesome-webfont.woff
-    - frontend/vendors/font-awesome/fonts/fontawesome-webfont.woff2
-    - frontend/vendors/font-awesome/fonts/FontAwesome.otf
-    - frontend/vendors/bitter-fontface/fonts/Regular/Bitter-Regular.ttf
-    - frontend/vendors/bitter-fontface/fonts/Bold/Bitter-Bold.ttf
-    - frontend/vendors/karla-googlefont/Karla-Regular.ttf
-    - frontend/vendors/karla-googlefont/Karla-Bold.ttf
-    - frontend/vendors/entypo-plus/fonts/entypo-plus.eot
-    - frontend/vendors/entypo-plus/fonts/entypo-plus.svg
-    - frontend/vendors/entypo-plus/fonts/entypo-plus.ttf
-    - frontend/vendors/entypo-plus/fonts/entypo-plus.woff
-    - frontend/vendors/sass-bootstrap-glyphicons/fonts/glyphiconshalflings-regular.eot
-    - frontend/vendors/sass-bootstrap-glyphicons/fonts/glyphiconshalflings-regular.otf
-    - frontend/vendors/sass-bootstrap-glyphicons/fonts/glyphiconshalflings-regular.svg
-    - frontend/vendors/sass-bootstrap-glyphicons/fonts/glyphiconshalflings-regular.ttf
-    - frontend/vendors/sass-bootstrap-glyphicons/fonts/glyphiconshalflings-regular.woff
-    # - frontend/vendors/siconfont/fonts/siconfont.eot
-    # - frontend/vendors/siconfont/fonts/siconfont.svg
-    # - frontend/vendors/siconfont/fonts/siconfont.ttf
-    # - frontend/vendors/siconfont/fonts/siconfont.woff
-    # - frontend/vendors/stroke-gap-icons-webfont/fonts/Stroke-Gap-Icons.eot
-    # - frontend/vendors/stroke-gap-icons-webfont/fonts/Stroke-Gap-Icons.svg
-    # - frontend/vendors/stroke-gap-icons-webfont/fonts/Stroke-Gap-Icons.ttf
-    # - frontend/vendors/stroke-gap-icons-webfont/fonts/Stroke-Gap-Icons.woff
-    # - frontend/vendors/typicons.font/src/font/typicons.eot
-    # - frontend/vendors/typicons.font/src/font/typicons.svg
-    # - frontend/vendors/typicons.font/src/font/typicons.ttf
-    # - frontend/vendors/typicons.font/src/font/typicons.woff
-    - frontend/vendors/open-iconic/font/fonts/open-iconic.eot
-    - frontend/vendors/open-iconic/font/fonts/open-iconic.otf
-    - frontend/vendors/open-iconic/font/fonts/open-iconic.svg
-    - frontend/vendors/open-iconic/font/fonts/open-iconic.ttf
-    - frontend/vendors/open-iconic/font/fonts/open-iconic.woff
-    # - frontend/vendors/metro/build/fonts/metro.eot
-    # - frontend/vendors/metro/build/fonts/metro.svg
-    # - frontend/vendors/metro/build/fonts/metro.ttf
-    # - frontend/vendors/metro/build/fonts/metro.woff
-    # - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.eot
-    # - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.ijmap
-    # - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.svg
-    # - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.ttf
-    # - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.woff
-    # - frontend/vendors/material-design-icons/iconfont/MaterialIcons-Regular.woff2
-  images:
-    - frontend/vendors/font-awesome/fonts/fontawesome-webfont.svg
+    - node_modules/font-awesome/fonts/fontawesome-webfont.ttf
+    - theme/sass/idea-pollo/fonts/Montserrat/Montserrat-Bold.ttf
+    - theme/sass/idea-pollo/fonts/Montserrat/Montserrat-SemiBold.ttf
+    - theme/sass/idea-pollo/fonts/Montserrat/Montserrat-Regular.ttf
+    - theme/sass/idea-pollo/fonts/Merriweather/Merriweather-Regular.ttf
+    - theme/sass/idea-pollo/fonts/Roboto Mono/RobotoMono-Regular.ttf
 
 paths:
   server: test/results/

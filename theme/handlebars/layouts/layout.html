@@ -1,0 +1,10 @@
+<!doctype html>
+<html>
+{{> head }}
+<body>
+  {{#each annotations}}
+    <li>{{@index}} - {{this.name}}</li>
+  {{/each}}
+  {{{ contents }}}
+</body>
+</html>

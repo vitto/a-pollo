@@ -1,9 +1,0 @@
-.miniml-logo {
-  $margin: 26px;
-  $icon-size: $height-header - $margin;
-  @include icon('a-pollo-logo--gold.svg', $icon-size);
-  display: block;
-  float: left;
-  position: relative;
-  top: s(0.5, $margin);
-}
