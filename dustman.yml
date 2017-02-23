@@ -5,32 +5,23 @@ tasks:
   - js
 
 css:
-  file: dustman.frontsize.min.css
+  file: a-pollo.min.css
   watch: frontend/frontsize/**/*.scss
   themes:
     -
       name: miniml
-      file: frontsize.miniml.css
-      compile: theme/sass/ideatollo/import.scss
-      images: frontend/frontsize/miniml/img/**/*.*
+      file: idea-pollo.css
+      compile: theme/sass/idea-pollo/import.scss
+      images: theme/sass/idea-pollo/img/**/*.*
       csslint: true
       stylestats: false
       autoprefixer: true
-      path: hexo/themes/miniml/source/css/
+      path: theme/tmp/
   vendors:
     file: vendors.min.css
+    path: theme/tmp/
     files:
-      - frontend/vendors/normalize-css/normalize.css
-      - frontend/vendors/github-markdown-css/github-markdown.css
-      - frontend/vendors/entypo-plus/css/entypo-plus.css # http://www.entypo.com/
-      - frontend/vendors/font-awesome/css/font-awesome.css # http://fontawesome.io/cheatsheet/
-      # - frontend/vendors/material-design-icons/iconfont/material-icons.css # https://materialdesignicons.com/
-      # - frontend/vendors/metro/build/css/metro-icons.css # https://metroui.org.ua/font.html
-      - frontend/vendors/open-iconic/font/css/open-iconic-bootstrap.css # https://useiconic.com/open
-      - frontend/vendors/sass-bootstrap-glyphicons/css/bootstrap-glyphicons.css # http://getbootstrap.com/components/
-      # - frontend/vendors/siconfont/css/siconfont.css # http://segundofdez.github.io/siconfont/
-      # - frontend/vendors/stroke-gap-icons-webfont/style.css
-      # - frontend/vendors/typicons.font/src/font/typicons.css # http://www.typicons.com/
+      - node_modules/font-awesome/css/font-awesome.css # http://fontawesome.io/cheatsheet/
 
 config:
   autoprefixer:
@@ -49,11 +40,12 @@ config:
   verify: false
 
 js:
-  file: dustman.min.js
+  file: a-pollo.min.js
   watch: frontend/js/**/*.js
   files:
-    - frontend/js/*
+    - theme/js/*
   vendors:
+    path: theme/tmp/
     file: vendors.min.js
     files:
       - node_modules/clipboard/dist/clipboard.js
@@ -69,13 +61,8 @@ vendors:
     - theme/sass/idea-pollo/fonts/Roboto Mono/RobotoMono-Regular.ttf
 
 paths:
-  server: test/results/
-  css: hexo/themes/miniml/source/css/
-  images: hexo/themes/miniml/source/img/
-  fonts: hexo/themes/miniml/source/fonts/
-  js: hexo/themes/miniml/source/js/
-
-shell:
-  after:
-    - cp hexo/themes/miniml/source/css/dustman.frontsize.min.css public/css/dustman.frontsize.min.css &
-    - cp hexo/themes/miniml/source/js/dustman.min.js public/js/dustman.min.js &
+  server: test/samples/build/
+  css: test/samples/metalsmith/contents/css/
+  images: test/samples/metalsmith/contents/images/
+  fonts: test/samples/metalsmith/contents/fonts/
+  js: test/samples/metalsmith/contents/js/

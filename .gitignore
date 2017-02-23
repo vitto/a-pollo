@@ -8,14 +8,17 @@
 /test/a-pollo/index.md
 /test/samples/build
 /test/samples/metalsmith/contents/assets.md
+/test/samples/metalsmith/contents/css
 /test/samples/metalsmith/contents/docs
 /test/samples/metalsmith/contents/fonts
 /test/samples/metalsmith/contents/identity
 /test/samples/metalsmith/contents/images
 /test/samples/metalsmith/contents/index.md
+/test/samples/metalsmith/contents/js
 /test/samples/metalsmith/contents/map.yml
 /test/samples/metalsmith/contents/snippets
 /test/samples/sass/frontsize
+/theme/tmp/
 /vendors/
 gulpfile.js
 Thumbs.db
