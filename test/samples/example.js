@@ -11,6 +11,7 @@ const metalsmith = require('metalsmith')
 const permalinks = require('metalsmith-permalinks')
 
 aPollo(function (config, docs, map, inlineCss, images, fonts) {
+  // process.exit();
   var m = yaml.safeLoad(fs.readFileSync('metalsmith.yml', 'utf-8'))
   m.metadata.css = inlineCss
   m.metadata.map = map

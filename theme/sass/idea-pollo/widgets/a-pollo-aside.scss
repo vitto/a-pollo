@@ -1,0 +1,28 @@
+@include block ('a-pollo-aside') {
+  background-color: $color-body-background;
+  bottom: 0;
+  color: $color-body-text;
+  left: 0;
+  padding-top: $initial-top-padding;
+  position: fixed;
+  top: 0;
+  width: $aside-width;
+
+  @include element ('header') {
+    text-align: center;
+  }
+
+  @include element ('logo') {
+    $height: 38px;
+    $width: 33px;
+    $scale: 1.5;
+    background-image: theme('a-pollo-logo-gold.svg');
+    background-position: 50% 50%;
+    background-repeat: repeat;
+    background-size: contain;
+    display: inline-block;
+    height: s($scale, $height);
+    line-height: 0;
+    width: s($scale, $width);
+  }
+}

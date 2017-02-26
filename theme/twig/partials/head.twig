@@ -1,0 +1,17 @@
+<head>
+  <title>
+    {% if title %}
+      {{ title }}
+    {% else %}
+      {% for annotation in annotations %}
+          {% if loop.first %}
+            {{ annotation.name }}
+          {% endif %}
+      {% endfor %}
+    {% endif %}
+  </title>
+  <link rel="stylesheet" href="/a-pollo/css/a-pollo.min.css">
+  <style media="screen">
+    {{ css|raw }}
+  </style>
+</head>

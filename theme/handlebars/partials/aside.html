@@ -1,0 +1,15 @@
+<aside class="a-pollo-aside">
+  <div class="a-pollo-aside__header">
+    <div class="a-pollo-aside__logo"></div>
+  </div>
+  <ul>
+    {{#each map.pages}}
+      {{#if this.category }}
+        {{> (this.category)}}
+      {{/if}}
+
+      <li>{{ this.type }} / {{ this.category }} / {{ this.title }}</li>
+    {{/each}}
+  </ul>
+  ---
+</aside>

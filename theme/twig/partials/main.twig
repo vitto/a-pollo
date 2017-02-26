@@ -1,0 +1,8 @@
+<main class="a-pollo-main">
+  {% for annotation in annotations %}
+      {% if loop.first %}
+        <li>{{ loop.index }} - {{ annotation.name }}</li>
+      {% endif %}
+  {% endfor %}
+  {{{ contents }}}
+</main>

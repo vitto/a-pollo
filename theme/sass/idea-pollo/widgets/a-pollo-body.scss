@@ -1,0 +1,5 @@
+@include block ('a-pollo-body') {
+  background-color: $color-body-background;
+  color: $color-body-text;
+  font-family: Merriweather, sans-serif;
+}

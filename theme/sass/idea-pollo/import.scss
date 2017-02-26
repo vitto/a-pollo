@@ -1,7 +1,10 @@
 @import '../_config/import';
 @import 'config';
+@import 'fonts';
 @import 'vars';
 
 @import 'alias/grid';
 
-@import 'base/body';
+@import 'widgets/a-pollo-body';
+@import 'widgets/a-pollo-aside';
+@import 'widgets/a-pollo-main';

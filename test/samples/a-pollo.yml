@@ -1,7 +1,8 @@
 annotations: sass
-cache: metalsmith/contents
+cache: ./tmp
 front_matter: true
+posts: ./metalsmith
 assets:
   css: css/example.css
-  fonts: fonts
-  images: images
+  fonts: ../../theme/sass/idea-pollo/fonts
+  images: ../../theme/sass/idea-pollo/img

@@ -5,16 +5,12 @@ metadata:
   site_name: My Static Site & Blog
   site_url: http://example.com/
 clean: true
+source: tmp
+destination: build
 collections:
   posts:
-    pattern: ./metalsmith/contents/posts/*.md
+    pattern: metalsmith/posts/*.md
     sortBy: date
-destination: ./build
-layouts:
-  default: layout.html
-  directory: ../../theme/handlebars/layouts
-  engine: handlebars
-  partials: ../../theme/handlebars/partials
 beautify:
   css: false
   js: false
@@ -30,4 +26,15 @@ markdown:
   tables: true
 permalinks:
   relative: false
-source: ./metalsmith/contents
+# layouts:
+#   default: default.html
+#   directory: ../../theme/handlebars/layouts
+#   engine: handlebars
+#   partialExtension: .html
+#   partials: ../../theme/handlebars/partials
+layouts:
+  default: default.twig
+  directory: ../../theme/twig/layouts
+  engine: twig
+  partialExtension: .twig
+  partials: ../../theme/twig/partials

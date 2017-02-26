@@ -1,0 +1,24 @@
+@include font('Merriweather-Regular', (ttf)) {
+  font-family: 'Merriweather';
+  font-weight: 400;
+}
+
+@include font('Montserrat-Bold', (ttf)) {
+  font-family: 'Montserrat';
+  font-weight: 600;
+}
+
+@include font('Montserrat-SemiBold', (ttf)) {
+  font-family: 'Montserrat';
+  font-weight: 500;
+}
+
+@include font('Montserrat-Regular', (ttf)) {
+  font-family: 'Montserrat';
+  font-weight: 400;
+}
+
+@include font('RobotoMono-Regular', (ttf)) {
+  font-family: 'RobotoMono';
+  font-weight: 400;
+}

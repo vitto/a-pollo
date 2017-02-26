@@ -6,13 +6,12 @@ tasks:
 
 css:
   file: a-pollo.min.css
-  watch: frontend/frontsize/**/*.scss
+  watch: theme/sass/**/*.scss
   themes:
     -
-      name: miniml
+      name: idea-pollo
       file: idea-pollo.css
       compile: theme/sass/idea-pollo/import.scss
-      images: theme/sass/idea-pollo/img/**/*.*
       csslint: true
       stylestats: false
       autoprefixer: true
@@ -36,7 +35,8 @@ config:
     locale: it
   twig:
     cache: false
-  verbose: 2
+  verbose: 3
+  emptyFolders: true
   verify: false
 
 js:
@@ -59,10 +59,25 @@ vendors:
     - theme/sass/idea-pollo/fonts/Montserrat/Montserrat-Regular.ttf
     - theme/sass/idea-pollo/fonts/Merriweather/Merriweather-Regular.ttf
     - theme/sass/idea-pollo/fonts/Roboto Mono/RobotoMono-Regular.ttf
+  images:
+    - theme/sass/idea-pollo/img/a-pollo-logo-black.svg
+    - theme/sass/idea-pollo/img/a-pollo-logo-colored.svg
+    - theme/sass/idea-pollo/img/a-pollo-logo-gold.svg
 
 paths:
   server: test/samples/build/
-  css: test/samples/metalsmith/contents/css/
-  images: test/samples/metalsmith/contents/images/
-  fonts: test/samples/metalsmith/contents/fonts/
-  js: test/samples/metalsmith/contents/js/
+  css: test/samples/metalsmith/contents/a-pollo/css/
+  images: test/samples/metalsmith/contents/a-pollo/img/
+  fonts: test/samples/metalsmith/contents/a-pollo/fonts/
+  js: test/samples/metalsmith/contents/a-pollo/js/
+
+shell:
+  after:
+    - rm ./test/samples/metalsmith/contents/docs || true
+    - rm ./test/samples/metalsmith/contents/fonts || true
+    - rm ./test/samples/metalsmith/contents/identity || true
+    - rm ./test/samples/metalsmith/contents/snipets || true
+    - mkdir -p ./test/samples/build/a-pollo/ || true
+    - cp -r ./test/samples/metalsmith/contents/a-pollo/* ./test/samples/build/a-pollo/
+    - cp -r ./test/samples/tmp/* ./test/samples/metalsmith/contents/
+    - rm ./test/samples/metalsmith/contents/map.yml || true
