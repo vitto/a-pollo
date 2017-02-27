@@ -29,22 +29,19 @@ function aPollo (cb) {
           parse(files, function (err, annotations) {
             if (err) throw err
             // require('./test/save-json')('../tap/data/parsed-annotations-2.json', annotations, true)
-            assets.build(config, function (err) {
+            assets.images(config, function (err, images) {
               if (err) throw err
-              assets.images(config, function (err, images) {
+              assets.fonts(config, function (err, fonts) {
                 if (err) throw err
-                assets.fonts(config, function (err, fonts) {
+                save(config, {
+                  annotations: annotations,
+                  fonts: fonts,
+                  images: images,
+                  css: inlineCss
+                }, function (err, config, annotations, map) {
                   if (err) throw err
-                  save(config, {
-                    annotations: annotations,
-                    fonts: fonts,
-                    images: images,
-                    css: inlineCss
-                  }, function (err, config, annotations, map) {
-                    if (err) throw err
-                    // require('./test/save-json')('../tap/data/decorated-annotations-2.json', annotations, true)
-                    cb(config, annotations, map, inlineCss, images, fonts)
-                  })
+                  // require('./test/save-json')('../tap/data/decorated-annotations-2.json', annotations, true)
+                  cb(config, annotations, map, inlineCss, images, fonts)
                 })
               })
             })

@@ -5,16 +5,17 @@ const aPollo = require('../../index')
 
 const beutify = require('metalsmith-beautify')
 const collections = require('metalsmith-collections')
-const layouts = require('metalsmith-layouts')
+const twig = require('metalsmith-twig')
 const markdown = require('metalsmith-markdown')
 const metalsmith = require('metalsmith')
 const permalinks = require('metalsmith-permalinks')
 
 aPollo(function (config, docs, map, inlineCss, images, fonts) {
-  // process.exit();
   var m = yaml.safeLoad(fs.readFileSync('metalsmith.yml', 'utf-8'))
-  m.metadata.css = inlineCss
-  m.metadata.map = map
+  m.twig.global = {
+    css: inlineCss,
+    map: map
+  }
   metalsmith(__dirname)
     .metadata(m.metadata)
     .source(m.source)
@@ -23,7 +24,7 @@ aPollo(function (config, docs, map, inlineCss, images, fonts) {
     .use(collections(m.collections))
     .use(markdown(m.markdown))
     .use(permalinks(m.permalinks))
-    .use(layouts(m.layouts))
+    .use(twig(m.twig))
     .use(beutify(m.beautify))
     .build(function (err) {
       if (err) throw err
