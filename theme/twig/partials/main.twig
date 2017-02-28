@@ -1,19 +1,18 @@
-<main class="a-pollo-main">
-  <h1 class="a-pollo-snippet__title">
+<main class="main">
+  <h1 class="snippet__title">
     {{ title }}
   </h1>
-
-  <h3 class="a-pollo-snippet__sub-title">
-    <span class="a-pollo-time">
-      <time class="a-pollo-time__time-ago time-ago" datetime="{{ date }}">{{ date }}</time>
-      <span class="a-pollo-time__full-date">
-        {{ date|date("l m F, Y") }}
-      </span>
-    </span>
+  <h3 class="snippet__sub-title">
+    <div>{{ category }}</div>
   </h3>
 
+  <span class="time">
+    <time class="time__time-ago time-ago" datetime="{{ date }}">{{ date }}</time>
+    <span class="time__full-date">
+      {{ date|date("l m F, Y") }}
+    </span>
+  </span>
 
-  <div>{{ category }}</div>
   <div>{{ file }}</div>
 
   {% for annotation in annotations %}
@@ -27,8 +26,8 @@
         {{ annotation.path.relative }}/{{ annotation.path.base }}
         <br>
         <br>
-        {{ dump(annotation.path) }}
       {% endif %}
+      {% include 'snippet/item.twig' %}
   {% endfor %}
   {{ contents }}
 </main>

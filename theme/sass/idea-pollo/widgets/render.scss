@@ -1,0 +1,18 @@
+@include block ('render') {
+
+  background-color: $color-render-background;
+  border: 0;
+  border-top: $border $color-render-border;
+  margin-bottom: s(20);
+
+  @include element ('area') {
+    background-color: transparent;
+    border: 0;
+    border-bottom: $border $color-render-border;
+    padding: s(1) 0;
+
+    @include modifier ('transparent') {
+      background-image: theme('transparent-background.svg');
+    }
+  }
+}

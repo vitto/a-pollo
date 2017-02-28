@@ -1,0 +1,10 @@
+@include block ('snippet') {
+
+  @include element ('title') {
+    margin: 0;
+  }
+
+  @include element ('sub-title') {
+    margin: 0;
+  }
+}

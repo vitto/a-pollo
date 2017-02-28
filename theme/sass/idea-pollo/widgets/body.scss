@@ -1,0 +1,7 @@
+@include block ('body') {
+  background-color: $color-body-background;
+  color: $color-body-text;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1.25;
+}

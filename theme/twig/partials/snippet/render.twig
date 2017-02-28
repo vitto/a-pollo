@@ -1,0 +1,52 @@
+<div class="render">
+  <iframe class="render__area" srcdoc="
+  <html>
+  <head>
+    <style media='all'>{{ global.css|escape }}</style>
+    <script>
+      function disableAnchors () {
+        var anchors = document.getElementsByTagName('a');
+        for(i=0, len=anchors.length; i<len; i++){
+          anchors[i].addEventListener('click', function(e){e.preventDefault();});
+        }
+      }
+      document.addEventListener('DOMContentLoaded', disableAnchors);
+    </script>
+  </head>
+  <body>
+    {{ annotation.html.code|escape }}
+  </body>
+  </html>" width="100%" height="auto">
+    It seems that your browser doesn't support <b>srcdoc</b> attribute for the <b>iframe</b> element.
+  </iframe>
+  <ul class="options">
+    <li class="options__title">
+      Viewport
+    </li>
+    <li class="options__item">
+      <a class="options__action options__action--selected" href="#">Desktop</a>
+    </li>
+    <li class="options__item">
+      <a class="options__action" href="#">Tablet</a>
+    </li>
+    <li class="options__item">
+      <a class="options__action" href="#">Mobile</a>
+    </li>
+  </ul>
+  <ul class="options">
+    <li class="options__title">
+      Actions
+    </li>
+    <li class="options__item">
+      <a class="options__action" href="#">Copy to clipboard</a>
+    </li>
+  </ul>
+  <ul class="options">
+    <li class="options__title">
+      View
+    </li>
+    <li class="options__item">
+      <a class="options__action" href="#">Show transparency</a>
+    </li>
+  </ul>
+</div>

@@ -31,7 +31,7 @@
     </a>
 */
 
-.button-social {
+@include block ('button-social') {
 
   border-radius: 4px;
   cursor: pointer;

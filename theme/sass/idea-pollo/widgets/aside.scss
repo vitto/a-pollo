@@ -1,9 +1,7 @@
-@include block ('a-pollo-aside') {
+@include block ('aside') {
   $ease: 0.25s ease(in-out-expo);
 
-  background-color: $color-body-background;
   bottom: 0;
-  color: $color-body-text;
   left: 0;
   padding-top: $initial-top-padding;
   position: fixed;

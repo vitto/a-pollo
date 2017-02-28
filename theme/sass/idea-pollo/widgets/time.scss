@@ -1,4 +1,4 @@
-@include block ('a-pollo-time') {
+@include block ('time') {
 
   cursor: copy;
 
@@ -12,11 +12,9 @@
   }
 
   @include element ('time-ago') {
-    color: $color-body-text;
   }
 
   @include element ('full-date') {
-    color: $color-body-text;
     display: none;
     text-transform: lowercase;
 

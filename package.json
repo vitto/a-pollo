@@ -53,7 +53,7 @@
   "devDependencies": {
     "bower": "^1.6.5",
     "dustman": "^1.11.55",
-    "frontsize": "git+https://github.com/ideatosrl/frontsize.git#5e46057",
+    "frontsize": "git+https://github.com/ideatosrl/frontsize.git#397b002",
     "matchdep": "^1.0.0",
     "prettyjson": "^1.2.1",
     "standard": "^8.6.0",
@@ -68,7 +68,7 @@
     "test": "tap test/tap/*.js",
     "update": "npm update frontsize && mkdir -p ./test/samples/sass/frontsize && cp -R ./node_modules/frontsize/* ./test/samples/sass/frontsize",
     "build": "cd ./test/samples/ && node example.js && cd - && mkdir -p ./test/samples/build/a-pollo/ || true && cp -r ./theme/build/a-pollo/* ./test/samples/build/a-pollo/",
-    "frontend": "./node_modules/.bin/gulp --config dustman.yml -S"
+    "frontend": "rm -rf ./test/samples/build/a-pollo && ./node_modules/.bin/gulp --config dustman.yml -S"
   },
   "repository": {
     "type": "git",
