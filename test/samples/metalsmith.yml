@@ -9,7 +9,7 @@ source: tmp
 destination: build
 collections:
   posts:
-    pattern: ./posts/*.md
+    pattern: ./markdown/posts/*.md
     sortBy: date
 beautify:
   css: false
@@ -26,12 +26,6 @@ markdown:
   tables: true
 permalinks:
   relative: false
-layouts:
-  default: default.html
-  directory: ../../theme/handlebars/layouts
-  engine: handlebars
-  partialExtension: .html
-  partials: ../../theme/handlebars/partials
 twig:
   directory: ../../theme/twig/layouts
   cache: false

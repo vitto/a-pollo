@@ -1,0 +1,10 @@
+@mixin title {
+  font-family: $font-heading;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}

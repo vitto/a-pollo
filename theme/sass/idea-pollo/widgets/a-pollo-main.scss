@@ -1,8 +1,7 @@
 @include block ('a-pollo-main') {
-  background-color: red;
   margin-left: $aside-width;
   padding-left: s(2);
   padding-right: s(2);
   padding-top: $initial-top-padding;
-  width: 60%;
+  width: $main-width;
 }

@@ -1,0 +1,14 @@
+@include block ('a-pollo-snippet') {
+
+  @include element ('title') {
+    @include title;
+    color: $color-titles;
+    margin: 0;
+  }
+
+  @include element ('sub-title') {
+    @include sub-title;
+    color: $color-body-text;
+    margin: 0;
+  }
+}

@@ -1,11 +1,14 @@
 $color-body-background: $color-ebb;
 $color-body-text: $color-shark;
+$color-titles: $color-teak;
 
 
 $font-sans: 'Merriweather', sans-serif;
 $font-serif: 'Montserrat', serif;
 $font-mono: 'RobotoMono', serif;
 
-$initial-top-padding: s(2);
+$font-heading: $font-serif;
+
+$initial-top-padding: s(3);
 $aside-width: 20%;
-$main-width: 80%;
+$main-width: 70%;

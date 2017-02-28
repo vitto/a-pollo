@@ -5,6 +5,11 @@
 
 @import 'alias/grid';
 
+@import 'helpers/title';
+@import 'helpers/sub-title';
+
 @import 'widgets/a-pollo-body';
 @import 'widgets/a-pollo-aside';
 @import 'widgets/a-pollo-main';
+@import 'widgets/a-pollo-snippet';
+@import 'widgets/a-pollo-time';

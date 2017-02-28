@@ -1,8 +1,34 @@
 <main class="a-pollo-main">
+  <h1 class="a-pollo-snippet__title">
+    {{ title }}
+  </h1>
+
+  <h3 class="a-pollo-snippet__sub-title">
+    <span class="a-pollo-time">
+      <time class="a-pollo-time__time-ago time-ago" datetime="{{ date }}">{{ date }}</time>
+      <span class="a-pollo-time__full-date">
+        {{ date|date("l m F, Y") }}
+      </span>
+    </span>
+  </h3>
+
+
+  <div>{{ category }}</div>
+  <div>{{ file }}</div>
+
   {% for annotation in annotations %}
       {% if loop.first %}
-        <li>{{ loop.index }} - {{ annotation.name }}</li>
+        <li>
+        <i class="{{ annotation.icon }}"></i> {{ loop.index }} - {{ annotation.name }}</li>
+        <br>
+        <br>
+        {{ annotation.path.base }}
+        <br>
+        {{ annotation.path.relative }}/{{ annotation.path.base }}
+        <br>
+        <br>
+        {{ dump(annotation.path) }}
       {% endif %}
   {% endfor %}
-  {{{ contents }}}
+  {{ contents }}
 </main>

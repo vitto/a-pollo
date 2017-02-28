@@ -20,6 +20,7 @@
 /test/samples/metalsmith/contents/snippets
 /test/samples/sass/frontsize
 /test/samples/tmp
+/theme/build/
 /theme/tmp/
 /vendors/
 gulpfile.js

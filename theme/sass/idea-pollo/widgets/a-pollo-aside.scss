@@ -1,4 +1,6 @@
 @include block ('a-pollo-aside') {
+  $ease: 0.25s ease(in-out-expo);
+
   background-color: $color-body-background;
   bottom: 0;
   color: $color-body-text;
@@ -6,7 +8,12 @@
   padding-top: $initial-top-padding;
   position: fixed;
   top: 0;
+  transition: background-color $ease, color $ease, transform $ease;
   width: $aside-width;
+
+  &:hover {
+
+  }
 
   @include element ('header') {
     text-align: center;

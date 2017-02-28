@@ -1,0 +1,27 @@
+@include block ('a-pollo-time') {
+
+  cursor: copy;
+
+  &:hover {
+    @include element ('time-ago') {
+      display: none;
+    }
+    @include element ('full-date') {
+      display: inline-block;
+    }
+  }
+
+  @include element ('time-ago') {
+    color: $color-body-text;
+  }
+
+  @include element ('full-date') {
+    color: $color-body-text;
+    display: none;
+    text-transform: lowercase;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 annotations: sass
 cache: ./tmp
 front_matter: true
-posts: ./metalsmith
+posts: ./markdown
 assets:
   css: css/example.css
   fonts: ../../theme/sass/idea-pollo/fonts

@@ -49,6 +49,8 @@ js:
     file: vendors.min.js
     files:
       - node_modules/clipboard/dist/clipboard.js
+      - node_modules/timeago.js/dist/timeago.js
+      - node_modules/timeago.js/dist/timeago.locales.min.js
       - node_modules/jquery/dist/jquery.slim.js
 
 vendors:
@@ -63,21 +65,30 @@ vendors:
     - theme/sass/idea-pollo/img/a-pollo-logo-black.svg
     - theme/sass/idea-pollo/img/a-pollo-logo-colored.svg
     - theme/sass/idea-pollo/img/a-pollo-logo-gold.svg
+    - theme/sass/idea-pollo/img/apple-touch-icon-57x57.png
+    - theme/sass/idea-pollo/img/apple-touch-icon-60x60.png
+    - theme/sass/idea-pollo/img/apple-touch-icon-72x72.png
+    - theme/sass/idea-pollo/img/apple-touch-icon-76x76.png
+    - theme/sass/idea-pollo/img/apple-touch-icon-114x114.png
+    - theme/sass/idea-pollo/img/apple-touch-icon-120x120.png
+    - theme/sass/idea-pollo/img/apple-touch-icon-144x144.png
+    - theme/sass/idea-pollo/img/apple-touch-icon-152x152.png
+    - theme/sass/idea-pollo/img/favicon-16x16.png
+    - theme/sass/idea-pollo/img/favicon-32x32.png
+    - theme/sass/idea-pollo/img/favicon-96x96.png
+    - theme/sass/idea-pollo/img/favicon-160x160.png
+    - theme/sass/idea-pollo/img/favicon-196x196.png
+    - theme/sass/idea-pollo/img/mstile-144x144.png
 
 paths:
-  server: test/samples/build/
-  css: test/samples/metalsmith/contents/a-pollo/css/
-  images: test/samples/metalsmith/contents/a-pollo/img/
-  fonts: test/samples/metalsmith/contents/a-pollo/fonts/
-  js: test/samples/metalsmith/contents/a-pollo/js/
+  server: ./test/samples/build/
+  css: ./theme/build/a-pollo/css/
+  images: ./theme/build/a-pollo/img/
+  fonts: ./theme/build/a-pollo/fonts/
+  js: ./theme/build/a-pollo/js/
 
 shell:
   after:
-    - rm ./test/samples/metalsmith/contents/docs || true
-    - rm ./test/samples/metalsmith/contents/fonts || true
-    - rm ./test/samples/metalsmith/contents/identity || true
-    - rm ./test/samples/metalsmith/contents/snipets || true
+    - mkdir -p ./theme/build/a-pollo/ || true
     - mkdir -p ./test/samples/build/a-pollo/ || true
-    - cp -r ./test/samples/metalsmith/contents/a-pollo/* ./test/samples/build/a-pollo/
-    - cp -r ./test/samples/tmp/* ./test/samples/metalsmith/contents/
-    - rm ./test/samples/metalsmith/contents/map.yml || true
+    - cp -r ./theme/build/a-pollo/* ./test/samples/build/a-pollo/
