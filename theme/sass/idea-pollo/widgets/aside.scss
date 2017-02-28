@@ -37,7 +37,7 @@
 
   @include element ('contents') {
     position: relative;
-    transform: translate(30%, 0);
+    transform: translate(40%, 0);
     transition: transform $ease-aside;
   }
 

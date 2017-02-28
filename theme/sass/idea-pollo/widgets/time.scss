@@ -1,7 +1,5 @@
 @include block ('time') {
 
-  cursor: copy;
-
   &:hover {
     @include element ('time-ago') {
       display: none;
@@ -9,9 +7,6 @@
     @include element ('full-date') {
       display: inline-block;
     }
-  }
-
-  @include element ('time-ago') {
   }
 
   @include element ('full-date') {

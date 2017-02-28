@@ -1,17 +1,94 @@
 @include block ('render') {
 
+  $ease: 0.5s ease(in-out-expo);
   border: 0;
   border-top: $border $color-border;
   margin-bottom: s(20);
 
+  @include element ('wrapper') {
+    background-color: $color-body-background;
+    border-bottom: $border $color-border;
+    line-height: 0;
+    overflow: hidden;
+    position: relative;
+    transition: max-width $ease, background-color $ease;
+
+    &::after {
+      background-image: theme('transparent-background.svg');
+      bottom: 0;
+      content: '';
+      display: block;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: opacity $ease, max-width $ease;
+    }
+
+    @include modifier ('desktop') {
+      &::after {
+        max-width: 100%;
+      }
+      @include element ('area') {
+        max-width: 100%;
+      }
+    }
+
+    @include modifier ('tablet') {
+      &::after {
+        max-width: 768px;
+      }
+      @include element ('area') {
+        max-width: 768px;
+      }
+    }
+
+    @include modifier ('mobile') {
+      &::after {
+        max-width: 320px;
+      }
+      @include element ('area') {
+        max-width: 320px;
+      }
+    }
+
+    @include modifier ('dark') {
+      background-color: $color-body-background;
+      @include element ('area') {
+        background-color: $color-border;
+        padding-left: s(1);
+        padding-right: s(1);
+      }
+    }
+
+    @include modifier ('light') {
+      background-color: $color-border;
+      @include element ('area') {
+        background-color: $color-body-background;
+      }
+    }
+
+    @include modifier ('transparency') {
+      background-color: $color-border;
+
+      &::after {
+        opacity: 1;
+      }
+      @include element ('area') {
+        padding-left: s(1);
+        padding-right: s(1);
+      }
+    }
+  }
+
   @include element ('area') {
     background-color: transparent;
     border: 0;
-    border-bottom: $border $color-border;
     padding: s(1) 0;
-
-    @include modifier ('transparent') {
-      background-image: theme('transparent-background.svg');
-    }
+    position: relative;
+    transition: max-width $ease, background-color $ease, padding $ease;
+    width: 100%;
+    z-index: 1;
   }
 }

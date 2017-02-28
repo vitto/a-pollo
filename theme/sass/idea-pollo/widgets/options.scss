@@ -33,6 +33,11 @@
       color: $color-hover;
     }
 
+    @include modifier ('actived') {
+      color: $color-body-text;
+      text-decoration: line-through;
+    }
+
     @include modifier ('selected') {
       color: $color-body-text;
       cursor: default;

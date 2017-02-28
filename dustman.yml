@@ -41,7 +41,7 @@ config:
 
 js:
   file: a-pollo.min.js
-  watch: frontend/js/**/*.js
+  watch: theme/js/**/*.js
   files:
     - theme/js/*
   vendors:
@@ -49,6 +49,7 @@ js:
     file: vendors.min.js
     files:
       - node_modules/clipboard/dist/clipboard.js
+      - node_modules/js-cookie/src/js.cookie.js
       - node_modules/timeago.js/dist/timeago.js
       - node_modules/timeago.js/dist/timeago.locales.min.js
       - node_modules/jquery/dist/jquery.slim.js

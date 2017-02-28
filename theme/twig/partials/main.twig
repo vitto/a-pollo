@@ -2,30 +2,38 @@
   <h1 class="snippet__title">
     {{ title }}
   </h1>
-  <h3 class="snippet__sub-title">
-    <div>{{ category }}</div>
-  </h3>
-
-  <span class="time">
-    <time class="time__time-ago time-ago" datetime="{{ date }}">{{ date }}</time>
-    <span class="time__full-date">
-      {{ date|date("l m F, Y") }}
-    </span>
-  </span>
-
-  <div>{{ file }}</div>
-
   {% for annotation in annotations %}
       {% if loop.first %}
-        <li>
-        <i class="{{ annotation.icon }}"></i> {{ loop.index }} - {{ annotation.name }}</li>
-        <br>
-        <br>
-        {{ annotation.path.base }}
-        <br>
-        {{ annotation.path.relative }}/{{ annotation.path.base }}
-        <br>
-        <br>
+
+        <div class="snippet__info-item">
+          <div class="snippet__info-title">
+            Category
+          </div>
+          {{ category }}
+        </div>
+
+        <div class="snippet__info-item">
+          <div class="snippet__info-title">
+            Source
+          </div>
+          <div title="{{ annotation.path.relative }}/{{ annotation.path.base }}">
+            {{ annotation.path.base }}
+          </div>
+        </div>
+
+        <div class="snippet__info-item">
+          <div class="snippet__info-title">
+            Date
+          </div>
+          <span class="time">
+            <time class="time__time-ago time-ago" datetime="{{ date }}">{{ date }}</time>
+            <span class="time__full-date">
+              {{ date|date("l m F, Y") }}
+            </span>
+          </span>
+        </div>
+
+
       {% endif %}
       {% include 'snippet/item.twig' %}
   {% endfor %}

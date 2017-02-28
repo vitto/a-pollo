@@ -7,4 +7,18 @@
   @include element ('sub-title') {
     margin: 0;
   }
+
+  @include element ('info-title') {
+    font-weight: 600;
+  }
+
+  @include element ('info-item') {
+    display: inline-block;
+    margin-bottom: s(2);
+    margin-top: s(1);
+
+    & + & {
+      margin-left: s(2);
+    }
+  }
 }

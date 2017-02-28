@@ -1,36 +1,40 @@
 <div class="render">
-  <iframe class="render__area" srcdoc="
-  <html>
-  <head>
-    <style media='all'>{{ global.css|escape }}</style>
-    <script>
-      function disableAnchors () {
-        var anchors = document.getElementsByTagName('a');
-        for(i=0, len=anchors.length; i<len; i++){
-          anchors[i].addEventListener('click', function(e){e.preventDefault();});
+  <div class="render__wrapper">
+    <iframe class="render__area" srcdoc="
+    <html>
+    <head>
+      <style media='all'>{{ global.css|escape }}</style>
+      <script>
+        function disableAnchors () {
+          var anchors = document.getElementsByTagName('a');
+          for(i=0, len=anchors.length; i<len; i++){
+            anchors[i].addEventListener('click', function(e){e.preventDefault();});
+          }
         }
-      }
-      document.addEventListener('DOMContentLoaded', disableAnchors);
-    </script>
-  </head>
-  <body>
-    {{ annotation.html.code|escape }}
-  </body>
-  </html>" width="100%" height="auto">
-    It seems that your browser doesn't support <b>srcdoc</b> attribute for the <b>iframe</b> element.
-  </iframe>
-  <ul class="options">
+        document.addEventListener('DOMContentLoaded', disableAnchors);
+      </script>
+    </head>
+    <body>
+      {{ annotation.html.code|escape }}
+    </body>
+    </html>" width="100%" height="auto">
+      It seems that your browser doesn't support <b>srcdoc</b> attribute for the <b>iframe</b> element.
+    </iframe>
+  </div>
+
+
+  <ul class="options options--viewport">
     <li class="options__title">
       Viewport
     </li>
     <li class="options__item">
-      <a class="options__action options__action--selected" href="#">Desktop</a>
+      <a class="options__action" data-viewport="desktop" href="#">Desktop</a>
     </li>
     <li class="options__item">
-      <a class="options__action" href="#">Tablet</a>
+      <a class="options__action" data-viewport="tablet" href="#">Tablet</a>
     </li>
     <li class="options__item">
-      <a class="options__action" href="#">Mobile</a>
+      <a class="options__action" data-viewport="mobile" href="#">Mobile</a>
     </li>
   </ul>
   <ul class="options">
@@ -38,15 +42,21 @@
       Actions
     </li>
     <li class="options__item">
-      <a class="options__action" href="#">Copy to clipboard</a>
+      <a class="options__action copy" href="#">Copy to clipboard</a>
     </li>
   </ul>
-  <ul class="options">
+  <ul class="options options--background">
     <li class="options__title">
-      View
+      Background
     </li>
     <li class="options__item">
-      <a class="options__action" href="#">Show transparency</a>
+      <a class="options__action" data-background="light" href="#">Light</a>
+    </li>
+    <li class="options__item">
+      <a class="options__action" data-background="dark" href="#">Dark</a>
+    </li>
+    <li class="options__item">
+      <a class="options__action" data-background="transparency" href="#">Transparency</a>
     </li>
   </ul>
 </div>
