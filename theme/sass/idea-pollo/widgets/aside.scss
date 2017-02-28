@@ -1,27 +1,51 @@
 @include block ('aside') {
-  $ease: 0.25s ease(in-out-expo);
 
   bottom: 0;
   left: 0;
+  padding: s(2);
   padding-top: $initial-top-padding;
   position: fixed;
   top: 0;
-  transition: background-color $ease, color $ease, transform $ease;
   width: $aside-width;
 
-  &:hover {
-
+  &::after {
+    background-image: linear-gradient(to right, transparent 0%, $color-body-background 100%);
+    bottom: 0;
+    content: '';
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: width $ease-aside;
+    width: 50px;
   }
 
-  @include element ('header') {
-    text-align: center;
+  &:hover {
+    &::after {
+      width: 20px;
+    }
+
+    .aside-menu {
+      opacity: 1;
+    }
+
+    @include element ('contents') {
+      transform: translate(0, 0);
+    }
+  }
+
+  @include element ('contents') {
+    position: relative;
+    transform: translate(30%, 0);
+    transition: transform $ease-aside;
   }
 
   @include element ('logo') {
     $height: 38px;
     $width: 33px;
     $scale: 1.5;
-    background-image: theme('a-pollo-logo-gold.svg');
+    background-image: theme('a-pollo-logo-black.svg');
     background-position: 50% 50%;
     background-repeat: repeat;
     background-size: contain;

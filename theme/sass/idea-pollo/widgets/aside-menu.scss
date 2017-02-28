@@ -1,0 +1,21 @@
+@include block ('aside-menu') {
+
+  list-style-type: none;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  transition: opacity $ease-aside;
+
+  @include element ('item') {
+    white-space: nowrap;
+  }
+
+  @include element ('title') {
+    font-weight: 600;
+  }
+
+  @include element ('link') {
+    color: $color-body-text;
+    text-decoration: none;
+  }
+}
