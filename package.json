@@ -43,6 +43,7 @@
     "node-static": "^0.7.8",
     "path": "^0.12.7",
     "pretty-bytes": "^4.0.2",
+    "prismjs": "^1.6.0",
     "prompt": "^0.2.14",
     "random-js": "^1.0.8",
     "rimraf": "^2.5.4",

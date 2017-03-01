@@ -1,0 +1,8 @@
+@include block ('snippet-item') {
+  margin-bottom: s(4);
+  margin-top: s(2);
+
+  @include element ('title') {
+    margin-bottom: s(1);
+  }
+}

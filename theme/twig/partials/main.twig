@@ -4,7 +4,6 @@
   </h1>
   {% for annotation in annotations %}
       {% if loop.first %}
-
         <div class="snippet__info-item">
           <div class="snippet__info-title">
             Category
@@ -21,20 +20,9 @@
           </div>
         </div>
 
-        <div class="snippet__info-item">
-          <div class="snippet__info-title">
-            Date
-          </div>
-          <span class="time">
-            <time class="time__time-ago time-ago" datetime="{{ date }}">{{ date }}</time>
-            <span class="time__full-date">
-              {{ date|date("l m F, Y") }}
-            </span>
-          </span>
-        </div>
-
-
+        {% include 'date.twig' %}
       {% endif %}
+
       {% include 'snippet/item.twig' %}
   {% endfor %}
   {{ contents }}

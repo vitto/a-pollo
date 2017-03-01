@@ -1,2 +1,14 @@
+<div class="snippet-item">
+  <h2 class="snippet-item__title">
+    {{ annotation.name }}
+  </h2>
+  {{ annotation.text }}
 
-{% include 'render.twig' %}
+  {% include '../date.twig' with { data: annotation.data } %}
+
+
+  {% include 'render.twig' %}
+  {% if annotation.html.snippet %}
+    {% include 'code.twig' with { snippet: annotation.html.code } %}
+  {% endif %}
+</div>

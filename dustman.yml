@@ -21,6 +21,7 @@ css:
     path: theme/tmp/
     files:
       - node_modules/font-awesome/css/font-awesome.css # http://fontawesome.io/cheatsheet/
+      - node_modules/prismjs/themes/prism.css
 
 config:
   autoprefixer:
@@ -53,6 +54,13 @@ js:
       - node_modules/timeago.js/dist/timeago.js
       - node_modules/timeago.js/dist/timeago.locales.min.js
       - node_modules/jquery/dist/jquery.slim.js
+      - node_modules/prismjs/prism.js
+      - node_modules/prismjs/components/prism-bash.js
+      - node_modules/prismjs/components/prism-css.js
+      - node_modules/prismjs/components/prism-less.js
+      - node_modules/prismjs/components/prism-markup.js
+      - node_modules/prismjs/components/prism-scss.js
+      - node_modules/prismjs/plugins/unescaped-markup/prism-unescaped-markup.js
 
 vendors:
   fonts:

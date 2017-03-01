@@ -7,6 +7,8 @@
 
 @import 'helpers/selected';
 
+@import 'base/code';
+
 @import 'widgets/aside-menu';
 @import 'widgets/aside';
 @import 'widgets/body';
@@ -14,6 +16,7 @@
 @import 'widgets/options';
 @import 'widgets/render';
 @import 'widgets/render-options';
+@import 'widgets/snippet-item';
 @import 'widgets/snippet';
 @import 'widgets/time';
 // @import 'widgets/button-social';
