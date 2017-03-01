@@ -6,15 +6,15 @@
     content: '';
     display: block;
     height: 1px;
+    left: 50%;
     position: absolute;
     top: 50%;
-    left: 50%;
-    width: 0;
     transition: width $ease-selected, left $ease-selected;
+    width: 0;
   }
 
   @include modifier ('selected') {
-    color: $color-body-text;
+    color: mix($color-body-text, $color-body-background, 15%);
     cursor: default;
 
     &:hover {

@@ -6,7 +6,7 @@
   @include float-col-offset($rules, $total-columns);
 }
 
-@mixin row($rules, $total-columns: $row-columns-total) {
+@mixin row($rules: null, $total-columns: $row-columns-total) {
   @include float-row($rules, $total-columns) {
     @content;
   };

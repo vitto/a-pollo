@@ -9,7 +9,10 @@
   width: $aside-width;
 
   &::after {
-    background-image: linear-gradient(to right, transparent 0%, $color-body-background 100%);
+    $transparency: rgba($color-body-background, 0);
+    $fill: rgba($color-body-background, 1);
+
+    background-image: linear-gradient(to right, $transparency 0%, $fill 100%);
     bottom: 0;
     content: '';
     display: block;

@@ -5,20 +5,19 @@ $(function () {
     background: 'light'
   }
 
-
-  if (cookies.snippet === 'undefined') {
+  if (typeof cookies.snippet === 'undefined') {
     Cookies.set('snippet', snippet)
   } else {
     snippet = cookies.snippet
   }
 
   function setViewport (viewport) {
-    $('.render__wrapper').removeClass(function (index, className) {
-      return (className.match(/render__wrapper--(desktop|tablet|mobile)/g) || []).join(' ');
+    $('.render').removeClass(function (index, className) {
+      return (className.match(/render--(desktop|tablet|mobile)/g) || []).join(' ');
     })
     $('.options__action[data-viewport]').removeClass('options__action--selected')
     $('.options__action[data-viewport=' + viewport + ']').addClass('options__action--selected')
-    $('.render__wrapper').addClass('render__wrapper--' + viewport)
+    $('.render').addClass('render--' + viewport)
   }
 
   setViewport(snippet.viewport)
@@ -31,13 +30,13 @@ $(function () {
   })
 
   function setBackground(background) {
-    $('.render__wrapper').removeClass(function (index, className) {
-      return (className.match(/render__wrapper--(transparency|light|dark)/g) || []).join(' ');
+    $('.render').removeClass(function (index, className) {
+      return (className.match(/render--(transparency|light|dark)/g) || []).join(' ');
     })
     $('.options__action[data-background]').removeClass('options__action--selected')
     if (background !== '') {
       $('.options__action[data-background=' + background + ']').addClass('options__action--selected')
-      $('.render__wrapper').addClass('render__wrapper--' + background)
+      $('.render').addClass('render--' + background)
     }
   }
 

@@ -1,90 +1,119 @@
 @include block ('render') {
 
   border: 0;
+  border-bottom: $border $color-border;
   border-top: $border $color-border;
-  margin-bottom: s(20);
+  position: relative;
+
+  $transition-mask: 0.25s ease(out-quint);
+
+  &::after {
+    background-color: $color-body-background;
+    bottom: 0;
+    content: '';
+    left: s(-1);
+    position: absolute;
+    top: 0;
+    transition: background-color $ease-render-mask;
+    width: s(1);
+    z-index: 2;
+  }
+
+  @include modifier ('desktop') {
+    @include element ('wrapper') {
+      &::after {
+        max-width: 100%;
+      }
+    }
+    @include element ('area') {
+      max-width: 100%;
+    }
+  }
+
+  @include modifier ('tablet') {
+    @include element ('wrapper') {
+      &::after {
+        max-width: 768px;
+      }
+    }
+    @include element ('area') {
+      max-width: 768px;
+    }
+  }
+
+  @include modifier ('mobile') {
+    @include element ('wrapper') {
+      &::after {
+        max-width: 320px;
+      }
+    }
+    @include element ('area') {
+      max-width: 320px;
+    }
+  }
+
+  @include modifier ('dark') {
+    @include element ('wrapper') {
+      background-color: $color-body-background;
+      margin-left: 0;
+    }
+    @include element ('area') {
+      background-color: $color-border;
+      padding-left: 0;
+      padding-right: s(1);
+    }
+  }
+
+  @include modifier ('light') {
+    &::after {
+      background-color: transparent;
+      transition: background-color $ease-render-mask $ease-render-delay;
+    }
+    @include element ('wrapper') {
+      background-color: $color-border;
+    }
+    @include element ('area') {
+      background-color: $color-body-background;
+      padding-left: 0;
+    }
+  }
+
+  @include modifier ('transparency') {
+    @include element ('wrapper') {
+      background-color: $color-border;
+      margin-left: 0;
+    }
+    @include element ('area') {
+      padding-left: 0;
+      padding-right: s(1);
+    }
+  }
 
   @include element ('wrapper') {
     background-color: $color-body-background;
-    border-bottom: $border $color-border;
     line-height: 0;
+    margin-left: s(-1);
     overflow: hidden;
     position: relative;
-    transition: background-color $ease-render;
+    transition: background-color $ease-render, margin-left $ease-render;
 
     &::after {
       background-image: theme('transparent-background.svg');
+      background-size: 128px;
       bottom: 0;
       content: '';
       display: block;
       left: 0;
-      opacity: 0;
       position: absolute;
       right: 0;
       top: 0;
-      transition: opacity $ease-render, max-width $ease-render;
-    }
-
-    @include modifier ('desktop') {
-      &::after {
-        max-width: 100%;
-      }
-      @include element ('area') {
-        max-width: 100%;
-      }
-    }
-
-    @include modifier ('tablet') {
-      &::after {
-        max-width: 768px;
-      }
-      @include element ('area') {
-        max-width: 768px;
-      }
-    }
-
-    @include modifier ('mobile') {
-      &::after {
-        max-width: 320px;
-      }
-      @include element ('area') {
-        max-width: 320px;
-      }
-    }
-
-    @include modifier ('dark') {
-      background-color: $color-body-background;
-      @include element ('area') {
-        background-color: $color-border;
-        padding-left: s(1);
-        padding-right: s(1);
-      }
-    }
-
-    @include modifier ('light') {
-      background-color: $color-border;
-      @include element ('area') {
-        background-color: $color-body-background;
-      }
-    }
-
-    @include modifier ('transparency') {
-      background-color: $color-border;
-
-      &::after {
-        opacity: 1;
-      }
-      @include element ('area') {
-        padding-left: s(1);
-        padding-right: s(1);
-      }
+      transition: max-width $ease-render;
     }
   }
 
   @include element ('area') {
     background-color: transparent;
     border: 0;
-    padding: s(1) 0;
     position: relative;
     transition: max-width $ease-render, background-color $ease-render, padding $ease-render;
     width: 100%;
