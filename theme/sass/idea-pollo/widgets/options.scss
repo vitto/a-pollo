@@ -33,19 +33,6 @@
       color: $color-hover;
     }
 
-    @include modifier ('actived') {
-      color: $color-body-text;
-      text-decoration: line-through;
-    }
-
-    @include modifier ('selected') {
-      color: $color-body-text;
-      cursor: default;
-      text-decoration: line-through;
-
-      &:hover {
-        color: mix($color-body-text, $color-body-background, 25%);
-      }
-    }
+    @include selected;
   }
 }

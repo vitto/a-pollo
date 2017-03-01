@@ -1,6 +1,5 @@
 @include block ('render') {
 
-  $ease: 0.5s ease(in-out-expo);
   border: 0;
   border-top: $border $color-border;
   margin-bottom: s(20);
@@ -11,7 +10,7 @@
     line-height: 0;
     overflow: hidden;
     position: relative;
-    transition: max-width $ease, background-color $ease;
+    transition: background-color $ease-render;
 
     &::after {
       background-image: theme('transparent-background.svg');
@@ -23,7 +22,7 @@
       position: absolute;
       right: 0;
       top: 0;
-      transition: opacity $ease, max-width $ease;
+      transition: opacity $ease-render, max-width $ease-render;
     }
 
     @include modifier ('desktop') {
@@ -87,7 +86,7 @@
     border: 0;
     padding: s(1) 0;
     position: relative;
-    transition: max-width $ease, background-color $ease, padding $ease;
+    transition: max-width $ease-render, background-color $ease-render, padding $ease-render;
     width: 100%;
     z-index: 1;
   }

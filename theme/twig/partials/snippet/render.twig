@@ -1,6 +1,6 @@
 <div class="render">
   <div class="render__wrapper">
-    <iframe class="render__area" srcdoc="
+    <iframe class="render__area" scrolling="no" onload="resizeIframe(this)" srcdoc="
     <html>
     <head>
       <style media='all'>{{ global.css|escape }}</style>
@@ -37,14 +37,6 @@
       <a class="options__action" data-viewport="mobile" href="#">Mobile</a>
     </li>
   </ul>
-  <ul class="options">
-    <li class="options__title">
-      Actions
-    </li>
-    <li class="options__item">
-      <a class="options__action copy" href="#">Copy to clipboard</a>
-    </li>
-  </ul>
   <ul class="options options--background">
     <li class="options__title">
       Background
@@ -57,6 +49,14 @@
     </li>
     <li class="options__item">
       <a class="options__action" data-background="transparency" href="#">Transparency</a>
+    </li>
+  </ul>
+  <ul class="options">
+    <li class="options__title">
+      Code
+    </li>
+    <li class="options__item">
+      <a class="options__action clipboard" href="#" data-copied="Copied" data-clipboard-text="{{ annotation.html.copy|escape }}">Copy to clipboard</a>
     </li>
   </ul>
 </div>

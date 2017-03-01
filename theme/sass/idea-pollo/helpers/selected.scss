@@ -1,0 +1,29 @@
+@mixin selected {
+  position: relative;
+
+  &::after {
+    background-color: $color-body-text;
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    transition: width $ease-selected, left $ease-selected;
+  }
+
+  @include modifier ('selected') {
+    color: $color-body-text;
+    cursor: default;
+
+    &:hover {
+      color: mix($color-body-text, $color-body-background, 15%);
+    }
+
+    &::after {
+      left: 0;
+      width: 100%;
+    }
+  }
+}

@@ -6,7 +6,9 @@ $color-hover: $color-teak;
 $border: 2px solid;
 $color-border: $color-shark;
 
-$ease-aside: 0.25s ease(in-out-expo);
+$ease-aside: 0.5s ease(in-out-quint);
+$ease-render: 0.5s ease(in-out-quint);
+$ease-selected: 0.5s ease(in-out-quint);
 
 $font-sans: 'Merriweather', sans-serif;
 $font-serif: 'Montserrat', serif;

@@ -35,6 +35,10 @@
     }
   }
 
+  @include element ('header') {
+    margin-bottom: $initial-top-padding;
+  }
+
   @include element ('contents') {
     position: relative;
     transform: translate(40%, 0);

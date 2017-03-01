@@ -3674,6 +3674,7 @@ template {
 
 .button-social--small {
   padding: 3px 5px;
+  height: 200px;
 }
 
 .button-social--small .button-social__network {

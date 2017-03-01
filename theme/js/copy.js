@@ -1,59 +1,34 @@
-jQuery.fn.selectText = function () {
-  var doc = document
-  var element = this[0]
-  var range
-
-  this.find('input').each(function () {
-    if($(this).prev().length === 0 || !$(this).prev().hasClass('p_copy')) {
-      $('<p class="p_copy" style="position: absolute z-index: -1"></p>').insertBefore($(this))
-    }
-    $(this).prev().html($(this).val())
-  })
-
-  if (doc.body.createTextRange) {
-    range = document.body.createTextRange()
-    range.moveToElementText(element)
-    range.select()
-  } else if (window.getSelection) {
-    var selection = window.getSelection()
-    range = document.createRange()
-    range.selectNodeContents(element)
-    selection.removeAllRanges()
-    selection.addRange(range)
-  }
-}
-
 $(function () {
-  $(document).on('click', '.apollo-html-example', function () {
-    var isActive = $(this).find('.apollo-html-example__bg').hasClass('apollo-html-example__bg--active')
-    if (isActive) {
-      $(this).find('.apollo-html-example__bg').removeClass('apollo-html-example__bg--active')
-    } else {
-      $(this).find('.apollo-html-example__bg').addClass('apollo-html-example__bg--active')
-    }
+  var clipboard = new Clipboard('.clipboard')
+
+  clipboard.on('success', function(e) {
+    console.info('Action:', e.action)
+    console.info('Text:', e.text)
+    console.info('Trigger:', e.trigger)
+    e.clearSelection()
+    var $button = $(e.target)
+    var original = $button.text()
+    var copied = $button.data('copied')
+    // e.preventDefault()
+    $button.text(copied)
+    setTimeout(function () {
+      $button.text(original)
+    }, 3000)
   })
 
-  $('.highlight .code').each(function () {
-    $(this).html($(this).html().replace(/[“”]{1,}/g, '"'))
+  clipboard.on('error', function(e) {
+    console.error('Action:', e.action)
+    console.error('Trigger:', e.trigger)
   })
 
-  new Clipboard('.apollo-code-example')
-
-  $(document).on('click', '.apollo-post > p > code, .apollo-widget__description code', function () {
-    $(this).selectText()
-  })
-
-  var timeout
-
-  $(document).on('click', '.apollo-code-example', function () {
-    var $copyMessage, originalText
-    $copyMessage = $(this).find('.apollo-code-example__message')
-    originalText = $(this).find('.apollo-code-example__message').data('text')
-    $copyMessage.text('copied')
-    clearTimeout(timeout)
-    timeout = setTimeout(function(){
-      $copyMessage.text(originalText)
-      window.getSelection().removeAllRanges()
-    }, 2000)
-  })
+  // $('.clipboard').on('click', function (e) {
+  //   var $button = $(this)
+  //   var original = $button.text()
+  //   var copied = $button.data('copied')
+  //   e.preventDefault()
+  //   $button.text(copied)
+  //   setTimeout(function () {
+  //     $button.text(original)
+  //   }, 3000)
+  // })
 })
