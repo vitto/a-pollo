@@ -1,0 +1,21 @@
+@mixin underline {
+  $bottom: 85%;
+
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    background-color: $color-body-text;
+    box-shadow: 0 -0.5px 0 $color-body-background, 0 0.5px 0 $color-body-background;
+    content: '';
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: $bottom;
+    transition: width $ease-selected, height $ease-selected, left $ease-selected, right $ease-selected, bottom $ease-selected, box-shadow $ease-selected, transform $ease-selected, top $ease-selected 0.25s;
+    width: auto;
+  }
+}

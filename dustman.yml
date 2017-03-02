@@ -79,6 +79,9 @@ vendors:
     - theme/sass/idea-pollo/img/a-pollo-logo-black.svg
     - theme/sass/idea-pollo/img/a-pollo-logo-colored.svg
     - theme/sass/idea-pollo/img/a-pollo-logo-gold.svg
+    - theme/sass/idea-pollo/img/a-pollo-logo-simple-black.svg
+    - theme/sass/idea-pollo/img/a-pollo-logo-simple-gold.svg
+    - theme/sass/idea-pollo/img/a-pollo-logo-simple-grey.svg
     - theme/sass/idea-pollo/img/apple-touch-icon-114x114.png
     - theme/sass/idea-pollo/img/apple-touch-icon-120x120.png
     - theme/sass/idea-pollo/img/apple-touch-icon-144x144.png

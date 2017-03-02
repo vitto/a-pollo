@@ -1,28 +1,47 @@
 @mixin selected {
   position: relative;
 
+  $bottom: 85%;
+
   &::after {
     background-color: $color-body-text;
+    box-shadow: 0 -0.5px 0 $color-body-background, 0 0.5px 0 $color-body-background;
     content: '';
     display: block;
     height: 1px;
     left: 50%;
     position: absolute;
-    top: 50%;
-    transition: width $ease-selected, left $ease-selected;
+    top: $bottom;
+    transition: width $ease-selected, left $ease-selected, box-shadow $ease-selected, transform $ease-selected, top $ease-selected 0.25s;
     width: 0;
   }
 
+  &:hover {
+    &::after {
+      left: 0;
+      top: $bottom;
+      width: 100%;
+    }
+  }
+
   @include modifier ('selected') {
-    color: mix($color-body-text, $color-body-background, 15%);
+    color: $color-body-text;
     cursor: default;
 
     &:hover {
-      color: mix($color-body-text, $color-body-background, 15%);
+      color: $color-body-text;
+
+      &::after {
+        top: 50%;
+      }
     }
 
     &::after {
+      box-shadow: 0 -0.5px 0 transparent, 0 0.5px 0 transparent;
       left: 0;
+      top: 50%;
+      transform: rotate(-10deg);
+      transition: width $ease-selected, left $ease-selected, box-shadow $ease-selected, top $ease-selected, transform $ease-selected;
       width: 100%;
     }
   }

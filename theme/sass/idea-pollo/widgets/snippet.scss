@@ -29,5 +29,21 @@
       margin-bottom: 0;
       margin-top: s(2);
     }
+
+    @include modifier ('icon') {
+      margin-right: s(-0.5);
+      position: relative;
+      top: s(-0.5);
+    }
+  }
+
+  @include element ('icon') {
+    $size: 40px;
+    background-color: $color-icon-background;
+    border-radius: 100px;
+    color: $color-icon-text;
+    line-height: $size;
+    text-align: center;
+    width: $size;
   }
 }

@@ -1,0 +1,48 @@
+@mixin underline-link-aside {
+  $margin: -3px;
+  $ease-duration: 0.375s;
+  $animation: ease(out-expo);
+  $ease: $ease-duration $animation;
+
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  transition: color $ease;
+
+  &::after {
+    background-color: $color-body-text;
+    bottom: 0;
+    box-shadow: 0 -0.5px 0 $color-body-background, 0 0.5px 0 $color-body-background;
+    content: '';
+    display: block;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 100%;
+    top: 0;
+
+    transition:
+    background $ease,
+    bottom $ease,
+    box-shadow $ease,
+    box-shadow $ease,
+    height $ease,
+    left $ease,
+    right $ease,
+    top $ease,
+    transform $ease,
+    width $ease;
+
+    width: auto;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: $color-body-background;
+
+    &::after {
+      left: $margin;
+      right: $margin;
+    }
+  }
+}

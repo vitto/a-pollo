@@ -4,8 +4,11 @@ $color-titles: $color-teak;
 $color-hover: $color-teak;
 $color-snippet-hr: $color-teak;
 
+$color-icon-text: $color-white;
+$color-icon-background: $color-shark;
+
 $border: 2px solid;
-$border-code: 2px dashed;
+$border-code: 2px solid;
 $color-border: $color-shark;
 
 $ease-aside: 0.5s ease(in-out-quint);
@@ -20,6 +23,7 @@ $font-mono: 'RobotoMono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monosp
 
 $font-heading: $font-serif;
 
-$initial-top-padding: s(3);
+$aside-top-padding: s(6);
+$main-top-padding: s(4);
 $aside-width: 20%;
 $main-width: 70%;

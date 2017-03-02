@@ -1,0 +1,37 @@
+@mixin underline-link {
+  @include underline;
+  $margin: -3px;
+
+  $ease-duration: 0.375s;
+  $animation: ease(in-out-expo);
+  $ease: $ease-duration $animation;
+
+  transition: color $ease;
+
+  &::after {
+    transition:
+    background $ease,
+    bottom $ease,
+    box-shadow $ease,
+    box-shadow $ease,
+    height $ease,
+    left $ease,
+    right $ease,
+    top $ease,
+    transform $ease,
+    width $ease;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: $color-body-background;
+
+    &::after {
+      bottom: 0;
+      height: 100%;
+      left: $margin;
+      right: $margin;
+      top: 0;
+    }
+  }
+}

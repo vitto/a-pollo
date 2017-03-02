@@ -1,0 +1,13 @@
+{% if date %}
+  <div class="snippet__info-item">
+    <div class="snippet__info-title">
+      Date
+    </div>
+    <span class="time">
+      <time class="time__time-ago time-ago" datetime="{{ date }}">{{ date }}</time>
+      <span class="time__full-date">
+        {{ date|date() }}
+      </span>
+    </span>
+  </div>
+{% endif %}

@@ -4,11 +4,14 @@
   </h2>
   {{ annotation.text }}
 
-  {% include '../date.twig' with { data: annotation.data } %}
+  {% if annotation.author %}
+    {% include 'info-item.twig' with { title: 'Author', value: annotation.author, default: 'Unknown' } %}
+  {% endif %}
+  {% include 'info-item-date.twig' with { date: annotation.date } %}
 
 
   {% include 'render.twig' %}
   {% if annotation.html.snippet %}
-    {% include 'code.twig' with { snippet: annotation.html.snippet, lang:'html' } %}
+    {% include 'code.twig' with { snippet: annotation.html.code, lang:'html' } %}
   {% endif %}
 </div>

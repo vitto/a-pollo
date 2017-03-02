@@ -3,27 +3,23 @@
     {{ title }}
   </h1>
   {% for annotation in annotations %}
-      {% if loop.first %}
-        <div class="snippet__info-item">
-          <div class="snippet__info-title">
-            Category
-          </div>
-          {{ category }}
+    {% if loop.first %}
+      <div class="snippet__info-item snippet__info-item--icon">
+        <div class="snippet__icon">
+          {% if annotation.icon %}
+            <i class="{{ annotation.icon }}"></i>
+          {% else %}
+            <i class="{{ annotation.icon }}"></i>
+          {% endif %}
         </div>
+      </div>
 
-        <div class="snippet__info-item">
-          <div class="snippet__info-title">
-            Source
-          </div>
-          <div title="{{ annotation.path.relative }}/{{ annotation.path.base }}">
-            {{ annotation.path.base }}
-          </div>
-        </div>
-
-        {% include 'date.twig' %}
-      {% endif %}
-
-      {% include 'snippet/item.twig' %}
+      {% include 'snippet/info-item.twig' with { title: 'Category', value: category, default: 'Not available' } %}
+      {% include 'snippet/info-item.twig' with { title: 'Source', value: annotation.path.base, default: 'Unknown!' } %}
+      {% include 'snippet/info-item.twig' with { title: 'Author', value: annotation.author, default: 'Unknown' } %}
+      {% include 'snippet/info-item-date.twig' %}
+    {% endif %}
+    {% include 'snippet/item.twig' %}
   {% endfor %}
   {{ contents }}
 </main>

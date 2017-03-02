@@ -29,10 +29,6 @@
     text-decoration: none;
     transition: color 0.5s ease(out-expo);
 
-    &:hover {
-      color: $color-hover;
-    }
-
     @include selected;
   }
 }

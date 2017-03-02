@@ -1,0 +1,6 @@
+p {
+  a {
+    color: $color-body-text;
+    @include underline-link;
+  }
+}

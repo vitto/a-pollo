@@ -16,6 +16,6 @@
 
   @include element ('link') {
     color: $color-body-text;
-    text-decoration: none;
+    @include underline-link-aside;
   }
 }

@@ -2,7 +2,17 @@
   <div class="aside__contents">
     <div class="aside__header">
       <div class="aside__logo"></div>
+      <div class="aside__headline">
+        <strong class="aside__title">a-pollo</strong>
+        <div class="aside__sub-title">
+          The CSS style guide
+        </div>
+      </div>
     </div>
+    {% if files %}
+      qualcosa c'è
+    {% endif %}
+    {{ files }}
     <ul class="aside-menu">
       <li class="aside-menu__title">
         Menu title

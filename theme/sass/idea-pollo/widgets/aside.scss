@@ -3,7 +3,7 @@
   bottom: 0;
   left: 0;
   padding: s(2);
-  padding-top: $initial-top-padding;
+  padding-top: $aside-top-padding;
   position: fixed;
   top: 0;
   width: $aside-width;
@@ -36,10 +36,15 @@
     @include element ('contents') {
       transform: translate(0, 0);
     }
+
+    @include element ('headline') {
+      opacity: 1;
+    }
   }
 
   @include element ('header') {
-    margin-bottom: $initial-top-padding;
+    margin-bottom: s(3.5);
+    overflow: auto;
   }
 
   @include element ('contents') {
@@ -52,13 +57,31 @@
     $height: 38px;
     $width: 33px;
     $scale: 1.5;
-    background-image: theme('a-pollo-logo-black.svg');
+    background-image: theme('a-pollo-logo-simple-black.svg');
     background-position: 50% 50%;
     background-repeat: repeat;
     background-size: contain;
     display: inline-block;
+    float: left;
     height: s($scale, $height);
     line-height: 0;
+    margin-right: s(0.5);
     width: s($scale, $width);
+  }
+
+  @include element ('headline') {
+    margin-top: s(1);
+    opacity: 0;
+    transition: $ease-aside;
+    white-space: nowrap;
+  }
+
+  @include element ('title') {
+    display: block;
+    font-weight: 600;
+  }
+
+  @include element ('sub-title') {
+    display: block;
   }
 }
