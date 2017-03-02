@@ -6,6 +6,10 @@
   padding: 0;
   transition: opacity $ease-aside;
 
+  & + & {
+    margin-top: s(2);
+  }
+
   @include element ('item') {
     white-space: nowrap;
   }

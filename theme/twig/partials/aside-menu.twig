@@ -1,0 +1,21 @@
+{% if items.length %}
+  <ul class="aside-menu">
+    <li class="aside-menu__title">
+      {{ title }}
+    </li>
+    {% if title|lower == 'snippet' or title|lower == 'snippets' %}
+    <li class="aside-menu__item">
+      <a class="aside-menu__link" href="{{ item.url }}">
+        <i class="fa fa-map-o"></i> Show all
+      </a>
+    </li>
+    {% endif %}
+    {% for item in items %}
+      <li class="aside-menu__item">
+        <a class="aside-menu__link" href="{{ item.url }}">
+          {{ item.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

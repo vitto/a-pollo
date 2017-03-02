@@ -8,9 +8,9 @@ clean: true
 source: tmp
 destination: build
 collections:
-  posts:
-    pattern: ./markdown/posts/*.md
-    sortBy: date
+  posts: ./markdown/posts/*.md
+  doc: ./test/samples/tmp/docs/*.md
+  snippet: ./test/samples/tmp/snippets/*.md
 beautify:
   css: false
   js: false

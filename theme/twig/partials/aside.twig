@@ -9,19 +9,9 @@
         </div>
       </div>
     </div>
-    {% if files %}
-      qualcosa c'è
-    {% endif %}
-    {{ files }}
-    <ul class="aside-menu">
-      <li class="aside-menu__title">
-        Menu title
-      </li>
-      <li class="aside-menu__item">
-        <a class="aside-menu__link" href="#">
-          Hello this is a very long menu item
-        </a>
-      </li>
-    </ul>
+    {{collections.docs}}
+    {% include 'aside-menu.twig' with { title: 'Documentation', items: metadata.collections.doc } %}
+    {% include 'aside-menu.twig' with { title: 'Posts', items: metadata.collections.posts } %}
+    {% include 'aside-menu.twig' with { title: 'Snippet', items: metadata.collections.snippet } %}
   </div>
 </aside>
