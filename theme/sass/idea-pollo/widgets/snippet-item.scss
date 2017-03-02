@@ -1,6 +1,9 @@
 @include block ('snippet-item') {
+  border-top: $border $color-border;
   margin-bottom: s(4);
   margin-top: s(2);
+  padding-top: s(2);
+  overflow: auto;
 
   @include element ('title') {
     margin-bottom: s(1);

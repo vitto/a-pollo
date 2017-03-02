@@ -1,0 +1,6 @@
+@include block ('snippet-code') {
+  margin-top: s(1);
+  pre {
+    margin: 0;
+  }
+}

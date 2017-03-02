@@ -10,6 +10,10 @@
 
   @include element ('info-title') {
     font-weight: 600;
+
+    @include modifier ('upper') {
+      text-transform: uppercase;
+    }
   }
 
   @include element ('info-item') {
@@ -19,6 +23,11 @@
 
     & + & {
       margin-left: s(2);
+    }
+
+    @include modifier ('code') {
+      margin-bottom: 0;
+      margin-top: s(2);
     }
   }
 }

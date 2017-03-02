@@ -1,8 +1,8 @@
 @include block ('render') {
 
   border: 0;
-  border-bottom: $border $color-border;
-  border-top: $border $color-border;
+  border-bottom: $border-code $color-border;
+  border-top: $border-code $color-border;
   position: relative;
 
   $transition-mask: 0.25s ease(out-quint);

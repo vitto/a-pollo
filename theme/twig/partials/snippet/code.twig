@@ -1,7 +1,18 @@
-<div class="snippet-code">
-  <pre class="lang-html">
-    <code>
-      {{ snippet|raw|nl2br }}
-    </code>
-  </pre>
+<div class="snippet__info-item snippet__info-item--code">
+  <div class="snippet__info-title snippet__info-title--upper">
+    {{ lang|upper }}
+  </div>
 </div>
+
+<div class="snippet-code">
+  <pre><code class="lang-{{ lang }}">{{ snippet|raw }}</code></pre>
+</div>
+
+<ul class="options">
+  <li class="options__title">
+    Code
+  </li>
+  <li class="options__item">
+    <a class="options__action clipboard" href="#" data-copied="Copied" data-clipboard-text="{{ annotation.html.copy|escape }}">Copy to clipboard</a>
+  </li>
+</ul>
