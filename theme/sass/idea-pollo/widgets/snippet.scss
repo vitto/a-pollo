@@ -18,7 +18,7 @@
 
   @include element ('info-item') {
     display: inline-block;
-    margin-bottom: s(2);
+    margin-bottom: s(1);
     margin-top: s(1);
 
     & + & {

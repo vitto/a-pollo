@@ -1,3 +1,4 @@
+<hr class="hr">
 <div class="snippet-item">
   <h2 class="snippet-item__title">
     {{ annotation.name }}
@@ -12,6 +13,6 @@
 
   {% include 'render.twig' %}
   {% if annotation.html.snippet %}
-    {% include 'code.twig' with { snippet: annotation.html.code, lang:'html' } %}
+    {% include 'code.twig' with { snippet: annotation.html.snippet, lang:'html' } %}
   {% endif %}
 </div>

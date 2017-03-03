@@ -1,0 +1,12 @@
+@include block ('hr') {
+  border: 0;
+  border-top: s(1) solid $color-border;
+  margin-bottom: s(3);
+  margin-top: s(3);
+
+  @include modifier ('aside') {
+    opacity: 0;
+    transition: opacity $ease-aside, width 0.5s ease(in-out-expo);
+    width: 100%;
+  }
+}

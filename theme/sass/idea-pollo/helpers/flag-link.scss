@@ -1,4 +1,4 @@
-@mixin underline-link-aside {
+@mixin flag-link {
   $margin: -3px;
   $ease-duration: 0.375s;
   $animation: ease(out-expo);
@@ -15,7 +15,7 @@
     box-shadow: 0 -0.5px 0 $color-body-background, 0 0.5px 0 $color-body-background;
     content: '';
     display: block;
-    height: auto;
+    height: 100%;
     left: 0;
     position: absolute;
     right: 100%;
@@ -43,6 +43,29 @@
     &::after {
       left: $margin;
       right: $margin;
+    }
+  }
+
+  @include modifier ('selected') {
+    color: $color-body-text;
+    cursor: default;
+
+    &:hover {
+      color: $color-body-text;
+
+      &::after {
+        top: 50%;
+
+      }
+    }
+
+    &::after {
+      box-shadow: 0 -0.5px 0 transparent, 0 0.5px 0 transparent;
+      height: 1px;
+      left: 0;
+      right: 0;
+      top: 50%;
+      transform: rotate(-10deg);
     }
   }
 }

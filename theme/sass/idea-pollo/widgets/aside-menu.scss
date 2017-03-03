@@ -20,6 +20,6 @@
 
   @include element ('link') {
     color: $color-body-text;
-    @include underline-link-aside;
+    @include flag-link;
   }
 }
