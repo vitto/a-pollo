@@ -1,15 +1,15 @@
 metadata:
-  description: It's about saying Hello to the world.
-  generator_name: Metalsmith
-  generator_url: http://metalsmith.io/
-  site_name: My Static Site & Blog
-  site_url: http://example.com/
+  home: http://vit.to
+  work: https://ideato.it
+  repo: https://github.com/vitto/a-pollo
 clean: true
 source: tmp
 destination: build
 collections:
   posts: ./markdown/posts/*.md
-  doc: ./test/samples/tmp/docs/*.md
+  doc:
+    pattern: ./test/samples/tmp/docs/*.md
+    sortBy: 'category'
   snippet: ./test/samples/tmp/snippets/*.md
 beautify:
   css: false

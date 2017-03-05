@@ -15,12 +15,12 @@
         </div>
       </div>
 
-      {% include 'main/info.twig' with { title: 'Category', value: category, default: 'Not available' } %}
-      {% include 'main/info.twig' with { title: 'Source', value: annotation.path.base, default: 'Unknown!' } %}
-      {% include 'main/info.twig' with { title: 'Author', value: annotation.author, default: 'Unknown' } %}
-      {% include 'main/info-date.twig' %}
+      <div class="infos">
+        {% include '../main/info.twig' with { title: 'Category', value: category, default: 'Not available' } %}
+        {% include '../main/info-date.twig' %}
+      </div>
     {% endif %}
-    {% include 'snippet/item.twig' %}
+    {% include '../doc/item.twig' %}
   {% endfor %}
   {{ contents }}
 </main>

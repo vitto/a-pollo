@@ -1,0 +1,30 @@
+@include block ('info') {
+  display: inline-block;
+  margin-top: s(1);
+
+  & + & {
+    margin-left: s(2);
+  }
+
+  @include element ('title') {
+    font-weight: 600;
+    @include modifier ('upper') {
+      text-transform: uppercase;
+    }
+  }
+
+  @include modifier ('code') {
+    margin-bottom: 0;
+    margin-top: s(2);
+  }
+
+  @include modifier ('icon') {
+    margin-right: s(-0.5);
+    position: relative;
+    top: s(-0.5);
+  }
+
+  @include modifier ('bottom') {
+    margin-bottom: s(1);
+  }
+}

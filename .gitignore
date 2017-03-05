@@ -1,6 +1,7 @@
 .DS_Store
 .nyc_output/
 *.log
+npm-debug.log.*
 /build
 /coverage
 /frontend/vendors/

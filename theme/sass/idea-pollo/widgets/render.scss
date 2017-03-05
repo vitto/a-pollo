@@ -22,33 +22,33 @@
   @include modifier ('desktop') {
     @include element ('wrapper') {
       &::after {
-        max-width: 100%;
+        width: 1024px;
       }
     }
     @include element ('area') {
-      max-width: 100%;
+      width: 1024px;
     }
   }
 
   @include modifier ('tablet') {
     @include element ('wrapper') {
       &::after {
-        max-width: 768px;
+        width: 768px;
       }
     }
     @include element ('area') {
-      max-width: 768px;
+      width: 768px;
     }
   }
 
   @include modifier ('mobile') {
     @include element ('wrapper') {
       &::after {
-        max-width: 320px;
+        width: 320px;
       }
     }
     @include element ('area') {
-      max-width: 320px;
+      width: 320px;
     }
   }
 
@@ -107,7 +107,7 @@
       position: absolute;
       right: 0;
       top: 0;
-      transition: max-width $ease-render;
+      transition: width $ease-render;
     }
   }
 
@@ -115,7 +115,7 @@
     background-color: transparent;
     border: 0;
     position: relative;
-    transition: max-width $ease-render, background-color $ease-render, padding $ease-render;
+    transition: width $ease-render, background-color $ease-render, padding $ease-render;
     width: 100%;
     z-index: 1;
   }

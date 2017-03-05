@@ -6,17 +6,19 @@
 @import 'alias/grid';
 
 @import 'helpers/flag-link';
-@import 'helpers/selected';
 @import 'helpers/underline-link';
 @import 'helpers/underline';
 
 @import 'base/code';
 @import 'base/p';
+@import 'base/selection';
 
 @import 'widgets/aside-menu';
 @import 'widgets/aside';
 @import 'widgets/body';
 @import 'widgets/hr';
+@import 'widgets/icon';
+@import 'widgets/info';
 @import 'widgets/main';
 @import 'widgets/options';
 @import 'widgets/render';

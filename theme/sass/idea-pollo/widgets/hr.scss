@@ -6,7 +6,7 @@
 
   @include modifier ('aside') {
     opacity: 0;
-    transition: opacity $ease-aside, width 0.5s ease(in-out-expo);
+    transition: opacity $ease-aside, width 0.5625s ease(in-out-expo);
     width: 100%;
   }
 }

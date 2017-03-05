@@ -1,0 +1,18 @@
+<hr class="hr">
+<div class="snippet-item">
+  <h2 class="snippet-item__title">
+    {{ annotation.name }}
+  </h2>
+  {{ annotation.text }}
+
+  <div class="infos">
+    {% include '../main/info.twig' with { title: 'From', value: annotation.version, default: 'Not available' } %}
+    {% if annotation.author %}
+      {% include '../main/info.twig' with { title: 'Author', value: annotation.author, default: 'Not specified' } %}
+    {% endif %}
+    {% include '../main/info-date.twig' with { date: annotation.date, selector: 'info--bottom' } %}
+  </div>
+  {% if annotation.html.snippet %}
+    {% include '../main/code.twig' with { snippet: annotation.html.snippet, lang:'html' } %}
+  {% endif %}
+</div>

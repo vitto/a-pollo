@@ -1,6 +1,6 @@
 {% if items.length %}
   <ul class="aside-menu">
-    <li class="aside-menu__title">
+    <li class="aside-menu__title aside-menu__title--big">
       {{ title }}
     </li>
     {% if title|lower == 'snippet' or title|lower == 'snippets' %}
@@ -10,9 +10,17 @@
       </a>
     </li>
     {% endif %}
+
+    {% set category = '' %}
     {% for item in items %}
+      {% if item.category != category %}
+        {% set category = item.category %}
+        <li class="aside-menu__title">
+          {{ category }}
+        </li>
+      {% endif %}
       <li class="aside-menu__item">
-        <a class="aside-menu__link" href="{{ item.url }}">
+        <a class="aside-menu__link{% if path == item.path %} aside-menu__link--selected {% endif %}" href="/{{ item.path }}">
           {{ item.title }}
         </a>
       </li>

@@ -6,13 +6,11 @@
   {{ annotation.text }}
 
   {% if annotation.author %}
-    {% include 'info-item.twig' with { title: 'Author', value: annotation.author, default: 'Unknown' } %}
+    {% include '../main/info.twig' with { title: 'Author', value: annotation.author, default: 'Unknown' } %}
   {% endif %}
-  {% include 'info-item-date.twig' with { date: annotation.date } %}
-
-
+  {% include '../main/info-date.twig' with { date: annotation.date, selector: 'info--bottom' } %}
   {% include 'render.twig' %}
   {% if annotation.html.snippet %}
-    {% include 'code.twig' with { snippet: annotation.html.snippet, lang:'html' } %}
+    {% include '../main/code.twig' with { snippet: annotation.html.snippet, lang:'html' } %}
   {% endif %}
 </div>

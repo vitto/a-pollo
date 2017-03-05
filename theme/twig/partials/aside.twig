@@ -9,6 +9,9 @@
         </div>
       </div>
     </div>
+
+    <hr class="hr hr--aside">
+
     {% include 'aside-menu.twig' with { title: 'Documentation', items: metadata.collections.doc } %}
     {% include 'aside-menu.twig' with { title: 'Posts', items: metadata.collections.posts } %}
     {% include 'aside-menu.twig' with { title: 'Snippet', items: metadata.collections.snippet } %}
@@ -16,12 +19,22 @@
     <hr class="hr hr--aside">
 
     <ul class="aside-menu">
-      <li class="aside-menu__title">
+      <li class="aside-menu__title aside-menu__title--big">
         Project
       </li>
-      <li class="aside-menu__item">
-        <a class="aside-menu__link" href="{{ item.url }}">
-          <i class="fa fa-map-o"></i>
+      <li class="aside-menu__item aside-menu__item--inline">
+        <a class="aside-menu__link" href="{{ metadata.repo }}">
+          <i class="fa fa-github-alt"></i>
+        </a>
+      </li>
+      <li class="aside-menu__item aside-menu__item--inline">
+        <a class="aside-menu__link" href="{{ metadata.work }}">
+          <i class="fa fa-briefcase"></i>
+        </a>
+      </li>
+      <li class="aside-menu__item aside-menu__item--inline">
+        <a class="aside-menu__link" href="{{ metadata.home }}">
+          <i class="fa fa-coffee"></i>
         </a>
       </li>
     </ul>

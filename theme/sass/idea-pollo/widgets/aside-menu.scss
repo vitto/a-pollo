@@ -12,10 +12,40 @@
 
   @include element ('item') {
     white-space: nowrap;
+    @include modifier ('inline') {
+      display: inline-block;
+
+      & + & {
+        margin-left: s(0.25);
+      }
+    }
   }
 
   @include element ('title') {
     font-weight: 600;
+    margin-top: s(0.5);
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    @include modifier ('big') {
+      font-size: 18px;
+      margin-bottom: s(0.5);
+      padding-bottom: s(0.5);
+      position: relative;
+
+      &::after {
+        background-color: $color-border;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 2px;
+        position: absolute;
+        transition: opacity $ease-aside, width 0.5625s ease(in-out-expo);
+        width: 100%;
+      }
+    }
   }
 
   @include element ('link') {

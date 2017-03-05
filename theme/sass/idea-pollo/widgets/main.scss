@@ -1,10 +1,16 @@
 @include block ('main') {
   background-color: $color-body-background;
   margin-left: $aside-width;
-  padding-left: s(2);
-  padding-right: s(2);
-  padding-top: $main-top-padding;
+  padding: $main-top-padding s(2);
   position: relative;
   width: $main-width;
   z-index: 1;
+
+  @include element ('title') {
+    margin: 0;
+  }
+
+  @include element ('sub-title') {
+    margin: 0;
+  }
 }
