@@ -5,20 +5,7 @@
 
   {% for annotation in annotations %}
     {% if loop.first %}
-      <div class="info info--icon">
-        <div class="icon">
-          {% if annotation.icon %}
-            <i class="{{ annotation.icon }}"></i>
-          {% else %}
-            <i class="{{ annotation.icon }}"></i>
-          {% endif %}
-        </div>
-      </div>
-
-      <div class="infos">
-        {% include '../main/info.twig' with { title: 'Category', value: category, default: 'Not available' } %}
-        {% include '../main/info-date.twig' %}
-      </div>
+      {% include '../main/infos.twig' %}
     {% endif %}
     {% include '../doc/item.twig' %}
   {% endfor %}
