@@ -13,10 +13,10 @@
     }
   }
 
-  @include modifier ('code') {
-    margin-bottom: 0;
-    margin-top: s(2);
-  }
+  // @include modifier ('code') {
+  //   margin-bottom: 0;
+  //   margin-top: s(2);
+  // }
 
   @include modifier ('icon') {
     margin-right: s(-0.5);

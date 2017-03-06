@@ -1,0 +1,25 @@
+@include block ('code') {
+
+  clear: both;
+  display: block;
+
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+  & + & {
+    border-top: $border-code $color-border;
+    margin-top: s(2);
+    padding-top: s(2);
+  }
+
+  @include element ('snippet') {
+    margin-top: s(1);
+
+    pre {
+      margin: 0;
+    }
+  }
+}

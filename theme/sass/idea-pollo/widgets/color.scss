@@ -1,0 +1,66 @@
+@include block ('color') {
+
+  margin-top: s(2);
+
+  @include element ('preview') {
+    $size: 150px;
+    $shadow: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 1px $shadow inset;
+    height: $size;
+    width: 100%;
+  }
+
+  @include element ('infos') {
+    margin-top: s(1);
+  }
+
+  @include element ('var') {
+    border-bottom: $border-code $color-border;
+    margin-bottom: s(0.5);
+    padding-bottom: s(0.5);
+  }
+
+  @include element ('field') {
+    font-weight: 600;
+
+    @include modifier ('block') {
+      display: block;
+    }
+  }
+
+  @include element ('values') {
+    margin-top: s(0.25);
+    &:hover {
+      @include element ('copy') {
+        &:first-child {
+          background-color: transparent;
+        }
+
+        &:hover {
+          background-color: $color-body-text;
+        }
+      }
+    }
+  }
+
+  @include element ('value') {
+    display: inline-block;
+    white-space: nowrap;
+
+  }
+
+  @include element ('copy') {
+    display: block;
+    padding: s(0.25);
+
+    &:first-child {
+      background-color: $color-body-text;
+    }
+
+    &:nth-child(1n+2) {
+      @include element ('value') {
+        color: $color-body-text;
+      }
+    }
+  }
+}

@@ -6,8 +6,14 @@
   {% for annotation in annotations %}
     {% if loop.first %}
       {% include '../main/infos.twig' %}
+      <div class="colors">
     {% endif %}
-    {% include 'item.twig' %}
+        <div class="colors__column">
+          {% include 'item.twig' %}
+        </div>
+    {% if loop.last %}
+      </div>
+    {% endif %}
   {% endfor %}
   {{ contents }}
 </main>

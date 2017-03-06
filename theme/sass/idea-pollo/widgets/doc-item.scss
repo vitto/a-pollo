@@ -1,0 +1,19 @@
+@include block ('doc-item') {
+  overflow: visible;
+
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+    height: 1px;
+    margin-top: -1px;
+  }
+
+  @include element ('title') {
+    margin-bottom: s(1);
+  }
+
+  @include element ('type') {
+    font-weight: 300;
+  }
+}

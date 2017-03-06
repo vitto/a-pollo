@@ -1,0 +1,15 @@
+{% if items.length %}
+  <ul class="aside-menu">
+    <li class="aside-menu__title aside-menu__title--big">
+      {{ title }}
+    </li>
+
+    {% for item in items %}
+      <li class="aside-menu__item">
+        <a class="aside-menu__link{% if path == item.path %} aside-menu__link--selected {% endif %}" href="/{{ item.path }}">
+          {{ item.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

@@ -1,0 +1,51 @@
+<div class="parameters">
+  <div class="infos">
+    <div class="info">
+      <div class="info__title info__title--upper">
+        Parameters
+      </div>
+    </div>
+  </div>
+
+  <div class="parameter-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Required</th>
+          <th>Default</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for param in annotation.params %}
+        <tr>
+          <td><code>{{ param.name }}</code></td>
+          <td><i>{{ param.type }}</i></td>
+          <td>
+            {% if param.default %}
+              {% if param.default|lower == 'required' %}
+                <i class="fa fa-check"></i>
+              {% else %}
+                No
+              {% endif %}
+            {% else %}
+              No
+            {% endif %}
+          </td>
+          <td>
+            {% if param.default|lower != 'required' %}
+              <code>{{ param.default }}</code>
+            {% else %}
+              No
+            {% endif %}
+          </td>
+          <td>{{ param.text }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</div>

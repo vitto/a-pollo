@@ -55,7 +55,7 @@
   "devDependencies": {
     "bower": "^1.6.5",
     "dustman": "^1.11.55",
-    "frontsize": "git+https://github.com/ideatosrl/frontsize.git#8aa8fae",
+    "frontsize": "git+https://github.com/ideatosrl/frontsize.git#eba0db2",
     "matchdep": "^1.0.0",
     "prettyjson": "^1.2.1",
     "standard": "^8.6.0",

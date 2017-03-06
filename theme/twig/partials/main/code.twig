@@ -1,20 +1,28 @@
-<div class="infos">
-  <div class="info--code">
-    <div class="info__title info__title--upper">
-      {{ lang|upper }}
+<div class="code">
+  <div class="infos">
+    <div class="info">
+      <div class="info__title info__title--upper">
+        {{ lang|upper }}
+      </div>
     </div>
   </div>
-</div>
 
-<div class="snippet-code">
-  <pre><code class="lang-{{ lang }}">{{ snippet|raw }}</code></pre>
-</div>
+  {% if code.text %}
+    {{ code.text }}
+  {% endif %}
 
-<ul class="options">
-  <li class="options__title">
-    Code
-  </li>
-  <li class="options__item">
-    <a class="options__action clipboard" href="#" data-copied="Copied" data-clipboard-text="data to be copied here">Copy to clipboard</a>
-  </li>
-</ul>
+  <div class="code__snippet">
+    <pre><code class="lang-{{ lang }}">{{ code.snippet|raw }}</code></pre>
+  </div>
+
+  {% if generated != true %}
+    <ul class="options">
+      <li class="options__title">
+        Code
+      </li>
+      <li class="options__item">
+        <a class="options__action clipboard" href="#" data-copied="Copied" data-clipboard-text="data to be copied here">Copy to clipboard</a>
+      </li>
+    </ul>
+  {% endif %}
+</div>

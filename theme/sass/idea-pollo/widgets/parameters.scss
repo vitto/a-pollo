@@ -1,0 +1,6 @@
+@include block ('parameters') {
+  border-bottom: $border-code $color-border;
+  margin-bottom: s(2);
+  margin-top: s(1.5);
+  padding-bottom: s(2);
+}

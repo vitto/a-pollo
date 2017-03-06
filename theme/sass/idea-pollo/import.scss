@@ -6,6 +6,7 @@
 @import 'alias/grid';
 
 @import 'helpers/flag-link';
+@import 'helpers/markdown-table';
 @import 'helpers/underline-link';
 @import 'helpers/underline';
 
@@ -16,14 +17,20 @@
 @import 'widgets/aside-menu';
 @import 'widgets/aside';
 @import 'widgets/body';
+@import 'widgets/code';
+@import 'widgets/colors';
+@import 'widgets/color';
+@import 'widgets/doc-item';
 @import 'widgets/hr';
 @import 'widgets/icon';
 @import 'widgets/info';
 @import 'widgets/main';
+@import 'widgets/markdown';
 @import 'widgets/options';
-@import 'widgets/render';
+@import 'widgets/parameter-table';
+@import 'widgets/parameters';
 @import 'widgets/render-options';
-@import 'widgets/snippet-code';
+@import 'widgets/render';
 @import 'widgets/snippet-item';
 @import 'widgets/snippet';
 @import 'widgets/time';

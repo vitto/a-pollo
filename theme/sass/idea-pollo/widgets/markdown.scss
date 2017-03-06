@@ -1,0 +1,7 @@
+.markdown {
+  @include markdown-table;
+
+  table {
+    margin-top: s(1);
+  }
+}

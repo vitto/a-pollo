@@ -13,6 +13,7 @@
     <hr class="hr hr--aside">
 
     {% include 'aside-menu.twig' with { title: 'Documentation', items: metadata.collections.doc } %}
+    {% include 'aside-menu-simple.twig' with { title: 'Identity', items: metadata.collections.identity } %}
     {% include 'aside-menu.twig' with { title: 'Posts', items: metadata.collections.posts } %}
     {% include 'aside-menu.twig' with { title: 'Snippet', items: metadata.collections.snippet } %}
 

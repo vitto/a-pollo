@@ -1,0 +1,33 @@
+@include block ('parameter-table') {
+
+  margin-top: s(0.5);
+  @include markdown-table;
+
+  th,
+  td {
+    border-bottom: $border transparent;
+    border-top: $border transparent;
+    vertical-align: top;
+    white-space: nowrap;
+
+    code,
+    i {
+      white-space: nowrap;
+    }
+
+    &:last-child {
+      white-space: normal;
+      width: 100%;
+
+      code,
+      i {
+        white-space: normal;
+      }
+    }
+
+    &:nth-child(3),
+    &:nth-child(4) {
+      text-align: center;
+    }
+  }
+}

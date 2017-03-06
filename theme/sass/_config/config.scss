@@ -11,5 +11,5 @@ $bem-modifier: '--' !default;
 $spacing: 20px !default;
 
 $row-columns-name: 'column';
-$row-columns-style: 'classic'; // 'classic' || 'frontsize'
-$row-columns-total: 12 !default;
+$row-columns-style: 'frontsize'; // 'classic' || 'frontsize'
+$row-columns-total: 10 !default;

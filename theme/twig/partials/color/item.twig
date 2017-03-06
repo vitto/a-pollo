@@ -1,0 +1,34 @@
+<div class="color">
+  <div class="color__preview" style="background-color:{{ annotation.value }};"></div>
+  <div class="color__infos">
+    <h3 class="color__title">{{ annotation.name }}</h3>
+    <div class="color__var">
+      <code>{{ annotation.var }}</code>
+    </div>
+    <div>
+      <strong class="color__field color__field--block">CSS</strong>
+      <div class="color__values">
+        <a class="color__copy" href="#">
+          <code class="color__value" style="color:{{ annotation.value }};">
+            {{ annotation.css.hex }}
+          </code>
+        </a>
+        <a class="color__copy" href="#">
+          <code class="color__value" style="color:{{ annotation.value }};">
+            {{ annotation.css.rgb }}
+          </code>
+        </a>
+        <a class="color__copy" href="#">
+          <code class="color__value" style="color:{{ annotation.value }};">
+            {{ annotation.css.hsl }}
+          </code>
+        </a>
+        <a class="color__copy" href="#">
+          <code class="color__value" style="color:{{ annotation.value }};">
+            {{ annotation.css.cmyk }}
+          </code>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+@mixin markdown-table {
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: s(0.5);
+    text-align: left;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  tbody tr:nth-child(odd) {
+    td {
+      background-color: $color-table-cell;
+    }
+  }
+}

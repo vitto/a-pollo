@@ -4,8 +4,7 @@
   left: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: $aside-top-padding 0 s(2) s(2);
-  padding-top: $aside-top-padding;
+  padding: $aside-top-padding 0 $main-top-padding s(2);
   position: fixed;
   top: 0;
   width: $aside-width;
