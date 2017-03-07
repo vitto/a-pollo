@@ -1,34 +1,86 @@
 <div class="color">
-  <div class="color__preview" style="background-color:{{ annotation.value }};"></div>
+  <div class="color__preview{% if annotation.channel.hsl.l >= 90 %} color__preview--bordered {% endif %}" style="background-color:{{ annotation.value }};"></div>
+
   <div class="color__infos">
-    <h3 class="color__title">{{ annotation.name }}</h3>
-    <div class="color__var">
-      <code>{{ annotation.var }}</code>
+
+    <div class="color__header">
+      <h3 class="color__title" data-title="{{ annotation.name }}">{{ annotation.name }}</h3>
+      <code class="color__var" data-clipboard-text="{{ annotation.var }}">
+        {{ annotation.var }}
+      </code>
     </div>
-    <div>
-      <strong class="color__field color__field--block">CSS</strong>
-      <div class="color__values">
-        <a class="color__copy" href="#">
-          <code class="color__value" style="color:{{ annotation.value }};">
-            {{ annotation.css.hex }}
-          </code>
-        </a>
-        <a class="color__copy" href="#">
-          <code class="color__value" style="color:{{ annotation.value }};">
-            {{ annotation.css.rgb }}
-          </code>
-        </a>
-        <a class="color__copy" href="#">
-          <code class="color__value" style="color:{{ annotation.value }};">
-            {{ annotation.css.hsl }}
-          </code>
-        </a>
-        <a class="color__copy" href="#">
-          <code class="color__value" style="color:{{ annotation.value }};">
-            {{ annotation.css.cmyk }}
-          </code>
-        </a>
-      </div>
+
+    <div class="color__values">
+      <ul class="color-value">
+        <li class="color-value__title" data-title="HEX">
+          HEX
+        </li>
+        <li class="color-value__item">
+          <strong class="color-value__item-title">CSS</strong>
+          <span class="color-value__item-copy" data-clipboard-text="{{ annotation.css.hex }}">{{ annotation.css.hex }}</span>
+        </li>
+        <li class="color-value__item">
+          <strong class="color-value__item-title">String</strong>
+          <span class="color-value__item-copy" data-clipboard-text="{{ annotation.css.hex|replace({ '#': '' }) }}">{{ annotation.css.hex|replace({ '#': '' }) }}</span>
+        </li>
+      </ul>
+
+      <ul class="color-value">
+        <li class="color-value__title" data-title="RGB">
+          RGB
+        </li>
+        <li class="color-value__item">
+          <strong class="color-value__item-title">CSS</strong>
+          <span class="color-value__item-copy" data-clipboard-text="{{ annotation.css.rgb }}">{{ annotation.css.rgb }}</span>
+        </li>
+        <li class="color-value__item">
+          <strong class="color-value__item-title">R</strong>
+          <span class="color-value__item-copy" data-clipboard-text="{{ annotation.channel.rgb.r }}">{{ annotation.channel.rgb.r }}</span>
+          <strong class="color-value__item-title">G</strong>
+          <span class="color-value__item-copy" data-clipboard-text="{{ annotation.channel.rgb.g }}">{{ annotation.channel.rgb.g }}</span>
+          <strong class="color-value__item-title">B</strong>
+          <span class="color-value__item-copy" data-clipboard-text="{{ annotation.channel.rgb.b }}">{{ annotation.channel.rgb.b }}</span>
+        </li>
+      </ul>
+
+      <ul class="color-value">
+        <li class="color-value__title" data-title="HSL">
+          HSL
+        </li>
+        <li class="color-value__item">
+          <strong class="color-value__item-title">CSS</strong>
+          <span class="color-value__item-copy" data-clipboard-text="{{ annotation.css.hsl }}">{{ annotation.css.hsl }}</span>
+        </li>
+        <li class="color-value__item">
+          <strong class="color-value__item-title">H</strong>
+          <span class="color-value__item-copy" data-clipboard-text="{{ annotation.channel.hsl.h }}">{{ annotation.channel.hsl.h }}</span>
+          <strong class="color-value__item-title">S</strong>
+          <span class="color-value__item-copy" data-clipboard-text="{{ annotation.channel.hsl.s }}">{{ annotation.channel.hsl.s }}</span>
+          <strong class="color-value__item-title">L</strong>
+          <span class="color-value__item-copy" data-clipboard-text="{{ annotation.channel.hsl.l }}">{{ annotation.channel.hsl.l }}</span>
+        </li>
+      </ul>
+
+      <ul class="color-value">
+        <li class="color-value__title" data-title="CMYK">
+          CMYK
+        </li>
+        <li class="color-value__item">
+          <strong class="color-value__item-title">CSS</strong>
+          <span class="color-value__item-copy" data-clipboard-text="{{ annotation.css.cmyk }}">{{ annotation.css.cmyk }}</span>
+        </li>
+        <li class="color-value__item">
+          <strong class="color-value__item-title">c</strong>
+          <span class="color-value__item-copy" data-clipboard-text="{{ annotation.channel.cmyk.c }}">{{ annotation.channel.cmyk.c }}</span>
+          <strong class="color-value__item-title">m</strong>
+          <span class="color-value__item-copy" data-clipboard-text="{{ annotation.channel.cmyk.m }}">{{ annotation.channel.cmyk.m }}</span>
+          <strong class="color-value__item-title">y</strong>
+          <span class="color-value__item-copy" data-clipboard-text="{{ annotation.channel.cmyk.y }}">{{ annotation.channel.cmyk.y }}</span>
+          <strong class="color-value__item-title">k</strong>
+          <span class="color-value__item-copy" data-clipboard-text="{{ annotation.channel.cmyk.k }}">{{ annotation.channel.cmyk.k }}</span>
+        </li>
+      </ul>
     </div>
+
   </div>
 </div>

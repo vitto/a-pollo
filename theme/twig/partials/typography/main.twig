@@ -5,13 +5,10 @@
 
   {% for annotation in annotations %}
     {% if loop.first %}
-      {% include '../main/infos.twig' with { icon: 'fa fa-paint-brush' } %}
-      <div class="colors">
+      {% include '../main/infos.twig' with { icon: 'fa fa-font' } %}
     {% endif %}
-        {% include 'item.twig' %}
-    {% if loop.last %}
-      </div>
-    {% endif %}
+    <hr class="hr">
+    {% include 'item.twig' %}
   {% endfor %}
   {{ contents }}
 </main>

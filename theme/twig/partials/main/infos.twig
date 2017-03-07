@@ -10,8 +10,8 @@
     </div>
   </div>
   {% endif %}
-  {% include '../main/info.twig' with { title: 'Category', value: category, default: 'Not available' } %}
+  {% include '../main/info.twig' with { title: 'Category', value: category, default: 'Not available', selector: 'info--category' } %}
   {% include '../main/info.twig' with { title: 'Source', value: annotation.path.base, default: 'Unknown!' } %}
-  {% include '../main/info.twig' with { title: 'Author', value: annotation.author, default: 'Unknown' } %}
+  {% include '../main/info.twig' with { title: 'Author', value: annotation.author, default: 'Unknown', selector: 'info--author' } %}
   {% include '../main/info-date.twig' %}
 </div>

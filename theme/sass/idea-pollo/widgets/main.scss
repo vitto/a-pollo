@@ -6,6 +6,18 @@
   width: $main-width;
   z-index: 1;
 
+  @include media ('<=tablet-large') {
+    margin-left: 0;
+    padding: s(2);
+    width: 100%;
+  }
+
+  @include media ('<=tablet-small') {
+    margin-left: 0;
+    padding: s(1);
+    width: 100%;
+  }
+
   @include element ('title') {
     margin: 0;
   }

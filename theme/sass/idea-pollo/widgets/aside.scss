@@ -9,6 +9,10 @@
   top: 0;
   width: $aside-width;
 
+  @include media ('<=tablet-large') {
+    display: none;
+  }
+
   &::after {
     $transparency: rgba($color-body-background, 0);
     $fill: rgba($color-body-background, 1);
@@ -54,7 +58,7 @@
   }
 
   @include element ('header') {
-    margin-bottom: s(3.5);
+    margin-bottom: s(3);
     overflow: auto;
   }
 

@@ -66,6 +66,12 @@
     "node": ">=6.9.2",
     "npm": ">=3.10.9"
   },
+  "standard": {
+    "globals": [
+      "$",
+      "Clipboard"
+    ]
+  },
   "scripts": {
     "test": "tap test/tap/*.js",
     "update": "npm update frontsize && mkdir -p ./test/samples/sass/frontsize && cp -R ./node_modules/frontsize/* ./test/samples/sass/frontsize",

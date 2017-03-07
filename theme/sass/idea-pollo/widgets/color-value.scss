@@ -1,0 +1,36 @@
+@include block ('color-value') {
+  flex-basis: auto;
+  flex-grow: 1;
+  list-style-type: none;
+  margin: 0;
+  padding: s(0.5);
+
+  @include media ('<=tablet-large') {
+    flex-basis: 33.3333%;
+  }
+
+  @include media ('<=tablet-small') {
+    flex-basis: 50%;
+  }
+
+  @include element ('title') {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  @include element ('item') {
+    white-space: nowrap;
+  }
+
+  @include element ('item-title') {
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  @include element ('item-copy') {
+    @include flag-link;
+    font-size: 0.75em;
+    padding-top: 2px;
+  }
+}

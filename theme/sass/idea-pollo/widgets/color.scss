@@ -1,66 +1,63 @@
 @include block ('color') {
 
-  margin-top: s(2);
+  border-bottom: $border-code $color-border;
+  display: flex;
+  margin-top: s(3);
+  padding-bottom: s(3);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  @include media ('<=tablet-small') {
+    flex-direction: column;
+  }
 
   @include element ('preview') {
     $size: 150px;
-    $shadow: rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 0 1px $shadow inset;
+    border-radius: $size;
+    display: inline-block;
+    flex-shrink: 0;
     height: $size;
-    width: 100%;
-  }
+    width: $size;
 
-  @include element ('infos') {
-    margin-top: s(1);
+    @include media ('<=tablet-small') {
+      margin-bottom: s(2);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include modifier ('bordered') {
+      $shadow: rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 1px $shadow inset;
+    }
   }
 
   @include element ('var') {
-    border-bottom: $border-code $color-border;
-    margin-bottom: s(0.5);
-    padding-bottom: s(0.5);
+    @include flag-link;
+    white-space: normal;
   }
 
-  @include element ('field') {
-    font-weight: 600;
+  @include element ('header') {
+    display: block;
+  }
 
-    @include modifier ('block') {
-      display: block;
+  @include element ('infos') {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: s(1);
+
+    @include media ('<=tablet-small') {
+      flex-direction: column;
+      margin-left: 0;
     }
   }
 
   @include element ('values') {
-    margin-top: s(0.25);
-    &:hover {
-      @include element ('copy') {
-        &:first-child {
-          background-color: transparent;
-        }
-
-        &:hover {
-          background-color: $color-body-text;
-        }
-      }
-    }
-  }
-
-  @include element ('value') {
-    display: inline-block;
-    white-space: nowrap;
-
-  }
-
-  @include element ('copy') {
-    display: block;
-    padding: s(0.25);
-
-    &:first-child {
-      background-color: $color-body-text;
-    }
-
-    &:nth-child(1n+2) {
-      @include element ('value') {
-        color: $color-body-text;
-      }
-    }
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: s(-0.5);
+    margin-right: s(-0.5);
   }
 }

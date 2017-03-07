@@ -1,10 +1,12 @@
-<div class="info">
+<div class="info{% if selector %} {{ selector }} {% endif %}">
   <div class="info__title">
     {{ title }}
   </div>
-  {% if value %}
-    {{ value }}
-  {% else %}
-    {{ default }}
-  {% endif %}
+  <div class="info__value">
+    {% if value %}
+      {{ value }}
+    {% else %}
+      {{ default }}
+    {% endif %}
+  </div>
 </div>

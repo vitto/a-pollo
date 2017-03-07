@@ -4,6 +4,7 @@
   $animation: ease(out-expo);
   $ease: $ease-duration $animation;
 
+  cursor: pointer;
   display: inline-block;
   position: relative;
   text-decoration: none;

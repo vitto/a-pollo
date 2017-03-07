@@ -29,5 +29,21 @@
     &:nth-child(4) {
       text-align: center;
     }
+
+    @include media ('<tablet-small') {
+      &:nth-child(5) {
+        display: none;
+      }
+
+      &:first-child {
+        width: 100%;
+      }
+    }
+
+    @include media ('<mobile-large') {
+      &:nth-child(4) {
+        display: none;
+      }
+    }
   }
 }
