@@ -1,4 +1,9 @@
 @include block ('render-options') {
   @include row;
   margin-bottom: s(2);
+
+  @include modifier ('info') {
+    margin-bottom: 0;
+    margin-left: s(2);
+  }
 }

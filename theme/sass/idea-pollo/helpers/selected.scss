@@ -14,6 +14,10 @@
     top: $bottom;
     transition: width $ease-selected, left $ease-selected, box-shadow $ease-selected, transform $ease-selected, top $ease-selected 0.25s;
     width: 0;
+
+    @include media ('>desktop-small') {
+      height: 2px;
+    }
   }
 
   &:hover {

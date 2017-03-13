@@ -53,7 +53,7 @@
 
   @include element ('network') {
     display: table-cell;
-    font-size: 14px;
+    font-size: px-to-em(14px);
     padding-left:  s(0.25);
     text-transform: capitalize;
   }
@@ -78,7 +78,7 @@
     padding: s(0.125) s(0.25);
 
     @include element ('network') {
-      font-size: 12px;
+      font-size: px-to-em(12px);
       padding-left:  s(0.125);
     }
   }

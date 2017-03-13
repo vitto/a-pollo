@@ -30,7 +30,7 @@
     }
 
     @include modifier ('big') {
-      font-size: 18px;
+      font-size: px-to-em(18px);
       margin-bottom: s(0.5);
       padding-bottom: s(0.5);
       position: relative;

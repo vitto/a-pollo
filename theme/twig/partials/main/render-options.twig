@@ -1,0 +1,35 @@
+
+<div class="render-options{% if selector %} {{ selector }} {% endif %}">
+  {% if viewport %}
+  <ul class="options options--viewport">
+    <li class="options__title">
+      Viewport
+    </li>
+    <li class="options__item">
+      <a class="options__action" data-viewport="desktop" href="#">Desktop</a>
+    </li>
+    <li class="options__item">
+      <a class="options__action" data-viewport="tablet" href="#">Tablet</a>
+    </li>
+    <li class="options__item">
+      <a class="options__action" data-viewport="mobile" href="#">Mobile</a>
+    </li>
+  </ul>
+  {% endif %}
+  {% if background %}
+  <ul class="options options--background">
+    <li class="options__title">
+      Background
+    </li>
+    <li class="options__item">
+      <a class="options__action" data-background="light" href="#">Light</a>
+    </li>
+    <li class="options__item">
+      <a class="options__action" data-background="dark" href="#">Dark</a>
+    </li>
+    <li class="options__item">
+      <a class="options__action" data-background="transparency" href="#">Transparency</a>
+    </li>
+  </ul>
+  {% endif %}
+</div>

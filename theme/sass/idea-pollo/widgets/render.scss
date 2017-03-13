@@ -19,6 +19,31 @@
     z-index: 2;
   }
 
+  @include modifier ('force-desktop') {
+    &::before {
+      $transparency: rgba($color-body-background, 0);
+      $fill: rgba($color-body-background, 1);
+      background-image: linear-gradient(to right, $transparency 0%, $fill 90%);
+      bottom: 0;
+      content: '';
+      position: absolute;
+      right: -1px;
+      top: 0;
+      transition: background $ease-render-mask;
+      width: s(1);
+      z-index: 3;
+    }
+    @include element ('wrapper') {
+      &::after {
+        width: 1024px !important;
+      }
+      background-color: $color-body-background !important;
+    }
+    @include element ('area') {
+      width: 1024px !important;
+    }
+  }
+
   @include modifier ('desktop') {
     @include element ('wrapper') {
       &::after {
@@ -53,6 +78,12 @@
   }
 
   @include modifier ('dark') {
+    &::before {
+      $transparency: rgba($color-border, 0);
+      $fill: rgba($color-border, 1);
+      background-image: linear-gradient(to right, $transparency 0%, $fill 100%);
+      right: 0;
+    }
     @include element ('wrapper') {
       background-color: $color-body-background;
       margin-left: 0;
@@ -65,6 +96,11 @@
   }
 
   @include modifier ('light') {
+    &::before {
+      $transparency: rgba($color-body-background, 0);
+      $fill: rgba($color-body-background, 1);
+      background-image: linear-gradient(to right, $transparency 0%, $fill 90%);
+    }
     &::after {
       background-color: transparent;
       transition: background-color $ease-render-mask $ease-render-delay;
@@ -79,6 +115,9 @@
   }
 
   @include modifier ('transparency') {
+    &::before {
+      display: none;
+    }
     @include element ('wrapper') {
       background-color: $color-border;
       margin-left: 0;

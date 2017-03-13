@@ -11,5 +11,14 @@
 
   @include element ('title') {
     margin-bottom: s(1);
+
+    @include modifier ('small') {
+      font-size: px-to-em(18px);
+    }
+  }
+
+  @include element ('category') {
+    font-size: px-to-em(16px);
+    font-weight: 200;
   }
 }

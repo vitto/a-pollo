@@ -1,11 +1,10 @@
 @include block ('font') {
   @include element ('title') {
-    font-size: 3em;
+    font-size: px-to-em(48px);
     line-height: 0;
   }
 
   @include element ('frame') {
-    @include debug;
     border: 0;
   }
 }

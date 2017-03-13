@@ -38,10 +38,10 @@ function aPollo (cb) {
                   fonts: fonts,
                   images: images,
                   css: inlineCss
-                }, function (err, config, annotations, map) {
+                }, function (err, config, annotations) {
                   if (err) throw err
                   // require('./test/save-json')('../tap/data/decorated-annotations-2.json', annotations, true)
-                  cb(config, annotations, map, inlineCss, images, fonts)
+                  cb(config, annotations, inlineCss, images, fonts)
                 })
               })
             })

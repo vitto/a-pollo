@@ -4,7 +4,7 @@
   left: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: $aside-top-padding 0 $main-top-padding s(2);
+  padding-left: s(2);
   position: fixed;
   top: 0;
   width: $aside-width;
@@ -16,7 +16,6 @@
   &::after {
     $transparency: rgba($color-body-background, 0);
     $fill: rgba($color-body-background, 1);
-
     background-image: linear-gradient(to right, $transparency 0%, $fill 100%);
     bottom: 0;
     content: '';
@@ -59,16 +58,17 @@
 
   @include element ('header') {
     margin-bottom: s(3);
-    overflow: auto;
+    overflow: hidden;
   }
 
   @include element ('contents') {
+    padding: $aside-top-padding 0 $main-top-padding 0;
     position: relative;
     transform: translate(40%, 0);
     transition: transform $ease-aside;
   }
 
-  @include element ('logo') {
+  @include element ('logo-image') {
     $height: 38px;
     $width: 33px;
     $scale: 1.5;
@@ -84,8 +84,26 @@
     width: s($scale, $width);
   }
 
+  @include element ('logo') {
+    float: left;
+    font-size: px-to-em(64px);
+
+    font-smooth: greyscale;
+    font-smooth: antialiased;
+    font-smoothing: greyscale;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+
+    line-height: 1;
+    margin-right: s(0.5);
+
+    &::before {
+      margin: 0;
+    }
+  }
+
   @include element ('headline') {
-    margin-top: s(1);
+    margin-top: px-to-em(24px);
     opacity: 0;
     transition: $ease-aside;
     white-space: nowrap;

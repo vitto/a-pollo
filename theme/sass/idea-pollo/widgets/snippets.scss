@@ -1,0 +1,11 @@
+@include block ('snippets') {
+  @include row ((
+      '>tablet-large': 3
+  )) {
+    padding: s(2);
+  }
+
+  margin-left: s(-2);
+  margin-right: s(-2);
+  width: auto;
+}

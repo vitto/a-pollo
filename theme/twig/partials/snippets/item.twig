@@ -1,0 +1,14 @@
+<div class="snippet-item">
+  <h2 class="snippet-item__title snippet-item__title--small">
+    {{ annotation.name }}
+    {% if annotation.category %}
+      <div class="snippet-item__category">
+        {% if annotation.icon %}
+          <i class="{{ annotation.icon }}"></i>
+        {% endif %}
+        {{ annotation.category }}
+      </div>
+    {% endif %}
+  </h2>
+  {% include 'render.twig' %}
+</div>

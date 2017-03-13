@@ -22,6 +22,7 @@ css:
     files:
       - node_modules/font-awesome/css/font-awesome.css # http://fontawesome.io/cheatsheet/
       - node_modules/prismjs/themes/prism.css
+      - theme/sass/fontello/css/fontello-embedded.css
 
 config:
   autoprefixer:

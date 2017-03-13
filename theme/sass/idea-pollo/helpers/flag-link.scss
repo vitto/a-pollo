@@ -56,7 +56,6 @@
 
       &::after {
         top: 50%;
-
       }
     }
 
@@ -67,6 +66,10 @@
       right: 0;
       top: 50%;
       transform: rotate(-10deg);
+
+      @include media ('>desktop-small') {
+        height: 2px;
+      }
     }
   }
 }

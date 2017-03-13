@@ -14,7 +14,7 @@
   }
 
   @include element ('preview') {
-    $size: 150px;
+    $size: px-to-em(150px);
     border-radius: $size;
     display: inline-block;
     flex-shrink: 0;

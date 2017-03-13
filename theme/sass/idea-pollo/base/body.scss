@@ -1,3 +1,19 @@
 body {
+  font-size: 100%;
 
+  @include media ('<tablet-small') {
+    font-size: 90%;
+  }
+
+  @include media ('>=tablet-small') {
+    font-size: 100%;
+  }
+
+  @include media ('>desktop-small') {
+    font-size: 120%;
+  }
+
+  @include media ('>=desktop-large') {
+    font-size: 140%;
+  }
 }
