@@ -29,4 +29,5 @@ permalinks:
   relative: false
 twig:
   directory: ../../theme/twig/layouts
+  view: default.twig
   cache: false

@@ -1,8 +1,8 @@
 annotations: sass
-cache: ./tmp
+build: ./tmp
 front_matter: true
 posts: ./markdown
 assets:
   css: css/example.css
-  fonts: ../../theme/sass/idea-pollo/fonts
-  images: ../../theme/sass/idea-pollo/img
+  fonts: css/fonts
+  images: css/img

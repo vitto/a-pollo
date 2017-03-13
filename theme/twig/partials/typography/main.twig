@@ -3,6 +3,8 @@
     {{ title }}
   </h1>
 
+  {% set titleFontSize = '32px' %}
+
   {% for annotation in annotations %}
     {% if loop.first %}
       {% include '../main/infos.twig' with { icon: 'fa fa-font' } %}

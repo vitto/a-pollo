@@ -18,6 +18,10 @@
     width: 100%;
   }
 
+  @include modifier ('short') {
+    width: ($main-width - 10%);
+  }
+
   @include element ('title') {
     margin: 0;
   }

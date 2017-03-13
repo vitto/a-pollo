@@ -2,6 +2,7 @@
 title: Hello world again
 date: 2016-12-16T15:40:08+01:00
 collection: posts
+view: default.twig
 ---
 
 Welcome to StackEdit!

@@ -1,11 +1,11 @@
-<iframe class="font__title" scrolling="no" onload="resizeIframe(this)" srcdoc="
+<iframe class="font__frame" scrolling="no" onload="resizeIframe(this)" srcdoc="
 <html>
 <head>
-  <style media='all'>{{ global.css|escape }}</style>
+  <style media='all'>{% include '../main/css.twig' %}</style>
 </head>
-<body class='{{ annotation.selectorClass }}' style='padding:20px; line-height:0;'>
-  {{ annotation.name }}
+<body class='{{ annotation.selectorClass }}' style='padding:0; margin:0; line-height:1;'>
+  <span style='font-size: {{ titleFontSize }};'>{{ annotation.name }}</span>
 </body>
-</html>" width="100%" height="auto">
+</html>" width="100%" height="0px">
   It seems that your browser doesn't support <b>srcdoc</b> attribute for the <b>iframe</b> element.
 </iframe>

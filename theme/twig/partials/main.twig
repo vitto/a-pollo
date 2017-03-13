@@ -1,26 +1,6 @@
-<main class="main">
+<main class="main main--short">
   <h1 class="main__title">
     {{ title }}
   </h1>
-
-  {% for annotation in annotations %}
-    {% if loop.first %}
-      <div class="info info--icon">
-        <div class="icon">
-          {% if annotation.icon %}
-            <i class="{{ annotation.icon }}"></i>
-          {% else %}
-            <i class="{{ annotation.icon }}"></i>
-          {% endif %}
-        </div>
-      </div>
-
-      {% include 'main/info.twig' with { title: 'Category', value: category, default: 'Not available' } %}
-      {% include 'main/info.twig' with { title: 'Source', value: annotation.path.base, default: 'Unknown!' } %}
-      {% include 'main/info.twig' with { title: 'Author', value: annotation.author, default: 'Unknown' } %}
-      {% include 'main/info-date.twig' %}
-    {% endif %}
-    {% include 'snippet/item.twig' %}
-  {% endfor %}
   {{ contents }}
 </main>

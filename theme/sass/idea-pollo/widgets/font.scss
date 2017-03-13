@@ -1,5 +1,11 @@
 @include block ('font') {
   @include element ('title') {
     font-size: 3em;
+    line-height: 0;
+  }
+
+  @include element ('frame') {
+    @include debug;
+    border: 0;
   }
 }
