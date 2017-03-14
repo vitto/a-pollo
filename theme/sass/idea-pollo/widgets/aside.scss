@@ -86,7 +86,7 @@
 
   @include element ('logo') {
     display: table-cell;
-    font-size: px-to-em(64px);
+    font-size: px-to-em(s(3));
     vertical-align: bottom;
 
     font-smooth: greyscale;
@@ -95,7 +95,7 @@
     font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
 
-    line-height: 1;
+    line-height: 0;
     margin-right: s(0.5);
 
     &::before {

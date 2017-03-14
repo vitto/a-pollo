@@ -28,7 +28,7 @@ $font-weight-bold: 700;
 
 $font-heading: $font-serif;
 
-$aside-top-padding: s(6);
-$main-top-padding: s(4);
+$aside-top-padding: px-to-em(s(6));
+$main-top-padding: px-to-em(s(4));
 $aside-width: 20%;
 $main-width: 70%;
