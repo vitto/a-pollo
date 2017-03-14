@@ -12,7 +12,7 @@
   }
 
   @include element ('title') {
-    font-weight: 600;
+    font-weight: $font-weight-bold;
   }
 
   @include element ('item') {

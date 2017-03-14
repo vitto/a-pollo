@@ -1,6 +1,6 @@
 @include block ('info') {
   display: inline-block;
-  margin-top: s(1);
+  margin-top: px-to-em(s(1));
 
   & + & {
     margin-left: s(2);
@@ -27,7 +27,7 @@
   }
 
   @include element ('title') {
-    font-weight: 600;
+    font-weight: $font-weight-bold;
     @include modifier ('upper') {
       text-transform: uppercase;
     }

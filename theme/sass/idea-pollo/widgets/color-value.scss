@@ -14,7 +14,7 @@
   }
 
   @include element ('title') {
-    font-weight: 600;
+    font-weight: $font-weight-bold;
     text-transform: uppercase;
   }
 
@@ -24,7 +24,7 @@
 
   @include element ('item-title') {
     font-size: px-to-em(12px);
-    font-weight: 600;
+    font-weight: $font-weight-bold;
     text-transform: uppercase;
   }
 

@@ -1,7 +1,61 @@
 .markdown {
-  @include markdown-table;
+  $margin-top-large: px-to-em(s(2));
 
-  table {
-    margin-top: s(1);
+  @extend %table;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: s(2);
   }
+
+  hr {
+    background-color: $color-markdown-hr;
+    border: 0;
+    height: 2px;
+    margin-top: $margin-top-large;
+  }
+
+  p {
+    margin-top: px-to-em(s(0.25));
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  a {
+    color: $color-body-text;
+    @include underline-link;
+    z-index: 0;
+  }
+
+  b,
+  strong {
+    font-weight: $font-weight-bold;
+  }
+
+  blockquote {
+    background-color: $color-markdown-hr;
+    border-left: $border $color-border;
+    margin-top: px-to-em(s(0.5));
+    padding: s(0.5);
+
+    p {
+      margin: 0;
+    }
+  }
+
+  kbd {
+    background-color: $color-markdown-hr;
+    padding: s(0.125);
+  }
+
+  pre {
+    overflow: scroll;
+  }
+
 }

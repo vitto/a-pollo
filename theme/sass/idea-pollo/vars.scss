@@ -5,6 +5,8 @@ $color-hover: $color-teak;
 $color-snippet-hr: $color-teak;
 
 $color-table-cell: $color-pampas;
+$color-markdown-hr: $color-pampas;
+$color-markdown-border-table: $color-pampas;
 
 $color-icon-text: $color-white;
 $color-icon-background: $color-shark;
@@ -19,9 +21,10 @@ $ease-render-mask: 0.25s;
 $ease-render: 0.5s ease(in-out-quint);
 $ease-selected: 0.5s ease(in-out-quint);
 
-$font-sans: 'Merriweather', sans-serif;
+$font-sans: $font-family-sans;
 $font-serif: 'Montserrat', serif;
 $font-mono: 'RobotoMono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace, serif;
+$font-weight-bold: 700;
 
 $font-heading: $font-serif;
 

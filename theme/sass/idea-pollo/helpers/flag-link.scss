@@ -67,7 +67,7 @@
       top: 50%;
       transform: rotate(-10deg);
 
-      @include media ('>desktop-small') {
+      @include media ('>=desktop-large') {
         height: 2px;
       }
     }

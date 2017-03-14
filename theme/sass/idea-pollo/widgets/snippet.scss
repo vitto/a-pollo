@@ -9,7 +9,7 @@
   }
 
   @include element ('info-title') {
-    font-weight: 600;
+    font-weight: $font-weight-bold;
 
     @include modifier ('upper') {
       text-transform: uppercase;

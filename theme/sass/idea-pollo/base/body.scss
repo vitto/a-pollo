@@ -10,7 +10,15 @@ body {
   }
 
   @include media ('>desktop-small') {
+    font-size: 100%;
+  }
+
+  @include media ('>=1600px') {
     font-size: 120%;
+  }
+
+  @include media ('>=1700px') {
+    font-size: 130%;
   }
 
   @include media ('>=desktop-large') {

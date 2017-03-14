@@ -22,7 +22,7 @@
   }
 
   @include element ('title') {
-    font-weight: 600;
+    font-weight: $font-weight-bold;
     margin-top: s(0.5);
 
     &:first-child {

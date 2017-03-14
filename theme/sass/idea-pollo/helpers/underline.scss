@@ -18,7 +18,7 @@
     transition: width $ease-selected, height $ease-selected, left $ease-selected, right $ease-selected, bottom $ease-selected, box-shadow $ease-selected, transform $ease-selected, top $ease-selected 0.25s;
     width: auto;
 
-    @include media ('>desktop-small') {
+    @include media ('>=desktop-large') {
       height: 2px;
     }
   }

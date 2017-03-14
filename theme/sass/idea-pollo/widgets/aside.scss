@@ -58,7 +58,7 @@
 
   @include element ('header') {
     margin-bottom: s(3);
-    overflow: hidden;
+    overflow: visible;
   }
 
   @include element ('contents') {
@@ -85,8 +85,9 @@
   }
 
   @include element ('logo') {
-    float: left;
+    display: table-cell;
     font-size: px-to-em(64px);
+    vertical-align: bottom;
 
     font-smooth: greyscale;
     font-smooth: antialiased;
@@ -103,15 +104,22 @@
   }
 
   @include element ('headline') {
-    margin-top: px-to-em(24px);
+    display: table-cell;
+    vertical-align: bottom;
     opacity: 0;
     transition: $ease-aside;
     white-space: nowrap;
   }
 
+  @include element ('trigger') {
+    position: absolute;
+    height: 40px;
+    background-color: red;
+  }
+
   @include element ('title') {
     display: block;
-    font-weight: 600;
+    font-weight: $font-weight-bold;
   }
 
   @include element ('sub-title') {

@@ -1,19 +1,19 @@
 @include block ('parameter-table') {
 
   margin-top: s(0.5);
-  @include markdown-table;
+
+  @extend %table;
+
+
+  tbody tr:nth-child(odd) {
+    td {
+      background-color: $color-table-cell;
+    }
+  }
 
   th,
   td {
-    border-bottom: $border transparent;
-    border-top: $border transparent;
-    vertical-align: top;
     white-space: nowrap;
-
-    code,
-    i {
-      white-space: nowrap;
-    }
 
     &:last-child {
       white-space: normal;
