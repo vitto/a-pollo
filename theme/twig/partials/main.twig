@@ -1,8 +1,10 @@
 <main class="main main--short">
-  <h1 class="main__title">
-    {{ title }}
-  </h1>
   <article class="markdown">
+    {% if show_title != false %}
+      <h1 class="main__title">
+        {{ title }}
+      </h1>
+    {% endif %}
     {{ contents }}
   </article>
 </main>

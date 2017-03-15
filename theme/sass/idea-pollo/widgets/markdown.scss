@@ -12,6 +12,11 @@
     margin-top: s(2);
   }
 
+  h1,
+  h2 {
+    margin-bottom: s(2);
+  }
+
   hr {
     background-color: $color-markdown-hr;
     border: 0;
@@ -25,6 +30,10 @@
     &:first-child {
       margin-top: 0;
     }
+  }
+
+  table + p {
+    margin-top: px-to-em(s(1));
   }
 
   a {
@@ -49,13 +58,21 @@
     }
   }
 
-  kbd {
+  kbd,
+  code {
     background-color: $color-markdown-hr;
     padding: s(0.125);
   }
 
   pre {
+    background-color: $color-markdown-hr;
     overflow: scroll;
+    padding: s(0.5);
+
+    code {
+      background-color: transparent;
+      padding: 0;
+    }
   }
 
 }
