@@ -29,6 +29,10 @@
       margin-top: 0;
     }
 
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
     @include modifier ('big') {
       font-size: px-to-em(18px);
       margin-bottom: s(0.5);

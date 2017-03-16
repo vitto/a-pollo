@@ -1,0 +1,24 @@
+<main class="main">
+  <h1 class="main__title main__title--assets">
+    {{ title }}
+  </h1>
+
+  <div class="infos">
+    <div class="info info--icon">
+      <div class="icon-dot">
+          <i class="fa fa-copy"></i>
+      </div>
+    </div>
+    {% include '../main/render-options.twig' with { background: true, viewport: false, selector: 'render-options--info' } %}
+  </div>
+
+  <hr class="hr">
+
+  {% include 'font-files.twig' %}
+
+  <hr class="hr">
+
+  {% include 'image-files.twig' %}
+
+  {{ contents }}
+</main>

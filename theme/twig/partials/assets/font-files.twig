@@ -1,0 +1,38 @@
+<h2 class="main__title">
+  Fonts
+</h2>
+
+<hr class="hr hr--thin">
+
+<div class="font-files">
+  {% for font in fonts %}
+    <div class="font-files__column">
+      <a class="font-file" href="{{ (metadata.fontAssets ~ font.path.base) }}">
+        <div class="font-file__icon">
+          <div class="icon-dot">
+            <i class="fa fa-font"></i>
+          </div>
+        </div>
+        <div class="font-file__info">
+          <div class="font-file__title">
+            {{ font.name }}
+          </div>
+          <div class="font-file-size">
+            <div class="font-file-size__item">
+              <div class="font-file-size__title">file</div>
+              <div class="font-file-size__value">{{ font.path.base }}</div>
+            </div>
+            <div class="font-file-size__item">
+              <div class="font-file-size__title">size</div>
+              <div class="font-file-size__value">{{ font.size }}</div>
+            </div>
+            <div class="font-file-size__item">
+              <div class="font-file-size__title">format</div>
+              <div class="font-file-size__value">{{ font.path.ext|upper|replace({'.': ''}) }}</div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</div>

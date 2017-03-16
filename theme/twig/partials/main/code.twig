@@ -12,16 +12,16 @@
   {% endif %}
 
   <div class="code__snippet">
-    <pre><code class="lang-{{ lang }}">{{ code.snippet|raw }}</code></pre>
+    <pre><code class="lang-{{ lang }}">{{ code.code|escape }}</code></pre>
   </div>
 
-  {% if generated != true %}
+  {% if copy is defined or code.copy is defined %}
     <ul class="options">
       <li class="options__title">
         Code
       </li>
       <li class="options__item">
-        <span class="options__action copy-snippet" data-title="Copy to clipboard" data-clipboard-text="data to be copied here">Copy to clipboard</span>
+        <span class="options__action copy-snippet" data-title="Copy to clipboard" data-clipboard-text="{% if code.copy is defined %}{{ code.copy|escape|trim }}{% else %}{{ copy|escape|trim }}{% endif %}">Copy to clipboard</span>
       </li>
     </ul>
   {% endif %}

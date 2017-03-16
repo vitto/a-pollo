@@ -1,0 +1,12 @@
+@include block ('font-files') {
+  @include row ((
+      '<=mobile-large': 1,
+      '>mobile-large', '<desktop-large': 2,
+      '>=desktop-large': 3
+  )) {
+    padding: s(0.5);
+  }
+  margin-left: s(-0.5);
+  margin-right: s(-0.5);
+  width: auto;
+}

@@ -1,7 +1,13 @@
 <div class="font">
   <div class="font__title">
-    {% include 'title.twig' %}
+    {% include 'title.twig' with { fontSize: '48px' } %}
   </div>
-  characters example
-  text cascade
+  <div class="font__characters">
+    {% include 'characters.twig' with { fontSize: '24px' } %}
+  </div>
+  {% if annotation.usage == 'paragraph' %}
+    <div class="font__paragraphs">
+      {% include 'paragraphs.twig' %}
+    </div>
+  {% endif %}
 </div>

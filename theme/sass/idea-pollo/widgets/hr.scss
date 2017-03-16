@@ -1,12 +1,18 @@
 @include block ('hr') {
   border: 0;
-  border-top: s(1) solid $color-border;
-  margin-bottom: s(3);
-  margin-top: s(3);
+  border-top: px-to-em(s(1)) solid $color-border;
+  margin-bottom: px-to-em(s(3));
+  margin-top: px-to-em(s(3));
 
   @include modifier ('aside') {
     opacity: 0;
     transition: opacity $ease-aside, width 0.5625s ease(in-out-expo);
     width: 100%;
+  }
+
+  @include modifier ('thin') {
+    border-top: $border $color-border;
+    margin-bottom: px-to-em(s(1));
+    margin-top: px-to-em(s(1));
   }
 }

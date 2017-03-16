@@ -1,0 +1,47 @@
+<h2 class="main__title">
+  Images
+</h2>
+
+<hr class="hr hr--thin">
+
+<div class="image-files">
+  {% for image in images %}
+  <div class="image-files__column">
+    <div class="image-file">
+      <div class="image-file__preview-container">
+        <div class="image-file__preview" style="background-image: url({{ metadata.imageAssets ~ image.path.base }});{% if image.height < 150 %} background-size: {{ image.width }}px {{ image.height }}px; {% endif %}"></div>
+      </div>
+      <hr class="hr hr--thin">
+      <h4>
+        {{ image.path.base }}
+      </h4>
+      <div class="">
+        {{ image.format }}
+      </div>
+      {{ image.mimeType }}
+      {{ image.size }}
+      {{ image.width }}
+      {{ image.height }}
+    </div>
+  </div>
+
+  <div class="image-files__column">
+    <div class="image-file">
+      <div class="image-file__preview-container">
+        <div class="image-file__preview" style="background-image: url({{ metadata.imageAssets ~ image.path.base }});"></div>
+      </div>
+      <hr class="hr hr--thin">
+      <h4>
+        {{ image.path.base }}
+      </h4>
+      <div class="">
+        {{ image.format }}
+      </div>
+      {{ image.mimeType }}
+      {{ image.size }}
+      {{ image.width }}
+      {{ image.height }}
+    </div>
+  </div>
+  {% endfor %}
+</div>

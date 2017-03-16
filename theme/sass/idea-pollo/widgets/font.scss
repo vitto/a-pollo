@@ -1,10 +1,19 @@
 @include block ('font') {
   @include element ('title') {
-    font-size: px-to-em(48px);
     line-height: 0;
   }
 
   @include element ('frame') {
     border: 0;
+  }
+
+  @include element ('characters') {
+    line-height: 0;
+    margin-top: s(2);
+  }
+
+  @include element ('paragraphs') {
+    line-height: 0;
+    margin-top: s(2);
   }
 }

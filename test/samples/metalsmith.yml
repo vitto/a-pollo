@@ -2,6 +2,8 @@ metadata:
   home: http://vit.to
   work: https://ideato.it
   repo: https://github.com/vitto/a-pollo
+  fontAssets: ../fonts/
+  imageAssets: ../img/
 clean: true
 source: tmp
 destination: build
@@ -15,12 +17,7 @@ collections:
 beautify:
   css: false
   js: false
-  html:
-    indent_char: " "
-    indent_size: 2
-    max_preserve_newlines: 1
-    preserve_newlines: false
-    wrap_line_length: 10000
+  html: false
 markdown:
   smartypants: true
   gfm: true

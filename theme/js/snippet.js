@@ -13,7 +13,7 @@ $(function () {
 
   function setViewport (viewport) {
     $('.render').removeClass(function (index, className) {
-      return (className.match(/render--(desktop|tablet|mobile)/g) || []).join(' ');
+      return (className.match(/render--(desktop|tablet|mobile)/g) || []).join(' ')
     })
     $('.options__action[data-viewport]').removeClass('options__action--selected')
     $('.options__action[data-viewport=' + viewport + ']').addClass('options__action--selected')
@@ -29,9 +29,9 @@ $(function () {
     setViewport(snippet.viewport)
   })
 
-  function setBackground(background) {
+  function setBackground (background) {
     $('.render').removeClass(function (index, className) {
-      return (className.match(/render--(transparency|light|dark)/g) || []).join(' ');
+      return (className.match(/render--(transparency|light|dark)/g) || []).join(' ')
     })
     $('.options__action[data-background]').removeClass('options__action--selected')
     if (background !== '') {

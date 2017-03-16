@@ -1,0 +1,29 @@
+@include block ('image-file') {
+  @include element ('preview-container') {
+    padding: s(1);
+    position: relative;
+
+    &::after {
+      background-image: theme('transparent-background.svg');
+      background-size: 128px;
+      bottom: 0;
+      content: '';
+      display: block;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: width $ease-render;
+    }
+  }
+
+  @include element ('preview') {
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 150px;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+}

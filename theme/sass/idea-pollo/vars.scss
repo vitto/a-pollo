@@ -1,8 +1,5 @@
 $color-body-background: $color-white;
 $color-body-text: $color-shark;
-$color-titles: $color-teak;
-$color-hover: $color-teak;
-$color-snippet-hr: $color-teak;
 
 $color-table-cell: $color-pampas;
 $color-markdown-hr: $color-pampas;
@@ -14,6 +11,8 @@ $color-icon-background: $color-shark;
 $border: 2px solid;
 $border-code: 2px solid;
 $color-border: $color-shark;
+$color-code-selection-text: $color-pampas;
+$color-code-selection-background: $color-shark;
 
 $ease-aside: 0.5s ease(in-out-quint);
 $ease-render-delay: 0.5s;

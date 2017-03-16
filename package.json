@@ -69,7 +69,8 @@
   "standard": {
     "globals": [
       "$",
-      "Clipboard"
+      "Clipboard",
+      "Cookies"
     ]
   },
   "scripts": {

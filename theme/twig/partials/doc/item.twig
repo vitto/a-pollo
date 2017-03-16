@@ -24,11 +24,11 @@
   {% endif %}
 
   {% if annotation.code %}
-    {% include '../main/code.twig' with { code: annotation.code, lang: annotation.code.ext } %}
+    {% include '../main/code.twig' with { code: annotation.code, copy: annotation.code.code, lang: annotation.code.ext } %}
   {% endif %}
 
   {% if annotation.css %}
-    {% include '../main/code.twig' with { code: annotation.css, lang:'css', generated: true } %}
+    {% include '../main/code.twig' with { code: annotation.css, lang:'css' } %}
   {% endif %}
 
   {% if annotation.html %}

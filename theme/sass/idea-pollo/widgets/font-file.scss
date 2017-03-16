@@ -1,0 +1,58 @@
+@include block ('font-file') {
+  color: $color-border;
+  display: table;
+  padding: s(0.5);
+  text-decoration: none;
+  width: 100%;
+
+  &:hover {
+    background-color: $color-body-text;
+    color: $color-body-background;
+
+    .icon-dot {
+      background-color: $color-body-background;
+      color: $color-body-text;
+    }
+  }
+
+  @include element ('icon') {
+    display: table-cell;
+    padding-left: s(0.5);
+    padding-right: s(1);
+    vertical-align: middle;
+  }
+
+  @include element ('info') {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  @include element ('title') {
+    display: block;
+    font-size: px-to-em(24px);
+    font-weight: $font-weight-bold;
+    text-transform: capitalize;
+  }
+
+  @include element ('size') {
+    font-size: px-to-em(12px);
+    white-space: nowrap;
+  }
+
+  @include element ('size-title') {
+    display: inline-block;
+    font-weight: $font-weight-bold;
+    margin-left: px-to-em(s(0.5));
+    margin-right: px-to-em(s(0.25));
+    text-transform: uppercase;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  @include element ('size-value') {
+    display: inline-block;
+  }
+}
