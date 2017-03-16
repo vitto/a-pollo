@@ -26,7 +26,7 @@ markdown:
   gfm: true
   tables: true
 permalinks:
-  relative: false
+  relative: true
 twig:
   directory: ../../theme/twig/layouts
   view: default.twig

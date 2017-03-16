@@ -11,24 +11,33 @@
     {% endif %}
   </title>
 
-  <link href="/a-pollo/img/safari-mask-icon.svg" rel="mask-icon" color="#262626">
-  <link href="/a-pollo/img/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
-  <link href="/a-pollo/img/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
-  <link href="/a-pollo/img/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
-  <link href="/a-pollo/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
-  <link href="/a-pollo/img/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
-  <link href="/a-pollo/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
-  <link href="/a-pollo/img/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
-  <link href="/a-pollo/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
-  <link href="/a-pollo/img/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
-  <link href="/a-pollo/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
-  <link href="/a-pollo/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
-  <link href="/a-pollo/img/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
-  <link href="/a-pollo/img/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png">
-  <link href="/a-pollo/img/favicon-196x196.png" rel="icon" sizes="196x196" type="image/png">
-  <meta content="#262626" name="msapplication-TileColor">
-  <meta content="/a-pollo/img/mstile-144x144.png" name="msapplication-TileImage">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if relativePath is defined %}
+    {% set path = relativePath %}
+  {% else %}
+    {% set path = '/' %}
+  {% endif %}
 
-  <link rel="stylesheet" href="/a-pollo/css/a-pollo.min.css">
-  <script src="/a-pollo/js/a-pollo.min.js"></script>
+  <!-- {{ path }} -->
+
+  <link href="{{ path }}a-pollo/img/safari-mask-icon.svg" rel="mask-icon" color="#262626">
+  <link href="{{ path }}a-pollo/img/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+  <link href="{{ path }}a-pollo/img/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+  <link href="{{ path }}a-pollo/img/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+  <link href="{{ path }}a-pollo/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+  <link href="{{ path }}a-pollo/img/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+  <link href="{{ path }}a-pollo/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+  <link href="{{ path }}a-pollo/img/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+  <link href="{{ path }}a-pollo/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+  <link href="{{ path }}a-pollo/img/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="{{ path }}a-pollo/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="{{ path }}a-pollo/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="{{ path }}a-pollo/img/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+  <link href="{{ path }}a-pollo/img/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png">
+  <link href="{{ path }}a-pollo/img/favicon-196x196.png" rel="icon" sizes="196x196" type="image/png">
+  <meta content="#262626" name="msapplication-TileColor">
+  <meta content="{{ path }}a-pollo/img/mstile-144x144.png" name="msapplication-TileImage">
+
+  <link rel="stylesheet" href="{{ path }}a-pollo/css/a-pollo.min.css">
+  <script src="{{ path }}a-pollo/js/a-pollo.min.js"></script>
 </head>
