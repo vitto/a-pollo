@@ -10,6 +10,12 @@
     width: 100%;
   }
 
+  @include modifier ('image') {
+    border-top: $border $color-border;
+    margin-bottom: px-to-em(s(1));
+    margin-top: 0;
+  }
+
   @include modifier ('thin') {
     border-top: $border $color-border;
     margin-bottom: px-to-em(s(1));

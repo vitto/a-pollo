@@ -30,13 +30,27 @@ $(function () {
   })
 
   function setBackground (background) {
-    $('.render').removeClass(function (index, className) {
-      return (className.match(/render--(transparency|light|dark)/g) || []).join(' ')
-    })
     $('.options__action[data-background]').removeClass('options__action--selected')
     if (background !== '') {
       $('.options__action[data-background=' + background + ']').addClass('options__action--selected')
-      $('.render').addClass('render--' + background)
+    }
+
+    if ($('.render').length > 0) {
+      $('.render').removeClass(function (index, className) {
+        return (className.match(/render--(transparency|light|dark)/g) || []).join(' ')
+      })
+      if (background !== '') {
+        $('.render').addClass('render--' + background)
+      }
+    }
+
+    if ($('.image-file').length > 0) {
+      $('.image-file').removeClass(function (index, className) {
+        return (className.match(/image-file--(transparency|light|dark)/g) || []).join(' ')
+      })
+      if (background !== '') {
+        $('.image-file').addClass('image-file--' + background)
+      }
     }
   }
 

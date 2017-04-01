@@ -1,7 +1,32 @@
 @include block ('image-file') {
+
+  @include modifier ('light') {
+    @include element ('preview-container') {
+      padding-left: 0;
+      padding-right: 0;
+
+      &::after {
+        opacity: 0;
+      }
+    }
+  }
+
+  @include modifier ('dark') {
+    @include element ('preview-container') {
+      background-color: $color-render-dark;
+      padding: s(1);
+
+      &::after {
+        opacity: 0;
+      }
+    }
+  }
+
   @include element ('preview-container') {
+    background-color: transparent;
     padding: s(1);
     position: relative;
+    transition: background-color $ease-render, padding $ease-render;
 
     &::after {
       background-image: theme('transparent-background.svg');
@@ -10,10 +35,11 @@
       content: '';
       display: block;
       left: 0;
+      opacity: 1;
       position: absolute;
       right: 0;
       top: 0;
-      transition: width $ease-render;
+      transition: opacity $ease-render, width $ease-render;
     }
   }
 
@@ -25,5 +51,9 @@
     position: relative;
     width: 100%;
     z-index: 1;
+  }
+
+  @include element ('name') {
+    margin-bottom: px-to-em(s(0.75));
   }
 }

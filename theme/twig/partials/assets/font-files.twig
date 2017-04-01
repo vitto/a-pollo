@@ -17,18 +17,18 @@
           <div class="font-file__title">
             {{ font.name }}
           </div>
-          <div class="font-file-size">
-            <div class="font-file-size__item">
-              <div class="font-file-size__title">file</div>
-              <div class="font-file-size__value">{{ font.path.base }}</div>
+          <div class="file">
+            <div class="file__item file__item--fill">
+              <div class="file__title" data-title="file">file</div>
+              <div class="file__value">{{ font.path.base }}</div>
             </div>
-            <div class="font-file-size__item">
-              <div class="font-file-size__title">size</div>
-              <div class="font-file-size__value">{{ font.size }}</div>
+            <div class="file__item">
+              <div class="file__title">size</div>
+              <div class="file__value">{{ font.size }}</div>
             </div>
-            <div class="font-file-size__item">
-              <div class="font-file-size__title">format</div>
-              <div class="font-file-size__value">{{ font.path.ext|upper|replace({'.': ''}) }}</div>
+            <div class="file__item">
+              <div class="file__title">format</div>
+              <div class="file__value">{{ font.path.ext|upper|replace({'.': ''}) }}</div>
             </div>
           </div>
         </div>

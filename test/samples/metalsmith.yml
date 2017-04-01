@@ -2,6 +2,7 @@ metadata:
   home: http://vit.to
   work: https://ideato.it
   repo: https://github.com/vitto/a-pollo
+  hamburger: true
   fontAssets: ../fonts/
   imageAssets: ../img/
 clean: true

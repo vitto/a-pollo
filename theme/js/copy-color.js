@@ -1,5 +1,4 @@
 $(function () {
-
   var duration = 2000
   var colorClipboard = new Clipboard('.color-value__item-copy')
 
@@ -18,7 +17,7 @@ $(function () {
   })
 
   colorClipboard.on('error', function (e) {
-    messageColor(e.trigger, 'Error')
+    messageColor(e.trigger, 'Copy not supported')
   })
 
   var colorVarClipboard = new Clipboard('.color__var')
@@ -38,6 +37,6 @@ $(function () {
   })
 
   colorVarClipboard.on('error', function (e) {
-    messageColorVar(e.trigger, 'Error')
+    messageColorVar(e.trigger, 'Copy not supported')
   })
 })

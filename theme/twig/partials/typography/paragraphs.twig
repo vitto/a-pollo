@@ -8,7 +8,7 @@
     }
   </style>
 </head>
-<body class='{{ annotation.selectorClass }}' style='padding:0; margin:0; line-height:1;'>
+<body class='{{ annotation.selectorClass }}' style='padding:0; margin:0; line-height:1; user-select: none;'>
   <div {% if fontSize is defined %}style='font-size: {{ fontSize }};'{% endif %}>{{ annotation.preview.paragraph }}</div>
 </body>
 </html>" width="100%" height="0px">

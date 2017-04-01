@@ -6,7 +6,8 @@
   $animation: ease(in-out-expo);
   $ease: $ease-duration $animation;
 
-  transition: color $ease;
+  text-shadow: -1px 0 0 $color-body-background, 1px 0 0 $color-body-background;
+  transition: color $ease, text-shadow $ease,;
 
   &::after {
     transition:
@@ -25,6 +26,7 @@
 
   &:hover {
     color: $color-body-background;
+    text-shadow: -1px 0 0 transparent, 1px 0 0 transparent;
 
     &::after {
       bottom: 0;

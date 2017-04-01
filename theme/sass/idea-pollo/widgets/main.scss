@@ -3,23 +3,19 @@
   margin-left: $aside-width;
   padding: $main-top-padding s(2);
   position: relative;
-  width: $main-width;
+  width: 60%;
   z-index: 1;
 
   @include media ('<=tablet-large') {
     margin-left: 0;
-    padding: s(2);
+    padding: s(5) s(2);
     width: 100%;
   }
 
   @include media ('<=tablet-small') {
     margin-left: 0;
-    padding: s(1);
+    padding: s(4) s(1) s(1);
     width: 100%;
-  }
-
-  @include modifier ('short') {
-    width: ($main-width - 10%);
   }
 
   @include element ('title') {

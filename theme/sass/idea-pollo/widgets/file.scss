@@ -1,4 +1,4 @@
-@include block ('font-file-size') {
+@include block ('file') {
   font-size: px-to-em(12px);
 
   @include element ('title') {
@@ -10,18 +10,25 @@
 
   @include element ('item') {
     display: inline-block;
+    margin-left: px-to-em(s(1));
     white-space: nowrap;
 
     &:first-child {
-      display: block;
+      margin-left: 0;
     }
 
-    &:last-child {
-      margin-left: px-to-em(s(1));
+    @include modifier ('fill') {
+      display: block;
+      margin-left: 0;
+
+      & + .file__item {
+        margin-left: 0;
+      }
     }
   }
 
   @include element ('value') {
     display: inline-block;
+    @include flag-link;
   }
 }

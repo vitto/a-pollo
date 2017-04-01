@@ -2,6 +2,7 @@ annotations: sass
 build: ./tmp
 front_matter: true
 posts: ./markdown
+index: true
 assets:
   css: css/example.css
   fonts: css/fonts

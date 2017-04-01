@@ -21,7 +21,7 @@
         Code
       </li>
       <li class="options__item">
-        <span class="options__action copy-snippet" data-title="Copy to clipboard" data-clipboard-text="{% if code.copy is defined %}{{ code.copy|escape|trim }}{% else %}{{ copy|escape|trim }}{% endif %}">Copy to clipboard</span>
+        <span class="options__action copy-snippet" data-title="Copy to clipboard" data-clipboard-text="{% if code.copy is defined %}{{ code.copy|raw|trim }}{% else %}{{ copy|raw|trim }}{% endif %}">Copy to clipboard</span>
       </li>
     </ul>
   {% endif %}

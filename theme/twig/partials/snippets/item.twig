@@ -4,7 +4,9 @@
     {% if annotation.category %}
       <div class="snippet-item__category">
         {% if annotation.icon %}
-          <i class="{{ annotation.icon }}"></i>
+          <span class="snippet-item__icon">
+            <i class="{{ annotation.icon }}"></i>
+          </span>
         {% endif %}
         {{ annotation.category }}
       </div>

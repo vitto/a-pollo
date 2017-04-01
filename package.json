@@ -75,7 +75,7 @@
   },
   "scripts": {
     "test": "tap test/tap/*.js",
-    "update": "npm update frontsize && mkdir -p ./test/samples/sass/frontsize && cp -R ./node_modules/frontsize/* ./test/samples/sass/frontsize",
+    "update": "rm -R ./node_modules/frontsize && npm update frontsize && mkdir -p ./test/samples/sass/frontsize && cp -R ./node_modules/frontsize/* ./test/samples/sass/frontsize",
     "build": "cd ./test/samples/ && node example.js && cd - && mkdir -p ./test/samples/build/a-pollo/ || true && cp -r ./theme/build/a-pollo/* ./test/samples/build/a-pollo/",
     "frontend": "rm -rf ./test/samples/build/a-pollo && ./node_modules/.bin/gulp --config dustman.yml -S"
   },

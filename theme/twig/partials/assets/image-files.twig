@@ -9,38 +9,37 @@
   <div class="image-files__column">
     <div class="image-file">
       <div class="image-file__preview-container">
-        <div class="image-file__preview" style="background-image: url({{ metadata.imageAssets ~ image.path.base }});{% if image.height < 150 %} background-size: {{ image.width }}px {{ image.height }}px; {% endif %}"></div>
-      </div>
-      <hr class="hr hr--thin">
-      <h4>
-        {{ image.path.base }}
-      </h4>
-      <div class="">
-        {{ image.format }}
-      </div>
-      {{ image.mimeType }}
-      {{ image.size }}
-      {{ image.width }}
-      {{ image.height }}
-    </div>
-  </div>
-
-  <div class="image-files__column">
-    <div class="image-file">
-      <div class="image-file__preview-container">
         <div class="image-file__preview" style="background-image: url({{ metadata.imageAssets ~ image.path.base }});"></div>
       </div>
-      <hr class="hr hr--thin">
-      <h4>
+      <hr class="hr hr--image">
+      <h4 class="image-file__name">
         {{ image.path.base }}
       </h4>
-      <div class="">
-        {{ image.format }}
+
+      <div class="file">
+        <div class="file__item">
+          <div class="file__title" data-title="format">format</div>
+          <div class="file__value" data-clipboard-text="{{ image.format }}">{{ image.format }}</div>
+        </div>
+        <div class="file__item">
+          <div class="file__title" data-title="mime type">mime type</div>
+          <div class="file__value" data-clipboard-text="{{ image.mimeType }}">{{ image.mimeType }}</div>
+        </div>
+
+        <div class="file__item file__item--fill">
+          <div class="file__title" data-title="file size">file size</div>
+          <div class="file__value" data-clipboard-text="{{ image.size }}">{{ image.size }}</div>
+        </div>
+        <div class="file__item">
+          <div class="file__title" data-title="width">width</div>
+          <div class="file__value" data-clipboard-text="{{ image.width }}">{{ image.width }}</div>
+        </div>
+        <div class="file__item">
+          <div class="file__title" data-title="height">height</div>
+          <div class="file__value" data-clipboard-text="{{ image.height }}">{{ image.height }}</div>
+        </div>
       </div>
-      {{ image.mimeType }}
-      {{ image.size }}
-      {{ image.width }}
-      {{ image.height }}
+
     </div>
   </div>
   {% endfor %}

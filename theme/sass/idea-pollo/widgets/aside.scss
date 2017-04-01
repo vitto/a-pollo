@@ -9,6 +9,10 @@
   top: 0;
   width: $aside-width;
 
+  @include media ('<=desktop-small') {
+    width: 30%;
+  }
+
   @include media ('<=tablet-large') {
     display: none;
   }
@@ -27,6 +31,10 @@
     transition: width $ease-aside;
     width: 50px;
     z-index: 1;
+
+    @include media ('<=desktop-small') {
+      right: 70%;
+    }
   }
 
   &:hover {
@@ -57,12 +65,14 @@
   }
 
   @include element ('header') {
+    color: inherit;
     margin-bottom: s(3);
     overflow: visible;
+    text-decoration: none;
   }
 
   @include element ('contents') {
-    padding: $aside-top-padding 0 $main-top-padding 0;
+    padding: $aside-top-padding 0 $main-top-padding;
     position: relative;
     transform: translate(40%, 0);
     transition: transform $ease-aside;
@@ -85,18 +95,18 @@
   }
 
   @include element ('logo') {
+    -webkit-font-smoothing: antialiased;
+    color: inherit;
     display: table-cell;
     font-size: px-to-em(s(3));
-    vertical-align: bottom;
-
-    font-smooth: greyscale;
     font-smooth: antialiased;
-    font-smoothing: greyscale;
+    font-smooth: greyscale;
     font-smoothing: antialiased;
-    -webkit-font-smoothing: antialiased;
-
+    font-smoothing: greyscale;
     line-height: 0;
     margin-right: s(0.5);
+    text-decoration: none;
+    vertical-align: bottom;
 
     &::before {
       margin: 0;
@@ -105,16 +115,10 @@
 
   @include element ('headline') {
     display: table-cell;
-    vertical-align: bottom;
     opacity: 0;
     transition: $ease-aside;
+    vertical-align: bottom;
     white-space: nowrap;
-  }
-
-  @include element ('trigger') {
-    position: absolute;
-    height: 40px;
-    background-color: red;
   }
 
   @include element ('title') {

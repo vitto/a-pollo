@@ -1,6 +1,14 @@
 .markdown {
   $margin-top-large: px-to-em(s(2));
 
+  .release-details {
+    a {
+      &:after {
+        display: none;
+      }
+    }
+  }
+
   @extend %table;
 
   h1,
@@ -22,13 +30,21 @@
     border: 0;
     height: 2px;
     margin-top: $margin-top-large;
+
+    & + p {
+      margin-top: $margin-top-large;
+    }
   }
 
   p {
-    margin-top: px-to-em(s(0.25));
+    margin-top: px-to-em(s(0.5));
 
     &:first-child {
       margin-top: 0;
+    }
+
+    & + p {
+      margin-top: px-to-em(s(1));
     }
   }
 
@@ -48,13 +64,25 @@
   }
 
   blockquote {
-    background-color: $color-markdown-hr;
+    background-color: $color-markdown-blockquote;
     border-left: $border $color-border;
     margin-top: px-to-em(s(0.5));
     padding: s(0.5);
 
+    a {
+      text-shadow: -1px 0 0 $color-markdown-blockquote, 1px 0 0 $color-markdown-blockquote;
+
+      &:hover {
+        text-shadow: -1px 0 0 transparent, 1px 0 0 transparent;
+      }
+    }
+
     p {
       margin: 0;
+
+      & + & {
+        margin-top: px-to-em(s(0.5));
+      }
     }
   }
 

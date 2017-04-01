@@ -1,0 +1,107 @@
+@include block ('hamburger') {
+  position: fixed;
+  transform: translateY(0%);
+  transition: transform $hamburger-ease, z-index 0s linear 0.5s;
+  width: 100%;
+  z-index: 2;
+
+  @include media ('>tablet-large') {
+    display: none;
+    z-index: 0;
+  }
+
+  @include media ('<=tablet-small') {
+    @include element ('area') {
+      transform: translate(-100%, 0);
+    }
+  }
+
+  @include modifier ('active') {
+    transform: translateY(-100vh);
+    transition: transform $hamburger-ease, z-index 0s linear;
+    z-index: 2;
+
+    @include media ('<=tablet-small') {
+      transform: translateY(0%);
+
+      @include element ('area') {
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+  @include modifier ('desktop') {
+    @include media ('>tablet-large') {
+      display: block;
+    }
+  }
+
+  @include element ('header') {
+    display: flex;
+    justify-content: space-between;
+    padding: s(2);
+
+    @include media ('>tablet-large') {
+      padding-top: $aside-top-padding;
+    }
+
+    @include media ('<=tablet-large') {
+      background-color: $color-body-background;
+      box-shadow: 0 2px 0 2px $hamburger-border;
+      padding: s(1);
+    }
+
+    @include media ('<=tablet-small') {
+      padding: s(0.5);
+    }
+
+    @include media ('<=mobile-large') {
+      padding: 0;
+    }
+  }
+
+  @include element ('logo') {
+    color: inherit;
+    font-size: 48px;
+    text-decoration: none;
+
+    @include media ('>tablet-large') {
+      margin-left: 5%;
+    }
+  }
+
+  @include element ('button') {
+    $size: 64px;
+    border-radius: $size;
+    cursor: pointer;
+    display: inline-block;
+    font-size: s(0.5, $size);
+    height: $size;
+    line-height: $size;
+    text-align: center;
+    transition: transform $ease-hover;
+    width: $size;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+
+    @include media ('>tablet-large') {
+      margin-right: 5%;
+    }
+  }
+
+  @include element ('area') {
+    background-color: rgba($color-body-text, 0.5);
+    color: $color-body-background;
+    height: 100vh;
+    position: fixed;
+    transform: translateY(100%);
+    transition: transform $hamburger-ease;
+    width: 100vw;
+
+    @include media ('<=tablet-small') {
+      transform: translate(-100%, 0);
+    }
+  }
+}

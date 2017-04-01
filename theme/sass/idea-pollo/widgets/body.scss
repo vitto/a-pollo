@@ -4,4 +4,8 @@
   font-family: $font-sans;
   font-weight: 300;
   line-height: 1.25;
+
+  @include modifier ('no-overflow') {
+    overflow: hidden;
+  }
 }

@@ -3,7 +3,7 @@
 <head>
   <style media='all'>{% include '../main/css.twig' %}</style>
 </head>
-<body class='{{ annotation.selectorClass }}' style='padding:0; margin:0; line-height:1;'>
+<body class='{{ annotation.selectorClass }}' style='padding:0; margin:0; line-height:1; user-select: none;'>
   <div {% if fontSize is defined %}style='font-size: {{ fontSize }};'{% endif %}>{{ annotation.alphabet.uppercase }}</div>
   <div {% if fontSize is defined %}style='font-size: {{ fontSize }};'{% endif %}>{{ annotation.alphabet.lowercase }}</div>
 </body>

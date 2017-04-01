@@ -1,4 +1,5 @@
 @include block ('snippet-item') {
+  $icon-size: 28px;
   overflow: visible;
 
   &::after {
@@ -18,7 +19,20 @@
   }
 
   @include element ('category') {
-    font-size: px-to-em(16px);
+    font-size: px-to-em(13px);
     font-weight: 200;
+    line-height: px-to-em($icon-size);
+  }
+
+  @include element ('icon') {
+    background-color: $color-icon-background;
+    border-radius: 100px;
+    color: $color-icon-text;
+    display: block;
+    float: left;
+    height: px-to-em($icon-size);
+    margin-right: 4px;
+    text-align: center;
+    width: px-to-em($icon-size);
   }
 }

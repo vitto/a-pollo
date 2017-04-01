@@ -1,9 +1,10 @@
 $color-body-background: $color-white;
 $color-body-text: $color-shark;
 
-$color-table-cell: $color-pampas;
-$color-markdown-hr: $color-pampas;
+$color-markdown-blockquote: $color-pampas;
 $color-markdown-border-table: $color-pampas;
+$color-markdown-hr: $color-pampas;
+$color-table-cell: $color-pampas;
 
 $color-icon-text: $color-white;
 $color-icon-background: $color-shark;
@@ -14,7 +15,14 @@ $color-border: $color-shark;
 $color-code-selection-text: $color-pampas;
 $color-code-selection-background: $color-shark;
 
+$color-render-dark: $color-shark;
+$color-render-light: $color-white;
 $ease-aside: 0.5s ease(in-out-quint);
+$ease-hover: 0.325s ease(out-quint);
+
+$hamburger-ease: 0.5s ease(in-out-quint);
+$hamburger-border: rgba(0, 0, 0, 0.05);
+
 $ease-render-delay: 0.5s;
 $ease-render-mask: 0.25s;
 $ease-render: 0.5s ease(in-out-quint);
@@ -30,4 +38,3 @@ $font-heading: $font-serif;
 $aside-top-padding: px-to-em(s(6));
 $main-top-padding: px-to-em(s(4));
 $aside-width: 20%;
-$main-width: 70%;
