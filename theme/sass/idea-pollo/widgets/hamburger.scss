@@ -21,6 +21,11 @@
     transition: transform $hamburger-ease, z-index 0s linear;
     z-index: 2;
 
+    @include element ('area') {
+      transition: transform $hamburger-ease, visibility 0s linear;
+      visibility: visible;
+    }
+
     @include media ('<=tablet-small') {
       transform: translateY(0%);
 
@@ -97,7 +102,8 @@
     height: 100vh;
     position: fixed;
     transform: translateY(100%);
-    transition: transform $hamburger-ease;
+    transition: transform $hamburger-ease, visibility 0s linear 0.5s;
+    visibility: hidden;
     width: 100vw;
 
     @include media ('<=tablet-small') {
