@@ -30,21 +30,21 @@
 
   @include element ('title') {
     display: block;
-    font-size: px-to-em(24px);
+    font-size: em(24px);
     font-weight: $font-weight-bold;
     text-transform: capitalize;
   }
 
   @include element ('size') {
-    font-size: px-to-em(12px);
+    font-size: em(12px);
     white-space: nowrap;
   }
 
   @include element ('size-title') {
     display: inline-block;
     font-weight: $font-weight-bold;
-    margin-left: px-to-em(s(0.5));
-    margin-right: px-to-em(s(0.25));
+    margin-left: em(s(0.5));
+    margin-right: em(s(0.25));
     text-transform: uppercase;
 
     &:first-child {

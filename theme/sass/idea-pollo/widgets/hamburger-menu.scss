@@ -1,0 +1,78 @@
+@include block ('hamburger-menu') {
+
+  color: inherit;
+  flex-grow: 1;
+  list-style-type: none;
+  margin: em(s(2)) em(s(1)) 0;
+  padding: 0;
+  transition: opacity $ease-aside;
+
+  @include element ('item') {
+    white-space: nowrap;
+    @include modifier ('inline') {
+      display: inline-block;
+
+      & + & {
+        margin-left: s(0.25);
+      }
+    }
+  }
+
+  @include element ('title') {
+    font-size: em(20px);
+    font-weight: $font-weight-bold;
+    margin-top: em(s(1));
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    @include modifier ('big') {
+      font-size: em(24px);
+      margin-bottom: em(s(0.5));
+      padding-bottom: em(s(0.5));
+      position: relative;
+
+      &::after {
+        background-color: $hamburger-menu-color;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 2px;
+        position: absolute;
+        transition: opacity $ease-aside, width 0.5625s ease(in-out-expo);
+        width: 100%;
+      }
+    }
+  }
+
+  @include element ('link') {
+    color: $hamburger-menu-color;
+    @include flag-link($hamburger-menu-color, $hamburger-menu-background);
+
+    @include modifier ('selected') {
+      color: mix($hamburger-menu-color, $hamburger-menu-background, 25%);
+
+      &::after {
+        z-index: 1;
+      }
+    }
+  }
+
+  @include element ('icon') {
+    $size: 36px;
+    $font-size: 32px;
+    background-color: $hamburger-menu-color;
+    border-radius: em($size);
+    color: $hamburger-menu-background;
+    font-size: em($font-size);
+    height: em($size);
+    line-height: em($size);
+    text-align: center;
+    width: em($size);
+  }
+}

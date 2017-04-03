@@ -1,6 +1,6 @@
 {% if metadata.hamburger %}
-  {% include 'hamburger.twig' with { desktop: true } %}
+  {% include './hamburger/hamburger.twig' with { desktop: true } %}
 {% else %}
-  {% include 'hamburger.twig' with { desktop: false } %}
-  {% include 'aside.twig' %}
+  {% include './hamburger/hamburger.twig' with { desktop: false } %}
+  {% include './aside/aside.twig' %}
 {% endif %}

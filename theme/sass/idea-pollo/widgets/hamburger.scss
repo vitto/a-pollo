@@ -22,6 +22,7 @@
     z-index: 2;
 
     @include element ('area') {
+      overflow: auto;
       transition: transform $hamburger-ease, visibility 0s linear;
       visibility: visible;
     }
@@ -94,11 +95,22 @@
     @include media ('>tablet-large') {
       margin-right: 5%;
     }
+
+    @include modifier ('close') {
+      border-radius: 100px;
+      transition: background-color $ease-hover, color $ease-hover, transform $ease-hover;
+
+      &:hover {
+        background-color: $hamburger-menu-color;
+        color: $hamburger-menu-background;
+        transform: scale(0.925);
+      }
+    }
   }
 
   @include element ('area') {
-    background-color: rgba($color-body-text, 0.5);
-    color: $color-body-background;
+    background-color: $hamburger-menu-background;
+    color: $hamburger-menu-color;
     height: 100vh;
     position: fixed;
     transform: translateY(100%);
@@ -109,5 +121,55 @@
     @include media ('<=tablet-small') {
       transform: translate(-100%, 0);
     }
+  }
+
+  @include element ('area-header') {
+    padding: s(2);
+    text-align: right;
+
+    @include media ('>tablet-large') {
+      padding-top: $aside-top-padding;
+    }
+
+    @include media ('<=tablet-large') {
+      padding: s(1);
+    }
+
+    @include media ('<=tablet-small') {
+      padding: s(0.5);
+    }
+
+    @include media ('<=mobile-large') {
+      padding: 0;
+    }
+  }
+
+  @include element ('menus') {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    padding-bottom: s(4);
+    width: 70%;
+
+    @include media ('<=tablet-small') {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  @include element ('footer') {
+    margin: auto;
+    padding-bottom: s(4);
+    width: 70%;
+
+    @include media ('<=tablet-small') {
+      width: 100%;
+    }
+  }
+
+  @include element ('footer-contents') {
+    margin-left: em(s(1));
+    margin-right: em(s(1));
   }
 }

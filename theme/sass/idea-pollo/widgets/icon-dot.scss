@@ -1,5 +1,5 @@
 @include block ('icon-dot') {
-  $size: px-to-em(40px);
+  $size: em(40px);
   background-color: $color-icon-background;
   border-radius: 100px;
   color: $color-icon-text;

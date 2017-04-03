@@ -1,4 +1,4 @@
-@mixin flag-link {
+@mixin flag-link($background-color: $color-body-text, $color: $color-body-background) {
   $margin: -3px;
   $ease-duration: 0.375s;
   $animation: ease(out-expo);
@@ -11,9 +11,9 @@
   transition: color $ease;
 
   &::after {
-    background-color: $color-body-text;
+    background-color: $background-color;
     bottom: 0;
-    box-shadow: 0 -0.5px 0 $color-body-background, 0 0.5px 0 $color-body-background;
+    box-shadow: 0 -0.5px 0 $color, 0 0.5px 0 $color;
     content: '';
     display: block;
     height: 100%;
@@ -39,7 +39,7 @@
   }
 
   &:hover {
-    color: $color-body-background;
+    color: $color;
 
     &::after {
       left: $margin;
@@ -48,11 +48,11 @@
   }
 
   @include modifier ('selected') {
-    color: $color-body-text;
+    color: $background-color;
     cursor: default;
 
     &:hover {
-      color: $color-body-text;
+      color: $background-color;
 
       &::after {
         top: 50%;

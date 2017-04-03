@@ -1,5 +1,5 @@
 .markdown {
-  $margin-top-large: px-to-em(s(2));
+  $margin-top-large: em(s(2));
 
   .release-details {
     a {
@@ -37,19 +37,19 @@
   }
 
   p {
-    margin-top: px-to-em(s(0.5));
+    margin-top: em(s(0.5));
 
     &:first-child {
       margin-top: 0;
     }
 
     & + p {
-      margin-top: px-to-em(s(1));
+      margin-top: em(s(1));
     }
   }
 
   table + p {
-    margin-top: px-to-em(s(1));
+    margin-top: em(s(1));
   }
 
   a {
@@ -66,7 +66,7 @@
   blockquote {
     background-color: $color-markdown-blockquote;
     border-left: $border $color-border;
-    margin-top: px-to-em(s(0.5));
+    margin-top: em(s(0.5));
     padding: s(0.5);
 
     a {
@@ -81,7 +81,7 @@
       margin: 0;
 
       & + & {
-        margin-top: px-to-em(s(0.5));
+        margin-top: em(s(0.5));
       }
     }
   }

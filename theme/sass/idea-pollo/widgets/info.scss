@@ -1,6 +1,6 @@
 @include block ('info') {
   display: inline-block;
-  margin-top: px-to-em(s(1));
+  margin-top: em(s(1));
 
   & + & {
     margin-left: s(2);

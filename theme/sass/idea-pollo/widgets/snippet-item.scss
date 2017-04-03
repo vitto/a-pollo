@@ -14,14 +14,14 @@
     margin-bottom: s(1);
 
     @include modifier ('small') {
-      font-size: px-to-em(18px);
+      font-size: em(18px);
     }
   }
 
   @include element ('category') {
-    font-size: px-to-em(13px);
+    font-size: em(13px);
     font-weight: 200;
-    line-height: px-to-em($icon-size);
+    line-height: em($icon-size);
   }
 
   @include element ('icon') {
@@ -30,9 +30,9 @@
     color: $color-icon-text;
     display: block;
     float: left;
-    height: px-to-em($icon-size);
+    height: em($icon-size);
     margin-right: 4px;
     text-align: center;
-    width: px-to-em($icon-size);
+    width: em($icon-size);
   }
 }

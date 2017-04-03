@@ -19,11 +19,11 @@
   }
 
   @include element ('title') {
-    font-size: px-to-em(32px);
+    font-size: em(32px);
     margin: 0;
 
     @include modifier ('assets') {
-      margin-top: px-to-em(s(1.5));
+      margin-top: em(s(1.5));
     }
   }
 

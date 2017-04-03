@@ -1,16 +1,16 @@
 @include block ('file') {
-  font-size: px-to-em(12px);
+  font-size: em(12px);
 
   @include element ('title') {
     display: inline-block;
     font-weight: $font-weight-bold;
-    margin-right: px-to-em(s(0.25));
+    margin-right: em(s(0.25));
     text-transform: uppercase;
   }
 
   @include element ('item') {
     display: inline-block;
-    margin-left: px-to-em(s(1));
+    margin-left: em(s(1));
     white-space: nowrap;
 
     &:first-child {

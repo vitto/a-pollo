@@ -1,0 +1,20 @@
+{% if items.length %}
+  <ul class="hamburger-menu">
+    {% if icon %}
+      <li class="hamburger-menu__icon">
+        <i class="{{ icon }}"></i>
+      </li>
+    {% endif %}
+    <li class="hamburger-menu__title hamburger-menu__title--big">
+      {{ title }}
+    </li>
+
+    {% for item in items %}
+      <li class="hamburger-menu__item">
+        <a class="hamburger-menu__link{% if path == item.path %} hamburger-menu__link--selected {% endif %}" href="{{ (relativePath ~ item.path) }}/index.html">
+          {{ item.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

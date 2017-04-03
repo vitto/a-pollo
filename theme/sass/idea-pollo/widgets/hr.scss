@@ -1,8 +1,8 @@
 @include block ('hr') {
   border: 0;
-  border-top: px-to-em(s(1)) solid $color-border;
-  margin-bottom: px-to-em(s(3));
-  margin-top: px-to-em(s(3));
+  border-top: em(s(1)) solid $color-border;
+  margin-bottom: em(s(3));
+  margin-top: em(s(3));
 
   @include modifier ('aside') {
     opacity: 0;
@@ -12,13 +12,17 @@
 
   @include modifier ('image') {
     border-top: $border $color-border;
-    margin-bottom: px-to-em(s(1));
+    margin-bottom: em(s(1));
     margin-top: 0;
   }
 
   @include modifier ('thin') {
     border-top: $border $color-border;
-    margin-bottom: px-to-em(s(1));
-    margin-top: px-to-em(s(1));
+    margin-bottom: em(s(1));
+    margin-top: em(s(1));
+  }
+
+  @include modifier ('bright') {
+    border-top-color: $color-border-bright;
   }
 }

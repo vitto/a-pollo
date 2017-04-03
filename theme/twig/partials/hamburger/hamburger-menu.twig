@@ -1,0 +1,35 @@
+{% if items.length %}
+
+  <ul class="hamburger-menu">
+    {% if icon %}
+      <li class="hamburger-menu__icon">
+        <i class="{{ icon }}"></i>
+      </li>
+    {% endif %}
+    <li class="hamburger-menu__title hamburger-menu__title--big">
+      {{ title }}
+    </li>
+    {% if title|lower == 'snippet' or title|lower == 'snippets' %}
+      <li class="hamburger-menu__item">
+        <a class="hamburger-menu__link{% if path == 'snippets' %} hamburger-menu__link--selected {% endif %}" href="{{ relativePath }}snippets/index.html">
+          <i class="fa fa-copy"></i> Show all
+        </a>
+      </li>
+    {% endif %}
+
+    {% set category = '' %}
+    {% for item in items %}
+      {% if item.category != category %}
+        {% set category = item.category %}
+        <li class="hamburger-menu__title">
+          {{ category }}
+        </li>
+      {% endif %}
+      <li class="hamburger-menu__item">
+        <a class="hamburger-menu__link{% if path == item.path %} hamburger-menu__link--selected {% endif %}" href="{{ (relativePath ~ item.path) }}/index.html">
+          {{ item.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
