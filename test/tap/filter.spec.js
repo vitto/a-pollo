@@ -11,7 +11,8 @@ const fileList = [
   'test/samples/sass/frontsize/core/core.scss',
   'test/samples/sass/frontsize/core/functions/background.scss',
   'test/samples/sass/frontsize/core/functions/ease.scss',
-  'test/samples/sass/frontsize/core/functions/public.scss',
+  'test/samples/sass/frontsize/core/functions/map.scss',
+  'test/samples/sass/frontsize/core/functions/math.scss',
   'test/samples/sass/frontsize/core/functions/string.scss',
   'test/samples/sass/frontsize/core/grids/float.scss',
   'test/samples/sass/frontsize/core/helpers/background.scss',
@@ -52,7 +53,7 @@ test('filters file list of annotations', tap => {
     if (err) {
       throw err
     }
-    tap.equal(files.length, 8)
+    tap.equal(files.length, 9)
   })
 })
 
