@@ -67,13 +67,21 @@
   }
 
   @include element ('logo') {
+    align-items: center;
     color: inherit;
+    display: flex;
     font-size: 48px;
+    margin-left: em(s(0.125));
     text-decoration: none;
 
     @include media ('>tablet-large') {
       margin-left: 5%;
     }
+  }
+
+  @include element ('logo-image') {
+    height: 48px;
+    width: auto;
   }
 
   @include element ('button') {
@@ -117,6 +125,7 @@
     transition: transform $hamburger-ease, visibility 0s linear 0.5s;
     visibility: hidden;
     width: 100vw;
+    z-index: 1;
 
     @include media ('<=tablet-small') {
       transform: translate(-100%, 0);
@@ -150,7 +159,7 @@
     justify-content: space-between;
     margin: auto;
     padding-bottom: s(4);
-    width: 70%;
+    width: $hamburger-content-width;
 
     @include media ('<=tablet-small') {
       flex-direction: column;

@@ -31,5 +31,18 @@
     color: inherit;
     font-size: 48px;
     margin-left: -15px;
+    margin-top: -10px;
+  }
+
+  @include element ('left') {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    margin-right: em(s(2));
+  }
+
+  @include element ('right') {
+    align-items: center;
+    display: flex;
   }
 }

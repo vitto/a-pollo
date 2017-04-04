@@ -1,0 +1,70 @@
+<div class="hamburger-header">
+  <div class="hamburger-header__contents">
+
+    <div class="hamburger-header__left">
+
+      {% if metadata.project.prod %}
+      <a class="hamburger-header__logo" href="{{ metadata.project.prod }}">
+      {% else %}
+      <span class="hamburger-header__logo">
+      {% endif %}
+
+      {% if metadata.project.logo %}
+        <img src="{{ metadata.project.logo }}" srcset="{{ metadata.project.logo }} 1x, {{ metadata.project.logo }} 2x">
+      {% else %}
+        <span class="icon icon-a-pollo"></span>
+      {% endif %}
+
+      {% if metadata.project.prod %}
+      </a>
+      {% else %}
+      </span>
+      {% endif %}
+
+    </div>
+    {% if metadata.project is defined %}
+    <div class="hamburger-header__center">
+      <div class="hamburger-list">
+        <div class="hamburger-list__title">
+          Project
+        </div>
+        <div class="hamburger-list__items">
+          {% if metadata.project.repo is defined %}
+            <a class="hamburger-list__item" href="{{ metadata.project.repo }}">
+              GitHub
+            </a>
+          {% endif %}
+          {% if metadata.project.wiki is defined %}
+            <a class="hamburger-list__item" href="{{ metadata.project.wiki }}">
+              Wiki
+            </a>
+          {% endif %}
+          {% if metadata.project.staging is defined %}
+            <a class="hamburger-list__item" href="{{ metadata.project.staging }}">
+              Staging
+            </a>
+          {% endif %}
+          {% if metadata.project.local is defined %}
+            <a class="hamburger-list__item" href="{{ metadata.project.local }}">
+              Local
+            </a>
+          {% endif %}
+          {% if metadata.project.prod is defined %}
+            <a class="hamburger-list__item" href="{{ metadata.project.prod }}">
+              Production
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    <div class="hamburger-header__right">
+      <div class="hamburger__button hamburger__button--close">
+        <i class="fa fa-close"></i>
+      </div>
+    </div>
+  </div>
+
+
+  <hr class="hr hr--bright">
+</div>

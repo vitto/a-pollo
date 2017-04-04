@@ -1,0 +1,44 @@
+@include block ('hamburger-header') {
+  margin: auto;
+  margin-top: em(s(4));
+  padding-left: em(s(1));
+  padding-right: em(s(1));
+  width: $hamburger-content-width;
+
+  @include media ('<=tablet-small') {
+    margin-top: em(s(1));
+    width: 100%;
+  }
+
+  @include element ('contents') {
+    align-items: flex-end;
+    display: flex;
+  }
+
+  @include element ('logo') {
+    display: block;
+    line-height: 0;
+
+    img {
+      height: auto;
+      max-width: 100%;
+    }
+  }
+
+  @include element ('left') {
+    flex-grow: 1;
+  }
+
+  @include element ('center') {
+    margin-left: em(s(2));
+
+    @include media ('<=tablet-large') {
+      display: none;
+    }
+  }
+
+  @include element ('right') {
+    align-self: flex-start;
+    margin-left: em(s(2));
+  }
+}

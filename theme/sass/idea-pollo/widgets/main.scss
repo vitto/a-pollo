@@ -6,6 +6,11 @@
   width: 60%;
   z-index: 1;
 
+  @include modifier ('hamburger') {
+    margin-left: 15%;
+    width: 70%;
+  }
+
   @include media ('<=tablet-large') {
     margin-left: 0;
     padding: s(5) s(2);
@@ -13,9 +18,7 @@
   }
 
   @include media ('<=tablet-small') {
-    margin-left: 0;
     padding: s(4) s(1) s(1);
-    width: 100%;
   }
 
   @include element ('title') {

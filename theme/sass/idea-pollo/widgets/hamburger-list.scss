@@ -1,0 +1,27 @@
+@include block ('hamburger-list') {
+
+  @include element ('title') {
+    font-weight: $font-weight-bold;
+  }
+
+  @include element ('items') {
+    display: flex;
+  }
+
+  @include element ('item') {
+    color: inherit;
+    margin-right: em(s(1));
+    text-decoration: none;
+    @include flag-link($hamburger-menu-color, $hamburger-menu-background);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @include element ('text') {
+    @include media ('<=tablet-large') {
+      display: none;
+    }
+  }
+}

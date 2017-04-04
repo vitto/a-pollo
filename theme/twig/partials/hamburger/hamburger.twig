@@ -1,10 +1,6 @@
 <div class="hamburger {% if desktop == true %} hamburger--desktop {% endif %}">
   <div class="hamburger__area">
-    <div class="hamburger__area-header">
-      <div class="hamburger__button hamburger__button--close">
-        <i class="fa fa-close"></i>
-      </div>
-    </div>
+    {% include 'hamburger-header.twig' %}
     <div class="hamburger__menus">
       {% include 'hamburger-menu.twig' with { title: 'Documentation', items: metadata.collections.doc, icon: 'fa fa-book' } %}
       {% include 'hamburger-menu.twig' with { title: 'Snippet', items: metadata.collections.snippet, icon: 'fa fa-code' } %}
@@ -15,9 +11,15 @@
     {% include 'hamburger-footer.twig' %}
   </div>
   <div class="hamburger__header">
+    {% if metadata.project.logo_mini is defined %}
+      <a href="{{ relativePath }}" class="hamburger__logo">
+        <img src="{{ metadata.project.logo_mini }}" class="hamburger__logo-image">
+      </a>
+    {% else %}
       <a href="{{ relativePath }}" class="hamburger__logo icon icon-a-pollo"></a>
-      <div class="hamburger__button">
-        <i class="fa fa-navicon"></i>
-      </div>
+    {% endif %}
+    <div class="hamburger__button">
+      <i class="fa fa-navicon"></i>
+    </div>
   </div>
 </div>

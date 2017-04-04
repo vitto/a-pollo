@@ -5,6 +5,14 @@ metadata:
   hamburger: true
   fontAssets: ../fonts/
   imageAssets: ../img/
+  project:
+    logo: http://media.nintendo.com/nintendo/cocoon/switch-static-pages/switch/etRgxnAu0zRX4bmWnt9K628wG7YQUI6t/images/switch/facebook.jpg
+    logo_mini: https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/NintendoSwitchLogo.svg/1200px-NintendoSwitchLogo.svg.png
+    repo: https://github.com/vitto/a-pollo
+    redmine: https://github.com/vitto/a-pollo/wiki
+    staging: http://staging.project.com
+    local: http://dev.project.com
+    prod: http://project.com
 clean: true
 source: tmp
 destination: build
