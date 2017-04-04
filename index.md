@@ -261,11 +261,14 @@ This annotation parameters:
 | Parameter | Required | Description |
 | - | - | - |
 | `@a-pollo-snippet` | `true` | The annotation tag |
-| `@name` | | Inline string |
-| `@selector` | | CSS selector to render the typography in the documentation |
+| `@author` | | Inline markdown string |
+| `@category` | | Inline string |
+| `@date` | | A valid date |
+| `@html` | | Inline markdown string as first parameter, multiline code block as second parameter |
+| `@icon` | | Inline string, meant to be used to store a CSS class selector |
+| `@name` | `true` | Inline string |
 | `@text` | | Multiline markdown string |
-| `@usage` | | Inline string |
-
+| `@title` | | Inline string |
 
 ```css
 /*
@@ -277,7 +280,7 @@ This annotation parameters:
   @icon: fa fa-hand-pointer-o
   @text: The base usage without styles of the button, this component **requires** [FontAwesome](http://fontawesome.github.io) to be loaded as dependency.
   @html:
-    <a href="#" class="button-social">
+    <a href="#" class="button-social" data-style="width: 150px;">
       <div class="button-social__icon">
         <i class="fa fa-dashboard"></i>
       </div>
@@ -287,6 +290,10 @@ This annotation parameters:
     </a>
 */
 ```
+
+##### Note
+
+Inside the `@html` tag you can add the attribute `data-style`, this will be converted as inline stile for display examples, but will be not copied in the clipboard.
 
 ---
 

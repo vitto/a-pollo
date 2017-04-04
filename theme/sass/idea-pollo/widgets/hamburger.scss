@@ -157,19 +157,4 @@
       width: 100%;
     }
   }
-
-  @include element ('footer') {
-    margin: auto;
-    padding-bottom: s(4);
-    width: 70%;
-
-    @include media ('<=tablet-small') {
-      width: 100%;
-    }
-  }
-
-  @include element ('footer-contents') {
-    margin-left: em(s(1));
-    margin-right: em(s(1));
-  }
 }

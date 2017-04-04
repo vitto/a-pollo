@@ -16,13 +16,16 @@
   }
 
   @include element ('snippet') {
+    font-family: $font-mono;
     margin-top: s(1);
 
     pre {
+      font-family: inherit;
       margin: 0;
     }
 
     code {
+      font-family: inherit;
       &::selection,
       span::selection {
         background-color: $color-code-selection-background;

@@ -1,0 +1,35 @@
+@include block ('hamburger-footer') {
+  margin: auto;
+  padding-bottom: s(4);
+  width: 70%;
+
+  @include media ('<=tablet-small') {
+    width: 100%;
+  }
+
+  @include element ('area') {
+    margin-left: em(s(1));
+    margin-right: em(s(1));
+  }
+
+  @include element ('contents') {
+    align-items: center;
+    display: flex;
+  }
+
+  @include element ('name') {
+    display: block;
+    font-weight: $font-weight-bold;
+    text-transform: lowercase;
+  }
+
+  @include element ('description') {
+    display: block;
+  }
+
+  @include element ('icon') {
+    color: inherit;
+    font-size: 48px;
+    margin-left: -15px;
+  }
+}
