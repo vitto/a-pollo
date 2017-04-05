@@ -3,14 +3,9 @@ language: node_js
 node_js:
     - 4.1
 
-before_install:
-    - gem install sass
-    - npm install -g bower
-    - npm install -g gulp
-
 before_script:
     - npm install
-    - bower install
 
 script:
+    - npm run build
     - npm run test
