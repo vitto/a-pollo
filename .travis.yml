@@ -7,5 +7,7 @@ before_script:
     - npm install
 
 script:
+    - npm run init
+    - npm run frontend
     - npm run build
     - npm run test

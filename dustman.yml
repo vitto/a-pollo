@@ -101,13 +101,13 @@ vendors:
 
 paths:
   server: ./test/samples/build/
-  css: ./theme/build/a-pollo/css/
-  images: ./theme/build/a-pollo/img/
-  fonts: ./theme/build/a-pollo/fonts/
-  js: ./theme/build/a-pollo/js/
+  css: ./theme/dist/a-pollo/css/
+  images: ./theme/dist/a-pollo/img/
+  fonts: ./theme/dist/a-pollo/fonts/
+  js: ./theme/dist/a-pollo/js/
 
 shell:
   after:
-    - mkdir -p ./theme/build/a-pollo/ || true
+    - mkdir -p ./theme/dist/a-pollo/ || true
     - mkdir -p ./test/samples/build/a-pollo/ || true
-    - cp -r ./theme/build/a-pollo/* ./test/samples/build/a-pollo/
+    - cp -r ./theme/dist/a-pollo/* ./test/samples/build/a-pollo/
