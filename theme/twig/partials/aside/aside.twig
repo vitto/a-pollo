@@ -1,6 +1,11 @@
 <aside class="aside">
   <div class="aside__contents">
     <a class="aside__header" href="{{ relativePath }}">
+      {% if metadata.project.logo_mini is defined %}
+      <div class="aside__logo">
+        <img src="{{ metadata.project.logo_mini }}" class="aside__logo-image">
+      </div>
+      {% else %}
       <div class="aside__logo icon icon-a-pollo"></div>
       <div class="aside__headline">
         <strong class="aside__title">a-pollo</strong>
@@ -8,6 +13,7 @@
           The CSS style guide
         </div>
       </div>
+      {% endif %}
     </a>
 
     <hr class="hr hr--aside">

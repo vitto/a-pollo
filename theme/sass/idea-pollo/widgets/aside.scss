@@ -79,19 +79,12 @@
   }
 
   @include element ('logo-image') {
-    $height: 38px;
-    $width: 33px;
-    $scale: 1.5;
-    background-image: theme('a-pollo-logo-simple-black.svg');
-    background-position: 50% 50%;
-    background-repeat: repeat;
-    background-size: contain;
     display: inline-block;
     float: left;
-    height: s($scale, $height);
+    height: auto;
     line-height: 0;
     margin-right: s(0.5);
-    width: s($scale, $width);
+    width: 64px;
   }
 
   @include element ('logo') {

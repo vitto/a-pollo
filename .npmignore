@@ -3,18 +3,10 @@ Thumbs.db
 db.json
 *.log
 
-/hexo/node_modules
-node_modules/
-example_source/
-frontsize/
-example/
-public/
-spec/
-scaffolds/
-source/
-_site/
-vendors/
-test/
-hexo/source/
-
-.deploy*/
+.nyc_output
+coverage
+node_modules
+test/samples/build
+test/samples/tmp
+theme/build
+theme/tmp

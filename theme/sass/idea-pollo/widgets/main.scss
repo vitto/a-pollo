@@ -1,6 +1,6 @@
 @include block ('main') {
   background-color: $color-body-background;
-  margin-left: $aside-width;
+  margin-left: 20%;
   padding: $main-top-padding s(2);
   position: relative;
   width: 60%;
@@ -9,6 +9,14 @@
   @include modifier ('hamburger') {
     margin-left: 15%;
     width: 70%;
+  }
+
+  @include modifier ('aside') {
+    margin-left: 20%;
+
+    @include media ('<=desktop-small') {
+      margin-left: 30%;
+    }
   }
 
   @include media ('<=tablet-large') {

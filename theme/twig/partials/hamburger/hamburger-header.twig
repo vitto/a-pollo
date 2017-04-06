@@ -22,35 +22,35 @@
       {% endif %}
 
     </div>
-    {% if metadata.project is defined %}
+    {% if metadata.project.link is defined %}
     <div class="hamburger-header__center">
       <div class="hamburger-list">
         <div class="hamburger-list__title">
           Project
         </div>
         <div class="hamburger-list__items">
-          {% if metadata.project.repo is defined %}
-            <a class="hamburger-list__item" href="{{ metadata.project.repo }}">
+          {% if metadata.project.link.repo is defined %}
+            <a class="hamburger-list__item" href="{{ metadata.project.link.repo }}">
               GitHub
             </a>
           {% endif %}
-          {% if metadata.project.wiki is defined %}
-            <a class="hamburger-list__item" href="{{ metadata.project.wiki }}">
+          {% if metadata.project.link.wiki is defined %}
+            <a class="hamburger-list__item" href="{{ metadata.project.link.wiki }}">
               Wiki
             </a>
           {% endif %}
-          {% if metadata.project.staging is defined %}
-            <a class="hamburger-list__item" href="{{ metadata.project.staging }}">
+          {% if metadata.project.link.staging is defined %}
+            <a class="hamburger-list__item" href="{{ metadata.project.link.staging }}">
               Staging
             </a>
           {% endif %}
-          {% if metadata.project.local is defined %}
-            <a class="hamburger-list__item" href="{{ metadata.project.local }}">
+          {% if metadata.project.link.local is defined %}
+            <a class="hamburger-list__item" href="{{ metadata.project.link.local }}">
               Local
             </a>
           {% endif %}
-          {% if metadata.project.prod is defined %}
-            <a class="hamburger-list__item" href="{{ metadata.project.prod }}">
+          {% if metadata.project.link.prod is defined %}
+            <a class="hamburger-list__item" href="{{ metadata.project.link.prod }}">
               Production
             </a>
           {% endif %}
