@@ -1,6 +1,6 @@
 annotations: sass
 build: ./tmp
-front_matter: true
+frontMatter: true
 posts: ./markdown
 index: true
 assets:

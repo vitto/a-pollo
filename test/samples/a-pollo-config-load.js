@@ -1,14 +1,12 @@
-const fs = require('fs')
-const yaml = require('js-yaml')
-
 const aPollo = require('../../index')
-
 const beutify = require('metalsmith-beautify')
 const collections = require('metalsmith-collections')
-const twig = require('metalsmith-twig')
+const fs = require('fs')
 const markdown = require('metalsmith-markdown')
 const metalsmith = require('metalsmith')
 const permalinks = require('metalsmith-permalinks')
+const twig = require('metalsmith-twig')
+const yaml = require('js-yaml')
 
 aPollo(function (config, docs, inlineCss, images, fonts) {
   var m = yaml.safeLoad(fs.readFileSync('metalsmith.yml', 'utf-8'))

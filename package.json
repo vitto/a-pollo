@@ -74,7 +74,8 @@
     ]
   },
   "scripts": {
-    "build": "cd ./test/samples/ && node example.js && cd - && mkdir -p ./test/samples/build/a-pollo/ || true && cp -r ./theme/dist/a-pollo/* ./test/samples/build/a-pollo/",
+    "build": "cd ./test/samples && node a-pollo-no-config.js && mkdir -p build/a-pollo/ || true && cp -r ../../theme/dist/a-pollo/* build/a-pollo/",
+    "buildLoad": "cd ./test/samples && node a-pollo-config-load.js && mkdir -p build/a-pollo/ || true && cp -r ../../theme/dist/a-pollo/* build/a-pollo/",
     "frontend": "rm -rf ./test/samples/build/a-pollo && ./node_modules/.bin/gulp --config dustman.yml -S",
     "init": "cp ./node_modules/dustman/gulpfile.js gulpfile.js && cp -R ./node_modules/frontsize ./test/samples/sass/frontsize",
     "test": "tap test/tap/*.js",
