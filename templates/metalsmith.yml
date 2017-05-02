@@ -1,0 +1,40 @@
+metadata:
+  home: http://vit.to
+  work: https://ideato.it
+  repo: https://github.com/vitto/a-pollo
+  hamburger: true
+  fontAssets: ../fonts/
+  imageAssets: ../img/
+  project:
+    logo: http://localhost:3000/img/logo-aperture-laboratories.svg
+    logo_mini: http://localhost:3000/img/logo-aperture-laboratories-mini.svg
+    link:
+      repo: https://github.com/vitto/a-pollo
+      redmine: https://github.com/vitto/a-pollo/wiki
+      staging: http://staging.project.com
+      local: http://dev.project.com
+      prod: http://project.com
+clean: true
+source: tmp
+destination: build
+collections:
+  posts: ./markdown/posts/*.md
+  doc:
+    pattern: ./test/samples/tmp/docs/*.md
+    sortBy: 'category'
+  snippet: ./test/samples/tmp/snippets/*.md
+  identity: ./test/samples/tmp/identity/*.md
+beautify:
+  css: false
+  js: false
+  html: false
+markdown:
+  smartypants: true
+  gfm: true
+  tables: true
+permalinks:
+  relative: true
+twig:
+  directory: ../../theme/twig/layouts
+  view: default.twig
+  cache: false

@@ -11,7 +11,6 @@ const yaml = require('js-yaml')
 aPollo({
   annotations: 'sass',
   build: './tmp',
-  frontMatter: true,
   posts: './markdown',
   index: true,
   assets: {
@@ -20,7 +19,7 @@ aPollo({
     images: 'css/img'
   }
 }, function (err, config, docs, css, images, fonts) {
-  if (err) err
+  if (err) throw err
   var m = yaml.safeLoad(fs.readFileSync('metalsmith.yml', 'utf-8'))
   m.twig.global = {
     css: css

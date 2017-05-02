@@ -11,7 +11,6 @@ const yaml = require('js-yaml')
 aPollo({
   annotations: 'sass',
   build: './tmp',
-  frontMatter: true,
   posts: './markdown',
   index: true,
   assets: {
