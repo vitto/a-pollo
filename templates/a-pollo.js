@@ -7,20 +7,10 @@ const metalsmith = require('metalsmith')
 const permalinks = require('metalsmith-permalinks')
 const twig = require('metalsmith-twig')
 const yaml = require('js-yaml')
+const ncp = require('ncp').ncp
 
-aPollo({
-  annotations: 'sass',
-  build: './tmp',
-  posts: './markdown',
-  index: true,
-  assets: {
-    css: 'css/example.css',
-    fonts: 'css/fonts',
-    images: 'css/img'
-  }
-}, function (err, config, docs, css, images, fonts) {
-  if (err) throw err
-  var m = yaml.safeLoad(fs.readFileSync('metalsmith.yml', 'utf-8'))
+function generator (css) {
+  var m = yaml.safeLoad(fs.readFileSync('a-pollo-metalsmith.yml', 'utf-8'))
   m.twig.global = {
     css: css
   }
@@ -38,4 +28,22 @@ aPollo({
       if (err) throw err
       console.log('Build done')
     })
+}
+
+aPollo({
+  annotations: 'core',
+  build: './node_modules/a-pollo/tmp',
+  posts: './wiki',
+  index: true,
+  assets: {
+    css: 'test/css/frontsize.test.css',
+    // fonts: 'css/fonts',
+    images: 'themes/default/img'
+  }
+}, function (err, config, docs, css, images, fonts) {
+  if (err) throw err
+  ncp('node_modules/a-pollo/theme/dist/a-pollo/*', 'node_modules/a-pollo/tmp/a-pollo/', function (err) {
+    if (err) throw err
+    generator(css)
+  })
 })
