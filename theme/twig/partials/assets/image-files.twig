@@ -9,7 +9,7 @@
   <div class="image-files__column">
     <div class="image-file">
       <div class="image-file__preview-container">
-        <div class="image-file__preview" style="background-image: url({{ metadata.imageAssets ~ image.path.base }});"></div>
+        <div class="image-file__preview" style="background-image: url({{ relativePath }}{{ metadata.imageAssets ~ image.path.base }});"></div>
       </div>
       <hr class="hr hr--image">
       <h4 class="image-file__name">

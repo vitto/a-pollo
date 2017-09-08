@@ -7,7 +7,7 @@
 <div class="font-files">
   {% for font in fonts %}
     <div class="font-files__column">
-      <a class="font-file" href="{{ (metadata.fontAssets ~ font.path.base) }}">
+      <a class="font-file" href="{{ relativePath }}{{ (metadata.fontAssets ~ font.path.base) }}">
         <div class="font-file__icon">
           <div class="icon-dot">
             <i class="fa fa-font"></i>
