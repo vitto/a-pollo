@@ -3,7 +3,7 @@
     <a class="aside__header" href="{{ relativePath }}">
       {% if metadata.project.logo_mini is defined %}
       <div class="aside__logo">
-        <img src="{{ metadata.project.logo_mini }}" class="aside__logo-image">
+        <img src="{{ relativePath }}{{ metadata.project.logo_mini }}" class="aside__logo-image">
       </div>
       {% else %}
       <div class="aside__logo icon icon-a-pollo"></div>

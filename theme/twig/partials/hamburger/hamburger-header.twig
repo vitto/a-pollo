@@ -10,7 +10,7 @@
       {% endif %}
 
       {% if metadata.project.logo %}
-        <img src="{{ metadata.project.logo }}" srcset="{{ metadata.project.logo }} 1x, {{ metadata.project.logo }} 2x">
+        <img src="{{ relativePath }}{{ metadata.project.logo }}" srcset="{{ relativePath }}{{ metadata.project.logo }} 1x, {{ relativePath }}{{ metadata.project.logo }} 2x">
       {% else %}
         <span class="icon icon-a-pollo"></span>
       {% endif %}
