@@ -13,7 +13,7 @@
   <div class="hamburger__header">
     {% if metadata.project.logo_mini is defined %}
       <a href="{{ relativePath }}" class="hamburger__logo">
-        <img src="{{ metadata.project.logo_mini }}" class="hamburger__logo-image">
+        <img src="{{ relativePath }}{{ metadata.project.logo_mini }}" class="hamburger__logo-image">
       </a>
     {% else %}
       <a href="{{ relativePath }}" class="hamburger__logo icon icon-a-pollo"></a>
